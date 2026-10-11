@@ -1,0 +1,88 @@
+{
+  "conclusion": "b(E_s tensor F_t)=b(E_s)b(F_t) on the full closed square",
+  "exact_point": {
+    "joint_kernel": "span{rvec(I_4)}",
+    "joint_remainder_rank": 15,
+    "product_radius": "573440/5357",
+    "s": "1/10",
+    "t": "1/8"
+  },
+  "limitation": "the universal arbitrary-channel conjecture remains unresolved",
+  "local_radii": {
+    "R_E(s)": "-140/(25*s**2 - 14)",
+    "R_F(t)": "-80/(25*t**2 - 8)"
+  },
+  "local_remainders": {
+    "Q_E_LDL_pivots": [
+      "-(500*s**3 + 75*s**2 - 440*s - 266)/((5*s**2 - 6)*(25*s**2 - 14))",
+      "40*(1250*s**4 - 725*s**2 + 294)/((25*s**2 - 14)*(500*s**3 + 75*s**2 - 440*s - 266))",
+      "-100/(25*s**2 - 14)"
+    ],
+    "Q_F_LDL_pivots": [
+      "10*(25*t**2 + 112)/((25*t**2 - 48)*(25*t**2 - 8))",
+      "-80*(25*t**2 + 32)/((25*t**2 - 8)*(25*t**2 + 112))",
+      "-20*(625*t**4 - 250*t**2 + 96)/((25*t**2 - 8)*(25*t**2 + 32))"
+    ],
+    "interval_checks": [
+      "Q_E_LDL_pivot_1: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=19/6)",
+      "Q_E_LDL_pivot_2: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=60/19)",
+      "Q_E_LDL_pivot_3: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=50/7)",
+      "Q_F_LDL_pivot_1: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=35/12)",
+      "Q_F_LDL_pivot_2: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=20/7)",
+      "Q_F_LDL_pivot_3: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=15/2)"
+    ],
+    "kernel": "span{rvec(I_2)} for each local remainder"
+  },
+  "multipliers": {
+    "L_E(s)": [
+      [
+        "10*(5*s - 7)/(25*s**2 - 14)",
+        "0"
+      ],
+      [
+        "0",
+        "-10*(5*s + 7)/(25*s**2 - 14)"
+      ]
+    ],
+    "L_F(t)": [
+      [
+        "-40/(25*t**2 - 8)",
+        "50*t/(25*t**2 - 8)"
+      ],
+      [
+        "50*t/(25*t**2 - 8)",
+        "-40/(25*t**2 - 8)"
+      ]
+    ],
+    "positive_definiteness": [
+      "L_E_minor_1: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=5)",
+      "L_E_minor_2: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=25)",
+      "L_F_minor_1: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=5)",
+      "L_F_minor_2: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=25)"
+    ]
+  },
+  "physical_checks": [
+    "J_E: Hermitian, trace one, Tr_B=I/2, lambda_min>=1/20 by the exact Weyl bound",
+    "J_F: Hermitian, trace one, Tr_B=I/2, lambda_min>=1/20 by the exact Weyl bound"
+  ],
+  "radius_checks": [
+    "E_radius_gap_0: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=6)",
+    "E_radius_gap_1: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=20/3)",
+    "E_radius_gap_3: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=50/7)",
+    "F_radius_gap_0: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=20/3)",
+    "F_radius_gap_1: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=5)",
+    "F_radius_gap_3: PASS (numerator_roots=0, denominator_roots=0, value_at_zero=15/2)"
+  ],
+  "schema": 1,
+  "scope": "exact restricted family on |s|,|t|<=1/5; no arbitrary-channel claim",
+  "software": {
+    "python": "3.12.14",
+    "sympy": "1.14.0"
+  },
+  "tensor_check": {
+    "joint_trace": "11200/((25*s**2 - 14)*(25*t**2 - 8))",
+    "permutation": "B1,A1,B2,A2 -> B1,B2,A1,A2",
+    "remainder_identity": "PASS",
+    "saturation": "V=I_4"
+  }
+}

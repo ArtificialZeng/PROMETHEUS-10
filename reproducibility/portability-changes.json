@@ -1,0 +1,50 @@
+[
+  {
+    "path": "projects/phys-00002-p01/evidence/interval-kkt.json",
+    "original_sha256": "fcfd918ede417eb20873a766bcc9949b7ed03b59df36dd57e29651bbb5dfa289",
+    "packaged_sha256": "d105755eb422e898abf91ac9788d83ef2694f3e28d530fde09d91a214e436bec",
+    "reason": "Portable library/path metadata or corrected required reproduction output arguments; scientific formulas unchanged."
+  },
+  {
+    "path": "projects/phys-00002-p01/evidence/interval-rank-two-neighborhood-320.json",
+    "original_sha256": "d341f6b7f819029dfa79e16783a860e7354bbb8cf97ae3e04a4ee9f7cb4e0ce7",
+    "packaged_sha256": "8e7d00f8dca0ed808cdb4ff0cd33645c6367d75643a629f631d325079bc73e37",
+    "reason": "Portable library/path metadata or corrected required reproduction output arguments; scientific formulas unchanged."
+  },
+  {
+    "path": "projects/phys-00002-p01/evidence/interval-rank-two-neighborhood.json",
+    "original_sha256": "91a983e4480896649a3f6eadcb816f5036bfce32624a26815eb3fe20d77cdfc5",
+    "packaged_sha256": "4f7010c12db7ff19ff513d7a8493ccf795bb015b00803aff8c5764807419674b",
+    "reason": "Portable library/path metadata or corrected required reproduction output arguments; scientific formulas unchanged."
+  },
+  {
+    "path": "projects/phys-00002-p01/evidence/research_interval_kkt.py",
+    "original_sha256": "88086f5d87d2e41330259466386c6187f7504c42ab62646babc0320e20c1c0a8",
+    "packaged_sha256": "935475e6ad0c4a7cc0d1721744d48967b767d4cd96ae902019c2304b00d63cb9",
+    "reason": "Portable library/path metadata or corrected required reproduction output arguments; scientific formulas unchanged."
+  },
+  {
+    "path": "projects/phys-00002-p01/evidence/verify_interval_rank_two_neighborhood.py",
+    "original_sha256": "c0b13288cca3f4d90f90df64b483a5d3cf59241e15a6619235be4e57cbfc61fc",
+    "packaged_sha256": "863be6b2c578c3bc9226123ef0de759728239bea0d73dbf6c8cb1da8c9079c28",
+    "reason": "Portable library/path metadata or corrected required reproduction output arguments; scientific formulas unchanged."
+  },
+  {
+    "path": "projects/phys-00002-p15/MANUSCRIPT_REPRODUCIBILITY.md",
+    "original_sha256": "8c030ac009560238acc209f8a4a7bfc78d3a308deec55b7d8a091b8d49491359",
+    "packaged_sha256": "3600ec3f5f3ba6fb1f7b81c3f8349abd22d9c98e6d046174fe5f6fdb94b66976",
+    "reason": "Portable library/path metadata or corrected required reproduction output arguments; scientific formulas unchanged."
+  },
+  {
+    "path": "projects/phys-00005-p01/REPRODUCIBILITY.md",
+    "original_sha256": "e7d189a869db38d9f0a9f1f562116eccd403f32a15e0ca92e44e6444ad224035",
+    "packaged_sha256": "3fd8b80c82c94153212dac55eac69090e1c8a6efd260503d03feaae3104fee59",
+    "reason": "Portable library/path metadata or corrected required reproduction output arguments; scientific formulas unchanged."
+  },
+  {
+    "path": "projects/phys-00006-p01/REPRODUCIBILITY.md",
+    "original_sha256": "5cda2bc778f0791bf4fc34fdcfa21cb51dc09e26371cd8f89b079c415aa1fa4e",
+    "packaged_sha256": "62a2c96208a7ac50c11c00c63128a5f9691d489a20d7a1c6318f95931ade4dff",
+    "reason": "Portable library/path metadata or corrected required reproduction output arguments; scientific formulas unchanged."
+  }
+]

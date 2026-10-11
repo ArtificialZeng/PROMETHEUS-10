@@ -1,0 +1,475 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\rvec}{rvec}
+\DeclareMathOperator{\Ree}{Re}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\I}{I}
+\newcommand{\succeqz}{\succeq 0}
+
+\title{Exact tensor-product boundariness for a two-parameter family of non-unital qubit channels}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The boundariness of an interior quantum channel is the reciprocal of a
+maximally entangled numerical radius of its inverse Choi state. Its
+multiplicativity under tensor products was conjectured from numerical
+evidence. We prove exact multiplicativity for a two-parameter family of
+full-rank qubit channels on $|s|,|t|\leq 1/5$, including a relative open
+subset in which both channels are non-unital. Parameter-dependent
+positive-semidefinite multipliers bound every entangling $U(4)$ comparator
+and are saturated by the identity. Six rational $LDL^{\mathsf T}$ pivots
+certify positivity on the full intervals. The joint optimization consequently
+reduces to two closed formulas. The universal arbitrary-channel conjecture
+remains unresolved.
+\end{abstract}
+
+\noindent\textbf{Keywords:} quantum channels; Choi states; boundariness;
+non-unital noise; tensor-product multiplicativity
+
+\section{Introduction}
+
+Completely positive trace-preserving maps form a compact convex set once the
+input and output dimensions are fixed.  The \emph{boundariness} of an interior
+channel measures the smallest channel weight needed in a convex decomposition
+that reaches the boundary.  Through the Choi--Jamio\l kowski representation
+\cite{Jamiolkowski1972,Choi1975}, this is a question about positive matrices
+with a fixed marginal.  It also has an operational interpretation through
+minimum-error discrimination: the channel farthest from a given interior
+channel can be chosen unitary \cite{Puchala2015}.
+
+Pucha\l a, Jen\v cov\'a, Sedl\'ak, and Ziman derived an inverse-Choi formula
+for channel boundariness, proved submultiplicativity under parallel tensor
+products, and proved equality when one factor is the completely mixed
+replacement channel \cite{Puchala2015}.  They reported numerical evidence for
+general multiplicativity but left it as a conjecture.  The issue is whether an
+entangling unitary comparator for a product channel can outperform all product
+comparators.
+
+This article gives an exact positive result on a deliberately restricted
+domain.  We construct two one-parameter families of full-rank qubit channels
+and prove multiplicativity on their complete parameter square.  Away from the
+coordinate axes both channels are non-unital, so the result is not the known
+completely mixed replacement case.  The proof uses tight one-sided
+positive-semidefinite multipliers for the two local inverse Choi matrices.
+These local certificates tensor to control every unitary in $U(4)$.  Their
+positivity is established by rational interval inequalities, without a grid,
+floating-point optimizer, or perturbative truncation.
+
+The result does not prove or disprove multiplicativity for arbitrary
+full-rank qubit channels.  Its value is instead twofold: it supplies a
+continuum with two genuinely non-unital factors, and it isolates a reusable
+certificate that can replace joint-unitary optimization when suitable local
+multipliers exist.
+
+\section{Normalized Choi convention and the tensor question}
+\label{sec:setup}
+
+Let $A\simeq B\simeq\mathbb C^d$ denote the input/reference and output
+spaces.  We use the normalized maximally entangled vector and normalized Choi
+state
+\begin{equation}
+ |\Omega_d\rangle=\frac{1}{\sqrt d}\sum_{j=0}^{d-1}|j\rangle_B|j\rangle_A,
+ \qquad
+ J_{\cG}=(\cG\otimes\id_A)(|\Omega_d\rangle\langle\Omega_d|).
+ \label{eq:choi}
+\end{equation}
+Thus $J_{\cG}\succeqz$, $\Tr J_{\cG}=1$, and
+$\Tr_BJ_{\cG}=\I_A/d$.  The basis order is always output followed by input,
+$(B,A)$.
+
+For a $d\times d$ matrix $V$, define row vectorization by
+\begin{equation}
+ \rvec(V)=\sum_{b,a}V_{ba}|b\rangle_B|a\rangle_A,
+ \qquad |u_V^{(d)}\rangle=\frac{\rvec(V)}{\sqrt d}.
+ \label{eq:rvec}
+\end{equation}
+For Hermitian $A$ on $B\otimes A$, write
+\begin{equation}
+ R_d(A)=\max_{U\in U(d)}
+ \langle u_U^{(d)}|A|u_U^{(d)}\rangle.
+ \label{eq:radius}
+\end{equation}
+If $J_{\cG}>0$, the formula of Ref.~\cite{Puchala2015}, converted from its
+unnormalized vector $|U\rangle\!\rangle=\sqrt d\,|u_U^{(d)}\rangle$, is
+\begin{equation}
+ b(\cG)=R_d(J_{\cG}^{-1})^{-1}.
+ \label{eq:boundariness}
+\end{equation}
+Equivalently, this is the quantity defined directly by
+\begin{equation}
+ b(\cG)=\inf_{\cC\ {\rm CPTP}}
+ \max\bigl\{q\in[0,1]:J_{\cG}-qJ_{\cC}\succeqz\bigr\}.
+ \label{eq:direct-b}
+\end{equation}
+
+For two qubit channels, the raw tensor order is $B_1A_1B_2A_2$.  Let $P$
+be the permutation unitary defined by
+\begin{equation}
+ P|b_1,a_1,b_2,a_2\rangle=|b_1,b_2,a_1,a_2\rangle.
+ \label{eq:permutation}
+\end{equation}
+Then the normalized Choi state of one parallel use is
+\begin{equation}
+ J_{\cE\otimes\cF}=P(J_{\cE}\otimes J_{\cF})P^\dagger.
+ \label{eq:product-choi}
+\end{equation}
+Consequently, with $A=J_{\cE}^{-1}$ and $B=J_{\cF}^{-1}$, multiplicativity
+of boundariness is equivalent to
+\begin{equation}
+ R_4\!\left(P(A\otimes B)P^\dagger\right)=R_2(A)R_2(B).
+ \label{eq:tensor-radius}
+\end{equation}
+Product unitaries give the ``$\geq$'' direction in \eqref{eq:tensor-radius},
+or equivalently the established submultiplicativity
+$b(\cE\otimes\cF)\leq b(\cE)b(\cF)$.  The reverse inequality must control
+all entangling $V\in U(4)$.
+
+For a qubit, the magic-basis reduction used in
+Ref.~\cite{Puchala2015} gives
+\begin{equation}
+ R_2(A)=\lambda_{\max}\!\left(\Ree(W^\dagger A W)\right),
+ \qquad
+ W=\frac{1}{\sqrt2}
+ \begin{pmatrix}
+ 0&0&1&i\\
+ -1&i&0&0\\
+ 1&i&0&0\\
+ 0&0&1&-i
+ \end{pmatrix},
+ \label{eq:magic}
+\end{equation}
+where $\Ree$ is entrywise real part.  This realizes the maximally entangled
+numerical range as a real numerical range; see also
+Ref.~\cite{Dunkl2015}.
+
+\section{A tensorizable multiplier criterion}
+\label{sec:criterion}
+
+The following elementary criterion is the mechanism behind the family result.
+
+\begin{proposition}[Tight local multipliers]
+\label{prop:multiplier}
+Let $A,B>0$ act on two copies of $\mathbb C^2\otimes\mathbb C^2$.
+Suppose there are Hermitian $2\times2$ matrices $L_A,L_B$ such that
+\begin{equation}
+ \frac{A}{2}\preceq \I_2\otimes L_A^{\mathsf T},\qquad
+ \frac{B}{2}\preceq \I_2\otimes L_B^{\mathsf T},
+ \label{eq:local-ceilings}
+\end{equation}
+and
+\begin{equation}
+ \Tr L_A=R_2(A),\qquad \Tr L_B=R_2(B).
+ \label{eq:tight-traces}
+\end{equation}
+Then \eqref{eq:tensor-radius} holds.
+\end{proposition}
+
+\begin{proof}
+For row vectorization,
+\begin{equation}
+ \rvec(V)^\dagger(\I_d\otimes L^{\mathsf T})\rvec(V)
+ =\Tr(LV^\dagger V).
+ \label{eq:vec-trace}
+\end{equation}
+Tensoring the two positive inequalities in
+\eqref{eq:local-ceilings} and applying $P$ gives
+\begin{equation}
+ \frac{P(A\otimes B)P^\dagger}{4}
+ \preceq
+ \I_4\otimes(L_A\otimes L_B)^{\mathsf T}.
+ \label{eq:joint-ceiling}
+\end{equation}
+Indeed, if $Q_A=\I_2\otimes L_A^{\mathsf T}-A/2$ and
+$Q_B=\I_2\otimes L_B^{\mathsf T}-B/2$, the difference on the right of
+\eqref{eq:joint-ceiling} is the permutation of
+\begin{equation}
+ Q_A\otimes(\I_2\otimes L_B^{\mathsf T})
+ +(A/2)\otimes Q_B,
+ \label{eq:tensor-remainder}
+\end{equation}
+which is positive semidefinite.  Hence every $V\in U(4)$ obeys
+\begin{align}
+ \langle u_V^{(4)}|P(A\otimes B)P^\dagger|u_V^{(4)}\rangle
+ &\leq \Tr\!\left[(L_A\otimes L_B)V^\dagger V\right]\\
+ &=\Tr(L_A)\Tr(L_B)=R_2(A)R_2(B).
+\end{align}
+The reverse bound is attained by a tensor product of local maximizing
+unitaries.  This proves the claim.
+\end{proof}
+
+The criterion is a sufficient condition, not an assertion that tight
+multipliers exist for every qubit channel.  In the family below they can be
+written in closed form and certified exactly.
+
+\section{The non-unital two-parameter family}
+\label{sec:family}
+
+Let $X=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$ and
+$Z=\operatorname{diag}(1,-1)$, and use the matrix $W$ in
+\eqref{eq:magic}.  Define
+\begin{align}
+ J_E(s)&=W\operatorname{diag}\!\left(\frac14,\frac3{10},
+             \frac1{10},\frac7{20}\right)W^\dagger
+             +\frac{s}{4}(Z\otimes\I_2),\label{eq:JE}\\
+ J_F(t)&=W\operatorname{diag}\!\left(\frac3{10},\frac15,
+             \frac1{10},\frac25\right)W^\dagger
+             +\frac{t}{4}(X\otimes\I_2).\label{eq:JF}
+\end{align}
+
+\begin{lemma}[Physical admissibility]
+\label{lem:admissible}
+For every real $|s|,|t|\leq1/5$, $J_E(s)$ and $J_F(t)$ are normalized,
+positive-definite, trace-preserving qubit Choi states.  More precisely,
+\begin{equation}
+ \lambda_{\min}(J_E(s)),\lambda_{\min}(J_F(t))\geq\frac1{20}.
+ \label{eq:min-eigenvalue}
+\end{equation}
+Their output marginals are
+\begin{equation}
+ \Tr_AJ_E(s)=\frac{\I_2+sZ}{2},\qquad
+ \Tr_AJ_F(t)=\frac{\I_2+tX}{2}.
+ \label{eq:output-marginals}
+\end{equation}
+Thus the corresponding channels are both non-unital whenever $st\neq0$.
+\end{lemma}
+
+\begin{proof}
+The four unperturbed eigenvalues in each definition are positive, sum to one,
+and have minimum $1/10$.  The perturbations have trace zero and vanish under
+$\Tr_B$, so $\Tr_BJ_E=\Tr_BJ_F=\I_2/2$.  Their operator norms are
+$|s|/4$ and $|t|/4$, at most $1/20$.  Weyl's inequality gives
+\eqref{eq:min-eigenvalue}.  Taking $\Tr_A$ gives
+\eqref{eq:output-marginals}; in the normalized convention this marginal is
+the channel output on $\I_2/2$.
+\end{proof}
+
+Exact inversion and the qubit formula \eqref{eq:magic} give
+\begin{align}
+ \Ree(W^\dagger J_E(s)^{-1}W)
+ &=\operatorname{diag}\!\left(
+ \frac{24}{6-5s^2},\frac{20}{6-5s^2},
+ \frac{140}{14-25s^2},\frac{40}{14-25s^2}\right),
+ \label{eq:magic-E}\\
+ \Ree(W^\dagger J_F(t)^{-1}W)
+ &=\operatorname{diag}\!\left(
+ \frac{160}{48-25t^2},\frac{40}{8-25t^2},
+ \frac{80}{8-25t^2},\frac{120}{48-25t^2}\right).
+ \label{eq:magic-F}
+\end{align}
+On the complete parameter intervals the third entry is strictly largest in
+both lines.  The third column of $W$ is $\rvec(\I_2)/\sqrt2$, so the local
+maximizer is the identity up to phase and
+\begin{equation}
+ R_E(s)=\frac{140}{14-25s^2},\qquad
+ R_F(t)=\frac{80}{8-25t^2}.
+ \label{eq:local-radii}
+\end{equation}
+
+\begin{theorem}[Exact multiplicativity on the closed square]
+\label{thm:main}
+Let $\cE_s$ and $\cF_t$ be the qubit channels with normalized Choi states
+\eqref{eq:JE} and \eqref{eq:JF}.  For all real
+$|s|,|t|\leq1/5$,
+\begin{equation}
+ b(\cE_s\otimes\cF_t)=b(\cE_s)b(\cF_t)
+ =\frac{(14-25s^2)(8-25t^2)}{11200}.
+ \label{eq:main-result}
+\end{equation}
+Equivalently, every $V\in U(4)$ is bounded in
+\eqref{eq:tensor-radius} by $R_E(s)R_F(t)$, and $V=\I_4$ attains the bound.
+The saturating joint comparator is unique up to an overall phase.
+\end{theorem}
+
+\begin{proof}
+Set $A=J_E(s)^{-1}$ and $B=J_F(t)^{-1}$.  Define
+\begin{equation}
+ L_E(s)=\frac{10}{14-25s^2}
+ \begin{pmatrix}7-5s&0\\0&7+5s\end{pmatrix},\qquad
+ L_F(t)=\frac{1}{8-25t^2}
+ \begin{pmatrix}40&-50t\\-50t&40\end{pmatrix}.
+ \label{eq:multipliers}
+\end{equation}
+Both matrices are positive definite on the closed intervals: the first
+denominator is at least $13$, its diagonal numerators are at least $6$, the
+second denominator is at least $7$, and the two numerator eigenvalues of
+$L_F$ are at least $30$.  Directly,
+\begin{equation}
+ \Tr L_E(s)=R_E(s),\qquad \Tr L_F(t)=R_F(t).
+ \label{eq:multiplier-traces}
+\end{equation}
+
+Now put
+\begin{equation}
+ Q_E=\I_2\otimes L_E(s)^{\mathsf T}-\frac{A}{2},\qquad
+ Q_F=\I_2\otimes L_F(t)^{\mathsf T}-\frac{B}{2}.
+ \label{eq:local-remainders}
+\end{equation}
+Exact multiplication shows that both remainders annihilate
+$\rvec(\I_2)$.  On the complementary basis
+\begin{equation}
+ \mathcal B=(e_{01},e_{10},e_{00}-e_{11}),
+ \label{eq:complement-basis}
+\end{equation}
+the two $3\times3$ Gram matrices have the six
+$LDL^{\mathsf T}$ pivots listed in Appendix~\ref{app:pivots}.  All six are
+strictly positive throughout their respective closed intervals.  Therefore
+$Q_E,Q_F\succeqz$, each with kernel exactly
+$\operatorname{span}\{\rvec(\I_2)\}$.  Proposition~\ref{prop:multiplier}
+and \eqref{eq:multiplier-traces} prove the radius identity, while
+\eqref{eq:boundariness} and \eqref{eq:local-radii} give
+\eqref{eq:main-result}.
+
+Finally, $\I_2\otimes L_F^{\mathsf T}$ and $A/2$ are positive definite, so
+the kernels of the two summands in \eqref{eq:tensor-remainder} are
+$\ker Q_E\otimes\mathbb C^4$ and $\mathbb C^4\otimes\ker Q_F$.  Their
+intersection is $\ker Q_E\otimes\ker Q_F$, spanned by
+$\rvec(\I_2)\otimes\rvec(\I_2)$.  After applying $P$, the joint kernel is
+$\operatorname{span}\{\rvec(\I_4)\}$.  Unitarity fixes the proportionality
+constant to a phase, proving the uniqueness statement.
+\end{proof}
+
+\section{Interpretation, scope, and limitations}
+\label{sec:interpretation}
+
+The relative open subset
+\begin{equation}
+ |s|<\frac15,\qquad |t|<\frac15,\qquad st\neq0
+\end{equation}
+contains only pairs with two non-unital factors, as seen from
+\eqref{eq:output-marginals}.  Theorem~\ref{thm:main} therefore shows that two
+simultaneous output Bloch shifts do not, by themselves, produce an advantage
+for an entangling comparator in the inverse-Choi geometry.  For this family
+the sixteen-dimensional joint problem reduces exactly to the two scalar
+expressions in \eqref{eq:local-radii}.
+
+The multiplier construction also has a methodological interpretation.
+Instead of optimizing directly over $U(4)$, one may seek local matrices whose
+traces equal the local maximally entangled radii and which dominate half of
+the corresponding inverse Choi matrices.  Whenever they exist, the tensor
+remainder \eqref{eq:tensor-remainder} is an explicit global certificate.
+This does not imply that such multipliers exist for arbitrary channels.
+
+Several limits should be kept explicit.  The result concerns one parallel
+use of two independent qubit channels.  It is not about serial composition,
+continuous-time dynamics, or Gorini--Kossakowski--Sudarshan--Lindblad
+embeddability.  All quantities are dimensionless and no continuum boundary
+conditions arise.  The family was selected for exact tractability and is not
+claimed to represent generic non-unital noise.  Most importantly, the
+universal multiplicativity conjecture for arbitrary full-rank qubit-channel
+pairs remains unresolved.
+
+\section{Exact reproducibility}
+\label{sec:reproducibility}
+
+The accompanying script \texttt{reproduce.py} reconstructs $W$, the two Choi
+families, their exact inverses, the magic-basis radii, the multipliers, all six
+interval certificates, the tensor-leg permutation, and the joint positive
+remainder using SymPy rational algebra.  It also specializes to
+$s=1/10,t=1/8$, where
+\begin{equation}
+ R_E(1/10)R_F(1/8)=\frac{573440}{5357},
+\end{equation}
+and verifies that the direct $16\times16$ remainder has rank $15$.  The
+generated JSON record contains exact expressions; any floating values are
+omitted from the proof path.  Regeneration instructions and tested software
+versions are supplied in \texttt{REPRODUCIBILITY.md}.
+
+\section*{Statements and declarations}
+
+\paragraph{Data and code availability.}
+No empirical data are used.  The exact symbolic checker, its generated JSON
+record, and regeneration instructions accompany this draft.
+
+\paragraph{Funding.}
+Funding information has not yet been confirmed by the author.
+
+\paragraph{Competing interests.}
+A final competing-interest declaration has not yet been supplied by the
+author.
+
+\paragraph{Use of generative artificial intelligence.}
+OpenAI Codex, using the \texttt{gpt-5.6-sol} model with the Ultra reasoning
+setting, was used in September 2026 to assist question refinement, symbolic
+derivation, code generation, exact checks, bounded literature screening,
+independent algebraic replay, and manuscript drafting.  The system is not an
+author and cannot assume responsibility.  The named human author must
+independently review the scientific claims, code, citations, declarations,
+and text and approve a final version before any submission.  That required
+human review is not represented as completed in this local draft.
+
+\appendix
+\section{Closed-interval \texorpdfstring{$LDL^{\mathsf T}$}{LDL-transpose} certificate}
+\label{app:pivots}
+
+Let
+\begin{equation}
+ N(s)=500s^3+75s^2-440s-266.
+\end{equation}
+An exact unpivoted $LDL^{\mathsf T}$ decomposition of
+$\mathcal B^{\mathsf T}Q_E\mathcal B$ has pivots
+\begin{align}
+ p^E_1&=\frac{-N(s)}{(5s^2-6)(25s^2-14)},\label{eq:pE1}\\
+ p^E_2&=\frac{40(1250s^4-725s^2+294)}
+ {(25s^2-14)N(s)},\label{eq:pE2}\\
+ p^E_3&=\frac{-100}{25s^2-14}.\label{eq:pE3}
+\end{align}
+For $|s|\leq1/5$,
+\begin{gather}
+ 5s^2-6\leq-\frac{29}{5},\qquad 25s^2-14\leq-13,\\
+ N(s)\leq4+3+88-266=-171,\\
+ 1250s^4-725s^2+294\geq294-29=265.
+\end{gather}
+These inequalities make all three pivots in
+\eqref{eq:pE1}--\eqref{eq:pE3} strictly positive.
+
+Similarly, an exact decomposition of
+$\mathcal B^{\mathsf T}Q_F\mathcal B$ has pivots
+\begin{align}
+ p^F_1&=\frac{10(25t^2+112)}
+ {(25t^2-48)(25t^2-8)},\label{eq:pF1}\\
+ p^F_2&=\frac{-80(25t^2+32)}
+ {(25t^2-8)(25t^2+112)},\label{eq:pF2}\\
+ p^F_3&=\frac{-20(625t^4-250t^2+96)}
+ {(25t^2-8)(25t^2+32)}.\label{eq:pF3}
+\end{align}
+For $|t|\leq1/5$,
+\begin{equation}
+ 25t^2-48\leq-47,\qquad 25t^2-8\leq-7,
+ \qquad 625t^4-250t^2+96\geq86.
+\end{equation}
+All remaining displayed factors are positive, so the three pivots in
+\eqref{eq:pF1}--\eqref{eq:pF3} are also strictly positive.  This completes
+the exact positivity step used in Theorem~\ref{thm:main}.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,333 @@
+\documentclass[aps,pre,reprint,superscriptaddress,nofootinbib]{revtex4-2}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newcommand{\DKL}{D_{\mathrm{KL}}}
+\newcommand{\Acal}{\mathcal{A}}
+
+\begin{document}
+
+\title{Controlled numerical four-level counterexample to triplet screening of the Markovian Mpemba effect}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+
+\date{September 12, 2026}
+
+\begin{abstract}
+Local rate tests derived for three-level subsystems have been proposed as a scalable
+screen for the Markovian Mpemba effect in larger detailed-balance systems.  We test
+the finite-temperature proposal in the minimal four-level setting and give a simple
+controlled-numerical witness.  In units where the bath inverse temperature and a
+common rate scale are one, the energies are
+$(0,1/200,7/20,14)$ and the six downward rates are
+$(1/10,1,13,99/100,1,3/4)$.  Every one of the four triplets strictly fails its
+applicable published necessary-condition predicate, while the slow nonstationary
+mode is simple.  Nevertheless, Gibbs preparations at inverse temperatures
+$1/50$ and $1/20$ have normalized slow-mode amplitudes
+$0.0628307488472$ and $0.0630538586374$, respectively.  Thus the initially hotter
+state has the smaller late-time amplitude, and direct relative-entropy evolution
+reverses the initial distance ordering.  Separate generator constructions,
+100- and 180-digit calculations, residual tests, and direct dynamics reproduce the
+effect.  The result is a reproducible computational counterexample at controlled
+numerical scope, not a directed-rounding proof or a classification of the heating
+branch or of general $N$.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+The Mpemba effect denotes anomalous relaxation in which a preparation initially
+farther from a common equilibrium state becomes closer at a later time.  Modern
+formulations separate this phenomenon from the material-specific question of
+freezing water and place it in the spectral theory of nonequilibrium relaxation
+\cite{Teza2026}.  For finite Markov systems obeying detailed balance, the overlap of
+a thermal preparation with the slowest nonstationary mode gives a particularly
+clean late-time criterion \cite{LuRaz2017,Klich2019}.
+
+This criterion is simple once the full generator has been diagonalized, but it does
+not by itself provide an inexpensive way to screen a large parameter space.  Avitan,
+Factor, and Gelbwaser-Klimovsky recently derived elementary necessary conditions for
+a three-level system and proposed applying them to every triplet of an $N$-level
+generator \cite{Avitan2026}.  They proved an exclusion statement at zero bath
+temperature under stronger inequalities and reported finite-temperature random
+tests, while the implication from triplet exclusion to global exclusion at finite
+temperature remained conjectural.  A subsequent study found four-level Mpemba
+behavior even when no isolated triplet itself exhibits the effect
+\cite{GelbwaserKlimovsky2026}; that premise is weaker than failure of every published
+necessary-condition predicate.  Computational screening has also been explored in
+other Markovian settings \cite{Amorim2023}.
+
+Here we address the stronger, unresolved premise directly.  We exhibit one
+four-level, finite-positive-temperature, detailed-balance generator for which all
+four applicable triplet predicates fail strictly, yet two cooling preparations have
+the reversed slow-mode ordering.  The exact input parameters are rational, but the
+Boltzmann factors and eigensystem are evaluated numerically.  We therefore state the
+result at controlled-numerical scope and retain explicit margins and reproducibility
+checks rather than presenting it as an exact disproof.
+
+\section{Model and late-time criterion}
+
+Consider four strictly ordered levels $E_1<E_2<E_3<E_4$ and a population column
+vector $\bm p(t)$.  Its autonomous dynamics is
+\begin{equation}
+ \begin{aligned}
+  \dot{\bm p}&=M\bm p,
+  & M_{ij}&=a_{ij}>0\quad(i\ne j),\\
+  M_{jj}&=-\sum_{i\ne j}a_{ij}.&&
+ \end{aligned}
+  \label{eq:master}
+\end{equation}
+where $a_{ij}$ is the rate for $j\to i$.  A fixed bath at inverse temperature
+$\beta_b$ imposes detailed balance,
+\begin{equation}
+ a_{ij}\pi_j=a_{ji}\pi_i,
+ \qquad
+ \pi_i=\frac{e^{-\beta_b E_i}}{Z(\beta_b)}.
+ \label{eq:db}
+\end{equation}
+For $i<j$, we take the six downward rates $d_{ij}=a_{ij}$ as independent and set
+$a_{ji}=d_{ij}e^{-\beta_b(E_j-E_i)}$.  Strict positivity makes the finite chain
+irreducible.  A Gibbs preparation at inverse temperature $\beta$ is denoted by
+$\bm g(\beta)$, with $g_i(\beta)=e^{-\beta E_i}/Z(\beta)$; changing $\beta$ changes
+only the initial state, not the bath or the generator.
+
+Let $D=\operatorname{diag}(\bm\pi)$.  Detailed balance makes
+$S=D^{-1/2}MD^{1/2}$ real symmetric.  Order the eigenvalues as
+$0=\lambda_1>\lambda_2>\lambda_3\geq\lambda_4$ and assume that $\lambda_2$ is
+simple.  If $\bm u_2$ is a real unit eigenvector of $S$, define
+\begin{equation}
+ \begin{aligned}
+ \bm v_2&=D^{1/2}\bm u_2,
+ &\bm\ell_2&=D^{-1/2}\bm u_2,\\
+ b_2(\beta)&=\bm\ell_2^{\mathsf T}[\bm g(\beta)-\bm\pi].&&
+ \end{aligned}
+ \label{eq:mode}
+\end{equation}
+and the normalization-independent preparation amplitude
+$\Acal(\beta)=|b_2(\beta)|$.  With this fixed normalization,
+\begin{equation}
+ \DKL[\bm p(t;\beta)\Vert\bm\pi]
+ =\frac{b_2(\beta)^2}{2}e^{2\lambda_2 t}
+  +o(e^{2\lambda_2 t}).
+ \label{eq:klasymp}
+\end{equation}
+Consequently, for two cooling preparations
+$0<\beta_h<\beta_c<\beta_b$, the strict reversal
+$\Acal(\beta_h)<\Acal(\beta_c)$ guarantees that the hotter state is closer in
+relative entropy at sufficiently late times, even if it starts farther away.
+
+\section{Triplet screening predicate}
+
+For an ordered triplet $i<j<k$, retain the off-diagonal rates of the full
+four-level generator and define
+\begin{align}
+ q&=e^{-\beta_b(E_j-E_i)}, &
+ r&=e^{-\beta_b(E_k-E_j)},\nonumber\\
+ \kappa&=\frac{a_{ik}+a_{jk}}{a_{ij}(1+q)},\label{eq:kappa}\\
+ F_{>}&=a_{ik}\left(1+\frac{qr}{2}\right)
+       -a_{jk}\left(1+\frac{r}{2}\right)\nonumber\\
+      &\hspace{2.4cm}-a_{ij}(1-q),\label{eq:fhigh}\\
+ F_{<}&=a_{ik}q-a_{jk}.\label{eq:flow}
+\end{align}
+The published three-level necessary condition is $F_{>}>0$ when $\kappa\geq1$
+and $F_{<}>0$ when $\kappa\leq1$ \cite{Avitan2026}.  At $\kappa=1$ the two signs
+agree; none of the triplets below lies on that boundary.  The proposed global
+screen excludes a larger system when every triplet fails its applicable strict
+condition.  Importantly, this test uses the original internal edge rates; it is not
+a principal-submatrix generator with external escape terms, an effective-rate
+model, or an adiabatic elimination.
+
+\section{Four-level witness}
+
+Set $\beta_b=1$ by measuring energies in units of $\beta_b^{-1}$ and measure rates
+in a common inverse-time unit $\gamma$.  The witness is
+\begin{align}
+ (E_1,E_2,E_3,E_4)&=\left(0,\frac{1}{200},\frac{7}{20},14\right),\label{eq:energies}\\
+ (d_{12},d_{13},d_{23},d_{14},d_{24},d_{34})
+ &=\gamma\left(\frac{1}{10},1,13,\frac{99}{100},1,\frac{3}{4}\right).
+ \label{eq:rates}
+\end{align}
+Table~\ref{tab:triplets} evaluates Eqs.~\eqref{eq:kappa}--\eqref{eq:flow}.
+For compact comparison we also give
+$m_{ijk}=-F_{\mathrm{app}}/(a_{ik}+a_{jk}+a_{ij})$.  Every applicable value is
+negative, and the smallest normalized exclusion margin is
+$2.8325184\times10^{-3}$.
+
+\begin{table}[t]
+\caption{Triplet tests for the witness.  $F_{\mathrm{app}}$ is $F_{>}$ or $F_{<}$
+according to the listed branch.  Positive $m_{ijk}$ means that the applicable
+strict necessary condition is excluded.}
+\label{tab:triplets}
+\begin{ruledtabular}
+\small
+\begin{tabular}{ccccc}
+Triplet & $\kappa$ & branch & $F_{\mathrm{app}}/\gamma$ & $m_{ijk}$\\
+\hline
+$123$ & $70.1750$ & $>$ & $-16.25159$ & $1.152595$\\
+$124$ & $9.97487$ & $>$ & $-0.0104988$ & $0.00502333$\\
+$134$ & $1.02071$ & $>$ & $-0.0553119$ & $0.0201868$\\
+$234$ & $0.0788045$ & $<$ & $-0.0417796$ & $0.00283252$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The relaxation spectrum, ordered from stationary to fastest, is
+\begin{equation}
+ \begin{split}
+ \frac{\bm\lambda}{\gamma}={}&
+ (0,-1.25273315932984,\\
+ &-2.74000084438500,-22.8583224729113).
+ \end{split}
+ \label{eq:spectrum}
+\end{equation}
+Thus the slow mode is simple.  Its separation from the next mode, normalized by
+the full spectral width, is
+$(\lambda_2-\lambda_3)/(-\lambda_4)=0.0650646033548$.
+
+Now take two Gibbs preparations on the cooling branch,
+$\beta_h/\beta_b=1/50$ and $\beta_c/\beta_b=1/20$.  Equation~\eqref{eq:mode}
+gives
+\begin{align}
+ \Acal(\beta_h)&=0.0628307488471692912,\nonumber\\
+ \Acal(\beta_c)&=0.0630538586374105295,\nonumber\\
+ \Acal(\beta_c)-\Acal(\beta_h)
+ &=2.2310979024123833\times10^{-4}>0.
+ \label{eq:amplitudes}
+\end{align}
+This is the ordering forbidden by the proposed cooling screen.  The hotter state
+does start farther from equilibrium:
+$\DKL[\bm g(\beta_h)\Vert\bm\pi]=2.53001045904$, whereas
+$\DKL[\bm g(\beta_c)\Vert\bm\pi]=1.74010206475$.  Direct propagation with the
+same fixed generator gives $D_h-D_c=1.6527113\times10^{-10}$ at
+$\gamma t=6$ and $-2.4701607\times10^{-14}$ at $\gamma t=8$, so the checked
+distance ordering changes between those times.  The small late-time difference is
+not the sole discriminator: the resolved amplitude inequality in
+Eq.~\eqref{eq:amplitudes} independently fixes the eventual ordering through
+Eq.~\eqref{eq:klasymp}.
+
+\begin{figure*}[t]
+  \includegraphics[width=0.98\textwidth]{manuscript/fig-counterexample.pdf}
+  \caption{Three views of the same frozen numerical witness.  (a) All four
+  normalized exclusion margins are positive.  (b) The normalized slow-mode
+  amplitude increases from the hotter preparation ($\beta/\beta_b=0.02$) to the
+  cooler one ($0.05$), reversing the proposed cooling monotonicity.  (c) Relative
+  entropy initially favors the cooler state, while the directly calculated
+  difference $D_h-D_c$ becomes negative at the checked late times.  Markers are
+  archived high-precision outputs and connecting lines are guides to the eye.  The
+  plotting code was generated with substantive assistance from OpenAI Codex; it
+  deterministically reads the archived machine-readable verifier output without
+  manual data entry.}
+  \label{fig:witness}
+\end{figure*}
+
+\section{Discovery and numerical control}
+
+The mechanism was found by a deterministic finite scan followed by constrained
+local optimization.  That finite search is discovery provenance rather than a global
+certificate.  After identifying a boundary mechanism---a nearly degenerate lowest
+pair together with a widely separated top level---we rationalized the parameters and
+froze Eqs.~\eqref{eq:energies} and \eqref{eq:rates} before the high-precision
+calculation.
+
+For verification, the generator was assembled in two separately coded conventions:
+an ascending-energy column generator following Eq.~\eqref{eq:master}, and a
+descending-energy row generator mapped back by reversal and transposition.  The
+mapped matrices agree.  The detailed-balance similarity was diagonalized at 100
+and 180 decimal digits, and the amplitudes, spectral gap, triplet predicates, and
+matrix-exponential dynamics were recalculated at both precisions.  The decisive
+quantities agree beyond 90 decimal places.  At 180 digits the largest reported
+matrix or modal residual is below $2\times10^{-180}$, compared with the
+$2.23\times10^{-4}$ amplitude difference and the $2.83\times10^{-3}$ smallest
+normalized predicate margin.  Probability conservation, stationarity, detailed
+balance, positivity along the checked trajectories, left/right eigenpair equations,
+and biorthogonal normalization were tested explicitly.
+
+These checks control ordinary floating-point and representation errors very strongly,
+but arbitrary precision is not directed rounding.  We have not enclosed the Gibbs
+factors or the isolated eigenpair with intervals and do not attach a theorem-level
+sign certificate to the result.  The exact-rational input and large stable margins
+make the witness reproducible as a computational result; stronger exact or
+computer-assisted language would require a new enclosure argument.
+
+\subsection{AI-use disclosure for the computational workflow}
+
+The user designated the source conversation and required a staged verification
+workflow.  The topic originated in an AI-generated batch on that designated page,
+which the user also supplied as an attachment; a local AI supervisor then selected
+this candidate and formalized its scope before research.  OpenAI Codex using the
+GPT-6 Astra and GPT-5.6 Sol model families (accessed September 2026) provided
+substantive assistance with
+literature synthesis, numerical-search design, code generation and debugging,
+verification planning, figure-code generation, and scientific interpretation.  The
+AI-assisted output was constrained by a frozen model statement and checked through
+the two generator representations, precision scaling, residual tests, and direct
+dynamics described above.  No AI system is an author.  Before submission, the named
+author must independently inspect the cited sources, code, outputs, figures, and
+claims, revise them as needed, and accept full responsibility; that human review is
+pending for this draft.
+
+\section{Physical interpretation and limitations}
+
+The witness is not tied to an unphysical sign choice.  In the chosen rate unit, take
+a common Arrhenius attempt rate $\Gamma=14\gamma$.  For every edge $i<j$, choose a
+symmetric barrier satisfying
+\begin{equation}
+ \beta_b B_{ij}=\beta_b E_j+\ln(14\gamma/d_{ij}).
+ \label{eq:barrier}
+\end{equation}
+Because every $d_{ij}<14\gamma$, the barrier lies above the upper level.  The
+downward rate is $\Gamma e^{-\beta_b(B_{ij}-E_j)}=d_{ij}$ and the reverse rate is
+$d_{ij}e^{-\beta_b(E_j-E_i)}$, exactly as in Eq.~\eqref{eq:db}.  This supplies one
+standard ideal-bath realization of the population generator; it is not a claim of a
+unique or universal microscopic spectral density.
+
+The strict predicate margins, nonzero spectral separation, and strict amplitude
+difference also imply continuity under sufficiently small parameter perturbations,
+so the effect is not confined to a tuned equality.  We do not quantify that
+neighborhood here.  The large scaled top energy, $\beta_bE_4=14$, lies outside the
+compact energy boxes used in the reported finite-temperature random tests
+\cite{Avitan2026,GelbwaserKlimovsky2026}; this helps explain why a finite no-hit scan
+does not establish the proposed implication.
+
+The scope is deliberately narrow.  We show one cooling pair for one four-state
+classical population generator with a simple slow mode.  We do not classify inverse
+heating, degenerate slow subspaces, systems with $N>4$, coherence, memory, a changing
+bath, transient crossings of unrelated observables, or microscopic universality.
+Nor does a bounded literature search establish absolute priority.  Within these
+limits, the calculation demonstrates the physical point: local three-level
+necessary-condition screening can miss collective four-level anomalous cooling.
+
+\section{Conclusion}
+
+A finite-temperature four-level detailed-balance generator can fail every applicable
+three-level necessary-condition predicate and still display a Markovian Mpemba
+cooling reversal.  The explicit rational fixture, resolved slow mode, stable amplitude
+margin, and direct entropy overtaking make this conclusion reproducible at controlled
+numerical scope.  The example therefore invalidates the proposed universal cooling
+screen at that scope, while leaving the heating branch, general $N$, and exact
+computer-assisted certification open.
+
+\section*{Data availability}
+
+The machine-readable high-precision output, the independent-convention verifier,
+the plotting script, and environment requirements accompany this manuscript.  The
+verifier reconstructs the generator from the exact
+parameters in Eqs.~\eqref{eq:energies} and \eqref{eq:rates}; no downloaded paper or
+private runtime log is required to reproduce the numerical tables and figure.
+
+\begin{acknowledgments}
+OpenAI Codex also assisted substantively with organization and drafting of this
+manuscript.  The scope and pending author-review requirement are stated in the
+AI-use disclosure above.
+\end{acknowledgments}
+
+\bibliography{manuscript/references}
+
+\end{document}

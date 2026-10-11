@@ -1,0 +1,11 @@
+Reference environment for the manuscript draft (2026-09-12)
+Python 3.12.14
+NumPy 2.5.3
+SciPy 1.18.1
+SymPy 1.14.0
+Matplotlib 3.11.2
+LaTeX engine: pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)
+Document class: REVTeX 4.2
+
+One CPU is sufficient. The exact symbolic command is the most expensive step;
+the other checks and figure generation are modest-memory deterministic runs.

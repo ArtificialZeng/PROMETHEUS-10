@@ -1,0 +1,7 @@
+quantity,exact_sympy,decimal_15_digits
+input_E2,-1/2 + 3*sqrt(1489)/202,0.073082615294299
+alpha_ceiling,-3/8 + 9*sqrt(1489)/808,0.054811961470724
+actual_output_E2,-13/101 + 3*sqrt(41)/101,0.061478937745530
+violation_margin,-9*sqrt(1489)/808 + 3*sqrt(41)/101 + 199/808,0.006666976274806
+actual_output_error,38/101 - sqrt(41)/101,0.312840354084823
+alpha_implied_error_floor,11/24 - 3*sqrt(1489)/808,0.315062679509759

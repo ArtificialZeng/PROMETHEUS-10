@@ -1,0 +1,527 @@
+{
+  "job_id": "phys-00002-p02-research-1baba23d8e78",
+  "status": "pass",
+  "source_sha256": "f4df96a62655110bba6043cfb7b266e7f042ab2eadb15a45ea20af70fb89c028",
+  "criterion": "N=4 Grinko-Uola Eq. (8)/(13): minimize eight Euclidean norms over all four unrestricted triple-index Fourier vectors; compatibility iff the minimum is at most 8 for unbiased qubit measurements",
+  "symbolic_checks": {
+    "walsh_identity": "PASS: the four low Walsh coefficients of the AK four-support function are symbolically n_1,n_2,n_3,n_4",
+    "unit_vector_lemma_identity": "PASS: 1-||u(a)+u(c)-u(b)||^2 = 8 cos((p+q)/2) sin(p/2) sin(q/2)",
+    "lemma_domain": "For p,q>=0 and p+q<=pi the right-hand side is nonnegative; the project domain gives strict ordered spans below pi."
+  },
+  "cases": [
+    {
+      "name": "symmetric-published",
+      "angles_radians": [
+        0.0,
+        0.7853981633974483,
+        1.5707963267948966,
+        2.356194490192345
+      ],
+      "minimum_gap": 0.7853981633974483,
+      "pi_minus_alpha_4": 0.7853981633974483,
+      "D": 1.5307337294603591,
+      "formula_eta": 0.6532814824381883,
+      "expected_fourier_objective": 12.245869835682873,
+      "ak_fourier": {
+        "basis_orthogonality_residual": 0.0,
+        "low_coefficient_residual": 4.9789962505147994e-17,
+        "reconstruction_residual": 4.440892098500626e-16,
+        "objective": 12.245869835682871
+      },
+      "analytic_dual": {
+        "chain_interpolation_residual": 1.1102230246251565e-16,
+        "stationarity_residual": 2.220446049250313e-16,
+        "max_norm": 1.0,
+        "max_unit_ball_violation": 0.0,
+        "objective": 12.245869835682871,
+        "primal_dual_gap": 0.0
+      },
+      "clarabel_fourier_socp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 6,
+        "solve_time_seconds": 0.000475169,
+        "objective": 12.245869835512117,
+        "dual_objective": 12.245869835534165,
+        "absolute_primal_dual_gap": 2.204814109063591e-11,
+        "relative_primal_dual_gap": 1.8004552871122255e-12,
+        "primal_cone_violation": 6.056169943200704e-11,
+        "epigraph_activity_residual": 6.056169943200704e-11,
+        "dual_cone_violation": 0.0,
+        "x_stationarity_residual": 2.7755575615628914e-16,
+        "t_stationarity_residual": 2.220446049250313e-16
+      },
+      "socp_minus_formula_objective": -1.7075585390102788e-10,
+      "socp_threshold_eta": 0.6532814824472976,
+      "socp_threshold_minus_formula_eta": 9.109268894746947e-12,
+      "direct_sixteen_effect_parent_sdp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 7,
+        "solve_time_seconds": 0.002657751,
+        "eta": 0.6532814814204448,
+        "normalization_residual": 7.771561172376096e-14,
+        "marginal_residual": 6.511458039426543e-14,
+        "minimum_effect_eigenvalue": -1.246059888419848e-09,
+        "eta_minus_formula": -1.0177434450753253e-09
+      }
+    },
+    {
+      "name": "reproduction-unequal",
+      "angles_radians": [
+        0.0,
+        0.3490658503988659,
+        1.2217304763960306,
+        2.6179938779914944
+      ],
+      "minimum_gap": 0.3490658503988659,
+      "pi_minus_alpha_4": 0.5235987755982987,
+      "D": 1.4978730941966898,
+      "formula_eta": 0.6676133004019947,
+      "expected_fourier_objective": 11.982984753573518,
+      "ak_fourier": {
+        "basis_orthogonality_residual": 0.0,
+        "low_coefficient_residual": 1.1102230246251565e-16,
+        "reconstruction_residual": 2.220446049250313e-16,
+        "objective": 11.982984753573518
+      },
+      "analytic_dual": {
+        "chain_interpolation_residual": 5.551115123125783e-17,
+        "stationarity_residual": 0.0,
+        "max_norm": 1.0,
+        "max_unit_ball_violation": 0.0,
+        "objective": 11.98298475357352,
+        "primal_dual_gap": -1.7763568394002505e-15
+      },
+      "clarabel_fourier_socp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 13,
+        "solve_time_seconds": 0.000344666,
+        "objective": 11.982984752554046,
+        "dual_objective": 11.982984752784738,
+        "absolute_primal_dual_gap": 2.3069191001923173e-10,
+        "relative_primal_dual_gap": 1.9251623429635275e-11,
+        "primal_cone_violation": 3.319371444376884e-10,
+        "epigraph_activity_residual": 3.319371444376884e-10,
+        "dual_cone_violation": 0.0,
+        "x_stationarity_residual": 1.099120794378905e-14,
+        "t_stationarity_residual": 9.547918011776346e-15
+      },
+      "socp_minus_formula_objective": -1.0194725064138765e-09,
+      "socp_threshold_eta": 0.6676133004587931,
+      "socp_threshold_minus_formula_eta": 5.6798343806008234e-11,
+      "direct_sixteen_effect_parent_sdp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 10,
+        "solve_time_seconds": 0.004065167,
+        "eta": 0.6676132996668745,
+        "normalization_residual": 3.086420008457935e-14,
+        "marginal_residual": 2.5979218776228663e-14,
+        "minimum_effect_eigenvalue": -6.808480009248474e-11,
+        "eta_minus_formula": -7.351201869454371e-10
+      }
+    },
+    {
+      "name": "adversarial-first-coincidence",
+      "angles_radians": [
+        0.0,
+        1e-06,
+        1.4,
+        3.0
+      ],
+      "minimum_gap": 1e-06,
+      "pi_minus_alpha_4": 0.14159265358979312,
+      "D": 1.4323110973837423,
+      "formula_eta": 0.6981723466547168,
+      "expected_fourier_objective": 11.458488779069938,
+      "ak_fourier": {
+        "basis_orthogonality_residual": 0.0,
+        "low_coefficient_residual": 1.1102230246251565e-16,
+        "reconstruction_residual": 4.440892098500626e-16,
+        "objective": 11.45848877906994
+      },
+      "analytic_dual": {
+        "chain_interpolation_residual": 4.163336342344337e-17,
+        "stationarity_residual": 2.220446049250313e-16,
+        "max_norm": 1.0,
+        "max_unit_ball_violation": 0.0,
+        "objective": 11.45848877906994,
+        "primal_dual_gap": 0.0
+      },
+      "clarabel_fourier_socp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 13,
+        "solve_time_seconds": 0.000344499,
+        "objective": 11.458488779041495,
+        "dual_objective": 11.458488779048405,
+        "absolute_primal_dual_gap": 6.910028105266974e-12,
+        "relative_primal_dual_gap": 6.030488172145332e-13,
+        "primal_cone_violation": 5.8257842994180464e-12,
+        "epigraph_activity_residual": 5.8257842994180464e-12,
+        "dual_cone_violation": 0.0,
+        "x_stationarity_residual": 1.582067810090848e-15,
+        "t_stationarity_residual": 1.7763568394002505e-15
+      },
+      "socp_minus_formula_objective": -2.844302571247681e-11,
+      "socp_threshold_eta": 0.6981723466564499,
+      "socp_threshold_minus_formula_eta": 1.7330581414398694e-12,
+      "direct_sixteen_effect_parent_sdp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 13,
+        "solve_time_seconds": 0.004436959,
+        "eta": 0.6981723441470402,
+        "normalization_residual": 7.930021657218584e-14,
+        "marginal_residual": 1.8286938836547937e-14,
+        "minimum_effect_eigenvalue": -3.6507209555778323e-10,
+        "eta_minus_formula": -2.5076766219100932e-09
+      }
+    },
+    {
+      "name": "adversarial-middle-coincidence",
+      "angles_radians": [
+        0.0,
+        0.2,
+        0.200001,
+        2.8
+      ],
+      "minimum_gap": 1.000000000001e-06,
+      "pi_minus_alpha_4": 0.3415926535897933,
+      "D": 1.2333591112147273,
+      "formula_eta": 0.8107938644204822,
+      "expected_fourier_objective": 9.866872889717818,
+      "ak_fourier": {
+        "basis_orthogonality_residual": 0.0,
+        "low_coefficient_residual": 0.0,
+        "reconstruction_residual": 4.440892098500626e-16,
+        "objective": 9.86687288971782
+      },
+      "analytic_dual": {
+        "chain_interpolation_residual": 2.7755575615628914e-17,
+        "stationarity_residual": 2.220446049250313e-16,
+        "max_norm": 1.0000000000000002,
+        "max_unit_ball_violation": 2.220446049250313e-16,
+        "objective": 9.86687288971782,
+        "primal_dual_gap": 0.0
+      },
+      "clarabel_fourier_socp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 12,
+        "solve_time_seconds": 0.000381209,
+        "objective": 9.86687288958243,
+        "dual_objective": 9.866872889613072,
+        "absolute_primal_dual_gap": 3.064215547965432e-11,
+        "relative_primal_dual_gap": 3.1055589569828856e-12,
+        "primal_cone_violation": 2.9891172749340814e-11,
+        "epigraph_activity_residual": 2.9891172749340814e-11,
+        "dual_cone_violation": 0.0,
+        "x_stationarity_residual": 5.828670879282072e-16,
+        "t_stationarity_residual": 8.881784197001252e-16
+      },
+      "socp_minus_formula_objective": -1.353885892285689e-10,
+      "socp_threshold_eta": 0.8107938644316075,
+      "socp_threshold_minus_formula_eta": 1.1125322885163769e-11,
+      "direct_sixteen_effect_parent_sdp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 10,
+        "solve_time_seconds": 0.004068001,
+        "eta": 0.8107938624227513,
+        "normalization_residual": 3.959055305813308e-13,
+        "marginal_residual": 4.11448652926083e-13,
+        "minimum_effect_eigenvalue": -1.552378215430179e-09,
+        "eta_minus_formula": -1.997730869618408e-09
+      }
+    },
+    {
+      "name": "adversarial-last-coincidence",
+      "angles_radians": [
+        0.0,
+        0.1,
+        2.9,
+        2.900001
+      ],
+      "minimum_gap": 1.000000000139778e-06,
+      "pi_minus_alpha_4": 0.24159165358979307,
+      "D": 1.1559316722699946,
+      "formula_eta": 0.865103036787824,
+      "expected_fourier_objective": 9.247453378159957,
+      "ak_fourier": {
+        "basis_orthogonality_residual": 0.0,
+        "low_coefficient_residual": 1.1102230246251565e-16,
+        "reconstruction_residual": 2.220446049250313e-16,
+        "objective": 9.247453378159957
+      },
+      "analytic_dual": {
+        "chain_interpolation_residual": 1.1102230246251565e-16,
+        "stationarity_residual": 4.440892098500626e-16,
+        "max_norm": 1.0000000000000002,
+        "max_unit_ball_violation": 2.220446049250313e-16,
+        "objective": 9.247453378159957,
+        "primal_dual_gap": 0.0
+      },
+      "clarabel_fourier_socp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 12,
+        "solve_time_seconds": 0.000296585,
+        "objective": 9.247453378083804,
+        "dual_objective": 9.247453378100179,
+        "absolute_primal_dual_gap": 1.637445734559151e-11,
+        "relative_primal_dual_gap": 1.7706990969425698e-12,
+        "primal_cone_violation": 1.6536661926519453e-11,
+        "epigraph_activity_residual": 1.6536661926519453e-11,
+        "dual_cone_violation": 0.0,
+        "x_stationarity_residual": 2.220446049250313e-16,
+        "t_stationarity_residual": 0.0
+      },
+      "socp_minus_formula_objective": -7.615241770508874e-11,
+      "socp_threshold_eta": 0.865103036794948,
+      "socp_threshold_minus_formula_eta": 7.1240791044147045e-12,
+      "direct_sixteen_effect_parent_sdp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 10,
+        "solve_time_seconds": 0.003824125,
+        "eta": 0.8651030371012021,
+        "normalization_residual": 1.162669960308449e-10,
+        "marginal_residual": 1.8347930697847117e-10,
+        "minimum_effect_eigenvalue": -9.461813337454927e-10,
+        "eta_minus_formula": 3.1337810124654197e-10
+      }
+    },
+    {
+      "name": "adversarial-near-antipodal",
+      "angles_radians": [
+        0.0,
+        0.31,
+        1.77,
+        3.141591653589793
+      ],
+      "minimum_gap": 0.31,
+      "pi_minus_alpha_4": 1.000000000139778e-06,
+      "D": 1.454539348825684,
+      "formula_eta": 0.6875028859187245,
+      "expected_fourier_objective": 11.636314790605471,
+      "ak_fourier": {
+        "basis_orthogonality_residual": 0.0,
+        "low_coefficient_residual": 1.1102230246251565e-16,
+        "reconstruction_residual": 4.440892098500626e-16,
+        "objective": 11.636314790605471
+      },
+      "analytic_dual": {
+        "chain_interpolation_residual": 1.1102230246251565e-16,
+        "stationarity_residual": 4.440892098500626e-16,
+        "max_norm": 1.0,
+        "max_unit_ball_violation": 0.0,
+        "objective": 11.636314790605471,
+        "primal_dual_gap": 0.0
+      },
+      "clarabel_fourier_socp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 12,
+        "solve_time_seconds": 0.000442666,
+        "objective": 11.636314790313767,
+        "dual_objective": 11.63631479037209,
+        "absolute_primal_dual_gap": 5.832312410802842e-11,
+        "relative_primal_dual_gap": 5.012164517633832e-12,
+        "primal_cone_violation": 6.364411251963718e-11,
+        "epigraph_activity_residual": 6.364411251963718e-11,
+        "dual_cone_violation": 0.0,
+        "x_stationarity_residual": 6.661338147750939e-16,
+        "t_stationarity_residual": 3.3306690738754696e-16
+      },
+      "socp_minus_formula_objective": -2.9170443838211213e-10,
+      "socp_threshold_eta": 0.6875028859359591,
+      "socp_threshold_minus_formula_eta": 1.7234547122768618e-11,
+      "direct_sixteen_effect_parent_sdp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 13,
+        "solve_time_seconds": 0.004066791,
+        "eta": 0.6875028845833506,
+        "normalization_residual": 1.9720883732513586e-12,
+        "marginal_residual": 1.414009444823222e-14,
+        "minimum_effect_eigenvalue": -6.568489063243056e-10,
+        "eta_minus_formula": -1.3353739225507866e-09
+      }
+    },
+    {
+      "name": "adversarial-all-clustered",
+      "angles_radians": [
+        0.0,
+        1e-06,
+        2e-06,
+        3e-06
+      ],
+      "minimum_gap": 1e-06,
+      "pi_minus_alpha_4": 3.141589653589793,
+      "D": 1.000001499998875,
+      "formula_eta": 0.9999985000033749,
+      "expected_fourier_objective": 8.000011999991,
+      "ak_fourier": {
+        "basis_orthogonality_residual": 0.0,
+        "low_coefficient_residual": 0.0,
+        "reconstruction_residual": 2.220446049250313e-16,
+        "objective": 8.000011999991
+      },
+      "analytic_dual": {
+        "chain_interpolation_residual": 1.1102230246251565e-16,
+        "stationarity_residual": 3.885780586188048e-16,
+        "max_norm": 1.0000000000000002,
+        "max_unit_ball_violation": 2.220446049250313e-16,
+        "objective": 8.000011999991,
+        "primal_dual_gap": 0.0
+      },
+      "clarabel_fourier_socp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 11,
+        "solve_time_seconds": 0.000471874,
+        "objective": 8.000011999110148,
+        "dual_objective": 8.000011999251411,
+        "absolute_primal_dual_gap": 1.4126300129646552e-10,
+        "relative_primal_dual_gap": 1.7657848677249282e-11,
+        "primal_cone_violation": 1.8935325509269313e-10,
+        "epigraph_activity_residual": 1.8935325509269313e-10,
+        "dual_cone_violation": 0.0,
+        "x_stationarity_residual": 3.3306690738754696e-16,
+        "t_stationarity_residual": 1.1102230246251565e-15
+      },
+      "socp_minus_formula_objective": -8.808527240944386e-10,
+      "socp_threshold_eta": 0.9999985001134811,
+      "socp_threshold_minus_formula_eta": 1.1010625744489744e-10,
+      "direct_sixteen_effect_parent_sdp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 8,
+        "solve_time_seconds": 0.002615209,
+        "eta": 0.9999985078742725,
+        "normalization_residual": 8.326672684688674e-13,
+        "marginal_residual": 7.235878562994458e-13,
+        "minimum_effect_eigenvalue": -2.274533545106678e-09,
+        "eta_minus_formula": 7.870897600348314e-09
+      }
+    },
+    {
+      "name": "adversarial-opposite-cluster",
+      "angles_radians": [
+        0.0,
+        3.141589653589793,
+        3.1415906535897933,
+        3.141591653589793
+      ],
+      "minimum_gap": 9.999999996956888e-07,
+      "pi_minus_alpha_4": 1.000000000139778e-06,
+      "D": 1.0000014999988749,
+      "formula_eta": 0.9999985000033751,
+      "expected_fourier_objective": 8.000011999990999,
+      "ak_fourier": {
+        "basis_orthogonality_residual": 0.0,
+        "low_coefficient_residual": 0.0,
+        "reconstruction_residual": 2.220446049250313e-16,
+        "objective": 8.000011999991
+      },
+      "analytic_dual": {
+        "chain_interpolation_residual": 1.1102230246251565e-16,
+        "stationarity_residual": 2.7569058960643517e-16,
+        "max_norm": 1.0000000000000002,
+        "max_unit_ball_violation": 2.220446049250313e-16,
+        "objective": 8.000011999991003,
+        "primal_dual_gap": -1.7763568394002505e-15
+      },
+      "clarabel_fourier_socp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 11,
+        "solve_time_seconds": 0.000462585,
+        "objective": 8.000011999110026,
+        "dual_objective": 8.000011999251306,
+        "absolute_primal_dual_gap": 1.4128076486485952e-10,
+        "relative_primal_dual_gap": 1.7660069119968387e-11,
+        "primal_cone_violation": 1.8938972926398518e-10,
+        "epigraph_activity_residual": 1.8938972926398518e-10,
+        "dual_cone_violation": 0.0,
+        "x_stationarity_residual": 1.1102230246251565e-16,
+        "t_stationarity_residual": 0.0
+      },
+      "socp_minus_formula_objective": -8.809735163595178e-10,
+      "socp_threshold_eta": 0.9999985001134964,
+      "socp_threshold_minus_formula_eta": 1.1012135647803234e-10,
+      "direct_sixteen_effect_parent_sdp": {
+        "status": "optimal",
+        "solver": "CLARABEL",
+        "iterations": 8,
+        "solve_time_seconds": 0.003172501,
+        "eta": 0.9999985078766906,
+        "normalization_residual": 1.0287882289681945e-12,
+        "marginal_residual": 2.647326802218686e-13,
+        "minimum_effect_eigenvalue": -2.2740936620567876e-09,
+        "eta_minus_formula": 7.873315555073646e-09
+      }
+    }
+  ],
+  "held_out_scan": {
+    "seed": 20260912,
+    "count": 128,
+    "generation": "mixed Dirichlet and log-uniform positive four-gap partitions of pi-2e-8; fourth gap is pi-alpha_4",
+    "max_analytic_primal_dual_gap": 3.552713678800501e-15,
+    "max_analytic_dual_ball_violation": 2.220446049250313e-16,
+    "max_clarabel_objective_error_vs_8D": 2.6700721633687863e-09,
+    "max_clarabel_reported_primal_dual_gap": 5.711573436428807e-10,
+    "max_clarabel_x_stationarity_residual": 5.411227022023013e-13,
+    "worst_formula_case": {
+      "index": 78,
+      "minimum_gap": 0.0007780732599196594,
+      "pi_minus_alpha_4": 0.10180324461820378,
+      "socp_formula_objective_error": 2.6700721633687863e-09,
+      "analytic_dual_ball_violation": 0.0,
+      "socp_primal_dual_gap": 5.711573436428807e-10
+    },
+    "smallest_internal_gap_case": {
+      "index": 119,
+      "minimum_gap": 3.947492555056442e-09,
+      "pi_minus_alpha_4": 0.39158800691297735,
+      "socp_formula_objective_error": 2.347810834635311e-11,
+      "analytic_dual_ball_violation": 0.0,
+      "socp_primal_dual_gap": 2.9309887850104133e-13
+    },
+    "closest_alpha4_to_pi_case": {
+      "index": 48,
+      "minimum_gap": 5.081494895309291e-05,
+      "pi_minus_alpha_4": 1.9139659723776958e-07,
+      "socp_formula_objective_error": 1.0180389864444805e-09,
+      "analytic_dual_ball_violation": 0.0,
+      "socp_primal_dual_gap": 2.4923885177940974e-10
+    }
+  },
+  "published_implementation_benchmark": {
+    "scope": "implementation benchmark only; radii are unequal and this point is outside the frozen common-visibility target",
+    "source_value_approximately": 7.957386,
+    "computed_value": 7.957374095796092,
+    "difference_from_rounded_source_value": -1.1904203907953104e-05,
+    "solver_status": "optimal",
+    "absolute_primal_dual_gap": 2.3740120980164647e-11,
+    "primal_cone_violation": 1.308539943067899e-10,
+    "dual_cone_violation": 0.0,
+    "x_stationarity_residual": 1.7780221739371882e-12
+  },
+  "tolerances": {
+    "symbolic_checks": "exact",
+    "analytic_numeric_identity": 2e-11,
+    "analytic_dual_ball_violation": 2e-12,
+    "clarabel_objective_vs_8D": 2e-07,
+    "clarabel_relative_primal_dual_gap": 2e-08,
+    "clarabel_stationarity": 2e-07,
+    "direct_parent_eta_vs_formula": 2e-07,
+    "direct_parent_equalities": 2e-07,
+    "direct_parent_minimum_eigenvalue": -2e-07
+  },
+  "interpretation": "The explicit AK Fourier point and the explicit feasible Fourier dual have the same value 8D. Hence the unrestricted Fourier minimum is exactly 8D throughout the strict ordered planar common-length domain; solver agreement is corroboration, not the proof.",
+  "limitations": "The analytic conclusion uses the Grinko-Uola necessary-and-sufficient theorem for finite unbiased binary qubit measurements. Numerical solver success alone is not used as a scientific certificate. No statement is made for unequal radii, biases, noncoplanar measurements, or boundary points outside the frozen strict domain."
+}

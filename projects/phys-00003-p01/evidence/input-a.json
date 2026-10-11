@@ -1,0 +1,33 @@
+{
+  "id": "input-a-real-poisson",
+  "construction": "Direct real-coordinate transcription of the frozen SDE, checked against Dechant arXiv:2202.10696v1 Sec. IX.C Eqs. (133)-(149), plus an independent transcription of the zero-field benchmark from Chun-Fischer-Seifert arXiv:1903.06480v2 Eqs. (3)-(10).",
+  "coordinate_order": ["x1", "x2", "v1", "v2"],
+  "rotation_matrix_R": [["0", "-1"], ["1", "0"]],
+  "drift_matrix_A": [
+    ["0", "0", "1", "0"],
+    ["0", "0", "0", "1"],
+    ["-k/m", "-kappa/m", "-gamma/m", "0"],
+    ["kappa/m", "-k/m", "0", "-gamma/m"]
+  ],
+  "noise_covariance_BBt": [
+    ["0", "0", "0", "0"],
+    ["0", "0", "0", "0"],
+    ["0", "0", "2*gamma*T/m^2", "0"],
+    ["0", "0", "0", "2*gamma*T/m^2"]
+  ],
+  "admissibility": "m,gamma,k,T>0; kappa!=0; kstar=k-m*kappa^2/gamma^2>0",
+  "stationary_covariance_blocks": {
+    "Cov_xx": "T*I2/kstar",
+    "Cov_vx": "T*kappa*R/(gamma*kstar)",
+    "Cov_vv": "T*k*I2/(m*kstar)"
+  },
+  "work_rate": "f=kappa*(R*x).v=kappa*(x1*v2-x2*v1)",
+  "poisson_equation": "-Lh=f-E[f] on real polynomials of total degree <=4",
+  "diffusion_evaluation": "D=E[(f-E[f])*h]",
+  "benchmark": {
+    "mean_rate": "2*kappa^2*T/(gamma*kstar)",
+    "D_var_over_2t": "2*kappa^2*T^2*(k^2+kappa^2+3*m*k*kappa^2/gamma^2)/(gamma*kstar^3)"
+  },
+  "implementation": "scripts/baseline_poisson.py",
+  "primary_files": ["supervisor-inputs/2202.10696v1.pdf", "supervisor-inputs/1903.06480v2.pdf"]
+}

@@ -1,0 +1,829 @@
+{
+  "status": "pass",
+  "precision": "NumPy/SciPy complex128; complete ages 0..t",
+  "tested_gamma": [
+    0.2,
+    0.5,
+    0.8
+  ],
+  "tested_times": [
+    1,
+    2,
+    3,
+    8,
+    32,
+    128,
+    512
+  ],
+  "max_trace_norm_over_weighted_bound": 0.46681727287333835,
+  "max_spectral_reconstruction_trace_norm_error": 5.691421212932435e-14,
+  "minimum_density_eigenvalue": -2.914335439641051e-16,
+  "max_age_normalization_error": 9.103828801926284e-15,
+  "cases": [
+    {
+      "id": "wald_noninteracting_theta_pi_over_4",
+      "dimension": 4,
+      "distinct_occupied_eigenvalues": 3,
+      "minimum_occupied_chord_gap": 1.4142135623730947,
+      "weighted_gap_constant": 1.249999999999999,
+      "max_trace_bound_ratio": 0.46681727287333835,
+      "max_spectral_reconstruction_trace_norm_error": 5.691421212932435e-14,
+      "rows": [
+        {
+          "gamma": 0.2,
+          "t": 1,
+          "trace_norm_to_pinching": 0.9768639238445845,
+          "weighted_fixed_gap_bound": 2.499999999999998,
+          "ratio": 0.3907455695378342,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -8.448985915697007e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 2,
+          "trace_norm_to_pinching": 0.8018661092672781,
+          "weighted_fixed_gap_bound": 2.0999999999999983,
+          "ratio": 0.38184100441298985,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -3.010380080896948e-32
+        },
+        {
+          "gamma": 0.2,
+          "t": 3,
+          "trace_norm_to_pinching": 0.7266027189446289,
+          "weighted_fixed_gap_bound": 1.8999999999999984,
+          "ratio": 0.3824224836550682,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 4.1633363423442945e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 8,
+          "trace_norm_to_pinching": 0.682964707427363,
+          "weighted_fixed_gap_bound": 1.5049382399999984,
+          "ratio": 0.45381577082350155,
+          "normalization_error": 1.1102230246251565e-16,
+          "min_density_eigenvalue": 1.387778780781442e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 32,
+          "trace_norm_to_pinching": 0.5106428758147793,
+          "weighted_fixed_gap_bound": 1.104948777516944,
+          "ratio": 0.462141672270368,
+          "normalization_error": 4.440892098500626e-16,
+          "min_density_eigenvalue": -2.1202420437069203e-30
+        },
+        {
+          "gamma": 0.2,
+          "t": 128,
+          "trace_norm_to_pinching": 0.383703162528183,
+          "weighted_fixed_gap_bound": 0.8244030567316142,
+          "ratio": 0.4654315136207679,
+          "normalization_error": 1.6653345369377348e-15,
+          "min_density_eigenvalue": -1.3877787807818142e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 512,
+          "trace_norm_to_pinching": 0.28955226941896,
+          "weighted_fixed_gap_bound": 0.6202689708474529,
+          "ratio": 0.4668172728733381,
+          "normalization_error": 8.881784197001252e-15,
+          "min_density_eigenvalue": 5.551115123124847e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 1,
+          "trace_norm_to_pinching": 0.7071067811865478,
+          "weighted_fixed_gap_bound": 2.499999999999998,
+          "ratio": 0.2828427124746194,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -6.584023048547746e-18
+        },
+        {
+          "gamma": 0.5,
+          "t": 2,
+          "trace_norm_to_pinching": 0.40450849718747384,
+          "weighted_fixed_gap_bound": 1.8749999999999982,
+          "ratio": 0.21573786516665291,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 2.7755575615628892e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 3,
+          "trace_norm_to_pinching": 0.17677669529663756,
+          "weighted_fixed_gap_bound": 1.5624999999999987,
+          "ratio": 0.11313708498984813,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -2.7755575615637844e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 8,
+          "trace_norm_to_pinching": 0.37443071720499155,
+          "weighted_fixed_gap_bound": 0.9819030761718741,
+          "ratio": 0.38133164697352523,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 2.023789243319847e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 32,
+          "trace_norm_to_pinching": 0.19243009933234687,
+          "weighted_fixed_gap_bound": 0.49673376873983405,
+          "ratio": 0.3873908146420639,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -2.4380400031621282e-27
+        },
+        {
+          "gamma": 0.5,
+          "t": 128,
+          "trace_norm_to_pinching": 0.09687463832536292,
+          "weighted_fixed_gap_bound": 0.2490955496807005,
+          "ratio": 0.38890553624719615,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 5.98443206297924e-18
+        },
+        {
+          "gamma": 0.5,
+          "t": 512,
+          "trace_norm_to_pinching": 0.04851987191606896,
+          "weighted_fixed_gap_bound": 0.12463902946489767,
+          "ratio": 0.3892831332558932,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 1.1265093764552642e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 1,
+          "trace_norm_to_pinching": 0.976863923844585,
+          "weighted_fixed_gap_bound": 2.499999999999998,
+          "ratio": 0.39074556953783435,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -6.291573095833919e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 2,
+          "trace_norm_to_pinching": 0.8018661092672786,
+          "weighted_fixed_gap_bound": 2.0999999999999983,
+          "ratio": 0.3818410044129901,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.1102230246251553e-16
+        },
+        {
+          "gamma": 0.8,
+          "t": 3,
+          "trace_norm_to_pinching": 0.726602718944629,
+          "weighted_fixed_gap_bound": 1.8999999999999984,
+          "ratio": 0.38242248365506826,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 2.7755575615628873e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 8,
+          "trace_norm_to_pinching": 0.6829647074273631,
+          "weighted_fixed_gap_bound": 1.5049382399999984,
+          "ratio": 0.4538157708235016,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": -1.387778780781485e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 32,
+          "trace_norm_to_pinching": 0.5106428758147787,
+          "weighted_fixed_gap_bound": 1.104948777516944,
+          "ratio": 0.4621416722703675,
+          "normalization_error": 4.440892098500626e-16,
+          "min_density_eigenvalue": -8.326672684688686e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 128,
+          "trace_norm_to_pinching": 0.38370316252818276,
+          "weighted_fixed_gap_bound": 0.8244030567316142,
+          "ratio": 0.4654315136207676,
+          "normalization_error": 1.5543122344752192e-15,
+          "min_density_eigenvalue": -1.7832595760156686e-31
+        },
+        {
+          "gamma": 0.8,
+          "t": 512,
+          "trace_norm_to_pinching": 0.2895522694189602,
+          "weighted_fixed_gap_bound": 0.6202689708474529,
+          "ratio": 0.46681727287333835,
+          "normalization_error": 9.103828801926284e-15,
+          "min_density_eigenvalue": 1.3877787807809571e-17
+        }
+      ]
+    },
+    {
+      "id": "degenerate_gate",
+      "dimension": 4,
+      "distinct_occupied_eigenvalues": 3,
+      "minimum_occupied_chord_gap": 0.9999999999999999,
+      "weighted_gap_constant": 1.0842057020792022,
+      "max_trace_bound_ratio": 0.41812694176910886,
+      "max_spectral_reconstruction_trace_norm_error": 1.549783293439231e-14,
+      "rows": [
+        {
+          "gamma": 0.2,
+          "t": 1,
+          "trace_norm_to_pinching": 0.7818357768593082,
+          "weighted_fixed_gap_bound": 2.1684114041584044,
+          "ratio": 0.3605569383005303,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.6076409165375252e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 2,
+          "trace_norm_to_pinching": 0.6751804933148462,
+          "weighted_fixed_gap_bound": 1.8214655794930599,
+          "ratio": 0.37067979813418084,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -7.632783294297964e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 3,
+          "trace_norm_to_pinching": 0.6015059190282231,
+          "weighted_fixed_gap_bound": 1.6479926671603873,
+          "ratio": 0.36499307977180634,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -9.714451465470125e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 8,
+          "trace_norm_to_pinching": 0.5180154496711659,
+          "weighted_fixed_gap_bound": 1.3053300968680308,
+          "ratio": 0.3968463233277746,
+          "normalization_error": 1.1102230246251565e-16,
+          "min_density_eigenvalue": 9.714451465470112e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 32,
+          "trace_norm_to_pinching": 0.39248144452236655,
+          "weighted_fixed_gap_bound": 0.9583934120714525,
+          "ratio": 0.4095201819825378,
+          "normalization_error": 4.440892098500626e-16,
+          "min_density_eigenvalue": -6.938893903907262e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 128,
+          "trace_norm_to_pinching": 0.297080371200563,
+          "weighted_fixed_gap_bound": 0.7150579959359528,
+          "ratio": 0.4154633230997004,
+          "normalization_error": 1.6653345369377348e-15,
+          "min_density_eigenvalue": 1.1102230246251564e-16
+        },
+        {
+          "gamma": 0.2,
+          "t": 512,
+          "trace_norm_to_pinching": 0.22495201202318865,
+          "weighted_fixed_gap_bound": 0.537999324012486,
+          "ratio": 0.41812694176910886,
+          "normalization_error": 8.881784197001252e-15,
+          "min_density_eigenvalue": -2.914335439641051e-16
+        },
+        {
+          "gamma": 0.5,
+          "t": 1,
+          "trace_norm_to_pinching": 0.6433675815497705,
+          "weighted_fixed_gap_bound": 2.1684114041584044,
+          "ratio": 0.2966999621547701,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -1.7342370518961638e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 2,
+          "trace_norm_to_pinching": 0.4609068536719226,
+          "weighted_fixed_gap_bound": 1.6263085531188033,
+          "ratio": 0.2834067697596699,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -2.7755575615629215e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 3,
+          "trace_norm_to_pinching": 0.31152780877822966,
+          "weighted_fixed_gap_bound": 1.3552571275990029,
+          "ratio": 0.2298662020912133,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -9.811245333385335e-33
+        },
+        {
+          "gamma": 0.5,
+          "t": 8,
+          "trace_norm_to_pinching": 0.2510638711744359,
+          "weighted_fixed_gap_bound": 0.8516679312597248,
+          "ratio": 0.29479080045092293,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 8.326672684688673e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 32,
+          "trace_norm_to_pinching": 0.12779528643037885,
+          "weighted_fixed_gap_bound": 0.43084926758641623,
+          "ratio": 0.2966125186803218,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -4.163336342344343e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 128,
+          "trace_norm_to_pinching": 0.06414847647537542,
+          "weighted_fixed_gap_bound": 0.21605665226109513,
+          "ratio": 0.29690581522967757,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 4.1633363423443253e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 512,
+          "trace_norm_to_pinching": 0.032104425234727195,
+          "weighted_fixed_gap_bound": 0.1081074771579679,
+          "ratio": 0.2969676666102922,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": -2.0291521853618984e-32
+        },
+        {
+          "gamma": 0.8,
+          "t": 1,
+          "trace_norm_to_pinching": 0.7818357768593084,
+          "weighted_fixed_gap_bound": 2.1684114041584044,
+          "ratio": 0.3605569383005304,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -2.2440185442683023e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 2,
+          "trace_norm_to_pinching": 0.6751804933148462,
+          "weighted_fixed_gap_bound": 1.8214655794930599,
+          "ratio": 0.37067979813418084,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -4.163336342344386e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 3,
+          "trace_norm_to_pinching": 0.601505919028223,
+          "weighted_fixed_gap_bound": 1.6479926671603873,
+          "ratio": 0.3649930797718063,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.3877787807814406e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 8,
+          "trace_norm_to_pinching": 0.5180154496711659,
+          "weighted_fixed_gap_bound": 1.3053300968680308,
+          "ratio": 0.3968463233277746,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": -2.7755575615628944e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 32,
+          "trace_norm_to_pinching": 0.39248144452236644,
+          "weighted_fixed_gap_bound": 0.9583934120714525,
+          "ratio": 0.4095201819825377,
+          "normalization_error": 4.440892098500626e-16,
+          "min_density_eigenvalue": 8.32667268468858e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 128,
+          "trace_norm_to_pinching": 0.29708037120056285,
+          "weighted_fixed_gap_bound": 0.7150579959359528,
+          "ratio": 0.4154633230997002,
+          "normalization_error": 1.5543122344752192e-15,
+          "min_density_eigenvalue": -4.163336342344335e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 512,
+          "trace_norm_to_pinching": 0.2249520120231882,
+          "weighted_fixed_gap_bound": 0.537999324012486,
+          "ratio": 0.41812694176910803,
+          "normalization_error": 9.103828801926284e-15,
+          "min_density_eigenvalue": -8.326672684688686e-17
+        }
+      ]
+    },
+    {
+      "id": "small_fixed_gap",
+      "dimension": 5,
+      "distinct_occupied_eigenvalues": 5,
+      "minimum_occupied_chord_gap": 0.07098508798134125,
+      "weighted_gap_constant": 6.87037918558176,
+      "max_trace_bound_ratio": 0.11356660959350771,
+      "max_spectral_reconstruction_trace_norm_error": 1.2474497601793635e-14,
+      "rows": [
+        {
+          "gamma": 0.2,
+          "t": 1,
+          "trace_norm_to_pinching": 0.9922217776102777,
+          "weighted_fixed_gap_bound": 13.74075837116352,
+          "ratio": 0.07221011757928611,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -3.1359001059603867e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 2,
+          "trace_norm_to_pinching": 0.8864922613799074,
+          "weighted_fixed_gap_bound": 11.542237031777358,
+          "ratio": 0.07680419826237089,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -8.088853576589437e-18
+        },
+        {
+          "gamma": 0.2,
+          "t": 3,
+          "trace_norm_to_pinching": 0.8702329182900357,
+          "weighted_fixed_gap_bound": 10.442976362084275,
+          "ratio": 0.08333188624745189,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 4.9238399935056494e-17
+        },
+        {
+          "gamma": 0.2,
+          "t": 8,
+          "trace_norm_to_pinching": 0.7607839696506327,
+          "weighted_fixed_gap_bound": 8.271597087745636,
+          "ratio": 0.09197546272868312,
+          "normalization_error": 1.1102230246251565e-16,
+          "min_density_eigenvalue": 0.0009934809485599324
+        },
+        {
+          "gamma": 0.2,
+          "t": 32,
+          "trace_norm_to_pinching": 0.582304796634324,
+          "weighted_fixed_gap_bound": 6.073133665749144,
+          "ratio": 0.09588209788932654,
+          "normalization_error": 4.440892098500626e-16,
+          "min_density_eigenvalue": 0.003319251847609995
+        },
+        {
+          "gamma": 0.2,
+          "t": 128,
+          "trace_norm_to_pinching": 0.4300605097578067,
+          "weighted_fixed_gap_bound": 4.531169281199093,
+          "ratio": 0.09491159633832945,
+          "normalization_error": 1.6653345369377348e-15,
+          "min_density_eigenvalue": 0.0038398017871049905
+        },
+        {
+          "gamma": 0.2,
+          "t": 512,
+          "trace_norm_to_pinching": 0.32107536302986517,
+          "weighted_fixed_gap_bound": 3.409186421418051,
+          "ratio": 0.09417946786738458,
+          "normalization_error": 8.881784197001252e-15,
+          "min_density_eigenvalue": 0.004166622456306889
+        },
+        {
+          "gamma": 0.5,
+          "t": 1,
+          "trace_norm_to_pinching": 0.7814137661877258,
+          "weighted_fixed_gap_bound": 13.74075837116352,
+          "ratio": 0.056868314330278,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -2.1105425945458198e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 2,
+          "trace_norm_to_pinching": 0.6826336096559569,
+          "weighted_fixed_gap_bound": 10.30556877837264,
+          "ratio": 0.06623929492261872,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -2.094818296624567e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 3,
+          "trace_norm_to_pinching": 0.6286777028605259,
+          "weighted_fixed_gap_bound": 8.5879739819772,
+          "ratio": 0.07320442565148365,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -2.5789261209061897e-17
+        },
+        {
+          "gamma": 0.5,
+          "t": 8,
+          "trace_norm_to_pinching": 0.5080714565587642,
+          "weighted_fixed_gap_bound": 5.396837165431961,
+          "ratio": 0.09414244695264921,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 0.0018467022847246794
+        },
+        {
+          "gamma": 0.5,
+          "t": 32,
+          "trace_norm_to_pinching": 0.31005949805105676,
+          "weighted_fixed_gap_bound": 2.730199476420594,
+          "ratio": 0.11356660959350771,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 0.004578837787956734
+        },
+        {
+          "gamma": 0.5,
+          "t": 128,
+          "trace_norm_to_pinching": 0.14841997436749815,
+          "weighted_fixed_gap_bound": 1.369104703797867,
+          "ratio": 0.1084065915161816,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 0.004681431271570728
+        },
+        {
+          "gamma": 0.5,
+          "t": 512,
+          "trace_norm_to_pinching": 0.02236364780249038,
+          "weighted_fixed_gap_bound": 0.6850539149973963,
+          "ratio": 0.0326450915948351,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 0.004733521090356277
+        },
+        {
+          "gamma": 0.8,
+          "t": 1,
+          "trace_norm_to_pinching": 0.9922217776102776,
+          "weighted_fixed_gap_bound": 13.74075837116352,
+          "ratio": 0.07221011757928611,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -1.2656896583913745e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 2,
+          "trace_norm_to_pinching": 0.8864922613799074,
+          "weighted_fixed_gap_bound": 11.542237031777358,
+          "ratio": 0.07680419826237089,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": -9.549589712472734e-17
+        },
+        {
+          "gamma": 0.8,
+          "t": 3,
+          "trace_norm_to_pinching": 0.8702329182900357,
+          "weighted_fixed_gap_bound": 10.442976362084275,
+          "ratio": 0.08333188624745189,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 2.183242309044543e-18
+        },
+        {
+          "gamma": 0.8,
+          "t": 8,
+          "trace_norm_to_pinching": 0.7607839696506328,
+          "weighted_fixed_gap_bound": 8.271597087745636,
+          "ratio": 0.09197546272868314,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 0.000993480948559889
+        },
+        {
+          "gamma": 0.8,
+          "t": 32,
+          "trace_norm_to_pinching": 0.5823047966343238,
+          "weighted_fixed_gap_bound": 6.073133665749144,
+          "ratio": 0.09588209788932651,
+          "normalization_error": 4.440892098500626e-16,
+          "min_density_eigenvalue": 0.0033192518476099957
+        },
+        {
+          "gamma": 0.8,
+          "t": 128,
+          "trace_norm_to_pinching": 0.43006050975780546,
+          "weighted_fixed_gap_bound": 4.531169281199093,
+          "ratio": 0.09491159633832918,
+          "normalization_error": 1.5543122344752192e-15,
+          "min_density_eigenvalue": 0.0038398017871049918
+        },
+        {
+          "gamma": 0.8,
+          "t": 512,
+          "trace_norm_to_pinching": 0.3210753630298615,
+          "weighted_fixed_gap_bound": 3.409186421418051,
+          "ratio": 0.0941794678673835,
+          "normalization_error": 9.103828801926284e-15,
+          "min_density_eigenvalue": 0.004166622456306924
+        }
+      ]
+    },
+    {
+      "id": "one_dimensional_trivial",
+      "dimension": 1,
+      "distinct_occupied_eigenvalues": 1,
+      "minimum_occupied_chord_gap": null,
+      "weighted_gap_constant": 0.0,
+      "max_trace_bound_ratio": 0.0,
+      "max_spectral_reconstruction_trace_norm_error": 1.1003216647050102e-14,
+      "rows": [
+        {
+          "gamma": 0.2,
+          "t": 1,
+          "trace_norm_to_pinching": 7.496660267155263e-18,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.0
+        },
+        {
+          "gamma": 0.2,
+          "t": 2,
+          "trace_norm_to_pinching": 2.4591634867603358e-17,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.0
+        },
+        {
+          "gamma": 0.2,
+          "t": 3,
+          "trace_norm_to_pinching": 2.260427811991481e-16,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 0.9999999999999998
+        },
+        {
+          "gamma": 0.2,
+          "t": 8,
+          "trace_norm_to_pinching": 7.84410922732497e-16,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 1.1102230246251565e-16,
+          "min_density_eigenvalue": 0.9999999999999992
+        },
+        {
+          "gamma": 0.2,
+          "t": 32,
+          "trace_norm_to_pinching": 2.221287993271362e-15,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 4.440892098500626e-16,
+          "min_density_eigenvalue": 0.9999999999999978
+        },
+        {
+          "gamma": 0.2,
+          "t": 128,
+          "trace_norm_to_pinching": 1.1003216647050102e-14,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 1.6653345369377348e-15,
+          "min_density_eigenvalue": 0.999999999999989
+        },
+        {
+          "gamma": 0.2,
+          "t": 512,
+          "trace_norm_to_pinching": 1.5602719108015671e-15,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 8.881784197001252e-15,
+          "min_density_eigenvalue": 0.9999999999999986
+        },
+        {
+          "gamma": 0.5,
+          "t": 1,
+          "trace_norm_to_pinching": 4.685412666972039e-18,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.0
+        },
+        {
+          "gamma": 0.5,
+          "t": 2,
+          "trace_norm_to_pinching": 1.119484123686223e-16,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 0.9999999999999999
+        },
+        {
+          "gamma": 0.5,
+          "t": 3,
+          "trace_norm_to_pinching": 1.1377762397597224e-16,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 0.9999999999999999
+        },
+        {
+          "gamma": 0.5,
+          "t": 8,
+          "trace_norm_to_pinching": 2.302333182503684e-16,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 0.9999999999999998
+        },
+        {
+          "gamma": 0.5,
+          "t": 32,
+          "trace_norm_to_pinching": 1.6653346704098812e-15,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 0.9999999999999983
+        },
+        {
+          "gamma": 0.5,
+          "t": 128,
+          "trace_norm_to_pinching": 6.446449569878305e-15,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 0.9999999999999936
+        },
+        {
+          "gamma": 0.5,
+          "t": 512,
+          "trace_norm_to_pinching": 9.448881883666049e-15,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 0.9999999999999906
+        },
+        {
+          "gamma": 0.8,
+          "t": 1,
+          "trace_norm_to_pinching": 1.8741650667888155e-18,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.0
+        },
+        {
+          "gamma": 0.8,
+          "t": 2,
+          "trace_norm_to_pinching": 5.348049189126435e-18,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.0
+        },
+        {
+          "gamma": 0.8,
+          "t": 3,
+          "trace_norm_to_pinching": 9.248525059610404e-18,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 0.0,
+          "min_density_eigenvalue": 1.0
+        },
+        {
+          "gamma": 0.8,
+          "t": 8,
+          "trace_norm_to_pinching": 3.3387911752704203e-16,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 2.220446049250313e-16,
+          "min_density_eigenvalue": 0.9999999999999997
+        },
+        {
+          "gamma": 0.8,
+          "t": 32,
+          "trace_norm_to_pinching": 4.445602479396422e-16,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 4.440892098500626e-16,
+          "min_density_eigenvalue": 0.9999999999999996
+        },
+        {
+          "gamma": 0.8,
+          "t": 128,
+          "trace_norm_to_pinching": 4.5528693383068484e-15,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 1.5543122344752192e-15,
+          "min_density_eigenvalue": 0.9999999999999954
+        },
+        {
+          "gamma": 0.8,
+          "t": 512,
+          "trace_norm_to_pinching": 3.559983409411036e-15,
+          "weighted_fixed_gap_bound": 0.0,
+          "ratio": 0.0,
+          "normalization_error": 9.103828801926284e-15,
+          "min_density_eigenvalue": 1.0000000000000036
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Floating stress tests are not interval certificates.",
+    "The analytic proof, not these samples, establishes the finite-dimensional theorem.",
+    "The 0.071-radian case is a fixed gap and does not certify a gap-closing uniform limit."
+  ]
+}

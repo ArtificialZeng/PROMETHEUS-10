@@ -1,0 +1,21 @@
+{
+  "id": "input-a",
+  "representation": "direct Kraus transcription",
+  "source": "source.md, section 1",
+  "basis": ["|0>", "|1>"],
+  "parameter_domain": {
+    "gamma": "0 <= gamma <= 1",
+    "eta": "0 <= eta <= 1/2"
+  },
+  "operators": {
+    "K0": "sqrt(1-eta) * [[1,0],[0,sqrt(1-gamma)]]",
+    "K1": "sqrt((1-eta)*gamma) * [[0,1],[0,0]]",
+    "K2": "sqrt(eta) * [[sqrt(1-gamma),0],[0,1]]",
+    "K3": "sqrt(eta*gamma) * [[0,0],[1,0]]"
+  },
+  "one_use_action": "Phi(rho)=sum_{nu=0}^3 K_nu rho K_nu^dagger",
+  "two_use_action": "Phi tensor Phi evaluated from K_mu tensor K_nu for mu,nu=0,1,2,3",
+  "two_use_basis": ["|00>", "|01>", "|10>", "|11>"],
+  "implementation": "evidence/method_a_kraus.py",
+  "independence_note": "This representation contains no Liouville matrix and does not read method B or its outputs."
+}

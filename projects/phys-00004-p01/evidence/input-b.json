@@ -1,0 +1,22 @@
+{
+  "id": "input-b",
+  "representation": "column-vectorized Liouville superoperator",
+  "source": "supervisor-inputs/arxiv-2305.16803v4.pdf, Eq. (53), independently linearized on matrix units",
+  "basis": ["|0>", "|1>"],
+  "vectorization": "vec_F(rho)=(rho00,rho10,rho01,rho11)",
+  "single_use_matrix_rows": [
+    ["1-gamma*eta", "0", "0", "gamma*(1-eta)"],
+    ["0", "sqrt(1-gamma)", "0", "0"],
+    ["0", "0", "sqrt(1-gamma)", "0"],
+    ["gamma*eta", "0", "0", "1-gamma*(1-eta)"]
+  ],
+  "two_use_convention": {
+    "global_matrix_basis": ["|00>", "|01>", "|10>", "|11>"],
+    "global_vec_index": "(2*i1+i2)+4*(2*j1+j2)",
+    "local_tensor_index": "4*(i1+2*j1)+(i2+2*j2)",
+    "permutation_map": "v_local=P v_global",
+    "tensor_identity": "S2=P^T (S tensor S) P"
+  },
+  "implementation": "evidence/method_b_liouville.py",
+  "independence_note": "The superoperator was derived from the printed Eq. (53), has no Kraus matrices, and does not read method A or its outputs."
+}

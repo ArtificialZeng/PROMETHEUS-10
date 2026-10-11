@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "scope": "Exact qutrit unistochastic counterexample to the extended-MUB induced-norm formula; no claim is made about the global norm value or a direct entropy-inequality violation.",
+  "unitary": [
+    ["1/3", "-14/15", "2/15"],
+    ["-2/3", "-1/3", "-2/3"],
+    ["2/3", "2/15", "-11/15"]
+  ],
+  "overlap": [
+    ["1/9", "196/225", "4/225"],
+    ["4/9", "1/9", "4/9"],
+    ["4/9", "4/225", "121/225"]
+  ],
+  "parameters": {
+    "lambda": "3/4",
+    "mu": "1/3",
+    "r": "3",
+    "s": "4",
+    "spectral_threshold": "2/3"
+  },
+  "sum_zero_basis": [
+    ["1", "-1", "0"],
+    ["1", "1", "-2"]
+  ],
+  "expected_spectral_quadratic_form": [
+    ["2602/5625", "2048/1875"],
+    ["2048/1875", "4906/1875"]
+  ],
+  "expected_spectral_quadratic_form_determinant": "292/16875",
+  "witness": ["6", "10", "5"],
+  "expected_witness_image": ["142/15", "6", "83/15"],
+  "expected_output_fourth_power_sum": "519655217/50625",
+  "expected_input_third_power_sum": "1341",
+  "expected_integer_gap": "1409896381134395295169314"
+}

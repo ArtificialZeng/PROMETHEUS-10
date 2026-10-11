@@ -1,0 +1,40 @@
+{
+  "id": "input-b-complex-wick",
+  "construction": "Separate reconstruction from the primary rendering using complex coordinates, after re-reading Chun-Fischer-Seifert arXiv:1903.06480v2 Eqs. (3)-(6), (9)-(10). It does not read input A, its script, or its output.",
+  "complex_coordinates": {
+    "u": "x1+i*x2",
+    "s": "v1+i*v2"
+  },
+  "complex_dynamics": [
+    "du=s*dt",
+    "m*ds=(-k+i*kappa)*u*dt-gamma*s*dt+isotropic_complex_noise"
+  ],
+  "complex_drift_matrix": [["0", "1"], ["(-k+i*kappa)/m", "-gamma/m"]],
+  "real_numerical_order": ["Re(u)=x1", "Re(s)=v1", "Im(u)=x2", "Im(s)=v2"],
+  "realification_rule": "For C=Re(C)+i Im(C), M=[[Re(C),-Im(C)],[Im(C),Re(C)]].",
+  "noise_covariance_in_real_numerical_order": [
+    ["0", "0", "0", "0"],
+    ["0", "2*gamma*T/m^2", "0", "0"],
+    ["0", "0", "0", "0"],
+    ["0", "0", "0", "2*gamma*T/m^2"]
+  ],
+  "admissibility": "m,gamma,k,T>0; kappa!=0; kstar=k-m*kappa^2/gamma^2>0; all drift eigenvalues have negative real part",
+  "work_rate": "f=kappa*Im(conj(u)*s)=kappa*(x1*v2-x2*v1)",
+  "stationary_covariance": "Solve M*Sigma+Sigma*M^T+Q=0 numerically without importing the analytic covariance from input A.",
+  "two_time_covariance": "C(t)=exp(M*t)*Sigma=E[y_t y_0^T]",
+  "wick_contraction": "Cov(f_t,f_0)=2*tr(F*C(t)*F*C(t)^T)",
+  "diffusion_evaluation": "D=integral_0^infinity Cov(f_t,f_0) dt, checked by a separate Wick-resolvent evaluation",
+  "cfs_convention_map": {
+    "force": "f_CFS=kappa_CFS*(x2,-x1)=-kappa_CFS*R*x",
+    "torque": "kappa_CFS=-kappa",
+    "magnetic_field": "B0=0",
+    "dimensionless": "kappa0=kappa_CFS/k, m0=k*m/gamma^2, tau=gamma/k",
+    "variance_rate": "CFS Eq. (6) uses D=lim Var/(2t), identical to the frozen convention"
+  },
+  "benchmark": {
+    "mean_rate": "2*kappa^2*T/(gamma*kstar)",
+    "D_var_over_2t": "2*kappa^2*T^2*(k^2+kappa^2+3*m*k*kappa^2/gamma^2)/(gamma*kstar^3)"
+  },
+  "implementation": "scripts/baseline_wick.py",
+  "primary_files": ["supervisor-inputs/1903.06480v2.pdf", "supervisor-inputs/2202.10696v1.pdf"]
+}

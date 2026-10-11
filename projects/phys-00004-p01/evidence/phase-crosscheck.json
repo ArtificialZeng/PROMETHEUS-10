@@ -1,0 +1,58 @@
+{
+  "cases": [
+    {
+      "eigenvalues_A_ascending": [
+        0.015624999999999943,
+        0.10937499999999988,
+        0.10937499999999999,
+        0.7656249999999998
+      ],
+      "ergotropy_A": 0.5000000000000002,
+      "ergotropy_B": 0.5,
+      "max_A_B_output_difference": 5.551115123125783e-17,
+      "name": "equal_plus",
+      "purity_A": 0.6103515625
+    },
+    {
+      "eigenvalues_A_ascending": [
+        0.06805275963069297,
+        0.1093749999999999,
+        0.24954566688283306,
+        0.5730265734864737
+      ],
+      "ergotropy_A": 0.2549738138557811,
+      "ergotropy_B": 0.2549738138557807,
+      "max_A_B_output_difference": 5.551115123125783e-17,
+      "name": "equal_minus",
+      "purity_A": 0.4072265625
+    },
+    {
+      "eigenvalues_A_ascending": [
+        0.1145225315988359,
+        0.12453105656202945,
+        0.2000000000000001,
+        0.560946411839135
+      ],
+      "ergotropy_A": 0.296423880240299,
+      "ergotropy_B": 0.2964238802402992,
+      "max_A_B_output_difference": 1.1102230246251565e-16,
+      "name": "adc_zero",
+      "purity_A": 0.3832842712474621
+    },
+    {
+      "eigenvalues_A_ascending": [
+        0.08390687591529036,
+        0.1767910923081047,
+        0.20000000000000015,
+        0.5393020317766051
+      ],
+      "ergotropy_A": 0.3053951558613148,
+      "ergotropy_B": 0.3053951558613148,
+      "max_A_B_output_difference": 1.1102230246251565e-16,
+      "name": "adc_pi_over_3",
+      "purity_A": 0.36914213562373116
+    }
+  ],
+  "precision": "IEEE-754 binary64",
+  "status": "pass"
+}

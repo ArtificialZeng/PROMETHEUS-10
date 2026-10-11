@@ -1,0 +1,602 @@
+\documentclass[aps,pre,reprint,amsmath,amssymb,superscriptaddress,nofootinbib]{revtex4-2}
+
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\grad}{\nabla}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cG}{\mathcal{G}}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\title{Matched-equilibrium lower bound for polynomial current noise in a torque-driven underdamped Gaussian particle}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190, China}
+
+\date{September 12, 2026}
+
+\begin{abstract}
+An equilibrium process with the same position marginal as a nonequilibrium
+underdamped diffusion provides a natural reference for current fluctuations,
+but the reference need not order arbitrary observables.  We resolve this
+comparison for a stable two-dimensional Ornstein--Uhlenbeck particle driven by
+a constant torque and for the complete family of position-current weights
+whose homogeneous degrees are one and three.  Gradient weights are stationary
+boundary increments, leaving a four-dimensional quotient of the original
+twelve-dimensional coefficient space.  After an exact nondimensionalization,
+rotational covariance splits that quotient into a coupled isotropic block and
+an angular-two doublet.  Complete polynomial Poisson equations of total degree
+at most four give the driven-minus-equilibrium diffusion matrix as rational
+functions of two positive parameters.  Its isotropic leading minor and
+determinant and its angular coefficient have explicit strictly positive
+certificates over the full stability domain.  Consequently, every current in
+the stated family is at least as noisy in the driven process as in the matched
+equilibrium trap, with equality exactly for gradient boundary currents.  The
+calculation is exact for the linear dynamics and is independently checked by a
+two-time covariance and Wick-contraction representation.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+
+Current fluctuations quantify the precision of transport in nonequilibrium
+steady states.  In underdamped systems their behavior is especially sensitive
+to the observable and to forces that act on velocity or break time-reversal
+symmetry.  For example, a magnetic field can invalidate familiar
+thermodynamic-uncertainty bounds for work and heat currents
+\cite{ChunFischerSeifert2019}.  It is therefore useful to separate statements
+about a particular current from statements that order a whole family of
+observables.
+
+Dechant introduced an ``equivalent equilibrium'' dynamics for an underdamped
+steady state: the reference retains the position marginal while removing the
+local mean flow.  In a torque-driven Brownian-gyrator sector, the torque-work
+current is noisier than its equivalent-equilibrium counterpart, and the same
+ordering was conjectured for more general observables
+\cite{Dechant2022}.  The conjecture cannot hold without specifying both the
+model and the observable class.  Recent velocity-resolved examples show that
+closely related fluctuation inequalities can fail when the readout or physical
+premises change \cite{VuVoBaoSaito2026}.
+
+Here we give an all-parameter result for a finite but complete polynomial
+sector of the zero-field torque-driven Gaussian model.  The weight of the
+position current may contain every real homogeneous term of degree one and
+three.  This sector is already beyond the linear current-type observables in
+the exact large-deviation treatment of linear diffusions by du Buisson and
+Touchette \cite{duBuissonTouchette2023}; cubic position weights produce
+quartic phase-space rates.  Their erratum concerns eigenfunction
+normalizability and full scaled-cumulant-generating-function domains
+\cite{duBuissonTouchette2025Erratum}, whereas our argument uses only the
+centered Poisson equation at zero tilt.  Results for occupation estimators in
+nonreversible samplers also have different matching premises: those processes
+share the full invariant law, not only the position marginal
+\cite{CoghiChetriteTouchette2021}.
+
+Our result has three ingredients.  First, quotienting gradient boundary
+increments reduces the twelve current coefficients to four without discarding
+any extensive current.  Second, a change of units leaves only two positive
+dimensionless parameters and preserves the sign of the diffusion difference
+by a nonsingular congruence.  Third, rotational covariance reduces the exact
+degree-four Poisson calculation to a two-dimensional invariant block and an
+angular-two doublet.  The resulting global sign certificate proves the
+ordering throughout the strict stability domain, rather than at sampled
+parameters.  The closest sources identified above do not state this cubic
+quotient theorem; that comparison is necessarily a bounded priority search,
+not a claim of exhaustive bibliographic precedence.
+
+\section{Model, stationary laws, and current space}
+\label{sec:model}
+
+Let
+\begin{equation}
+ R=\begin{pmatrix}0&-1\\1&0\end{pmatrix},
+ \qquad x,v\in\RR^2.
+\end{equation}
+The driven process is
+\begin{subequations}
+\label{eq:driven}
+\begin{align}
+ \dd x_t &=v_t\,\dd t,\\
+ m\,\dd v_t&=(-k x_t+\kappa R x_t-\gamma v_t)\,\dd t
+       +\sqrt{2\gamma T}\,\dd W_t,
+\end{align}
+\end{subequations}
+where $W_t$ is standard two-dimensional Brownian motion.  We assume
+\begin{equation}
+ m,\gamma,k,T>0,\qquad \kappa\ne0,\qquad
+ k_*:=k-\frac{m\kappa^2}{\gamma^2}>0.
+\label{eq:domain}
+\end{equation}
+The comparison process keeps $m,\gamma,T$ but replaces the entire position
+force with the conservative force $-k_*x$:
+\begin{subequations}
+\label{eq:equilibrium}
+\begin{align}
+ \dd x_t &=v_t\,\dd t,\\
+ m\,\dd v_t&=(-k_* x_t-\gamma v_t)\,\dd t
+       +\sqrt{2\gamma T}\,\dd W_t.
+\end{align}
+\end{subequations}
+The matched stiffness is $k_*$, not $k$.
+
+Both processes are initialized in their own complete stationary laws.  Direct
+solution of the Lyapunov equation gives, for Eq.~\eqref{eq:driven},
+\begin{equation}
+ x\sim N\!\left(0,\frac{T}{k_*}I_2\right),\qquad
+ v\mid x\sim N\!\left(\frac{\kappa}{\gamma}Rx,
+                       \frac{T}{m}I_2\right),
+\label{eq:stationary-driven}
+\end{equation}
+whereas Eq.~\eqref{eq:equilibrium} has
+\begin{equation}
+ x\sim N\!\left(0,\frac{T}{k_*}I_2\right),\qquad
+ v\sim N\!\left(0,\frac{T}{m}I_2\right),\qquad x\perp v.
+\label{eq:stationary-equilibrium}
+\end{equation}
+Thus the position marginals agree although the phase-space laws do not.  For
+each complex spatial mode the deterministic characteristic equation is
+$m\lambda^2+\gamma\lambda+k\mp i\kappa=0$; its strict Hurwitz condition is
+$m\kappa^2<\gamma^2k$, exactly Eq.~\eqref{eq:domain}.  There is no spatial
+cutoff or boundary other than Gaussian decay at infinity.  We set Boltzmann's
+constant to one, so $T$ has units of energy, while $k$ and $\kappa$ have
+units of stiffness.
+
+Let $\cH_d$ denote the real homogeneous scalar polynomials of degree $d$ in
+$(x_1,x_2)$, and define the twelve-dimensional current-weight space
+\begin{equation}
+ \cW_{1,3}=(\cH_1\oplus\cH_3)^2.
+\end{equation}
+For $w\in\cW_{1,3}$, use the same weight in both processes and set
+\begin{equation}
+ J_w(t)=\int_0^t w(x_s)\mathbin{\cdot}v_s\,\dd s,
+ \qquad
+ D(w)=\lim_{t\to\infty}\frac{\Var J_w(t)}{2t}.
+\label{eq:current-diffusion}
+\end{equation}
+The two diffusion rates will be denoted $D_{\rm d}$ and $D_{\rm e}$.
+Because $\dd x=v\,\dd t$ has finite variation, Eq.~\eqref{eq:current-diffusion}
+has no It\^o--Stratonovich ambiguity.  The variance is centered by definition;
+the two current means need not agree.
+
+\section{Gradient quotient and statement of the result}
+\label{sec:quotient}
+
+For any $\phi\in\cH_2\oplus\cH_4$,
+\begin{equation}
+ J_{\grad\phi}(t)=\phi(x_t)-\phi(x_0).
+\end{equation}
+Stationarity and Gaussian moments make its variance bounded uniformly in
+$t$.  Its covariance with an extensive current is $o(t)$ by
+Cauchy--Schwarz.  Hence both diffusion forms are invariant under
+$w\mapsto w+\grad\phi$, and the relevant space is
+\begin{equation}
+ \cW_{1,3}/\cG,\qquad
+ \cG=\grad(\cH_2\oplus\cH_4).
+\end{equation}
+The gradient space has dimension $3+5=8$, leaving a four-dimensional
+quotient.
+
+Every quotient class has the unique representative
+\begin{equation}
+ w_c(x)=\left(c_0+c_1x_1^2+c_2x_1x_2+c_3x_2^2\right)Rx.
+\label{eq:quotient-representative}
+\end{equation}
+Indeed, in two dimensions curl has the gradient fields as its kernel, while
+\begin{equation}
+ \operatorname{curl}(pRx)=2p+x\mathbin{\cdot}\grad p.
+\label{eq:curl}
+\end{equation}
+It acts as multiplication by $2$ on constant $p$ and by $4$ on
+quadratic homogeneous $p$.  Dimension counting then proves existence and
+uniqueness in Eq.~\eqref{eq:quotient-representative}; further details are in
+Appendix~\ref{app:quotient}.
+
+\begin{theorem}
+\label{thm:main}
+For every parameter tuple satisfying Eq.~\eqref{eq:domain} and every real
+$w\in\cW_{1,3}$,
+\begin{equation}
+ D_{\rm d}(w)\ge D_{\rm e}(w).
+\label{eq:main-inequality}
+\end{equation}
+Equality holds if and only if
+$w\in\grad(\cH_2\oplus\cH_4)$.
+\end{theorem}
+
+The theorem concerns only the stationary long-time second-cumulant rate.  It
+does not assert a finite-time inequality, a full generating-function ordering,
+or an ordering for velocity-dependent or higher-degree weights.
+
+\section{Dimensionless exact Poisson representation}
+\label{sec:poisson}
+
+Introduce dimensionless time and length
+\begin{equation}
+ \theta=\frac{\gamma t}{m},\qquad
+ \ell=\frac{\sqrt{mT}}{\gamma},\qquad
+ X=\frac{x}{\ell},\qquad V=\frac{mv}{\gamma\ell},
+\end{equation}
+and the two parameters
+\begin{equation}
+ a=\frac{mk_*}{\gamma^2}>0,\qquad
+ b=\frac{m\kappa}{\gamma^2}\ne0,\qquad u=b^2>0.
+\label{eq:dimensionless-parameters}
+\end{equation}
+The backward generators become
+\begin{subequations}
+\label{eq:generators}
+\begin{align}
+ L_b={}&V\mathbin{\cdot}\grad_X+
+ [-(a+b^2)X+bRX-V]\mathbin{\cdot}\grad_V+\Delta_V,\\
+ L_0={}&V\mathbin{\cdot}\grad_X+[-aX-V]\mathbin{\cdot}\grad_V+\Delta_V.
+\end{align}
+\end{subequations}
+Their covariance blocks are
+\begin{equation}
+ \begin{aligned}
+ \langle XX^{\mathsf T}\rangle&=a^{-1}I,\\
+ \langle VX^{\mathsf T}\rangle&=(b/a)R,\\
+ \langle VV^{\mathsf T}\rangle&=((a+b^2)/a)I
+ \end{aligned}
+\label{eq:cov-blocks}
+\end{equation}
+for the driven process and $(a^{-1}I,0,I)$ for equilibrium.
+
+Let $S_\ell=\operatorname{diag}(1,\ell^2,\ell^2,\ell^2)$ act on the
+coefficient vector in Eq.~\eqref{eq:quotient-representative}.  Direct
+substitution in the integrated current gives
+\begin{equation}
+ D_{\rm physical}(c)=\frac{\gamma\ell^4}{m}
+ D_{\rm dimensionless}(S_\ell c).
+\label{eq:physical-scaling}
+\end{equation}
+The prefactor is positive and $S_\ell$ is nonsingular.  Thus sign and kernel
+dimension are preserved.  Torque reversal is implemented by a spatial
+reflection; the final symmetric form depends on $b$ only through $u=b^2$.
+
+For a centered polynomial rate
+$\widehat f=f-\langle f\rangle$, solve
+\begin{equation}
+ -Lh=\widehat f.
+\label{eq:poisson}
+\end{equation}
+Exponential stability makes the centered solution unique up to a constant,
+and the Green--Kubo formula gives
+\begin{equation}
+ D(f)=\langle \widehat f h\rangle.
+\label{eq:green-kubo}
+\end{equation}
+For several basis currents the quadratic-form matrix is the symmetric part of
+$\langle\widehat f_i h_j\rangle$.  Because $L_b$ and $L_0$ map
+phase-space polynomials of total degree at most four into the same space, the
+calculation is an exact finite closure, not a truncation of the dynamics.
+
+Writing
+\begin{equation}
+ \cA=X_1V_2-X_2V_1,
+\end{equation}
+the rates associated with Eq.~\eqref{eq:quotient-representative} are a
+quadratic prefactor times $\cA$.  Rotational covariance separates the
+invariant span of $\cA$ and $|X|^2\cA$ from a real angular-two doublet.
+The complete invariant Poisson sector contains 13 nonconstant monomials and
+the complex angular-two sector contains 11.  Appendix~\ref{app:closure} lists
+these sectors and their stationary means.
+
+\section{Exact quotient matrix and positivity certificate}
+\label{sec:certificate}
+
+Decompose the quadratic prefactor as
+\begin{equation}
+ p=c_0+s|X|^2+d(X_1^2-X_2^2)+eX_1X_2,
+\label{eq:p-decomposition}
+\end{equation}
+where
+\begin{equation}
+ s=\frac{c_1+c_3}{2},\qquad
+ d=\frac{c_1-c_3}{2},\qquad e=c_2.
+\end{equation}
+The exact driven-minus-equilibrium calculation gives
+\begin{equation}
+ \Delta D=A c_0^2+2B c_0s+C s^2+Gd^2+\frac{G}{4}e^2.
+\label{eq:block-form}
+\end{equation}
+Define
+\begin{subequations}
+\label{eq:isotropic-components}
+\begin{align}
+ A&=\frac{2u(5a+4u+1)}{a^3},\\
+ B&=\frac{16u(4a+4u+1)}{a^4},\\
+ H&=16a^2+32au+24a+16u^2+40u+9,\\
+ \Delta_0&=\frac{32u^2P_0(a,u)}{a^8(4a+3)H},\\
+ C&=\frac{\Delta_0+B^2}{A}.
+\end{align}
+\end{subequations}
+The angular coefficient is
+\begin{equation}
+ G=\frac{16uP_2(a,u)}{
+ a^3(4a+3)(4a+3u+3)((a+u)^2+u)K},
+\label{eq:angular-coefficient}
+\end{equation}
+with
+\begin{equation}
+ K=(16a^2+32au+12a+16u^2-13u)^2
+   +4u(20a+20u+3)^2.
+\label{eq:K}
+\end{equation}
+The integer polynomials $P_0$ and $P_2$ are displayed in
+Appendix~\ref{app:polynomials}.  All 20 coefficients of $P_0$ and all 33
+coefficients of $P_2$ are strictly positive.
+
+In the ordered quotient basis
+$(1,X_1^2,X_1X_2,X_2^2)RX$, Eq.~\eqref{eq:block-form} is the matrix
+\begin{equation}
+ Q_\Delta=
+ \begin{pmatrix}
+ A&B/2&0&B/2\\
+ B/2&(C+G)/4&0&(C-G)/4\\
+ 0&0&G/4&0\\
+ B/2&(C-G)/4&0&(C+G)/4
+ \end{pmatrix}.
+\label{eq:quotient-matrix}
+\end{equation}
+Every factor in the denominators of Eqs.~\eqref{eq:isotropic-components} and
+\eqref{eq:angular-coefficient} is positive when $a,u>0$.  In particular,
+$K>0$ follows immediately from Eq.~\eqref{eq:K}.  Positive polynomial
+coefficients imply $P_0,P_2>0$.  Consequently
+\begin{equation}
+ A>0,\qquad
+ \det\begin{pmatrix}A&B\\B&C\end{pmatrix}=\Delta_0>0,
+ \qquad G>0.
+\label{eq:sylvester}
+\end{equation}
+Sylvester's criterion makes the isotropic block positive definite, while the
+angular-two doublet is strictly positive.  Hence $Q_\Delta$ is positive
+definite on the four-dimensional quotient for every $a,u>0$.  The scaling
+in Eq.~\eqref{eq:physical-scaling} transfers this statement to every physical
+tuple in Eq.~\eqref{eq:domain}.  Gradient classes have zero long-time rate in
+both processes, and every nongradient class has $\Delta D>0$.  This proves
+Theorem~\ref{thm:main}, including its equality statement.
+
+\begin{figure*}[t]
+ \centering
+ \includegraphics[width=0.92\textwidth]{figures/quotient_spectrum.pdf}
+ \caption{Numerical visualization of the exact quotient formula on an
+ $81\times81$ logarithmic grid with $10^{-2}\le a,u\le10^2$.
+ Left: smallest eigenvalue of the thermally normalized
+ $\widetilde Q_\Delta$.  Right: its spectral condition number.  Every sampled
+ eigenvalue is positive, but the grid is illustrative only; positivity on the
+ continuous domain follows from Eqs.~\eqref{eq:isotropic-components}--
+ \eqref{eq:sylvester}.  The plotted values and regeneration script accompany
+ the manuscript.  OpenAI Codex assisted in writing and checking the
+ deterministic plotting code; the plotted data were generated from the exact
+ formulas, as detailed in Sec.~\ref{sec:reproducibility}.}
+ \label{fig:spectrum}
+\end{figure*}
+
+\section{Benchmark and independent checks}
+\label{sec:checks}
+
+Before applying the closure to cubic currents, we reproduced the published
+zero-field torque-work benchmark.  With
+$W(t)=\kappa\int_0^t(Rx_s)\cdot v_s\,\dd s$, the source convention gives
+\begin{subequations}
+\label{eq:work-benchmark}
+\begin{align}
+ \langle\dot W\rangle&=\frac{2\kappa^2T}{\gamma k_*},\\
+ D_W&=\frac{2\kappa^2T^2}{\gamma k_*^3}
+ \left(k^2+\kappa^2+\frac{3mk\kappa^2}{\gamma^2}\right),
+\end{align}
+\end{subequations}
+in agreement with the zero-magnetic-field specialization of
+Ref.~\cite{ChunFischerSeifert2019}.  That reference uses the opposite torque
+orientation, $\kappa_{\rm CFS}=-\kappa$; Eq.~\eqref{eq:work-benchmark} is even
+in torque.  Independent real-coordinate Poisson and complex-coordinate
+two-time covariance reconstructions reproduce both formulas.
+
+The global proof is symbolic.  Four Poisson identities---two invariant and two
+angular, driven and equilibrium---have zero polynomial residual.  The
+positive-coefficient audit gives minimum integer coefficients $27$ for
+$P_0$ and $1620$ for $P_2$.  Complete real polynomial solves with 69
+nonconstant unknowns agree exactly with Eq.~\eqref{eq:quotient-matrix} at the
+rational points
+\begin{equation}
+ (a,b)=(1,1),\quad(2,1/2),\quad(3/2,-2/3),
+\end{equation}
+including all constant Poisson equations.  These hold-outs test the reduction
+and torque sign but do not replace the continuous-domain certificate.
+
+As a separate numerical representation, we form the full two-time covariance
+of $(X,V)$, evaluate degree-eight Gaussian moments by Wick contractions, and
+integrate symmetrized correlations on $[0,\infty)$.  Across the three physical
+cases listed in the reproducibility data, the largest Lyapunov residual is
+$5.77\times10^{-14}$, the largest reported quadrature error is
+$5.99\times10^{-9}$, and the largest Poisson--Wick relative matrix
+discrepancy is $1.053\times10^{-12}$.  These numerical values are auxiliary
+error controls; the theorem itself rests on exact identities.
+
+Figure~\ref{fig:spectrum} illustrates the thermally normalized quotient
+spectrum.  To put linear and cubic coefficients on comparable stationary
+scales, write $c=(\widetilde c_0,a\widetilde c_1,
+a\widetilde c_2,a\widetilde c_3)$, so
+$\widetilde Q_\Delta=\operatorname{diag}(1,a,a,a)Q_\Delta
+\operatorname{diag}(1,a,a,a)$.  The wide variation of its condition number
+also explains why a floating-point scan alone would be a poor global sign
+test.
+
+\section{Physical interpretation and limitations}
+\label{sec:discussion}
+
+The equilibrium reference in Eq.~\eqref{eq:equilibrium} is matched only at the
+level of the position marginal.  The driven phase-space law retains a
+rotational conditional velocity, Eq.~\eqref{eq:stationary-driven}.  Theorem
+\ref{thm:main} states that, despite this distinction, eliminating the rotation
+cannot increase the long-time noise of any degree-one/three position current.
+The result includes anisotropic cubic readouts: none can undercut the matched
+equilibrium calibration.  Equality has a concrete kinematic meaning, namely a
+nonextensive endpoint difference $\phi(x_t)-\phi(x_0)$, rather than a hidden
+finite-current saturation.
+
+The conclusion is deliberately local in model and observable space.  It uses
+linear Gaussian dynamics, zero magnetic field, stationary initialization,
+strict stability, and the second cumulant at long times.  It does not establish
+the general-observable conjecture of Ref.~\cite{Dechant2022}.  It also does not
+apply at the stability boundary, to nonlinear forces, to velocity-dependent
+weights, to finite-time variances, to higher cumulants, or to full
+large-deviation domains.  In particular, the integrability corrections in
+Ref.~\cite{duBuissonTouchette2025Erratum} caution against promoting a local
+Poisson calculation to an unproved statement about the complete scaled
+cumulant generating function.
+
+The quotient construction and rotational-sector decomposition are reusable:
+they turn a broad coefficient search into exact low-dimensional sign tests.
+For weights of higher odd degree the OU polynomial closure remains finite, but
+new angular sectors and larger positivity problems appear.  Whether the
+matched-equilibrium ordering persists there is left open.
+
+\section{Computational reproducibility and AI assistance}
+\label{sec:reproducibility}
+
+The accompanying package contains the exact symbolic Poisson calculation,
+complete rational hold-outs, the independent covariance/Wick implementation,
+the benchmark reconstruction, figure-generation code, environment versions,
+and reference outputs.  All calculations are deterministic.  The exact
+residual tests and positive-domain formulas, rather than numerical precision,
+are the basis of the result.
+
+OpenAI Codex using the model identifier \texttt{gpt-5.6-sol} provided
+substantive assistance with scientific reasoning, symbolic and numerical code,
+literature synthesis, verification design, figure generation, and manuscript
+drafting.  It was directed to retain the full parameter domain, matched
+stiffness, stationary boundary conditions, units, and factor-of-two convention.
+Its mathematical output was checked by exact zero-residual identities,
+positive-coefficient certificates, complete rational hold-outs, and a
+separately implemented covariance/Wick calculation as described above.  These
+machine checks do not replace author judgment or accountability; the named
+author must complete a final scientific, textual, rights, and policy review
+before any submission.
+
+\section*{Data availability}
+
+No experimental data were used.  All code and generated numerical data needed
+to reproduce the formulas, checks, and figure are included with this manuscript
+in the reproducibility package described in Sec.~\ref{sec:reproducibility}.
+Downloaded third-party articles are not part of that package.
+
+\appendix
+
+\section{Completeness of the gradient quotient}
+\label{app:quotient}
+
+For a homogeneous vector field of degree $d$ in two variables, the vector
+space has dimension $2(d+1)$.  Gradients of $\cH_{d+1}$ form a subspace of
+dimension $d+2$: a homogeneous polynomial of positive degree cannot have
+identically zero gradient.  The scalar curls have degree $d-1$ and span a
+space of dimension $d$.  Since
+\begin{equation}
+ 2(d+1)-(d+2)=d,
+\end{equation}
+the curl map induces an isomorphism from vector fields modulo gradients to
+$\cH_{d-1}$.  Equation~\eqref{eq:curl} supplies an explicit inverse on the
+complement $pRx$.  Applying this argument for $d=1$ and $d=3$ gives the
+four representatives in Eq.~\eqref{eq:quotient-representative} and proves that
+no extensive position-current direction is lost.
+
+For completeness, if $g=\grad\phi$ and $f$ is any polynomial current rate,
+stationarity gives
+\begin{equation}
+ \Var[\phi(x_t)-\phi(x_0)]=O(1),\qquad \Var J_f(t)=O(t).
+\end{equation}
+Therefore
+\begin{equation}
+ \frac{|\Cov(J_f(t),\phi(x_t)-\phi(x_0))|}{t}
+ \le \frac{O(\sqrt t)}{t}\longrightarrow0.
+\end{equation}
+This proves invariance of the entire asymptotic bilinear form, not merely its
+diagonal values.
+
+\section{Complete symmetry-reduced polynomial sectors}
+\label{app:closure}
+
+Set
+\begin{equation}
+ \begin{aligned}
+ X_0&=|X|^2,& V_0&=|V|^2,\\
+ C_0&=X\cdot V,& \cA&=X_1V_2-X_2V_1.
+ \end{aligned}
+\end{equation}
+A linearly independent basis of all nonconstant rotational invariants through
+total degree four is
+\begin{multline}
+ X_0,V_0,C_0,\cA, X_0^2,V_0^2,X_0V_0,X_0C_0,X_0\cA,\\
+ V_0C_0,V_0\cA,C_0^2,C_0\cA.
+\end{multline}
+The identity $\cA^2=X_0V_0-C_0^2$ removes the only redundant quartic.  Both
+generators in Eq.~\eqref{eq:generators} preserve this 13-dimensional sector.
+For the targets $(\cA,X_0\cA)$, the driven stationary means are
+\begin{equation}
+ \langle\cA\rangle_b=\frac{2b}{a},\qquad
+ \langle X_0\cA\rangle_b=\frac{8b}{a^2},
+\end{equation}
+and both equilibrium means vanish.
+
+For the angular-two sector introduce independent formal complex variables
+$z=X_1+iX_2$, $q=V_1+iV_2$ and their conjugates.  The degree-two basis is
+$(z^2,zq,q^2)$.  The eight degree-four monomials are
+\begin{equation}
+ z^j q^{3-j}\bar z,\quad z^j q^{3-j}\bar q,\qquad j=0,1,2,3.
+\end{equation}
+They are precisely the degree-two and degree-four monomials of rotational
+weight $+2$.  The target $z^2\cA$ lies in their span after application of
+the generator, and its stationary mean is zero.  Direct substitution of each
+solved polynomial $h$ in Eq.~\eqref{eq:poisson} gives an identically zero
+residual.  Gaussian moments are evaluated recursively by pairings from the
+covariances in Eq.~\eqref{eq:cov-blocks}.
+
+\onecolumngrid
+\section{Positive polynomials}
+\label{app:polynomials}
+
+The isotropic determinant in Eq.~\eqref{eq:isotropic-components} contains
+\begin{align}
+P_0(a,u)={}&448a^5+2944a^4u+1700a^4+5568a^3u^2+8220a^3u+2683a^3\notag\\
+&+4096a^2u^3+12480a^2u^2+8432a^2u+1872a^2\notag\\
+&+1024au^4+6144au^3+8256au^2+3424au+432a\notag\\
+&+768u^4+2304u^3+1440u^2+336u+27.
+\label{eq:P0}
+\end{align}
+Its 20 integer coefficients are positive.  The angular coefficient in
+Eq.~\eqref{eq:angular-coefficient} contains
+\begin{align}
+P_2(a,u)={}&10496a^7+60928a^6u+41024a^6
++147200a^5u^2+235488a^5u+70512a^5\notag\\
+&+189440a^4u^3+529920a^4u^2+359932a^4u+65772a^4\notag\\
+&+136960a^3u^4+591680a^3u^3+702445a^3u^2
++278523a^3u+28404a^3\notag\\
+&+52736a^2u^5+335040a^2u^4+633102a^2u^3+458033a^2u^2
++105507a^2u+3564a^2\notag\\
+&+8448au^6+83424au^5+251037au^4+299256au^3
++142527au^2+19332au\notag\\
+&+4608u^6+30960u^5+61749u^4+50670u^3+16893u^2+1620u.
+\label{eq:P2}
+\end{align}
+All 33 coefficients are positive.  Thus $P_0(a,u)>0$ and $P_2(a,u)>0$
+for the entire open domain $a,u>0$, with no numerical lower-bound argument.
+
+\twocolumngrid
+\bibliography{manuscript/references}
+
+\end{document}

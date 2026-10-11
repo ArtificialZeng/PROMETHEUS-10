@@ -1,0 +1,52 @@
+[
+  {
+    "id": "phys-00002-p01",
+    "pdf_sha256": "13aaa1cf0560c6fb4868583a54fa5ba81be546dcfba8ea78c417318462af8805",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00002-p02",
+    "pdf_sha256": "a0aa1ec3bf7d9e3b91b45b5382c07b50106b7453bf72a85ec321ab1f19b0e3b9",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00002-p06",
+    "pdf_sha256": "34662e50b4c4e28938d2b87d126717c428a30e699185e2ed89fdfe6c9687996e",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00002-p15",
+    "pdf_sha256": "4e86ede185ed27cb3f6688f42a6550557a0b2bb7ae42a5c8be11c8c7696f1668",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00003-p01",
+    "pdf_sha256": "5a6249b06f7d2a160e19bc70e375294f9b921dc80cddeb6d1c6403dc14083959",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00004-p01",
+    "pdf_sha256": "11855b518427960c0e9ec4cad44aec4111a91c68408e399b3093fc1249783c55",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00004-p02",
+    "pdf_sha256": "b8791a5a34fab28ee4faf9ed0d8d909e29d1715482c35873ab5d09d1e4114e70",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00005-p01",
+    "pdf_sha256": "706a95dde37a5c0339585ac56fa1b44726d492ab66cb3d5f8f00633269eee585",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00006-p01",
+    "pdf_sha256": "77e48633ead86d5cf992b51376dcbe8bb7fa804816fece156ad3ea7c9ead9693",
+    "historical_bundle": "passed"
+  },
+  {
+    "id": "phys-00007-p01",
+    "pdf_sha256": "b43ccca3965dcb299330a39d83fdee508cb080f34d22145d75e636b5b99c4c85",
+    "historical_bundle": "failed: evidence/manuscript binding; included as archived draft"
+  }
+]

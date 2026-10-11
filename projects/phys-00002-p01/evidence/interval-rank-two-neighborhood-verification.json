@@ -1,0 +1,163 @@
+{
+  "job_id": "phys-00002-p01-research-147b1435c704",
+  "method": "Independent complex matrix-unit Liouvillian reconstruction, finite-difference chart Hessian, corrected fixed-a holdouts, and record-level 256/320-bit Arb checks",
+  "comparisons": {
+    "max_abs_numerical_hessian_minus_identity": 6.597590758605776e-06,
+    "numerical_hessian_symmetry_residual": 0.0,
+    "numerical_hessian_eigenvalues": [
+      0.9999998712079964,
+      1.0000000382626353,
+      1.000000323351743,
+      1.0000003593369808,
+      1.0000003593369813,
+      1.000000433798824,
+      1.0000005139415222,
+      1.000000561712208,
+      1.000000561712208,
+      1.0000009117622384,
+      1.0000066188557983
+    ],
+    "max_abs_whitening_256_minus_320": 0.0,
+    "max_abs_z_dagger_w": 8.55367149641366e-22,
+    "root_a_minus_half": -1.1102230246251565e-16,
+    "root_b": 0.02261621659234725,
+    "trace_preservation_residual": 5.551115123125783e-17,
+    "probability_column_residual": 0.0,
+    "fixed_a_holdouts": [
+      {
+        "index": 0,
+        "a_minus_half": 3.3306690738754696e-16,
+        "b_minus_root": 8.000367035521094e-10,
+        "z_dagger_w_abs": 4.235164736271502e-22,
+        "correction": -9.008280843625923e-10
+      },
+      {
+        "index": 1,
+        "a_minus_half": 0.0,
+        "b_minus_root": 7.996417972222503e-10,
+        "z_dagger_w_abs": 2.117582368135751e-22,
+        "correction": -4.359289604897763e-10
+      },
+      {
+        "index": 2,
+        "a_minus_half": -1.1102230246251565e-16,
+        "b_minus_root": 8.000211604297647e-10,
+        "z_dagger_w_abs": 1.0587911840678754e-22,
+        "correction": -1.439842253306513e-10
+      },
+      {
+        "index": 3,
+        "a_minus_half": 0.0,
+        "b_minus_root": 7.999498841115837e-10,
+        "z_dagger_w_abs": 2.117582368135751e-22,
+        "correction": 7.4032730849869345e-09
+      },
+      {
+        "index": 4,
+        "a_minus_half": -1.1102230246251565e-16,
+        "b_minus_root": 8.000680118414039e-10,
+        "z_dagger_w_abs": 2.117582368135751e-22,
+        "correction": -1.684439612473958e-09
+      },
+      {
+        "index": 5,
+        "a_minus_half": -3.3306690738754696e-16,
+        "b_minus_root": 7.99966981546163e-10,
+        "z_dagger_w_abs": 6.779571493085238e-22,
+        "correction": -6.63687001261946e-10
+      },
+      {
+        "index": 6,
+        "a_minus_half": -2.220446049250313e-16,
+        "b_minus_root": 7.999894080512604e-10,
+        "z_dagger_w_abs": 8.470329472543003e-22,
+        "correction": -4.1253058158256797e-11
+      },
+      {
+        "index": 7,
+        "a_minus_half": -1.1102230246251565e-16,
+        "b_minus_root": 7.998314233148562e-10,
+        "z_dagger_w_abs": 0.0,
+        "correction": 2.069149084631193e-09
+      },
+      {
+        "index": 8,
+        "a_minus_half": 0.0,
+        "b_minus_root": 8.003198104233888e-10,
+        "z_dagger_w_abs": 0.0,
+        "correction": 8.164994927038177e-10
+      },
+      {
+        "index": 9,
+        "a_minus_half": 2.220446049250313e-16,
+        "b_minus_root": 7.999685358583974e-10,
+        "z_dagger_w_abs": 4.735058123106524e-22,
+        "correction": 7.243318331897687e-09
+      },
+      {
+        "index": 10,
+        "a_minus_half": 0.0,
+        "b_minus_root": 8.000112794448455e-10,
+        "z_dagger_w_abs": 0.0,
+        "correction": -2.16373547491786e-09
+      },
+      {
+        "index": 11,
+        "a_minus_half": 0.0,
+        "b_minus_root": 8.000813345176994e-10,
+        "z_dagger_w_abs": 8.55367149641366e-22,
+        "correction": 4.394635825692013e-09
+      },
+      {
+        "index": 12,
+        "a_minus_half": 5.551115123125783e-16,
+        "b_minus_root": 8.000407003549981e-10,
+        "z_dagger_w_abs": 0.0,
+        "correction": -1.8800545749487645e-10
+      },
+      {
+        "index": 13,
+        "a_minus_half": -1.1102230246251565e-16,
+        "b_minus_root": 8.002335460943755e-10,
+        "z_dagger_w_abs": 1.0587911840678754e-22,
+        "correction": -2.0227899421645095e-09
+      },
+      {
+        "index": 14,
+        "a_minus_half": 0.0,
+        "b_minus_root": 8.001115325839692e-10,
+        "z_dagger_w_abs": 0.0,
+        "correction": -7.617986621483531e-11
+      },
+      {
+        "index": 15,
+        "a_minus_half": 1.1102230246251565e-16,
+        "b_minus_root": 7.998254281105233e-10,
+        "z_dagger_w_abs": 1.852884572118782e-22,
+        "correction": -2.611724496717042e-10
+      }
+    ]
+  },
+  "conditions": {
+    "source_immutable": true,
+    "primary_status_true": true,
+    "replay_status_true": true,
+    "primary_uniform_margins_positive": true,
+    "replay_uniform_margins_positive": true,
+    "same_selected_radius": true,
+    "positive_taylor_radii": true,
+    "taylor_radii_below_uniform_radius": true,
+    "whitening_precision_replay_stable": true,
+    "matrix_unit_hessian_near_whitened_identity": true,
+    "matrix_unit_hessian_positive": true,
+    "chart_orthogonality_numerically_reproduced": true,
+    "fixed_a_holdouts_corrected": true,
+    "fixed_a_holdouts_all_above_root": true,
+    "trace_preservation_reconstructed": true,
+    "probability_columns_normalized": true
+  },
+  "verification_passed": true,
+  "scientific_scope": "finite-radius fixed-a local optimality in the explicit nearby rank-at-most-two Kossakowski chart",
+  "limitations": "Finite-difference and holdout tests are independent diagnostics, not the interval proof. Neither verifier nor primary certificate addresses rank-three directions, distant/unbounded generators, global optimality, or the Q2 boundary.",
+  "source_sha256": "7bfa09317b0b519a4be6488e9e980431f7cdd49e11fe6adf216f9b9d32dccfc8"
+}

@@ -1,0 +1,209 @@
+\documentclass[aps,pra,reprint,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+
+\begin{document}
+
+\title{Comment on ``Entropic uncertainty principle for mixed states'':\
+An exact qutrit counterexample to the extended-MUB conjecture}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+
+\date{\today}
+
+\begin{abstract}
+Rotundo and Schwonnek conjectured that a condition involving only the second
+singular value of a doubly stochastic measurement-overlap matrix makes the
+uniform vector a global maximizer of a related induced norm.  We give an exact
+counterexample within the physically realizable qutrit subset.  Two complete
+rank-one projective measurements are related by a rational real orthogonal
+matrix, so their overlap is orthostochastic and hence unistochastic.  At
+$\lambda=3/4$ and $\mu=1/3$, the proposed singular-value condition holds with a
+strict exact margin, but the positive vector $(6,10,5)^{\mathsf T}$ produces a
+norm ratio strictly larger than the mutually unbiased-basis value.  The two
+strict inequalities reduce to a quadratic-radical comparison and a positive
+integer certificate.  Thus local stability at the uniform vector does not
+imply the conjectured global formula, even for two legal qutrit measurements.
+The proved induced-norm uncertainty relation itself is unaffected.
+\end{abstract}
+
+\maketitle
+
+\section{Context and claim}
+
+For two complete rank-one projective measurements $X$ and $Y$ in dimension
+$d$, let
+\begin{equation}
+ C_{ij}=\operatorname{Tr}(X_iY_j)=|U_{ij}|^2,
+ \qquad U\in U(d),
+ \label{eq:overlap}
+\end{equation}
+where the columns of $U$ express the $Y$ basis in the $X$ basis.  Rotundo and
+Schwonnek derived, at entropy weight $\alpha=1$, the uncertainty relation
+\begin{equation}
+ \lambda H_X(\rho)+\mu H_Y(\rho)
+ \geq S(\rho)-\log\|C\|_{r\to s},
+ \label{eq:proved-bound}
+\end{equation}
+where $r=1/\mu$ and $s=1/(1-\lambda)$, and proposed an analytic formula for
+the norm in an ``extended MUB regime''
+\cite{RotundoSchwonnek2024}.  In the nontrivial domain
+$0<\lambda,\mu<1$ and $\lambda+\mu>1$, their conjecture states that
+\begin{equation}
+ \frac{(1-\mu)(1-\lambda)}{\mu\lambda}\geq \sigma_2(C)^2
+ \quad\Longrightarrow\quad
+ \|C\|_{r\to s}=d^{\,1-\lambda-\mu}.
+ \label{eq:conjecture}
+\end{equation}
+Here $\sigma_2(C)$ is the second singular value.  Because $C$ is entrywise
+nonnegative, its induced norm may be written as
+\begin{equation}
+ \|C\|_{r\to s}
+ =\max_{x\in\mathbb R_+^d\setminus\{0\}}
+ \frac{\|Cx\|_s}{\|x\|_r}.
+ \label{eq:norm}
+\end{equation}
+The uniform vector always gives the right-hand side of
+Eq.~\eqref{eq:conjecture} as a lower bound.  The supplemental analysis of
+Ref.~\cite{RotundoSchwonnek2024} shows that the singular-value condition makes
+this vector a local maximum; the missing step is global optimality.
+
+We disprove Eq.~\eqref{eq:conjecture} already for $d=3$, while retaining the
+physical restriction $C_{ij}=|U_{ij}|^2$.  No relaxation to an arbitrary
+doubly stochastic matrix is used.
+
+\section{Exact physical counterexample}
+
+Take the real matrix
+\begin{equation}
+ U=\begin{pmatrix}
+  1/3&-14/15&2/15\\
+  -2/3&-1/3&-2/3\\
+  2/3&2/15&-11/15
+ \end{pmatrix}.
+ \label{eq:U}
+\end{equation}
+Direct rational multiplication gives $U^{\mathsf T}U=I_3$ and
+$\det U=1$.  Hence $U$ is an exact unitary matrix on $\mathbb C^3$, and its
+columns define a complete rank-one projective measurement.  Equation
+\eqref{eq:overlap} gives
+\begin{equation}
+ C=|U|^2=\begin{pmatrix}
+  1/9&196/225&4/225\\
+  4/9&1/9&4/9\\
+  4/9&4/225&121/225
+ \end{pmatrix}.
+ \label{eq:C}
+\end{equation}
+Every row and column sums to one.  More importantly, Eq.~\eqref{eq:U}
+certifies that $C$ is orthostochastic, and therefore unistochastic.
+
+Choose
+\begin{equation}
+ \lambda=\frac34,\qquad \mu=\frac13,
+ \qquad r=3,\qquad s=4.
+ \label{eq:parameters}
+\end{equation}
+The parameter conditions are satisfied because
+$\lambda+\mu=13/12>1$.  To check spectral admissibility exactly, the
+characteristic polynomial of $C^{\mathsf T}C$ factors as
+\begin{equation}
+ \det(tI-C^{\mathsf T}C)
+ =(t-1)\frac{50625t^2-33714t+49}{50625}.
+ \label{eq:charpoly}
+\end{equation}
+Its nontrivial eigenvalues are
+\begin{equation}
+ \eta_{\pm}=\frac{1873\pm64\sqrt{849}}{5625},
+ \qquad \sigma_2(C)^2=\eta_+.
+ \label{eq:eigenvalues}
+\end{equation}
+For Eq.~\eqref{eq:parameters}, the threshold in
+Eq.~\eqref{eq:conjecture} equals $2/3$, and
+\begin{equation}
+ \frac23-\sigma_2(C)^2
+ =\frac{1877-64\sqrt{849}}{5625}>0.
+ \label{eq:spectral-margin}
+\end{equation}
+The last inequality is exact: both terms being compared are positive and
+\begin{equation}
+ 1877^2-64^2\,849=45625>0.
+ \label{eq:spectral-certificate}
+\end{equation}
+Thus the proposed condition holds strictly, so the uniform vector is locally
+stable under the cited second-variation test.
+
+It is not a global maximizer.  Set
+$x=(6,10,5)^{\mathsf T}$, which lies in the interior of the positive cone.
+Then
+\begin{equation}
+ Cx=\left(\frac{142}{15},6,\frac{83}{15}\right)^{\mathsf T}.
+ \label{eq:witness-image}
+\end{equation}
+Define
+\begin{equation}
+ A=\sum_i(Cx)_i^4=\frac{519655217}{15^4},
+ \qquad B=\sum_i x_i^3=1341.
+ \label{eq:AB}
+\end{equation}
+For $R=\|Cx\|_4/\|x\|_3$, one has $R^{12}=A^3/B^4$.
+The conjectured MUB value is $3^{-1/12}$, whose twelfth power is $1/3$.
+Their strict ordering is certified entirely in integer arithmetic:
+\begin{align}
+ &3(519655217)^3-15^{12}(1341)^4\notag\\
+ &\hspace{2.0cm}=1409896381134395295169314>0.
+ \label{eq:integer-certificate}
+\end{align}
+Consequently,
+\begin{equation}
+ \|C\|_{3\to4}\geq R>3^{-1/12}
+ =3^{\,1-\lambda-\mu}.
+ \label{eq:disproof}
+\end{equation}
+One feasible vector is sufficient for this strict lower bound; determining
+the global value of $\|C\|_{3\to4}$ is unnecessary for the disproof.
+
+\section{Consequences and limitations}
+
+Equations~\eqref{eq:spectral-margin} and \eqref{eq:disproof} separate the
+local and global questions sharply: the uniform vector passes the strict
+singular-value stability test, yet another positive vector gives a larger
+objective value.  Thus $\sigma_2(C)$ alone cannot certify the MUB-form norm
+replacement, even for two complete rank-one qutrit measurements connected by
+an exact real unitary.
+
+This conclusion concerns only the conjectured evaluation of the induced
+norm.  It does not alter the proved bound in Eq.~\eqref{eq:proved-bound}, which
+remains valid with the actual norm.  Nor does the counterexample by itself
+exhibit a state that violates an entropic uncertainty inequality.  It shows
+instead that using the MUB value at this admissible point would require a
+stronger sufficient criterion or a separate norm computation.  The example
+also does not characterize the full parameter region in which the MUB formula
+may remain valid.
+
+\section*{Data and code availability}
+
+All quantities needed for the exact argument are displayed above.  A
+machine-readable certificate and a deterministic verification script using
+only Python's standard library accompany the manuscript.  The script checks
+orthogonality, stochasticity, spectral admissibility on the sum-zero
+subspace, and the positive integer norm certificate without floating-point
+arithmetic or network access.
+
+\begin{acknowledgments}
+OpenAI Codex with the gpt-5.6-sol model and Ultra reasoning setting was used
+substantively for literature triage, exact-arithmetic code generation,
+verification design, and manuscript drafting under prompts that fixed the
+physical domain and required independent exact checks.  The reported
+arithmetic was cross-checked by structurally different exact-rational
+implementations.  Human author review of the science, literature, authorship
+details, and wording remains pending; this local draft is not authorized for
+submission.
+\end{acknowledgments}
+
+\bibliography{references}
+
+\end{document}

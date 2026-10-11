@@ -1,0 +1,423 @@
+\documentclass[aps,pra,reprint,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage{amsmath,amssymb,bm,mathtools}
+\usepackage{graphicx}
+
+\newcommand{\id}{\mathbb I_2}
+\newcommand{\R}{\mathbb R}
+\newcommand{\bmnu}{\bm{\mu}}
+\newcommand{\bn}{\bm n}
+\newcommand{\bu}{\bm u}
+\newcommand{\bx}{\bm x}
+
+\begin{document}
+
+\title{Exact joint-measurability threshold for four coplanar qubit measurements}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190}
+
+\date{September 12, 2026}
+
+\begin{abstract}
+Four projective spin measurements on a qubit become jointly measurable after
+sufficient common depolarization.  For four distinct coplanar axes, a known
+construction gives a visibility threshold in terms of the successive angular
+gaps, but its optimality for unequal gaps has previously been supported only
+numerically.  We prove that the construction is optimal throughout the strict
+ordered semicircle domain.  The proof evaluates the unrestricted
+four-measurement Fourier criterion exactly.  The vector part of the known
+parent measurement supplies a feasible four-support primal point, while an
+explicit affine dual function has matching value.  Its only nontrivial
+feasibility conditions reduce to an elementary inequality for three ordered
+planar unit vectors.  Consequently, if
+$0=\alpha_1<\alpha_2<\alpha_3<\alpha_4<\pi$, the maximum common visibility is
+\(
+ [\sum_{j=2}^{4}\sin((\alpha_j-\alpha_{j-1})/2)
+ +\cos(\alpha_4/2)]^{-1}
+\).
+The result assumes unbiased binary qubit effects and an unrestricted parent
+POVM; it makes no claim for unequal visibilities, biased effects, or
+noncoplanar measurements.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Joint measurability asks whether the statistics of several measurements can
+be recovered as marginals of a single parent positive-operator-valued measure
+(POVM).  For noisy qubit measurements this question gives a precise
+operational measure of how much common white noise is needed before one
+simultaneous readout can simulate all measurement choices
+\cite{UolaEtAl2016,AndrejicKunjwal2020,GrinkoUola2025}.
+
+For coplanar unbiased binary qubit measurements of a common visibility,
+Andrejic and Kunjwal constructed a parent POVM whose admissible visibility is
+set by a polygonal norm sum \cite{AndrejicKunjwal2020}.  They conjectured that
+this sufficient condition is also necessary.  Grinko and Uola subsequently
+gave a necessary-and-sufficient Fourier characterization for any finite
+family of unbiased binary qubit measurements \cite{GrinkoUola2025}; however,
+using it still requires a nontrivial norm minimization.  Most recently, Porto
+\emph{et al.} found strong numerical evidence that the polygonal bound is
+tight for planar projective measurements \cite{PortoEtAl2026}.
+
+Here we settle the four-measurement specialization analytically.  We evaluate
+all eight norm channels and retain all four free triple-index Fourier vectors.
+The proof is a matching primal--dual certificate and therefore does not
+restrict a putative parent POVM to the support pattern of the known
+construction.  The result fixes the exact common depolarizing visibility for
+four arbitrary distinct coplanar qubit axes.  It does not address the
+arbitrary-number conjecture.
+
+\section{Model and exact statement}
+\label{sec:model}
+
+Let $\bm\sigma=(\sigma_x,\sigma_y,\sigma_z)$, with
+$\operatorname{tr}(\sigma_k\sigma_l)=2\delta_{kl}$.  Common rotations,
+independent outcome relabelings, and permutation of four distinct coplanar
+projective axes allow representatives
+\begin{equation}
+  \bn_j=(\cos\alpha_j,\sin\alpha_j,0),\qquad
+  0=\alpha_1<\alpha_2<\alpha_3<\alpha_4<\pi .
+  \label{eq:ordered-domain}
+\end{equation}
+For outcome $a\in\{-1,+1\}$ and common visibility $\eta\in[0,1]$, define
+\begin{equation}
+ E_{a|j}^{(\eta)}
+ =\frac12\bigl(\id+a\eta\,\bn_j\mathbin{\cdot}\bm\sigma\bigr).
+ \label{eq:noisy-effects}
+\end{equation}
+Thus $1-\eta$ is the depolarizing-noise fraction.  The four POVMs are jointly
+measurable when there are sixteen positive semidefinite effects
+$G_{\bm s}$, $\bm s\in\{-1,+1\}^4$, such that
+\begin{align}
+ \sum_{\bm s}G_{\bm s}&=\id,
+ \nonumber\\
+ \sum_{\bm s:s_j=a}G_{\bm s}&=E_{a|j}^{(\eta)}
+ \quad (j=1,\ldots,4;\ a=\pm1).
+ \label{eq:parent}
+\end{align}
+No rank, planarity, or support restriction is imposed on the parent; zero
+effects are allowed.
+
+Introduce
+\begin{equation}
+ D=\sum_{j=2}^{4}\sin\frac{\alpha_j-\alpha_{j-1}}2
+   +\cos\frac{\alpha_4}{2}.
+ \label{eq:D-trig}
+\end{equation}
+The main result is the following.
+
+\textbf{Theorem.} \emph{Under Eq.~\eqref{eq:ordered-domain}, the effects in
+Eq.~\eqref{eq:noisy-effects} admit an unrestricted parent POVM if and only if
+\begin{equation}
+ \eta D\leq 1.
+ \label{eq:threshold-criterion}
+\end{equation}
+Consequently their maximum common visibility is
+\begin{equation}
+ \eta_*(\alpha_2,\alpha_3,\alpha_4)=D^{-1}.
+ \label{eq:eta-star}
+\end{equation}}
+
+Figure~\ref{fig:geometry} shows the two pieces of planar geometry used below.
+The centrally symmetric polygon is useful for interpreting $D$, whereas the
+ordered arc of four auxiliary unit vectors controls dual feasibility.
+
+\begin{figure*}[t]
+ \centering
+ \includegraphics[width=0.84\textwidth]{manuscript/figures/geometry.pdf}
+ \caption{Geometry of the exact certificate for a representative strict
+ ordered configuration.  (a) The highlighted path from $\bn_1$ through
+ $\bn_4$ to $-\bn_1$ has length $2D$; central symmetry therefore gives
+ perimeter $4D$ for $\operatorname{conv}\{\pm\bn_j\}$.  (b) The four unit
+ directions $\bu_1,\ldots,\bu_4$ lie in angular order on an arc shorter than
+ $\pi$.  The displayed endpoints-minus-middle vector illustrates the lemma
+ that bounds every off-support dual value by the unit disk.  The figure is a
+ schematic, not numerical evidence.  It was produced with Matplotlib code
+ developed with assistance from OpenAI Codex and checked against the analytic
+ definitions.}
+ \label{fig:geometry}
+\end{figure*}
+
+\section{Fourier compatibility criterion}
+\label{sec:fourier}
+
+We use the necessary-and-sufficient criterion of Grinko and Uola
+\cite{GrinkoUola2025}.  On the half cube
+\begin{equation}
+ \mathcal D_4=\{(1,\mu_2,\mu_3,\mu_4):\mu_k\in\{-1,+1\}\},
+\end{equation}
+write
+\begin{equation}
+ \bm X=(\bx_{123},\bx_{124},\bx_{134},\bx_{234})\in(\R^3)^4
+\end{equation}
+and define
+\begin{align}
+ q(\bn_1,\ldots,\bn_4)
+  &=\min_{\bm X\in(\R^3)^4}
+    \sum_{\bmnu\in\mathcal D_4}\|\bm r(\bmnu)\|,
+ \label{eq:q-def}\\[-1ex]
+ \bm r(\bmnu)={}&\bn_1+\mu_2\bn_2+\mu_3\bn_3+\mu_4\bn_4
+ \nonumber\\
+ &+\mu_2\mu_3\bx_{123}+\mu_2\mu_4\bx_{124}\nonumber\\
+ &+\mu_3\mu_4\bx_{134}
+ +\mu_2\mu_3\mu_4\bx_{234}.
+ \label{eq:r-def}
+\end{align}
+All four vectors in the minimization are unrestricted elements of $\R^3$.
+For the common-visibility effects, joint measurability is equivalent to the
+same minimum with fixed vectors $\eta\bn_j$ being at most $8$.  Positive
+homogeneity of Eq.~\eqref{eq:q-def} gives
+\begin{equation}
+ q(\eta\bn_1,\ldots,\eta\bn_4)
+ =\eta q(\bn_1,\ldots,\bn_4)
+ \label{eq:homogeneity}
+\end{equation}
+for $\eta\geq0$.  It therefore remains to prove $q=8D$ at unit visibility.
+
+\section{Matching exact certificates}
+\label{sec:certificate}
+
+Define the positive half-chord lengths and corresponding unit directions
+\begin{align}
+ d_j&=\frac{\|\bn_j-\bn_{j+1}\|}{2},&
+ \bu_j&=\frac{\bn_j-\bn_{j+1}}{2d_j}
+ &&(j=1,2,3),
+ \label{eq:chord-defs}\\
+ c&=\frac{\|\bn_1+\bn_4\|}{2},&
+ \bu_4&=\frac{\bn_1+\bn_4}{2c}.
+ \label{eq:endpoint-defs}
+\end{align}
+Then $D=d_1+d_2+d_3+c$.
+
+\subsection{Primal certificate}
+
+Define a vector-valued function $R$ on $\mathcal D_4$ by the four nonzero
+values
+\begin{table}[b]
+ \caption{Support of the primal function $R$.}
+ \label{tab:primal}
+ \begin{ruledtabular}
+ \begin{tabular}{cc}
+ $(\mu_2,\mu_3,\mu_4)$ & $R(\bmnu)$ \\
+ \hline
+ $(-,-,-)$ & $8d_1\bu_1=4(\bn_1-\bn_2)$ \\
+ $(+,-,-)$ & $8d_2\bu_2=4(\bn_2-\bn_3)$ \\
+ $(+,+,-)$ & $8d_3\bu_3=4(\bn_3-\bn_4)$ \\
+ $(+,+,+)$ & $8c\bu_4=4(\bn_1+\bn_4)$
+ \end{tabular}
+ \end{ruledtabular}
+\end{table}
+and set $R=0$ at the other four vertices.  To see directly that this is a
+feasible point of Eq.~\eqref{eq:q-def}, denote the four displayed values by
+$A,B,C,F$ in their table order.  Their normalized Walsh sums are
+\begin{align}
+ \tfrac18(A+B+C+F)&=\bn_1,\nonumber\\
+ \tfrac18(-A+B+C+F)&=\bn_2,\nonumber\\
+ \tfrac18(-A-B+C+F)&=\bn_3,\nonumber\\
+ \tfrac18(-A-B-C+F)&=\bn_4.
+ \label{eq:low-walsh}
+\end{align}
+These are exactly the coefficients of the constant and the three singleton
+characters $1,\mu_2,\mu_3,\mu_4$.  The remaining Walsh characters are
+$\mu_2\mu_3$, $\mu_2\mu_4$, $\mu_3\mu_4$, and
+$\mu_2\mu_3\mu_4$; their four coefficients can therefore be taken as the
+four free vectors in Eq.~\eqref{eq:r-def}.  Thus $\bm r=R$ is feasible and
+\begin{equation}
+ q\leq\sum_{\bmnu}\|R(\bmnu)\|
+ =8(d_1+d_2+d_3+c)=8D.
+ \label{eq:primal-bound}
+\end{equation}
+This feasible point is the Walsh transform of the vector part of the known
+parent construction \cite{AndrejicKunjwal2020}; it is not a support
+restriction on the minimization.
+
+\subsection{Planar unit-vector lemma}
+
+Let $\bu(\theta)=(\cos\theta,\sin\theta,0)$.  If
+$a\leq b\leq c_0$ and $c_0-a\leq\pi$, set $p=b-a$ and $s=c_0-b$.
+An elementary expansion gives
+\begin{align}
+ 1-\|\bu(a)+\bu(c_0)-\bu(b)\|^2
+ &=8\cos\frac{p+s}{2}\sin\frac p2\sin\frac s2
+ \geq0.
+ \label{eq:unit-lemma}
+\end{align}
+Hence every endpoints-minus-middle combination of three unit vectors ordered
+on a closed semicircle has norm at most one.
+
+\subsection{Dual certificate}
+
+For every half-cube vertex define
+\begin{align}
+ \bm Y(\bmnu)={}&-\frac{\bu_1+\bu_4}{2}
+ +\frac{\mu_2}{2}(\bu_1-\bu_2)\nonumber\\
+ &+\frac{\mu_3}{2}(\bu_2-\bu_3)
+ +\frac{\mu_4}{2}(\bu_3-\bu_4).
+ \label{eq:dual}
+\end{align}
+Because $\bm Y$ contains only the constant and singleton characters,
+Boolean-character orthogonality gives
+\begin{equation}
+ \sum_{\bmnu\in\mathcal D_4}\chi_S(\bmnu)\bm Y(\bmnu)=0,
+ \quad S\in\{123,124,134,234\},
+ \label{eq:dual-orthogonality}
+\end{equation}
+where the four $\chi_S$ are the optimization characters appearing in
+Eq.~\eqref{eq:r-def}.
+
+The eight values of $\bm Y$ are listed in Table~\ref{tab:dual}.  At the four
+support vertices of $R$ they are $-\bu_1,-\bu_2,-\bu_3,-\bu_4$,
+respectively.  To control the other four, note that the polar angles of the
+auxiliary directions are
+\begin{align}
+ \beta_1&=\frac{\alpha_2}{2}-\frac\pi2,&
+ \beta_2&=\frac{\alpha_2+\alpha_3}{2}-\frac\pi2,\nonumber\\
+ \beta_3&=\frac{\alpha_3+\alpha_4}{2}-\frac\pi2,&
+ \beta_4&=\frac{\alpha_4}{2}.
+ \label{eq:beta}
+\end{align}
+They satisfy $\beta_1<\beta_2<\beta_3<\beta_4$ and
+\begin{equation}
+ \beta_4-\beta_1=\frac{\pi+\alpha_4-\alpha_2}{2}<\pi.
+ \label{eq:beta-span}
+\end{equation}
+Every off-support entry in Table~\ref{tab:dual} is therefore covered by
+Eq.~\eqref{eq:unit-lemma}.  The support entries have norm one, so
+\begin{equation}
+ \|\bm Y(\bmnu)\|\leq1\qquad(\bmnu\in\mathcal D_4).
+ \label{eq:dual-feasible}
+\end{equation}
+
+\begin{table}[t]
+ \caption{The dual function.  The first, fifth, seventh, and eighth rows are
+ the support vertices of $R$ in Table~\ref{tab:primal}.}
+ \label{tab:dual}
+ \begin{ruledtabular}
+ \begin{tabular}{cc}
+ $(\mu_2,\mu_3,\mu_4)$ & $\bm Y(\bmnu)$ \\
+ \hline
+ $(-,-,-)$ & $-\bu_1$ \\
+ $(-,-,+)$ & $-(\bu_1+\bu_4-\bu_3)$ \\
+ $(-,+,-)$ & $-(\bu_1+\bu_3-\bu_2)$ \\
+ $(-,+,+)$ & $-(\bu_1+\bu_4-\bu_2)$ \\
+ $(+,-,-)$ & $-\bu_2$ \\
+ $(+,-,+)$ & $-(\bu_2+\bu_4-\bu_3)$ \\
+ $(+,+,-)$ & $-\bu_3$ \\
+ $(+,+,+)$ & $-\bu_4$
+ \end{tabular}
+ \end{ruledtabular}
+\end{table}
+
+For arbitrary values of all four free vectors in Eq.~\eqref{eq:r-def},
+Cauchy--Schwarz, Eqs.~\eqref{eq:dual-orthogonality} and
+\eqref{eq:dual-feasible} imply
+\begin{align}
+ \sum_{\bmnu}\|\bm r(\bmnu)\|
+ &\geq-\sum_{\bmnu}\bm Y(\bmnu)\mathbin{\cdot}\bm r(\bmnu)\nonumber\\
+ &=-\sum_{\bmnu}\bm Y(\bmnu)\mathbin{\cdot}
+ (\bn_1+\mu_2\bn_2+\mu_3\bn_3+\mu_4\bn_4).
+ \label{eq:weak-duality}
+\end{align}
+The fixed low-order coefficients in Eq.~\eqref{eq:low-walsh} allow the last
+line to be evaluated with $R$.  At each nonzero vertex,
+$\bm Y=-\bu_j$ and $R$ is a positive multiple of $\bu_j$, giving
+\begin{equation}
+ -\sum_{\bmnu}\bm Y(\bmnu)\mathbin{\cdot}R(\bmnu)
+ =8d_1+8d_2+8d_3+8c=8D.
+ \label{eq:dual-value}
+\end{equation}
+Equations~\eqref{eq:primal-bound} and \eqref{eq:dual-value} prove the global,
+unrestricted equality
+\begin{equation}
+ \boxed{q(\bn_1,\bn_2,\bn_3,\bn_4)=8D}.
+ \label{eq:q-result}
+\end{equation}
+This conclusion uses only weak duality; no numerical strong-duality
+assumption is involved.  Combining Eqs.~\eqref{eq:homogeneity} and
+\eqref{eq:q-result} with the Fourier compatibility criterion proves
+Eq.~\eqref{eq:threshold-criterion}.
+
+\section{Physical range and checks}
+\label{sec:checks}
+
+The threshold lies in the physical visibility interval.  Indeed, $2D$ is
+the total length of the four vectors
+\begin{equation}
+ \bn_1-\bn_2,\quad \bn_2-\bn_3,\quad
+ \bn_3-\bn_4,\quad \bn_4+\bn_1,
+\end{equation}
+whose sum is $2\bn_1$.  The triangle inequality gives $D\geq1$, and equality
+would require collinearity incompatible with the strict ordering in
+Eq.~\eqref{eq:ordered-domain}.  Therefore $D>1$ and $0<\eta_*<1$.
+
+For the symmetric angles
+$(0,\pi/4,\pi/2,3\pi/4)$, Eq.~\eqref{eq:D-trig} gives
+$D=4\sin(\pi/8)$ and recovers the known exact threshold
+$[4\sin(\pi/8)]^{-1}$ \cite{UolaEtAl2016,AndrejicKunjwal2020}.
+The unequal-gap proof is exact and does not use a limiting expansion near
+this configuration.
+
+Computations were used only to attack the certificate, not to establish the
+theorem.  The accompanying verification program performs exact symbolic
+Walsh and trigonometric checks, solves the full four-vector eight-channel
+second-order-cone program, and separately optimizes sixteen unrestricted
+$2\times2$ Hermitian parent effects.  Across 128 seeded hold-out angle sets,
+the maximum observed $|q_{\mathrm{SOCP}}-8D|$ was
+$2.68\times10^{-9}$ and the largest reported solver primal--dual gap was
+$5.72\times10^{-10}$.  Across eight named direct-parent checks, the computed
+visibility agreed with $D^{-1}$ within $7.9\times10^{-9}$.  Residuals,
+tolerances, environment versions, and all sampled cases are recorded in the
+reproducibility package.
+
+\subsection{AI-assisted research and verification}
+
+OpenAI Codex, using GPT-6 Astra (Max reasoning) and GPT-5.6 Sol (Ultra
+reasoning) model configurations, was used substantively for literature
+organization, derivation discovery, code
+generation and debugging, symbolic and numerical checks, adversarial review,
+and manuscript drafting.  The generated results were cross-checked within a
+staged workflow by independent source reconstruction, exact Walsh
+enumeration, symbolic factorization, and separately implemented numerical
+optimizations.  These automated checks do not replace author judgment or
+accountability.  This local draft requires the named author's personal
+scientific review, correction where needed, confirmation of the disclosure,
+and approval before any submission.
+
+
+\section{Scope and conclusion}
+
+The exact formula applies to one qubit, four distinct coplanar projective
+axes represented in one open semicircle, binary unbiased effects, and one
+common depolarizing visibility.  The parent POVM is unrestricted in
+$\mathbb C^2$ and may contain zero effects.  Coincident or antipodal boundary
+points are outside the stated strict domain, although the formula has
+well-defined one-sided limits.  Unequal visibilities, biased effects,
+noncoplanar directions, more or fewer than four measurements,
+higher-dimensional or nonbinary measurements, sequential nondisturbance,
+and multicopy notions require separate analyses.
+
+Within this domain, the affine dual certificate supplies the missing
+necessity direction of the known parent construction.  Thus the polygonal
+noise bound is not merely sufficient: for four axes it is the exact common
+white-noise threshold for simulation by a single parent measurement.
+
+\section*{Data availability}
+
+No experimental data were used.  The source package accompanying this draft
+contains the verification code, frozen JSON output, plain-text log, pinned
+environment versions, and regeneration instructions.  The analytic proof is
+self-contained and does not depend on the numerical calculations.
+
+\begin{acknowledgments}
+OpenAI Codex also assisted substantively with manuscript organization and
+drafting.  The research assistance and automated checks are described above;
+the named author's personal review, correction, and approval remain pending.
+\end{acknowledgments}
+
+\bibliography{manuscript/references}
+
+\end{document}

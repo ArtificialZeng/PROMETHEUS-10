@@ -1,0 +1,316 @@
+{
+  "basis_convention_map": {
+    "matrix_units": "vec_F(rho)=(rho00,rho10,rho01,rho11)",
+    "bloch": "q=(r_x,r_y,r_z,1), rho=(I+r.sigma)/2",
+    "S_where_vec_rho_equals_Sq": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.5,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          -0.5
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -0.5,
+          0.0
+        ],
+        [
+          0.5,
+          0.0
+        ]
+      ]
+    ],
+    "generator_map": "G_aug=S^{-1} L_matrix-unit S",
+    "observable_map": "a=(1+Mzz+vz)/2; b=(1+Mzz-vz)/2",
+    "author_code_map": "Julia arrays are column-major; E[1,1] and E[4,4] are survival probabilities for E00 and E11. Its reshuffle maps J_phi=gamma P_o tensor conj(P_i) to Phi(rho)=A rho A^dagger with A=sqrt(gamma)|psi_o><psi_i|."
+  },
+  "row_by_row_generator_comparison": [
+    {
+      "row": 0,
+      "entries": [
+        {
+          "column": 0,
+          "from_matrix_units": [
+            -0.35000000000000003,
+            0.0
+          ],
+          "from_bloch": [
+            -0.35,
+            0.0
+          ],
+          "abs_residual": 5.551115123125783e-17
+        },
+        {
+          "column": 1,
+          "from_matrix_units": [
+            0.0,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 2,
+          "from_matrix_units": [
+            0.0,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 3,
+          "from_matrix_units": [
+            0.0,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 0.0
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "entries": [
+        {
+          "column": 0,
+          "from_matrix_units": [
+            0.0,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 1,
+          "from_matrix_units": [
+            -0.22606601618300756,
+            0.0
+          ],
+          "from_bloch": [
+            -0.22606601618300756,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 2,
+          "from_matrix_units": [
+            -2.0567193239358117,
+            0.0
+          ],
+          "from_bloch": [
+            -2.056719323935812,
+            0.0
+          ],
+          "abs_residual": 4.440892098500626e-16
+        },
+        {
+          "column": 3,
+          "from_matrix_units": [
+            -0.18195767958096076,
+            0.0
+          ],
+          "from_bloch": [
+            -0.18195767958096087,
+            0.0
+          ],
+          "abs_residual": 1.1102230246251565e-16
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "entries": [
+        {
+          "column": 0,
+          "from_matrix_units": [
+            0.0,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 1,
+          "from_matrix_units": [
+            2.293131437128715,
+            0.0
+          ],
+          "from_bloch": [
+            2.293131437128715,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 2,
+          "from_matrix_units": [
+            -0.4841538166224435,
+            0.0
+          ],
+          "from_bloch": [
+            -0.4841538166224435,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 3,
+          "from_matrix_units": [
+            0.4680227406925096,
+            0.0
+          ],
+          "from_bloch": [
+            0.4680227406925096,
+            0.0
+          ],
+          "abs_residual": 0.0
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "entries": [
+        {
+          "column": 0,
+          "from_matrix_units": [
+            0.0,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 1,
+          "from_matrix_units": [
+            0.0,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 0.0
+        },
+        {
+          "column": 2,
+          "from_matrix_units": [
+            -5.204170427930421e-18,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 5.204170427930421e-18
+        },
+        {
+          "column": 3,
+          "from_matrix_units": [
+            -5.204170427930421e-18,
+            0.0
+          ],
+          "from_bloch": [
+            0.0,
+            0.0
+          ],
+          "abs_residual": 5.204170427930421e-18
+        }
+      ]
+    }
+  ],
+  "generator_max_abs_residual": 4.440892098500626e-16,
+  "generator_last_row_max_abs": 5.204170427930421e-18,
+  "transition_a_abs_residual": 1.1102230246251565e-16,
+  "transition_b_abs_residual": 4.440892098500626e-16,
+  "transition_max_abs_residual": 4.440892098500626e-16,
+  "finite_channel_checks": {
+    "choi_eigenvalues": [
+      0.002273453579452066,
+      0.06422445655846454,
+      0.3237001355947043,
+      1.609801954267379
+    ],
+    "choi_min_eigenvalue": 0.002273453579452066,
+    "choi_hermiticity_max_abs": 2.220446049250313e-16,
+    "probability_min": 0.3096918330121442,
+    "probability_max": 0.6903081669878558
+  },
+  "threshold": 1e-10,
+  "status": "pass"
+}

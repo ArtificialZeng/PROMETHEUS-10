@@ -1,0 +1,536 @@
+{
+  "date": "2026-10-12",
+  "python": "3.12.14",
+  "scope": "Fresh selected manuscript-check replays and clean PDF compilation; not a new scientific or novelty review.",
+  "commands": [
+    {
+      "project": "phys-00002-p01",
+      "step": 1,
+      "command": [
+        "python",
+        "evidence/research_interval_rank_two_neighborhood.py",
+        "--precision",
+        "256",
+        "--json",
+        "replay-256.json",
+        "--log",
+        "replay-256.log"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 2.789,
+      "log": "phys-00002-p01/check-01.log"
+    },
+    {
+      "project": "phys-00002-p01",
+      "step": 2,
+      "command": [
+        "python",
+        "evidence/research_interval_rank_two_neighborhood.py",
+        "--precision",
+        "320",
+        "--json",
+        "replay-320.json",
+        "--log",
+        "replay-320.log"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 2.349,
+      "log": "phys-00002-p01/check-02.log"
+    },
+    {
+      "project": "phys-00002-p01",
+      "step": 3,
+      "command": [
+        "python",
+        "evidence/verify_interval_rank_two_neighborhood.py",
+        "--json",
+        "replay-independent.json",
+        "--log",
+        "replay-independent.log"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.946,
+      "log": "phys-00002-p01/check-03.log"
+    },
+    {
+      "project": "phys-00002-p02",
+      "step": 1,
+      "command": [
+        "python",
+        "scripts/verify_fourier_n4.py",
+        "--project",
+        ".",
+        "--json-out",
+        "replay.json",
+        "--log-out",
+        "replay.log"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 2.514,
+      "log": "phys-00002-p02/check-01.log"
+    },
+    {
+      "project": "phys-00002-p06",
+      "step": 1,
+      "command": [
+        "python",
+        "manuscript/reproduce_witness.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.23,
+      "log": "phys-00002-p06/check-01.log"
+    },
+    {
+      "project": "phys-00002-p15",
+      "step": 1,
+      "command": [
+        "python",
+        "code/check_fixed_gap.py",
+        "--output",
+        "replay-gap.json"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 7.155,
+      "log": "phys-00002-p15/check-01.log"
+    },
+    {
+      "project": "phys-00002-p15",
+      "step": 2,
+      "command": [
+        "python",
+        "code/check_trace_bound.py",
+        "--output",
+        "replay-trace.json"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.238,
+      "log": "phys-00002-p15/check-02.log"
+    },
+    {
+      "project": "phys-00003-p01",
+      "step": 1,
+      "command": [
+        "python",
+        "scripts/quotient_symbolic.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 17.877,
+      "log": "phys-00003-p01/check-01.log"
+    },
+    {
+      "project": "phys-00003-p01",
+      "step": 2,
+      "command": [
+        "python",
+        "scripts/verify_quotient.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.73,
+      "log": "phys-00003-p01/check-02.log"
+    },
+    {
+      "project": "phys-00003-p01",
+      "step": 3,
+      "command": [
+        "python",
+        "scripts/quotient_wick.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 4.423,
+      "log": "phys-00003-p01/check-03.log"
+    },
+    {
+      "project": "phys-00003-p01",
+      "step": 4,
+      "command": [
+        "python",
+        "scripts/compare_quotient_methods.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 4.49,
+      "log": "phys-00003-p01/check-04.log"
+    },
+    {
+      "project": "phys-00003-p01",
+      "step": 5,
+      "command": [
+        "python",
+        "scripts/baseline_poisson.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.343,
+      "log": "phys-00003-p01/check-05.log"
+    },
+    {
+      "project": "phys-00003-p01",
+      "step": 6,
+      "command": [
+        "python",
+        "scripts/baseline_wick.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.294,
+      "log": "phys-00003-p01/check-06.log"
+    },
+    {
+      "project": "phys-00003-p01",
+      "step": 7,
+      "command": [
+        "python",
+        "scripts/compare_inputs.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.239,
+      "log": "phys-00003-p01/check-07.log"
+    },
+    {
+      "project": "phys-00004-p01",
+      "step": 1,
+      "command": [
+        "python",
+        "evidence/verify_gadc_coefficients.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 2.729,
+      "log": "phys-00004-p01/check-01.log"
+    },
+    {
+      "project": "phys-00004-p01",
+      "step": 2,
+      "command": [
+        "python",
+        "evidence/verify_gadc_quadratic_proof.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 2.357,
+      "log": "phys-00004-p01/check-02.log"
+    },
+    {
+      "project": "phys-00004-p01",
+      "step": 3,
+      "command": [
+        "python",
+        "evidence/compare_and_baseline.py",
+        "compare"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.34,
+      "log": "phys-00004-p01/check-03.log"
+    },
+    {
+      "project": "phys-00004-p01",
+      "step": 4,
+      "command": [
+        "python",
+        "evidence/compare_and_baseline.py",
+        "baseline"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 1.483,
+      "log": "phys-00004-p01/check-04.log"
+    },
+    {
+      "project": "phys-00004-p02",
+      "step": 1,
+      "command": [
+        "python",
+        "reproducibility/verify_counterexample.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.039,
+      "log": "phys-00004-p02/check-01.log"
+    },
+    {
+      "project": "phys-00005-p01",
+      "step": 1,
+      "command": [
+        "python",
+        "code/counterexample_spectral_a.py",
+        "--output",
+        "replay-a.json",
+        "--log",
+        "replay-a.log"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.077,
+      "log": "phys-00005-p01/check-01.log"
+    },
+    {
+      "project": "phys-00005-p01",
+      "step": 2,
+      "command": [
+        "python",
+        "code/counterexample_commutant_b.py",
+        "--output",
+        "replay-b.json",
+        "--log",
+        "replay-b.log"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 1.93,
+      "log": "phys-00005-p01/check-02.log"
+    },
+    {
+      "project": "phys-00005-p01",
+      "step": 3,
+      "command": [
+        "python",
+        "code/compare_counterexample.py",
+        "--method-a",
+        "replay-a.json",
+        "--method-b",
+        "replay-b.json",
+        "--output",
+        "replay-compare.json",
+        "--log",
+        "replay-compare.log"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.04,
+      "log": "phys-00005-p01/check-03.log"
+    },
+    {
+      "project": "phys-00006-p01",
+      "step": 1,
+      "command": [
+        "python",
+        "code/certify_alpha_plus.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.186,
+      "log": "phys-00006-p01/check-01.log"
+    },
+    {
+      "project": "phys-00006-p01",
+      "step": 2,
+      "command": [
+        "python",
+        "code/certify_counterexample.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.349,
+      "log": "phys-00006-p01/check-02.log"
+    },
+    {
+      "project": "phys-00006-p01",
+      "step": 3,
+      "command": [
+        "python",
+        "code/verify_counterexample_independent.py"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.296,
+      "log": "phys-00006-p01/check-03.log"
+    },
+    {
+      "project": "phys-00007-p01",
+      "step": 1,
+      "command": [
+        "python",
+        "manuscript/reproduce.py",
+        "--output",
+        "replay.json"
+      ],
+      "exit_code": 0,
+      "status": "exit-zero",
+      "seconds": 0.845,
+      "log": "phys-00007-p01/check-01.log"
+    }
+  ],
+  "repaired_initial_failure": {
+    "project": "phys-00002-p02",
+    "cause": "Missing immutable source.md in historical curated submission list.",
+    "repair": "Added unchanged source.md; existing verifier and expected hash unchanged.",
+    "retry_exit_code": 0
+  },
+  "observations": {
+    "phys-00002-p01": "256/320-bit interval runs reported rank_two_fixed_a_local_optimality_certified=true; independent check verification_passed=true. Global assertions remain false/unresolved.",
+    "phys-00002-p02": "Eight named configurations plus 128 held-out configurations; exact identities and SOCP/SDP diagnostics met verifier criteria. Numerical agreement is corroboration of the manuscript proof.",
+    "phys-00002-p06": "All eight witness checks printed PASS, including detailed-balance predicates, late-time order reversal and precision stability. Not an interval-certified general theorem.",
+    "phys-00002-p15": "Fixed-gap probe failure_count=0; trace-bound stress checks passed within floating tolerance. Near-closing-gap uniformity is not claimed.",
+    "phys-00003-p01": "Exact quotient, independent Wick comparison, baseline and convention-map checks printed PASS. Polynomial scope remains restricted.",
+    "phys-00004-p01": "Coefficient, exact quadratic proof and representation/baseline commands reported pass. Baseline calculation alone does not establish two-use additivity.",
+    "phys-00004-p02": "Standard-library rational certificate status PASS, without floating-point sign decisions.",
+    "phys-00005-p01": "Two representations and comparator recovered 62 edges, tau=1673/1192 and delta=-81/2384; status exact_counterexample_verified.",
+    "phys-00006-p01": "Three exact symbolic checks printed PASS, including independent equal-marginal memory witness audit.",
+    "phys-00007-p01": "Symbolic replay printed PASS. This does not remedy the historical submission-bundle binding failure."
+  },
+  "clean_builds": [
+    {
+      "project": "phys-00002-p01",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "cwd": "manuscript"
+    },
+    {
+      "project": "phys-00002-p02",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "cwd": "."
+    },
+    {
+      "project": "phys-00002-p06",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "cwd": "."
+    },
+    {
+      "project": "phys-00002-p15",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "cwd": "manuscript"
+    },
+    {
+      "project": "phys-00003-p01",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "cwd": "."
+    },
+    {
+      "project": "phys-00004-p01",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "cwd": "manuscript"
+    },
+    {
+      "project": "phys-00004-p02",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "cwd": "manuscript"
+    },
+    {
+      "project": "phys-00005-p01",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "cwd": "."
+    },
+    {
+      "project": "phys-00006-p01",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "cwd": "."
+    },
+    {
+      "project": "phys-00007-p01",
+      "exit_code": 0,
+      "pdf_exists": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "cwd": "manuscript"
+    }
+  ],
+  "pdf_policy": "Archived PDFs unchanged; rebuild outputs are not substituted or claimed as newly release-reviewed."
+}

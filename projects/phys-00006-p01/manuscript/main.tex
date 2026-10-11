@@ -1,0 +1,412 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{doi}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!45!black,
+  citecolor=blue!45!black,
+  urlcolor=blue!55!black,
+  pdftitle={An exact qubit-memory counterexample to an alpha-Doeblin hockey-stick bound},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\dyad}[2]{\lvert #1\rangle\!\langle #2\rvert}
+\newcommand{\psdle}{\preceq}
+\newcommand{\psdge}{\succeq}
+
+\title{An exact qubit-memory counterexample to an
+$\alpha$-Doeblin hockey-stick bound}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{Draft of 13 September 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The complete contraction bound for quantum hockey-stick divergence is known
+with the positive Doeblin coefficient $\alpha_+$.  A published open question
+asks whether the stronger coefficient $\alpha$ can replace $\alpha_+$ when
+the two inputs have the same reference marginal.  We give an exact negative
+answer.  For one use of the qubit amplitude-damping channel with
+$p=1$ and $\eta=1/4$, a noiseless qubit reference, bias $\gamma=2$, and the
+entangled pair
+$\ket{\psi_\pm}=(\ket{00}\pm10\ket{11})/\sqrt{101}$, we certify
+$\alpha=1/4$, $\alpha_+=0$, and
+\[
+ E_2\bigl((\id\otimes\cN)(\rho)\Vert(\id\otimes\cN)(\sigma)\bigr)
+ -(1-\alpha)E_2(\rho\Vert\sigma)
+ =\frac{199+24\sqrt{41}-9\sqrt{1489}}{808}>0.
+\]
+All channel, state, marginal, semidefinite-program, and strict-sign
+conditions are checked algebraically.  The witness disproves the universal
+$\alpha$ replacement, without claiming a classification or the optimal
+complete contraction coefficient.
+\end{abstract}
+
+\noindent\textbf{Keywords:} quantum channels; strong data processing;
+hockey-stick divergence; Doeblin coefficient; quantum side information
+
+\section{Introduction}
+
+A contraction coefficient quantifies how much a channel can preserve the
+distinguishability of two inputs.  Such coefficients strengthen ordinary
+data processing and enter problems ranging from mixing to noisy quantum
+hypothesis testing.  George, Hirche, Nuradha, and Wilde introduced several
+quantum analogues of the classical Doeblin coefficient and related them to
+efficient upper bounds on contraction coefficients~\cite{GeorgeEtAl2026}.
+Two variants matter here.  The coefficient $\alpha$ optimizes over a
+Hermitian operator, whereas $\alpha_+$ restricts that operator to be positive
+semidefinite.  Consequently $\alpha_+\leq\alpha$, and a contraction factor
+$1-\alpha$ is potentially strictly stronger than $1-\alpha_+$.
+
+For the hockey-stick divergence, the known complete bound uses
+$1-\alpha_+$.  Open Question~1 of Ref.~\cite{GeorgeEtAl2026} asks whether it
+remains valid with $1-\alpha$.  The question is nontrivial precisely because
+an optimizer for $\alpha$ need not be positive semidefinite and therefore
+need not define a physical replacer channel.  Follow-up work on conditional
+contraction retains an $\alpha_+$ bound~\cite{HircheEtAl2026Conditional},
+while nonlinear hockey-stick inequalities obtained under an additional noise
+criterion concern a different, non-reference setting~\cite{NuradhaEtAl2025Nonlinear}.
+
+The main contribution is stated and proved with exact arithmetic.  A single
+amplitude-damping channel has $\alpha=1/4$ but $\alpha_+=0$.  Two entangled
+two-qubit inputs with identical reference marginals then violate the proposed
+$1-\alpha$ bound at $\gamma=2$.  The proof supplies primal and dual
+semidefinite-program certificates, exact input and output spectra, an
+attaining measurement effect, and an integer/radical certificate for the
+strict sign.  Because the proposed statement is universal, this one witness
+settles it negatively.  It does not determine the best replacement factor,
+describe all violations, or assert failure for every $\gamma>1$.
+
+\section{Definitions and the proposed complete bound}
+
+Let $\cN:\mathcal L(A)\to\mathcal L(B)$ be a completely positive,
+trace-preserving map.  We use the unnormalized Choi convention
+\begin{equation}
+ J_{\cN}=\sum_{i,j}\dyad{i}{j}_A\otimes\cN(\dyad{i}{j}),
+ \qquad J_{\cN}\psdge0,\qquad \Tr_BJ_{\cN}=I_A .
+ \label{eq:choi}
+\end{equation}
+The two coefficients are
+\begin{align}
+ \alpha(\cN)
+ &=\max_{H=H^\dagger}\bigl\{\Tr H:I_A\otimes H\psdle J_{\cN}\bigr\},
+ \label{eq:alpha}\\
+ \alpha_+(\cN)
+ &=\max_{H\psdge0}\bigl\{\Tr H:I_A\otimes H\psdle J_{\cN}\bigr\}.
+ \label{eq:alphaplus}
+\end{align}
+For density operators $\rho$ and $\sigma$ and $\gamma>1$, the hockey-stick
+divergence is
+\begin{equation}
+ E_\gamma(\rho\Vert\sigma)
+ =\Tr(\rho-\gamma\sigma)_+
+ =\max_{0\psdle M\psdle I}\Tr M(\rho-\gamma\sigma).
+ \label{eq:hockey}
+\end{equation}
+
+The established complete inequality says that, for states on $R\otimes A$
+with $\rho_R=\sigma_R$,
+\begin{equation}
+ E_\gamma\!\left((\id_R\otimes\cN)(\rho)\middle\|
+                  (\id_R\otimes\cN)(\sigma)\right)
+ \leq[1-\alpha_+(\cN)]E_\gamma(\rho\Vert\sigma)
+ \label{eq:known}
+\end{equation}
+for every $\gamma\geq1$~\cite[Proposition~31]{GeorgeEtAl2026}.  The proposed
+strengthening replaces $\alpha_+$ by $\alpha$:
+\begin{equation}
+ E_\gamma\!\left((\id_R\otimes\cN)(\rho)\middle\|
+                  (\id_R\otimes\cN)(\sigma)\right)
+ \stackrel{?}{\leq}[1-\alpha(\cN)]E_\gamma(\rho\Vert\sigma).
+ \label{eq:proposed}
+\end{equation}
+No ratio is taken in Eq.~\eqref{eq:proposed}; inputs with zero divergence
+remain harmless by ordinary data processing.
+
+For priors $1/(1+\gamma)$ on $\rho$ and $\gamma/(1+\gamma)$ on $\sigma$,
+the Helstrom--Holevo binary error probability~\cite{Helstrom1967,Holevo1973}
+is
+\begin{equation}
+ P_{\rm err}(\rho,\sigma)=\frac{1-E_\gamma(\rho\Vert\sigma)}{1+\gamma}.
+ \label{eq:perr}
+\end{equation}
+Thus Eq.~\eqref{eq:proposed} would lower-bound the post-channel error in a
+biased discrimination experiment assisted by a noiseless quantum memory.
+
+\section{A channel with \texorpdfstring{$\alpha_+<\alpha$}{alpha-plus less than alpha}}
+
+Consider the generalized amplitude-damping family of
+Ref.~\cite[Lemma~10]{GeorgeEtAl2026} at $p=1$ and $\eta=1/4$.  Its two
+nonzero Kraus operators are
+\begin{equation}
+ K_0=\begin{pmatrix}1&0\\0&1/2\end{pmatrix},\qquad
+ K_1=\begin{pmatrix}0&\sqrt3/2\\0&0\end{pmatrix},
+ \qquad \sum_aK_a^\dagger K_a=I.
+ \label{eq:kraus}
+\end{equation}
+In the ordered Choi basis
+$(\ket{0_A0_B},\ket{0_A1_B},\ket{1_A0_B},\ket{1_A1_B})$,
+\begin{equation}
+ J=\begin{pmatrix}
+ 1&0&0&1/2\\
+ 0&0&0&0\\
+ 0&0&3/4&0\\
+ 1/2&0&0&1/4
+ \end{pmatrix}.
+ \label{eq:J}
+\end{equation}
+It is positive semidefinite, with spectrum
+$\{0,0,3/4,5/4\}$, and $\Tr_BJ=I_A$.
+
+\begin{lemma}
+For the channel in Eq.~\eqref{eq:kraus},
+\begin{equation}
+ \alpha(\cN)=\frac14,\qquad \alpha_+(\cN)=0.
+ \label{eq:coefficients}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $\alpha$, choose
+\begin{equation}
+ H=\operatorname{diag}(1/2,-1/4),\qquad
+ Y=\begin{pmatrix}
+ 1&0&0&-1\\0&0&0&0\\0&0&0&0\\-1&0&0&1
+ \end{pmatrix}.
+ \label{eq:alpha-cert}
+\end{equation}
+The primal slack $J-I\otimes H$ has spectrum
+$\{0,1/4,1/4,1\}$, so $H$ is feasible and gives $\Tr H=1/4$.
+Moreover $Y\psdge0$, $\Tr_A Y=I_B$, and $\Tr(JY)=1/4$.
+The matching primal and dual objectives certify $\alpha=1/4$.  This also
+reproduces the family formula
+$\alpha(\cN_{p,\eta})=(1-\sqrt\eta)^2$ at the selected point.
+
+For $\alpha_+$, the zero matrix is primal feasible.  Let
+\begin{equation}
+ \ket{\kappa}=\ket{00}-2\ket{11},\qquad
+ Y_+=\ket{\kappa}\!\bra{\kappa}.
+\end{equation}
+Then $J\ket{\kappa}=0$ and
+$\Tr_A Y_+=\operatorname{diag}(1,4)\psdge I$.  For every positive
+primal-feasible $H_+$,
+\begin{equation}
+ \Tr H_+
+ \leq\Tr[(\Tr_A Y_+)H_+]
+ =\Tr[Y_+(I\otimes H_+)]
+ \leq\Tr(Y_+J)=0.
+\end{equation}
+Together with the zero primal point, this proves $\alpha_+=0$.
+\end{proof}
+
+\section{Exact counterexample}
+
+All state matrices below use the $R$-major order
+$(\ket{0_R0_A},\ket{0_R1_A},\ket{1_R0_A},\ket{1_R1_A})$ before the channel,
+and the corresponding $R,B$ order afterwards.
+
+\begin{theorem}
+Equation~\eqref{eq:proposed} is false even when
+$A=B=R=\mathbb C^2$.  A counterexample is given by the channel in
+Eq.~\eqref{eq:kraus}, $\gamma=2$, and
+\begin{equation}
+ \ket{\psi_\pm}=\frac{\ket{00}\pm10\ket{11}}{\sqrt{101}},
+ \qquad
+ \rho=\ket{\psi_+}\!\bra{\psi_+},\quad
+ \sigma=\ket{\psi_-}\!\bra{\psi_-}.
+ \label{eq:states}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The two operators in Eq.~\eqref{eq:states} are rank-one density operators and
+have the identical reference marginal
+\begin{equation}
+ \rho_R=\sigma_R=\operatorname{diag}(1/101,100/101).
+ \label{eq:marginal}
+\end{equation}
+The eigenvalues of either partial transpose include $-10/101$, so the inputs
+are entangled and cannot reduce to a common classical-reference construction.
+
+The only nonzero block of $\rho-2\sigma$, on
+$\operatorname{span}\{\ket{00},\ket{11}\}$, is
+\begin{equation}
+ \frac1{101}\begin{pmatrix}-1&30\\30&-100\end{pmatrix}.
+\end{equation}
+Its trace and determinant are $-1$ and $-800/101^2$, respectively, so it has
+exactly one positive eigenvalue.  Direct diagonalization gives
+\begin{equation}
+ E_2(\rho\Vert\sigma)=\frac{3\sqrt{1489}-101}{202}.
+ \label{eq:inputE}
+\end{equation}
+
+The channel action is
+\begin{equation}
+ \cN\!\begin{pmatrix}a&b\\c&d\end{pmatrix}
+ =\begin{pmatrix}a+3d/4&b/2\\c/2&d/4\end{pmatrix}.
+ \label{eq:action}
+\end{equation}
+Applying it to the $A$ subsystem gives
+\begin{align}
+ \rho'&=\frac1{101}\begin{pmatrix}
+ 1&0&0&5\\0&0&0&0\\0&0&75&0\\5&0&0&25
+ \end{pmatrix},
+ &
+ \sigma'&=\frac1{101}\begin{pmatrix}
+ 1&0&0&-5\\0&0&0&0\\0&0&75&0\\-5&0&0&25
+ \end{pmatrix}.
+ \label{eq:outputs}
+\end{align}
+The active block of $\rho'-2\sigma'$ is
+$101^{-1}\bigl(\begin{smallmatrix}-1&15\\15&-25\end{smallmatrix}\bigr)$;
+the remaining eigenvalues are $0$ and $-75/101$.  Hence
+\begin{equation}
+ E_2(\rho'\Vert\sigma')=\frac{3\sqrt{41}-13}{101}.
+ \label{eq:outputE}
+\end{equation}
+For completeness, the positive eigenspace is attained by the effect whose
+active two-dimensional block is
+\begin{equation}
+ M_{\rm act}=\frac12\left[I+\frac{5\sigma_x+4\sigma_z}{\sqrt{41}}\right].
+ \label{eq:effect}
+\end{equation}
+Indeed $M_{\rm act}^2=M_{\rm act}$ because $5^2+4^2=41$; embedding it by
+zero on the other two basis vectors gives $0\psdle M\psdle I$ and reproduces
+Eq.~\eqref{eq:outputE} through Eq.~\eqref{eq:hockey}.
+
+Using Eq.~\eqref{eq:coefficients}, the excess over the proposed right-hand
+side is
+\begin{equation}
+ \Delta
+ =\frac{3\sqrt{41}-13}{101}
+  -\frac34\frac{3\sqrt{1489}-101}{202}
+ =\frac{199+24\sqrt{41}-9\sqrt{1489}}{808}.
+ \label{eq:margin}
+\end{equation}
+It remains to certify strictness without a floating-point comparison.  Both
+sides of $199+24\sqrt{41}>9\sqrt{1489}$ are positive, and their squared
+difference is
+\begin{equation}
+ -57392+9552\sqrt{41}
+ >-57392+9552\frac{32}{5}
+ =\frac{18704}{5}>0,
+\end{equation}
+where $\sqrt{41}>32/5$ follows by squaring.  Therefore $\Delta>0$, which
+contradicts Eq.~\eqref{eq:proposed}.
+\end{proof}
+
+\section{Discrimination meaning and comparison with known bounds}
+
+Figure~\ref{fig:comparison} displays decimal renderings of the exact values
+only for visual comparison.  Ordinary data processing remains intact:
+$E_2(\rho'\Vert\sigma')\approx0.061479$ is below the input value
+$0.073083$.  The known $\alpha_+$ inequality~\eqref{eq:known} also remains
+valid, since $\alpha_+=0$.  What fails is the stronger proposed ceiling
+$(1-\alpha)E_2\approx0.054812$.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=0.88\linewidth]{figures/witness_comparison.pdf}
+ \caption{Exact witness values, plotted in decimal form.  The actual output
+ divergence exceeds the proposed $\alpha$-based ceiling by the exact positive
+ quantity $\Delta$ in Eq.~\eqref{eq:margin}.  The plot is generated directly
+ from the symbolic expressions; no numerical fit or optimization enters the
+ proof.}
+ \label{fig:comparison}
+\end{figure}
+
+For priors $1/3$ on $\rho$ and $2/3$ on $\sigma$, Eq.~\eqref{eq:perr} gives
+an actual post-channel error of approximately $0.312840$.  If
+Eq.~\eqref{eq:proposed} held, it would require an error of at least
+$0.315063$.  The proposed guarantee therefore overstates the unavoidable
+loss of biased discrimination power by exactly $\Delta/3$ for this
+memory-assisted experiment.
+
+The role of the quantum reference is essential to the example.  Without a
+reference system, the ordinary hockey-stick contraction coefficient is
+bounded by the trace-distance coefficient and hence by
+$1-\alpha$~\cite[Section~6.1]{GeorgeEtAl2026}; a common classical reference
+basis likewise reduces the problem blockwise~\cite[Appendix~A]{HircheEtAl2026Conditional}.
+The negative partial-transpose eigenvalue in Eq.~\eqref{eq:marginal} rules out
+those reductions.  The strict gap $\alpha_+<\alpha$ also rules out the region
+already covered by equality of the two Doeblin coefficients.
+
+Among the directly related works checked through 13 September 2026, the
+conditional framework of Ref.~\cite{HircheEtAl2026Conditional} continues to
+use $\alpha_+$ and explicitly discusses the obstruction posed by a quantum
+reference at general $\gamma$.  The nonlinear bounds of
+Ref.~\cite{NuradhaEtAl2025Nonlinear} assume an additional channel-noise
+condition and optimize without the same-reference complete setting.  These
+comparisons are bounded rather than an exhaustive priority search; the result
+is therefore presented without a priority claim.
+
+\section{Scope and reproducibility}
+
+The theorem uses one exact, finite-dimensional channel instance and one exact
+pair of input states.  It is sufficient to disprove both the qubit-universal
+statement and the arbitrary-dimensional universal proposal that contains it.
+It does not characterize the optimal complete contraction coefficient, all
+violating channels or inputs, the full range of $\gamma$, or robustness to
+experimental imperfections.  No perturbative, asymptotic, continuum, or
+unit-dependent statement is involved.
+
+The ancillary package contains two independent exact implementations.  One
+constructs the Kraus action, Choi matrix, semidefinite-program certificates,
+states, spectra, and effect using symbolic rational and radical arithmetic.
+The other begins from the rational state matrices and the block action in
+Eq.~\eqref{eq:action}, imports no result from the first checker, and repeats
+the decisive characteristic-polynomial and sign checks.  A separate script
+generates Fig.~\ref{fig:comparison} and its tabulated values from the exact
+expressions.  The environment and commands are specified in
+\texttt{REPRODUCIBILITY.md}.
+
+\section*{Data and code availability}
+
+All witness matrices are included in the ancillary JSON data, and all exact
+verification and figure-generation scripts are included in the local source
+package.  No downloaded third-party paper is part of that package.  A public
+archival location and license for the code must be selected by the prospective
+author before dissemination or submission.
+
+\section*{Author contributions and AI-use disclosure}
+
+This is a provisional local draft for author review.  Xiaojian Zeng is the
+prospective corresponding author.  OpenAI Codex language models were used for
+idea development, the exact calculations and code, a bounded bibliographic
+check, figure production, and drafting and editing the manuscript.  The models
+are not authors.  Before any dissemination or submission, the prospective
+author must independently inspect the sources, calculations, code, claims,
+text, and rights; make any needed corrections; and explicitly accept full
+responsibility.  That human review and approval are not represented as
+complete here.
+
+\section*{Competing interests}
+
+The prospective author has not yet supplied a competing-interest declaration;
+it must be completed before submission.
+
+\bibliographystyle{unsrturl}
+\bibliography{manuscript/references}
+
+\end{document}
