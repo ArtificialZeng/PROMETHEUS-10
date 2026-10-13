@@ -1,0 +1,140 @@
+{
+  "status": "certified",
+  "method": "Arb interval residual plus exact Markov Dobrushin contraction",
+  "parameters_file": "evidence/counterexample-parameters.json",
+  "parameters": {
+    "parameter_type": "rounded_finite_Fourier_candidate",
+    "omega": "6.0",
+    "offsets": [
+      "-13.0",
+      "-23.0",
+      "0.0"
+    ],
+    "sin_coefficients_by_harmonic": [
+      [
+        "0.8",
+        "0.85",
+        "0.0"
+      ],
+      [
+        "1.1",
+        "6.1",
+        "0.0"
+      ]
+    ],
+    "cos_coefficients_by_harmonic": [
+      [
+        "-1.7",
+        "1.7",
+        "0.0"
+      ],
+      [
+        "6.8",
+        "-3.0",
+        "0.0"
+      ]
+    ],
+    "k0_edges_12_13_23": [
+      "1.0",
+      "300.0",
+      "8000.0"
+    ],
+    "alpha_edges_12_13_23": [
+      "0.01",
+      "0.83",
+      "0.93"
+    ]
+  },
+  "segments": 4096,
+  "residual_subdivisions_per_segment": 512,
+  "total_residual_boxes": 2097152,
+  "arb_precision_bits": 320,
+  "environment": {
+    "python_executable": "python3",
+    "python_version": "3.12.14",
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.18.1",
+    "python_flint_version": "0.9.0"
+  },
+  "comparison_constructor": {
+    "kind": "periodic C1 piecewise cubic Hermite path; p3=1-p1-p2 exactly",
+    "scipy_role": "proposal only; no SciPy local/global error estimate is used",
+    "raw_scipy_closure_inf": 9.2148511043888e-15,
+    "scipy_nfev": 28915,
+    "minimum_comparison_probability_interval_lower_float": 5.93096363208203e-11
+  },
+  "proof_bounds": {
+    "integrated_l1_residual_upper": {
+      "ball": "[8.396496332054004362677983116014865825707e-5 +/- 1.69e-45]",
+      "lower": "[8.396496332054004362677983116014865825707e-5 +/- 1.69e-45]",
+      "upper": "[8.396496332054004362677983116014865825707e-5 +/- 1.69e-45]"
+    },
+    "dobrushin_gamma_lower": {
+      "ball": "[0.9208114378568045500657007578420699392193 +/- 6.40e-42]",
+      "lower": "[0.9208114378568045500657007578420699392193 +/- 6.40e-42]",
+      "upper": "[0.9208114378568045500657007578420699392193 +/- 6.40e-42]"
+    },
+    "one_period_zero_sum_contraction_upper": {
+      "ball": "[0.3812608536645300394429308167768447453733 +/- 4.70e-41]",
+      "lower": "[0.3812608536645300394429308167768447453733 +/- 4.70e-41]",
+      "upper": "[0.3812608536645300394429308167768447453733 +/- 4.70e-41]"
+    },
+    "periodic_initial_l1_error": {
+      "ball": "[0.0001357033312306631597079625640982444366569 +/- 2.35e-44]",
+      "lower": "[0.0001357033312306631597079625640982444366569 +/- 2.35e-44]",
+      "upper": "[0.0001357033312306631597079625640982444366569 +/- 2.35e-44]"
+    },
+    "uniform_periodic_solution_l1_error": {
+      "ball": "[0.0002196682945512032033347423952583930949140 +/- 8.24e-45]",
+      "lower": "[0.0002196682945512032033347423952583930949140 +/- 8.24e-45]",
+      "upper": "[0.0002196682945512032033347423952583930949140 +/- 8.24e-45]"
+    },
+    "A_comparison": {
+      "ball": "[0.4997274966051222940331268201586271268727 +/- 3.65e-41]",
+      "lower": "[0.4997274966051222940331268201586271268727 +/- 3.65e-41]",
+      "upper": "[0.4997274966051222940331268201586271268727 +/- 3.65e-41]"
+    },
+    "A_error_radius": {
+      "ball": "[0.3080188826196971317159757866313187976884 +/- 7.53e-43]",
+      "lower": "[0.3080188826196971317159757866313187976884 +/- 7.53e-43]",
+      "upper": "[0.3080188826196971317159757866313187976884 +/- 7.53e-43]"
+    },
+    "A_enclosure": {
+      "ball": "[+/- 0.808]",
+      "lower": "[0.1917086133805455823784637342211271268727 +/- 3.65e-41]",
+      "upper": "[0.8077463798296990056877899060961271268727 +/- 3.65e-41]"
+    },
+    "B_comparison": {
+      "ball": "[6.130836853054139765838463763262690240349 +/- 2.35e-41]",
+      "lower": "[6.130836853054139765838463763262690240349 +/- 2.35e-41]",
+      "upper": "[6.130836853054139765838463763262690240349 +/- 2.35e-41]"
+    },
+    "B_error_radius": {
+      "ball": "[0.02734870267162479881517542820966994031679 +/- 1.98e-42]",
+      "lower": "[0.02734870267162479881517542820966994031679 +/- 1.98e-42]",
+      "upper": "[0.02734870267162479881517542820966994031679 +/- 1.98e-42]"
+    },
+    "B_enclosure": {
+      "ball": "[6.1 +/- 0.0582]",
+      "lower": "[6.103488150338895621637185076739252740349 +/- 2.35e-41]",
+      "upper": "[6.158185555769383910039742449786127740349 +/- 2.35e-41]"
+    },
+    "A_minus_k0min_B_enclosure": {
+      "ball": "[-6e+0 +/- 0.705]",
+      "lower": "[-5.966476942447045988574746122791563113476 +/- 2.41e-40]",
+      "upper": "[-5.295741770450988955035927763416563113476 +/- 2.41e-40]"
+    }
+  },
+  "logical_checks": {
+    "comparison_path_exactly_periodic": true,
+    "comparison_path_probability_sum_exact": true,
+    "contraction_strictly_below_one": true,
+    "A_strictly_positive": true,
+    "B_strictly_positive": true,
+    "margin_strictly_negative": true,
+    "exact_periodic_state_strictly_positive": true,
+    "exact_periodic_state_positivity_basis": "all six continuous directed rates are strictly positive; the exact one-period stochastic map is positive and its normalized Perron fixed vector is unique and componentwise strictly positive"
+  },
+  "elapsed_certificate_seconds": 36.49151110649109,
+  "interpretation": "The certificate is independent of SciPy tolerance validity: SciPy selects a comparison polynomial, while Arb encloses its continuum residual and all observable integrals.  The contraction argument covers the exact unique periodic state over the full period."
+}

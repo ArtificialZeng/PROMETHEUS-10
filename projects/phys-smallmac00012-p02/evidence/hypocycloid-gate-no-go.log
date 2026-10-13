@@ -1,0 +1,14 @@
+exact d=5 hypocycloid-gate obstruction
+source_sha256=ba451f66e9a4ccdb10042f48bc7773d87ed35d33939f431b3f216134e2939389
+check.noncommuting_exact_unitary_with_circulant_moduli=PASS
+b=(209/500,3/40,7/500,3/40,209/500)
+check.simplex_and_circulant=PASS
+bracelet.s1.actual_margin=-209/500 + sqrt(42)/100 + sqrt(1254)/100
+bracelet.s1.certified_lower_margin=1/1250
+check.bracelet_all_row_column_pairs=PASS
+lambda_1=radial*exp(i*pi/5)
+radial=93/400 + 343*sqrt(5)/2000
+radial_minus_H5_boundary=-147/400 + 343*sqrt(5)/2000
+check.lambda_1_strictly_outside_H5=PASS
+conclusion=bracelet_but_not_unistochastic_by_commutator_trace_lemma
+status=PASS

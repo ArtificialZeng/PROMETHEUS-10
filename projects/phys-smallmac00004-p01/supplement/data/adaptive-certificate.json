@@ -1,0 +1,186 @@
+{
+  "precision_bits": 256,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "python_flint": "0.9.0",
+  "all_pass": true,
+  "checks": [
+    {
+      "name": "center_positive",
+      "domain": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "evaluated": 1,
+      "accepted_leaves": 1,
+      "max_depth": 0,
+      "minimum_certified_lower": "[0.001770830714201352587967951217377173600979336712087773884294163141837837325137 +/- 4.62e-79]",
+      "worst_box": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "status": "pass",
+      "exact_accepted_volume": "1/400",
+      "exact_domain_volume": "1/400",
+      "leaf_partition_sha256": "70e275876acc285b93204596853a43dd739ce76e8a36062949ede3880126a621"
+    },
+    {
+      "name": "transverse_convex",
+      "domain": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "evaluated": 1,
+      "accepted_leaves": 1,
+      "max_depth": 0,
+      "minimum_certified_lower": "[0.06860584900117658039474487304687500000000000000000000000000000000000000000000 +/- 3.09e-78]",
+      "worst_box": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "status": "pass",
+      "exact_accepted_volume": "1/400",
+      "exact_domain_volume": "1/400",
+      "leaf_partition_sha256": "70e275876acc285b93204596853a43dd739ce76e8a36062949ede3880126a621"
+    },
+    {
+      "name": "tail_coefficient_positive",
+      "domain": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "evaluated": 1,
+      "accepted_leaves": 1,
+      "max_depth": 0,
+      "minimum_certified_lower": "[0.07413549899643643200397491455078125000000000000000000000000000000000000000000 +/- 9.79e-79]",
+      "worst_box": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "status": "pass",
+      "exact_accepted_volume": "1/400",
+      "exact_domain_volume": "1/400",
+      "leaf_partition_sha256": "70e275876acc285b93204596853a43dd739ce76e8a36062949ede3880126a621"
+    },
+    {
+      "name": "lower_inner",
+      "domain": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "evaluated": 1,
+      "accepted_leaves": 1,
+      "max_depth": 0,
+      "minimum_certified_lower": "[0.0004559398664132459089159965515136718750000000000000000000000000000000000000001 +/- 1.45e-80]",
+      "worst_box": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "status": "pass",
+      "exact_accepted_volume": "1/400",
+      "exact_domain_volume": "1/400",
+      "leaf_partition_sha256": "70e275876acc285b93204596853a43dd739ce76e8a36062949ede3880126a621"
+    },
+    {
+      "name": "upper_tail",
+      "domain": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "evaluated": 1,
+      "accepted_leaves": 1,
+      "max_depth": 0,
+      "minimum_certified_lower": "[0.06012170418538153171539306640625000000000000000000000000000000000000000000000 +/- 3.98e-79]",
+      "worst_box": [
+        [
+          "27/250",
+          "221/2000"
+        ]
+      ],
+      "status": "pass",
+      "exact_accepted_volume": "1/400",
+      "exact_domain_volume": "1/400",
+      "leaf_partition_sha256": "70e275876acc285b93204596853a43dd739ce76e8a36062949ede3880126a621"
+    },
+    {
+      "name": "lower_outer",
+      "domain": [
+        [
+          "27/250",
+          "221/2000"
+        ],
+        [
+          "93/100",
+          "1"
+        ]
+      ],
+      "evaluated": 2443,
+      "accepted_leaves": 1222,
+      "max_depth": 12,
+      "minimum_certified_lower": "[2.202781597247203770552999754685715888779611279970884489130938883990877940553e-6 +/- 4.95e-83]",
+      "worst_box": [
+        [
+          "6957/64000",
+          "13919/128000"
+        ],
+        [
+          "3081/3200",
+          "193/200"
+        ]
+      ],
+      "status": "pass",
+      "exact_accepted_volume": "7/40000",
+      "exact_domain_volume": "7/40000",
+      "leaf_partition_sha256": "161ca28cf881f8a6d9993207fd2560c46679c00a8dbcf16611bbfaaea43c0d25"
+    },
+    {
+      "name": "upper_compact",
+      "domain": [
+        [
+          "27/250",
+          "221/2000"
+        ],
+        [
+          "0",
+          "99/100"
+        ]
+      ],
+      "evaluated": 2545,
+      "accepted_leaves": 1273,
+      "max_depth": 14,
+      "minimum_certified_lower": "[1.256717368960380554199218749999999999999999999999999999999999999999999996027e-7 +/- 3.63e-83]",
+      "worst_box": [
+        [
+          "14059/128000",
+          "28123/256000"
+        ],
+        [
+          "3069/3200",
+          "6237/6400"
+        ]
+      ],
+      "status": "pass",
+      "exact_accepted_volume": "99/40000",
+      "exact_domain_volume": "99/40000",
+      "leaf_partition_sha256": "3fc5297328eb84fc26a594498fbed7275deacc79380c7887416d2f908cdf0196"
+    }
+  ],
+  "limitations": "Analytic reductions and monotonicity are reviewed in science.md; arithmetic replay is conditional on those arguments. No claim outside frozen p interval."
+}

@@ -1,0 +1,551 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\N}{\mathcal N}
+\newcommand{\E}{\mathcal E}
+\newcommand{\K}{\mathcal K}
+\newtheorem{theorem}{Theorem}
+\title{An exact anti-degradability threshold for the\newline three-level bosonic loss--dephasing channel}
+\author{Xiaojian Zeng\\[3pt]
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \href{mailto:xiaojianzeng@foxmail.com}{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine the exact anti-degradability threshold of the bosonic
+loss--dephasing channel restricted to its first three Fock levels, at Gaussian
+phase variance $\ln 2$. The threshold is an isolated root of a sextic
+polynomial, approximately $0.664544268033$. A rank-four symmetric Choi
+extension establishes feasibility at the endpoint. Explicit separating
+operators, lifted from the population support to the full extension space,
+exclude every larger transmissivity. Exact loss composition covers the remaining
+parameter intervals. This certifies a previously numerical boundary and
+sharpens a necessary condition for anti-degradability of the unrestricted
+bosonic channel.
+\end{abstract}
+\noindent\textbf{Keywords:} bosonic quantum channel; photon loss; Gaussian dephasing;
+anti-degradability; symmetric extension
+
+\section{Introduction}
+Photon loss and random phase noise act on different parts of a bosonic state:
+loss changes photon-number populations, while number dephasing suppresses
+coherences. Their combined channel can be anti-degradable even in a parameter
+region where pure loss alone is not. An anti-degradable channel has zero
+unassisted quantum capacity, because its environment can simulate the receiver.
+Determining the boundary of this property therefore provides a useful,
+although incomplete, communication criterion.
+
+Mele, Salek, Giovannetti and Lami studied the bosonic loss--dephasing channel
+and its finite Fock restrictions \cite{Mele2024}. Their two-level threshold is
+$1/(1+e^{-\gamma})$. They also established equality with this bound for the
+three-level restriction when $e^{-\gamma}\leq\sqrt2-1$; outside that regime
+the three-level boundary was evaluated numerically. We fix $\gamma=\ln2$,
+where that analytic hypothesis does not apply. Our contribution is the exact
+endpoint and explicit primal and full-space dual certificates for this
+previously numerical point. We do not claim that the qualitative departure
+from the two-level boundary was previously unknown.
+
+The argument exploits zeros in the channel's population support and its
+number-phase covariance. Swap invariance alone does not justify restricting
+an extension to the symmetric output subspace in arbitrary qutrit problems
+\cite{Myhr2009}. Here that restriction follows from a particular
+marginal-preserving transfer of antisymmetric blocks. A positive operator
+constructed on the resulting support is then lifted to the entire
+$3\times3\times3$ extension space. This distinction is essential for an
+unrestricted infeasibility certificate.
+
+\section{Channel, conventions and result}
+Let $\mathcal H_3=\operatorname{span}\{\ket0,\ket1,\ket2\}$. The exact
+restriction of vacuum pure loss followed by centered Gaussian number
+dephasing is
+\begin{equation}\label{eq:channel}
+\begin{split}
+\N_\lambda(\ket m\bra n)
+={}&2^{-(m-n)^2/2}\sum_{\ell=0}^{\min(m,n)}
+\sqrt{\binom m\ell\binom n\ell}\,(1-\lambda)^\ell
+\lambda^{(m+n)/2-\ell}\ket{m-\ell}\bra{n-\ell},
+\end{split}
+\end{equation}
+for $m,n\in\{0,1,2\}$ and transmissivity $0\leq\lambda\leq1$.
+The dephasing convention is $e^{-\gamma(m-n)^2/2}$ with phase variance
+$\gamma=\ln2$, as in Lemma 25 of Ref.~\cite{Mele2024}. The parameters,
+phases in radians, photon numbers and all matrix entries are dimensionless.
+This is an invariant finite-dimensional restriction: loss only removes
+photons. There is no output projection, postselection or renormalization,
+and no perturbative or numerical truncation of the channel.
+
+In the input-first tensor convention, define the normalized Choi state
+\begin{equation}\label{eq:choi}
+J_\lambda=\frac13\sum_{m,n=0}^2\ket m\bra n\otimes
+\N_\lambda(\ket m\bra n),\qquad \Tr_BJ_\lambda=I_A/3.
+\end{equation}
+Writing $\ket{ab}=\ket a_A\otimes\ket b_B$, its nonzero entries are
+\begin{equation}\label{eq:choi-entries}
+\begin{split}
+3J_\lambda={}&\ket{00}\bra{00}+(1-\lambda)\ket{10}\bra{10}
++\lambda\ket{11}\bra{11}\phantom{\Big|}\\
+&+(1-\lambda)^2\ket{20}\bra{20}
++2\lambda(1-\lambda)\ket{21}\bra{21}
++\lambda^2\ket{22}\bra{22}\\
+&+\left[\sqrt{\lambda/2}\ket{00}\bra{11}
++\frac\lambda4\ket{00}\bra{22}
++\sqrt\lambda(1-\lambda)\ket{10}\bra{21}
++\frac{\lambda^{3/2}}{\sqrt2}\ket{11}\bra{22}
++\mathrm{h.c.}\right].
+\end{split}
+\end{equation}
+No partial transpose is included. A channel is anti-degradable precisely
+when its Choi state has an extension $X$ satisfying
+\begin{equation}\label{eq:extension}
+X\succeq0,\qquad SX S=X,\qquad \Tr_{B_2}X=J_\lambda,
+\end{equation}
+where $S$ exchanges $B_1$ and $B_2$ \cite{Mele2024,Myhr2009}.
+Swap symmetry gives the other marginal. For completeness, an anti-degrading
+map applied to a Stinespring environment gives a channel with two identical
+output marginals; swap averaging gives \eqref{eq:extension}. Conversely,
+the extension defines such a two-output channel. Uniqueness of Stinespring
+dilation expresses its second output as a channel from the environment
+of the first, providing an anti-degrading map.
+
+\begin{theorem}\label{thm:threshold}
+Let $r$ be the unique root in
+\begin{equation}\label{eq:root-interval}
+I_r=\left[\frac{66454426803}{10^{11}},
+                \frac{66454426804}{10^{11}}\right]
+\end{equation}
+of
+\begin{equation}\label{eq:polynomial}
+P(x)=601x^6-714x^5+113x^4-1040x^3+2080x^2-1280x+256.
+\end{equation}
+Then $\N_\lambda$ is anti-degradable if and only if $\lambda\leq r$.
+At $r$ there is a rank-four normalized swap-invariant extension.
+For every $\lambda>r$ there is an explicit Hermitian $H_\lambda$ such that
+\begin{equation}\label{eq:dual-condition}
+W_{H_\lambda}:=\frac{H_\lambda\otimes I_3+
+S(H_\lambda\otimes I_3)S}{2}\succeq0,\qquad
+\Tr(H_\lambda J_\lambda)<0
+\end{equation}
+on the full 27-dimensional space.
+\end{theorem}
+
+An exact narrower enclosure is
+\begin{equation}\label{eq:refined}
+\frac{66454426803317}{10^{14}}<r<
+\frac{66454426803318}{10^{14}}.
+\end{equation}
+Thus $r\simeq0.664544268033$, slightly below the two-level bound $2/3$.
+The decimal is descriptive; the proof uses the algebraic definition and
+rational enclosures.
+
+\section{Population support and the two swap sectors}\label{sec:reduction}
+Set $Y=3X$, so that $\Tr_{B_2}Y=3J_\lambda$ and $\Tr Y=3$.
+All marginal populations with $b>a$ vanish. For a positive $Y$, the
+corresponding diagonal summands $Y_{abc,abc}$ are nonnegative and hence
+individually zero. A zero diagonal of a positive matrix forces its whole
+row and column to vanish, by $|Y_{ij}|^2\leq Y_{ii}Y_{jj}$.
+The second marginal imposes $c\leq a$ as well. Every extension therefore
+has support in
+\begin{equation}\label{eq:support}
+\K=\operatorname{span}\{\ket{abc}:b,c\leq a\},\qquad
+\dim\K=1+4+9=14.
+\end{equation}
+
+The Choi state is invariant under $e^{i\theta(-N_A+N_B)}$.
+To average an extension, use the representation
+\begin{equation}
+U_\theta=e^{i\theta(-N_A+N_{B_1}+N_{B_2})}.
+\end{equation}
+This preserves positivity and each marginal and gives blocks of charge
+$q=b+c-a$. The averaging commutes with the swap. For $b<c$ define
+\begin{equation}
+\ket{a;s_{bc}}=\frac{\ket{abc}+\ket{acb}}{\sqrt2},\qquad
+\ket{a;a_{bc}}=\frac{\ket{abc}-\ket{acb}}{\sqrt2};
+\quad\ket{a;s_{bb}}=\ket{abb}.
+\end{equation}
+The symmetric sector has charge dimensions $(1,2,4,2,1)$, and the
+antisymmetric sector has dimensions $(1,2,1)$ at $q=-1,0,1$.
+
+For this support, every antisymmetric block can be transferred isometrically
+to the corresponding symmetric kets without changing either marginal.
+The singleton kets are $\ket{2;a_{01}}$ and $\ket{2;a_{12}}$.
+Their diagonal marginal images coincide with those of the symmetric kets.
+The only nonsingleton block has $\ket{1;a_{01}}$ and
+$\ket{2;a_{02}}$. Its two diagonal units have the same property.
+In its off-diagonal unit the only common traced number is zero;
+the two antisymmetric signs agree, so the partial trace equals that
+of the symmetric unit. The same holds for its adjoint and for the
+other partial trace. These six ordered matrix units exhaust all blocks.
+Adding the transferred positive matrices to the symmetric blocks preserves
+positivity. This proves symmetric-support equivalence for the present
+channel; no such equivalence for general qutrit channels is used.
+
+Since $J_\lambda$ is real, averaging with complex conjugation permits
+real symmetric blocks. Their ordered bases are in Table~\ref{tab:bases}.
+Let $B_q$ denote the isometry whose columns are the listed kets.
+\begin{table}[htbp]
+\centering
+\caption{Ordered symmetric block bases in the necessary support.
+The scalar blocks are denoted $\zeta$ and $w$.}\label{tab:bases}
+\begin{tabular}{ccl}
+\toprule
+Charge & Block & Ordered basis\\
+\midrule
+$-2$ & $\zeta$ & $\ket{2;s_{00}}$\\
+$-1$ & $R$ & $\ket{1;s_{00}},\ \ket{2;s_{01}}$\\
+$0$ & $T$ & $\ket{0;s_{00}},\ \ket{1;s_{01}},\ \ket{2;s_{02}},\ \ket{2;s_{11}}$\\
+$1$ & $V$ & $\ket{1;s_{11}},\ \ket{2;s_{12}}$\\
+$2$ & $w$ & $\ket{2;s_{22}}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+Direct partial tracing of these kets gives the ten independent equations
+\begin{equation}\label{eq:marginals}
+\begin{aligned}
+T_{00}&=1,& T_{01}&=\sqrt\lambda,& T_{02}&=\lambda/(2\sqrt2),\\
+R_{00}+T_{11}/2&=1-\lambda,& T_{11}/2+V_{00}&=\lambda,\\
+R_{01}+T_{13}&=\sqrt{2\lambda}(1-\lambda),\\
+T_{12}+\sqrt2 V_{01}&=\sqrt2\lambda^{3/2},\\
+\zeta+R_{11}/2+T_{22}/2&=(1-\lambda)^2,\\
+R_{11}/2+T_{33}+V_{11}/2&=2\lambda(1-\lambda),\\
+T_{22}/2+V_{11}/2+w&=\lambda^2.
+\end{aligned}
+\end{equation}
+All other marginal entries vanish. The problem now has 18 real matrix
+entries, with ten independent constraints, while retaining equivalence
+to \eqref{eq:extension}.
+
+\section{The algebraic endpoint and its extension}\label{sec:primal}
+At the specified root $r$, set
+\begin{equation}\label{eq:primal-parameters}
+t=\sqrt r,\quad d=2-3r,\quad p=\frac{r}{2\sqrt2},\quad
+\alpha=2(1-r)^2-\frac{r^2}{8},\quad k=\frac{t}{\sqrt2}.
+\end{equation}
+All square roots below are the positive real roots. Set $\zeta=0$, $R=0$,
+and
+\begin{equation}\label{eq:primal}
+G=\begin{pmatrix}
+1&0\\ t&\sqrt d\\ p&\sqrt\alpha\\ kt&k\sqrt d
+\end{pmatrix},\qquad
+T=GG^{\mathsf T},\qquad
+h=\begin{pmatrix}\sqrt{2r-1}\\\sqrt{2r(1-r)}\end{pmatrix},\qquad
+V=hh^{\mathsf T},\quad w=r^2+r-1.
+\end{equation}
+The positivity of $d,\alpha,2r-1,w$ follows from the rational interval
+\eqref{eq:root-interval}; exact bounds are summarized in Appendix~\ref{app:arithmetic}.
+Thus these blocks are positive semidefinite. Substitution in
+\eqref{eq:marginals} leaves only one residual equation,
+\begin{equation}\label{eq:radical}
+\sqrt{(2-3r)\bigl(2(1-r)^2-r^2/8\bigr)}
++2\sqrt{r(1-r)(2r-1)}=\frac{3r^{3/2}}{2\sqrt2}.
+\end{equation}
+
+To check the branch after squaring, define
+\begin{equation}\label{eq:ABC}
+\begin{split}
+A(x)&=(2-3x)\bigl(16(1-x)^2-x^2\bigr),\\
+B(x)&=32x(1-x)(2x-1),\qquad C(x)=9x^3.
+\end{split}
+\end{equation}
+Direct expansion gives
+\begin{equation}\label{eq:squaring}
+(C-A-B)^2-4AB=4P(x).
+\end{equation}
+On $I_r$, $A,B,C,C-A-B$ are strictly positive. Consequently $P(r)=0$
+implies $C-A-B=2\sqrt{AB}$ and then
+$\sqrt A+\sqrt B=\sqrt C$, which is \eqref{eq:radical}.
+There is no extraneous negative radical branch. Sturm counts establish
+exactly one root in $I_r$ and exactly one in $(3/5,2/3)$.
+Applying the same exact count to \eqref{eq:refined} gives its narrower
+enclosure.
+
+The endpoint extension is now explicit:
+\begin{equation}\label{eq:endpoint-X}
+X_r=\frac13\left[B_0GG^{\mathsf T}B_0^{\mathsf T}
++B_1hh^{\mathsf T}B_1^{\mathsf T}
++w\ket{222}\bra{222}\right].
+\end{equation}
+Equations~\eqref{eq:marginals}--\eqref{eq:radical} give both marginals
+$J_r$. Each component is supported on symmetric output kets.
+Moreover $\Tr T+\Tr V+w=3$, so $\Tr X_r=1$.
+The two columns of $G$ are independent because $d>0$; $h\ne0$ and $w>0$.
+The three charge sectors are orthogonal, proving $\operatorname{rank}X_r=4$.
+
+\section{A separating operator on the full population support}\label{sec:face}
+The following coefficients are fixed at $r$, even when the tested
+transmissivity is varied. Define
+\begin{equation}\label{eq:dual-parameters}
+u=\sqrt{\alpha/d},\quad
+v=\sqrt{\frac{2r(1-r)}{2r-1}},\quad
+\eta=\frac{\sqrt2u}{v},\quad \beta=2\eta,\quad c=tu-p,
+\end{equation}
+and ten real numbers
+\begin{equation}\label{eq:y}
+\begin{aligned}
+y_0&=c^2,& y_1&=-2\sqrt2uc,& y_2&=2\sqrt2c,\\
+y_3&=2u^2+\eta(2r-v^2),& y_4&=-2\beta t,& y_5&=\eta v^2,\\
+y_6&=-4u,& y_7&=2,&y_8&=\beta,&y_9&=0.
+\end{aligned}
+\end{equation}
+In the lexicographic basis $\ket{00},\ket{01},\ldots,\ket{22}$,
+let $H_0$ have diagonal entries $y_0,y_3,y_5,y_7,y_8,y_9$ at
+indices $0,3,4,6,7,8$, respectively. Its only nonzero off-diagonal
+entries and their equal adjoints are
+\begin{equation}\label{eq:H0}
+(H_0)_{0,4}=y_1/2,\quad (H_0)_{0,8}=y_2/2,\quad
+(H_0)_{3,7}=y_4/2,\quad (H_0)_{4,8}=y_6/2.
+\end{equation}
+Define $W_0=W_{H_0}$ as in \eqref{eq:dual-condition}.
+Its symmetric blocks on $\K$ are
+\begin{equation}\label{eq:dual-blocks}
+\begin{split}
+C_\zeta&=2,\qquad
+C_R=\begin{pmatrix}y_3&-\beta k\\-\beta k&1+\eta\end{pmatrix},\\
+C_T&=nn^{\mathsf T}+\beta mm^{\mathsf T},\qquad
+C_V=\eta jj^{\mathsf T},\qquad C_w=0,\\
+n&=(c,-u,1,0)^{\mathsf T},\quad
+m=(0,-k,0,1)^{\mathsf T},\quad j=(v,-1)^{\mathsf T}.
+\end{split}
+\end{equation}
+These identities follow by compression in the bases of Table~\ref{tab:bases}.
+For example $(C_T)_{12}=y_6/4$ and $(C_V)_{01}=y_6/(2\sqrt2)$:
+the factors account for the two real off-diagonal entries in a trace pairing.
+Exact interval bounds give $y_3>53$ and $334<\det C_R<335$.
+Thus $C_R$ is positive definite and the remaining blocks are manifestly
+positive semidefinite. The antisymmetric blocks have identical marginal
+images to the corresponding symmetric principal blocks, by
+Section~\ref{sec:reduction}. Their trace pairing with $H_0$ is therefore
+identical, so they too are positive semidefinite. This proves
+$P_\K W_0P_\K\succeq0$ on all 14 support dimensions.
+
+Complementary slackness can be checked without an eigenvalue calculation:
+$n^{\mathsf T}G=m^{\mathsf T}G=0$ and $j^{\mathsf T}h=0$.
+Consequently $q(r)=0$, where the variable-transmissivity expectation is
+\begin{equation}\label{eq:q}
+\begin{split}
+q(\lambda):=3\Tr(H_0J_\lambda)
+={}&y_0+\frac{y_1\sqrt\lambda}{\sqrt2}+\frac{y_2\lambda}{4}
++y_3(1-\lambda)+y_4\sqrt\lambda(1-\lambda)+y_5\lambda\\
+&+\frac{y_6\lambda^{3/2}}{\sqrt2}+y_7(1-\lambda)^2
++2y_8\lambda(1-\lambda)+y_9\lambda^2.
+\end{split}
+\end{equation}
+The coefficients remain fixed in this differentiation:
+\begin{equation}\label{eq:qprime}
+\begin{split}
+q'(\lambda)={}&\frac{y_1}{2\sqrt2\sqrt\lambda}+\frac{y_2}{4}-y_3
++\frac{y_4(1-3\lambda)}{2\sqrt\lambda}+y_5
++\frac{3y_6\sqrt\lambda}{2\sqrt2}\\
+&-2y_7(1-\lambda)+2y_8(1-2\lambda).
+\end{split}
+\end{equation}
+Rational outward interval evaluation on $[\inf I_r,2/3]$ yields
+$-83<q'(\lambda)<-81$, as detailed in Appendix~\ref{app:arithmetic}.
+Hence $q(\lambda)<0$ for every $r<\lambda\leq2/3$.
+This statement is uniform over the interval, rather than a test of sample points.
+
+\section{Full-space witnesses and the remaining transmissivities}\label{sec:lift}
+Positivity of $W_0$ outside $\K$ has not been assumed. Introduce
+\begin{equation}\label{eq:penalty}
+F=\operatorname{diag}(0,1,1,0,0,1,0,0,0).
+\end{equation}
+It marks the forbidden output populations $b>a$ and satisfies
+$\Tr(FJ_\lambda)=0$ for every $\lambda$. The associated $W_F$
+vanishes on $\K$ and is diagonal with entries at least $1/2$ on
+$\K^\perp$. The rational coefficient bounds give $|y_i|<60$;
+the 27-dimensional row-sum bound then gives
+$\lVert W_0\rVert_{\mathrm{op}}<27\cdot60< K_0:=2000$.
+
+For $r<\lambda\leq2/3$ define
+\begin{equation}\label{eq:full-H}
+\epsilon_\lambda=-q(\lambda)/6>0,\qquad
+M_\lambda=2\left(K_0+\frac{K_0^2}{\epsilon_\lambda}\right),\qquad
+H_\lambda=H_0+\epsilon_\lambda I_9+M_\lambda F.
+\end{equation}
+In $\K\oplus\K^\perp$, write $W_{H_\lambda}$ in block form
+$\bigl(\begin{smallmatrix}A_*&B_*\\B_*^\dagger&D_*\end{smallmatrix}\bigr)$.
+We have $A_*\succeq\epsilon_\lambda I$, $\lVert B_*\rVert\leq K_0$,
+and $D_*\succeq(-K_0+\epsilon_\lambda+M_\lambda/2)I$.
+Therefore
+\begin{equation}\label{eq:schur}
+\begin{split}
+D_*-B_*^\dagger A_*^{-1}B_*
+&\succeq\left(-K_0+\epsilon_\lambda+\frac{M_\lambda}{2}
+-\frac{K_0^2}{\epsilon_\lambda}\right)I
+=\epsilon_\lambda I>0.
+\end{split}
+\end{equation}
+Thus the full $W_{H_\lambda}$ is positive definite, whereas
+\begin{equation}\label{eq:negative}
+\Tr(H_\lambda J_\lambda)=q(\lambda)/3+\epsilon_\lambda
+=q(\lambda)/6<0.
+\end{equation}
+For any extension satisfying \eqref{eq:extension},
+$\Tr(W_{H_\lambda}X)=\Tr(H_\lambda J_\lambda)$ would be nonnegative,
+a contradiction. The penalty grows without bound as $\lambda\downarrow r$,
+but is finite for each strictly larger transmissivity.
+
+Let $\E_\mu$ be vacuum pure loss restricted to $\mathcal H_3$.
+Its Kraus operators are
+\begin{equation}\label{eq:loss-kraus}
+L_\ell(\mu)=\sum_{n=\ell}^2\sqrt{\binom n\ell}
+(1-\mu)^{\ell/2}\mu^{(n-\ell)/2}\ket{n-\ell}\bra n,
+\quad\ell=0,1,2.
+\end{equation}
+They satisfy $\sum_\ell L_\ell^\dagger L_\ell=I_3$ throughout $[0,1]$.
+Loss and number dephasing commute, and the exact loss composition law gives
+\begin{equation}\label{eq:composition}
+\E_\mu\circ\N_\lambda=\N_{\mu\lambda}
+\end{equation}
+(Lemma 28 and Eq.~(67) in Ref.~\cite{Mele2024}). It can also be checked
+directly on the nine matrix units using \eqref{eq:channel} and
+\eqref{eq:loss-kraus}.
+
+For $0\leq\lambda\leq r$, set $\Psi=\E_{\lambda/r}$ and
+\begin{equation}\label{eq:below}
+X_\lambda=(\id_A\otimes\Psi\otimes\Psi)(X_r).
+\end{equation}
+Complete positivity, trace preservation and applying the same map to both
+outputs preserve positivity, normalization and swap invariance. Its marginals
+are $J_\lambda$ by \eqref{eq:composition}.
+
+For $2/3\leq\lambda\leq1$, take $U=2/3$ and the operator $H_U$ from
+\eqref{eq:full-H}. With $\Psi=\E_{U/\lambda}$, define
+\begin{equation}\label{eq:pullback}
+H_\lambda=(\id_A\otimes\Psi^\dagger)(H_U).
+\end{equation}
+The adjoint is completely positive and unital, giving
+\begin{equation}\label{eq:pullback-W}
+\begin{split}
+W_{H_\lambda}&=(\id_A\otimes\Psi^\dagger\otimes\Psi^\dagger)(W_{H_U})
+\succeq0,\\
+\Tr(H_\lambda J_\lambda)&=\Tr(H_UJ_U)<0.
+\end{split}
+\end{equation}
+The unital identity is needed here for both tensor terms in $W$.
+Together \eqref{eq:endpoint-X}, \eqref{eq:full-H}, \eqref{eq:below} and
+\eqref{eq:pullback} establish every assertion of Theorem~\ref{thm:threshold},
+including both physical endpoints $\lambda=0,1$.
+
+\section{Physical consequence, comparison and limits}
+The exact feasible interval is $[0,r]$ for arbitrary states supported on the
+first three Fock levels. In particular the unassisted quantum capacity of
+this restriction vanishes there. The two-level threshold $2/3$ is larger
+by
+\begin{equation}\label{eq:delta}
+2/3-r\simeq0.00212239863349.
+\end{equation}
+By Corollary 35 of Ref.~\cite{Mele2024}, non-anti-degradability of a finite
+restriction implies non-anti-degradability of the unrestricted channel.
+Thus anti-degradability of the infinite bosonic channel at this phase
+variance necessarily requires $\lambda\leq r$, sharpening the two-level
+necessary bound. Anti-degradability below $r$ for the unrestricted channel
+does not follow from this restriction, and neither does positive quantum
+capacity above $r$.
+
+The closest prior calculation is the three-level numerical boundary in
+Ref.~\cite{Mele2024}; the advance is exact algebraic and operator
+certification at one specified variance. The symmetry-class criterion of
+Ranade \cite{Ranade2009} concerns invariance under the full family of
+diagonal unitaries. We use only number-phase covariance and do not apply
+that criterion to the present Choi matrix. Our explicit construction and
+separation argument supply the threshold directly. The literature comparison
+supports this narrow contribution; exhaustive priority under every possible
+transformed representation is not asserted.
+
+This is an exact finite-restriction result, with rational error control for
+the algebraic signs. It is not a general-$\gamma$ formula, a capacity
+formula, a two-way communication boundary or an empirical claim.
+The support transfer and full-space penalty exhibit how a singular
+symmetric-extension endpoint can be certified without treating numerical
+solver feasibility as a proof.
+
+\appendix
+\section{Exact arithmetic and reproducibility}\label{app:arithmetic}
+The auxiliary sign checks use rational endpoints, exact polynomial
+arithmetic and outward bounds for square roots. For a nonnegative rational
+$a$, with $D=10^{30}$, compute
+\begin{equation}
+n=\left\lfloor\sqrt{\left\lfloor aD^2\right\rfloor}\right\rfloor.
+\end{equation}
+Then $n/D\leq\sqrt a<(n+1)/D$. Apply this to the lower and upper
+endpoints of a nonnegative interval. Addition and multiplication use
+the endpoint extrema; division is performed only when the denominator
+interval excludes zero. All such arithmetic uses integers and rational
+numbers, with no floating-point tolerance.
+
+Table~\ref{tab:bounds} lists conservative rational enclosures, written
+with terminating decimals interpreted as exact rationals. The sign and
+operator conditions follow with substantial margins. The coefficient
+intervals in \eqref{eq:y} are computed with $r\in I_r$, and the derivative
+interval uses $\lambda\in[\inf I_r,2/3]$ independently. This enlarged
+interval covers every required value; no cancellation requiring numerical
+correlation between the two variables is assumed.
+\begin{table}[htbp]
+\centering
+\caption{Conservative exact rational bounds sufficient for the radical
+branch, endpoint positivity and full-space witness construction.}
+\label{tab:bounds}
+\begin{tabular}{lcc}
+\toprule
+Quantity & Lower bound & Upper bound\\
+\midrule
+$A(r)$ & $0.0086$ & $0.0087$\\
+$B(r)$ & $2.34$ & $2.35$\\
+$C(r)$ & $2.64$ & $2.65$\\
+$C(r)-A(r)-B(r)$ & $0.28$ & $0.29$\\
+$d$ & $0.0063$ & $0.0064$\\
+$\alpha$ & $0.169$ & $0.171$\\
+$2r-1$ & $0.329$ & $0.330$\\
+$w$ & $0.10$ & $0.12$\\
+$y_3$ & $53$ & $54$\\
+$\det C_R$ & $334$ & $335$\\
+Each $y_i$ & $-60$ & $60$\\
+$q'(\lambda)$ on $[\inf I_r,2/3]$ & $-83$ & $-81$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For root isolation, take the Sturm chain $S_0=P$, $S_1=P'$,
+$S_{j+1}=-\operatorname{rem}(S_{j-1},S_j)$, stopping at the nonzero
+constant. Exact sign variations at the endpoints of $I_r$ are respectively
+3 and 2, so the root count is one. The same computation gives one root
+in $(3/5,2/3)$ and in the interval of \eqref{eq:refined}. These checks,
+the polynomial identity \eqref{eq:squaring}, endpoint marginal identities,
+dual block identities and the nine loss-composition units are supplied as
+reproducible symbolic calculations in Online Resource~1. Numerical
+optimization was used only to discover the candidate, not to validate it.
+
+The recorded computational environment is Python 3.12.14, SymPy 1.14.0,
+NumPy 2.3.5 and SciPy 1.18.1. The decisive symbolic and rational checks
+require SymPy and the Python standard library; NumPy and SciPy support
+the optional discovery calculations. The supplementary README separates
+these tasks and gives regeneration commands.
+
+\section*{Statements and Declarations}
+\paragraph{Data and code availability.}
+The channel is specified analytically by \eqref{eq:channel}.
+Own symbolic verification code, exact certificate data and reproduction
+instructions accompany the manuscript as Online Resource~1; no experimental
+dataset is used. The supplementary material does not include third-party
+full-text papers.
+\paragraph{Use of generative artificial intelligence.}
+OpenAI Codex was used in analytic candidate development, calculation and
+code preparation, computational checking, literature screening and manuscript
+drafting. The exact checks use the symbolic and rational arithmetic methods
+described above. This disclosure covers substantive research and text
+generation, beyond copy editing.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

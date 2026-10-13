@@ -1,0 +1,351 @@
+\documentclass[aps,pra,reprint,amsmath,amssymb,longbibliography,nofootinbib]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm,booktabs,mathtools,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Optimal single-letter private information of the dephrasure channel on a noise interval},pdfauthor={Xiaojian Zeng},pdfsubject={Computer-assisted quantum information result; local draft}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\atanh}{\operatorname{atanh}}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\kl}{k_{\mathrm l}}
+\newcommand{\ku}{k_{\mathrm u}}
+\begin{document}
+\title{Optimal single-letter private information of the dephrasure channel on a noise interval}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190, China}
+\date{September 12, 2026}
+\begin{abstract}
+The dephrasure channel combines qubit dephasing with a flagged erasure. A symmetric pair of mixed input states gives a known lower bound on its single-letter private information, but optimizing over arbitrary ensembles also permits biased average states and larger signal alphabets. We prove that this pair is optimal for erasure probability $q=3p$ and dephasing probability $p\in[27/250,221/2000]$. The proof bounds coherent information between two quadratic envelopes that match at the average and signal states of the known code. It yields the stronger inequality $\Pi(\cE)\le B(p)-(3/250)\Var_w(z_a)-(1/1000)\bar z^2$ for every finite ensemble, where $z_a$ is the signal's Bloch component along the dephasing axis and $B(p)$ is the known one-dimensional coding maximum. Analytic reductions, including the entropy endpoint limit, reduce the continuous domain to seven inequalities verified with outward-rounded interval arithmetic and a separately implemented replay. At $p=0.11$, the matching bound is strictly stronger than the general coherent-information max-minus-min bound. The result concerns single-letter private information; it does not determine the regularized private capacity or the optimizer outside the stated interval.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+The private information of a quantum channel compares the classical information available to its receiver and to its environment. Even for a qubit input, its single-letter optimization ranges over mixed signal states, their probabilities, and their average state. A useful coding construction therefore need not come with a tractable converse.
+
+The dephrasure channel provides a concrete example. Leditzky, Leung, and Smith introduced the channel as a simple setting for superadditivity of coherent information and studied its private information~\cite{LLS2018}. They exhibited an equally weighted pair of mixed states on the equator of the Bloch sphere and conjectured its optimality on the basis of numerical optimization. Their Fig.~3 examines the line $q=3p$, including a regime where the single-letter private information exceeds the optimized coherent information. The mixed-state code and that private advantage are prior results.
+
+We give a converse for this code on the closed interval
+\begin{equation}
+ J=\left[\frac{27}{250},\frac{221}{2000}\right]
+   =[0.108,0.1105],\qquad q=3p.
+ \label{eq:J}
+\end{equation}
+The upper bound applies to every finite ensemble, without fixing its mean, purity, weights, or alphabet size. Its main ingredient is a pair of quadratic bounds on coherent information. The two bounds have different coefficients along the dephasing axis, and their difference gives a quantitative loss for vertical signal components.
+
+The distinction from existing bounds matters inside $J$. Hirche and Leditzky obtained a general upper bound on single-letter private information in terms of the optimized coherent information of the channel and its complement~\cite{HL2022}. At $p=0.11$, we show directly that this bound exceeds the known coding value. Recent perturbative criteria of Wu, Ma, and Fullwood detect a positive private-information advantage under specified input-state conditions~\cite{WMF2025}; they address a different task from determining the optimizing ensemble. Here the contribution is a matching upper bound for a published code on a specified noise interval. No maximality or physical criticality is assigned to the endpoints in Eq.~\eqref{eq:J}.
+
+\section{Channel and private-information objective}
+Let $X,Y,Z$ denote the Pauli matrices and let $V:\mathbb C^2\to\mathbb C^3$ embed the computational basis into the first two receiver levels. The third level $|e\rangle$ is an orthogonal erasure flag. For an input operator $A$, define
+\begin{align}
+ \cN_{p,q}(A)={}&(1-q)V[(1-p)A+pZAZ]V^\dagger\nonumber\\
+ &+q\Tr(A)|e\rangle\langle e|,
+ \label{eq:channel}
+\end{align}
+with $0\le p\le1/2$ and $0\le q\le1$. A Kraus representation is
+\begin{align}
+ K_0&=\sqrt{(1-q)(1-p)}\,V,&
+ K_1&=\sqrt{(1-q)p}\,VZ,\nonumber\\
+ K_2&=\sqrt q\,|e\rangle\langle0|,&
+ K_3&=\sqrt q\,|e\rangle\langle1|.
+ \label{eq:kraus}
+\end{align}
+Thus $\sum_jK_j^\dagger K_j=I_2$. In the environment basis associated with these four Kraus operators, a density matrix $\rho$ has complementary output
+\begin{equation}
+ \cN^c_{p,q}(\rho)=(1-q)
+ \begin{pmatrix}
+ 1-p&\sqrt{p(1-p)}\,z\\
+ \sqrt{p(1-p)}\,z&p
+ \end{pmatrix}\oplus q\rho,
+ \label{eq:complement}
+\end{equation}
+where $z=\Tr(Z\rho)$. This is the full complement, up to a permutation of the blocks in Appendix C of Ref.~\cite{LLS2018}. In particular, the erased input reaches the environment through the $q\rho$ block.
+
+All entropies are in bits, $S(\rho)=-\Tr\rho\log_2\rho$, with $0\log 0=0$. Write
+\begin{equation}
+ I_c(\rho)=S(\cN_{p,q}(\rho))-S(\cN^c_{p,q}(\rho)).
+ \label{eq:ic}
+\end{equation}
+For any finite ensemble $\cE=\{w_a,\rho_a\}_{a=1}^M$, the weights obey $w_a\ge0$ and $\sum_aw_a=1$, and each signal is a qubit density matrix. Its private information is
+\begin{equation}
+ \Pi(\cE)=I_c(\bar\rho)-\sum_aw_a I_c(\rho_a),
+ \qquad \bar\rho=\sum_aw_a\rho_a.
+ \label{eq:private}
+\end{equation}
+Linearity of the channel identifies Eq.~\eqref{eq:private} with the difference between the receiver and environment Holevo informations. We use
+\begin{equation}
+ P^{(1)}(\cN_{p,q})=\sup_{\cE}\Pi(\cE),
+ \label{eq:P1}
+\end{equation}
+where $M\ge1$ is arbitrary and finite. This quantity is distinct from its regularization over multiple channel uses.
+
+The known code consists of
+\begin{equation}
+ \rho_\pm=\tfrac12(I_2\pm rX),\qquad w_+=w_-=\tfrac12,
+ \quad 0\le r\le1.
+ \label{eq:pair}
+\end{equation}
+Let $h(t)=-t\log_2t-(1-t)\log_2(1-t)$ and $H(r)=h((1+r)/2)$. On the line $q=3p$, its private information is
+\begin{align}
+ f_p(r)&=(1-3p)[1-H((1-2p)r)]\nonumber\\
+       &\hspace{1.5em}-3p[1-H(r)],\label{eq:f}\\
+ B(p)&=\max_{0\le r\le1}f_p(r).\label{eq:B}
+\end{align}
+Equation~\eqref{eq:pair} is Eq.~(16) in the arXiv v3 PDF of Ref.~\cite{LLS2018}; Eqs.~\eqref{eq:f}--\eqref{eq:B} are its scalar entropy representation.
+
+The model is an exact, finite-dimensional, memoryless channel. The probabilities and Bloch coordinates are dimensionless; information is measured in bits per channel use. There is no perturbative expansion, spatial boundary condition, continuous-time generator assumption, or Hilbert-space truncation in the result below.
+
+\section{Optimality and a penalty for vertical components}
+For a finite ensemble define
+\begin{equation}
+ \begin{gathered}
+ z_a=\Tr(Z\rho_a),\qquad \bar z=\sum_aw_az_a,\\
+ \Var_w(z_a)=\sum_aw_a(z_a-\bar z)^2.
+ \end{gathered}
+ \label{eq:variance}
+\end{equation}
+\begin{theorem}\label{thm:main}
+For every $p\in J$, $q=3p$, and every finite ensemble of qubit states with arbitrary nonnegative normalized weights,
+\begin{equation}
+ \Pi(\cE)\le B(p)-\frac3{250}\Var_w(z_a)
+                         -\frac1{1000}\bar z^2.
+ \label{eq:main}
+\end{equation}
+Consequently,
+\begin{equation}
+ P^{(1)}(\cN_{p,3p})=B(p),\qquad p\in J.
+ \label{eq:optimal}
+\end{equation}
+\end{theorem}
+
+The bound does not presume that the average state is maximally mixed. It compares that unrestricted average state with each unrestricted signal. The code in Eq.~\eqref{eq:pair} attains Eq.~\eqref{eq:optimal}; adding more signals, biasing their weights, or moving their average cannot improve its single-letter value on $J$. Equation~\eqref{eq:main} also quantifies the loss when the vertical components have nonzero variance or nonzero mean. We do not give a full classification of all ensembles attaining equality.
+
+\section{Proof by matched quadratic envelopes}
+\subsection{Bloch-spectrum reduction}
+Write $\rho=(I_2+xX+yY+zZ)/2$ and set
+\begin{equation}
+ \begin{gathered}
+ R=\sqrt{x^2+y^2+z^2},\qquad u=z^2,\\
+ a=1-2p,\qquad b=1-a^2=4p(1-p).
+ \end{gathered}
+ \label{eq:variables}
+\end{equation}
+The physical domain is $0\le u\le R^2\le1$. The normalized qubit blocks in Eqs.~\eqref{eq:channel} and \eqref{eq:complement} have spectral radii
+\begin{equation}
+ s^2=a^2R^2+bu,\qquad t^2=a^2+bu.
+ \label{eq:spectra}
+\end{equation}
+The entropy of a direct sum with weights $1-q,q$ contains an identical binary-flag term on both sides of Eq.~\eqref{eq:ic}. Cancelling it gives the representation also used in Appendix D of Ref.~\cite{LLS2018}:
+\begin{equation}
+ F_p(R,u):=I_c(\rho)=(1-q)[H(s)-H(t)]-qH(R).
+ \label{eq:F}
+\end{equation}
+In the rest of the proof $q=3p$. Define
+\begin{equation}
+ E_p(R)=F_p(R,0),\quad
+ m_p=\min_{0\le R\le1}E_p(R),\quad C_p=E_p(0).
+ \label{eq:EmC}
+\end{equation}
+Continuity ensures that $m_p$ exists. The symmetric pair has average $I_2/2$, so
+\begin{equation}
+ B(p)=C_p-m_p.
+ \label{eq:match}
+\end{equation}
+The proof will not need a numerical approximation to $m_p$.
+
+\begin{lemma}\label{lem:envelopes}
+For $p\in J$ and $0\le u\le R^2\le1$,
+\begin{equation}
+ m_p+\kl u\le F_p(R,u)\le C_p+\ku u,
+ \label{eq:envelopes}
+\end{equation}
+where $\kl=3/250$ and $\ku=11/1000$.
+\end{lemma}
+
+The remainder of this section derives Lemma~\ref{lem:envelopes} from seven explicit scalar inequalities. Section~\ref{sec:certificate} gives their continuous-domain verification.
+
+\subsection{Lower envelope}
+For $0\le r<1$ introduce
+\begin{equation}
+ \begin{gathered}
+ L(r)=\frac{\atanh r}{r},\qquad L(0)=1,\\
+ \psi(v)=L(\sqrt v)=\sum_{n=0}^{\infty}\frac{v^n}{2n+1}.
+ \end{gathered}
+ \label{eq:psi}
+\end{equation}
+Both $\psi'$ and $L$ are nonnegative and nondecreasing on their domains. Differentiating Eq.~\eqref{eq:F} in the interior at fixed $R$ gives
+\begin{equation}
+ \partial_uF_p(R,u)=\frac{(1-q)b}{2\ln2}[L(t)-L(s)].
+ \label{eq:Fu}
+\end{equation}
+Here $t^2-s^2=a^2(1-R^2)\ge0$, and $s^2,t^2$ increase at the same rate with $u$. Since $\psi'$ is nondecreasing, $\psi(t^2)-\psi(s^2)$ is nondecreasing in $u$. Hence
+\begin{align}
+ \partial_uF_p(R,u)&\ge d_p(R),\nonumber\\
+ d_p(R)&=\frac{(1-q)b}{2\ln2}[L(a)-L(aR)],\label{eq:d}\\
+ F_p(R,u)&\ge E_p(R)+d_p(R)u.\label{eq:lowerlinear}
+\end{align}
+The function $d_p(R)$ is nonincreasing in $R$.
+
+Choose the exact radii
+\begin{equation}
+ R_0=\frac{93}{100},\qquad r_t=\frac78.
+ \label{eq:lowercuts}
+\end{equation}
+The interval calculation establishes, for every $p\in J$,
+\begin{equation}
+ d_p(R_0)-\kl>0,\label{eq:Linner}
+\end{equation}
+and, for every $R\in[R_0,1]$,
+\begin{equation}
+ E_p(R)-E_p(r_t)+(d_p(R)-\kl)R^2>0.
+ \label{eq:Louter}
+\end{equation}
+For $R\le R_0$, Eqs.~\eqref{eq:lowerlinear}--\eqref{eq:Linner} and $E_p(R)\ge m_p$ imply the lower envelope. For $R\ge R_0$, the same conclusion holds whenever $d_p(R)\ge\kl$. Otherwise, $u\le R^2$ yields
+\begin{equation}
+ \begin{aligned}
+ &F_p(R,u)-m_p-\kl u\\
+ &\quad\ge E_p(R)-m_p+(d_p(R)-\kl)R^2\\
+ &\quad\ge E_p(R)-E_p(r_t)+(d_p(R)-\kl)R^2>0.
+ \end{aligned}
+ \label{eq:outerargument}
+\end{equation}
+The direction of the second inequality uses $m_p\le E_p(r_t)$. Thus the trial radius supplies a value above the minimum; it is not used as a lower bound on that minimum. At $R=1$, the coherent information is exactly zero for pure inputs, and Eq.~\eqref{eq:lowerlinear} extends by entropy continuity.
+
+\subsection{Upper envelope}
+Fix $z$ and let $X_\perp=x^2+y^2$. In this coordinate,
+$R^2=X_\perp+z^2$ and $s^2=a^2X_\perp+z^2$. A second derivative of Eq.~\eqref{eq:F} gives
+\begin{equation}
+ \partial_{X_\perp}^2F_p=
+ \frac{q\psi'(R^2)-(1-q)a^4\psi'(s^2)}{2\ln2}.
+ \label{eq:transverse}
+\end{equation}
+Since $R^2\ge s^2$ and $\psi'$ is nonnegative and nondecreasing, the verified condition
+\begin{equation}
+ q-(1-q)a^4>0\qquad(p\in J)
+ \label{eq:convexcondition}
+\end{equation}
+makes $F_p$ convex in $X_\perp$. The interval $0\le X_\perp\le1-z^2$ has a diagonal state at one endpoint and a pure state at the other. A continuous convex function lies below the maximum of its endpoint values. It follows that
+\begin{align}
+ F_p(R,z^2)&\le\max\{G_p(z^2),0\},\label{eq:axisreduction}\\
+ G_p(y)&=(1-2q)H(\sqrt y)
+          -(1-q)H(\sqrt{a^2+by}).\label{eq:G}
+\end{align}
+This is a pointwise bound for any input state, and does not rotate different signals independently or change an ensemble's mean.
+
+It remains to control the diagonal branch. We have $G_p(0)=C_p$ and
+\begin{equation}
+ G_p'(y)=\frac{-(1-2q)L(\sqrt y)
+                  +(1-q)bL(\sqrt{a^2+by})}{2\ln2}.
+ \label{eq:Gprime}
+\end{equation}
+With $z_0=99/100$, the two conditions
+\begin{align}
+ C_p&>0&&(p\in J),\label{eq:Cpositive}\\
+ \ku-G_p'(z^2)&>0&&(p\in J,\ 0\le z\le z_0)
+ \label{eq:Ucompact}
+\end{align}
+are checked directly by interval arithmetic. The singular endpoint is handled analytically. Define
+\begin{equation}
+ A_p=(1-q)a^2-q,
+ \label{eq:A}
+\end{equation}
+and verify $A_p>0$ on $J$. For $z_0\le z<1$ and $t^2=a^2+bz^2$, the identity $1-t^2=b(1-z^2)$ gives
+\begin{equation}
+ \atanh t-\atanh z=\ln\frac{1+t}{1+z}-\tfrac12\ln b.
+ \label{eq:atanhtail}
+\end{equation}
+Because $1>t\ge z\ge z_0$, the right-hand side is nonnegative, and
+\begin{align}
+ L(t)-L(z)&=\frac{\atanh t-\atanh z}{t}
+                +\atanh z\left(\frac1t-\frac1z\right)\nonumber\\
+ &\le\frac{-\tfrac12\ln b+\ln[2/(1+z_0)]}{z_0}
+       =:D_0(p).
+ \label{eq:D0}
+\end{align}
+Rewriting the numerator in Eq.~\eqref{eq:Gprime} as
+$-A_pL(z)+(1-q)b[L(t)-L(z)]$ gives
+\begin{equation}
+ G_p'(z^2)\le T_p:=
+ \frac{-A_pL(z_0)+(1-q)bD_0(p)}{2\ln2}.
+ \label{eq:tailbound}
+\end{equation}
+The last interval condition is $\ku-T_p>0$ on $J$. Together with Eq.~\eqref{eq:Ucompact}, it proves $G_p'(y)\le\ku$ for $0\le y<1$. Integrating yields
+\begin{equation}
+ G_p(y)\le C_p+\ku y.
+ \label{eq:Gupper}
+\end{equation}
+Entropy continuity includes $y=1$, without numerically evaluating a derivative at the logarithmic singularity. The right-hand side is positive by Eq.~\eqref{eq:Cpositive}, so it also bounds the zero branch in Eq.~\eqref{eq:axisreduction}. This proves the upper envelope.
+
+\subsection{From states to arbitrary ensembles}
+The mean of legal density matrices with nonnegative normalized weights is again legal. Apply the upper envelope to $\bar\rho$ and the lower envelope to each $\rho_a$:
+\begin{align}
+ \Pi(\cE)&\le C_p+\ku\bar z^2-m_p-\kl\sum_aw_az_a^2\nonumber\\
+ &=B(p)-\kl\Var_w(z_a)-(\kl-\ku)\bar z^2.
+ \label{eq:ensembleproof}
+\end{align}
+This is Eq.~\eqref{eq:main}. Choose a radius attaining $m_p$ and use Eq.~\eqref{eq:pair}. Its signals have $z=0$, its average is $I_2/2$, and its private information equals $C_p-m_p=B(p)$. This proves Eq.~\eqref{eq:optimal} and completes the proof of Theorem~\ref{thm:main} subject to the scalar checks specified next.
+
+\section{Continuous-domain interval verification}\label{sec:certificate}
+Only seven scalar inequalities enter the proof. Table~\ref{tab:certificate} lists their exact domains and conservative lower bounds on their margins. Both implementations use Arb ball arithmetic~\cite{Johansson2017} through python-flint 0.9.0. Domain endpoints and subdivisions are rational. Each arithmetic expression is evaluated on an entire closed box using outward rounding; acceptance requires its interval to be strictly positive. This checks a cover of the continuous domain, rather than values on a grid of sample points.
+
+\input{certificate-table.tex}
+
+The first implementation uses uniform partitions. At 192-bit precision it covers 100 parameter intervals, 500 exterior-radius intervals, and 1000 intervals in $y=z^2$, for 150500 scalar boxes including the five parameter-only checks. A repeat at 256 bits uses 160, 700, and 1400 intervals, respectively, and checks 336800 boxes. Both verify all seven conditions.
+
+The second implementation was written separately from the defining channel and the analytic inequalities, without importing the first implementation or its output. It uses $z$ instead of $z^2$, evaluates $L$ through elementary logarithms, cancels the common environmental entropy in $E_p(R)-E_p(r_t)$ before interval evaluation, and bisects rational boxes adaptively. A box whose margin is not yet positive is divided along its largest relative width. The 256-bit calculation accepts 2500 leaf boxes after 4993 evaluations. The leaves are generated by disjoint-interior bisection and their exact rational volumes sum to the full domain volumes. The five one-dimensional domains each have length $1/400$; the two rectangular domains have areas $7/40000$ and $99/40000$.
+
+For entropy evaluation, $H$ is decreasing on $[0,1]$, so its endpoint values bound an interval image. Similarly, $L$ is increasing on $[0,1)$. The exact continuous values $H(1)=0$ and $L(0)=1$ are imposed explicitly. Domain intersection with $[0,1]$ is used only where that domain follows from the physical state constraints. The upper derivative near $z=1$ is replaced by Eq.~\eqref{eq:tailbound}, and is never sampled at the singular endpoint. The proof uses no fitted optimizer and no truncation of the series in Eq.~\eqref{eq:psi}.
+
+A separate reconstruction starts from the $12\times2$ Stinespring isometry and takes symbolic partial traces, recovering Eqs.~\eqref{eq:channel}, \eqref{eq:complement}, and \eqref{eq:spectra}. Floating-point diagnostics compare the full output matrices with the scalar formulas in 500 state/channel cases and 240 ensembles containing 1480 signals. Their maximum discrepancies are below $7.2\times10^{-15}$ and $1.1\times10^{-15}$ bits, respectively, with a declared diagnostic tolerance of $2\times10^{-12}$ bits. These finite tests detect convention or implementation mistakes; they do not establish the universal bound. Both interval implementations share Arb, and therefore do not constitute validation by independent arithmetic libraries or a formal proof assistant.
+
+\paragraph{Computational assistance.}
+OpenAI Codex was used for source reconstruction, proof development, code generation and debugging, computational checks, literature synthesis, and manuscript preparation. The writing session was identified as GPT-6; the exact model versions of earlier research stages were not independently established for this draft. Separate AI sessions implemented the two verification routes, with their shared formulas and arithmetic library stated above. Human scientific review of these AI-assisted results has not yet been completed. The supplied programs perform the reported arithmetic deterministically; no language-model judgment is used as an interval acceptance test.
+
+\section{Comparison and interpretation}\label{sec:comparison}
+Let $Q^{(1)}(\cN)=\max_\rho I_c(\rho,\cN)$. The complementary output reverses the sign of coherent information, so the general bound of Ref.~\cite{HL2022}, Corollary 2.4, can be written
+\begin{equation}
+ P^{(1)}(\cN)\le Q^{(1)}(\cN)+Q^{(1)}(\cN^c)
+                  =\max_\rho I_c(\rho)-\min_\rho I_c(\rho).
+ \label{eq:prior}
+\end{equation}
+Our lower envelope and its equatorial contact show that the minimum in Eq.~\eqref{eq:prior} equals $m_p$ on $J$. However, the maximum need not equal $C_p$. At $p=11/100$, consider the legal diagonal state with $z=4/5$. Equations~\eqref{eq:G} and \eqref{eq:match} imply
+\begin{align}
+ \max I_c-\min I_c-B(p)
+ &\ge G_p(16/25)-C_p\nonumber\\
+ &>0.0027166720147\quad\text{bits}.
+ \label{eq:slack}
+\end{align}
+The strict inequality is enclosed by 256-bit Arb arithmetic. It uses a single legal witness for the coherent-information maximum, rather than a numerically asserted global maximizer. Thus the matching bound in Theorem~\ref{thm:main} is not obtained by saturating Eq.~\eqref{eq:prior}. In particular, an upper-bound argument that simply replaces every candidate average by the center would require justification that this comparison does not supply.
+
+\input{rates-table.tex}
+
+Table~\ref{tab:rates} gives representative values of the known coding expression. The point $p=0.1$ reproduces the analytic coding baseline used in Ref.~\cite{LLS2018}, and is outside the interval proved here. On $J$, Theorem~\ref{thm:main} upgrades that lower bound to the exact single-letter optimum. Every numerical value is recomputed from the analytic channel and coding formulas. The published plot provides context and is not used as an exact numerical dataset.
+
+The result restricts what can be gained from more elaborate coding within one use of this noise model. The established mixed-state pair already achieves $B(p)$, and the new upper bound excludes an improvement by any finite alphabet or any biased average on $J$. It does not increase the prior achievable-rate lower bound. The two penalties in Eq.~\eqref{eq:main} quantify why vertical signal components cannot improve that rate even when the center fails to maximize coherent information.
+
+The proof gives no conclusion about the rest of the interval $p\in[2/25,1/8]$ examined in the original coding plot, about other relations between $p$ and $q$, or about regularized private capacity. Its rational endpoints are conservative choices with positive certificate margins, and are not claimed to be optimal thresholds. Broader upper-bound frameworks may admit alternative proofs or extensions; the explicit comparison here concerns Eq.~\eqref{eq:prior}. The remaining optimizer problem and the possible enlargement of $J$ are separate questions.
+
+\section*{Data and code availability}
+The accompanying reproducibility material contains both interval programs, the Stinespring reconstruction and numerical checks, the tabulated data, and instructions for regenerating the results and this PDF. The proof and all seven certificate conditions are given in the article. No experimental data were used, and no public repository deposit is asserted for this local draft.
+
+\appendix
+\section{Evaluating the scalar coding maximum}\label{app:root}
+Theorem~\ref{thm:main} needs only existence of the minimum in Eq.~\eqref{eq:EmC}. For the numerical values in Table~\ref{tab:rates}, the global scalar optimization can also be enclosed directly. For $0<r<1$,
+\begin{equation}
+ f_p'(r)=\frac{(1-q)a\atanh(ar)-q\atanh r}{\ln2}.
+ \label{eq:fprime}
+\end{equation}
+The ratio $\atanh(ar)/\atanh r$ is strictly decreasing when $0<a<1$. To see this, set $v=r^2$ and express the ratio as the quotient of two power series with coefficients
+\begin{equation}
+ A_n=\frac{a^{2n+1}}{2n+1},\qquad B_n=\frac1{2n+1}.
+\end{equation}
+The ratios $A_n/B_n=a^{2n+1}$ strictly decrease. In the derivative of the quotient, grouping the terms with indices $n>m$ gives factors
+$(n-m)(A_nB_m-A_mB_n)<0$. The power series converge for $0\le v<1$, proving the monotonicity. The ratio tends to $a$ at $r=0$ and to zero at $r=1$.
+
+For the parameters in Table~\ref{tab:rates}, $(1-q)a^2-q>0$; on $J$ this is one of the uniform interval conditions. Therefore $f_p'$ is positive near zero and negative near one, and its unique interior zero is the global maximum. Rational bisection supplies a bracket for that zero; Arb then verifies the opposite derivative signs at the two rational endpoints and encloses Eq.~\eqref{eq:f} on the bracket. Each displayed table center specifies a certified interval of radius $5\times10^{-13}$, in the units of its column. Root approximation and finite ensemble searches are not inputs to the envelope certificate.
+
+\bibliography{references}
+\end{document}

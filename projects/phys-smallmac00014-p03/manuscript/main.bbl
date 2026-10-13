@@ -1,0 +1,33 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Seifert(2012)]{Seifert2012}
+Udo Seifert.
+\newblock Stochastic thermodynamics, fluctuation theorems and molecular
+  machines.
+\newblock \emph{Reports on Progress in Physics}, 75\penalty0 (12):\penalty0
+  126001, 2012.
+\newblock doi: 10.1088/0034-4885/75/12/126001.
+
+\bibitem[Deg{\"u}nther et~al.(2022)Deg{\"u}nther, Koyuk, and
+  Seifert]{Deguenther2022}
+Julius Deg{\"u}nther, Timur Koyuk, and Udo Seifert.
+\newblock Phase shift in periodically driven non-equilibrium systems: its
+  identification and a bound.
+\newblock \emph{Journal of Statistical Mechanics: Theory and Experiment},
+  2022\penalty0 (3):\penalty0 033207, 2022.
+\newblock doi: 10.1088/1742-5468/ac59ad.
+
+\bibitem[Deg{\"u}nther(2024)]{Deguenther2024}
+Julius Deg{\"u}nther.
+\newblock \emph{Bounds on dynamical quantities in stochastic non-equilibrium
+  systems: From dynamical phenomena to thermodynamic inference}.
+\newblock Doctoral dissertation, University of Stuttgart, 2024.
+\newblock University repository:
+  \url{https://elib.uni-stuttgart.de/server/api/core/bitstreams/aa7f8e14-4785-4fd9-bec7-b1cbb1f24318/content}.
+
+\end{thebibliography}

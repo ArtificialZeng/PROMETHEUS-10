@@ -1,0 +1,254 @@
+\documentclass[aps,pra,reprint,onecolumn,superscriptaddress]{revtex4-2}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage[T1]{fontenc}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\NN}{\mathcal N}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\PSD}{\succeq0}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+
+\title{Pure-state uniqueness under common-axis measurements of three qubits excludes mixed-state impostors}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+
+\begin{abstract}
+We consider three labeled qubits subjected to the same single-qubit rotation, followed by site-resolved computational-basis readout. All common axes and all outcome strings are retained. For this exact measurement model, we prove that any pure state uniquely determined among pure states is also uniquely determined among arbitrary density matrices. More strongly, every nontrivial density-matrix competitor of a pure state differs from it by a rank-two operator with one positive and one negative eigenvalue; both states occupy the same two-dimensional subspace, and an explicit second pure competitor has the same data. The proof reduces positivity to a rank-one condition on a cross block of the full 26-dimensional measurement kernel, uses common-rotation covariance and antipodal roots of a binary cubic, and verifies a finite cubic-trace identity by exact symbolic arithmetic. This result removes a purity promise for exact three-qubit identifiability under the stated readout architecture. It does not establish a finite-error threshold, a sampling guarantee, or an analogous statement for arbitrary qubit number.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+A uniform control pulse followed by site-resolved readout is natural when independently addressing each qubit is costly. The resulting common-axis measurements retain the complete outcome string, yet they do not span all operators on three qubits. Mao \emph{et al.} defined this measurement architecture, identified families of states that it certifies, and raised a broader question about removing a purity promise in a certification setting \cite{Mao2026}. Here we isolate a precise, zero-error question for three qubits: if the data distinguish a target from every other pure state, can a mixed state still reproduce them?
+
+Pure-state uniqueness among pure states (UDP) and uniqueness among all states (UDA) differ for general incomplete measurements \cite{Chen2013}. Chen \emph{et al.} established circumstances under which UDP implies UDA, including a two-dimensional state space; neither the two-observable case nor their fixed-point condition directly describes the present eight-dimensional common-axis model \cite{Chen2013}. Optimization methods and generic low-rank existence bounds for the UDP/UDA distinction were developed by Wu \emph{et al.} \cite{Wu2025}. Our result is specific to the complete labeled common-axis measurement space. It yields a structural statement about \emph{every} physical competitor, rather than the existence of one low-rank competitor.
+
+\section{Measurement model and theorem}
+
+Let \(\Hh=(\mathbb C^2)^{\otimes3}\), with the computational basis ordered as \(000,001,\ldots,111\). The three sites have fixed labels. With Pauli matrices \(\sigma_x,\sigma_y,\sigma_z\), define, for every real unit vector \(n\in S^2\) and \(b\in\{-1,+1\}^3\),
+\begin{equation}
+ E_b(n)=\bigotimes_{j=1}^3
+ \frac{I+b_j(n_x\sigma_x+n_y\sigma_y+n_z\sigma_z)}{2},
+ \qquad p_\rho(b|n)=\Tr[\rho E_b(n)].
+ \label{eq:effects}
+\end{equation}
+Each \(E_b(n)\) is a positive rank-one projector and \(\sum_bE_b(n)=I\). We assume exact access to all these probabilities, with no promise that a competing state is pure, real, symmetric, or low rank.
+
+For a nonempty support \(S\subseteq\{1,2,3\}\) and a triple \(\alpha=(a,b,c)\) of nonnegative integers with \(a+b+c=|S|\), let
+\begin{equation}
+ M_{S;\alpha}=
+ \sum_{\substack{f:S\to\{x,y,z\}\\
+ |f^{-1}(x)|=a,\ |f^{-1}(y)|=b,\ |f^{-1}(z)|=c}}
+ \bigotimes_{j=1}^3 B_j(f),\qquad
+ B_j(f)=
+ \begin{cases}\sigma_{f(j)},&j\in S,\\ I,&j\notin S.\end{cases}
+ \label{eq:moments}
+\end{equation}
+There are \(3\cdot3+3\cdot6+10=37\) such nonidentity operators, mutually orthogonal under the Hilbert--Schmidt inner product. Walsh inversion of the outcomes in Eq.~\eqref{eq:effects} gives
+\(\langle\bigotimes_{j\in S}n\cdot\sigma_j\rangle_\rho\).
+Its homogeneous polynomial coefficients in \(n_x,n_y,n_z\) are the expectations of Eq.~\eqref{eq:moments}. A homogeneous polynomial that vanishes on \(S^2\) vanishes everywhere; hence equality of all probabilities is equivalent to equality of these 37 expectations. Write \(\mathcal A\) for this measurement map,
+\begin{equation}
+ \LL=\operatorname{span}_{\mathbb R}\{I,M_{S;\alpha}\},\qquad
+ \NN=\LL^\perp\cap\operatorname{Herm}(8).
+ \label{eq:kernel}
+\end{equation}
+Thus \(\dim_{\mathbb R}\LL=38\), \(\dim_{\mathbb R}\NN=26\), and two trace-one Hermitian matrices have identical data precisely when their difference lies in \(\NN\).
+
+\begin{theorem}\label{thm:main}
+For every complex unit vector \(\psi\in\mathbb C^8\), let \(P=|\psi\rangle\langle\psi|\). Under all the labeled common-axis effects \eqref{eq:effects}, UDP of \(P\) implies UDA of \(P\). More precisely, if \(\rho\ne P\) is any density matrix with \(\mathcal A(\rho)=\mathcal A(P)\), then \(K=\rho-P\) has rank two and spectrum \(\{s,-s,0,\ldots,0\}\), where \(s>0\). Both \(P\) and \(\rho\) are supported on \(\operatorname{ran}K\), and
+ \begin{equation}
+ Q=P-\frac{2\Tr(PK)}{\Tr(K^2)}K
+ \label{eq:Q}
+ \end{equation}
+is a distinct pure state with \(\mathcal A(Q)=\mathcal A(P)\).
+\end{theorem}
+
+The theorem is a contrapositive statement: every mixed-state collision produces a pure-state collision. It does not say that every pure three-qubit state is UDP.
+
+\section{Kernel geometry}
+
+Let \(e_0,\ldots,e_7\) be the ordered computational-basis columns. Set \(S_1=e_1+e_2+e_4\), \(S_2=e_3+e_5+e_6\), and define the real column matrices
+\begin{equation}
+ U=(e_0,S_1,S_2,e_7),\qquad
+ V=(e_1-e_2,e_1+e_2-2e_4,e_3-e_5,e_3+e_5-2e_6).
+ \label{eq:UV}
+\end{equation}
+The columns of \(U\) span the symmetric-spin sector, while those of \(V\) span its orthogonal complement. The bases are deliberately unnormalized:
+\begin{equation}
+ U^\dagger U=\operatorname{diag}(1,3,3,1),\quad
+ V^\dagger V=\operatorname{diag}(2,6,2,6),\quad U^\dagger V=0.
+ \label{eq:Gram}
+\end{equation}
+Consequently \(W=(U,V)\) is invertible and congruence by \(W\) preserves positivity.
+
+\begin{lemma}\label{lem:block}
+For every \(K\in\NN\), \(U^\dagger K U=0\). If \(P+K\PSD\) for a pure \(P\), the cross block \(C=U^\dagger K V\) has rank at most one. If \(U^\dagger\psi=0\), then \(C=0\).
+\end{lemma}
+\begin{proof}
+The all-plus effects project onto spin-coherent products. Their restrictions to the symmetric sector span \(\operatorname{Herm}(4)\): in an affine spinor coordinate, the 16 matrix elements are independent functions \(z^p\bar z^q\) for \(0\le p,q\le3\). Orthogonality of \(K\) to every effect therefore gives \(U^\dagger K U=0\).
+
+Put \(u=U^\dagger\psi\) and \(v=V^\dagger\psi\). The leading block of \(W^\dagger(P+K)W\) is \(uu^\dagger\), and its off-diagonal block is \(uv^\dagger+C\). For a positive block matrix, a vector in the null space of a diagonal block annihilates the corresponding off-diagonal block, by Cauchy--Schwarz for its positive form. Thus every column of \(uv^\dagger+C\) lies in \(\operatorname{span}u\). Subtracting \(uv^\dagger\) gives \(\rank C\le1\), with \(C=0\) when \(u=0\).
+\end{proof}
+
+The full measurement kernel has additional real-linear structure. In the bases \eqref{eq:UV}, every \(C=U^\dagger K V\), \(K\in\NN\), obeys
+\begin{align}
+ C_{30}&=\tfrac12(-\overline{C_{02}}+\overline{C_{03}}),&
+ C_{31}&=\tfrac12(3\overline{C_{02}}+\overline{C_{03}}),\nonumber\\
+ \operatorname{Re}C_{22}&=\tfrac12(-\operatorname{Re}C_{10}+\operatorname{Re}C_{11}),&
+ \operatorname{Re}C_{23}&=\tfrac12(3\operatorname{Re}C_{10}+\operatorname{Re}C_{11}),\nonumber\\
+ C_{32}&=\overline{C_{12}}+
+ \tfrac12(\overline{C_{00}}-\overline{C_{01}}-C_{20}+C_{21}),\nonumber\\
+ C_{33}&=\overline{C_{13}}+
+ \tfrac12(-3\overline{C_{00}}-\overline{C_{01}}+3C_{20}+C_{21}).
+ \label{eq:cross}
+\end{align}
+Indices run from zero to three. Equation~\eqref{eq:cross} follows by substituting the Pauli-string expansion of \(\NN\) from Eq.~\eqref{eq:moments}; the exact finite check described in Appendix~\ref{app:certificate} evaluates every identity on a complete 26-element basis.
+
+\begin{lemma}\label{lem:antipodes}
+If \(K\in\NN\) and \(\rank(U^\dagger K V)\le1\), a common single-qubit \(SU(2)\) rotation transforms \(K\) into an element annihilating both \(e_0\) and \(e_7\).
+\end{lemma}
+\begin{proof}
+The space \(\NN\) is invariant under \(K\mapsto g^{\otimes3}K(g^{\otimes3})^\dagger\), because this rotates the common axis in Eq.~\eqref{eq:effects}. The symmetric and complementary sectors remain invariant. If \(C=0\), Lemma~\ref{lem:block} and invertibility of \(W\) imply that \(K\) annihilates the entire symmetric sector, including \(e_0,e_7\).
+
+For rank-one \(C\), write \(C=uw^T\), with nonzero complex columns \(u,w\). The symmetric vector \(\eta\) satisfying \(U^\dagger\eta=u\) is
+\[
+ \eta=u_0e_0+(u_1/3)S_1+(u_2/3)S_2+u_3e_7.
+\]
+Its coherent amplitude is the homogeneous binary cubic
+\begin{equation}
+ p(s,t)=u_0s^3+u_1s^2t+u_2st^2+u_3t^3.
+ \label{eq:cubic}
+\end{equation}
+Every nonzero complex binary cubic has a projective root. Here \((s,t)\) is a coherent \emph{covector}; the associated physical spinor has conjugate coordinates. Rotate that physical direction to \(e_0\). In the new basis \(u_0=0\). If \(u_3=0\) as well, the first and last rows of \(C\) vanish and \(U^\dagger K U=0\), so \(K e_0=K e_7=0\).
+
+Otherwise write \(a=u_1,b=u_2,c=u_3\ne0\). Row zero of \(C\) vanishes. The first line of Eq.~\eqref{eq:cross} forces \(C_{30}=C_{31}=0\); hence \(w_0=w_1=0\). Its remaining relations reduce, for \(j=2,3\), to
+\begin{equation}
+ \operatorname{Re}(bw_j)=0,\qquad cw_j=\overline{aw_j}.
+ \label{eq:wrelations}
+\end{equation}
+At least one \(w_j\) is nonzero. Absolute values and conjugation in Eq.~\eqref{eq:wrelations} give
+\begin{equation}
+ |a|=|c|\ne0,\qquad \bar c\,b+a\bar b=0.
+ \label{eq:abc}
+\end{equation}
+The derivation does not divide by \(b\), so \(b=0\) is included. With \(q(z)=a+bz+cz^2\), Eq.~\eqref{eq:abc} yields
+\begin{equation}
+ z^2\overline{q(-1/\bar z)}
+ =\bar c-\bar b z+\bar a z^2
+ =(\bar c/a)q(z).
+ \label{eq:sharp}
+\end{equation}
+Thus the roots of \(q\) form a pair under the antipodal map \(z\mapsto-1/\bar z\) on \(\mathbb{CP}^1\), with zero and infinity understood projectively. This map has no fixed point, so they are distinct. In the covector convention of Eq.~\eqref{eq:cubic}, the associated physical spinors are orthogonal. One further \emph{common} \(SU(2)\) rotation takes them to \(e_0,e_7\). In this basis the endpoint rows of \(C\) and the symmetric block vanish, giving \(K e_0=K e_7=0\).
+\end{proof}
+
+\section{Cubic obstruction and proof of the theorem}
+
+\begin{lemma}\label{lem:cubic}
+For every \(K\in\NN\) with \(\rank(U^\dagger K V)\le1\), \(\Tr(K^3)=0\).
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{lem:antipodes} and unitary invariance of the trace, take \(K e_0=K e_7=0\). It acts on the six coordinates \((001,010,011,100,101,110)\), and its diagonal is zero because the \(z\)-axis data fix every computational-basis probability. The intersection \(\{K\in\NN:K e_0=K e_7=0\}\) has real dimension 14.
+
+If \(C\) has rank one, its column line has the form \((0,a,b,0)^T\), with at least one of \(a,b\) nonzero. When both are nonzero, a common \(z\)-rotation, which preserves the endpoint zeros, makes \(r=b/a\) real and nonzero. The symmetric vector \(rS_1-S_2\) is orthogonal to the column line, so \(K(rS_1-S_2)=0\). The limiting cases \(b=0\) and \(a=0\) instead give \(KS_2=0\) and \(KS_1=0\); \(C=0\) gives both conditions.
+
+Appendix~\ref{app:certificate} specifies an exact finite-dimensional calculation starting from Eq.~\eqref{eq:moments}. It constructs complete real-linear bases of dimensions \(6,6,6,4\) for these four branches, including a nonvanishing maximal minor for the real \(r\ne0\) branch, and checks every coefficient of the cubic \(\Tr(K^3)\) identically. No numerical sampling or generic-parameter argument is used. Hence the cubic trace vanishes on each branch, and therefore on every \(K\) in the lemma's scope.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Suppose \(\rho=P+K\) is a distinct density matrix with the same data. Then \(K\in\NN\), and Lemmas~\ref{lem:block} and \ref{lem:cubic} give \(\Tr K=0\) and \(\Tr(K^3)=0\).
+For every \(z\perp\psi\), \(z^\dagger Kz=z^\dagger\rho z\ge0\). Hence \(K\) has at most one negative eigenvalue: a two-dimensional negative spectral subspace would intersect \(\psi^\perp\). Since \(K\ne0\) and \(\Tr K=0\), it has exactly one negative eigenvalue \(-s\), \(s>0\), and at least one positive eigenvalue \(\lambda_j\). The two trace identities give
+\[
+ s=\sum_j\lambda_j,\qquad
+ 0=\sum_j\lambda_j^3-\left(\sum_j\lambda_j\right)^3.
+\]
+For two or more positive \(\lambda_j\), the second right-hand side is strictly negative. There is therefore exactly one positive eigenvalue \(s\), and \(\rank K=2\).
+
+We must also establish common support. If the projection \(q\) of \(\psi\) onto \(\ker K\) were nonzero, take a negative eigenvector \(h\) and choose \(c\in\mathbb C\) so that \(z=h-cq\) is orthogonal to \(\psi\). Then \(z^\dagger Kz=h^\dagger Kh<0\), a contradiction. Thus \(\psi\in\operatorname{ran}K\), and \(P,\rho\) are supported on its two-dimensional range.
+
+Since \(\rho\) is a density matrix, \(\Tr(\rho^2)\le1\). Expanding gives
+\[
+ 2\Tr(PK)+\Tr(K^2)\le0.
+\]
+Set \(t=-2\Tr(PK)/\Tr(K^2)\ge1\). The matrix \(Q=P+tK\) is Hermitian, has trace one, shares the same two-dimensional support and measured data, and satisfies \(\Tr(Q^2)=1\). Its two real eigenvalues have sum and squared sum one, hence product zero and values \(1,0\). Thus \(Q\) is a rank-one density matrix; \(Q\ne P\) because \(t>0\) and \(K\ne0\). This proves the contrapositive.
+\end{proof}
+
+\section{Physical scope and methods}
+
+The conclusion concerns exact identifiability for a fixed three-site architecture. Each measurement setting uses one axis for all sites, while the full labeled bit string is kept. Neither site-dependent rotations nor a permutation average are silently introduced. The 37-operator form is an exact characterization of all-axis data, not a claim that a particular finite collection of settings has been optimized or that noisy estimates achieve the same implication. In an experiment with global control and site-resolved readout, the theorem says that \emph{if} the exact data isolate a target within the pure-state manifold, a mixed-state impostor is impossible. It does not identify which targets are UDP, quantify confidence at finite sample size, or extend to more than three qubits.
+
+The finite identity in Lemma~\ref{lem:cubic} was checked using exact rational and Gaussian-rational arithmetic in SymPy, with no floating-point tolerance. A separately implemented calculation reconstructed the full Born-effect kernel rather than reading the first calculation's cached basis, and checked the four charts and the cubic coefficients. The executable code and its input conventions accompany this draft. OpenAI Codex (GPT-5-based) assisted with the algebraic reduction, code, and interpretation; the finite calculations were checked by an independent AI implementation, which does not substitute for human scientific review.
+
+\appendix
+\section{Exact finite certificate for the cubic trace}\label{app:certificate}
+
+This appendix gives the basis-independent input and the finite operations underlying Lemma~\ref{lem:cubic}. Expand a Hermitian \(8\times8\) matrix in the 64 tensor-Pauli strings with real coefficients. Impose the 38 independent Hilbert--Schmidt equations defined by \(I\) and Eq.~\eqref{eq:moments}. Exact rational row reduction returns a 26-dimensional real null space \(\NN\). Alternatively, 26 rational unit axes suffice to build 208 exact Born effects; their real Hermitian-coordinate span has rank 38. This independently saturates the analytic upper bound from Eq.~\eqref{eq:moments}.
+
+For each null-space basis matrix \(N_i\), form \(U^\dagger N_iU\) and \(U^\dagger N_iV\). Direct substitution gives zero for the first matrix and all six real-linear relations in Eq.~\eqref{eq:cross} for the second. Impose \(Ke_0=Ke_7=0\) by exact real row reduction. The resulting null space has dimension 14. On this space impose one of the final annihilators shown in Table~\ref{tab:charts}. Each \(Kz=0\) is imposed through its real and imaginary components. The displayed minor is a maximal minor of the resulting constraint matrix; the corresponding null-space basis has a free-coordinate identity submatrix and zero constraint residual. In the nonzero-\(r\) branch its entries are rational functions with denominators only powers of \(r\). The nonzero minor establishes completeness for every real \(r\ne0\), with no exceptional nonzero parameter.
+
+\begin{table}[ht]
+\caption{\label{tab:charts}Complete real-linear charts for the rank-one cross-block condition after endpoint rotation. The last column counts all distinct monomial coefficients of the cubic in the free real variables.}
+\begin{ruledtabular}
+\begin{tabular}{lccc}
+Branch and final annihilator&Dimension&Nonzero maximal minor&Cubic coefficients\\
+\hline
+\(r=b/a\in\mathbb R\setminus\{0\}\), \(K(rS_1-S_2)=0\)&6&\(r^4(r^2+1)^2\)&56\\
+\(b=0\), \(KS_2=0\)&6&\(1\)&56\\
+\(a=0\), \(KS_1=0\)&6&\(1\)&56\\
+\(C=0\), \(KS_1=KS_2=0\)&4&\(-1\)&20
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+If \(B_1,\ldots,B_d\) is any one of these complete bases, the finite check evaluates
+\begin{equation}
+ \Tr\!\left[\left(\sum_{i=1}^d t_iB_i\right)^3\right]
+ =\sum_{1\le i\le j\le k\le d}
+ t_i t_j t_k
+ \sum_{\pi\in\operatorname{Perm}(i,j,k)}
+ \Tr(B_{\pi_1}B_{\pi_2}B_{\pi_3})
+ \label{eq:polarized}
+\end{equation}
+and obtains zero for every one of its \(56+56+56+20=188\) coefficients. The permutations in Eq.~\eqref{eq:polarized} are distinct permutations of the multiset. All arithmetic is exact; the rational-function coefficients in the first row are identically zero.
+
+For a compact explicit check of the main chart, order its six support coordinates as \(001,010,011,100,101,110\). In terms of arbitrary real \(t_0,\ldots,t_5\), the nonzero upper-triangular entries of a general matrix in the \(r\ne0\) chart are
+\begin{align*}
+ K_{12}&=-i(r^2t_0-t_1+t_5)/r^2,&
+ K_{13}&=-t_3+it_4,\\
+ K_{14}&=i(r^2t_0-t_1-t_2)/r^2,&
+ K_{15}&=t_3-it_4,\\
+ K_{16}&=-i(t_2+t_5)/r,&
+ K_{23}&=t_3-it_4,\\
+ K_{24}&=-it_0,&
+ K_{25}&=-i(t_1-t_5)/r,\\
+ K_{26}&=-t_3+it_4,&
+ K_{34}&=-i(t_1+t_2)/r,\\
+ K_{35}&=-it_1,&
+ K_{36}&=-it_2,\\
+ K_{45}&=-t_3+it_4,&
+ K_{46}&=t_3-it_4,\\
+ K_{56}&=-it_5.
+\end{align*}
+The diagonal is zero and lower entries are Hermitian conjugates. For these entries,
+\begin{equation*}
+\Tr(K^3)=6\sum_{i<j<k}\operatorname{Re}(K_{ij}K_{jk}K_{ki})=0.
+\end{equation*}
+The degenerate branches are generated by the same stated linear constraints rather than by dividing by \(r\). The supplied exact-arithmetic verifier implements the construction and records the full basis and minor indices, so every finite assertion in the table can be replayed without fitting or tolerance.
+
+\section*{Data and software availability}
+No experimental data were collected. The exact-arithmetic source code and input matrices needed to reproduce the finite algebraic certificate accompany this local manuscript. A public repository identifier has not yet been assigned.
+
+\begin{acknowledgments}
+OpenAI Codex (GPT-5-based) assisted with literature comparison and drafting. Human-author verification and approval remain pending.
+\end{acknowledgments}
+
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,289 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\hypersetup{
+  pdftitle={A computer-assisted three-state counterexample to a nonlinear phase-lag bound},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\title{A computer-assisted three-state counterexample to a nonlinear phase-lag bound}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A phase-lag bound was proved for periodically driven two-state Markov systems and
+conjectured for arbitrary finite networks by replacing the single rate prefactor with
+the smallest edge prefactor.  We disprove the conjecture already on the complete
+three-state graph.  The counterexample retains local detailed balance, all three
+edges, time-independent positive prefactors, and a two-harmonic energy drive.  A
+computer-assisted residual argument encloses the exact periodic state uniformly in
+time.  Outward-rounded ball arithmetic certifies that both phase integrals are
+positive while the proposed bound margin is strictly negative.  Thus the phase
+exceeds the proposed upper bound.  The result shows that the slowest bare edge
+prefactor alone does not control nonlinear multistate phase lag; no replacement bound
+is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Stochastic thermodynamics; Dynamical processes; Exact
+results; Stationary states
+
+\section{Introduction}
+
+Periodic driving produces an intrinsic lag between a Markov system and its changing
+energy landscape.  Deg\"unther, Koyuk and Seifert introduced a scalar phase for this
+lag and proved a nonlinear upper bound for two-state systems
+\cite{deguenther2022phase}.  For a general network with heterogeneous edge
+prefactors, they proposed the extension
+\begin{equation}
+  \Delta\varphi\leq \arctan\!\left(\frac{\Omega}{k_{0,\min}}\right),
+  \label{eq:conjecture}
+\end{equation}
+supported by random three-state calculations.  The same statement was still described
+as a conjecture in the later thesis of Deg\"unther
+\cite{deguenther2024bounds}.  The two-state proof does not directly extend because a
+multistate network has several energy differences, rate splittings, and relaxation
+channels.
+
+Here we give one fully specified complete-three-state system for which
+Eq.~\eqref{eq:conjecture} fails.  A floating-point solve is used only to select a
+comparison path.  The mathematical conclusion follows from interval enclosures of
+its continuum residual, an analytic contraction estimate for the exact period map,
+and interval evaluation of the observables.  This separates discovery from the
+certificate and rules out an apparent violation caused by time discretization or an
+imperfectly periodic trajectory.
+
+\section{Model and the proposed bound}
+
+Consider states \(i\in\{1,2,3\}\), with all three undirected edges present and
+\(k_{\mathrm B}T=1\).  For \(i<j\), let
+\begin{align}
+ k_{ij}(t)&=k_{0,ij}\exp\!\left[\alpha_{ij}(E_i(t)-E_j(t))\right],
+ \label{eq:rate-forward}\\
+ k_{ji}(t)&=k_{0,ij}\exp\!\left[-(1-\alpha_{ij})(E_i(t)-E_j(t))\right],
+ \label{eq:rate-backward}
+\end{align}
+where \(k_{0,ij}>0\) and \(0\leq\alpha_{ij}\leq1\) are constant.  Hence
+\(k_{ij}/k_{ji}=\exp(E_i-E_j)\).  The energies have a finite Fourier expansion,
+\begin{equation}
+ E_i(t)=E_i^0+\sum_{n=1}^{M}
+ \left[c_{ni}\sin(n\Omega t)+d_{ni}\cos(n\Omega t)\right].
+ \label{eq:drive}
+\end{equation}
+The probability column \(p\) obeys
+\begin{equation}
+ \dot p_i=\sum_{j\ne i}(p_jk_{ji}-p_ik_{ij}),\qquad
+ p(t+T)=p(t),\quad T=\frac{2\pi}{\Omega}.
+ \label{eq:master}
+\end{equation}
+Strictly positive continuous rates make the one-period stochastic matrix positive;
+therefore its normalized fixed point exists, is unique, and is componentwise positive.
+
+Define the period averages
+\begin{equation}
+ A=\frac1T\int_0^T p(t)\mathbin{\cdot}\ddot E(t)\,\dd t,
+ \qquad
+ B=\frac1T\int_0^T p(t)\mathbin{\cdot}\dot E(t)\,\dd t.
+ \label{eq:AB}
+\end{equation}
+On the nondegenerate branch \(A>0,B>0\), the multistate phase of
+Ref.~\cite{deguenther2022phase} is
+\begin{equation}
+ \Delta\varphi=\arctan\!\left(\frac{\Omega B}{A}\right).
+ \label{eq:phase}
+\end{equation}
+Because \(\arctan\) is increasing and \(k_{0,\min}>0\), Eq.~\eqref{eq:conjecture}
+is then equivalent to
+\begin{equation}
+ A-k_{0,\min}B\geq0.
+ \label{eq:margin}
+\end{equation}
+
+\section{Exact counterexample}
+
+Set \(M=2\), \(\Omega=6\), and use the exact terminating decimals
+\begin{equation}
+\begin{array}{c|ccc}
+\text{edge }ij & 12&13&23\\ \hline
+k_{0,ij}&1&300&8000\\
+\alpha_{ij}&0.01&0.83&0.93
+\end{array}
+\label{eq:edgeparameters}
+\end{equation}
+with \(\theta=\Omega t\) and
+\begin{align}
+E_1(\theta)={}&-13+0.8\sin\theta+1.1\sin2\theta
+                 -1.7\cos\theta+6.8\cos2\theta,
+                 \label{eq:E1}\\
+E_2(\theta)={}&-23+0.85\sin\theta+6.1\sin2\theta
+                 +1.7\cos\theta-3\cos2\theta,
+                 \label{eq:E2}\\
+E_3(\theta)={}&0.
+\label{eq:E3}
+\end{align}
+Every edge is retained, every prefactor is fixed and positive, and every splitting
+parameter lies strictly inside its allowed interval.  In particular,
+\(k_{0,\min}=1\).
+
+Our central result is the following.
+
+\medskip
+\noindent\textbf{Proposition.}
+\emph{The exact periodic state of Eqs.~\eqref{eq:rate-forward}--\eqref{eq:E3}
+satisfies \(A>0\), \(B>0\), and \(A-B<0\).  Consequently it violates
+Eq.~\eqref{eq:conjecture}.}
+\medskip
+
+The proof is computer-assisted; all discretization and rounding errors used in the
+conclusion are enclosed below.
+
+\section{Residual certificate}
+
+\subsection{Periodic comparison path}
+
+In the phase variable, Eq.~\eqref{eq:master} is
+\begin{equation}
+ p'(\theta)=G(\theta)p(\theta),\qquad G(\theta)=L(\theta)/\Omega,
+ \label{eq:thetaode}
+\end{equation}
+where the columns of \(L\) sum to zero.  A numerical Radau solve supplies values and
+slopes on 2048 uniform segments.  The final value and slope are set equal to the
+initial ones, and cubic Hermite interpolation defines \(\widehat p_1,\widehat p_2\);
+we set \(\widehat p_3=1-\widehat p_1-\widehat p_2\).  Thus the comparison path is
+exactly normalized, periodic, and \(C^1\), regardless of the accuracy of the
+proposal solve.  Each binary floating-point node and slope is converted to its exact
+integer ratio before evaluation in Arb ball arithmetic
+\cite{johansson2017arb}.
+
+Let
+\begin{equation}
+ r(\theta)=\widehat p'(\theta)-G(\theta)\widehat p(\theta).
+\end{equation}
+Each Hermite segment is divided into 1024 closed subintervals.  At 256-bit working
+precision, outward-rounded interval evaluation on all \(2{,}097{,}152\) boxes gives
+\begin{equation}
+ R:=\int_0^{2\pi}\norm{r(\theta)}_1\,\dd\theta
+ \leq 8.40694407275998\times10^{-5}.
+ \label{eq:R}
+\end{equation}
+
+\subsection{From residual to the exact periodic state}
+
+For a continuous-time Markov generator with directed rates \(q_{ij}\), the standard
+coupling estimate contracts zero-sum signed measures in \(\ell^1\) at the instantaneous
+rate
+\begin{equation}
+ \gamma=\min_{i\ne j}\left(q_{ij}+q_{ji}
+ +\sum_{\ell\ne i,j}\min(q_{i\ell},q_{j\ell})\right).
+ \label{eq:dobrushin}
+\end{equation}
+Indeed, for a pair of starting states \(i,j\), the displayed rate is the sum of
+direct jumps between the pair and the maximum common jump rate into every third
+state; an infinitesimal coupling followed by integration gives the contraction.
+For the three unordered pairs, the bracket is bounded below respectively by
+\(k_{12}\), \(k_{31}\), and \(k_{32}\) in physical time.  Direct triangle bounds on
+Eqs.~\eqref{eq:E1} and \eqref{eq:E2} give
+\begin{equation}
+ E_1-E_2\geq-8.25,\qquad E_1\leq-2.6,
+ \qquad E_2\leq-11.35.
+\end{equation}
+It follows from Eqs.~\eqref{eq:rate-forward} and \eqref{eq:rate-backward} that
+\(k_{12}\geq\exp(-33/400)\), whereas \(k_{31}>1\) and \(k_{32}>1\).
+The exact one-period map therefore contracts the zero-sum subspace by at most
+\begin{equation}
+ q=\exp\!\left[-\frac{2\pi}{6}\ee^{-33/400}\right]
+ \leq0.381260853664531<1.
+ \label{eq:q}
+\end{equation}
+
+Put \(e=p-\widehat p\).  Variation of constants, periodicity of both paths, and
+Eq.~\eqref{eq:q} imply
+\begin{equation}
+ \norm{e(0)}_1\leq\frac{R}{1-q},\qquad
+ \sup_{0\leq\theta\leq2\pi}\norm{e(\theta)}_1
+ \leq\frac{R}{1-q}+R
+ \leq2.19941627295248\times10^{-4}.
+ \label{eq:stateerror}
+\end{equation}
+This step connects the finite comparison path to the unique exact periodic state; no
+numerical monodromy matrix or numerical ODE tolerance is assumed to be rigorous.
+
+\subsection{Observable enclosure}
+
+The Hermite cubics are integrated in closed form against the two Fourier harmonics,
+with all evaluations enclosed by Arb.  For the comparison path this gives
+\begin{equation}
+ \widehat A=0.4997274966496502\ldots,\qquad
+ \widehat B=6.1308368530420400\ldots .
+\end{equation}
+In \(\theta\) units the exact coefficients give
+\begin{equation}
+ \max_i\norm{\partial_\theta E_i}_\infty\leq20.75,
+ \qquad
+ \max_i\norm{\partial_\theta^2 E_i}_\infty\leq38.95.
+\end{equation}
+Combining these bounds with Eq.~\eqref{eq:stateerror} yields
+\begin{align}
+ |A-\widehat A|&\leq\Omega^2(38.95)\sup_\theta\norm{e(\theta)}_1
+ \leq0.308402149793396,\\
+ |B-\widehat B|&\leq\Omega(20.75)\sup_\theta\norm{e(\theta)}_1
+ \leq0.027382732598259.
+\end{align}
+The final outward-rounded enclosures are
+\begin{align}
+ A&\in[0.1913253462459419,\;0.8081296470533585],\\
+ B&\in[6.1034541204110998,\;6.1582195856729802],\\
+ A-B&\in[-5.966894239630766,\;-5.295324473154014].
+ \label{eq:finalintervals}
+\end{align}
+The first two lower endpoints establish the stipulated positive branch; the negative
+upper endpoint in the third line proves the proposition.  A separate run with 4096
+Hermite segments, 512 residual subboxes per segment, and 320-bit precision again
+certifies all three strict signs.
+
+\section{Physical meaning and limitations}
+
+The counterexample is not produced by deleting a slow edge or by changing the phase
+convention.  It is a complete, irreducible local-detailed-balance network on the same
+positive branch for which the bound was proposed.  The witness combines heterogeneous
+prefactors, asymmetric rate splittings, and two drive harmonics; the certificate does
+not identify any one of these features as necessary.  What it establishes is narrow
+but decisive: the slowest bare prefactor is insufficient as a universal nonlinear
+multistate phase control.
+
+We do not classify the set of violating drives, propose an alternative network
+timescale, or address a different phase observable.  The example also does not
+invalidate the proven two-state results of Ref.~\cite{deguenther2022phase}.  Finding a
+replacement bound may require information from the full generator, its time-dependent
+contraction, or network topology rather than one edge prefactor.
+
+\section*{Data and code availability}
+
+The exact-decimal parameters, the certificate program, the primary 256-bit output, a
+changed-partition 320-bit replay, and environment instructions accompany this draft.
+The certificate program regenerates the comparison path and performs every interval
+evaluation used in Eqs.~\eqref{eq:R}--\eqref{eq:finalintervals}.
+
+\section*{Acknowledgements and AI-use disclosure}
+
+OpenAI Codex using GPT-5.6 Sol (OpenAI) assisted with literature support, scientific
+reasoning, code, interval computation, an independent AI audit, and manuscript
+drafting.  It is not an author.  The named author must critically review the scientific
+content, references, code, disclosure, and final wording before any submission.  No
+external submission has been made as part of this work.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

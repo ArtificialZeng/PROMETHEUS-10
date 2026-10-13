@@ -1,0 +1,22 @@
+COMMAND: python3 evidence/verify-variational-identities.py
+UTC completed: 2026-09-13T15:41:39Z
+ENVIRONMENT: evidence/research-python-environment.txt
+OUTPUT:
+T_2,0 phi = 6 phi: exact
+T_2,-1 v_minus = 6 v_minus and v_minus'(1)=0: exact
+T_2,2 v_plus = 6 v_plus and v_plus'(1)=0: exact
+R[u_0] = b**2/8
+R[u_1] = (b**2 - 6*b + 24)/6
+R[v_minus]-(5+b^2/4) = (b - 2)*(b*rho - b + 2*rho + 2)/4
+R[v_plus]-6 = (b - 2)*(b*rho + 2*rho - 8)/4
+sign domains: 0<rho<1; 0<b<=2 for v_minus; 2<=b<=4 for v_plus
+
+SHA-256 at the same replay:
+source.md d9dbd26e595ea823b560fd16c2aa8f5fbe53b0045f8a6871487bcf8074208069
+evidence/variational-proof.md f75c1621b2d2e3aa4d9b082d317c621cd295c0717d609a2fffcbd1adf226f598
+evidence/verify-variational-identities.py ad893db2dccaa6eebde6da6f60a6eb912f8e8e55e3fe9edb4554152706576f13
+
+INTERPRETATION: SymPy differentiated the three exact b=2 functions, checked both
+Neumann boundary derivatives, integrated the two elementary trial quotients, and
+factored both piecewise comparison polynomials. This is an exact algebra replay of
+the displayed identities, not an independent referee judgment or a novelty check.

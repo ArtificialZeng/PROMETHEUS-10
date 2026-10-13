@@ -1,0 +1,62 @@
+{
+  "provenance": "portable copy of separate symbolic replay",
+  "checks": [
+    {
+      "name": "general separable candidate PSD and trace one",
+      "pass": true
+    },
+    {
+      "name": "general separable candidate PPT",
+      "pass": true
+    },
+    {
+      "name": "general separable distance squared 1/3",
+      "pass": true
+    },
+    {
+      "name": "general optimum has antisymmetric population 1/6",
+      "pass": true
+    },
+    {
+      "name": "supported classical distance squared 3/8",
+      "pass": true
+    },
+    {
+      "name": "supported state has zero antisymmetric population",
+      "pass": true
+    },
+    {
+      "name": "general optimizer normal witness",
+      "pass": true
+    },
+    {
+      "name": "unphysical target eigenvalues",
+      "pass": true
+    },
+    {
+      "name": "unphysical target has lambda=-3/5",
+      "pass": true
+    },
+    {
+      "name": "unphysical target exact K projection",
+      "pass": true
+    },
+    {
+      "name": "unphysical target saturates linear ratio",
+      "pass": true
+    },
+    {
+      "name": "kernel-block determinant identically zero",
+      "pass": true
+    },
+    {
+      "name": "kernel-block equation",
+      "pass": true
+    }
+  ],
+  "all_pass": true,
+  "bound_uses_target_positivity": false,
+  "physical_positivity_remains_used_for_rank1_exclusion": true,
+  "free_sets_equal": false,
+  "new_scientific_counterexample_claim": false
+}

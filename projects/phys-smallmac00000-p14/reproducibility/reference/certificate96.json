@@ -1,0 +1,43 @@
+{
+  "job_id": "PHY-14-referee-5a932658dcd5",
+  "precision_bits": 224,
+  "input": "evidence/research-halfline-Q1-L96-eta0.2.npz",
+  "input_sha256": "3fad7557e6baa56cbec3347505e4632578bfb5ffe46dc637958c7a8d3c7f0f2d",
+  "residual": {
+    "dyadic_denominator_power": 184,
+    "finite_physical_residual_l2": "[9.59211307235686589926805508858133442836713461714250e-16 +/- 6.23e-67]",
+    "physical_residual_including_next_geometric_source_coefficient": "[9.59213280216427486931440278306132953690047576991650e-16 +/- 5.47e-67]",
+    "normalization_contraction_l2": "[1.804458480269726406012868731062218340140479619856453e-15 +/- 4.20e-67]",
+    "weighted_finite": "[1.111106219119505675195949828497854506135572369808871e-15 +/- 6.47e-67]",
+    "weighted_source_tail": "[1.3095642444769239834341557489128816725410661442895407011958599608e-17 +/- 1.25e-82]",
+    "weighted_mass": "[1.772753134318642590588622641560403632993357986022817e-14 +/- 5.79e-66]",
+    "weighted_residual_total": "[1.885173320475070082091651780159101965279456289147993e-14 +/- 4.02e-66]",
+    "boundary": "Physical A cutoff coupling and B cutoff crossing coupling explicitly included; no final physical bond deleted."
+  },
+  "root": {
+    "center_displacement_upper": "[3.25634078263405102021322849679255700832272627957036165175600220489e-61 +/- 1.67e-127]",
+    "contraction_infinity_norm_upper": "[2.76190671710514046278103639355938092530160236486060198214926034951e-16 +/- 4.33e-82]",
+    "radius": "1e-20",
+    "frequency_box": "[+/- 1.22e-20] + [+/- 1.28e-20]j",
+    "preconditioner": [
+      [
+        "4.69152342566394509049132466316223144531250000000000000000000000000",
+        "3.79564789273543867764715287194121628999710083007812500000000000000"
+      ],
+      [
+        "1.67145628502548215799095032707555219531059265136718750000000000000",
+        "2.63345534316450136103071599791292101144790649414062500000000000000"
+      ]
+    ]
+  },
+  "independent_integer_residual_multiplier": 1248632935,
+  "finite_functional": "[0.0001289919067857570 +/- 5.46e-20] + [9.8528787488562e-6 +/- 9.03e-20]j",
+  "frequency_sum_box": "[+/- 1.22e-20] + [+/- 1.28e-20]j",
+  "functional_error_upper": "[2.35388949612848235093279010125803425387115560152306765084406467418e-5 +/- 2.71e-71]",
+  "infinite_real_lower": "[0.000105453011824472126713797169553504101291268009385291703618694965538 +/- 1.90e-70]",
+  "infinite_real_upper": "[0.000152530801747041878024365263654666861887631332198401015955578232559 +/- 4.66e-70]",
+  "strict_Re_greater_than_0.0001": true,
+  "nonzero_certified": true,
+  "seconds": 3.1857019580202177,
+  "independence": "Gaussian integer nearest-neighbour action and exterior determinant contraction implemented from source algebra; no discovery module, eigensystem, or reported residual imported."
+}

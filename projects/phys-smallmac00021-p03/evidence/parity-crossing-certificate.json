@@ -1,0 +1,180 @@
+{
+  "certified_ordering": {
+    "left": "E_A2 < E_A1",
+    "left_interval_separation_lower_bound": {
+      "decimal": "0.00000000000031486314566932502202689647674560546875",
+      "rational": "270465382673087/858993459200000000000000000"
+    },
+    "right": "E_A1 < E_A2",
+    "right_interval_separation_lower_bound": {
+      "decimal": "0.0000000000003154020261686595040373504161834716796875",
+      "rational": "1083713109989223/3435973836800000000000000000"
+    }
+  },
+  "conclusion": "The indexed A1 and A2 generalized eigenvalues reverse strict order between the two rational lambda endpoints. Hermitian eigenvalues depend continuously on lambda, so at least one exact A1/A2 degeneracy lies in the closed bracket. Because the two states have opposite exact mirror parity, this is a symmetry-allowed level crossing rather than an avoided crossing.",
+  "edge_maps": {
+    "baseline_edges": 1200,
+    "endpoint_edges": 1200,
+    "exact_C3_invariance": true,
+    "exact_mirror_invariance": true,
+    "input_A_equals_input_B": true
+  },
+  "endpoints": {
+    "left": {
+      "lambda": {
+        "decimal": "0.7919395246780079",
+        "rational": "7919395246780079/10000000000000000"
+      },
+      "sectors": {
+        "A1": {
+          "inertia_at_lower": {
+            "negative": 43,
+            "positive": 67,
+            "zero": 0
+          },
+          "inertia_at_upper": {
+            "negative": 44,
+            "positive": 66,
+            "zero": 0
+          },
+          "lower": {
+            "decimal": "-0.554930413678181209920442455913871526718140",
+            "rational": "-238340797830353936537001111/429496729600000000000000000"
+          },
+          "upper": {
+            "decimal": "-0.554930413678181209920436771571985445916653",
+            "rational": "-7626905530571325969183957427/13743895347200000000000000000"
+          },
+          "width": {
+            "decimal": "0.000000000000000000000005684341886080801486968994140625",
+            "rational": "1/175921860444160000000000"
+          },
+          "zero_based_index": 43
+        },
+        "A2": {
+          "inertia_at_lower": {
+            "negative": 32,
+            "positive": 68,
+            "zero": 0
+          },
+          "inertia_at_upper": {
+            "negative": 33,
+            "positive": 67,
+            "zero": 0
+          },
+          "lower": {
+            "decimal": "-0.554930413678496073066117465277784503996372",
+            "rational": "-7626905530575653415306883069/13743895347200000000000000000"
+          },
+          "upper": {
+            "decimal": "-0.554930413678496073066111780935898423194885",
+            "rational": "-476681595660978338456675309/858993459200000000000000000"
+          },
+          "width": {
+            "decimal": "0.000000000000000000000005684341886080801486968994140625",
+            "rational": "1/175921860444160000000000"
+          },
+          "zero_based_index": 32
+        }
+      }
+    },
+    "right": {
+      "lambda": {
+        "decimal": "0.7919395246820078",
+        "rational": "3959697623410039/5000000000000000"
+      },
+      "sectors": {
+        "A1": {
+          "inertia_at_lower": {
+            "negative": 43,
+            "positive": 67,
+            "zero": 0
+          },
+          "inertia_at_upper": {
+            "negative": 44,
+            "positive": 66,
+            "zero": 0
+          },
+          "lower": {
+            "decimal": "-0.554930413684335557092755393459810875356197",
+            "rational": "-7626905530655910672650640811/13743895347200000000000000000"
+          },
+          "upper": {
+            "decimal": "-0.554930413684335557092749709117924794554710",
+            "rational": "-3813452765327955336325281343/6871947673600000000000000000"
+          },
+          "width": {
+            "decimal": "0.000000000000000000000005684341886080801486968994140625",
+            "rational": "1/175921860444160000000000"
+          },
+          "zero_based_index": 43
+        },
+        "A2": {
+          "inertia_at_lower": {
+            "negative": 32,
+            "positive": 68,
+            "zero": 0
+          },
+          "inertia_at_upper": {
+            "negative": 33,
+            "positive": 67,
+            "zero": 0
+          },
+          "lower": {
+            "decimal": "-0.554930413684020155066581049613887444138527",
+            "rational": "-3813452765325787910105302897/6871947673600000000000000000"
+          },
+          "upper": {
+            "decimal": "-0.554930413684020155066575365272001363337040",
+            "rational": "-7626905530651575820210527669/13743895347200000000000000000"
+          },
+          "width": {
+            "decimal": "0.000000000000000000000005684341886080801486968994140625",
+            "rational": "1/175921860444160000000000"
+          },
+          "zero_based_index": 32
+        }
+      }
+    }
+  },
+  "exact_arithmetic": {
+    "backend": "python-flint 0.9.0",
+    "bisection_steps": 45,
+    "coefficient_domain": "Q",
+    "floating_point_role": "Prior float64 values seed only broad 2e-10 energy intervals; every reported enclosure and ordering is decided by exact rational inertia.",
+    "method": "Integer D3 symmetry bases, diagonal positive Gram matrices, and exact symmetric-congruence inertia of K-mu*G with rational lambda and mu."
+  },
+  "flake": {
+    "side_cells": 20,
+    "sites": 630
+  },
+  "job_id": "phys-00021-p03-research-64db9546ea0d",
+  "limitations": "The certificate proves existence, sector indices, and the N=20 rational bracket. It does not prove uniqueness of the crossing, a thermodynamic limit, or the empirical finite-size convergence factor.",
+  "schema_version": 1,
+  "sectors": {
+    "A1": {
+      "C3_orbits": 210,
+      "dimension": 110,
+      "gram_diagonal_values": [
+        3,
+        6
+      ],
+      "reflection_fixed_C3_orbits": 10,
+      "reflection_paired_C3_orbits": 100
+    },
+    "A2": {
+      "C3_orbits": 210,
+      "dimension": 100,
+      "gram_diagonal_values": [
+        6
+      ],
+      "reflection_fixed_C3_orbits": 10,
+      "reflection_paired_C3_orbits": 100
+    }
+  },
+  "source_inputs": [
+    "evidence/geschner-input-a.json",
+    "evidence/geschner-input-b.json",
+    "literature/2412.20460v1-source/live_version.tex"
+  ]
+}

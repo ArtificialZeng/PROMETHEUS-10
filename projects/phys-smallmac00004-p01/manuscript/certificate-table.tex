@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\caption{Strict interval margins from the separately implemented adaptive 256-bit replay. Each listed decimal is rounded downward from the minimum certified lower endpoint over the accepted boxes, not a sampled minimum. The constants are $R_0=93/100$, $r_t=7/8$, $z_0=99/100$, $\kl=3/250$, and $\ku=11/1000$.}
+\label{tab:certificate}
+\begin{ruledtabular}
+\begin{tabular}{llrr}
+Margin & Domain & Leaf boxes & Lower bound \\
+$C_p$ & $p\in J$ & 1 & $1.7708\times10^{-3}$ \\
+$q-(1-q)a^4$ & $p\in J$ & 1 & $6.86058\times10^{-2}$ \\
+$A_p$ & $p\in J$ & 1 & $7.41354\times10^{-2}$ \\
+$d_p(R_0)-\kl$ & $p\in J$ & 1 & $4.559\times10^{-4}$ \\
+$\ku-T_p$ & $p\in J$ & 1 & $6.01217\times10^{-2}$ \\
+$E_p(R)-E_p(r_t)+(d_p(R)-\kl)R^2$ & $p\in J,\ R\in[R_0,1]$ & 1222 & $2.2027\times10^{-6}$ \\
+$\ku-G_p^{\prime}(z^2)$ & $p\in J,\ z\in[0,z_0]$ & 1273 & $1.2567\times10^{-7}$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}

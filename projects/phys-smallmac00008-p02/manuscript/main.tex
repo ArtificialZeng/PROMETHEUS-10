@@ -1,0 +1,356 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+  pdftitle={No optimized history gain in two-use environment feedback for full-rank qubit channels},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\1}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\M}{\mathrm{M}}
+\newcommand{\B}{\mathrm{B}}
+
+\title{No optimized history gain in two-use environment feedback for full-rank qubit channels}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study two identical uses of an arbitrary full-Choi-rank qubit channel, with a fresh minimal environment at each use and one fixed orthonormal environment measurement used twice. The first strategy retains both measurement records, whereas the second applies the prescribed polar recovery using only the current record. We prove that their separately optimized Bell entanglement fidelities are equal. The proof combines the complete Takagi family maximizing a determinant sum with a new $O(4)$ joint-diagonal lemma for triples of traceless real-symmetric forms. The result is exact and limited to the stated two-use protocol.
+\end{abstract}
+
+\noindent\textbf{Keywords:} environment-assisted error correction; quantum feedback; qubit channels; entanglement fidelity; simultaneous diagonalization
+
+\section{Introduction}
+
+Measuring an environment can reveal which Kraus branch of a noisy quantum
+channel occurred and can therefore guide a conditional recovery
+\cite{GregorattiWerner2004,HaydenKing2005}.  For repeated noise, the recovery
+may use only the current record or the full history.  Rexiti, Khabbazi Oskouei
+and Mancini compared such Markovian and Bayesian polar-recovery strategies,
+proved equality for several qubit families, and supported a general qubit
+statement numerically \cite{RexitiEtAl2024}.  Their general statement is
+formulated for multiple uses.  Here we resolve the exact two-use,
+same-fixed-measurement, full-Choi-rank entry of that problem.
+
+The obstacle is an intersection problem.  For a fixed environment basis the
+Bayesian fidelity dominates the Markovian fidelity by a sum of commutator
+squares.  Separately, the Bayesian optimum is characterized by a Takagi
+factorization already used for concurrence of assistance
+\cite{LaustsenEtAl2003}.  Equality of the optimized fidelities requires a
+single point that is both Takagi-optimal and has commuting positive Kraus
+parts.  An unrestricted complex-unitary hollowization does not ensure this
+intersection \cite{HaydenKing2005}; pairwise real hollowization results also
+have a different target \cite{DammFassbender2020,Nicholus2026}.
+
+We prove the missing intersection through a real-linear lemma: every triple
+of traceless real-symmetric $4\times4$ matrices admits an orthogonal frame in
+which its four joint-diagonal vectors are collinear.  A quaternionic model of
+$\operatorname{Sym}_0(\R^4)$ first produces a common balanced $2+2$
+splitting; independent rotations in the two planes then reduce the problem
+to intersecting two centered ellipses.  Applying the lemma throughout the
+real $O(4)$ freedom of the full-rank Takagi optimum proves the fidelity
+equality.
+
+\section{Two-use feedback protocol}
+\label{sec:model}
+
+Let $\mathcal T$ be a qubit completely positive trace-preserving map with a
+strictly positive unnormalized Choi matrix,
+\begin{equation}
+ J_{\mathcal T}=\sum_{m,n=0}^{1}|m\rangle\langle n|\otimes
+ \mathcal T(|m\rangle\langle n|)>0,
+ \qquad \Tr_{\mathrm{out}}J_{\mathcal T}=\1_2 .
+ \label{eq:choi}
+\end{equation}
+Thus the Choi rank is four.  Choose a minimal Kraus representation
+\begin{equation}
+ \mathcal T(\rho)=\sum_{a=1}^{4}K_a\rho K_a^\dagger,
+ \qquad \sum_{a=1}^{4}K_a^\dagger K_a=\1_2 .
+ \label{eq:kraus}
+\end{equation}
+With a fresh pure four-dimensional environment at each use, every orthonormal
+environment measurement is represented by
+\begin{equation}
+ K_i(U)=\sum_{a=1}^{4}U_{ia}K_a,\qquad U\in U(4),\qquad
+ A_i(U)=|K_i(U)|=\sqrt{K_i(U)^\dagger K_i(U)}.
+ \label{eq:mix}
+\end{equation}
+The same $U$ is used at both channel uses and every one of the sixteen outcome
+pairs is retained.
+
+After the first use, both strategies invert the unitary factor in the polar
+decomposition of $K_i$.  At the second use, the Markovian strategy inverts
+the unitary factor of $K_j$ using only the current record, whereas the
+Bayesian strategy uses $(i,j)$ to invert the unitary factor of $K_jA_i$.
+Unitary extensions on kernels are included when a polar factor is singular.
+For the normalized Bell state, the resulting entanglement fidelities at fixed
+$U$ are \cite{RexitiEtAl2024}
+\begin{align}
+ f_{\M}(U)&=\frac14\sum_{i,j=1}^{4}
+       \bigl[\Tr(A_jA_i)\bigr]^2, \\
+ f_{\B}(U)&=\frac14\sum_{i,j=1}^{4}
+       \bigl[\Tr|K_jA_i|\bigr]^2 .
+ \label{eq:fidelities}
+\end{align}
+The two maxima below are taken separately over $U(4)$.
+
+\begin{theorem}[Optimized two-use equality]
+\label{thm:main}
+For every channel satisfying \cref{eq:choi}, in the protocol just defined,
+\begin{equation}
+ \max_{U\in U(4)}f_{\B}(U)=\max_{U\in U(4)}f_{\M}(U).
+ \label{eq:main}
+\end{equation}
+\end{theorem}
+
+\section{Pointwise fidelity identities}
+\label{sec:pointwise}
+
+Define
+\begin{equation}
+ D(U)=\sum_{i=1}^{4}|\det K_i(U)|.
+\end{equation}
+For a $2\times2$ matrix $Y$,
+$(\Tr|Y|)^2=\Tr(Y^\dagger Y)+2|\det Y|$.  Applying this to
+$Y=K_jA_i$, summing, and using $\sum_jK_j^\dagger K_j=\1_2$ gives
+\begin{equation}
+ f_{\B}(U)=\frac{1+D(U)^2}{2}.
+ \label{eq:fB-D}
+\end{equation}
+For positive $2\times2$ matrices, the characteristic polynomial gives
+$(\Tr A_jA_i)^2=\Tr(A_jA_iA_jA_i)+2\det A_j\det A_i$.
+Since $\sum_iA_i^2=\1_2$ and $\det A_i=|\det K_i|$, comparison with
+\cref{eq:fB-D} yields the exact gap
+\begin{equation}
+ f_{\B}(U)-f_{\M}(U)
+ =\frac18\sum_{i,j=1}^{4}\|[A_i,A_j]\|_{\HS}^{2}\geq0 .
+ \label{eq:gap}
+\end{equation}
+Thus it is sufficient to find a maximizer of $D$ whose four positive Kraus
+parts commute pairwise.
+
+\section{The Takagi-optimal measurement family}
+\label{sec:takagi}
+
+Use column-major vectorization and set
+\begin{equation}
+ x_a=\frac{\operatorname{vec}(K_a)}{\sqrt2},\qquad
+ X=(x_1,\ldots,x_4),\qquad
+ Q=X^{\mathsf T}(\sigma_y\otimes\sigma_y)X .
+ \label{eq:Q}
+\end{equation}
+The environment mixing in \cref{eq:mix} changes $X$ to $XU^{\mathsf T}$.
+Moreover,
+$x_a^{\mathsf T}(\sigma_y\otimes\sigma_y)x_a=-\det K_a$, so maximizing
+$D$ is the square, full-rank instance of the Takagi problem in
+\cite{LaustsenEtAl2003}.  Strict Choi positivity makes $X$, and hence $Q$,
+invertible.  Choose a Takagi unitary $T$ such that
+\begin{equation}
+ T^{\mathsf T}QT=\diag(s_1,s_2,s_3,s_4),\qquad s_a>0.
+\end{equation}
+The complete maximizing family is
+\begin{equation}
+ V=TOP,\qquad O\in O(4),
+ \label{eq:TOP}
+\end{equation}
+where $P$ is diagonal unitary and $V=U^{\mathsf T}$.  Every member satisfies
+$D=\sum_as_a$.  The phases in $P$ do not change positive Kraus parts.  It
+therefore remains to select an appropriate real orthogonal $O$.
+
+\section{An orthogonal-frame lemma in four dimensions}
+\label{sec:lemma}
+
+\begin{lemma}[Joint-diagonal rank one]
+\label{lem:frame}
+Let $G_1,G_2,G_3$ be arbitrary traceless real-symmetric $4\times4$ matrices.
+There exists $O\in O(4)$ such that the $4\times3$ matrix
+\begin{equation}
+ B_{ir}=(O^{\mathsf T}G_rO)_{ii}
+ \end{equation}
+has rank at most one.
+\end{lemma}
+
+\begin{proof}
+Identify $\R^4$ with the quaternions in the ordered basis $(1,i,j,k)$.  Let
+$L_u$ and $R_v$ denote left and right multiplication by
+$u,v\in\{i,j,k\}$.  The nine matrices
+\begin{equation}
+ E_{uv}=L_uR_v
+\end{equation}
+are real, symmetric and traceless, and satisfy
+$\Tr(E_{uv}E_{u'v'})=4\delta_{uu'}\delta_{vv'}$.  They therefore form an
+orthogonal basis of $\operatorname{Sym}_0(\R^4)$.  Write
+\begin{equation}
+ G_r=G(M_r)=\sum_{u,v}(M_r)_{uv}E_{uv},\qquad M_r\in\R^{3\times3}.
+\end{equation}
+
+For unit vectors $a,b\in\R^3$, define
+$S(a,b)=L_aR_b$.  Left and right multiplication commute, while
+$L_a^2=R_b^2=-\1_4$.  Hence $S$ is symmetric, $S^2=\1_4$ and
+$\Tr S=0$.  The $+1$ eigenspace is a two-plane with projector
+$P=(\1_4+S)/2$, and orthogonality of the $E_{uv}$ gives
+\begin{equation}
+ \Tr\bigl(S(a,b)G(M)\bigr)=4a^{\mathsf T}Mb .
+ \label{eq:trace-pairing}
+\end{equation}
+
+Consider the homogeneous cubic
+\begin{equation}
+ p(b)=\det[M_1b,M_2b,M_3b].
+\end{equation}
+It is odd, so its restriction to the connected sphere $S^2$ has a zero.
+At such a $b$, the three vectors $M_rb$ span a space of dimension at most
+two.  Choose a unit $a$ perpendicular to that span.  By
+\cref{eq:trace-pairing} and $\Tr G_r=0$,
+\begin{equation}
+ \Tr(PG_r)=0,\qquad r=1,2,3 .
+ \label{eq:balance}
+\end{equation}
+The complementary two-plane is balanced as well.
+
+Choose orthonormal bases $(x_1,x_2)$ of $\operatorname{ran}P$ and
+$(x_3,x_4)$ of its orthogonal complement, and put
+\begin{equation}
+ q(x)=(x^{\mathsf T}G_1x,x^{\mathsf T}G_2x,x^{\mathsf T}G_3x).
+\end{equation}
+Balance implies $q(x_2)=-q(x_1)$ and $q(x_4)=-q(x_3)$.  Rotating the first
+basis through $\alpha$ gives
+\begin{equation}
+ q(y_1)=q(x_1)\cos(2\alpha)+h_{12}\sin(2\alpha),\qquad
+ (h_{12})_r=x_1^{\mathsf T}G_rx_2,
+ \label{eq:ellipse}
+\end{equation}
+and $q(y_2)=-q(y_1)$.  Thus $q(y_1)$ traces the image of the unit circle
+under a linear map into a subspace $\mathcal U\subset\R^3$ of dimension at
+most two.  An independent rotation in the complementary plane gives the
+same description in a subspace $\mathcal V$ and satisfies
+$q(y_4)=-q(y_3)$.
+
+If either circle map has rank at most one, it has a unit vector in its
+kernel; set the associated joint value to zero, and the four joint values
+are collinear.  If both maps have rank two, $\mathcal U$ and $\mathcal V$
+are two-dimensional subspaces of $\R^3$ and share a nonzero line.  Choose
+preimages of a vector on that line.  Normalizing the two preimages only
+rescales their images by positive factors, so suitable plane rotations make
+$q(y_1)$ and $q(y_3)$ parallel.  Together with their negatives, all four
+joint values are collinear.  Taking the $y_i$ as the columns of $O$ proves
+$\rank B\leq1$, including the degenerate cases.
+\end{proof}
+
+\section{Proof of the optimized equality}
+\label{sec:application}
+
+Let $L_a$ be the four Kraus operators after the Takagi factor $T$ in
+\cref{eq:TOP}, before the real $O$ mixing.  For
+$r\in\{x,y,z\}$ define the real-symmetric matrices
+\begin{equation}
+ (G_r)_{ab}=\frac12\operatorname{Re}\Tr
+ \bigl(\sigma_rL_a^\dagger L_b\bigr).
+ \label{eq:bloch-forms}
+\end{equation}
+Trace preservation gives $\Tr G_r=0$.  If $o_i$ is column $i$ of $O$, the
+Bloch vector of
+$K_i^\dagger K_i$ is exactly
+\begin{equation}
+ \bm b_i=\bigl(o_i^{\mathsf T}G_xo_i,
+                    o_i^{\mathsf T}G_yo_i,
+                    o_i^{\mathsf T}G_zo_i\bigr).
+\end{equation}
+By Lemma~\ref{lem:frame}, choose $O$ so that all four $\bm b_i$ are collinear.
+The corresponding $K_i^\dagger K_i$, and therefore their positive square
+roots $A_i$, are simultaneously diagonalizable.  They commute pairwise,
+including scalar and singular cases.  This $O$ remains in the maximizing
+family \cref{eq:TOP}.  Hence, for the corresponding $U_*$,
+\begin{equation}
+ f_{\M}(U_*)=f_{\B}(U_*)=\max_U f_{\B}(U).
+\end{equation}
+The pointwise inequality \cref{eq:gap} now gives
+\begin{equation}
+ \max_U f_{\M}(U)\geq f_{\M}(U_*)
+ =\max_U f_{\B}(U)\geq\max_U f_{\M}(U),
+\end{equation}
+which proves \cref{thm:main}.
+
+As a normalization check outside the full-rank theorem, the rank-three
+example of \cite{RexitiEtAl2024} at
+$\lambda=3/4$, $\theta_{13}=-\pi/6$, and $\theta_{23}=0$ gives
+$F_1=3/4$ and $F_2^{\M}=F_2^{\B}=5/8$.  Independent recovered-channel and
+trace--determinant calculations reproduce these values while retaining all
+nine two-use branches.  This control uses its original $U(3)$ environment
+domain and is not obtained by padding the channel and enlarging the
+measurement domain.
+
+\section{Physical interpretation and limitations}
+
+The theorem shows that, for the exact device model studied here, keeping the
+first environment outcome cannot improve the best Bell entanglement fidelity
+over the prescribed current-record polar strategy.  The reason is not that
+history is pointwise irrelevant: \cref{eq:gap} can be strict for a fixed
+measurement.  Rather, the determinant-maximizing measurement family always
+contains a point at which the positive branch operators commute, making the
+history advantage vanish at the optimum.
+
+The scope is deliberately narrow.  The result assumes two identical
+memoryless uses, a fresh minimal four-dimensional environment at each use,
+one fixed orthonormal environment basis used twice, perfect branch-conditioned
+unitary polar recoveries, and no postselection.  It does not establish the
+corresponding statement for three or more uses, adaptive or step-dependent
+environment measurements, general POVMs, nonminimal dilations, Choi rank
+below four with an enlarged environment, higher-dimensional systems,
+imperfect detection, control delay, or arbitrary current-record CPTP
+controllers.  In particular, it is not a proof of the full all-step
+conjecture in \cite{RexitiEtAl2024}.
+
+\section*{Data and code availability}
+
+The result is analytic.  Supplementary source files provide exact symbolic
+checks of the quaternion basis and trace pairing, two independent
+reproductions of the published rank-three control, and finite-precision
+adversarial tests on generic full-rank channels.  The latter corroborate but
+do not prove the universal statement.  A repository identifier should be
+added by the author before submission.
+
+\section*{Use of generative AI}
+
+OpenAI Codex (GPT-5.6 Sol) assisted in developing candidate derivations, writing
+and replaying symbolic and numerical checks, conducting a bounded literature
+search, and drafting this manuscript.  The named author has not yet completed
+the human verification required before submission.  The scientific content,
+references, disclosure wording, and final responsibility must be reviewed and
+approved by the author before this draft is submitted.
+
+\begingroup
+\footnotesize
+\bibliographystyle{unsrt}
+\bibliography{manuscript/references}
+\endgroup
+
+\end{document}

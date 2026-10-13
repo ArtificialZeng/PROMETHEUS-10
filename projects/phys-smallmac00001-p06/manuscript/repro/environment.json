@@ -1,0 +1,11 @@
+{
+  "python_version": "3.9.6 (default, Nov 11 2024, 03:15:38) \n[Clang 16.0.0 (clang-1600.0.26.6)]",
+  "python_implementation": "CPython",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "sympy_version": "1.14.0",
+  "arithmetic": "Exact rational and symbolic; no floating-point tolerances",
+  "commands_from_root": [
+    "python3 manuscript/repro/verify_symbolic.py --output-dir build/replay-local",
+    "python3 manuscript/repro/verify_rational.py --output-dir build/replay-local"
+  ]
+}

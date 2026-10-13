@@ -1,0 +1,38 @@
+{
+  "model": "generalized amplitude damping qubit channel",
+  "parameters": {
+    "p": "18/25",
+    "q": "7/25",
+    "gamma": "3/10",
+    "sqrt_one_minus_gamma": "sqrt(7/10)"
+  },
+  "kraus_order": [
+    "sqrt(p)*diag(1,sqrt(1-gamma))",
+    "sqrt(p*gamma)*|0><1|",
+    "sqrt(q)*diag(sqrt(1-gamma),1)",
+    "sqrt(q*gamma)*|1><0|"
+  ],
+  "balanced_pairing": [[0, 3], [1, 2]],
+  "observed_instrument": "I_b(rho)=sum_{x in pairing[b]} K_x rho K_x^dagger; hidden x is summed incoherently before recovery",
+  "rank_certificate": {
+    "off_diagonal_kraus_squared_norms": ["p*gamma=27/125", "q*gamma=21/250"],
+    "diagonal_kraus_minor_squared": "p*q*gamma^2=567/31250",
+    "choi_rank": 4
+  },
+  "history_witness": {
+    "R1_bit_0": "I",
+    "R1_bit_1": "X",
+    "R2_history_00": "I",
+    "R2_history_01": "I",
+    "R2_history_10": "X",
+    "R2_history_11": "X",
+    "entanglement_fidelity": "1831/2500"
+  },
+  "arbitrary_cptp_markov_upper": {
+    "one_stage_bloch_column_norm_caps": ["sqrt(7/10)", "sqrt(7/10)", "18/25"],
+    "one_stage_frobenius_squared_cap": "1199/625",
+    "two_stage_entanglement_fidelity_upper": "456/625"
+  },
+  "certified_gap_lower": "7/2500",
+  "scope": "Exact n=2 witness and global upper for every current-bit policy whose recovery maps are arbitrary qubit CPTP maps; no Pauli, unitary, phase-covariant, or extremality assumption."
+}

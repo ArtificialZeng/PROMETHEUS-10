@@ -1,0 +1,49 @@
+EXACT QUTRIT REPRODUCTION — SymPy exact arithmetic
+SymPy version: 1.14.0
+PASS: factor matrices and ordered product C*A are bistochastic
+PASS: T12(1/4): supplied realizer is exactly unitary
+PASS: T12(1/4): |U_ij|^2 equals the target row by row
+PASS: T23(1/3): supplied realizer is exactly unitary
+PASS: T23(1/3): |U_ij|^2 equals the target row by row
+PASS: ordered product C*A matches the transcribed column convention
+PASS: ordinary sparse unitary product V*U equals the displayed W in this benchmark
+PASS: factorisable product: supplied realizer is exactly unitary
+PASS: factorisable product: |U_ij|^2 equals the target row by row
+PASS: U: Kraus completeness sum is I3
+PASS: V: Kraus completeness sum is I3
+PASS: W: Kraus completeness sum is I3
+PASS: full dephase-unitary-dephase superoperators satisfy Phi_V o Phi_U = Phi_W
+BASELINE factorisable product M=C*A:
+Matrix([[1/4, 3/4, 0], [1/4, 1/12, 2/3], [1/2, 1/6, 1/3]])
+BASELINE exact realizer W:
+Matrix([[1/2, sqrt(3)/2, 0], [1/2, -sqrt(3)/6, sqrt(6)/3], [sqrt(2)/2, -sqrt(6)/6, -sqrt(3)/3]])
+PASS: interior_flat: matrix is exactly bistochastic
+PASS: interior_flat: exact h=1/27
+CASE interior_flat: x=['1/9', '1/9', '1/9'], h=1/27
+PASS: interior_flat: supplied realizer is exactly unitary
+PASS: interior_flat: |U_ij|^2 equals the target row by row
+PASS: saturated_positive: matrix is exactly bistochastic
+PASS: saturated_positive: exact h=0
+CASE saturated_positive: x=['3/16', '1/48', '1/12'], h=0
+PASS: saturated_positive: supplied realizer is exactly unitary
+PASS: saturated_positive: |U_ij|^2 equals the target row by row
+PASS: saturated_positive: L0=L1+L2
+PASS: saturated_positive: published phase cosines give phases pi,pi
+PASS: two_positive_equal_zero: matrix is exactly bistochastic
+PASS: two_positive_equal_zero: exact h=0
+CASE two_positive_equal_zero: x=['1/4', '1/4', '0'], h=0
+PASS: two_positive_equal_zero: supplied realizer is exactly unitary
+PASS: two_positive_equal_zero: |U_ij|^2 equals the target row by row
+PASS: two_positive_unequal_zero: matrix is exactly bistochastic
+PASS: two_positive_unequal_zero: exact h=-1/64
+CASE two_positive_unequal_zero: x=['1/16', '3/16', '0'], h=-1/64
+PASS: all_zero_identity: matrix is exactly bistochastic
+PASS: all_zero_identity: exact h=0
+CASE all_zero_identity: x=['0', '0', '0'], h=0
+PASS: all_zero_identity: supplied realizer is exactly unitary
+PASS: all_zero_identity: |U_ij|^2 equals the target row by row
+PASS: published_nonunistochastic_Q: matrix is exactly bistochastic
+PASS: published_nonunistochastic_Q: exact h=-1/16
+CASE published_nonunistochastic_Q: x=['0', '0', '1/4'], h=-1/16
+PASS: interior_flat: Eqs. (24)-(25) reproduce Fourier relative phase cosines
+RESULT: all exact transcription, completion, boundary, zero-branch, published-Q, unitary, Kraus, and ordered-product checks passed.

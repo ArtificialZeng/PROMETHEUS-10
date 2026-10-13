@@ -1,0 +1,129 @@
+{
+  "order": 24,
+  "numerical_integral": {
+    "gauss_order_phase_and_delay": 24,
+    "horizon": 80,
+    "estimator": 0.003016257515582166,
+    "integrated_joint_channels": [
+      [
+        0.1094350255419075,
+        0.8905649744580837
+      ],
+      [
+        0.8905649744580837,
+        0.10943502554190737
+      ]
+    ],
+    "integrated_row_sums": [
+      0.9999999999999912,
+      0.9999999999999911
+    ],
+    "direct_absorption_row_sums": [
+      0.9999999999999829,
+      0.9999999999999828
+    ],
+    "max_integral_vs_absorption_difference": 6.5503158452884236e-15,
+    "Poisson_series_degree": 85,
+    "max_omitted_probability_per_subsegment": 2.86375548395626e-46,
+    "limitations": "Poisson omission bound only; no interval enclosure of floating-point arithmetic or Gauss quadrature. Exact sign and infinite integral established separately."
+  },
+  "independent_density_samples": {
+    "0.005": {
+      "densities": [
+        [
+          0.00012010675709438811,
+          8.017091989434943
+        ],
+        [
+          8.017091989434949,
+          0.00012024287255504844
+        ]
+      ],
+      "A_minus_B_over_x3": -1.0889236852826667
+    },
+    "0.05": {
+      "densities": [
+        [
+          0.0084396434011448,
+          4.756151623786732
+        ],
+        [
+          4.756151623786732,
+          0.008540583089845713
+        ]
+      ],
+      "A_minus_B_over_x3": -0.8075175096073082
+    },
+    "0.2": {
+      "densities": [
+        [
+          0.04617821688516141,
+          0.9388692567991656
+        ],
+        [
+          0.9388692567991654,
+          0.04858326404798063
+        ]
+      ],
+      "A_minus_B_over_x3": -0.30063089535240206
+    },
+    "0.75": {
+      "densities": [
+        [
+          0.050658633193016854,
+          0.09249870438613611
+        ],
+        [
+          0.09249870438613617,
+          0.05821424781957328
+        ]
+      ],
+      "A_minus_B_over_x3": -0.017909605040726344
+    },
+    "1.25": {
+      "densities": [
+        [
+          0.04395120926603332,
+          0.049757648863820635
+        ],
+        [
+          0.04975764886382067,
+          0.04231596375905701
+        ]
+      ],
+      "A_minus_B_over_x3": 0.00083724569957187
+    },
+    "2.1": {
+      "densities": [
+        [
+          0.0470876240539771,
+          0.04173364855575705
+        ],
+        [
+          0.041733648555757064,
+          0.035092349754446694
+        ]
+      ],
+      "A_minus_B_over_x3": 0.001295246118079085
+    },
+    "5.4": {
+      "densities": [
+        [
+          0.0005270455200319619,
+          0.0004932797359227413
+        ],
+        [
+          0.0004932797359227407,
+          0.00046780999262666556
+        ]
+      ],
+      "A_minus_B_over_x3": 3.761845717452645e-07
+    }
+  },
+  "adversarial_checks": {
+    "x": 0.2,
+    "reversal_same_channel_exchange_error": 6.245004513516506e-17,
+    "phase_origin_change_error": 4.440892098500626e-16,
+    "r1_same_direction_difference": 0.0
+  }
+}

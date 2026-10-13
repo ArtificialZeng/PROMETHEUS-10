@@ -1,0 +1,14 @@
+{
+  "python": "3.9.6 (default, Nov 11 2024, 03:15:38) \n[Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "dependencies": "Python standard library only; no pip packages required. resource module assumes a Unix-like platform.",
+  "command": "python3 supplement/replay.py > replay-result.json",
+  "precision": "Exact integer/Fraction operations; 96 Mercator terms and rigorous rational tail bounds. Decimal precision 50, outward output quantization 1e-22.",
+  "randomness": "None",
+  "max_full_state_dimension": 512,
+  "full_marginal_entry_checks": 6740,
+  "measured_replay_seconds": 0.686503,
+  "measured_peak_rss": 15400960,
+  "rss_units": "bytes on macOS, KiB on Linux",
+  "parallelism": "One serial process; no external solver or background workers."
+}

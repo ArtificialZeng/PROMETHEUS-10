@@ -1,0 +1,31 @@
+{
+  "input_id": "A",
+  "kind": "direct_primary_transcription",
+  "transcribed_by": "same reproduce worker, direct source-reading pass",
+  "primary_source": "S1",
+  "secondary_primary_crosscheck": "S2",
+  "source_locator": "S1 Section 3, Eqs. (21)-(25); S2 Definition 7, Eqs. (9a)-(11), Section IV.1",
+  "local_source_files": [
+    "literature/bengtsson-et-al-math0402325v2-excerpt.md",
+    "literature/rajchel-mieldzioc-et-al-2101.11288v1-excerpt.md"
+  ],
+  "dimension": 3,
+  "source_indexing": "0-based in S1; 1-based in S2",
+  "matrix_definition": "B_ij = |U_ij|^2",
+  "dephasing_convention": "first row and first column of U real and nonnegative",
+  "selected_columns_zero_based": [0, 1],
+  "lengths": [
+    "sqrt(B_00*B_01)",
+    "sqrt(B_10*B_11)",
+    "sqrt(B_20*B_21)"
+  ],
+  "source_chain_link_form": "abs(L1-L2) <= L0 <= L1+L2",
+  "source_bracelet_form": "2*max(L0,L1,L2) <= L0+L1+L2",
+  "orthogonality_equation": "L0 + L1*exp(i*phi11) + L2*exp(i*phi21) = 0",
+  "phase_cosines": {
+    "cos_phi11": "(L2^2-L0^2-L1^2)/(2*L0*L1)",
+    "cos_phi21": "(L1^2-L2^2-L0^2)/(2*L0*L2)",
+    "cos_difference": "(L0^2-L1^2-L2^2)/(2*L1*L2)"
+  },
+  "scope_note": "The phase quotients apply only when their denominators are nonzero; zero branches require direct orthogonality/completion."
+}

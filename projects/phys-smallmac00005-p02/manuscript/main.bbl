@@ -1,0 +1,32 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Deg{\"u}nther et~al.(2022)Deg{\"u}nther, Koyuk, and
+  Seifert]{deguenther2022phase}
+Julius Deg{\"u}nther, Timur Koyuk, and Udo Seifert.
+\newblock Phase shift in periodically driven non-equilibrium systems: its
+  identification and a bound.
+\newblock \emph{Journal of Statistical Mechanics: Theory and Experiment},
+  2022\penalty0 (3):\penalty0 033207, 2022.
+\newblock \doi{10.1088/1742-5468/ac59ad}.
+
+\bibitem[Deg{\"u}nther(2024)]{deguenther2024bounds}
+Julius Deg{\"u}nther.
+\newblock \emph{Bounds on dynamical quantities in stochastic non-equilibrium
+  systems: from dynamical phenomena to thermodynamic inference}.
+\newblock PhD thesis, University of Stuttgart, 2024.
+\newblock URL \url{https://elib.uni-stuttgart.de/handle/11682/15137}.
+
+\bibitem[Johansson(2017)]{johansson2017arb}
+Fredrik Johansson.
+\newblock {Arb}: efficient arbitrary-precision midpoint-radius interval
+  arithmetic.
+\newblock \emph{IEEE Transactions on Computers}, 66\penalty0 (8):\penalty0
+  1281--1292, 2017.
+\newblock \doi{10.1109/TC.2017.2690633}.
+
+\end{thebibliography}

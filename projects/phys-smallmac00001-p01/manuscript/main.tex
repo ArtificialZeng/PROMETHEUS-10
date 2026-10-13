@@ -1,0 +1,309 @@
+\documentclass[aps,pra,reprint,amsmath,amssymb,longbibliography]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Certified local optimality of a qubit counting process over a finite mean interval},pdfauthor={Xiaojian Zeng}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\vecop}{\operatorname{vec}}
+\newcommand{\T}{\mathcal T}
+\newcommand{\R}{\mathcal R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\CF}{\mathrm{CF}_2}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\begin{document}
+\title{Certified local optimality of a qubit counting process over a finite mean interval}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190, China}
+\date{September 12, 2026}
+\begin{abstract}
+Single-Kraus dynamics with a rank-one detector provide effective candidates for low-variance quantum counting with a two-dimensional memory. We establish a computer-assisted local optimality result for one connected stationary branch: for every mean first-count time $m\in[3,6]$, the branch is a strict local variance minimum at fixed mean, modulo a common unitary change of basis. The competing processes include all nearby completely positive no-count maps, arbitrary mixed initial states, and full-rank counting effects. A local chart of the physical boundary combines a constrained Hessian with transverse Choi, state, and detector inequalities. Rational root boxes and outward-rounded interval arithmetic verify these conditions on a gap-free cover of the entire mean interval, with a separate symbolic reconstruction and complete certificate replay. A uniform two-step contraction controls the infinite counting-time tail. The result certifies local resistance to additional no-count channels and state or detector mixing; it does not establish global optimality or settle the corresponding attainment question for all $m>2$.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+A finite quantum memory can shape the fluctuations of the time at which a count first occurs. Budroni, Vitagliano, and Woods constructed a qubit ticking process with a reduced timing variance using nonclassical temporal correlations~\cite{Budroni2021}. More recently, Olamaei \textit{et al.}\ numerically optimized quantum counting instruments and identified single-Kraus no-count dynamics with a rank-one detector as a particularly effective structure~\cite{Olamaei2026}. Their work leaves its global optimality among arbitrary quantum instruments open.
+
+The distinction between an effective numerical candidate and a local minimum in the full physical domain is consequential. A minimum inside a single-Kraus family could, in principle, acquire a descent direction when additional unobserved channels are allowed. State mixing and detector leakage introduce further boundary directions. They must be tested at the same mean count time; an unconstrained variation does not answer the variance question.
+
+Here we certify one connected branch over the finite interval $3\le m\le6$. The contribution is a local sufficiency statement against all nearby physical competitors, together with complete parameter coverage. The numerical structure and its improved counting performance are already part of the preceding work~\cite{Olamaei2026}. Our argument adds a full boundary chart, strict transverse inequalities, and a validated continuation. It gives a local benchmark for optimization with a fixed qubit memory. Neither an ansatz-wide minimum nor a global lower bound is inferred.
+
+\section{Model and exact moments}\label{sec:model}
+At each integer step the same no-count operation acts on $\mathbb C^2$:
+\begin{equation}
+ \T(X)=\sum_{\alpha=1}^{r}K_\alpha X K_\alpha^\dagger,
+ \qquad F=\T^*(I)\le I.\label{eq:model}
+\end{equation}
+Here $\T$ is completely positive (CP), $\rho\ge0$, and $\tr\rho=1$. Its counting effect is $M_1=I-F\ge0$. No post-count state is needed for the first-count observable. Every such effect admits a CP counting operation, for example $X\mapsto\tr(M_1X)\tau$ for any density matrix $\tau$, so Eq.~\eqref{eq:model} defines a physical two-outcome instrument.
+
+The count starts at $L=1$. Put
+\begin{align}
+ f_n&=\tr\T^n(\rho),\qquad f_0=1,\nonumber\\
+ p_L&=\tr\bigl[M_1\T^{L-1}(\rho)\bigr]=f_{L-1}-f_L.\label{eq:survival}
+\end{align}
+We require eventual counting. In the neighborhood considered below the stronger condition $\T^{*2}(I)<\beta I$, $\beta<1$, holds. It implies $f_n\le\beta^{\lfloor n/2\rfloor}$, hence normalization and finite moments without a time cutoff.
+
+Let $\R=(\id-\T)^{-1}$ and define
+\begin{equation}
+ \begin{aligned}
+ X&=\R(\rho),& Z&=\R(X),\\
+ A&=\R^*(I),& B&=\R^*(2A-I).
+ \end{aligned}\label{eq:resolvents}
+\end{equation}
+Summing Eq.~\eqref{eq:survival} gives
+\begin{align}
+ \mu&=\sum_{n\ge0}f_n=\tr X,\nonumber\\
+ E_2:=\E[L^2]&=\sum_{n\ge0}(2n+1)f_n=2\tr Z-\tr X,\label{eq:moments}\\
+ \sigma^2&=E_2-\mu^2,\qquad
+ \CF=2E_2-3\mu^2+2\mu.\label{eq:cf}
+\end{align}
+At prescribed $\mu=m$, minimizing any of $E_2$, $\sigma^2$, and $\CF$ is equivalent. All statistics use one step as the time unit. A physical step duration $\Delta t$ changes the mean to $\Delta t\,\mu$ and the variance to $(\Delta t)^2\sigma^2$. The calculation is at exact discrete time, with no continuous-time, weak-detection, or large-mean approximation.
+
+\section{The stationary branch and the result}\label{sec:branch}
+Fix a common basis with $\rho_0=\ket0\bra0$. A five-coordinate chart of the pure-state, single-Kraus, rank-one-detector stratum is
+\begin{align}
+ W&=\frac{1}{1+h^2}\begin{pmatrix}h^2&-h\\-h&1\end{pmatrix},
+ \quad P=I-W,\quad D=P+aW,\nonumber\\
+ U&=\frac{(1-v^2)I+2i(x\sigma_x+t\sigma_y+z\sigma_z)}{1+v^2},\nonumber\\
+ v^2&=x^2+t^2+z^2,\qquad K=UD.\label{eq:chart}
+\end{align}
+The Pauli matrices have their usual signs, in particular $(\sigma_y)_{01}=-i$. Thus $F=P+a^2W$ and $M_1=(1-a^2)W$. The attenuation $a$ is an amplitude; the detector parameter called $q$ in Ref.~\cite{Olamaei2026} is $a^2$.
+
+The branch lies on $x=z=0$. Complex conjugation reverses $(x,z)$ and leaves $(a,h,t)$ invariant. Both odd first derivatives and the mixed real--odd Hessian blocks therefore vanish there. With $\lambda$ the mean multiplier and $p=(a,h,t,\lambda)$, define the four exact equations
+\begin{equation}
+ \mathfrak f(p,m)=
+ \begin{pmatrix}
+ \partial_a(E_2-\lambda\mu)\\
+ \partial_h(E_2-\lambda\mu)\\
+ \partial_t(E_2-\lambda\mu)\\
+ \mu-m
+ \end{pmatrix}=0.\label{eq:stationary}
+\end{equation}
+The moments here are rational functions, defined explicitly by Eqs.~\eqref{eq:chart} and \eqref{eq:moments}; Appendix~\ref{app:rational} gives a small real-matrix construction.
+
+We select the branch through the isolated mean-$4$ root whose coordinates are approximately
+\begin{align}
+ a_4&=0.5030832031365117, & h_4&=0.0897972315674670,\nonumber\\
+ t_4&=-0.2442257150461363, & \lambda_4&=9.416551179635163.
+ \label{eq:anchor}
+\end{align}
+The rational anchor box has component radii $10^{-45}$; its full centers and preconditioner are supplied with the certificate. The displayed rounded coordinates identify the point and are not substituted for that box. The continuous branch is defined by Eq.~\eqref{eq:stationary}, this anchor, and the 8,433 rational root boxes in the accompanying data.
+
+\textit{Local optimality statement.} For each $m\in[3,6]$, this branch supplies a pure state and a single-Kraus no-count map that are a strict local minimum of $\sigma^2$ at $\mu=m$, modulo simultaneous unitary conjugation of the state and map. The neighborhood is in the ordinary finite-dimensional topology of the pair $(J,\rho)$, where $J$ is the Choi matrix. Competitors include every nearby qubit CP map of Choi rank $1$ through $4$, mixed initial states, and rank-two counting effects. The same instrument acts at every step and counting is eventual.
+
+The statement concerns one local branch on a specified finite mean interval. In particular, it does not assert that a global optimum lies on the branch, nor that every mean above $2$ has an optimizer of this structure. No numerical radius of the neighborhood is supplied.
+
+\section{Local sufficiency in the full physical domain}\label{sec:proof}
+\subsection{Constrained first variations}
+Set $\mathcal C=B-\lambda A$ and $\mathcal L=E_2-\lambda\mu$. From $\delta\R=\R\,\delta\T\,\R$ one obtains
+\begin{align}
+ \delta\mathcal L={}&\tr\bigl[\mathcal C\,\delta\T(X)\bigr]
+ +2\tr\bigl[A\,\delta\T(Z)\bigr]
+ +\tr(\mathcal C\,\delta\rho).\label{eq:variation}
+\end{align}
+We use column vectorization,
+\begin{equation}
+ k=\vecop K=(K_{00},K_{10},K_{01},K_{11})^T,
+\end{equation}
+with the input Choi index first. Then
+\begin{equation}
+ J=\sum_\alpha (\vecop K_\alpha)(\vecop K_\alpha)^\dagger,
+ \qquad \tr_{\rm out}J=F^T,\label{eq:choi}
+\end{equation}
+The gradient with respect to $J$ is
+\begin{equation}
+ G=X^T\otimes\mathcal C+2Z^T\otimes A.\label{eq:gradient}
+\end{equation}
+The saturated eigenvalue of $F$ has projector $P$. Define
+\begin{equation}
+ E=P^T\otimes I,\qquad y=-(Ek)^\dagger Gk,\qquad H=G+yE.\label{eq:slack}
+\end{equation}
+Here $\norm{Ek}^2=1$ exactly. The plus sign in $H$ enforces the upper bound on $F$; a test using $G$ alone would include inadmissible variations.
+
+At a regular solution of Eq.~\eqref{eq:stationary}, the symmetry noted above gives stationarity in all five coordinates. Common unitary invariance restores the eliminated basis directions. In the unquotiented single-Kraus variables, the sole active effect constraint has normal $KP$, so full constrained stationarity implies $Gk=-yEk$. Independent pure-state variations give $\mathcal C\ket0=\eta\ket0$. Consequently
+\begin{equation}
+ Hk=0,\qquad \mathcal C\ket0=\eta\ket0\label{eq:complementarity}
+\end{equation}
+are exact equalities. They follow from regular stationarity, not from a small numerical residual. The state normal coefficient is
+\begin{equation}
+ \Delta=\mathcal C_{11}-\mathcal C_{00}.\label{eq:state-gap}
+\end{equation}
+
+\subsection{Tangent curvature at fixed mean}
+Order the five coordinates as $(a,h,t,x,z)$. Let $H_{\mathcal L}$ be their Hessian with $\lambda$ held fixed. The interval calculation below shows $\mu_t>0$. Eliminating $t$ from the mean constraint leaves free displacements $(\delta a,\delta h,\delta x,\delta z)$. Write $N$ for the corresponding $5\times4$ tangent matrix, whose $t$ row is $-\mu_j/\mu_t$ and whose other rows are coordinate inclusions. The constrained Hessian is
+\begin{equation}
+ H_{\rm red}=N^T H_{\mathcal L}N.\label{eq:reduced}
+\end{equation}
+Using $H_{\mathcal L}$ rather than the unrestricted Hessian of $E_2$ incorporates the curvature of the fixed-mean surface. At fixed mean the Hessian of $\CF$ is twice Eq.~\eqref{eq:reduced}.
+
+For clarity, the complex tangent derivatives can be obtained without numerical differentiation. For chart coordinates $i,j$, let $\T_i$ and $\T_{ij}$ denote the first and second derivatives of the map and set
+\begin{align}
+ X_i&=\R\T_iX,& Z_i&=\R(X_i+\T_iZ),\nonumber\\
+ b_{ij}&=\T_{ij}X+\T_iX_j+\T_jX_i,\nonumber\\
+ c_{ij}&=\T_{ij}Z+\T_iZ_j+\T_jZ_i.\nonumber
+\end{align}
+Then exact resolvent differentiation yields
+\begin{equation}
+ (H_{\mathcal L})_{ij}=\tr(\mathcal C b_{ij})+2\tr(Ac_{ij}).\label{eq:hessian}
+\end{equation}
+Both the real block and the $(x,z)$ block are included.
+
+\subsection{A chart containing every nearby competitor}
+Positivity of Eq.~\eqref{eq:reduced} alone only controls the boundary stratum. To extend it, diagonalize a nearby state using a common basis and write $\rho=\diag(1-s,s)$, $s\ge0$. The two eigenvalues of a nearby $F$ remain distinct, so
+\begin{equation}
+ F=(1-b)P+a^2W,\qquad b\ge0,\label{eq:effectchart}
+\end{equation}
+with $W$ as in Eq.~\eqref{eq:chart} after fixing the remaining diagonal phase. The reference point satisfies $0<a<1$ and $h>0$, making these choices regular.
+
+The leading eigenvalue of a nearby $J$ is simple. Choose its smooth eigenvector with its norm included, $k=\vecop K$, and a smooth orthonormal frame $V(K)$ for $k^\perp$. Exactly,
+\begin{equation}
+ J=kk^\dagger+V(K)QV(K)^\dagger,\qquad Q\ge0,\label{eq:fullchart}
+\end{equation}
+where $Q$ is an arbitrary $3\times3$ Hermitian matrix. The condition $Q\ge0$ includes every possible nearby Choi rank and all complex coherences.
+
+Let $\Phi_K(Q)=[\tr_{\rm out}(VQV^\dagger)]^T$ be the extra input effect. Since the principal Kraus matrix remains invertible, its polar decomposition obeys
+\begin{equation}
+ K=U\sqrt{F-\Phi_K(Q)}.\label{eq:implicitpolar}
+\end{equation}
+At $Q=0$ the right-hand side has zero derivative with respect to $K$. Thus the derivative of the left side minus the right side is the identity on the real matrix coordinates. The implicit-function theorem supplies a smooth local solution of Eq.~\eqref{eq:implicitpolar}. Conversely, every nearby physical Choi matrix has the leading-eigenvector decomposition and polar decomposition just used. This proves local coverage rather than merely constructing selected perturbations.
+
+Use $\mu_t>0$ to enforce the same mean and denote the four remaining tangent coordinates by $u$. Expanding the objective at the exact stationary point gives
+\begin{align}
+ E_2-E_{2,0}={}&\tfrac12u^TH_{\rm red}u+yb+\Delta s
+ +\tr(V_0^\dagger HV_0Q)\nonumber\\
+ &+o(\norm{u}^2)+O(\norm{u}r+r^2),\label{eq:expansion}\\
+ r={}&b+s+\tr Q.\nonumber
+\end{align}
+The normal coefficients include the mean compensation: they follow from Eq.~\eqref{eq:variation} with the Lagrange multiplier. Equation~\eqref{eq:complementarity} removes the compensating principal-Kraus terms.
+
+Suppose $H_{\rm red}>0$, $y>0$, $\Delta>0$, and $V_0^\dagger HV_0>0$. Since $b,s\ge0$ and $Q\ge0$, the first line of Eq.~\eqref{eq:expansion} bounds a positive multiple of $\norm{u}^2+r$ from below. Also $\norm{Q}\le\tr Q$. Shrinking the neighborhood absorbs both remainder terms into that bound. Equality then requires $u=b=s=Q=0$. The resulting strict minimum is precisely the statement in Sec.~\ref{sec:branch}, after accounting for the common unitary basis freedom. This argument is qualitative in neighborhood size; no radius is extracted.
+
+\section{Validated continuation and error control}\label{sec:certificate}
+\subsection{Existence, uniqueness, and joining the boxes}
+For each closed rational mean interval $I_m$, the certificate supplies a rational center $p_0$, positive component radii $r_i$, and a rational preconditioner $C_0$. Let $\mathcal B=p_0+[-r,r]$, $D_r=\diag(r)$, and $M_{\mathcal B}=I-C_0\mathfrak f_p(\mathcal B)$. Outward-rounded ball arithmetic~\cite{Johansson2016} verifies
+\begin{align}
+ q_{\mathcal B}&=\norm{D_r^{-1}M_{\mathcal B}D_r}_\infty<1,
+ \label{eq:banach}\\
+ \left|\left[-C_0\mathfrak f(p_0,I_m)
+ +M_{\mathcal B}[-r,r]\right]_i\right|&<r_i.
+ \label{eq:inclusion}
+\end{align}
+All denominators are separated from zero. For every real $m\in I_m$, these inequalities make $p\mapsto p-C_0\mathfrak f(p,m)$ a contraction taking $\mathcal B$ into its interior. They establish a unique exact root there. Invertibility of $C_0$ and $\mathfrak f_p$ follows from Eq.~\eqref{eq:banach}.
+
+Adjacent boxes are also tested on their convex rectangular hull using a common preconditioner. Strict contraction there implies injectivity of $\mathfrak f(\cdot,m)$; the two roots at the shared endpoint coincide. Overlapping boxes without this test would not suffice. The mean-$4$ anchor is independently recertified and joined to the adjacent cells in the same way. Exact rational endpoints form a gap-free cover of $[3,6]$. The implicit-function theorem then gives a single smooth branch on the cover.
+
+\subsection{Bounds along the exact branch}
+Direct interval evaluation on a large unconstrained box loses parameter correlations. We instead enclose the root at the mean midpoint and the derivative of the branch. The fixed-point residual bounds the error at the midpoint by less than $10^{-30}$ in every component. Implicit differentiation gives
+\begin{equation}
+ p'(m)=\mathfrak f_p(p(m))^{-1}e_4.\label{eq:velocity}
+\end{equation}
+An interval linear solve encloses this vector throughout $\mathcal B$. For each rational function $g$ used in the sign tests,
+\begin{equation}
+ g(p(m))\in g(\mathcal B_{\rm mid})+
+ [-w/2,w/2]\,\nabla g(\mathcal B)\cdot p'(I_m),\label{eq:flow}
+\end{equation}
+where $w$ is the interval width and $\mathcal B_{\rm mid}$ encloses its exact midpoint root. Numerator and denominator polynomials, including their derivatives, are evaluated with integer coefficients. Equation~\eqref{eq:flow} is an enclosure from the fundamental theorem of calculus, not an interpolation of numerical roots.
+
+\subsection{What the complete replay checks}
+All 8,433 cells pass root existence and the sign tests. All 8,432 adjacent joins, together with both joins to the mean-$4$ anchor, pass. The full replay uses 100 decimal digits of Arb precision. The rational functions are reconstructed separately using Pauli transfer matrices; 40 exact component identities check the moments, gradients, Hessian blocks, Kraus matrix, and Choi slacks against the original expressions.
+
+On every cell, symmetric Schur elimination verifies
+\begin{align}
+ H_{\rm red}&>10^{-2}I_4,\nonumber\\
+ H|_{k^\perp}&>10^{-2}I_{k^\perp},\label{eq:bounds}\\
+ y&>10^{-2},\qquad \Delta>10^{-2},\qquad \mu_t>0.\nonumber
+\end{align}
+For the Choi inequality the implementation can use a nonorthogonal rational basis $V$ of $k^\perp$: it tests $V^\dagger(H-10^{-2}I)V>0$, which implies the normalized inequality in Eq.~\eqref{eq:bounds}. The Hessian bound is in the stated chart coordinates. Neither its eigenvalues nor the elimination pivots are physical decay rates.
+
+Finally, every cell satisfies
+\begin{equation}
+ (K^2)^\dagger K^2<\frac{999}{1000}I.\label{eq:transience}
+\end{equation}
+This is the two-step condition used in Sec.~\ref{sec:model}. Its strictness persists for all sufficiently close CP maps, so the local argument remains inside the domain of eventual counting and smooth finite moments.
+
+\begin{table}[t]
+\caption{Outward-rounded summary bounds from the complete interval replay. The midpoint error is a bound on the root coordinates, not on a sampled optimizer residual. These bounds certify the stated branch and local conditions only.}
+\label{tab:certificate}
+\begin{ruledtabular}
+\begin{tabular}{lr}
+Quantity & Bound\\
+Mean cells & $8\,433$\\
+Largest scaled root contraction & $<0.333291$\\
+Largest inclusion ratio & $<0.999958$\\
+Largest adjacent joining contraction & $<0.557263$\\
+Largest midpoint root error & $<7.243\times10^{-64}$\\
+Detector multiplier $y$ & $>5.6579$\\
+State gap $\Delta$ & $>4.6549$\\
+Mean derivative $\mu_t$ & $>5.0446$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+Table~\ref{tab:certificate} records conservative decimal bounds. The full boxes and exact-decimal witnesses, rather than the rounded table, are the inputs to the replay. Failed trial boxes in the construction of the cover were subdivided or replaced; they are not interpreted as instabilities. Finite differences and finite full-rank perturbations served as diagnostics during development, but neither supplies the continuous-parameter proof.
+
+\section{Comparison and physical scope}\label{sec:comparison}
+A useful analytic reference is the earlier two-parameter construction~\cite{Budroni2021}. In its basis,
+\begin{align}
+ K_{\rm ref}&=\begin{pmatrix}\sqrt{u_0}&\sqrt{1-u_0}\\-\sqrt{1-u_0}&\sqrt{u_0}\end{pmatrix}
+ \diag(1,a_0),\nonumber\\
+ a_0&=1-\frac2m,\qquad u_0=\frac{2a_0}{1+a_0^2},\qquad \rho_{\rm ref}=\ket0\bra0.
+ \label{eq:baseline}
+\end{align}
+Its known cost is $-m^2(m-2)^2/[2(m-1)^2]$. Direct exact reconstruction at $m=3,4,6$ gives the first variance column of Table~\ref{tab:values}. The second column reports rounded moments on the certified stationary branch. These comparisons check the moment conventions; the improvement of the larger ansatz over Eq.~\eqref{eq:baseline} is already known~\cite{Olamaei2026}.
+
+\input{values.tex}
+
+The new guarantee concerns the effect of increasing the local dynamical complexity while retaining the qubit memory. Additional no-count Kraus operators, mixed initial states, and a detector acting on both state directions cannot lower the variance sufficiently close to this branch at the same mean. The positive tangent curvature and positive normal coefficients have different roles: the former controls coherent changes inside the rank-one stratum, while the latter controls approaches from higher rank.
+
+This is an instrument-level result. It makes no claim about an experimental implementation, energy cost, autonomous operation, or the statistics of repeated ticks without a reset prescription. Distant channels, including those with unused dark sectors, remain admissible competitors in the original global problem and are not covered by this proof. Extending the interval, finding a quantified neighborhood, or establishing global attainment requires further arguments.
+
+\section{Computational methods and availability}\label{sec:methods}
+Exact algebra uses SymPy 1.14.0; the interval replay uses python-flint 0.9.0 and its Arb arithmetic. The recorded environment is Python 3.12.14 on macOS arm64. The independently reconstructed Pauli formulas share the model and rational witness boxes with the first calculation, but do not import its discovery code or optimizer outputs. The complete replay recomputes each contraction, inclusion, join, and positivity decision rather than trusting stored pass flags. Both implementations share the underlying symbolic and interval libraries. This is an implementation cross-check, not independence of arithmetic libraries.
+
+OpenAI Codex assisted with the research reasoning, derivations, code construction, debugging, literature comparison, and computational cross-checks. Separate AI-assisted review reconstructed the source inputs and replayed the certificate. These uses are substantive research assistance; the automated checks do not replace human scientific responsibility. The accompanying author handoff records the available tool provenance and the human review still required for this local draft.
+
+The accompanying reproducibility files contain the rational cells, anchor, defining functions, symbolic reconstruction, and full interval checker. They also regenerate Table~\ref{tab:values}. No experimental dataset was used. The package can be run locally without network access once its declared Python dependencies are available; the analytic justification is contained in Secs.~\ref{sec:proof} and \ref{sec:certificate}. No public repository deposit is claimed.
+
+\begin{acknowledgments}
+OpenAI Codex also assisted with literature organization and preparation of the manuscript. Human author review and final approval of this draft remain pending.
+\end{acknowledgments}
+
+\appendix
+\section{Explicit rational moment construction}\label{app:rational}
+On $x=z=0$, $K$ is real. Write $K=\bigl(\begin{smallmatrix}\alpha&\beta\\\gamma&\delta\end{smallmatrix}\bigr)=U_rD$, with
+\begin{align}
+ U_r&=\frac{1}{1+t^2}\begin{pmatrix}1-t^2&2t\\-2t&1-t^2\end{pmatrix},\nonumber\\
+ D&=\frac{1}{1+h^2}\begin{pmatrix}1+ah^2&(1-a)h\\(1-a)h&h^2+a\end{pmatrix}.
+ \label{eq:realK}
+\end{align}
+For the symmetric coordinates $(X_{00},X_{01},X_{11})^T$, the transfer matrix is
+\begin{equation}
+ S=\begin{pmatrix}
+ \alpha^2&2\alpha\beta&\beta^2\\
+ \alpha\gamma&\alpha\delta+\beta\gamma&\beta\delta\\
+ \gamma^2&2\gamma\delta&\delta^2
+ \end{pmatrix}.\label{eq:symmetric}
+\end{equation}
+With $R_3=(I-S)^{-1}$, $e=(1,0,0)^T$, and $w=(1,0,1)^T$, the exact rational functions in Eq.~\eqref{eq:stationary} are
+\begin{equation}
+ \mu=w^TR_3e,\qquad E_2=w^T(2R_3^2-R_3)e.\label{eq:smallmoments}
+\end{equation}
+The imaginary Hermitian coordinate evolves with eigenvalue $\det K=a$, adding the factor $(1-a)^{-1}$ to the full resolvent. Thus retaining that coordinate recovers the complex derivatives in Eq.~\eqref{eq:hessian}; the real reduction is not a restriction on competitors.
+
+For the separate Pauli reconstruction write $X=\sum_{j=0}^3x_j\sigma_j/2$, $\sigma_0=I$, and use
+\begin{equation}
+ S^{\rm P}_{ij}=\tfrac12\tr(\sigma_iK\sigma_jK^\dagger),\quad
+ x(\rho_0)=(1,0,0,1)^T.\label{eq:pauli}
+\end{equation}
+Equations~\eqref{eq:smallmoments} and \eqref{eq:pauli} give the same moments by a fixed basis transformation. Primal Pauli matrices carry the factor $1/2$; the dual observables in Eq.~\eqref{eq:resolvents} do not. The separate calculation differentiates the primal resolvent twice before comparing its exact expressions with the first construction.
+
+\interlinepenalty=10000
+\bibliography{references}
+\end{document}

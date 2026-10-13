@@ -1,0 +1,389 @@
+[
+  {
+    "changes": [
+      "Xcode command-line Python executable: 1 replacement(s)"
+    ],
+    "file": "manuscript/repro/environment.json",
+    "packaged_sha256": "49f68842afe4aa25b30a894ceaa55f2bd894c78019384b78e2bc8ad3edf0ed62",
+    "project": "phys-smallmac00000-p13",
+    "source_sha256": "4ba65fe803495fa0ff019afc42a3b72a0c27b7a2eae720cbd5d7d8982cc3aaf9"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "reproducibility/README.md",
+    "packaged_sha256": "76015cc9160cedb242b77e0ef0d244fb4bdb3cf9547d6b3edbddbb163c9dfa31",
+    "project": "phys-smallmac00000-p14",
+    "source_sha256": "a4426ef719f19d567b5ab6348e03f81b8f89b411b89fe3d92a049233433cbfa5"
+  },
+  {
+    "changes": [
+      "Xcode command-line Python executable: 1 replacement(s)"
+    ],
+    "file": "supplement/environment.json",
+    "packaged_sha256": "fa47cb44001709fe20faf41951de59dca8c64119595bf5a9d217656874310b32",
+    "project": "phys-smallmac00003-p01",
+    "source_sha256": "b4ecf6d7df5988fbebc23eaa41b56e46c8327a3888f27470cbaa2084d7b54068"
+  },
+  {
+    "changes": [
+      "system Python executable: 1 replacement(s)"
+    ],
+    "file": "AUTHOR_HANDOFF.md",
+    "packaged_sha256": "e9e39db55195b307029a63547205d911d761dc9dbbaf425e445c420c166e980a",
+    "project": "phys-smallmac00004-p01",
+    "source_sha256": "ea2e5ea92a2d8ceaa7c1e00976539112a88649b019d837161a4d9d08cc088595"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/counterexample-interval-certificate.json",
+    "packaged_sha256": "323711d23d29b80347df1f226b6fbe87efdc80964fd909f873e980d625edbeb1",
+    "project": "phys-smallmac00005-p02",
+    "source_sha256": "26ac7753e6f4c41a87e5dab6b4bf0365fce5356904d0fbf69c930e0f59b3a906"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/counterexample-interval-replay.json",
+    "packaged_sha256": "6b9b4ba9127cfce9aaf647a8b56a1c5bc885bbc028fcd02e66d33abe92c0ca9f",
+    "project": "phys-smallmac00005-p02",
+    "source_sha256": "49785469a9a03853f77b3970a146083fb696e142907dbbe7d6de153820e79d9b"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "reproducibility/README.md",
+    "packaged_sha256": "d1a586c206ef67d1bc04be4d0081248a85da96b7a80d337ff08cd83af18b4f8f",
+    "project": "phys-smallmac00005-p02",
+    "source_sha256": "b75b9e4c712e0ad30f5824bdd5f51d7028bd672f45c994a08c20c82b122e72b8"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "REPRODUCIBILITY.md",
+    "packaged_sha256": "979d02e8ae615009f9b1a8b5a8cec2ef151a90e30c709a9598c94c84f7866a7a",
+    "project": "phys-smallmac00005-p03",
+    "source_sha256": "a764aedc8a5906dab0b9c006d4535c3b1792ae1057c29b2ee3c2ef2eeb113d2b"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "evidence/research-python-environment.txt",
+    "packaged_sha256": "4c330c3e01ce6ca63edee18cb71622f6a0c11d7794853dcc18e416f8d0847f48",
+    "project": "phys-smallmac00005-p03",
+    "source_sha256": "b7c5b9751ec670ddc4badadccfe84a29dc3158d594a5325a77009e40097bf41f"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/verify-variational-identities.py",
+    "packaged_sha256": "9238723edbe0bcbb1a2ca9c7571890ec5f006dabba3ee8c2aa1d247a958d42c0",
+    "project": "phys-smallmac00005-p03",
+    "source_sha256": "ad893db2dccaa6eebde6da6f60a6eb912f8e8e55e3fe9edb4554152706576f13"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/o4-rank-one-replay.log",
+    "packaged_sha256": "c19c16a547d9160828f6adcff886228eea0ead0f893cd3ab4639b121b3bd3f1b",
+    "project": "phys-smallmac00008-p02",
+    "source_sha256": "0c7ce42c059d8c10ebfbd828820094a8327d745cbefc0dab5812c1e89d9c0256"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "reproducibility/README.md",
+    "packaged_sha256": "d028e5336c24bf1085e83934d9e9689748ab826c5b0cf2d8d03cbe0fa8b17f86",
+    "project": "phys-smallmac00008-p02",
+    "source_sha256": "6f16d2c4c8fb8eea81c096b624f9ed233a0c414c47a026f2fac1b2ba4dedccf3"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "reproducibility/README.md",
+    "packaged_sha256": "d9eb4f0dcb6a72090cef15d51f72f95eccfcb02a0b8b1779b1379968f52508aa",
+    "project": "phys-smallmac00010-p01",
+    "source_sha256": "cc6b034837e404884aa7082e040209a71302bc7ce79983fb1433ae54f078c747"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/baseline.log",
+    "packaged_sha256": "f00ee960576b3ce4764e06aebfbc90f72f789f1af1950d0d4ffbc4fafb9eb37e",
+    "project": "phys-smallmac00014-p11",
+    "source_sha256": "00da0c91f74e78cada5e02d15086abb4a1a824143e0d317fa70d663a87c358fe"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "evidence/write-runtime-probe.txt",
+    "packaged_sha256": "2d6fdb7ac53e96121dde3f512736770fd06cd9286ee385d5c05c7ebf97c1359f",
+    "project": "phys-smallmac00014-p11",
+    "source_sha256": "0bf9e3b300e8266a4f64bfac5f1664a119b8c998ba2a571a0080094f9f50c467"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/write-validation.md",
+    "packaged_sha256": "d30b7b58e13f343db363ccb44e5c07f6286e9a76df6cd6eeaa8ce5b3fcfed143",
+    "project": "phys-smallmac00014-p11",
+    "source_sha256": "fa641a7bc6057e960949d6e08ebf1cdf9c7f9bbd9da8010c0e42532757baa4ec"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "reproducibility/README.md",
+    "packaged_sha256": "2d07195634ee744802adabc22c452d8d7994fb3ae2e46b8ee84cd3dc905be694",
+    "project": "phys-smallmac00014-p11",
+    "source_sha256": "d21dd7481b23f2cd8915d3cdf57505d0564cae5aabceb7072f40c94183ec043f"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "REPRODUCIBILITY.md",
+    "packaged_sha256": "e7da8fe7baa8714a1ac0e78afc226656496d9a215caf17c884feb3914419137b",
+    "project": "phys-smallmac00015-p06",
+    "source_sha256": "1443cd337b49496b295a3edd4957681c6a60cf5ec1c5ad188973fcd6dad7e7e3"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "evidence/write-runtime-versions.txt",
+    "packaged_sha256": "3f307f1bfcd83445fff34c5938fbf32b0364fc949b16ef87df78eec8ef217709",
+    "project": "phys-smallmac00015-p06",
+    "source_sha256": "3cfad6d293f2ab16f1f88350393c44e4283cfc475430c89682b7d6c998f03a96"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "evidence/write-runtime-versions.txt",
+    "packaged_sha256": "d7bbdb3387307be21a2e0c2fc26fd9fd0400fa5d8c96677d6d956c1d51f1f574",
+    "project": "phys-smallmac00016-p01",
+    "source_sha256": "d03de2d6ca930b736c965f05bd3e774f85d1efdffa5876833a198e567da55328"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "evidence/write-python-environment.txt",
+    "packaged_sha256": "f575c11d3ec09ad34bb388bb673b8fb5cf77cb80891b43e0fd582b91a065f1ca",
+    "project": "phys-smallmac00013-p03",
+    "source_sha256": "a9689dabcffd1d9a50c2d65fde4297c363a2faf32265764561389dd7b72c325a"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "REPRODUCIBILITY.md",
+    "packaged_sha256": "aa72d8bcccfdba86cb7153da27420b8d748026e3b0f9e849289c0b548fd1cd77",
+    "project": "phys-smallmac00013-p07",
+    "source_sha256": "8b675962d6898ad71caccd4dbbed31802244e85bfb759804283166ecd81ca7cd"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "evidence/write-environment.txt",
+    "packaged_sha256": "4da2b698f07cc345905b87267fea2158277b2b1ef4f00f3e17cae97e90b6b010",
+    "project": "phys-smallmac00019-p01",
+    "source_sha256": "a49251618fc0b3be37d998939c8fce85dcb08a99b44eedcec6e98a532d3c3f75"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "reproducibility/README.md",
+    "packaged_sha256": "51f27302c2909d7a3ffce81247774adb8a65a1facd2ccde78759eb18a97e942b",
+    "project": "phys-smallmac00019-p01",
+    "source_sha256": "09ea865ae0d5d0b3a7f52fc764b7827840297a1b114fd61100eafe326f655d17"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "REPRODUCIBILITY.md",
+    "packaged_sha256": "e88bacbaaed9017e630e8909bf8ca131bf1b1f89945b64c2c4aadb9b46d3132e",
+    "project": "phys-smallmac00020-p01",
+    "source_sha256": "979257ef90e8709750871a194203668908342036b6da388886074429ce471e51"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "evidence/write-runtime-versions.txt",
+    "packaged_sha256": "b4cd30f672b5be14e59aec8e1a603ba4f5626a584bbff28bcb25efa225401043",
+    "project": "phys-smallmac00020-p01",
+    "source_sha256": "cabe794fe5e1f856bc87c9efc6e618a06648c96ff5779a609e75234430ba939e"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "reproducibility/README.md",
+    "packaged_sha256": "d8e01beb1d407c80a3571d546633b9e3554e87ca18aa9f7a60aee91094594dbf",
+    "project": "phys-smallmac00020-p02",
+    "source_sha256": "0fb7f02ababf5d96cd368c0ce24b66de4c18831308ab585c058122f78489efc3"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/confluent-exact-check.log",
+    "packaged_sha256": "792189d34ed6b82e88761308f40dd63fcbf4c2fd033b5fbb699ee81214d58e1b",
+    "project": "phys-smallmac00020-p03",
+    "source_sha256": "8cc5869e39080ec64303e16f6cc0fbe2558e652ceeee3bf4f3038a9e0ee5d64d"
+  },
+  {
+    "changes": [
+      "python executable: 2 replacement(s)"
+    ],
+    "file": "evidence/confluent-validation.log",
+    "packaged_sha256": "f33b23c4a7a3ddaabcea4882da918ba24a440475f392520bdc6608c62d91a623",
+    "project": "phys-smallmac00020-p03",
+    "source_sha256": "e157b1de5247516d7a5ad508bdcf147009932204fa8d1e1064207bcc22695e49"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "reproducibility/README.md",
+    "packaged_sha256": "c6d85089a1711757b7e1105f73966976e5ebadc2bb0e323027cd99e05ac94a4b",
+    "project": "phys-smallmac00020-p03",
+    "source_sha256": "663ebfe0419cbdab435eaebdfcf4449f138784586e8cf22e07d02d2eceb8539d"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/cycle-schur-pass2.json",
+    "packaged_sha256": "189299593d1e5bccedc29bd3f07a22749f041c9707b82cb0e3a64677a46c6257",
+    "project": "phys-smallmac00021-p01",
+    "source_sha256": "8989b90d29c535cf67a1a632738cbe7f17c10fa481ca4df21382ff2121d6151a"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/cycle-schur-pass3-freeze.json",
+    "packaged_sha256": "e938aa2ad741fa7499388d0744605303859e9a304290ea1e2f5afc1c0fb75965",
+    "project": "phys-smallmac00021-p01",
+    "source_sha256": "84b708783f095854ec1aebd126846bdc08c74c166d591bf2f29da2ad1a5f6b7b"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/exact-k5-degeneracy.json",
+    "packaged_sha256": "f2e2fcc05901a641cf0572ca71cfdc3cf576e4b8de3076b9da779ffd549f5a33",
+    "project": "phys-smallmac00021-p01",
+    "source_sha256": "ffe00a570fd68446334e0e70f3b2a211090edd9d91b5b99952277edd62605b23"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/flat-crossing-scaling-pass4.json",
+    "packaged_sha256": "7ba06476748e80c566ea325d8ed2620a7d71e6766c8c258fb41ee849f9788631",
+    "project": "phys-smallmac00021-p01",
+    "source_sha256": "4f860fad0d29c557b0964c2b6c46d9f8a9b8fd9dd6a46979ef7e6acba5a0e8d6"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/resonance-classification.log",
+    "packaged_sha256": "89fa6651c1f4654789820ac760456958e652dd7ba70b38de22212280414be177",
+    "project": "phys-smallmac00021-p02",
+    "source_sha256": "0396c5a76fc6b9efe174cd4103d62783e9958b2d02b6e442ef6723b8615dc87a"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/baseline.log",
+    "packaged_sha256": "4fa2313c2c115f46843dfe976fa32e8e993efdef95d2533a7e909d829e802d10",
+    "project": "phys-smallmac00022-p01",
+    "source_sha256": "e2967e0282c316ac47c7993519b2c350a3af963f3525576b36737a0b593bf7fd"
+  },
+  {
+    "changes": [
+      "python executable: 2 replacement(s)"
+    ],
+    "file": "evidence/environment.txt",
+    "packaged_sha256": "7a516a01be65d7a02f66486c3e71aed0edfb50b7250dea3bdd543228880f5513",
+    "project": "phys-smallmac00022-p01",
+    "source_sha256": "2467ccb286e32c24d9fb29de9b39e6f4c32d446c18580575611344befc5aeb42"
+  },
+  {
+    "changes": [
+      "python executable: 3 replacement(s)"
+    ],
+    "file": "evidence/research2-environment.txt",
+    "packaged_sha256": "789caba5d112ddecb78518e91e5a243244a27e911cb0d4e55b7a4c6d18931a03",
+    "project": "phys-smallmac00022-p01",
+    "source_sha256": "841a240dd4cbe6a5b714c55d969ecca71561044eaaa8f288e1092581576df24f"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/u16-hessian-certificate.log",
+    "packaged_sha256": "9ec2c92458e1582b6144b769767e8f50d1a0971128b04cab01e82377536fb648",
+    "project": "phys-smallmac00022-p01",
+    "source_sha256": "20c1d17634ef9805314e9f2fe03e8e3125b74d7d83eb6e4e40af70fb08f36ffc"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "evidence/u16-tangent.log",
+    "packaged_sha256": "b2f62e52fd18f4bcf291c54cdb4d64e3a2d93cffeaccf87b8913856f58eb27c9",
+    "project": "phys-smallmac00022-p01",
+    "source_sha256": "9eeb713cff64ea963ae1d0d5bead542d3fdbdd8916f6ad22490b4d45970f86f3"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "manuscript/README.md",
+    "packaged_sha256": "8101531f93766b1b29effd48996f17786ff0b96bd3200ee885a1663f33e8c1c3",
+    "project": "phys-smallmac00022-p01",
+    "source_sha256": "97a56385a3e74614890ff1b86ab3d01574972ce0d0798f65adede61edd2c4bf8"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "supplementary/README.md",
+    "packaged_sha256": "2349b8d13986dced19b8450887fe22a7798b6434a9a36de30dc5093e2073a06a",
+    "project": "phys-smallmac00023-p03",
+    "source_sha256": "03db3905237e952774f083e022eb80ef995313821b278b8c4066a2c2ec9bbcb0"
+  },
+  {
+    "changes": [
+      "python executable: 1 replacement(s)"
+    ],
+    "file": "supplementary/environment.json",
+    "packaged_sha256": "daf26b8e1d943e51e1c98619b0a6f2deded64b75adb0b7bcaa7cbe743fb63ff5",
+    "project": "phys-smallmac00023-p03",
+    "source_sha256": "e78e5aaac16b77b60a022d61cc5084ea24e657bf3cb6dfd8f24ebd22ba71771f"
+  }
+]

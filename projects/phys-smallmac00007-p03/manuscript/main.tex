@@ -1,0 +1,360 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={A two-pineapple envelope for split-core threshold random walks},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\one}{\mathbf{1}}
+
+\title{A two-pineapple envelope for split-core threshold random walks}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Kemeny's constant is a stationary-target mean first-passage time for a finite
+random walk.  A conjecture of Breen et al. proposes that, among threshold graphs
+of a fixed order, its maximum is attained by a pineapple graph.  We prove an
+exact partial result for two infinite split-core families.  For positive integers
+$s,q,t$ and $n=s+q+t+3$, each threshold code
+$01\,0^t1^s0^q1$ and $0\,1^s0^t1\,0^q1$ has Kemeny's constant strictly below
+the larger of the two pineapple values with core parameters $s+1$ and
+$s+t+1$.  The proof reduces the general construction-code formula to four
+rational polynomials and uses exact positive-coefficient certificates.  We also
+show that the tempting operation of filling the interior zero block is not
+monotone: it can increase, decrease, or leave Kemeny's constant unchanged.
+Thus the two-pineapple comparison is essential.  The global pineapple conjecture
+and other split-core placements remain unresolved.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Kemeny's constant; threshold graph; random walk;
+pineapple graph; exact symbolic computation; extremal graph theory
+
+\section{Introduction}
+
+Let a simple random walk move one edge per unit time on a finite connected
+graph.  Kemeny's constant $\K$ is the expected time to reach a target drawn
+from the stationary distribution, and it does not depend on the initial
+vertex.  It is simultaneously a transport statistic and a spectral quantity.
+The way in which graph structure controls $\K$ is subtle: adding edges changes
+degrees, transition probabilities, and stationary weights at the same time.
+
+Threshold graphs provide a sharply structured setting in which this extremal
+question remains nontrivial.  Breen et al.~\cite{BreenEtAl2025} derived an exact
+construction-code formula, studied several related walk parameters, and
+conjectured that a pineapple graph maximizes $\K$ among all threshold graphs of
+fixed order.  Their openly available preprint reports computational verification
+through order $30$, but the conjecture is universal.
+
+This paper isolates two natural ways to split a dense core by a nonempty block
+of isolated-at-insertion vertices.  Neither family can beat the pineapple
+envelope.  More precisely, each member is strictly dominated by one of two
+pineapples of the same order.  Which pineapple wins depends on the parameters;
+this dependence cannot be removed by a simple edge-filling monotonicity argument.
+The result excludes two three-parameter families from a search for a global
+counterexample, but it does not settle the full conjecture.
+
+All calculations below are exact.  The source formula was transcribed from
+arXiv:2310.08552v1, the version that was available for equation-level checking.
+The corresponding 2025 version of record was not available for a line-by-line
+comparison, so statements about proximity to prior work are intentionally
+bounded to the sources described in Section~\ref{sec:related}.
+
+\section{Threshold-walk model and the pineapple bound}
+\label{sec:model}
+
+A connected threshold graph on $n\geq 3$ vertices is encoded here by
+$c=(c_1,\ldots,c_n)\in\{0,1\}^n$ with $c_1=0$ and $c_n=1$.  A vertex coded by
+$1$ is joined to every earlier vertex, while a vertex coded by $0$ is joined
+to none of them.  Equivalently,
+\begin{equation}
+ A_{ii}=0,
+ \qquad A_{ij}=c_{\max(i,j)}\quad(i\neq j).
+ \label{eq:adjacency}
+\end{equation}
+Let $d_i=\sum_j A_{ij}$, $D=\operatorname{diag}(d_i)$, and
+$m=\frac12\sum_i d_i$.  The non-lazy discrete-time walk has transition matrix
+$T=D^{-1}A$ and stationary distribution $\pi_i=d_i/(2m)$.  If
+\begin{equation}
+ H_{ij}=\mathbb E_i\inf\{k\geq0:X_k=j\},\qquad H_{ii}=0,
+\end{equation}
+then
+\begin{equation}
+ \K(G)=\sum_j\pi_jH_{ij}
+ =\operatorname{Tr}\!\left(I-T+\one\pi^{\mathsf T}\right)^{-1}-1
+ =\sum_{k=2}^n\frac{1}{1-\lambda_k(T)}.
+ \label{eq:kemeny}
+\end{equation}
+The auxiliary first-hitting problem does not alter the original chain.  In
+particular, periodic graphs are permitted and every step retains unit duration.
+
+For $0\leq r\leq n-2$, the pineapple graph $G_{n,r}$ has code
+$0\,1^r0^{n-r-2}1$.  Its exact value is~\cite[Lemma 3.14]{BreenEtAl2025}
+\begin{equation}
+ F_n(r)=n-4+\frac{2}{r+2}
+ +\frac{(n-1)(2r+3)}{2n+r^2+r-2}.
+ \label{eq:pineapple}
+\end{equation}
+Write $B_n=\max_{0\leq r\leq n-2}F_n(r)$, with the maximum taken over integer
+$r$.  The global conjecture is $\K(G(c))\leq B_n$ for every legal code $c$.
+
+For completeness, the source reduction used in our calculation can be stated
+compactly.  For $1\leq i\leq n-1$, define vectors $w_i,z_i\in\mathbb R^n$ by
+\begin{align}
+ w_i&=(0,2,4,\ldots,2(i-1),-i(i-1),0,\ldots,0),\\
+ z_i&=(0,\ldots,0,i+1,1,\ldots,1),
+\end{align}
+where the distinguished entry is in coordinate $i+1$.  Theorem 3.8 of
+Ref.~\cite{BreenEtAl2025} gives
+\begin{equation}
+ \K(c)=n-1-\sum_{i=1}^{n-1}\frac{c_{i+1}}{z_i^{\mathsf T}c}
+ +\sum_{i=1}^{n-1}
+ \frac{(w_i^{\mathsf T}c)(2m-w_i^{\mathsf T}c)}
+ {2m\,i(i+1)z_i^{\mathsf T}c}.
+ \label{eq:sourceformula}
+\end{equation}
+This expression and Eq.~\eqref{eq:pineapple} were independently checked
+against literal full-graph hitting-time calculations before the new comparison
+was attempted.
+
+\section{Exact two-pineapple domination}
+\label{sec:theorem}
+
+For $s,q,t\in\N$ define the legal six-run codes
+\begin{equation}
+ A_{s,q,t}=01\,0^t1^s0^q1,
+ \qquad
+ C_{s,q,t}=0\,1^s0^t1\,0^q1,
+ \label{eq:families}
+\end{equation}
+both of order $n=s+q+t+3$.  We use $C$ for the second family to avoid
+confusing the graph with the scalar pineapple envelope $B_n$.
+
+\paragraph{Theorem 1 (split-core envelope).}
+For every $s,q,t\in\N$,
+\begin{equation}
+ \K(A_{s,q,t}),\ \K(C_{s,q,t})
+ <\max\{F_n(s+1),F_n(s+t+1)\}\leq B_n.
+ \label{eq:main}
+\end{equation}
+
+\subsection{Block reduction}
+
+On a constant-bit run $a\leq i\leq b$, both $z_i^{\mathsf T}c$ and
+$w_i^{\mathsf T}c$ are constant.  If the run consists of ones, their values
+are respectively
+\begin{equation}
+ b+1+\#\{\text{later ones}\},
+ \qquad 2P_a-a(a-1),
+\end{equation}
+where $P_a$ is the sum of the indices of earlier ones.  On a zero run the
+corresponding values are the number of later ones and $2P_a$.  The remaining
+factor telescopes:
+\begin{equation}
+ \sum_{i=a}^{b}\frac{1}{i(i+1)}=\frac1a-\frac1{b+1}.
+ \label{eq:telescope}
+\end{equation}
+Thus Eq.~\eqref{eq:sourceformula} reduces each code in Eq.~\eqref{eq:families}
+to a rational function of $s,q,t$ without a matrix diagonalization.
+
+Set
+\begin{align}
+ \Delta_X^h&=F_n(s+t+1)-\K(X),&
+ \Delta_X^\ell&=F_n(s+1)-\K(X),
+\end{align}
+where $X=A_{s,q,t}$ or $C_{s,q,t}$.  Exact simplification gives
+\begin{align}
+ \Delta_A^h&=\frac{tH_A}{D_A^h}, &
+ \Delta_A^\ell&=\frac{stL_A}{D_A^\ell},\label{eq:Agaps}\\
+ \Delta_C^h&=\frac{tH_C}{D_C^h}, &
+ \Delta_C^\ell&=\frac{tL_C}{D_C^\ell}.\label{eq:Cgaps}
+\end{align}
+Here $H_X,L_X$ are integer polynomials fixed by these normalized expressions.
+Their complete expanded forms accompany this article as an exact
+machine-readable certificate.  The denominators are
+\begin{align*}
+D_A^h={}&(s+1)(s+3)(s+t+3)
+ (2q+s^2+2st+5s+2t+6)\\
+&\times(2q+s^2+2st+5s+t^2+5t+6),\\
+D_A^\ell={}&(s+1)(s+3)(s+t+3)
+ (2q+s^2+5s+2t+6)\\
+&\times(2q+s^2+2st+5s+2t+6),\\
+D_C^h={}&(s+3)(s+t+3)(2q+s^2+5s+4t+6)\\
+&\times(2q+s^2+2st+5s+t^2+5t+6),\\
+D_C^\ell={}&(s+3)(s+t+3)(2q+s^2+5s+2t+6)\\
+&\times(2q+s^2+5s+4t+6).
+\end{align*}
+Every displayed factor is positive on the stated domain.
+
+\subsection{Positive-coefficient certificates}
+
+For the first family, exact polynomial division yields
+\begin{equation}
+ L_A+\alpha_AH_A=R_A,
+ \qquad
+ \alpha_A=\frac{s^2+4s+1}{s^2t+3s^2+4st+12s+3t+7}>0.
+ \label{eq:Acertificate}
+\end{equation}
+The denominator of $R_A$ is the denominator in $\alpha_A$, and its numerator
+is an expanded polynomial with 49 nonzero monomials.  Every coefficient is a
+strictly positive integer.  The full polynomial is retained verbatim in the
+supplementary certificate rather than abbreviated by a numerical fit.
+Consequently, if $H_A>0$, Eq.~\eqref{eq:Agaps} gives $\Delta_A^h>0$; if
+$H_A\leq0$, Eq.~\eqref{eq:Acertificate} gives
+$L_A=R_A-\alpha_AH_A>0$ and hence $\Delta_A^\ell>0$.
+
+For the second family, the large-$s$ branch is already positive.  With
+$s=u+3$ and $u\geq0$, direct expansion gives
+\begin{align}
+L_C={}&2q^2u^2+14q^2u+8q^2+6qtu^2+58qtu+120qt\notag\\
+&+qu^4+22qu^3+177qu^2+616qu+780q\notag\\
+&+4t^2u^2+44t^2u+112t^2+7tu^3+111tu^2\notag\\
+&+584tu+1020t+2u^4+45u^3+379u^2+1416u+1980,
+\label{eq:Clarge}
+\end{align}
+which is strictly positive.  The two remaining values of $s$ have the exact
+certificates
+\begin{align}
+L_C+\frac{3H_C}{4t+11}
+&=\frac{2(71qt^2+403qt+552q+62t^3+514t^2+1356t+1128)}{4t+11},
+&&s=1,\label{eq:Csmall1}\\
+L_C+\frac{H_C}{5t+22}
+&=\frac{349qt^2+3138qt+7025q+338t^3+3976t^2+14950t+17600}{5t+22},
+&&s=2.\label{eq:Csmall2}
+\end{align}
+All coefficients and denominators in Eqs.~\eqref{eq:Csmall1}--\eqref{eq:Csmall2}
+are positive.  For $s\geq3$, Eq.~\eqref{eq:Clarge} directly gives
+$\Delta_C^\ell>0$.  For $s=1,2$, use the high-core gap if $H_C>0$; otherwise
+Eqs.~\eqref{eq:Csmall1}--\eqref{eq:Csmall2} imply $L_C>0$, so the low-core
+gap is positive.  This proves the strict first inequality in Eq.~\eqref{eq:main}.
+Finally, $s+1$ and $s+t+1$ are legal integer pineapple parameters at the same
+$n$, proving the second inequality.  \hfill$\square$
+
+The proof is computer-assisted only at the level of exact rational expansion
+and identity checking.  It contains no floating-point sign decision, finite
+parameter cutoff, interpolation, or asymptotic extrapolation.  The accompanying
+derivation script reconstructs Eqs.~\eqref{eq:Agaps}--\eqref{eq:Csmall2} from
+Eq.~\eqref{eq:sourceformula} and asserts the identities symbolically.  A second
+implementation evaluates explicit code strings and selected literal full-graph
+fundamental matrices.  Those finite checks protect against transcription and
+indexing errors; they are not substitutes for the all-parameter identities.
+
+\section{Why filling the core is not monotone}
+\label{sec:nonmonotone}
+
+When $t=1$, filling the interior zero turns either split-core graph into the
+pineapple with parameter $r=s+2$.  The sign of the resulting change is not
+fixed.  For family $A$, it is the sign of
+\begin{align}
+N_A(s,q)={}&(4s^2+16s+10)q^2+(s^3+9s^2+18s+4)q\notag\\
+&-(s^5+13s^4+66s^3+163s^2+193s+84),
+\label{eq:NA}
+\end{align}
+because the exact filled-minus-defect difference is
+\begin{equation}
+\frac{4N_A(s,q)}{(s+1)(s+3)(s+4)
+(2q+s^2+7s+8)(2q+s^2+7s+12)}.
+\label{eq:DAfill}
+\end{equation}
+For family $C$, the corresponding sign polynomial is
+\begin{align}
+N_C(s,q)={}&(6s+24)q^2+(-s^3-5s^2+2s+36)q\notag\\
+&-2(s+3)(s+4)(s^2+6s+6),
+\label{eq:NC}
+\end{align}
+and the difference is $(s+1)N_C$ divided by
+\begin{equation}
+(s+3)(s+4)(2q+s^2+5s+10)(2q+s^2+7s+12).
+\end{equation}
+Each sign polynomial is an upward-opening quadratic in $q$ with negative
+constant term and hence has exactly one positive real root.  The change is
+negative below that root and positive above it, with an integer equality
+possible at the root.
+
+For example,
+\begin{equation}
+ \K(011101)-\K(010101)
+ =\frac{489}{110}-\frac{821}{180}=-\frac{229}{1980},
+\end{equation}
+whereas $s=1,q=4$ in the same family gives a positive change $11/840$.
+In the second family, $s=12,q=48$ gives exact equality, with both values
+$1055/16$.  The alternative pineapple with $r=13$ is nevertheless larger by
+$337/2640$, as Theorem~1 requires.
+
+This reversal is the transport content behind the two-pineapple proof.  Filling
+the core adds edges, but it also changes local escape probabilities and the
+degree-stationary target distribution.  An argument that compares only the
+edge sets therefore misses the branch change in Eqs.~\eqref{eq:Agaps} and
+\eqref{eq:Cgaps}.
+
+\section{Relation to prior work and limitations}
+\label{sec:related}
+
+The closest result is the construction-code formula and pineapple conjecture of
+Breen et al.~\cite{BreenEtAl2025}.  Their paper supplies
+Eqs.~\eqref{eq:sourceformula} and \eqref{eq:pineapple}, but the checked preprint
+does not state the two-family envelope proved here.  Recent work on Braess
+cliques develops quotient and twin-vertex methods for changes in Kemeny's
+constant~\cite{BreenDeBlieckVanderMeulen2026}; the checked results do not give
+the present split-core comparison.  Effective-resistance matrices of weighted
+threshold graphs have also been obtained~\cite{KeVanMieghem2026}, but that work
+uses the combinatorial Laplacian and does not state this random-walk extremum.
+Accordingly, novelty is claimed only within the primary texts actually checked,
+not as an exhaustive priority certificate.
+
+Theorem~1 has several sharp scope limits.  It covers exactly the two placements
+in Eq.~\eqref{eq:families}, with every run nonempty.  It does not cover the other
+six-run arrangements, multiple separated zero blocks, or an arbitrary threshold
+code.  It neither classifies equality cases of the global problem nor proves
+that every non-pineapple is strictly suboptimal.  The full pineapple conjecture
+therefore remains unresolved.  The model is an exact finite, unweighted,
+undirected, non-lazy walk; no continuum, thermodynamic, experimental, or
+perturbative claim is implied.
+
+\section{Conclusion}
+
+Two infinite split-core families obey the conjectured pineapple bound for all
+positive run lengths, and in fact each graph is strictly dominated by one of
+two explicitly identified pineapples of the same order.  The need for a maximum
+of two comparators is structural: direct core filling has all three possible
+signs.  A natural next step is to seek a finite pineapple envelope for the
+remaining six-run placements and then for two separated interior zero blocks.
+Such an extension requires new identities; the present theorem alone does not
+resolve the global extremal question.
+
+\section*{Data and code availability}
+
+The exact derivation script, independent checker, machine-readable polynomial
+certificate, selected exact replay records, and reproduction instructions are
+included with the source package.  No empirical dataset or stochastic sampling
+is used.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the
+manuscript preparation process}
+
+OpenAI Codex was used to assist with problem development, symbolic code
+construction, exact calculations, computational checking, literature
+organization, and manuscript drafting.  Its outputs remain subject to review,
+correction, and approval by the named human author before any submission.  The
+named author must take responsibility for the content of any version that is
+submitted; this local draft does not represent that approval.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

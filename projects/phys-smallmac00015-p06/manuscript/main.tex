@@ -1,0 +1,322 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\hypersetup{
+  pdftitle={A two-use history advantage under one-bit coarse-grained environment feedback},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diag}{\operatorname{diag}}
+
+\title{A two-use history advantage under one-bit coarse-grained environment feedback}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Environment-assisted recovery is usually formulated with every measured Kraus outcome
+resolved.  We instead disclose one bit obtained by pairing four outcomes of a full-rank
+qubit channel.  For two uses of an explicit generalized-amplitude-damping instrument,
+we prove that every controller whose recovery sees only the current bit has
+entanglement fidelity at most $456/625$.  A controller retaining the preceding bit
+attains $1831/2500$, giving a certified advantage of at least $7/2500$.  Since the two
+policy classes coincide for one use, two uses are the earliest possible depth at which
+coarse-record history can help.  The upper bound permits arbitrary qubit CPTP
+recoveries.
+\end{abstract}
+
+\noindent\textbf{Keywords:} environment-assisted correction; quantum feedback;
+coarse-grained measurement; entanglement fidelity; generalized amplitude damping
+
+\section{Introduction}
+
+Classical information obtained from an environment can guide recovery of a noisy
+quantum system.  In the resolved-record setting, each measured outcome labels a single
+Kraus operator.  Gregoratti and Werner derived optimal discrete-time recovery formulas
+for this setting~\cite{GregorattiWerner2004}.  Rexiti, Oskouei, and Mancini subsequently
+compared current-outcome and history-conditioned discrete feedback and showed that the
+two have equal performance for their rank-two qubit protocol~\cite{RexitiEtAl2024}.
+Related Bayesian--Markovian distinctions also arise in continuous monitored feedback,
+but with a different dynamics, observation process, and objective~\cite{WisemanEtAl2002}.
+
+Finite-bandwidth readout changes the mathematical object presented to the controller.
+If several orthogonal environment outcomes are assigned the same classical symbol, an
+observed branch is a multi-Kraus completely positive operation; the unobserved
+alternatives must be summed incoherently before control.  A polar correction for each
+hidden Kraus operator is then unavailable.  We ask the first depth at which retaining
+the history of such a coarse record can improve entanglement fidelity over all
+current-bit-only recovery policies.
+
+Our contribution is an exact two-use separation.  We give a full-Choi-rank generalized
+amplitude-damping (GAD) channel and a fixed balanced pairing of its four environment
+outcomes.  A trace-norm data-processing argument bounds each Bloch column attainable
+after one current-bit correction.  Exact factorisation of a two-use current-bit policy,
+followed by Frobenius Cauchy--Schwarz, yields a global bound over arbitrary qubit CPTP
+recoveries.  An explicit history policy exceeds it.  The conclusion concerns the
+information structure of this fixed finite-dimensional instrument; it is not an
+experimental robustness or continuous-time statement.
+
+\section{Model and policy classes}
+
+Let the system be $\mathbb C^2$.  A fixed minimal Kraus representation
+$\bm K=(K_0,K_1,K_2,K_3)$ defines
+\begin{equation}
+  \cT(\rho)=\sum_{x=0}^{3}K_x\rho K_x^\dagger,
+  \qquad \sum_xK_x^\dagger K_x=I.
+  \label{eq:channel}
+\end{equation}
+The representation is physically tied to an orthogonal measurement of a fresh
+four-dimensional environment.  A balanced map $g:\{0,1,2,3\}\to\{0,1\}$ discloses
+only $b=g(x)$, so the observed instrument is
+\begin{equation}
+  \cI_b(\rho)=\sum_{x:g(x)=b}K_x\rho K_x^\dagger.
+  \label{eq:instrument}
+\end{equation}
+The fine outcome $x$ is never available.  Independent fresh environments and the same
+instrument are used at each step.
+
+After record $b_{1:k}$, a deterministic policy applies a qubit CPTP map
+$\cR_{k,b_{1:k}}$.  Its unnormalised branches obey
+\begin{equation}
+ \Gamma_{\varnothing}=\id,\qquad
+ \Gamma_{b_{1:k}}=\cR_{k,b_{1:k}}\circ\cI_{b_k}
+                     \circ\Gamma_{b_{1:k-1}},
+ \qquad
+ \Phi_n=\sum_{b_{1:n}}\Gamma_{b_{1:n}}.
+ \label{eq:branches}
+\end{equation}
+The current-bit class allows time-dependent $\cR_{k,b_k}$, whereas the full-history
+class allows $\cR_{k,b_{1:k}}$.  Both use the current bit immediately.  Neither class
+has access to hidden fine outcomes, postselection, or persistent quantum memory.
+Randomised recovery is already included through CPTP mixing.
+
+Performance is the entanglement fidelity for the maximally mixed qubit,
+\begin{equation}
+ F_e(\Phi)=\langle\Omega| (\id\otimes\Phi)
+ (|\Omega\rangle\langle\Omega|)|\Omega\rangle,
+ \qquad |\Omega\rangle=(|00\rangle+|11\rangle)/\sqrt2.
+ \label{eq:fidelity}
+\end{equation}
+Let $F_n^M$ and $F_n^B$ be the maxima in the current-bit and full-history classes and
+$\Delta_n=F_n^B-F_n^M$.  Compactness of the finite products of qubit-CPTP Choi sets
+ensures that these maxima exist.  At $n=1$ the two policy classes are identical.
+
+\section{A full-rank coarse GAD instrument}
+
+Set
+\begin{equation}
+ p=\frac{18}{25},\qquad q=1-p=\frac7{25},\qquad
+ \gamma=\frac3{10},\qquad s=\sqrt{1-\gamma}=\sqrt{\frac7{10}},
+ \label{eq:parameters}
+\end{equation}
+and use the ordered GAD Kraus operators
+\begin{equation}
+ \begin{aligned}
+ K_0&=\sqrt p\,\diag(1,s),\qquad&
+ K_1&=\sqrt{p\gamma}\,|0\rangle\langle1|,\\
+ K_2&=\sqrt q\,\diag(s,1),\qquad&
+ K_3&=\sqrt{q\gamma}\,|1\rangle\langle0|.
+ \end{aligned}
+ \label{eq:kraus}
+\end{equation}
+Equation~\eqref{eq:channel} follows by direct diagonal summation.  The off-diagonal
+operators $K_1$ and $K_3$ occupy distinct nonzero matrix units.  Within the diagonal
+subspace, the determinant of the two coordinate vectors from $K_0$ and $K_2$ is
+$\sqrt{pq}(1-s^2)=\sqrt{pq}\,\gamma$, whose squared modulus is
+\begin{equation}
+ pq\gamma^2=\frac{567}{31250}>0.
+\end{equation}
+Thus the four operators are linearly independent and the channel has Choi rank four.
+
+We disclose the pairing $03|12$:
+\begin{equation}
+ \cI_0(\rho)=K_0\rho K_0^\dagger+K_3\rho K_3^\dagger,
+ \qquad
+ \cI_1(\rho)=K_1\rho K_1^\dagger+K_2\rho K_2^\dagger.
+ \label{eq:pairing}
+\end{equation}
+Both observed operations genuinely contain two hidden alternatives.
+
+\section{Exact separation}
+
+\begin{theorem}\label{thm:main}
+For the instrument in Eqs.~\eqref{eq:parameters}--\eqref{eq:pairing}, every two-use
+current-bit policy with arbitrary qubit CPTP recoveries satisfies
+\begin{equation}
+ F_2^M\le\frac{456}{625}.
+ \label{eq:markovbound}
+\end{equation}
+There is a full-history policy with fidelity $1831/2500$.  Consequently
+$\Delta_2\ge 7/2500>0$, and the earliest use count at which a coarse-record history
+advantage can occur is $n_*=2$.
+\end{theorem}
+
+\subsection{A feasible full-history policy}
+
+Let $X$ be the Pauli bit flip and choose
+\begin{equation}
+ R_{1,0}=I,\quad R_{1,1}=X,\qquad
+ R_{2,b_1b_2}=\begin{cases}I,&b_1=0,\\X,&b_1=1.\end{cases}
+ \label{eq:historypolicy}
+\end{equation}
+These recoveries are unitary and hence CPTP.  Keeping the fine outcomes only as an
+algebraic device for evaluating the incoherent sums, the entanglement fidelity is
+\begin{equation}
+ F_e=\frac14\sum_{x_1,x_2=0}^{3}
+ \left|\Tr\!\left[R_{2,g(x_1)g(x_2)}K_{x_2}
+ R_{1,g(x_1)}K_{x_1}\right]\right|^2.
+ \label{eq:pathformula}
+\end{equation}
+Direct multiplication of the sixteen paths leaves the following multiset of nonzero
+trace amplitudes:
+\begin{equation}
+ p(2-\gamma),\quad 2\sqrt{pq(1-\gamma)},\quad
+ \gamma\sqrt{pq},\quad p\gamma,\quad
+ \sqrt{pq}(2-\gamma),\quad 2q\sqrt{1-\gamma}.
+ \label{eq:amplitudes}
+\end{equation}
+Substitution into Eq.~\eqref{eq:pathformula} gives the exact lower bound
+\begin{equation}
+ F_2^B\ge F_{\mathrm{hist}}
+ =1-\gamma+\frac{p\gamma^2}{2}
+ =\frac{1831}{2500}.
+ \label{eq:historyvalue}
+\end{equation}
+
+\subsection{A global current-bit upper bound}
+
+Consider one stage with arbitrary qubit CPTP maps $R_0,R_1$ and define
+\begin{equation}
+ C=R_0\circ\cI_0+R_1\circ\cI_1.
+ \label{eq:onestage}
+\end{equation}
+This averaged map is CPTP.  Write its affine Bloch action as
+$\bm r\mapsto\bm t+T\bm r$, equivalently
+$C(\sigma_j)=\sum_iT_{ij}\sigma_i$ for Pauli matrices $\sigma_j$.
+
+Every positive trace-preserving map contracts the trace norm on Hermitian inputs.
+Indeed, the adjoint is positive and unital and therefore preserves the operator order
+interval $[-I,I]$ used in the variational characterisation of the Hermitian trace norm.
+Triangle inequality in Eq.~\eqref{eq:onestage} then yields
+\begin{equation}
+ 2\|T\bm e_j\|_2=\|C(\sigma_j)\|_1
+ \le \sum_{b=0}^{1}\|\cI_b(\sigma_j)\|_1.
+ \label{eq:contraction}
+\end{equation}
+The equality on the left uses trace preservation: $C(\sigma_j)$ is a traceless
+Hermitian qubit operator.
+
+For the instrument~\eqref{eq:pairing}, direct evaluation gives
+\begin{align}
+ \cI_0(X)&=psX,& \cI_1(X)&=qsX,\nonumber\\
+ \cI_0(Y)&=psY,& \cI_1(Y)&=qsY,\label{eq:pauliimages}\\
+ \cI_0(Z)&=\diag(p,\gamma-p),&
+ \cI_1(Z)&=\diag(q-\gamma,-q).\nonumber
+\end{align}
+Because $q\le\gamma\le p$, the two $Z$-image trace norms sum to $2p$.
+Equation~\eqref{eq:contraction} therefore bounds the three Bloch columns by
+\begin{equation}
+ \|T\bm e_x\|_2\le s,\qquad
+ \|T\bm e_y\|_2\le s,\qquad
+ \|T\bm e_z\|_2\le p,
+\end{equation}
+and hence
+\begin{equation}
+ \|T\|_F^2\le 2(1-\gamma)+p^2=\frac{1199}{625}.
+ \label{eq:frobeniuscap}
+\end{equation}
+
+For a two-use current-bit policy, summing both records factorises exactly:
+\begin{equation}
+ \Phi_2^M=C_2\circ C_1,\qquad
+ C_k=\sum_{b=0}^{1}R_{k,b}\circ\cI_b.
+ \label{eq:factorisation}
+\end{equation}
+No unitality or unitary restriction is used here.  For trace-preserving qubit maps with
+Bloch blocks $T_1,T_2$, the normalised entanglement fidelity of the composition is
+\begin{equation}
+ F_e(C_2\circ C_1)=\frac{1+\Tr(T_2T_1)}4.
+ \label{eq:blochfidelity}
+\end{equation}
+The affine translation does not contribute to the superoperator trace underlying
+Eq.~\eqref{eq:blochfidelity}.  Frobenius Cauchy--Schwarz and
+Eq.~\eqref{eq:frobeniuscap} now give
+\begin{equation}
+ \Tr(T_2T_1)\le\|T_2\|_F\|T_1\|_F\le\frac{1199}{625},
+\end{equation}
+which proves Eq.~\eqref{eq:markovbound}.  Combining the global upper bound with
+Eq.~\eqref{eq:historyvalue} yields
+\begin{equation}
+ \Delta_2\ge\frac{1831}{2500}-\frac{456}{625}
+ =\frac7{2500}>0.
+\end{equation}
+At one use, a record history contains only the current bit, so the two policy classes
+coincide and $\Delta_1=0$.  This completes the proof of Theorem~\ref{thm:main}.
+
+\section{Interpretation and limitations}
+
+The theorem shows that an environment bit available for immediate recovery need not
+remain adequate for the next recovery: retaining the earlier coarse bit can improve
+the two-use optimum.  The mechanism is not Hilbert-space size alone.  Coarse graining
+turns each disclosed outcome into a two-Kraus operation, removing the resolved record
+on which the existing qubit no-advantage argument relies~\cite{GregorattiWerner2004,RexitiEtAl2024}.
+The separation remains valid even when every current-bit recovery is an arbitrary
+qubit CPTP map.
+
+Several conclusions are deliberately excluded.  The proof does not determine either
+exact optimum $F_2^M$ or $F_2^B$; its $7/2500$ is a certified lower bound on their
+difference, not the exact gap.  It does not optimise over instruments or establish a
+smallest positive gap on the continuous rank-four domain.  It supplies no robustness
+radius for perturbations or laboratory errors and makes no claim about an $n>2$
+optimum.  Finally, the literature comparison is bounded rather than an exhaustive
+priority search; the relation to broader partially observed quantum control should be
+reviewed by the author before submission.
+
+\section*{Reproducibility}
+
+The exact witness, Pauli images, rank certificate, trace-norm bounds, hidden-path
+calculation, and an independent Liouville evaluation are implemented in the accompanying
+Python script.  The calculations use rational and symbolic algebra for the logical
+certificate; floating-point output is only a replay.  The accompanying reproducibility
+file records the environment and invocation.
+
+\section*{Statements and declarations}
+
+\paragraph{Funding.} No funding information was supplied for this draft; the author
+must confirm or replace this statement before submission.
+
+\paragraph{Competing interests.} No competing-interest information was supplied for
+this draft; the author must provide the final declaration before submission.
+
+\paragraph{Data and code availability.} No empirical data were used.  The exact input
+record and verification code are included with the local manuscript package.
+
+\paragraph{AI use declaration.} OpenAI \texttt{gpt-5.6-sol} was used on
+13--14 September 2026 to assist problem formulation, bounded literature discovery,
+derivation, code generation, exact and numerical cross-checks, and manuscript drafting.
+All outputs remain subject to human verification; the exact calculations were also
+replayed in independent representations against the stated equations and primary-source
+records.  AI is not an author and cannot assume accountability.  This local draft
+requires independent review, correction, and approval by the named human author before
+any submission.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

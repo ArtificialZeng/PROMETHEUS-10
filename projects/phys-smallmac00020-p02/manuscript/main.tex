@@ -1,0 +1,499 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black,
+  pdftitle={Strict separable non-saturation for a seven-state prepare-and-measure witness},
+  pdfauthor={Xiaojian Zeng},
+  pdfsubject={Quantum information; prepare-and-measure witnesses; separability},
+  pdfkeywords={absolutely entangled set, prepare-and-measure, separable bound, product rays, Groebner basis}
+}
+
+\newcommand{\Hil}{\mathcal H}
+\newcommand{\SEP}{\mathrm{SEP}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\proj}[1]{\ket{#1}\!\bra{#1}}
+
+\title{Strict separable non-saturation for a seven-state\\
+prepare-and-measure witness}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Absolutely entangled sets can be certified in a dimension-bounded
+prepare-and-measure experiment when a correlation witness exceeds its maximum
+over separable preparations.  For a recently proposed seven-state two-qubit
+ensemble, the target value is $3/4$, whereas alternating optimization found a
+separable value $0.74990679$ and no relaxation was known to place the separable
+maximum strictly below $3/4$.  We prove strict non-saturation for this fixed
+witness.  Equality in the Helstrom, frame-purity, and Cauchy--Schwarz bounds
+would require seven pure product rays to reproduce all 21 transition
+probabilities of the target ensemble.  The six zero transitions admit 729
+assignments to the two local qubit factors.  Exact orthogonality closure leaves
+nine classes up to exchange of the factors.  Eight have unit Gr\"obner ideal
+over $\mathbb Q(\sqrt7)$; the remaining class forces a local Bloch Gram matrix
+with determinant $-27/16$ and is therefore unphysical.  Compactness then gives
+$Q_{\rm SEP}<3/4$.  The proof establishes existence of a positive separable
+gap, but it neither computes the optimum nor provides a numerical robustness
+threshold.
+\end{abstract}
+
+\noindent\textbf{Keywords:} absolutely entangled set; prepare-and-measure
+witness; separable bound; product rays; exact algebraic computation
+
+\section{Introduction}
+
+Entanglement depends on a tensor-product decomposition of the Hilbert space.
+An absolutely entangled set (AES) is a collection of states such that, for
+every global change of basis, at least one member of the transformed set is
+entangled.  Explicit
+minimal examples in two-qubit systems were introduced by Cai \emph{et
+al.}~\cite{Cai2021}.  Prepare-and-measure experiments offer an operational,
+semi-device-independent route to this set property: the communicated Hilbert
+space has a known dimension, while the preparation and measurement devices are
+otherwise uncharacterized.  Prepare-and-measure self-testing provides the
+general setting for witnesses built from pairwise state
+distinguishability~\cite{Navascues2023}.
+
+Patra, Taoutioui, and V\'ertesi recently constructed such witnesses for
+extended AES ensembles~\cite{Patra2026}.  Their seven-state example
+$\widetilde S_3$ has unrestricted value $3/4$.  A see-saw search found the
+feasible separable value $0.74990679$, but the available semidefinite
+relaxation did not produce an upper bound below $3/4$.  Thus a separable
+strategy saturating the unrestricted value was not excluded.
+
+Here we settle this equality question for the exact seven-state instance.  We
+first derive a necessary equality condition that does not assume a Wigner
+property: saturation would require seven product rays having all the target
+transition probabilities.  We then exclude such rays by an exhaustive exact
+calculation followed by one elementary Bloch-Gram obstruction.  The resulting
+statement is deliberately qualitative,
+\begin{equation}
+  Q_{\rm SEP}<\frac34.                                      \label{eq:main}
+\end{equation}
+It proves that a gap exists, but supplies neither its magnitude nor the value
+of $Q_{\rm SEP}$.  Consequently, it does not yet give a finite-precision
+experimental threshold.
+
+\section{The fixed witness}
+\label{sec:model}
+
+Let $\Hil=\mathbb C^2\otimes\mathbb C^2$, with basis
+$(\ket{00},\ket{01},\ket{10},\ket{11})$ and
+$\ket{\pm}=(\ket0\pm\ket1)/\sqrt2$.  The target rays are
+\begin{align}
+ \ket{\psi_1}&=\ket{00},&
+ \ket{\psi_2}&=\ket{0+},\nonumber\\
+ \ket{\psi_3}&=\ket{+0},&
+ \ket{\psi_4}&=\frac{\ket{00}+\ket{11}}{\sqrt2},
+                                                        \label{eq:firstfour}\\
+ \ket{\psi_5}&=\frac{\ket{01}}{\sqrt6}
+             -\sqrt{\frac23}\ket{10}+\frac{\ket{11}}{\sqrt6},\nonumber\\
+ \ket{\psi_6}&=\ket-\otimes\ket1,\nonumber\\
+ \ket{\psi_7}&=a_1\ket{00}-b_1(\ket{01}+\ket{10}+\ket{11}).
+                                                        \label{eq:lastthree}
+\end{align}
+where
+\begin{equation}
+ a_1=\sqrt{\frac{7-2\sqrt7}{14}},\qquad
+ b_1=\sqrt{\frac{7+2\sqrt7}{42}}.                       \label{eq:ab}
+\end{equation}
+Writing $P_i=\proj{\psi_i}$, the positive weights are
+\begin{equation}
+ \alpha_1=\cdots=\alpha_4=\frac1{6+2\sqrt7},\qquad
+ \alpha_5=\alpha_6=\frac{\sqrt7-1}{8},\qquad
+ \alpha_7=\frac{3\sqrt7-7}{4}.                          \label{eq:weights}
+\end{equation}
+Direct calculation gives the tight-frame identities
+\begin{equation}
+  \sum_{i=1}^7\alpha_i=1,
+  \qquad \sum_{i=1}^7\alpha_iP_i=\frac{I_4}{4}.          \label{eq:frame}
+\end{equation}
+
+For every unordered pair $1\leq j<i\leq7$, Bob has an independent binary
+effect $0\preceq E_{ij}\preceq I_4$.  With
+\begin{equation}
+ c_{ij}=\alpha_i\alpha_j\lVert P_i-P_j\rVert_1,
+\end{equation}
+the witness is
+\begin{equation}
+ W(\rho,E)=\sum_{j<i}c_{ij}
+       \Tr[(\rho_i-\rho_j)E_{ij}].                       \label{eq:witness}
+\end{equation}
+The separable benchmark $Q_{\rm SEP}$ is the attained maximum of
+\eqref{eq:witness} over seven trace-one states
+$\rho_i\in\SEP(2{:}2)$ and the 21 effects.  This is a finite,
+dimensionless, single-round optimization.  No common measurement constraint is
+imposed between distinct pairs.
+
+Set
+\begin{equation}
+ t_{ij}=\Tr(P_iP_j)=\lvert\langle\psi_i|\psi_j\rangle\rvert^2.
+\end{equation}
+For the target preparations, each effect may be chosen as the Helstrom
+projector for $P_i-P_j$.  Its contribution is
+$2\alpha_i\alpha_j(1-t_{ij})$.  Using \eqref{eq:frame},
+\begin{equation}
+ 2\sum_{j<i}\alpha_i\alpha_j(1-t_{ij})
+ =1-\Tr\!\left(\sum_i\alpha_iP_i\right)^2
+ =1-\frac14=\frac34.                                    \label{eq:baseline}
+\end{equation}
+This reproduces the unrestricted target value.
+
+\section{What equality would require}
+\label{sec:equality}
+
+\textbf{Proposition 1.}
+If a separable strategy attains $W=3/4$, then there are seven pure product
+projectors $R_i$ satisfying
+\begin{equation}
+  \Tr(R_iR_j)=t_{ij}\qquad(1\leq j<i\leq7).              \label{eq:matching}
+\end{equation}
+
+\emph{Proof.}
+The feasible preparation and effect sets are compact, so a maximizing strategy
+exists.  With the effects fixed, the score is linear in each preparation.
+Every separable preparation is a convex combination of pure product
+projectors; replacing it by a component that maximizes the relevant linear
+functional cannot lower the score.  Repeating this for all seven preparations
+shows that some optimum has pure product preparations $R_i$.
+
+Put $s_{ij}=\Tr(R_iR_j)$ and $F=\sum_i\alpha_iR_i$.  Optimizing each binary
+effect independently gives
+\begin{equation}
+ W\leq2\sum_{j<i}\alpha_i\alpha_j
+       \sqrt{(1-t_{ij})(1-s_{ij})}.                      \label{eq:helstrom}
+\end{equation}
+The two squared norms appearing in Cauchy--Schwarz are
+\begin{align}
+ A&=\sum_{j<i}\alpha_i\alpha_j(1-t_{ij})=\frac38,
+                                                               \label{eq:A}\\
+ B&=\sum_{j<i}\alpha_i\alpha_j(1-s_{ij})
+   =\frac{1-\Tr F^2}{2}\leq\frac38.                    \label{eq:B}
+\end{align}
+Here \eqref{eq:A} follows from \eqref{eq:baseline}; in
+\eqref{eq:B}, $F$ is a density operator on a four-dimensional space, so
+$\Tr F^2\geq1/4$.  Therefore
+\begin{equation}
+  W\leq2\sqrt{AB}\leq\frac34.                            \label{eq:cs}
+\end{equation}
+If $W=3/4$, every inequality in \eqref{eq:helstrom}--\eqref{eq:cs} is an
+equality.  Hence $A=B$, and equality in Cauchy--Schwarz makes the two
+21-component vectors
+\begin{equation}
+ \bigl(\sqrt{\alpha_i\alpha_j(1-t_{ij})}\bigr)_{j<i},
+ \qquad
+ \bigl(\sqrt{\alpha_i\alpha_j(1-s_{ij})}\bigr)_{j<i}
+\end{equation}
+proportional.  Their norms agree.  All weights are positive and all target
+rays are distinct, so the proportionality factor is one and
+$s_{ij}=t_{ij}$ for every pair.  This proves \eqref{eq:matching}.
+\hfill$\square$
+
+The proposition only uses equality in metric and purity bounds.  In
+particular, it does not require the transition probabilities to determine the
+target rays up to a unitary or antiunitary, and hence does not invoke a Wigner
+property.
+
+\section{Exact product-ray obstruction}
+\label{sec:obstruction}
+
+Write a product ray as
+$R_i=\proj{a_i}\otimes\proj{b_i}$.  For unit Bloch vectors
+$\boldsymbol r_i^A,\boldsymbol r_i^B\in S^2$, define the local fidelities
+\begin{equation}
+ q_{ij}^X=\lvert\langle x_i|x_j\rangle\rvert^2
+ =\frac{1+\boldsymbol r_i^X\!\cdot\boldsymbol r_j^X}{2},
+ \qquad X\in\{A,B\}.                                    \label{eq:q}
+\end{equation}
+Condition \eqref{eq:matching} becomes
+\begin{equation}
+ q_{ij}^Aq_{ij}^B=t_{ij}.                                \label{eq:factor}
+\end{equation}
+The complete target matrix is given in Appendix~\ref{app:transitions}.  Its
+zero graph is
+\begin{equation}
+ Z=\{15,16,36,56,57,67\},                                \label{eq:zeros}
+\end{equation}
+where, for example, $15$ denotes the pair $\{1,5\}$.
+
+We use the following finite exact test.  Each edge in $Z$ is assigned to
+factor $A$, factor $B$, or both, according to which local fidelity vanishes.
+This gives $3^6=729$ assignments.  For a qubit ray, the orthogonal ray is
+unique: in Bloch coordinates an orthogonality edge makes the two vectors
+antipodal.  Thus every connected local zero graph has a parity labeling;
+equal-parity vertices represent the same ray, while opposite-parity vertices
+are orthogonal.  Odd cycles and closures that make a nonzero target edge
+orthogonal are impossible.  Exact closure leaves 26 assignments, 18 ordered
+closure patterns, and nine patterns up to $A\leftrightarrow B$.
+
+For each remaining pattern, assign a formal dot product to each pair of
+distinct parity components.  If vertices $i,j$ have component signs
+$\sigma_i,\sigma_j\in\{\pm1\}$, then
+\begin{equation}
+ q_{ij}^X=\frac{1+\sigma_i\sigma_j x^X_{C(i)C(j)}}{2}.
+                                                               \label{eq:componentq}
+\end{equation}
+Substitution in the 15 nonzero equations \eqref{eq:factor} produces a
+polynomial system over $\mathbb Q(\sqrt7)$.  Exact Gr\"obner reduction gives
+the unit ideal for eight of the nine exchange classes.  Appendix
+\ref{app:enumeration} lists all classes and deletion-minimal contradictory
+sets; the accompanying checker prints the factored equations.  Because a
+physical Bloch solution would also solve these polynomial equations, a unit
+ideal is already a conclusive rejection.  No positivity relaxation is used in
+this step.
+
+The sole algebraic survivor, up to exchange of the two factors, has the local
+closure data
+\begin{align}
+ Z_A&=\{15,16,57,67\}, & O_A&=\{17,56\},\nonumber\\
+ Z_B&=\{36,56\},       & O_B&=\{35\},                    \label{eq:survivor}
+\end{align}
+where $O_X$ denotes pairs forced to have local fidelity one.  Reduction by the
+surviving transition ideal gives
+\begin{equation}
+ q^A_{23}=q^A_{34}=1.                                    \label{eq:forcedone}
+\end{equation}
+Unit Bloch vectors with dot product one coincide.  Hence rays $2,3,4$ in
+factor $A$ coincide and $q^A_{24}=1$ as well.  The target equations then force
+in factor $B$
+\begin{equation}
+ q^B_{1k}=\frac34\quad(k=2,3,4),\qquad
+ q^B_{k\ell}=\frac14\quad(2\leq k<\ell\leq4).            \label{eq:forcedq}
+\end{equation}
+The Bloch Gram matrix of these four local rays would therefore be
+\begin{equation}
+ G=\begin{pmatrix}
+ 1&1/2&1/2&1/2\\
+ 1/2&1&-1/2&-1/2\\
+ 1/2&-1/2&1&-1/2\\
+ 1/2&-1/2&-1/2&1
+ \end{pmatrix}.                                          \label{eq:gram}
+\end{equation}
+But
+\begin{equation}
+ \det G=-\frac{27}{16},\qquad
+ \spec(G)=\left\{-\frac12,\frac32,\frac32,\frac32\right\}. \label{eq:gramspectrum}
+\end{equation}
+Every real Gram matrix is positive semidefinite, so this survivor is
+impossible.  The factor-exchanged class has the same obstruction.
+
+\textbf{Lemma 2 (computer-assisted product obstruction).}
+No seven two-qubit product rays reproduce the 21 target transition
+probabilities.
+
+The argument above proves the lemma, with the finite enumeration and exact
+ideal calculations supplied as reproducible algebraic certificates.  The only
+non-ideal step for the survivor is the elementary unit-vector implication
+$\boldsymbol r\cdot\boldsymbol s=1\Rightarrow\boldsymbol r=\boldsymbol s$,
+followed by the exact spectrum \eqref{eq:gramspectrum}.
+
+\section{Strictness and physical scope}
+\label{sec:strictness}
+
+\textbf{Theorem 3.}
+For the states, weights, witness normalization, two-qubit separable
+preparations, and independent binary effects of Section~\ref{sec:model},
+\begin{equation}
+ Q_{\rm SEP}<\frac34.
+\end{equation}
+
+\emph{Proof.}
+The two-qubit separable-state set and each effect interval
+$\{E:0\preceq E\preceq I_4\}$ are compact.  Their finite Cartesian product is
+compact, and \eqref{eq:witness} is continuous, so $Q_{\rm SEP}$ is attained.
+Equation \eqref{eq:cs} gives $Q_{\rm SEP}\leq3/4$.  If equality held,
+Proposition~1 would produce product rays satisfying \eqref{eq:matching}, in
+contradiction with Lemma~2.  Therefore the inequality is strict.
+\hfill$\square$
+
+Together with the feasible value reported in Ref.~\cite{Patra2026}, the
+result changes the known interval to
+\begin{equation}
+  0.74990679\leq Q_{\rm SEP}<0.75,                        \label{eq:interval}
+\end{equation}
+where the lower endpoint remains a numerical see-saw value.  The strict upper
+endpoint means that the ideal target correlations lie outside the separable
+correlation set.  Under the assumed four-dimensional message and the
+prepare-and-measure causal model, the fixed witness therefore has a genuine
+AES-certification gap for the seven-state extended ensemble.
+
+Several boundaries matter.  The result is not device independent; the
+four-dimensional message assumption is essential.  It concerns the extended
+seven-state ensemble rather than directly certifying the original four-state
+subset with this witness.  It also neither determines $Q_{\rm SEP}$ nor proves
+that the see-saw point in \eqref{eq:interval} is globally optimal.  Most
+importantly for experiment, compactness supplies no computable modulus: this
+work gives no explicit number $U<3/4$ with certified decimal value and hence no
+finite noise tolerance.
+
+\section{Methods and reproducibility}
+\label{sec:methods}
+
+The target states and weights were independently entered in coordinate and
+tensor-product representations before the present calculation.  Both give
+unit-normalized rays, positive weights summing to one, the frame identity
+\eqref{eq:frame}, legal pairwise Helstrom projectors, and the exact value
+\eqref{eq:baseline}.
+
+The product obstruction is implemented in a deterministic Python script using
+SymPy~\cite{Meurer2017}.  It first compares all 21 embedded target transitions
+against the independently generated machine-readable target input.  It then
+enumerates the $3^6$ zero-edge assignments, performs parity closure, constructs
+the exact systems \eqref{eq:componentq}, and computes Gr\"obner bases over the
+algebraic extension $\mathbb Q(\sqrt7)$.  Rejected systems contain $1$ in the
+ideal; the script also deletes equations until it obtains the cores summarized
+in Appendix~\ref{app:enumeration}.  The surviving system is reduced exactly to
+\eqref{eq:forcedone}--\eqref{eq:forcedq}, and the determinant and characteristic
+polynomial of \eqref{eq:gram} are evaluated over the rationals.  No
+floating-point comparison or fitted tolerance enters the proof.  The code,
+input, exact output, environment specification, and run instructions accompany
+the manuscript.
+
+\section{Conclusion}
+
+The seven-state prepare-and-measure witness cannot be saturated by separable
+two-qubit preparations.  The central mechanism is rigid: equality would copy
+every target transition probability into a product-ray factorization, while
+the target's six zero transitions reduce all such factorizations to finitely
+many local orthogonality patterns.  Exact algebra eliminates eight patterns;
+the last violates positivity of a four-vector Bloch Gram matrix.  This proves
+the existential separation $Q_{\rm SEP}<3/4$ without assuming a Wigner
+property.
+
+The next quantitative task is to make the obstruction stable.  A bound that
+turns a small witness deficit into approximate transition matching, combined
+with a robust version of the zero-graph and negative-Gram arguments, could
+produce a rational or interval-certified $U<3/4$.  Such a bound, or a tight
+moment/SOS dual certificate, is required for an operational experimental
+threshold and for deciding whether the reported see-saw value is optimal.
+
+\section*{Statements and declarations}
+
+\noindent\textbf{Data and code availability.}
+All target data used in the proof are displayed in this article.  The exact
+checker, machine-readable input, output certificate, dependency versions, and
+regeneration instructions are supplied as ancillary files with the manuscript.
+
+\medskip
+\noindent\textbf{Generative-AI disclosure.}
+OpenAI Codex using the GPT-5.6 Sol model assisted with idea development,
+symbolic-algebra code, exact calculations, literature searching, verification,
+and manuscript drafting.  The AI system is not an author.  The corresponding
+author will review the complete scientific and editorial record and remains
+responsible for any version that is submitted.
+
+\medskip
+\noindent\textbf{Funding and competing interests.}
+The final funding and competing-interest statements require confirmation by
+the author before submission.
+
+\appendix
+
+\section{Target transition probabilities}
+\label{app:transitions}
+
+For completeness, define
+\begin{equation}
+ u=\frac{7-2\sqrt7}{14},\qquad
+ v=\frac{14-5\sqrt7}{42}.
+\end{equation}
+Direct evaluation of \eqref{eq:firstfour}--\eqref{eq:ab} gives
+\begin{equation}
+ (t_{ij})_{i,j=1}^7=
+ \begin{pmatrix}
+ 1&1/2&1/2&1/2&0&0&u\\
+ 1/2&1&1/4&1/4&1/12&1/4&v\\
+ 1/2&1/4&1&1/4&1/3&0&v\\
+ 1/2&1/4&1/4&1&1/12&1/4&v\\
+ 0&1/12&1/3&1/12&1&0&0\\
+ 0&1/4&0&1/4&0&1&0\\
+ u&v&v&v&0&0&1
+ \end{pmatrix}.                                          \label{eq:tmatrix}
+\end{equation}
+Every off-diagonal entry is strictly smaller than one.  The six vanishing
+entries in its upper triangle are exactly those in \eqref{eq:zeros}.
+
+\section{Finite enumeration certificate}
+\label{app:enumeration}
+
+Table~\ref{tab:classes} records the nine closure classes produced by the exact
+parity algorithm.  For each factor, $Z_X$ contains pairs forced orthogonal and
+$O_X$ contains pairs forced identical.  The rejected-row entry gives a
+deletion-minimal set of target-pair equations whose exact Gr\"obner basis is
+$[1]$.  The accompanying output lists the corresponding factored polynomials,
+so each rejection can be replayed without a numerical threshold.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Closure classes up to exchange of local factors.  Pair labels are
+one-based and unordered.}
+\label{tab:classes}
+\begin{tabularx}{\textwidth}{@{}cXXX@{}}
+\toprule
+Class & $A$: $Z_A/O_A$ & $B$: $Z_B/O_B$ & Exact outcome \\
+\midrule
+1 & \shortstack[l]{$Z=\{15,16,57,67\}$\\$O=\{17,56\}$}
+  & \shortstack[l]{$Z=\{36,56\}$\\$O=\{35\}$}
+  & Algebraic survivor; rejected by \eqref{eq:gram}. \\
+2 & \shortstack[l]{$Z=\{15,16,57,67\}$\\$O=\{17,56\}$}
+  & \shortstack[l]{$Z=\{36,56,67\}$\\$O=\{35,37,57\}$}
+  & Unit ideal; core $\{45,46,47\}$. \\
+3 & \shortstack[l]{$Z=\{15,36,57\}$\\$O=\{17\}$}
+  & \shortstack[l]{$Z=\{16,56,67\}$\\$O=\{15,17,57\}$}
+  & Unit ideal; core $\{17\}$. \\
+4 & \shortstack[l]{$Z=\{15,56,57\}$\\$O=\{16,17,67\}$}
+  & \shortstack[l]{$Z=\{16,36,67\}$\\$O=\{13,17,37\}$}
+  & Unit ideal; core $\{17\}$. \\
+5 & \shortstack[l]{$Z=\{15,16,57,67\}$\\$O=\{17,56\}$}
+  & \shortstack[l]{$Z=\{16,36,56\}$\\$O=\{13,15,35\}$}
+  & Unit ideal; core $\{17,35,37\}$. \\
+6 & \shortstack[l]{$Z=\{15,57\}$\\$O=\{17\}$}
+  & \shortstack[l]{$Z=\{16,36,56,67\}$\\$O=\{13,15,17,35,37,57\}$}
+  & Unit ideal; core $\{35,37\}$. \\
+7 & \shortstack[l]{$Z=\{15,16,57,67\}$\\$O=\{17,56\}$}
+  & \shortstack[l]{$Z=\{16,36,56,67\}$\\$O=\{13,15,17,35,37,57\}$}
+  & Unit ideal; core $\{45,46,47\}$. \\
+8 & \shortstack[l]{$Z=\{15,56,57\}$\\$O=\{16,17,67\}$}
+  & \shortstack[l]{$Z=\{16,36,56,67\}$\\$O=\{13,15,17,35,37,57\}$}
+  & Unit ideal; core $\{45,46,47\}$. \\
+9 & \shortstack[l]{$Z=\{15,36,57\}$\\$O=\{17\}$}
+  & \shortstack[l]{$Z=\{16,36,56,67\}$\\$O=\{13,15,17,35,37,57\}$}
+  & Unit ideal; core $\{35,37\}$. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The counts provide additional completeness checks: 26 of the 729 assignments
+survive local closure; these produce 18 ordered patterns; every ordered pattern
+is one of the nine rows or its factor exchange.  Thus a product-ray solution
+cannot lie outside the table.
+
+\bibliographystyle{unsrt}
+\bibliography{manuscript/references}
+
+\end{document}

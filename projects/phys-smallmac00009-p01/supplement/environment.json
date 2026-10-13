@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-09-12T23:08:03.247002+00:00",
+  "python": "3.9.6 (default, Nov 11 2024, 03:15:38) \n[Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "dependencies": "Python standard library only for verification and table generation",
+  "arithmetic": "Integer polynomial coefficients and fractions.Fraction",
+  "solver_role": "Floating LP used historically for support discovery only; not needed for checking.",
+  "threads_and_processes": "Sequential single-process scientific commands; no agents, model CLI or background workers",
+  "memory_peak": "not measured",
+  "precision_limit": "Arbitrary precision integers/rational arithmetic; finite degree-three identities, no numerical tolerances",
+  "limits": "Hardware/interpreter failures not scientifically certified. No performance claim."
+}

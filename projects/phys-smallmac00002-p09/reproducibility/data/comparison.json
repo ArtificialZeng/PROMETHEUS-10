@@ -1,0 +1,104 @@
+{
+  "comparison": "A piecewise 3x3 exponentials versus B elementary-jump 5x5 DOP853 absorption flux",
+  "samples": [
+    {
+      "x": 0.001,
+      "max_absolute_density_error_times_t_star": 7.105427357601002e-15,
+      "A_same_direction_difference": -1.1177069157810424e-09,
+      "B_same_direction_difference": -1.1177069157768072e-09
+    },
+    {
+      "x": 0.01,
+      "max_absolute_density_error_times_t_star": 4.440892098500626e-15,
+      "A_same_direction_difference": -1.0538223294230802e-06,
+      "B_same_direction_difference": -1.0538223294228634e-06
+    },
+    {
+      "x": 0.05,
+      "max_absolute_density_error_times_t_star": 5.577760475716786e-13,
+      "A_same_direction_difference": -0.00010093968870091355,
+      "B_same_direction_difference": -0.000100939688700891
+    },
+    {
+      "x": 0.1,
+      "max_absolute_density_error_times_t_star": 9.210410212290299e-13,
+      "A_same_direction_difference": -0.000577313841934355,
+      "B_same_direction_difference": -0.0005773138419338172
+    },
+    {
+      "x": 0.3,
+      "max_absolute_density_error_times_t_star": 1.1557976797860192e-12,
+      "A_same_direction_difference": -0.004419910451183326,
+      "B_same_direction_difference": -0.004419910451172682
+    },
+    {
+      "x": 0.7,
+      "max_absolute_density_error_times_t_star": 2.3342439092743916e-13,
+      "A_same_direction_difference": -0.007612118705646563,
+      "B_same_direction_difference": -0.0076121187056309575
+    },
+    {
+      "x": 1.0,
+      "max_absolute_density_error_times_t_star": 9.114931032172535e-14,
+      "A_same_direction_difference": -0.006550722844766654,
+      "B_same_direction_difference": -0.006550722844748266
+    },
+    {
+      "x": 1.2,
+      "max_absolute_density_error_times_t_star": 6.444150768558643e-14,
+      "A_same_direction_difference": 0.0005762550568571556,
+      "B_same_direction_difference": 0.0005762550568543454
+    },
+    {
+      "x": 2.5,
+      "max_absolute_density_error_times_t_star": 9.111808529915777e-14,
+      "A_same_direction_difference": 0.001465978334345034,
+      "B_same_direction_difference": 0.0014659783343782921
+    },
+    {
+      "x": 3.0,
+      "max_absolute_density_error_times_t_star": 7.57380269611474e-14,
+      "A_same_direction_difference": -7.813096004608954e-05,
+      "B_same_direction_difference": -7.813096002728861e-05
+    },
+    {
+      "x": 5.0,
+      "max_absolute_density_error_times_t_star": 7.928011545865754e-15,
+      "A_same_direction_difference": 9.62128795675292e-05,
+      "B_same_direction_difference": 9.621287956415234e-05
+    },
+    {
+      "x": 10.0,
+      "max_absolute_density_error_times_t_star": 2.5760190455628804e-15,
+      "A_same_direction_difference": -2.7646261569500635e-07,
+      "B_same_direction_difference": -2.764626156430038e-07
+    }
+  ],
+  "max_absolute_density_discrepancy": 1.1557976797860192e-12,
+  "diagnostic_tolerance": 5e-11,
+  "ODE_phase_refinement": [
+    {
+      "x": 0.1,
+      "max_density_change": 6.217248937900877e-15
+    },
+    {
+      "x": 1.2,
+      "max_density_change": 8.81239525796218e-16
+    },
+    {
+      "x": 3.0,
+      "max_density_change": 5.212844045310305e-16
+    }
+  ],
+  "entropy_successive_changes": [
+    4.5435617926879723e-08,
+    1.5481132608491377e-10,
+    3.197182102399054e-14,
+    1.196959198423997e-16
+  ],
+  "final_joint_normalization_error": 7.549516567451064e-15,
+  "illustrative_entropy_times_t_star": 0.003016257524685259,
+  "report_rounded_entropy_times_t_star": 0.0030163,
+  "independence": "Different matrix construction, vector convention, state basis and propagation algorithm within one agent. Shared protocol and laws. No fresh referee.",
+  "limitations": "Floating-point comparison and convergence are diagnostics, not interval quadrature certificates. The sign and infinite integral are proved analytically in proof.md; exact-result.json checks its algebra."
+}

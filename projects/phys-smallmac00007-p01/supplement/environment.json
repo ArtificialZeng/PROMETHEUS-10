@@ -1,0 +1,19 @@
+{
+  "python": "3.9.6",
+  "system": "Darwin",
+  "release": "25.6.0",
+  "machine": "arm64",
+  "decimal": "1.70",
+  "libmpdec": "2.5.0",
+  "certificate_external_requirements": [],
+  "optional_figure_packages": {
+    "numpy": "2.0.2",
+    "matplotlib": "3.9.4"
+  },
+  "observed_sequential_replay_seconds": {
+    "integer_cells": 8.615475042,
+    "decimal_nodes": 13.851458
+  },
+  "memory_measurement": "not instrumented",
+  "scope": "This recorded environment does not assert portability to every Python release."
+}

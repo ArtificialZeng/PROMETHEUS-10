@@ -1,0 +1,23 @@
+{
+  "bands": [
+    [
+      1.12,
+      2.08
+    ],
+    [
+      2.08,
+      2.72
+    ]
+  ],
+  "forcing_intervals": [
+    [
+      0.000105453,
+      0.0001525309
+    ],
+    [
+      7.96284e-05,
+      0.0001783554
+    ]
+  ],
+  "meaning": "Outward-rounded certified enclosures; not statistical errors or an L extrapolation"
+}

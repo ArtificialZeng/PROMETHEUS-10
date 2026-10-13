@@ -1,0 +1,401 @@
+\documentclass[aps,pra,onecolumn,notitlepage,10pt,amsmath,amssymb,longbibliography,nofootinbib]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{booktabs,longtable}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Maximum purity of absolutely PPT states of two qutrits},pdfauthor={Xiaojian Zeng}}
+\renewcommand{\bibsection}{\section*{References}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\APPT}{\operatorname{APPT}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\lam}{\boldsymbol{\lambda}}
+\begin{document}
+\title{Maximum purity of absolutely PPT states of two qutrits}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190}
+\date{September 12, 2026}
+\begin{abstract}
+We determine the maximum purity of a two-qutrit density operator that remains
+positive under partial transpose after every global unitary transformation.
+The exact value is $17/121$, and the unique decreasingly ordered maximizing
+spectrum is $(3,1,1,1,1,1,1,1,1)/11$.
+The computer-assisted proof uses three necessary linear inequalities from the
+spectral PPT criterion. Their intersection with the ordered probability simplex
+is an outer polytope with 49 vertices, all enumerated in exact rational arithmetic.
+An active-constraint argument proves that the enumeration is complete, including
+degenerate boundaries. The result gives the optimal purity-only sufficient
+threshold for a global unitary to produce a negative partial transpose, and the
+maximal Hilbert--Schmidt distance $4\sqrt{2}/33$ from the maximally mixed state
+within the absolutely PPT set.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+A global unitary transformation preserves the spectrum and purity of a quantum
+state, while it can change the state's entanglement across a fixed bipartition.
+An absolutely positive-partial-transpose (APPT) state stays PPT along its entire
+global unitary orbit. The largest purity of such a state therefore determines
+when purity alone guarantees that some global unitary can produce a negative
+partial transpose (NPT).
+
+For two qutrits, Hildebrand's spectral criterion expresses APPT as two
+$3\times3$ positive-semidefinite conditions~\cite{Hildebrand}.
+Song and Chen gave an extreme-point criterion and identified the spectrum
+$(3,1,1,1,1,1,1,1,1)/11$ among the two-eigenvalue extreme points; see Corollary~16,
+Eq.~(10), of their preprint version~\cite{SongChen}.
+Wang, Chen, and Song subsequently classified extreme points with exactly three
+distinct eigenvalues~\cite{WangChenSong}. These restricted classifications do not
+by themselves maximize purity over the full spectral domain.
+Dung and Khoi reported the numerical estimate $0.1405$ for the two-qutrit APPT
+maximum in Table~2 of their preprint~\cite{DungKhoi}.
+Tran's Theorem~1 gives the upper bound $25/169$ in total dimension nine;
+Remark~1.1 leaves the exact qutrit--qudit maximum open~\cite{Tran}.
+
+The closest explicit conjecture is due to Ahiable, Kothakonda, and
+Winter~\cite{AhiableKothakondaWinter}. Their Theorem~6.3 optimizes purity on an
+\emph{inscribed} APPT polytope. For local dimensions $m=n=3$, its value is
+$\max\{17/121,1/8\}=17/121$. Their Conjecture~6.7 asserts equality with the
+maximum on the full APPT set. We prove precisely its $3\times3$ case.
+The attaining spectrum is already known; the contribution here is the matching
+upper bound on the entire domain and the uniqueness of the equality spectrum.
+All preprint formula and theorem locators in this paper refer to the versions
+specified in the bibliography.
+
+\section{Model and sharp bound}
+\label{sec:model}
+
+Fix $\mathcal H=\C^3\otimes\C^3$ and let $\rho\succeq0$ with $\Tr\rho=1$.
+Partial transpose $T_B$ is taken on the second factor in a fixed product basis.
+The APPT condition is
+\begin{equation}
+ (U\rho U^\dagger)^{T_B}\succeq0\qquad\text{for every }U\in U(9).
+ \label{eq:appt}
+\end{equation}
+There is no restriction on the global unitary, eigenvalue multiplicities, or
+rank. Partial transpose is a mathematical test, not an assumed physical channel.
+The state, its spectrum, and its purity are dimensionless. The problem is static
+and finite dimensional; no perturbative expansion, dynamical approximation, or
+spatial boundary condition is imposed.
+
+Write the ordered spectrum as
+\begin{equation}
+ \lambda_1\geq\cdots\geq\lambda_9\geq0,
+ \qquad \sum_{i=1}^9\lambda_i=1,
+ \qquad P(\lam)=\Tr\rho^2=\sum_{i=1}^9\lambda_i^2.
+ \label{eq:domain}
+\end{equation}
+By Eq.~(5) and Corollary~4 of the preprint of Ref.~\cite{Hildebrand},
+Eq.~\eqref{eq:appt} is equivalent to both of the following matrices being
+positive semidefinite:
+\begin{align}
+ L_1(\lam)&=\begin{pmatrix}
+ 2\lambda_9&\lambda_8-\lambda_1&\lambda_6-\lambda_2\\
+ \lambda_8-\lambda_1&2\lambda_7&\lambda_5-\lambda_3\\
+ \lambda_6-\lambda_2&\lambda_5-\lambda_3&2\lambda_4
+ \end{pmatrix},\label{eq:L1}\\
+ L_2(\lam)&=\begin{pmatrix}
+ 2\lambda_9&\lambda_8-\lambda_1&\lambda_7-\lambda_2\\
+ \lambda_8-\lambda_1&2\lambda_6&\lambda_5-\lambda_3\\
+ \lambda_7-\lambda_2&\lambda_5-\lambda_3&2\lambda_4
+ \end{pmatrix}.\label{eq:L2}
+\end{align}
+Let $K$ denote the ordered spectral set satisfying
+Eqs.~\eqref{eq:domain}--\eqref{eq:L2}, including both semidefinite conditions.
+
+\begin{theorem}
+\label{thm:main}
+For every APPT state on $\C^3\otimes\C^3$,
+\begin{equation}
+ \Tr\rho^2\leq\frac{17}{121}.
+ \label{eq:main}
+\end{equation}
+Equality holds if and only if the ordered spectrum is
+\begin{equation}
+ \lam_* = \frac1{11}(3,1,1,1,1,1,1,1,1).
+ \label{eq:star}
+\end{equation}
+\end{theorem}
+
+The proof below is computer assisted: a finite rational enumeration supplies
+the vertex certificate, while an analytic argument establishes its completeness.
+The complete certificate is printed in Appendix~\ref{app:vertices}.
+
+\section{Three necessary inequalities}
+\label{sec:cuts}
+
+For $v_1=(1,1,0)^T$, $v_2=(1,1,1)^T$, and $v_3=(2,1,0)^T$, define
+$g_j(\lam)=v_j^TL_1(\lam)v_j/2$. Direct expansion gives
+\begin{align}
+ g_1(\lam)&=-\lambda_1+\lambda_7+\lambda_8+\lambda_9,\label{eq:g1}\\
+ g_2(\lam)&=-\lambda_1-\lambda_2-\lambda_3+
+              \lambda_4+\lambda_5+\lambda_6+\lambda_7+\lambda_8+\lambda_9,
+              \label{eq:g2}\\
+ g_3(\lam)&=-2\lambda_1+\lambda_7+2\lambda_8+4\lambda_9.\label{eq:g3}
+\end{align}
+Every $\lam\in K$ obeys $g_j(\lam)\geq0$. In particular,
+$g_2\geq0$ is equivalent to $\lambda_1+\lambda_2+\lambda_3\leq1/2$.
+
+Define the outer polytope
+\begin{equation}
+ Q=\{\lam\text{ satisfying Eq.~\eqref{eq:domain}}:
+                    g_1(\lam),g_2(\lam),g_3(\lam)\geq0\}.
+ \label{eq:Q}
+\end{equation}
+Then $K\subseteq Q$. Only this inclusion is needed for the upper bound; the
+three inequalities are not asserted to be a sufficient APPT criterion.
+In particular, $L_2\succeq0$ remains part of the physical domain and will also
+be checked at the equality spectrum.
+
+The same inequalities can be checked directly from Schmidt coefficients.
+For $b=\sum_{i=1}^3 x_i|ii\rangle$, the eigenvalues of
+$(|b\rangle\langle b|)^{T_B}$ are $x_i^2$ and $\pm x_ix_j$ for $i<j$.
+Pairing this spectrum in increasing order with $\lam$ in decreasing order
+gives the minimum trace over its unitary orbit~\cite{Hildebrand}.
+The choices $x=(1,1,0),(1,1,1),(2,1,0)$ respectively give the ordered spectra
+\begin{equation}
+ (-1,0,0,0,0,0,1,1,1),\quad
+ (-1,-1,-1,1,1,1,1,1,1),\quad
+ (-2,0,0,0,0,0,1,2,4),
+ \label{eq:schmidtchecks}
+\end{equation}
+and hence the three linear forms above. Normalization of $b$ is unnecessary
+because positive scaling does not change the sign of the test.
+
+\section{Complete exact vertex certificate}
+\label{sec:certificate}
+
+\subsection{Completeness of the enumeration}
+
+Set $\lambda_{10}=0$ and introduce gap weights
+\begin{equation}
+ y_k=k(\lambda_k-\lambda_{k+1}),\qquad
+ \lambda_i=\sum_{k=i}^9\frac{y_k}{k}.
+ \label{eq:gaps}
+\end{equation}
+This is a linear bijection between the full ordered probability simplex and
+$\{y\in\R^9:y\geq0,\ \boldsymbol{1}^Ty=1\}$.
+It is the standard representation by the uniform rank-$k$ spectra, also used
+in Ref.~\cite{AhiableKothakondaWinter}; it imposes no multiplicity assumption.
+In these coordinates the three extra inequalities are $Ay\geq0$, where
+\begin{equation}
+ A=\begin{pmatrix}
+ -1&-\frac12&-\frac13&-\frac14&-\frac15&-\frac16&0&\frac18&\frac29\\[2pt]
+ -1&-1&-1&-\frac12&-\frac15&0&\frac17&\frac14&\frac13\\[2pt]
+ -2&-1&-\frac23&-\frac12&-\frac25&-\frac13&-\frac17&\frac18&\frac59
+ \end{pmatrix}.
+ \label{eq:A}
+\end{equation}
+
+\begin{lemma}
+\label{lem:complete}
+Each vertex of $\{y\geq0:\boldsymbol{1}^Ty=1,Ay\geq0\}$ has at most four
+positive coordinates. If its positive support is $S$, with $s=|S|$, some
+$s-1$ active rows of $A$, together with the trace row, form a nonsingular
+$s\times s$ system on $S$ whose solution is the vertex.
+\end{lemma}
+\begin{proof}
+Within the simplex face with positive support $S$, the space of directions
+$d$ supported on $S$ and satisfying $\boldsymbol{1}^Td=0$ has dimension $s-1$.
+If the active rows of $A$ do not eliminate this space, there is a nonzero
+direction $d$ that also annihilates all active rows. For sufficiently small
+$\epsilon>0$, both $y+\epsilon d$ and $y-\epsilon d$ preserve the positive
+coordinates and all strictly slack inequalities. They are distinct feasible
+points with midpoint $y$, contradicting vertexhood. Thus $s-1$ independent
+active restrictions exist. Since $A$ has only three rows, $s\leq4$; choosing
+such restrictions gives the stated nonsingular system.
+\end{proof}
+
+Consequently, every vertex is found by considering $s=1,\ldots,4$, every
+support $S\subseteq\{1,\ldots,9\}$ of size $s$, and every subset $J$ of
+$s-1$ rows of $A$. For each nonsingular matrix
+\begin{equation}
+ M_{S,J}=\begin{pmatrix}\boldsymbol{1}_S^T\\A_{J,S}\end{pmatrix},
+ \qquad M_{S,J}y_S=(1,0,\ldots,0)^T,
+ \label{eq:basis}
+\end{equation}
+solve exactly, set $y_{S^c}=0$, and check all inequalities $y\geq0$ and
+$Ay\geq0$. Each feasible solution is a vertex: the selected independent
+equalities and the zero coordinates determine it uniquely. Solutions with zero
+weights are retained and deduplicated, so degeneracies are included.
+There are exactly
+\begin{equation}
+ \sum_{s=1}^4 \binom{9}{s}\binom{3}{s-1}
+       =9+108+252+126=495
+ \label{eq:count}
+\end{equation}
+systems to consider. Singular systems may be discarded because
+Lemma~\ref{lem:complete} supplies a nonsingular basis for every vertex.
+The bound on positive gaps concerns vertices of the outer polytope and is a
+consequence of its three cuts, not a restriction on arbitrary APPT states.
+
+\subsection{Rational evaluation and cross-checks}
+
+Exact enumeration gives 72 singular systems and 423 nonsingular systems.
+There are 63 feasible bases, which yield 49 distinct vertices after removing
+duplicates. Table~\ref{tab:groups} summarizes the results by the actual positive
+support size. Every vertex and its exact purity are listed in
+Appendix~\ref{app:vertices}. Purity can be evaluated directly from the listed
+weights using
+\begin{equation}
+ P(y)=\sum_{k,l=1}^9\frac{y_ky_l}{\max(k,l)},
+ \label{eq:Pgap}
+\end{equation}
+which follows by substituting Eq.~\eqref{eq:gaps} into $\sum_i\lambda_i^2$.
+
+\begin{table}[htb]
+\caption{Complete vertex enumeration for $Q$, grouped by the number $s$ of
+positive gap weights. These are exact rational results.}
+\label{tab:groups}
+\begin{ruledtabular}
+\begin{tabular}{ccc}
+$s$ & Number of vertices & Largest purity in the group\\
+1&2&$1/8$\\
+2&14&$17/121$\\
+3&21&$5/36$\\
+4&12&$3/22$
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The unique vertex with purity $17/121$ has
+$y_1=2/11$, $y_9=9/11$, and all other gap weights zero.
+Every other vertex has purity at most $5/36$, with a strict gap
+\begin{equation}
+ \frac{17}{121}-\frac5{36}=\frac7{4356}>0.
+ \label{eq:gap}
+\end{equation}
+
+For a separate representation of the finite calculation, one may work directly
+in the nine spectrum coordinates. There are twelve homogeneous inequalities:
+eight ordering inequalities, $\lambda_9\geq0$, and the three $g_j\geq0$.
+Enumerating all $\binom{12}{8}=495$ choices of eight active inequalities,
+together with the trace row, and solving by rational Gauss--Jordan elimination
+reproduces all 49 vertices. The supplied standard-library Python program
+implements this calculation and checks the complete distributed table only
+after generating its vertex set. A separate exact incremental clipping
+calculation also reproduces the same set; adding $g_1,g_2,g_3$ in that order
+gives 15, 31, and 49 vertices and maxima $25/169$, $1/7$, and $17/121$.
+The first step recovers the dimension-nine relaxation underlying
+Ref.~\cite{Tran}.
+
+All decisions in the certificate use rational arithmetic, with no feasibility
+tolerance. Floating-point optimization is not part of the proof. Agreement
+between implementations is a cross-check; completeness rests on the
+active-constraint argument above. Regeneration instructions and the exact
+data accompany the manuscript.
+
+\subsection{Research tools and verification}
+
+Generative AI (OpenAI Codex) was used substantively for literature exploration,
+selection of test vectors, development of the proof, preparation and execution
+of exact-arithmetic code, internal checks, and manuscript drafting.
+The computational checks consisted of complete rational enumerations in
+different representations and a separate rational clipping implementation.
+These checks do not constitute human peer review. This local draft still
+requires the named author's scientific review and final approval; no completed
+human verification is asserted.
+
+\section{Proof of the sharp bound and its consequences}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The compact polytope $Q$ is the convex hull of its vertices. Since
+$P(\lam)=\|\lam\|_2^2$ is convex, the exact vertex bound implies
+$P\leq17/121$ on all of $Q$, hence on $K\subseteq Q$.
+Strict convexity rules out a nonvertex maximizer: a nontrivial convex
+combination of distinct feasible points has purity strictly below the
+corresponding convex combination of their purities. The only possible ordered
+equality spectrum is therefore the unique maximizing vertex $\lam_*$.
+
+At this spectrum, both complete semidefinite constraints become
+\begin{equation}
+ L_1(\lam_*)=L_2(\lam_*)=
+ \frac2{11}\begin{pmatrix}1&-1&0\\-1&1&0\\0&0&1\end{pmatrix}\succeq0.
+ \label{eq:attain}
+\end{equation}
+Their eigenvalues are $0,2/11,4/11$. Thus $\lam_*\in K$, and
+$P(\lam_*)=(9+8)/121=17/121$, proving attainment and uniqueness.
+\end{proof}
+
+Attainment also has a direct full-orbit check. Every state with spectrum
+$\lam_*$ has the form
+\begin{equation}
+ \rho=\frac{I_9+2|\psi\rangle\langle\psi|}{11}
+ \label{eq:orbit}
+\end{equation}
+for a normalized $|\psi\rangle$. If its Schmidt coefficients are $x_i$, the
+potentially smallest eigenvalues of $\rho^{T_B}$ are
+$(1-2x_ix_j)/11$. They are nonnegative because
+$2x_ix_j\leq x_i^2+x_j^2\leq1$.
+
+For any two-qutrit state, Theorem~\ref{thm:main} implies
+\begin{equation}
+ \Tr\rho^2>\frac{17}{121}\quad\Longrightarrow\quad
+ \exists U\in U(9): (U\rho U^\dagger)^{T_B}\not\succeq0.
+ \label{eq:NPT}
+\end{equation}
+This purity-only sufficient threshold cannot be lowered, since the APPT orbit
+in Eq.~\eqref{eq:orbit} reaches it. The implication is not a characterization
+of states at lower purity: the theorem does not assert that every state below
+the threshold is APPT. It also does not assert distillability of the resulting
+NPT state or identify APPT with absolute separability.
+
+Finally, for the Hilbert--Schmidt norm
+$\|X\|_{\mathrm{HS}}=(\Tr X^\dagger X)^{1/2}$,
+\begin{equation}
+ \max_{\rho\in\APPT_{3,3}}
+    \left\|\rho-\frac{I_9}{9}\right\|_{\mathrm{HS}}^2
+       =\frac{17}{121}-\frac19=\frac{32}{1089}.
+ \label{eq:radius}
+\end{equation}
+The maximum distance is therefore $4\sqrt2/33$, attained precisely by the
+unitary orbit in Eq.~\eqref{eq:orbit}.
+
+\section{Discussion}
+
+Three necessary linear tests suffice to enclose the full two-qutrit APPT
+spectral domain in a polytope with the correct largest purity. The exact
+upper bound improves $25/169$ by $152/20449$ and matches the previously known
+attaining spectrum. This establishes the $3\times3$ instance of the
+maximum-purity conjecture of Ref.~\cite{AhiableKothakondaWinter}, including
+its maximizing spectrum. No conclusion for general $3\times n$ or other
+local dimensions follows from this nine-variable certificate.
+
+The argument avoids a classification of all APPT extreme points: it classifies
+only the vertices of a deliberately larger set. Its limitation is equally
+specific. The finite rational table and the analytic completeness argument
+together give a computer-assisted proof, rather than a floating-point search
+or a proof-assistant formalization. An analytic compression of the certificate
+could simplify the presentation, but is not assumed here.
+
+\section*{Data availability}
+All exact vertex data and a Python standard-library regeneration program are
+included with this local manuscript in the accompanying reproducibility
+materials. The full vertex table is also printed below. No experimental or
+third-party numerical dataset is used, and no public repository deposit is
+claimed.
+
+\appendix
+\section{Complete rational vertex certificate}
+\label{app:vertices}
+
+Table~\ref{tab:vertices} gives all vertices of $Q$. An entry $k:a/b$ means
+$y_k=a/b$; every unlisted weight is zero. The ordered spectrum is recovered
+from Eq.~\eqref{eq:gaps}. Thus the table, Eq.~\eqref{eq:A}, and
+Eq.~\eqref{eq:Pgap} give a finite exact certificate whose entries can be checked
+without numerical tolerances. Table numbering fixes one ordering of tied
+purities and has no mathematical significance.
+
+\input{vertices.tex}
+
+% Load the formatting control; all six literature entries are cited in the text.
+\nocite{*}
+\bibliographystyle{apsrev4-2}
+\raggedright
+\bibliography{references}
+\end{document}

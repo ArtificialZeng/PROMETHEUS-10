@@ -1,0 +1,388 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}
+\newcommand{\Rplus}{\mathbb{R}_{>0}}
+\newcommand{\dd}{\mathrm{d}}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=-1
+\hypersetup{pdftitle={Absence of reflection-symmetric two-periodic boundary laws in the competing three-state SOS model},pdfauthor={Xiaojian Zeng}}
+\title{Absence of reflection-symmetric two-periodic boundary laws in the competing three-state SOS model}
+\author{Xiaojian Zeng\\[3pt]
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \href{mailto:xiaojianzeng@foxmail.com}{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider the three-state solid-on-solid model on a rooted binary tree with
+nearest-neighbor and sibling interactions, each sibling bond counted once.
+For arbitrary finite real couplings and positive finite inverse temperature,
+we prove that the exact recursion of positive reflection-symmetric boundary
+messages has no nonfixed two-cycle. This resolves the two-periodicity
+conjecture of Karshiboev and Rahmatullaev in its stated invariant subspace.
+The proof reduces two distinct cycle values to their sum and product.
+Positivity would force a negative linear coefficient, but in that entire
+parameter region a strict inequality makes the corresponding discriminant
+negative. We also give a square-plus-positive-remainder certificate for the
+composition quotient. The boundary-message kernels yield compatible Gibbs
+cylinder distributions, so the result excludes alternating generation-parity
+boundary laws in this class. It does not assert uniqueness or exclude Gibbs
+measures outside the reflection-symmetric, level-homogeneous class.
+\end{abstract}
+
+\noindent\textbf{Keywords:} solid-on-solid model; binary tree; competing interactions;
+Gibbs measures; periodic boundary laws
+
+\section{Introduction}
+Periodic boundary messages provide a precise way to test for alternating
+equilibrium states on a rooted tree. In the three-state solid-on-solid (SOS)
+model with an additional interaction between siblings, the two children
+can remain correlated after conditioning on their parent. Nevertheless,
+summing over each parent--children unit gives an exact finite-dimensional
+recursion. Its reflection-symmetric subspace reduces the question of
+generation-parity alternation to a scalar two-cycle equation.
+
+Karshiboev and Rahmatullaev derived this recursion and excluded nonfixed
+two-cycles in a parameter region described by a nonnegative polynomial
+coefficient $B$ \cite[Sec.~5, Theorem~3]{KR2025}. Their Conjecture~1 leaves
+the complementary region $B<0$ to be excluded. Fixed points are omitted
+from the two-periodic solutions under discussion, as specified immediately
+after their Eq.~(16). The invariant set is $v=1$, where $v$ is the ratio
+of the boundary weights for spins $2$ and $0$.
+
+Here we close that remaining region for all positive values of both
+Boltzmann parameters. The decisive observation is that $B<0$ forces
+$t>1$ and $|B|<t^4-1$, whereas the leading and constant coefficients
+obey $A>t^6$ and $C>t^8$. These inequalities contradict the existence
+of two real positive cycle values. The proof is exact and requires no
+parameter scan or limiting approximation. An alternative global
+positivity certificate is given in Appendix~\ref{sec:certificate}.
+
+\section{Model and boundary messages}
+\label{sec:model}
+Let every vertex of a rooted binary tree have two children, including
+the root. Write $y_x,z_x$ for the children of $x$ and let
+$\sigma_x\in\{0,1,2\}$. The interaction is
+\begin{equation}
+ \mathcal H(\sigma)
+ =-J\sum_{\langle x,y\rangle}|\sigma_x-\sigma_y|
+  -J_1\sum_x|\sigma_{y_x}-\sigma_{z_x}|.
+ \label{eq:hamiltonian}
+\end{equation}
+The first sum counts every parent--child bond once; the second counts
+the single unordered sibling pair of each parent once. Infinite-volume
+Gibbs conditionals use the finite sum of interactions meeting the
+conditioned volume. We assume finite $J,J_1\in\mathbb R$ and
+$0<\beta<\infty$, and set
+\begin{equation}
+ t=e^{\beta J},\qquad h=e^{\beta J_1}.
+ \label{eq:parameters}
+\end{equation}
+Thus $t,h\in\Rplus$ are independent. The couplings have energy units,
+$\beta$ has inverse-energy units, and the spin differences and all message
+ratios are dimensionless. No external field or other distance-two
+interaction is included. These conventions agree with
+\citet[Eq.~(1)]{KR2025}, with $(t,h)=(\theta,\theta_1)$.
+
+The Boltzmann factor of a parent of spin $i$ and its labeled children
+of spins $j,k$ is
+\begin{equation}
+ \psi(i,j,k)=t^{|i-j|+|i-k|}h^{|j-k|}.
+ \label{eq:factor}
+\end{equation}
+For a positive child message $m$, define
+\begin{equation}
+ T_i(m)=\sum_{j,k=0}^{2}\psi(i,j,k)m(j)m(k).
+ \label{eq:update}
+\end{equation}
+The two assignments $(j,k)$ and $(k,j)$ are distinct when $j\ne k$;
+this does not double the sibling energy. Descendant subtrees communicate
+only through the displayed local units, so \eqref{eq:update} is an exact
+partition-weight recursion.
+
+Normalize a reflection-symmetric message to $m=(1,u,1)$ with $u>0$.
+Reflection of all three spins gives $T_2=T_0$. Direct evaluation of the
+nine summands for each parent spin gives
+\begin{align}
+ N(u):=T_1(1,u,1)&=u^2+4thu+2t^2(h^2+1),\label{eq:N}\\
+ D(u):=T_0(1,u,1)&=t^2u^2+2th(t^2+1)u+t^4+2t^2h^2+1.
+ \label{eq:D}
+\end{align}
+Consequently the normalized update is
+\begin{equation}
+ f(u)=\frac{N(u)}{D(u)},\qquad u>0.
+ \label{eq:f}
+\end{equation}
+Both numerator and denominator are strictly positive. This is the map
+in \citet[Eq.~(12), p.~137]{KR2025}.
+
+A positive level-homogeneous boundary law means a sequence of messages
+$m_n$ shared by all vertices in generation $n$, defined up to positive
+scalar multiples, with
+\begin{equation}
+ T(m_{n+1})=\lambda_n m_n,\qquad \lambda_n>0.
+ \label{eq:compatibility}
+\end{equation}
+On the reflection-symmetric subspace this is $u_n=f(u_{n+1})$.
+An alternating assignment $(1,a,1),(1,b,1)$ therefore requires
+\begin{equation}
+ a=f(b),\qquad b=f(a),\qquad a,b>0.
+ \label{eq:cycle}
+\end{equation}
+A nonfixed two-cycle has $a\ne b$.
+
+\section{Exclusion of two-cycles}
+\label{sec:proof}
+\begin{theorem}
+\label{thm:main}
+For every $t,h,u>0$, the function \eqref{eq:f} satisfies
+\begin{equation}
+ f(f(u))=u\quad\Longrightarrow\quad f(u)=u.
+ \label{eq:theorem}
+\end{equation}
+Hence the model \eqref{eq:hamiltonian} has no nonconstant
+generation-parity boundary law among positive reflection-symmetric
+level-homogeneous messages.
+\end{theorem}
+
+\begin{proof}
+Write
+\begin{equation}
+\begin{gathered}
+ N(u)=u^2+n_1u+n_0,\qquad D(u)=t^2u^2+d_1u+d_0,\\
+ n_1=4th,\quad n_0=2t^2(h^2+1),\quad L=d_0+n_1,\\
+ d_1=2th(t^2+1),\qquad d_0=t^4+2t^2h^2+1.
+\end{gathered}
+\label{eq:coefficients}
+\end{equation}
+Assume that $a,b>0$ solve \eqref{eq:cycle} with $a\ne b$.
+Set $F=aD(b)-N(b)$ and $G=bD(a)-N(a)$, so $F=G=0$.
+Polynomial expansion yields the two identities
+\begin{align}
+ F-G&=(a-b)(L+a+b-t^2ab),\label{eq:antisym}\\
+ F+G+(a+b)(L+a+b-t^2ab)
+   &=2\bigl[d_0(a+b)+(d_1+1)ab-n_0\bigr].
+ \label{eq:sym}
+\end{align}
+Division of \eqref{eq:antisym} by $a-b$ is legitimate under the
+assumption of a nonfixed cycle. With $s=a+b$ and $p=ab$, the two
+identities become
+\begin{equation}
+ t^2p=s+L,\qquad d_0s+(d_1+1)p=n_0.
+ \label{eq:sumproductsystem}
+\end{equation}
+Define
+\begin{equation}
+ A=t^2d_0+d_1+1,\quad
+ B=(d_1+1)L-t^2n_0,\quad
+ C=d_0L+n_0.
+ \label{eq:ABC}
+\end{equation}
+Solving \eqref{eq:sumproductsystem} gives
+\begin{equation}
+ s=-\frac{B}{A},\qquad p=\frac{C}{A}.
+ \label{eq:sumproduct}
+\end{equation}
+Here $A>t^6$ since $d_0>t^4$, and $C>t^8$ since
+$L>d_0>t^4$. Moreover,
+\begin{equation}
+\begin{split}
+ B={}&1-t^4+2th(t^6+t^4+t^2+3)\\
+    &+2t^2h^2(3t^2+5)+4t^3h^3(t^2+1)>1-t^4.
+\end{split}
+\label{eq:Bbound}
+\end{equation}
+Because $s>0$ and $A>0$, equation \eqref{eq:sumproduct} forces
+$B<0$. Inequality \eqref{eq:Bbound} then implies $t>1$ and
+$0<-B<t^4-1$. Therefore
+\begin{equation}
+ B^2<(t^4-1)^2<t^8<4t^{14}<4AC.
+ \label{eq:chain}
+\end{equation}
+On the other hand, two real numbers $a,b$ with sum and product
+\eqref{eq:sumproduct} necessarily satisfy
+\begin{equation}
+ A^2(a-b)^2=B^2-4AC\ge0,
+ \label{eq:contradiction}
+\end{equation}
+contradicting \eqref{eq:chain}. No nonfixed positive two-cycle exists.
+Finally, if $f(f(u))=u$, positivity of $f(u)$ allows
+$a=u$, $b=f(u)$ in this argument. They must coincide.
+\end{proof}
+
+The coefficients \eqref{eq:ABC} define the quadratic obtained by
+eliminating fixed points from the second iterate of \eqref{eq:f};
+compare \citet[Eq.~(17), p.~139]{KR2025}. When $B\ge0$, $A,C>0$ already
+exclude positive roots. Equation \eqref{eq:chain} excludes the entire
+remaining region $B<0$, thus resolving Conjecture~1 in the nonfixed
+sense of its preceding discussion. This includes the boundary $B=0$.
+The statement is not that $B^2-4AC$ is negative for all positive $t,h$;
+the sign implication is needed only when $B<0$.
+
+\section{Gibbs interpretation and scope}
+\label{sec:gibbs}
+For completeness, the compatibility condition \eqref{eq:compatibility}
+has a direct infinite-tree interpretation despite the sibling coupling.
+For any compatible positive messages, put
+\begin{equation}
+ K_n(j,k\mid i)=
+ \frac{\psi(i,j,k)m_{n+1}(j)m_{n+1}(k)}
+      {\lambda_n m_n(i)}.
+ \label{eq:kernel}
+\end{equation}
+Its sum over $j,k$ is one by \eqref{eq:compatibility}. Give the root
+spin the law $m_0(i)/\sum_r m_0(r)$, and multiply these conditional
+pair kernels over the parents in successive generations.
+
+Let $W_n$ denote generation $n$ and $V_n=\bigcup_{k=0}^n W_k$.
+The messages at internal vertices cancel, leaving the cylinder density
+\begin{equation}
+ \mu_n(\sigma_{V_n})=\frac{1}{Z_n}
+ \prod_{x\in V_{n-1}}
+ \psi(\sigma_x,\sigma_{y_x},\sigma_{z_x})
+ \prod_{x\in W_n}m_n(\sigma_x),
+ \label{eq:cylinder}
+\end{equation}
+where $Z_n>0$ normalizes the density. Summing a terminal generation
+recovers $\mu_{n-1}$ because each kernel is normalized. These
+consistent distributions on finite spin spaces define an infinite
+probability measure.
+
+To check the Gibbs condition for a finite vertex set $\Lambda$,
+choose $V_n$ large enough that all local units meeting $\Lambda$
+lie inside it and the terminal generation is outside $\Lambda$.
+Conditioning \eqref{eq:cylinder} on the spins outside $\Lambda$
+cancels terminal weights and all interactions disjoint from $\Lambda$.
+The remaining factor product is exactly the Boltzmann weight of every
+interaction meeting $\Lambda$, including a sibling bond crossing its
+boundary. This conditional depends on only finitely many exterior
+spins; the same identity persists in the consistent infinite measure.
+Thus these boundary laws give the Gibbs specification of
+\eqref{eq:hamiltonian}.
+
+Theorem~\ref{thm:main} excludes an alternating assignment in this
+positive reflection-symmetric class. It does not classify all Gibbs
+measures or establish uniqueness, extremality, stability, or convergence
+of arbitrary message iterations. In particular, reflection symmetry and
+level homogeneity are hypotheses; the theorem does not exclude
+two-periodic messages with unequal spin-$0$ and spin-$2$ weights.
+This agrees with the scope distinction in
+\citet[Remark~5(a)]{KR2025}. No zero-temperature conclusion is taken.
+
+The nearest-neighbor limit also fixes the message convention. When
+$h=1$,
+\begin{equation}
+ f(u)=\left(\frac{u+2t}{tu+t^2+1}\right)^2.
+ \label{eq:nearest}
+\end{equation}
+The Hamiltonian of the later thermodynamic study
+\cite[Eq.~(2.1), p.~166]{RK2026} has only nearest-neighbor interactions.
+After shifting its spin labels by one, its branch recursion is
+$g_{n+1}=W(g_n^2)$, where $W_{ij}=t^{|i-j|}$ and the square is
+componentwise \cite[Eq.~(2.4), p.~166]{RK2026}.
+Our descendant message satisfies $T(m)=(Wm)^2$ at $h=1$, so the
+convention change is $m=g^2$. This one-coupling limit does not cover
+independent $h\ne1$; no other thermodynamic or dynamical conclusions
+of that study are used here.
+
+\section{Exact verification}
+\label{sec:verification}
+The accompanying code contains two exact representations of the
+calculation. The integer checker reconstructs all $27$ local weights
+in \eqref{eq:factor}, forms two generations of the unnormalized
+update, and verifies the composition identity in
+Appendix~\ref{sec:certificate} by sparse polynomial arithmetic over
+the integers. It uses no computer algebra library or cached
+coefficient data. The symbolic checker reconstructs the local update
+as a quadratic form with sibling matrix $S_{jk}=h^{|j-k|}$ and
+independently derives \eqref{eq:antisym}--\eqref{eq:sumproduct}.
+Both verify the positive remainder in \eqref{eq:positiveQ}.
+
+As a finite-volume check of \eqref{eq:cylinder}, the symbolic-check
+program also uses exact rational arithmetic at $t=3/2$, $h=2/5$ and
+terminal message $(1,5/7,1)$. On a seven-vertex tree the kernel product
+agrees with the direct normalized Hamiltonian weight for all $3^7=2187$
+configurations. Its first-generation marginals and all $3^6=729$
+exterior choices for an internal-site conditional retain the crossing
+sibling interaction. These finite checks test the implementation; the
+infinite-volume statement follows from the consistency argument above.
+The algebraic identities hold for all parameters in their stated domain,
+without floating-point error, truncation, or extrapolation.
+
+\appendix
+\section{A positive composition quotient}
+\label{sec:certificate}
+An alternative certificate avoids dividing by a fixed-point factor.
+With the notation of \eqref{eq:coefficients} and \eqref{eq:ABC}, set
+\begin{equation}
+\begin{gathered}
+ P(u)=N(u)-uD(u),\qquad Q(u)=Au^2+Bu+C,\\
+ E(u)=t^2N(u)^2+d_1N(u)D(u)+d_0D(u)^2>0.
+\end{gathered}
+\label{eq:PQE}
+\end{equation}
+Direct polynomial multiplication gives
+\begin{equation}
+ N^2+n_1ND+n_0D^2-uE=PQ,
+ \qquad f(f(u))-u=\frac{P(u)Q(u)}{E(u)}.
+ \label{eq:composition}
+\end{equation}
+These are identities including at $P=0$. All coefficients are fixed
+by the defining map; in particular the expansion of $C$ contains
+$4t^6h^2$.
+
+Separate the terms of positive degree in $h$:
+\begin{align}
+ Q(u)&=Q_0(u)+R_h(u),\label{eq:Qsplit}\\
+ Q_0(u)&=(t^6+t^2+1)u^2+(1-t^4)u+t^8+2t^4+2t^2+1,
+ \label{eq:Qzero}\\
+ R_h(u)&=4t^4h^4+h^3(4t^5u+4t^3u+8t^3)\notag\\
+ &\quad+h^2(2t^4u^2+6t^4u+10t^2u+4t^6+6t^2)\notag\\
+ &\quad+h(2t^3u^2+2tu^2+2t^7u+2t^5u
+              +2t^3u+6tu+4t^5+4t).
+ \label{eq:Rh}
+\end{align}
+Every monomial in $R_h$ is positive for $t,h,u>0$. Completing the
+single negative term in $Q_0$ into a square gives
+\begin{equation}
+\begin{split}
+ Q(u)={}&t^2\left(t^2u-\tfrac12\right)^2
+ +(t^2+1)u^2+u+t^8+2t^4+\tfrac74t^2+1+R_h(u)>1.
+\end{split}
+\label{eq:positiveQ}
+\end{equation}
+Here the formal substitution $h=0$ used to define $Q_0$ is only an
+algebraic device; it does not introduce a zero Boltzmann weight into
+the physical domain. Equations \eqref{eq:composition} and
+\eqref{eq:positiveQ} imply $f(f(u))=u$ if and only if $P(u)=0$,
+which gives a second proof of Theorem~\ref{thm:main}. The certificate
+covers $t=1$, $B=0$, repeated fixed points, and any removable
+algebraic factors of $f$ without cancellation at a fixed point.
+
+\section*{Data availability}
+All defining mathematical inputs are given in this article. The accompanying
+reproducibility files contain the integer and symbolic checkers, their
+environment requirements, and instructions for regenerating the exact
+outputs. No empirical data or fitted parameters are used.
+
+\section*{Acknowledgements and AI disclosure}
+OpenAI Codex was used for proof exploration, algebraic reasoning, code
+generation, source checking, internal computational review, and manuscript
+drafting. This assistance included substantive work on the derivation.
+The exact program checks described above do not constitute external peer
+review. Human critical review and final approval of this draft are pending.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

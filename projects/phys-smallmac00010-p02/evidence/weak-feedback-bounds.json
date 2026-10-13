@@ -1,0 +1,18 @@
+{
+  "scope": "Exact rational comparison bounds for the infinite-state analytic remainder; not a finite-box certificate",
+  "e_upper_rational": "87/32 < 11/4",
+  "coefficient_S_over_a_strict_lower_by_species": [
+    "48/605",
+    "4096/43923",
+    "144/847"
+  ],
+  "K_strict_upper_by_species": [
+    "188/5",
+    "7264/63",
+    "20763/196"
+  ],
+  "uniform_coefficient_lower": "3/40",
+  "uniform_remainder_K_upper": "120",
+  "legal_epsilon_range": "0<|epsilon|<=1/2000",
+  "F_i_minus_1_strict_lower": "epsilon^2*(3/200) for all i in the stated range"
+}

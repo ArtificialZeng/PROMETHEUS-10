@@ -1,0 +1,28 @@
+{
+  "tested_python": "3.9.6",
+  "python_executable": "python3",
+  "python_requirement": "Python 3.9 or later; standard library only",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "arithmetic": "unbounded integers and fractions.Fraction; no tolerance decisions",
+  "python_third_party_dependencies": [],
+  "tex_tool_versions": {
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+    "bibtex": "BibTeX 0.99e (TeX Live 2026)",
+    "pdfinfo": "pdfinfo version 26.08.0",
+    "pdftoppm": "pdftoppm version 26.08.0"
+  },
+  "tex_class": "revtex4-2",
+  "tex_packages": [
+    "fontenc T1",
+    "lmodern",
+    "amsmath",
+    "amssymb",
+    "amsthm",
+    "booktabs",
+    "longtable",
+    "hyperref"
+  ],
+  "bibliography_style": "apsrev4-2, explicit CONTROL entry enabling article titles",
+  "resource_scope": "In this bounded write job, each exact program ran as one foreground process in sequence; this job spawned no agents or background workers.",
+  "scope": "Finite 9-variable ordered spectrum with three necessary cuts; no truncation, perturbative expansion or infinite-dimensional tail"
+}

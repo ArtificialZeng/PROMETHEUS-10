@@ -1,0 +1,94 @@
+SymPy 1.14.0
+Exact target/input-A transition comparison: PASS (21/21)
+Target zero-overlap edges: [(1, 5), (1, 6), (3, 6), (5, 6), (5, 7), (6, 7)]
+Raw zero-edge assignments: 3^6 = 729
+Assignments surviving exact qubit-orthogonality closure: 26
+Distinct ordered closure patterns: 18
+Patterns up to A/B exchange: 9
+
+Exchange class 1
+  A zero=[(1, 5), (1, 6), (5, 7), (6, 7)]; A one=[(1, 7), (5, 6)]
+  B zero=[(3, 6), (5, 6)]; B one=[(3, 5)]
+  Exact transition equations alone: algebraically consistent
+
+Exchange class 2
+  A zero=[(1, 5), (1, 6), (5, 7), (6, 7)]; A one=[(1, 7), (5, 6)]
+  B zero=[(3, 6), (5, 6), (6, 7)]; B one=[(3, 5), (3, 7), (5, 7)]
+  Exact transition equations: INCONSISTENT; Groebner basis is [1]
+  Deletion-minimal contradictory pair set:
+    (4, 5): -(3*a03*b23 + 3*a03 - 3*b23 - 2)/12 = 0
+    (4, 6): (a03*b23 - a03 - b23)/4 = 0
+    (4, 7): (21*a03*b23 + 21*a03 + 21*b23 - 7 + 10*sqrt(7))/84 = 0
+
+Exchange class 3
+  A zero=[(1, 5), (3, 6), (5, 7)]; A one=[(1, 7)]
+  B zero=[(1, 6), (5, 6), (6, 7)]; B one=[(1, 5), (1, 7), (5, 7)]
+  Exact transition equations: INCONSISTENT; Groebner basis is [1]
+  Deletion-minimal contradictory pair set:
+    (1, 7): (2*sqrt(7) + 7)/14 = 0
+
+Exchange class 4
+  A zero=[(1, 5), (5, 6), (5, 7)]; A one=[(1, 6), (1, 7), (6, 7)]
+  B zero=[(1, 6), (3, 6), (6, 7)]; B one=[(1, 3), (1, 7), (3, 7)]
+  Exact transition equations: INCONSISTENT; Groebner basis is [1]
+  Deletion-minimal contradictory pair set:
+    (1, 7): (2*sqrt(7) + 7)/14 = 0
+
+Exchange class 5
+  A zero=[(1, 5), (1, 6), (5, 7), (6, 7)]; A one=[(1, 7), (5, 6)]
+  B zero=[(1, 6), (3, 6), (5, 6)]; B one=[(1, 3), (1, 5), (3, 5)]
+  Exact transition equations: INCONSISTENT; Groebner basis is [1]
+  Deletion-minimal contradictory pair set:
+    (1, 7): (7*b03 + 2*sqrt(7))/14 = 0
+    (3, 5): -(3*a02 - 1)/6 = 0
+    (3, 7): (21*a02*b03 + 21*a02 + 21*b03 - 7 + 10*sqrt(7))/84 = 0
+
+Exchange class 6
+  A zero=[(1, 5), (5, 7)]; A one=[(1, 7)]
+  B zero=[(1, 6), (3, 6), (5, 6), (6, 7)]; B one=[(1, 3), (1, 5), (1, 7), (3, 5), (3, 7), (5, 7)]
+  Exact transition equations: INCONSISTENT; Groebner basis is [1]
+  Deletion-minimal contradictory pair set:
+    (3, 5): -(3*a02 - 1)/6 = 0
+    (3, 7): (21*a02 + 7 + 5*sqrt(7))/42 = 0
+
+Exchange class 7
+  A zero=[(1, 5), (1, 6), (5, 7), (6, 7)]; A one=[(1, 7), (5, 6)]
+  B zero=[(1, 6), (3, 6), (5, 6), (6, 7)]; B one=[(1, 3), (1, 5), (1, 7), (3, 5), (3, 7), (5, 7)]
+  Exact transition equations: INCONSISTENT; Groebner basis is [1]
+  Deletion-minimal contradictory pair set:
+    (4, 5): -(3*a03*b02 + 3*a03 - 3*b02 - 2)/12 = 0
+    (4, 6): (a03*b02 - a03 - b02)/4 = 0
+    (4, 7): (21*a03*b02 + 21*a03 + 21*b02 - 7 + 10*sqrt(7))/84 = 0
+
+Exchange class 8
+  A zero=[(1, 5), (5, 6), (5, 7)]; A one=[(1, 6), (1, 7), (6, 7)]
+  B zero=[(1, 6), (3, 6), (5, 6), (6, 7)]; B one=[(1, 3), (1, 5), (1, 7), (3, 5), (3, 7), (5, 7)]
+  Exact transition equations: INCONSISTENT; Groebner basis is [1]
+  Deletion-minimal contradictory pair set:
+    (4, 5): -(3*a03*b02 + 3*a03 - 3*b02 - 2)/12 = 0
+    (4, 6): -(a03*b02 - a03 + b02)/4 = 0
+    (4, 7): (21*a03*b02 + 21*a03 + 21*b02 - 7 + 10*sqrt(7))/84 = 0
+
+Exchange class 9
+  A zero=[(1, 5), (3, 6), (5, 7)]; A one=[(1, 7)]
+  B zero=[(1, 6), (3, 6), (5, 6), (6, 7)]; B one=[(1, 3), (1, 5), (1, 7), (3, 5), (3, 7), (5, 7)]
+  Exact transition equations: INCONSISTENT; Groebner basis is [1]
+  Deletion-minimal contradictory pair set:
+    (3, 5): -(3*a02 - 1)/6 = 0
+    (3, 7): (21*a02 + 7 + 5*sqrt(7))/42 = 0
+
+Only algebraic survivor (and its A/B swap)
+  Transition ideal forces long-subsystem q(2,3)=q(3,4)=1
+  Unit-Bloch geometry therefore forces q(2,4)=1 as well
+  Forced short-subsystem q(1,k)=3/4 for k=2,3,4
+  Forced short-subsystem q(k,l)=1/4 for 2<=k<l<=4
+  Corresponding exact Bloch Gram matrix:
+Matrix([[1, 1/2, 1/2, 1/2], [1/2, 1, -1/2, -1/2], [1/2, -1/2, 1, -1/2], [1/2, -1/2, -1/2, 1]])
+  determinant=-27/16
+  characteristic_polynomial=(2*lambda - 3)**3*(2*lambda + 1)/16
+  eigenvalues={-1/2, 3/2, 3/2, 3/2}: NOT PSD
+
+Conclusion: no seven two-qubit product rays reproduce all 21 target
+transition probabilities. Therefore an exactly separable strategy cannot
+saturate W=3/4. Compactness implies Q_SEP<3/4, but this calculation does
+not provide a numerical positive lower bound on 3/4-Q_SEP.

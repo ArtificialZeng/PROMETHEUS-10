@@ -1,0 +1,10 @@
+{
+  "code/research_normal_form.py": "c9f74159553a1dfadb01db3f0c00a1828db5c8ef69def8e08cb52c0ae372090d",
+  "code/dyadic_interval.py": "8466436870e992df4e9eebd871a6af6829a3b2f27c84a42c6df407f257fe3366",
+  "code/research_certificate.py": "0c33890afed12e13a13e4bb5c82735d5f67b01792718f7ebbec8ac75ff878d94",
+  "code/independent_lyapunov.py": "c0faab3f3a5702948f119deb58e7f1f07ac0547985165d604825f12c414c4bb9",
+  "code/independent_certificate.py": "0b745d4ab213d581ed54ccb25afd081e9d491085017927a499424b18b60b4ee8",
+  "evidence/research/certificate-input.json": "315971adc3a46667e666309bb4b2e501c766c3859b9bcb2b356a0393dd1a1a3d",
+  "reference/complex-certificate.json": "54622ba14166abd6bd9511f16735ed4d28b652e5f254165d75ae783502e21f4b",
+  "reference/scalar-certificate.json": "d20ed9ebc820c2296c104ab45f87e4f786451c48a4f7d666bcb965186a8b2ca8"
+}

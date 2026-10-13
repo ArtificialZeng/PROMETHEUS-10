@@ -1,0 +1,1358 @@
+[
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For the open XX spin chain and stationary covariance specified in problem.md, odd N with centered dephasing defect, J=1, kappa=4, mu=1/2, eta=5, and either gamma_0=c/N or c/(N-1), every fixed finite c>0 has nearest natural-occupation spacing from 1/2 tending to 1/(36+4c) and central-orbital IPR tending to 51/125 as stationarity is taken before N tends to infinity. Explicit finite bounds (A),(B) are in evidence/salvage-aefa2c1a93e3/bounded-noise-derivation.md. No claim about a Liouvillian gap, full-state Gaussianity, experiment, or the full XX/XY profile classification.",
+    "code_files": [
+      "manuscript/build.py",
+      "manuscript/repro/reproduce.py"
+    ],
+    "dependency_files": [
+      "manuscript/repro/requirements.txt"
+    ],
+    "display_number": 11,
+    "id": "phys-smallmac00000-p13",
+    "original_internal_id": "PHY-13",
+    "original_status": "unresolved",
+    "original_topic_title": "开放 XX/XY 链加入最小可控非均匀耗散后，哪些耗散剖面仍允许协方差矩阵谱的闭式表达？",
+    "paper_title": "Finite total dephasing and an isolated natural occupation in an open XX chain",
+    "pdf_sha256": "83bab1d8e32a56fdae6882ed0fdcbb63bb90ac196df1dd37e5f0de6251b74a58",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/repro/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "351df3b805bf91a71ac0501eda1193be0b4b21dfa2979f757c80f2a77b296cc5",
+    "source_bundle_sha256": "1033e86b930c6a15a9a2e7909b35441f4633986f50edf29523cf18bb0cb6e7ee",
+    "source_release_manifest_sha256": "351df3b805bf91a71ac0501eda1193be0b4b21dfa2979f757c80f2a77b296cc5"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "At t=1, g=(1-i)/5, eta=1/5, mu=0 on the original odd-left-dimerized half-line, Q0=sqrt(1-rho^2) sum_(n>=0) rho^n alpha_(2n+1), rho=3(1-i)/10, has a unique exponentially localized parity-odd normalized first-order continuation Q1. No exponentially localized Q2 solves [H0,Q2]=-[V,Q1]. Thus there is no twice-differentiable exact commutator-zero-mode continuation from Q0 whose first two Taylor coefficients are exponentially localized and whose square normalization holds to first order.",
+    "code_files": [
+      "manuscript/build.py",
+      "reproducibility/checker_core.py",
+      "reproducibility/plot_bounds.py",
+      "reproducibility/replay.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 12,
+    "id": "phys-smallmac00000-p14",
+    "original_internal_id": "PHY-14",
+    "original_status": "unresolved",
+    "original_topic_title": "非厄米相互作用 Kitaev 链在已知可解区域之外，能否得到一个新的精确相边界、例外点条件或反例？",
+    "paper_title": "A second-order obstruction to localized edge-mode continuation in a non-Hermitian interacting Kitaev chain",
+    "pdf_sha256": "904fd824c6f40198d77cb134e8aab7f27f5d9fdad5f0e0b58ecfa4cd3933c0bc",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "ce5a4fbe00934dddb9262d84558aeabccca964269e8588071b06f6c70df1a6ab",
+    "source_bundle_sha256": "5096b5b777b91544e39c0ea1f321a8236ed2c0c98eda8d21cf74a514076a6f44",
+    "source_release_manifest_sha256": "ce5a4fbe00934dddb9262d84558aeabccca964269e8588071b06f6c70df1a6ab"
+  },
+  {
+    "candidate_kind": "computational-paper",
+    "claim_class": "Computational result",
+    "claim_statement": "For every prescribed mean count m in [3,6], the connected stationary branch through the certified mean-4 point, defined by the exact equations and rational root boxes in evidence/choi-continuation-analysis.md and the 8433-cell certificate, is a strict local minimum of the counting-time variance at fixed mean, modulo common unitary basis changes. Local competitors include all nearby qubit completely positive no-count maps of Choi ranks 1 through 4, mixed initial states, and rank-2 count effects. The instrument is identical at each discrete step and counting is eventual. This is the saved local-sufficiency proposition, conditional on independent verification of its analytic chart and interval certificates.",
+    "code_files": [
+      "manuscript/build.py",
+      "supplement/code/algebra.py",
+      "supplement/code/cover.py",
+      "supplement/code/make_table.py"
+    ],
+    "dependency_files": [
+      "supplement/requirements.txt"
+    ],
+    "display_number": 13,
+    "id": "phys-smallmac00001-p01",
+    "original_internal_id": "phys-smallmac00001-p01",
+    "original_status": "unresolved",
+    "original_topic_title": "二能级量子计数器的单 Kraus–秩一探测器是否全局最优",
+    "paper_title": "Certified local optimality of a qubit counting process over a finite mean interval",
+    "pdf_sha256": "a8ea8aba990bf6a6f6070dec70cd8cf6a62678e43537e66a7c39b19b381bc74c",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "1419b0451b53c2bf3edded893944c7c0179b3a0e54bab6d14f069939124c10f0",
+    "source_bundle_sha256": "022b430ecd87531203d87a2eb50815ea51cf277968a1e685c43b9cc422f27b9e",
+    "source_release_manifest_sha256": "1419b0451b53c2bf3edded893944c7c0179b3a0e54bab6d14f069939124c10f0"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Disproof",
+    "claim_statement": "At B*=log(3)/2 there exists eta>0 such that every four-state generator with escape rates <=1 and both oriented cycle-product bounds product_forward<=3^n_c product_reverse obeys |Im(lambda)|<=1/2-delta/2+delta^2/4 whenever delta=-1-Re(lambda) is in (0,eta). The exact-alpha unrestricted companion supplies compressed points Lambda(delta)=-1-delta+(i/2)sqrt(1-2delta+3delta^2), all strictly above that bound for 0<delta<min(eta,1/2). Thus the affine-image equality H_eq fails by nonattainment, including the closure of the larger bounded-affinity class.",
+    "code_files": [
+      "manuscript/build.py",
+      "manuscript/repro/verify_rational.py",
+      "manuscript/repro/verify_symbolic.py"
+    ],
+    "dependency_files": [
+      "manuscript/repro/requirements.txt"
+    ],
+    "display_number": 14,
+    "id": "phys-smallmac00001-p06",
+    "original_internal_id": "phys-smallmac00001-p06",
+    "original_status": "disproved",
+    "original_topic_title": "有限热力学力下 Markov 谱集合是否等于 Karpelevich 区域的纵向缩放",
+    "paper_title": "A missing spectral arc at finite cycle affinity in four-state Markov generators",
+    "pdf_sha256": "c7950decd6589100aae107e145c3b13382bc1fbd43d50bdcede42da969f6e1a6",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/README.md",
+      "manuscript/repro/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "70f9d36005a58480d37329420b0dbe88da299d3730e3368bef7785b702b48609",
+    "source_bundle_sha256": "85e41b3aa0042954b13cb360d8973721276dbf303e2f96ad5c4aedbba60e9405",
+    "source_release_manifest_sha256": "70f9d36005a58480d37329420b0dbe88da299d3730e3368bef7785b702b48609"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For all t,h,u>0, f(f(u))=u implies f(u)=u, with f(u)=(u^2+4thu+2t^2(h^2+1))/(t^2u^2+2th(t^2+1)u+t^4+2t^2h^2+1). Equivalently the positive reflection-symmetric level-message update has no nonfixed two-cycle.",
+    "code_files": [
+      "manuscript/build.py",
+      "reproducibility/check_integer.py",
+      "reproducibility/check_symbolic.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 15,
+    "id": "phys-smallmac00002-p01",
+    "original_internal_id": "phys-smallmac00002-p01",
+    "original_status": "proved",
+    "original_topic_title": "竞争 SOS 树模型：是否严格不存在反射对称二周期 Gibbs 相？",
+    "paper_title": "Absence of reflection-symmetric two-periodic boundary laws in the competing three-state SOS model",
+    "pdf_sha256": "41fa0605a94fd4b4be22f7ec0edd7adfacce4cb41fe71af892922c0fa2b50bc1",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "27cf45a460b818eb6bc34b95f5a36ef11c0d7b4b2e17ac42452df9fcd07a489c",
+    "source_bundle_sha256": "c1bd7188cb684b00e6ef7397f687ec14e7cf20cfc8236e0b1fb3fdba4d503fce",
+    "source_release_manifest_sha256": "27cf45a460b818eb6bc34b95f5a36ef11c0d7b4b2e17ac42452df9fcd07a489c"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Disproof",
+    "claim_statement": "Counterexample to the universal upper bound hat_sigma_Psi<=bar_sigma exactly as quantified in immutable source.md and problem.md. On the complete three-state graph, observe only 1->2 and 2->1; take symmetric edge triples (k12,k23,k31)=(r,1,1),(1,r,1),(1,1,r)/t_star in consecutive segments of length t_star, with r>0,r!=1. The unique periodic distribution is uniform and bar_sigma=0, whereas the finite same-forward-protocol waiting estimator is strictly positive. The same-direction waiting-density difference has dimensionless x^3 coefficient -(r-1)^2/[6(r+2)]. For r=10, t_star*hat_sigma_Psi>=27/5734400000000000000000000000000000>0, with normalized joint waiting laws and controlled infinite logarithmic tail. This resolves the original conjunction by violating its upper half; no separate universal lower-bound theorem, smooth/fixed-prefactor claim, controller-cost claim, or independent acceptance is included.",
+    "code_files": [
+      "manuscript/build.py",
+      "reproducibility/plot.py",
+      "reproducibility/run.py",
+      "reproducibility/src/independent_replay.py",
+      "reproducibility/src/research_compare.py",
+      "reproducibility/src/research_exact.py",
+      "reproducibility/src/research_expm.py",
+      "reproducibility/src/research_ode.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 16,
+    "id": "phys-smallmac00002-p09",
+    "original_internal_id": "phys-smallmac00002-p09",
+    "original_status": "disproved",
+    "original_topic_title": "周期驱动中，正向相位平均等待时间是否仍给熵产生下界？",
+    "paper_title": "A counterexample to the forward waiting-time entropy bound in periodically driven Markov networks",
+    "pdf_sha256": "39d2d6c6418c6c4b936cbd661d4e17090bae6f40254142ce750ff9b4e00c582e",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "4fb66144c18faa73550f23ae97939d3b8e0b2f724603ef7f6e1ec827411aec8c",
+    "source_bundle_sha256": "99fd57b62fa6e810b4dfff6e1ae1c750c83d8f054ea405b70f85d624339f4d0d",
+    "source_release_manifest_sha256": "4fb66144c18faa73550f23ae97939d3b8e0b2f724603ef7f6e1ec827411aec8c"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For every density operator rho on C^3 tensor C^3 that remains PPT under every global U in U(9), Tr(rho^2)<=17/121. Equality holds if and only if its decreasingly ordered spectrum is (3,1,1,1,1,1,1,1,1)/11. Equivalently, this is the exact maximum over all nonnegative ordered trace-one nine-spectra satisfying BOTH source LMIs. The proposed proof uses exact exhaustive vertices of a three-cut outer polytope, analytic completeness and strict convexity, and both-LMI attainment. This is a proof candidate awaiting a fresh scientific referee.",
+    "code_files": [
+      "manuscript/build.py",
+      "supplement/verify_clipping.py",
+      "supplement/verify_vertices.py"
+    ],
+    "dependency_files": [],
+    "display_number": 17,
+    "id": "phys-smallmac00003-p01",
+    "original_internal_id": "phys-smallmac00003-p01",
+    "original_status": "proved",
+    "original_topic_title": "双qutrit绝对PPT态：最大纯度是否恰为 \\(17/121\\)？",
+    "paper_title": "Maximum purity of absolutely PPT states of two qutrits",
+    "pdf_sha256": "2a7849ba2baccb5745297c05ccc25bce2b9d6d3ea9a9b0885ced1f6ab6899863",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "e789caa427742a171a023a47f504dd546eccab29590bfe961186790e1eecd8ad",
+    "source_bundle_sha256": "a30c660296134dcf422ba88516001697a3260f4def0e305ec001acd49cd772b1",
+    "source_release_manifest_sha256": "e789caa427742a171a023a47f504dd546eccab29590bfe961186790e1eecd8ad"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For every p in [27/250,221/2000] and q=3p, and every finite ensemble of legal qubit density matrices with arbitrary nonnegative normalized weights and arbitrary mean, the full-environment dephrasure private information obeys Pi(E)<=B(p)-(3/250)Var_w(z_a)-(1/1000)(sum_a w_a z_a)^2, where z_a=Tr(Z rho_a) and B is the immutable source symmetric-code maximum. In particular P^(1)(N_p,3p)=B(p) on this subinterval. The rest of the original p interval and regularized private capacity remain unresolved.",
+    "code_files": [
+      "manuscript/build.py",
+      "supplement/code/adaptive_certificate.py",
+      "supplement/code/stinespring_checks.py",
+      "supplement/code/uniform_certificate.py",
+      "supplement/make_tables.py",
+      "supplement/run_replay.py"
+    ],
+    "dependency_files": [
+      "supplement/requirements.txt"
+    ],
+    "display_number": 18,
+    "id": "phys-smallmac00004-p01",
+    "original_internal_id": "phys-smallmac00004-p01",
+    "original_status": "unresolved",
+    "original_topic_title": "退相位—擦除信道：对称双混合态编码是否已经达到单字母私有信息最优？",
+    "paper_title": "Optimal single-letter private information of the dephrasure channel on a noise interval",
+    "pdf_sha256": "6b48b25f7bdfc00d5df8f08936b35326d86b0552faa33545531cc6b6031e6975",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "f0ff57810b6dd5598614f2d06fc7c84acf936860c88b2371ccc42a5b0c43d190",
+    "source_bundle_sha256": "2f0e8eff9a16006232cb8cd4668a591c4aded74fee47405ac89c055d2ebf74d3",
+    "source_release_manifest_sha256": "f0ff57810b6dd5598614f2d06fc7c84acf936860c88b2371ccc42a5b0c43d190"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "The rank3 nearest-Bloch projection bound Q<=sqrt(3/8)(-lambda), equality iff its unit kernel vector has v0=0, and consequent restriction of any source Eq41 counterexample to rank2 nearest Bloch matrices. Ranks concern the 4x4 real moment matrix of the unique closest state in the complete spin-coherent hull. The source all-state inequality is unresolved; zero-dipole formulas are illustrative corollaries and rank2 exploratory formulas are outside the claim.",
+    "code_files": [
+      "reproducibility/build.py",
+      "reproducibility/verify_exact.py",
+      "reproducibility/verify_scope.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 19,
+    "id": "phys-smallmac00003-p02",
+    "original_internal_id": "phys-smallmac00003-p02",
+    "original_status": "unresolved",
+    "original_topic_title": "spin-1混合态：相干态凸包距离是否受同最小Bloch本征值的纯态控制？",
+    "paper_title": "A rank-three projection bound for the quantumness of spin-1 states",
+    "pdf_sha256": "4f6b846a555a8338786ea73dad8818b08b5b8e14ec1b15077af18cf8336c7314",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "e9f2e9c394fb6b8f1797626669e0ff3922d4f3a04e63b8885130a758efb5f590",
+    "source_bundle_sha256": "0b8510067c30f008924a19c0cedc8a1e094f754505cee4281f510f1f1a1ea5d1",
+    "source_release_manifest_sha256": "e9f2e9c394fb6b8f1797626669e0ff3922d4f3a04e63b8885130a758efb5f590"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For a normalized-Haar pure qubit psi and three copies independently subjected to D_delta(X)=(1-delta)X+(delta/2)Tr(X)I, every completely positive trace-nonincreasing map E:M8->M2 that, tensored with any finite qubit identity, preserves the stabilizer positive cone has success-weighted conditional Haar fidelity F_delta(E)<=1-delta/2 whenever its average success is s>0. For every 0<delta<1 and every 0<s<=1, E_s=s Tr_(two inputs) is admissible and attains equality. Therefore the maximum in the unchanged source.md is exactly 1-delta/2 throughout its full stated domain. This three-input proof candidate does not assert the source paper's broader arbitrary-copy conjecture.",
+    "code_files": [
+      "manuscript/build.py",
+      "reproduction/check_physics_inputs.py",
+      "reproduction/input_a.py",
+      "reproduction/input_b.py",
+      "research/exhaustive_certificate.py",
+      "research/independent_replay.py",
+      "supplement/affine_replay.py",
+      "supplement/phase_replay.py",
+      "supplement/run.py"
+    ],
+    "dependency_files": [
+      "supplement/requirements.txt"
+    ],
+    "display_number": 20,
+    "id": "phys-smallmac00005-p01",
+    "original_internal_id": "phys-smallmac00005-p01",
+    "original_status": "proved",
+    "original_topic_title": "三份未知噪声qubit：完全稳定子保持操作能否提高普适提纯保真度？",
+    "paper_title": "Three-copy universal qubit purification under complete stabilizer preservation",
+    "pdf_sha256": "ada63c11955f0359e88f6505f421f45cd7acf81c73bbc1ea00e792258f9c9774",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "5a5f5f44afcd772b7ccd53627e1ec9bdc89fb72a1256310b74821736b4feebf2",
+    "source_bundle_sha256": "a8387d4e3b01bd1c57f1a6a041394492c7dc08d697feb885351055c166480df6",
+    "source_release_manifest_sha256": "5a5f5f44afcd772b7ccd53627e1ec9bdc89fb72a1256310b74821736b4feebf2"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Disproof",
+    "claim_statement": "The frozen universal complete-three-state positive-branch phase bound is false. For the exact terminating-decimal M=2 parameters in evidence/counterexample-parameters.json, the unique strictly positive periodic state satisfies A>0 and B>0, while A-k0,min B<0; specifically the primary outward-rounded certificate gives A in [0.1913253462459419,0.8081296470533585], B in [6.1034541204110998,6.1582195856729802], and A-k0,min B in [-5.966894239630766,-5.295324473154014].",
+    "code_files": [
+      "evidence/certify_counterexample.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 21,
+    "id": "phys-smallmac00005-p02",
+    "original_internal_id": "phys-smallmac00005-p02",
+    "original_status": "disproved",
+    "original_topic_title": "三态非线性周期响应的相位滞后，是否受最慢跃迁前因子约束？",
+    "paper_title": "A computer-assisted three-state counterexample to a nonlinear phase-lag bound",
+    "pdf_sha256": "376591c6d74c0ddce6d8bd1a88b9b7a2262f27871c23b5cad8db03b9c580eb7d",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "2fb286fd1b7770b5b4c9b144ed3030c1e4ec45c44523df94ee2422afcf7063c8",
+    "source_bundle_sha256": "085dc42a97deec286bad40fe88cf972684fd7ca69437b2ad70bc523a63379e15",
+    "source_release_manifest_sha256": "2fb286fd1b7770b5b4c9b144ed3030c1e4ec45c44523df94ee2422afcf7063c8"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For the spinless magnetic Laplacian H_b=(-i nabla-b(-y,x)/2)^2 on the unit disk, with Dirichlet eigenvalues lambda_k(b) and magnetic-Neumann eigenvalues mu_k(b) ordered with multiplicity, mu_3(b)<=lambda_1(b) for every b>0.",
+    "code_files": [
+      "evidence/verify-variational-identities.py"
+    ],
+    "dependency_files": [],
+    "display_number": 22,
+    "id": "phys-smallmac00005-p03",
+    "original_internal_id": "phys-smallmac00005-p03",
+    "original_status": "proved",
+    "original_topic_title": "磁圆盘的第三个Neumann能级，是否始终不高于Dirichlet基态？",
+    "paper_title": "A third magnetic Neumann level below the Dirichlet ground state on the disk",
+    "pdf_sha256": "fbe0b959aefbbe6de47de9d00fb5ac59219107dc5b08a91d866693948e8567c1",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "60f826122daaf4af401f71ad1b42d4e3a1d7a94073b31dab8ba7af321c019556",
+    "source_bundle_sha256": "bc218900cd30f526f423ea1394e69cb4ac781f42be02dd5bd8a1686e68843a8d",
+    "source_release_manifest_sha256": "60f826122daaf4af401f71ad1b42d4e3a1d7a94073b31dab8ba7af321c019556"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Disproof",
+    "claim_statement": "For the layered graph A(3),B(4),C(4), complete A-B edges, a B-C matching and C clique, with E/epsilon=(0x3,1x4,64x4), q=(10001/10000,33/32,64), beta epsilon=log q, K=2 and exact Gibbs initial state, A1>63/125 and (A0+A1)/2>251/500. For all independent perturbations |delta(E_i/epsilon)|<=1/1000 with the same temperatures and a redefined Gibbs initial state, A1>1003737/2000000 and the mean>8014821/16000000, both >1/2. This admissible finite example disproves the original all-regular-graph single-step activity bound in source.md/problem.md. It also violates its two-step averaged counterpart. Both are research claims submitted for fresh review, not an accepted scientific audit.",
+    "code_files": [
+      "code/compare_layered.py",
+      "code/compare_reproduction.py",
+      "code/layered_exact_a.py",
+      "code/layered_exact_b.py",
+      "code/reconstruct_a.py",
+      "code/reconstruct_b.py",
+      "reproducibility/build_manuscript.py",
+      "reproducibility/history_replay.py",
+      "reproducibility/make_display.py",
+      "reproducibility/replay.py",
+      "reproducibility/scalar_certificate.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 23,
+    "id": "phys-smallmac00006-p01",
+    "original_internal_id": "phys-smallmac00006-p01",
+    "original_status": "disproved",
+    "original_topic_title": "单调降温的Glauber退火，每步跳跃概率是否始终不超过 \\(1/2\\)？",
+    "paper_title": "Activity above one half in finite Glauber annealing",
+    "pdf_sha256": "00baae5e50a1b844cde5b00d3dc7cd9d59d37e6adf8fea5afe2fb14aa4e7d0ae",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "8c60d78a6b37b97614dcfd62132af18267e87989884dabe41e0823bb98f125aa",
+    "source_bundle_sha256": "a572aa96bd26ab360b3045c7ebd370324731c2b905be8d245226121458b8c52a",
+    "source_release_manifest_sha256": "8c60d78a6b37b97614dcfd62132af18267e87989884dabe41e0823bb98f125aa"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Disproof",
+    "claim_statement": "For the exact independent uniform phase-noise graph-state model of source.md/problem.md, the connected 5x4 biadjacency matrix with rows (1001),(1001),(1001),(0101),(0011) at P=199/200 has GF(2) rank3, no zero rows/columns, n_A=5>4=n_B>=3, and -0.0043<S_A-S_B<-0.0042 bits, with I_A>2.7 and I_B>2.7 bits. This is a strict counterexample to the frozen universal node-count ordering. More generally, for every integer r>=3, Gamma_r has rows v1,v1,v1,v2,...,vr, vi=ei+e_(r+1) in F2^(r+1); it is connected of size(r+2)x(r+1), rankr, and at the same P has Delta_r<=Delta_3<-0.0042 and I_B(r)>I_A(r)>2.7. These are coherent-information lower bounds, not equalities for optimal distillable entanglement.",
+    "code_files": [
+      "manuscript/build.py",
+      "supplement/replay.py"
+    ],
+    "dependency_files": [],
+    "display_number": 24,
+    "id": "phys-smallmac00006-p02",
+    "original_internal_id": "phys-smallmac00006-p02",
+    "original_status": "disproved",
+    "original_topic_title": "均匀噪声图态中，节点较多的一侧是否总有较高的相干信息？",
+    "paper_title": "Coherent information in uniformly noisy graph states is not ordered by subsystem size",
+    "pdf_sha256": "65bfe243825f9cf09109935583912cdc0f64b196f24667bbfd5bdeab94fa1e51",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "fb2c4e1422dbb00e93ac3caf9317da8373f013fbf3410185f9f73413654cc403",
+    "source_bundle_sha256": "7facc77c48c9c63b601b504b4ad65839f962d8af11db326d997fb0bc43fe3fae",
+    "source_release_manifest_sha256": "fb2c4e1422dbb00e93ac3caf9317da8373f013fbf3410185f9f73413654cc403"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "Existence of admissible parameters in the original source ODE with a hyperbolically stable unique positive equilibrium and at least four nested hyperbolic periodic orbits, repelling/attracting/repelling/attracting outward, all in a compact positive annulus.",
+    "code_files": [
+      "manuscript/build.py",
+      "supplement/code/dyadic_interval.py",
+      "supplement/code/independent_certificate.py",
+      "supplement/code/independent_lyapunov.py",
+      "supplement/code/research_certificate.py",
+      "supplement/code/research_normal_form.py",
+      "supplement/replay.py"
+    ],
+    "dependency_files": [],
+    "display_number": 25,
+    "id": "phys-smallmac00006-p04",
+    "original_internal_id": "phys-smallmac00006-p04",
+    "original_status": "proved",
+    "original_topic_title": "指定两浓度幂律反应系统，能否严格认证四条嵌套极限环？",
+    "paper_title": "指定两浓度幂律反应系统，能否严格认证四条嵌套极限环？",
+    "pdf_sha256": "a1ef2305011cdb54e66a8dd811727fa724b1de4a03dbcbbc82dad66bc300bae0",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "c6a0fb381e45d266401d6a19c0527a3822c39adc8f407244685d93266d7c5b98",
+    "source_bundle_sha256": "3ca77b12b1a3b81217ad353976bf90365b0e4408a96ae00ea223a329563c3080",
+    "source_release_manifest_sha256": "c6a0fb381e45d266401d6a19c0527a3822c39adc8f407244685d93266d7c5b98"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Disproof",
+    "claim_statement": "In the exact average branch-speed-budget relaxation defined in source.md and problem.md, take e=1/2, C_off=(sin(3/5),-sin(2/5)), and d=(sin(3/5)+sin(2/5))/2. Both C_off and (d,-d) lie in Q_(1/2). The submitted computer-assisted proof gives H*(C_off,1/2)>0.7758 bits and H*((d,-d),1/2)<0.7653 bits, so their difference exceeds 0.0105 bits. This counterexample disproves the original universal common-bias equality. It does not refute the proven midpoint lower-bound lemma or assert an optimal physical attack under a true total-state-variance constraint.",
+    "code_files": [
+      "manuscript/build.py",
+      "supplement/decimal_grid.py",
+      "supplement/interval_cells.py",
+      "supplement/plot_gap.py",
+      "supplement/reproduce.py"
+    ],
+    "dependency_files": [],
+    "display_number": 26,
+    "id": "phys-smallmac00007-p01",
+    "original_internal_id": "phys-smallmac00007-p01",
+    "original_status": "disproved",
+    "original_topic_title": "量子速度极限的随机性认证：固定相关差，输出共同偏置是否真的无关？",
+    "paper_title": "Common output bias matters in randomness certification from quantum speed limits",
+    "pdf_sha256": "205fefcbf6ed0b08c85db20f868dadb99b5905855d61092d06ae0e55063baef1",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "0aa87d9f24a9e5183d8908b097c9e829b7a82e62793629cacdb372e1b1e942fa",
+    "source_bundle_sha256": "3bff771d71cad8eab599941bef80875f9255174d5edf5dd786bd6dcd4c79504e",
+    "source_release_manifest_sha256": "0aa87d9f24a9e5183d8908b097c9e829b7a82e62793629cacdb372e1b1e942fa"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For every positive integer s,q,t, put n=s+t+q+3. In the frozen non-lazy threshold-graph random-walk model, each construction code 01 0^t 1^s 0^q 1 and 0 1^s 0^t 1 0^q 1 has Kemeny's constant strictly less than max{F_n(s+1),F_n(s+t+1)}, and hence strictly less than or equal to the global pineapple bound B_n. The original conjecture for all legal threshold codes remains unresolved.",
+    "code_files": [
+      "code/check_surgery_exact.py",
+      "code/derive_surgery_exact.py"
+    ],
+    "dependency_files": [],
+    "display_number": 27,
+    "id": "phys-smallmac00007-p03",
+    "original_internal_id": "phys-smallmac00007-p03",
+    "original_status": "unresolved",
+    "original_topic_title": "阈值输运网络中，单核心菠萝结构是否已经最慢？",
+    "paper_title": "A two-pineapple envelope for split-core threshold random walks",
+    "pdf_sha256": "49467bb628a90e461ce25a21573be1cd846283b369973d1debf349925235df5b",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "aad229f4818cdf1b6c7b44fd816a9572abfe2628b32cdca10c1cb8a358990723",
+    "source_bundle_sha256": "776a874021b5092c718ef09cc0fa7376a96f3c414cd46c578387549d1f8d8408",
+    "source_release_manifest_sha256": "aad229f4818cdf1b6c7b44fd816a9572abfe2628b32cdca10c1cb8a358990723"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Disproof",
+    "claim_statement": "原始固定标签双端外度≤1的Boolean OR凝聚保持LC等价的全称命题为假。完整证书：V={1,…,6}，C={1,2,3}，E(G)={13,16,24,35,46}，E(G′)={13,15,24,36,46,56}；G′=τ5τ1τ3G，两端连通且C外度均(1,1,1)、r_C=3。凝聚后B={4,5}对{6,c}的切割矩阵分别[[1,1],[0,1]]与[[1,1],[1,1]]，GF(2)秩2与1，边缘谱(1/4×4)与(1/2×2,0×2)，因此不LU等价，特别不LC等价。此反例允许C不连通；不主张无标签版本、C连通修正版或最小性。",
+    "code_files": [
+      "evidence/research-pass1/check_witness.py",
+      "evidence/research-pass1/replay_quantum.py",
+      "manuscript/build.py",
+      "supplement/referee_replay.py",
+      "supplement/reproduce.py"
+    ],
+    "dependency_files": [
+      "supplement/requirements.txt"
+    ],
+    "display_number": 28,
+    "id": "phys-smallmac00008-p01",
+    "original_internal_id": "phys-smallmac00008-p01",
+    "original_status": "disproved",
+    "original_topic_title": "图态凝聚：内部顶点各接至多一个外部顶点，是否足以保留局部Clifford等价？",
+    "paper_title": "Comment on “Distinguishing graph states by the properties of their marginals”",
+    "pdf_sha256": "de5b0bbf07beff64dd19dd94e8923c63d588283482fd425507008575d661145b",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "160304cc7046687eb8d09c0c964e3a0237899748b84bc9b273120f237325256a",
+    "source_bundle_sha256": "472144baebe9b38e468cf8db8e85f552c2afac14407009190ec61cd866bdfa8d",
+    "source_release_manifest_sha256": "160304cc7046687eb8d09c0c964e3a0237899748b84bc9b273120f237325256a"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For every qubit CPTP channel with strictly positive 4-by-4 unnormalized Choi matrix, in the two-use protocol of problem.md with a fresh minimal four-dimensional environment at each use, the same fixed U(4) orthonormal environment measurement at both uses, all outcomes retained, and the specified polar-unitary Markovian and full-record Bayesian recoveries, max_U f_B(U)=max_U f_M(U).",
+    "code_files": [
+      "evidence/compare_inputs.py",
+      "evidence/o4_frame_lemma_scan.py",
+      "evidence/o4_rank_one_lemma_replay.py",
+      "evidence/reproduce-a.py",
+      "evidence/reproduce-b.py",
+      "evidence/takagi_o4_scan.py"
+    ],
+    "dependency_files": [],
+    "display_number": 29,
+    "id": "phys-smallmac00008-p02",
+    "original_internal_id": "phys-smallmac00008-p02",
+    "original_status": "proved",
+    "original_topic_title": "全秩qubit噪声的两步环境反馈：最优固定测量下，保存历史记录是否仍无增益？",
+    "paper_title": "No optimized history gain in two-use environment feedback for full-rank qubit channels",
+    "pdf_sha256": "6e838d604ff092bdc9ae34447711a3f7f2c2387fce39a44340e579c147f5b0e4",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "cb7e4c38ac07142e1e098b3ead2aa74f7061f0b64792848772c4b18292d10acb",
+    "source_bundle_sha256": "8294218d821b22fa7bb4c0d6bbe0aea3538a75fa2fc394944015dd9026db0864",
+    "source_release_manifest_sha256": "cb7e4c38ac07142e1e098b3ead2aa74f7061f0b64792848772c4b18292d10acb"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For every strictly positive finite set of twelve directed rates k on K4 with sum k=1 and every d in [-1,1]^12 in the original column-generator model, r_j=partial_lambda log pi_j|0 lies in the convex hull of v^alpha_j=G^alpha_j-sum_l pi_l G^alpha_l over exactly the families unique under the full directed-edge multiplicity vector. More strongly, the 4x12 rooted-tree edge-marginal matrix H(k) is a convex combination of the unique-family incidence matrices with nonnegative normalized weights depending on k only. Proof: research/proof.md and the complete 93-coefficient exact certificate. This resolves only the full K4 source claim, not the general-graph conjecture, full-hull attainability or full-tree coupling.",
+    "code_files": [
+      "manuscript/build.py",
+      "supplement/check_cofactors.py",
+      "supplement/check_prufer.py",
+      "supplement/make_tables.py"
+    ],
+    "dependency_files": [],
+    "display_number": 30,
+    "id": "phys-smallmac00009-p01",
+    "original_internal_id": "phys-smallmac00009-p01",
+    "original_status": "proved",
+    "original_topic_title": "四态反应网络的稳态灵敏度，是否落在唯一生成树家族的凸包内？",
+    "paper_title": "Unique spanning-tree families bound the static response of every complete four-state Markov network",
+    "pdf_sha256": "b1cd61a02e5e86b3bf3a560ae930ae5fe765244b6a90da43be4750f0b4db3f67",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "ff2d704e2ab61fd48d051579b6291bcfbba889d65c6c5462115a5364a0e690af",
+    "source_bundle_sha256": "de148113c5a303c51b7c8567e5bd8958d23a3f4e7b1e4c1337153c9fae0b863d",
+    "source_release_manifest_sha256": "ff2d704e2ab61fd48d051579b6291bcfbba889d65c6c5462115a5364a0e690af"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For every complex unit vector psi in C^8, under the complete labeled three-qubit common-axis effects E_b(n)=tensor_j(I+b_j n.sigma)/2 for all unit n and all b, uniqueness of P=|psi><psi| among pure states implies uniqueness among all complex density matrices. More strongly, every nontrivial density-matrix competitor rho with the same data has K=rho-P of rank two with eigenvalues +/-s, and P,rho share its two-dimensional range; Q=P-2Tr(PK)K/Tr(K^2) is a distinct pure competitor. This is an exact three-qubit identifiability theorem, not an all-N or finite-error certification claim. A complete proposed computer-assisted proof is submitted for fresh review.",
+    "code_files": [
+      "code/check_antipodal_rotation.py",
+      "code/check_full_kernel_structure.py"
+    ],
+    "dependency_files": [],
+    "display_number": 31,
+    "id": "phys-smallmac00009-p02",
+    "original_internal_id": "phys-smallmac00009-p02",
+    "original_status": "proved",
+    "original_topic_title": "三qubit均匀旋转测量：纯态唯一性是否足以排除所有混态仿冒？",
+    "paper_title": "Pure-state uniqueness under common-axis measurements of three qubits excludes mixed-state impostors",
+    "pdf_sha256": "1d2601e46a3aad2aebaac4f2ed034d2c8379fcaad9e3969b32a8c9e242bff4a9",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/REPRODUCE.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "062a19b8c6f8de042f248a879f021a5008bea3d50f3f3f7c664c87db2800ebfd",
+    "source_bundle_sha256": "a0a9b968f3c8156b724769943fbec9466d189af61001ddead35d65570badde73",
+    "source_release_manifest_sha256": "062a19b8c6f8de042f248a879f021a5008bea3d50f3f3f7c664c87db2800ebfd"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For any order n with a real normalized Hadamard F and any real orthogonal projector P, U=F(I-2P) has the exact flat-noise transition ray |V_lambda,ij|^2=(1-lambda)|U_ij|^2+lambda/n for every lambda in [0,1], with V_lambda=sqrt(1-lambda)U+i sqrt(lambda)F unitary. Within this fixed real quadrature ansatz the condition is also necessary: F^T U is a symmetric orthogonal involution. At n=4 the rank-two projector component contains a locally four-dimensional image of noncirculant B(U) matrices.",
+    "code_files": [
+      "research/hadamard_involution.py"
+    ],
+    "dependency_files": [],
+    "display_number": 32,
+    "id": "phys-smallmac00010-p01",
+    "original_internal_id": "phys-00010-p01",
+    "original_status": "unresolved",
+    "original_topic_title": "四能级酉跃迁掺入均匀噪声后，能否总由另一个单次酉跃迁实现？",
+    "paper_title": "Exact flat-noise transition rays from Hadamard involutions in four-level systems",
+    "pdf_sha256": "b3790c18b5fbf258fd3f64a5d441920fde7ae8cf4ff4f293e101baaf709d2c65",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "6ce5996fba9545d5fe20f32e7e3f1084f4e1e91d0db7eeeff85e37717480b684",
+    "source_bundle_sha256": "1335d1cee391a04f14d65e7ab07c7bca9432088c3fa52dc519fd33d782bf5fdc",
+    "source_release_manifest_sha256": "6ce5996fba9545d5fe20f32e7e3f1084f4e1e91d0db7eeeff85e37717480b684"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For the explicitly specified fixed four-input-qubit, seven-|0>-ancilla Clifford+T circuit in evidence/seven-t-witness.json, using seven T or T-dagger gates and retaining all 2048 terminal computational-basis outcomes, the effective POVM operator span and frame have exact real rank 220. The original universal seven-T informational-incompleteness question remains unresolved.",
+    "code_files": [
+      "evidence/certify_220_exact.py",
+      "evidence/replay_explicit_seven_t.py"
+    ],
+    "dependency_files": [],
+    "display_number": 33,
+    "id": "phys-smallmac00010-p04",
+    "original_internal_id": "phys-00010-p04",
+    "original_status": "unresolved",
+    "original_topic_title": "四qubit的单设置完整层析，七个T门是否仍然不够？",
+    "paper_title": "A seven-$T$ fixed measurement accessing 220 four-qubit Pauli directions",
+    "pdf_sha256": "917c2d7daf6435103fe1aa5533d71136faac5fe2af48fe05c4bfce9244f01176",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "9625149f8a5ddcd7b11fd17b92df817e3638804b6073b2f43be1527e45c372ca",
+    "source_bundle_sha256": "16aa3c069c72cadb3879645f905c72b1e456d4fbbea87606e12b2d719b6b9724",
+    "source_release_manifest_sha256": "9625149f8a5ddcd7b11fd17b92df817e3638804b6073b2f43be1527e45c372ca"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For the exact infinite-state three-species unit-birth feedback ring with fixed a_i,tau_i>0 and bounded nonconstant h_i:N_0->R, put f_i(n)=a_i+epsilon h_i(n). For |epsilon| H_k<=a_k/2, each stationary Fano factor obeys F_i(epsilon)-1=epsilon^2 S_i/a_i+R_i(epsilon), where S_i=integral_0^infty exp(-t/tau_i) Cov_0(h_i(Y_{i-1}(0)),h_i(Y_{i-1}(t)))dt>0, Y_{i-1} is a stationary baseline immigration-death chain, and |R_i(epsilon)|<=K_i|epsilon|^3 for the explicit finite K_i in evidence/research-pass3.md. Consequently all three F_i>1 for each fixed triple at sufficiently small nonzero epsilon. No claim is made for arbitrary coupling strength; the original conjecture remains unresolved.",
+    "code_files": [
+      "evidence/weak_feedback_bounds.py",
+      "evidence/weak_feedback_check.py"
+    ],
+    "dependency_files": [],
+    "display_number": 34,
+    "id": "phys-smallmac00010-p02",
+    "original_internal_id": "phys-00010-p02",
+    "original_status": "unresolved",
+    "original_topic_title": "三组分随机生化反馈环，是否至多一个组分能低于Poisson噪声？",
+    "paper_title": "Weak regulation increases stationary abundance noise in a three-species stochastic feedback ring",
+    "pdf_sha256": "14df10d9f13d2982b22ba6be0bf2ad6e1751da1107a12daddc0e7a3bfab9f1cc",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCE.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "e20a8798ba65fdae25509de63afd6260425d9bbb51d15a46e6f88c2612d430c3",
+    "source_bundle_sha256": "5f853d414f9f4870dc9c9171dd4d7e3ef64ec202d6ac9461a5f727ad8c5e66e3",
+    "source_release_manifest_sha256": "e20a8798ba65fdae25509de63afd6260425d9bbb51d15a46e6f88c2612d430c3"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "Let D be the reverse-depolarizing qubit channel D_(4/3), and let Psi be any fixed qubit entanglement-breaking channel. For Phi_e=(1-e)D+e Psi as e decreases to zero through positive values, put c=<Omega|J_Psi/2|Omega>. If c>0, then K_* chi(Phi_e)-C_E(Phi_e)=c e log2(1/e)+O_Psi(e). If c=0, Psi has Bloch action r -> -Q r with Q positive semidefinite and trace one, and the gap is [K_*/2](lambda_max(Q)-1/3)e+O_Psi(e^2). The gap is strictly positive for all sufficiently small e>0 whenever Psi differs from D; if Psi=D, equality holds identically. All capacities are fully optimized and C=chi for these EB maps.",
+    "code_files": [
+      "manuscript/reproducibility/make_figure.py"
+    ],
+    "dependency_files": [
+      "manuscript/reproducibility/requirements.txt"
+    ],
+    "display_number": 35,
+    "id": "phys-smallmac00011-p02",
+    "original_internal_id": "phys-00011-p02",
+    "original_status": "unresolved",
+    "original_topic_title": "完全破坏纠缠的 qubit 信道，预共享纠缠的容量增益是否仍不超过已知反向去极化基准？",
+    "paper_title": "Directional stability of the reverse-depolarizing entanglement-assistance benchmark for qubit entanglement-breaking channels",
+    "pdf_sha256": "32a602aba00a77540833a2c4fd361927ffa16ec21a5b54e6919b83cb917a45e5",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "ddd677f47fca020991f4f66207df6ca685c9853e25098b28e1fa048df12e972f",
+    "source_bundle_sha256": "d11e846f5311dcb8332313540d677212ed4c39076643ca6605f6b22f7f8df980",
+    "source_release_manifest_sha256": "ddd677f47fca020991f4f66207df6ca685c9853e25098b28e1fa048df12e972f"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For every U,V in U(3), there exists W in U(3) such that |W_ij|^2 equals [B(V)B(U)]_ij for all i,j. Equivalently, the order-three unistochastic set U_3 is a monoid under ordinary matrix multiplication.",
+    "code_files": [
+      "code/compare_inputs.py",
+      "code/exact_qutrit_monoid_proof.py",
+      "code/exterior_triangle_orthostochastic.py",
+      "code/reproduce_baseline.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 36,
+    "id": "phys-smallmac00012-p01",
+    "original_internal_id": "phys-00012-p01",
+    "original_status": "proved",
+    "original_topic_title": "三能级的两段“酉演化后测量”，能否总压缩成一段？",
+    "paper_title": "Order-three unistochastic matrices form a monoid: exact compression of measured qutrit dynamics",
+    "pdf_sha256": "cea65f90b2da9e6ec48deaec697395da93dd127dc4cd8c511b917581c80b379b",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "cd5c2f9e716f0339b87d45696cae37af20fad17dd40b37897f2c08cb4450c0de",
+    "source_bundle_sha256": "704f73bc41e38c293e6e56c6bb1f6ed31c3289bf05835c1d0f55c19adcd5ef40",
+    "source_release_manifest_sha256": "cd5c2f9e716f0339b87d45696cae37af20fad17dd40b37897f2c08cb4450c0de"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "Let d>=2 and let B be a d-by-d circulant bistochastic matrix with B[i,j]=b[(i-j) mod d]. If B[i,j]=|U[i,j]|^2 for some arbitrary U in U(d), then for every Fourier mode k, lambda_k(B)=tr(D_k U D_k^dagger U^dagger)/d belongs to the closed unit d-hypocycloid H_d. For d=5, the circulant matrix generated by b=(209/500,3/40,7/500,3/40,209/500) satisfies every row and column bracelet inequality but is not unistochastic, because lambda_1=((465+343*sqrt(5))/2000) exp(i*pi/5) lies strictly outside H_5. Consequently, a five-hypocycloid violation cannot supply the general-unitary-versus-circulant-unitary separator required to disprove P_5.",
+    "code_files": [
+      "code/hypocycloid_gate_no_go.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 37,
+    "id": "phys-smallmac00012-p02",
+    "original_internal_id": "phys-00012-p02",
+    "original_status": "unresolved",
+    "original_topic_title": "五站点环的转移概率具有平移对称性，是否总能选择同样对称的酉实现？",
+    "paper_title": "A hypocycloid spectral bound for circulant unistochastic matrices without symmetric amplitudes",
+    "pdf_sha256": "f84359ff8b5f59eae8f5f7ea0471a1edfde99f3305758afd4a04660f93245b89",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "c87eebe0ed40b5b9387130f685cae85a2364510f9b0ba6c075c6647d7c52e0b5",
+    "source_bundle_sha256": "2d3011999f550c4ccdf26781ee24d269e7050295c6810956eb7cd9ef2aa07434",
+    "source_release_manifest_sha256": "c87eebe0ed40b5b9387130f685cae85a2364510f9b0ba6c075c6647d7c52e0b5"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For the dimensionless homogeneous-field magnetic Laplacian H_{a,b}=(-i nabla-A_b)^2 on every concentric annulus A_a={a<r<1}, with 0<a<1, b>0, no added harmonic Aharonov--Bohm flux, and respectively magnetic Neumann or Dirichlet conditions on both boundary circles, the globally ordered eigenvalues counted with multiplicity satisfy mu_3(A_a,b) <= lambda_1(A_a,b).",
+    "code_files": [
+      "scripts/check_universal_annulus_ordering.py"
+    ],
+    "dependency_files": [],
+    "display_number": 38,
+    "id": "phys-smallmac00014-p01",
+    "original_internal_id": "phys-00014-p01",
+    "original_status": "proved",
+    "original_topic_title": "均匀磁场圆环上的第三 Neumann 能级是否仍低于 Dirichlet 基态？",
+    "paper_title": "The third magnetic Neumann eigenvalue does not exceed the Dirichlet ground state on an annulus",
+    "pdf_sha256": "50ea1afba6898a50806c5632790976d921c1ada98a9fbb93035586975105c09c",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "87ce326380694d77b06fe45a320d84b638d035ba2903bd061c0223cea7ac4071",
+    "source_bundle_sha256": "7c6d5075e39b268bb59337896687a182b665a581398ea1846e486ad6b0a63204",
+    "source_release_manifest_sha256": "87ce326380694d77b06fe45a320d84b638d035ba2903bd061c0223cea7ac4071"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For every qubit CPTP map with positive-definite Choi matrix, using the same four-outcome orthogonal projective measurement on each fresh minimal environment, the separately optimized current-outcome Markovian polar-recovery and full-history/final-only Bayesian entanglement fidelities are equal at three uses. More strongly, within the same physical model they are equal for every positive integer n and have common value (1+||Q||_*^n)/2, where Q is the determinant polarization matrix of any minimal Kraus frame.",
+    "code_files": [
+      "code/reproduce.py",
+      "code/search_three_use.py",
+      "code/takagi_commuting_frame.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 39,
+    "id": "phys-smallmac00014-p11",
+    "original_internal_id": "phys-00014-p11",
+    "original_status": "proved",
+    "original_topic_title": "三次固定环境测量时，历史反馈首次产生优势吗？",
+    "paper_title": "No history advantage in repeated environment-assisted qubit recovery",
+    "pdf_sha256": "9a49cb2b4514042a1723a4d86ca89ec90429a1300144430b9baa11196312efd5",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "ce503d80b959b0c9fa556acb4cb208cb4608e9e58199b648ffc0fc55e52d1d23",
+    "source_bundle_sha256": "0abc2c195f0df8c8574cb9dcf4d2edaf859800985924eee713eefcd5b19631f2",
+    "source_release_manifest_sha256": "ce503d80b959b0c9fa556acb4cb208cb4608e9e58199b648ffc0fc55e52d1d23"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "In the complete symmetric K3 model k_ij(t)=k0 exp[(E_i(t)-E_j(t))/2], for arbitrary finite static offsets and every non-gauge finite real Fourier perturbation E(t)=E0+epsilon e(t), the unique periodic state has A=epsilon^2 A_2+O(epsilon^3) and B=epsilon^2 B_2+O(epsilon^3), with B_2>0 and A_2>2 k0 B_2. Thus the limiting weak-drive phase is strictly below arctan[Omega/(2 k0)] at finite offsets; the uniform factor 2 is sharp in the effective-two-state infinite-offset limit. This does not settle the original all-amplitude claim.",
+    "code_files": [
+      "evidence/search_k3_phase.py",
+      "evidence/verify_k3_linear_response.py",
+      "manuscript/figure_sharpness.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 40,
+    "id": "phys-smallmac00014-p03",
+    "original_internal_id": "phys-00014-p03",
+    "original_status": "unresolved",
+    "original_topic_title": "对称三态环是否恢复原相位滞后上界？",
+    "paper_title": "A sharp weak-driving phase-lag bound for a symmetric three-state Markov cycle",
+    "pdf_sha256": "7667f1aa243e7792722c8db7152f6e99e931e77eeecf8b198063799005d645c7",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "0365683b4e94e6f6938150f8e0fe79f4a7cc7bcbcfac890f7149f22e29d35a66",
+    "source_bundle_sha256": "4e043da05d5ac54ad519e856036fd0981fea95e02bb9a2a5e6d00a03ca91eae1",
+    "source_release_manifest_sha256": "0365683b4e94e6f6938150f8e0fe79f4a7cc7bcbcfac890f7149f22e29d35a66"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "In the frozen symmetric-splitting complete-graph model, for every integer N>=3, k0>0, finite offset vector, period T>0, and finite real Fourier drive, the weak coefficients satisfy A2>=2k0 B2. At finite offsets the inequality is strict whenever at least one energy difference varies in time; equality is exactly the zero-response class A2=B2=0. The coefficient 2 is optimal but is attained by a response-active system only at the excluded offset boundary, approached by x1=x2=1 and x3=...=xN=delta down to zero.",
+    "code_files": [
+      "evidence/check_spectral_proof.py",
+      "evidence/reproduce_response.py",
+      "evidence/test_spectral_gap.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 41,
+    "id": "phys-smallmac00015-p01",
+    "original_internal_id": "phys-00015-p01",
+    "original_status": "proved",
+    "original_topic_title": "对称完全图 K_N 的弱驱动相位常数是否统一等于二态极限？",
+    "paper_title": "A sharp weak-driving phase bound for symmetric complete Markov networks",
+    "pdf_sha256": "b1f0bc2e705fdf8050a8255736af3453f2f978db19ec6ad1c69f8e0afbbbd8e5",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "e721961829be473a4cfd7bceb49320a6ae7a8db49754b3ce5a975cc1f1cf7fa3",
+    "source_bundle_sha256": "d0eff67aa3e39b6ef53fd16285270537c1fddf037745771cd03dec9bdda5bfd8",
+    "source_release_manifest_sha256": "e721961829be473a4cfd7bceb49320a6ae7a8db49754b3ce5a975cc1f1cf7fa3"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "In the model and policy classes fixed by problem.md, the earliest use count at which retained coarse environment-bit history can outperform every current-bit-only qubit controller is n_*=2. Specifically, for the full-Choi-rank generalized-amplitude-damping channel with p=18/25, gamma=3/10, the displayed ordered minimal Kraus representation, and balanced readout 03|12, every arbitrary-CPTP n=2 Markov policy satisfies F_2^M<=456/625, while an explicit full-history policy attains 1831/2500. Therefore Delta_2>=7/2500>0; at n=1 the two policy classes coincide.",
+    "code_files": [
+      "scripts/verify_gad_global_bound.py"
+    ],
+    "dependency_files": [],
+    "display_number": 42,
+    "id": "phys-smallmac00015-p06",
+    "original_internal_id": "phys-00015-p06",
+    "original_status": "proved",
+    "original_topic_title": "把四个环境结果粗粒化成两个时，qubit 历史反馈首次何时有增益？",
+    "paper_title": "A two-use history advantage under one-bit coarse-grained environment feedback",
+    "pdf_sha256": "907dd621c523c7bc3eb799f6c1f4b44ab843cf036199103d7f16a9a7c5c598c2",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "7b3f2ad26beb2eea45051deb261a135d70251e6fe670467246771d3d0df4ea63",
+    "source_bundle_sha256": "04737c73e365bce8050e351af5221a0375eff628bfa8b3e391f970bbb9ce9eb2",
+    "source_release_manifest_sha256": "7b3f2ad26beb2eea45051deb261a135d70251e6fe670467246771d3d0df4ea63"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For the ordered full-Choi-rank generalized-amplitude-damping qubit instrument, the incoherent 03|12 one-bit readout, two independent uses, and arbitrary clock-dependent qubit CPTP recoveries conditioned only on the current bit: (i) at p=18/25 and gamma=3/10 the exact optimum is F_2^M=289/400, attained by identity recovery, while the fixed feasible history policy attains 1831/2500 and therefore has exact advantage 99/10000; and (ii) on the closed rectangle R=[71/100,723/1000] x [29/100,303/1000], the same history policy attains H=1-gamma+p gamma^2/2 and every admissible current-bit policy obeys F_2^M<=H-1/1000, hence F_2^B-F_2^M>=1/1000 throughout R. The rectangle is a sufficient certified region, not a maximality claim, and no off-center exact optimum or exact Bayesian optimum is asserted.",
+    "code_files": [
+      "merged/phys-00016-p02/scripts/verify_robust_rectangle.py",
+      "scripts/compare_reconstructions.py",
+      "scripts/reconstruct_a_exact.py",
+      "scripts/reconstruct_b_liouville.py",
+      "scripts/verify_global_bound_constants.py"
+    ],
+    "dependency_files": [
+      "manuscript/requirements.txt"
+    ],
+    "display_number": 43,
+    "id": "phys-smallmac00016-p01",
+    "original_internal_id": "phys-00016-p01",
+    "original_status": "proved",
+    "original_topic_title": "粗粒化 GAD 反例中两步 current-bit 恢复的精确最优值是多少？",
+    "paper_title": "Exact current-bit optimum and a robust history advantage for coarse-grained generalized-amplitude-damping feedback",
+    "pdf_sha256": "d2385c15811ab43a7fa97e8df69d47c3772508a32e45fe3aac10c4d08daed545",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "07de3763515e80fa3cee2f9151088bcb174a963fd5435b8ceb6adce7d8809b6d",
+    "source_bundle_sha256": "b80fff4178c42bfbf662dcf6df87d1bfb2bcfe0c88fc7e968b003b08830de649",
+    "source_release_manifest_sha256": "07de3763515e80fa3cee2f9151088bcb174a963fd5435b8ceb6adce7d8809b6d"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For the frozen Hamiltonian in problem.md, G1(r,m)=G2(r,m)=G(r,m). Let rc=sqrt((69-11sqrt(33))/8). For 1/2<=r<=rc, G is positive for every m except m=+/-sqrt(3)r, where G=0. For rc<r<=2 there are unique 0<m_-(r)<sqrt(3)r<m_+(r), given by the two physical branches X in (Xc,1) and X in (3/4,Xc) of equations (1)-(2) in evidence/global-boundary-certification.md with Xc=(7+sqrt(33))/16, such that G<0 exactly when m_-(r)<|m|<m_+(r), G=0 at |m|=m_-(r),m_+(r), and G>0 otherwise. Hence the relative insulating boundary consists exactly of the two direct segments m=+/-sqrt(3)r for 1/2<=r<=rc joined at their cusps to four mass-reflected indirect branches for rc<=r<=2. The extremizers are exactly those parametrized in Section 4 of that evidence file and their spectral/mass reflections; no other momentum or exceptional Laurent-factor sector occurs. The isolated-band Chern tuple is (+1,-2,+1) for |m|<sqrt(3)r and (0,0,0) for |m|>sqrt(3)r, with the nonzero tuple negated under flux/orientation reversal.",
+    "code_files": [
+      "manuscript/generate_phase_diagram.py",
+      "scripts/certify_global_boundary.py",
+      "scripts/reproduce_baseline.py",
+      "scripts/verify_extrema_reduction.py",
+      "scripts/verify_gap_factorization.py",
+      "scripts/verify_laurent_reconstruction.py"
+    ],
+    "dependency_files": [
+      "manuscript/requirements.txt"
+    ],
+    "display_number": 44,
+    "id": "phys-smallmac00018-p01",
+    "original_internal_id": "phys-00018-p01",
+    "original_status": "proved",
+    "original_topic_title": "磁通 1/3 Harper–Hofstadter 三带模型的间接绝缘隙边界",
+    "paper_title": "Exact indirect-gap boundary in a flux-one-third Harper–Hofstadter model with a period-three mass",
+    "pdf_sha256": "591535bfb3fd4e702e5012a829d7f413e78dd4be3fa20026d75a1dd1e0e1515a",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "3d2de51c071a1e28e03aadf4a1184739be658f84d33f3df2010784467f6ae4e8",
+    "source_bundle_sha256": "578d735768399f303d210ead8bdf415e79cc3a9d2a881d4d75c4a2625abb6fd4",
+    "source_release_manifest_sha256": "3d2de51c071a1e28e03aadf4a1184739be658f84d33f3df2010784467f6ae4e8"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For |M>=(|0000>+|1111>)/sqrt(2), the exact unrestricted fermionic Gaussian rank over C of |M> tensor |M> is chi_G=4, with no particle-number, reality, blockwise ZZ, copy-exchange, or Pfaffian-chart restriction.",
+    "code_files": [
+      "scripts/certify_clifford_rank_gap.py",
+      "scripts/replay_clifford_rank_gap.py"
+    ],
+    "dependency_files": [
+      "manuscript/requirements.txt"
+    ],
+    "display_number": 45,
+    "id": "phys-smallmac00013-p03",
+    "original_internal_id": "phys-00013-p03",
+    "original_status": "proved",
+    "original_topic_title": "两份 canonical matchgate magic state 的 unrestricted Gaussian rank",
+    "paper_title": "Exact unrestricted Gaussian rank of two canonical matchgate magic states",
+    "pdf_sha256": "20f4dbe92156e833328982e64585f87af5a650be93df6b426affe4487ad32c7e",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "40fec7b03d3fc9bd1e9db26ca9dbbddb9b54d6a2e3e41fc9c3c7c49279601195",
+    "source_bundle_sha256": "69bc7119032faa379372fdf1e76aa1be331f3e702d7b92afce131e482a8bfbc5",
+    "source_release_manifest_sha256": "40fec7b03d3fc9bd1e9db26ca9dbbddb9b54d6a2e3e41fc9c3c7c49279601195"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For every phase-covariant CPTP map Phi:M3->M3 with H=diag(0,1,2), Choi rank 2 through 8, and every ordered pair of distinct energy levels (a,b), condition (N) implies the existence of lambda in (0,1) and a CPTP Theta such that Phi=Theta composed with Psi_{lambda,a->b}. In fact, for any finite-dimensional CPTP Phi and orthogonal x,y, (N) is necessary and sufficient for such an elementary right quotient; if ZV=VA for a linearly independent minimal Kraus synthesis V, the quotient is CP exactly when 0<=lambda<1 and lambda<=||A||_2^{-2}.",
+    "code_files": [
+      "code/compare_reconstructions.py",
+      "code/reproduce_input_a.py",
+      "code/reproduce_input_b.py",
+      "code/test_support_congruence.py"
+    ],
+    "dependency_files": [
+      "manuscript/requirements.txt"
+    ],
+    "display_number": 46,
+    "id": "phys-smallmac00013-p04",
+    "original_internal_id": "phys-00013-p04",
+    "original_status": "proved",
+    "original_topic_title": "相位协变 qutrit 的 elementary 右除必要条件是否充分",
+    "paper_title": "An exact criterion for removing an elementary amplitude-damping factor from a quantum channel",
+    "pdf_sha256": "7df05ac5e1d9b10279496ef7f275819514a69a30e8b4ac7f381361dab1f31910",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "30133c6524d8f0c6a3e650e06dc596c081460cd3f59dc8118e751d8961d273aa",
+    "source_bundle_sha256": "911e21cf06efa0b6ccb948757d09915ef225626f227715024051b5b336ec3b34",
+    "source_release_manifest_sha256": "30133c6524d8f0c6a3e650e06dc596c081460cd3f59dc8118e751d8961d273aa"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For every integer n>=2, the even-order OSASM boundary polynomial satisfies [t^3]X^O_{2n}(r,t)=r(1+(n-2)r^2)X^O_{2n-2}(r,1) in Z[r], under the definitions and BFK normalization frozen in problem.md and physics.json.",
+    "code_files": [
+      "code/compare_order16.py",
+      "code/compare_reproduction.py",
+      "code/enumerate_osasm.py",
+      "code/osasm_boundary_dp.py",
+      "code/pfaffian_osasm.py",
+      "code/pfaffian_third_column.py",
+      "code/verify_all_n_reduction.py"
+    ],
+    "dependency_files": [],
+    "display_number": 47,
+    "id": "phys-smallmac00013-p07",
+    "original_internal_id": "phys-00013-p07",
+    "original_status": "proved",
+    "original_topic_title": "偶阶 OSASM 的第三列加权边界系数公式",
+    "paper_title": "The third boundary coefficient of even off-diagonally symmetric alternating-sign matrices",
+    "pdf_sha256": "855a088b41b667945159b00f5c93937a17b50938a104562fcda8d94e4b26e870",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "c6f60a822e49882e333e3bd3869dab963ef0481f6b340a38d01977923db01550",
+    "source_bundle_sha256": "4cece4ca9113dcf8172e25bc1ea588ceb7ce301327ce63729230601127ecb226",
+    "source_release_manifest_sha256": "c6f60a822e49882e333e3bd3869dab963ef0481f6b340a38d01977923db01550"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For every real coupling vector (a,b,c,d,e,f), the eight-level spectrum of H=a Z_2+b Y_1 X_2+c X_1 Y_2+d Z_1 Y_3+e Y_1 X_3+f Z_3 is, with multiplicity, the signed-sum spectrum of three nonnegative one-particle energies if and only if c d (a^2-f^2)(b^2-e^2)=0; equivalently the locus is exactly c=0, d=0, a=plus-or-minus f, or b=plus-or-minus e. This claim is spectral and does not claim a uniform structural CAR-mode construction.",
+    "code_files": [
+      "scripts/input_a_direct.py",
+      "scripts/input_b_bitwise.py",
+      "scripts/plot_locus_slices.py",
+      "scripts/reproduce_baseline.py",
+      "scripts/research_characteristic.py",
+      "scripts/verify_spectral_locus.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 48,
+    "id": "phys-smallmac00019-p01",
+    "original_internal_id": "phys-00019-p01",
+    "original_status": "unresolved",
+    "original_topic_title": "三比特 Pauli 模型出现自由费米谱的完整耦合流形",
+    "paper_title": "Exact signed-sum spectral locus of a six-term three-qubit Pauli Hamiltonian",
+    "pdf_sha256": "ee46a9ece1ae9fa26019be4e29b76277d5c637678839ef4e331f4e5986729a2d",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "fc5a50df20fe20ebc85d1f028e7b38678fc51fed6fae5e0377d14aa37277c382",
+    "source_bundle_sha256": "9cbf2d9145fa35cc0212242c7fcad4fd4dc7770949ae4539fb97c9f80aac8a99",
+    "source_release_manifest_sha256": "fc5a50df20fe20ebc85d1f028e7b38678fc51fed6fae5e0377d14aa37277c382"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For the fixed two-qubit XYZ GKSL generator in problem.md with gamma=3/5, Delta=2/5, and Gamma>0, the complete nonzero Liouvillian spectral gap satisfies g(73/10)>3/2>1>g(8). Since the reproduced largest positive Liouvillian exceptional point is Gamma_cr=8, Gamma=8 is not a global maximizer of g. The actual global maximizer is not determined by this claim.",
+    "code_files": [
+      "manuscript/make_figure.py",
+      "scripts/certify_rational_counterexample.py",
+      "scripts/check_reproduction.py",
+      "scripts/derive_matrix_units.py",
+      "scripts/transcribe_eq3.py",
+      "scripts/verify_rational_counterexample_independent.py"
+    ],
+    "dependency_files": [
+      "requirements.txt"
+    ],
+    "display_number": 49,
+    "id": "phys-smallmac00020-p01",
+    "original_internal_id": "phys-00020-p01",
+    "original_status": "unresolved",
+    "original_topic_title": "固定两比特 XYZ Liouvillian 的谱隙最优耗散是否落在最大例外点",
+    "paper_title": "The largest Liouvillian exceptional point need not maximize the spectral gap: An exact two-qubit counterexample",
+    "pdf_sha256": "bb629178e571165ac5bce3c391dbbc15f6a4857cdd707b0c483b0ac7eb4af363",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "6447cd2f30ea6f0f8120be6d3d4ceb1c98ffa97d32d395abefd7fd9ab8a8bcdd",
+    "source_bundle_sha256": "70ef1f9915fdbba741ea61b383798a6a6332e350cb0561b1d5491163569a1a0f",
+    "source_release_manifest_sha256": "6447cd2f30ea6f0f8120be6d3d4ceb1c98ffa97d32d395abefd7fd9ab8a8bcdd"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For the exact seven-state extended ensemble and prepare-and-measure witness of arXiv:2609.13075v1 Sec. VI.D in the two-qubit separable-preparation domain, Q_SEP is strictly smaller than 3/4. This result proves non-saturation but neither computes Q_SEP nor supplies an explicit numerical lower bound on the positive gap.",
+    "code_files": [
+      "scripts/check_product_saturation.py",
+      "scripts/reproduce_input_a.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 50,
+    "id": "phys-smallmac00020-p02",
+    "original_internal_id": "phys-00020-p02",
+    "original_status": "unresolved",
+    "original_topic_title": "最小绝对纠缠集见证的可分上界能否严格低于四分之三",
+    "paper_title": "Strict separable non-saturation for a seven-state prepare-and-measure witness",
+    "pdf_sha256": "2120d02bbf42adad9ef44612ae00d45d497ad0e1057c86401eb40eff42933b22",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "0323acab53ccd18a0524a6f25c8558c5e027a759a6b95db6f78f0b6a21e68662",
+    "source_bundle_sha256": "3728fd751a72aa47e188e6689fddcff1fa61ddb2deb7292b7765e37cf70bef96",
+    "source_release_manifest_sha256": "0323acab53ccd18a0524a6f25c8558c5e027a759a6b95db6f78f0b6a21e68662"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For the finite open extended-SSH family H_N with u2=1, u0=r^2, u1=2r and r in [1/5,4/5], the exact confluent four-state pencil has positive energies r^{N+1}/phi_{1,N} and r^{N+1}/phi_{2,N} with the finite sums defined in the evidence. For every integer N>=61 the exact two positive in-gap energies obey the explicit uniform error functions R_a(N,r), these errors are relative o(1) uniformly in r, the leading laws are E_{N,1}=(1-r^2)r^{N+1}/N[1+o(1)] and E_{N,2}=N(1-r^2)^3r^{N-1}[1+o(1)], and no third positive level lies below the bulk-band distance (1-r)^2.",
+    "code_files": [
+      "evidence/check_confluent_exact.py",
+      "evidence/confluent_analysis.py",
+      "reproducibility/generate_figure.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 51,
+    "id": "phys-smallmac00020-p03",
+    "original_internal_id": "phys-00020-p03",
+    "original_status": "proved",
+    "original_topic_title": "extended-SSH 重复衰减根线上的四个有限链边缘能级",
+    "paper_title": "Two-scale finite-size edge splitting at a repeated root of an extended Su–Schrieffer–Heeger chain",
+    "pdf_sha256": "3f5c6cc6cfca723e51a5d58c1ab507f8832e4740036b7011ccfcecbf4863aa37",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "d0d4e3161ee29913df387d808329df236523487f3be9baa8ea1eb83f44c13629",
+    "source_bundle_sha256": "29f4d8c6d74df5b967e7c57b20070fa16a934dc99d93add2d60162b2bed2ecf0",
+    "source_release_manifest_sha256": "d0d4e3161ee29913df387d808329df236523487f3be9baa8ea1eb83f44c13629"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "In the finite open Sierpinski-Hanoi model defined in problem.md, restricted to the all-canonical-cycle-+1 single-particle sector and using the source normalization, the k=5 Figure-5 landmarks are exact transverse crossings at J=+/-1/3 and lambda=1/6. Their unique nonzero continuation exists for every k>=3 at J_k=+/-3^(-(k-3)/2), x_k=|J_k| and lambda_k=|J_k|/2; the generic flat multiplicity c_k=(3^(k-2)-1)/2 becomes c_k+1 and |J_(k+1)/J_k|=1/sqrt(3). On fixed I_+=[1/4,1/2] and I_-=-I_+, Delta_k is zero iff k=5; for k=3,4 and k>=6 it obeys the explicit positive coefficient-norm bound in evidence/fixed-interval-gap-salvage-result.md. Separately named moving windows W_k^+=[J_k/2,3J_k/2] and W_k^-=-W_k^+ have zero minima for every k>=3. The characteristic polynomial is generated by the signed three-scalar recurrence and exact quotient in the evidence.",
+    "code_files": [
+      "evidence/check_cycle_schur_pass3.py",
+      "evidence/check_exact_k5.py",
+      "evidence/check_flat_crossing_scaling_pass4.py",
+      "evidence/cycle_schur_pass3.py",
+      "evidence/exact_k5_degeneracy.py",
+      "evidence/flat_crossing_scaling_pass4.py",
+      "evidence/reproduce_sierpinski_hanoi.py",
+      "manuscript/generate_figures.py"
+    ],
+    "dependency_files": [
+      "manuscript/requirements.txt"
+    ],
+    "display_number": 52,
+    "id": "phys-smallmac00021-p01",
+    "original_internal_id": "phys-00021-p01",
+    "original_status": "proved",
+    "original_topic_title": "Sierpinski–Hanoi 自由费米近简并的精确有限尺度递推",
+    "paper_title": "Exact finite-depth crossings in a Sierpinski–Hanoi free-fermion spin model",
+    "pdf_sha256": "099ff0727ad21a6733090a6515519428a2eb727c3a922743039f41fb107bcc4e",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "2424a348a80a8da87fe3c9f4ffbefec8a1d395b952405b68bc6ac582d4cab387",
+    "source_bundle_sha256": "72479f9948ded173513d5ba621b3f72db9809eb5e505eb76c8228d59bae26ed9",
+    "source_release_manifest_sha256": "2424a348a80a8da87fe3c9f4ffbefec8a1d395b952405b68bc6ac582d4cab387"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "In the reproduced Ivanov-Martin arXiv:1911.05213v1 co-propagating cubic model, for every g>0, sigma>0 and distinct k1,k2>0 with k3=k1+k2, the unrestricted real dispersion-plus-resonance system has exactly the two common-sign frequency solutions in Eq. (3) of evidence/resonance-classification.md, related by (omega_j,gamma)->(-omega_j,-gamma). With q_j=k_j(g+sigma*k_j^2), ell=q3-q1-q2, N=ell^2-4q1q2 and D=2ell[q3^2-(q1-q2)^2], the selected positive-frequency sheet has the unique physical vorticity gamma=-N/sqrt(D); the companion root belongs to the genuine all-negative-frequency sheet, not an algebraic artifact. On either sheet C=[16q1q2(q3-q1)(q3-q2)-ell^4]/D. For every positive pair (k1,k2), exactly one positive r=g/sigma makes C=0, namely the unique positive root of Eq. (9) in the proof; at that zero gamma<0 on the positive-frequency sheet and gamma>0 on its sign-reversed companion.",
+    "code_files": [
+      "scripts/resonance_classification.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 53,
+    "id": "phys-smallmac00021-p02",
+    "original_internal_id": "phys-00021-p02",
+    "original_status": "unresolved",
+    "original_topic_title": "常涡度共振三波的涡度公式与耦合零点符号审计",
+    "paper_title": "A unique cubic-coupling cancellation locus for collinear constant-vorticity capillary–gravity triads",
+    "pdf_sha256": "e758abd0af406e391aecfd7f1948ec430a46df79c858543c60572c368c44d53e",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "ec6907a0ed922e7d93722f636ddc7daf1a61a30af032aceb63cf8bbb1a85a954",
+    "source_bundle_sha256": "679ed62bc4186e5fdcfcd0a9bb60be96c0e7021dd363d6d37ca3c1dba05950ec",
+    "source_release_manifest_sha256": "ec6907a0ed922e7d93722f636ddc7daf1a61a30af032aceb63cf8bbb1a85a954"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For the Fig. 3 interpolation of Geschner et al. at t=0 and t'=1, the author-raster 15-site invariant corner component has chi(E,lambda)=(E-1)^2 P6(E,lambda)P7(E,lambda), coefficient gcd exactly (E-1)^2 in Q[E], chi(E,0)=E(E-1)^8(E+1)^4(E+2)^2, and chi(E,1)=(E-1)^8(E+1)^6(E+2). Thus exactly 13 eigenvalue roots per corner, counted with algebraic multiplicity, are nonconstant under the interpolation, correcting the source's count 12; the three pairwise-disjoint D3-related components verified in the N=20 flake give 39 rather than 36. Secondarily, for the separate t=0.1, t'=1 N=20 system, the previously certified opposite-mirror-parity crossing and exact uniform-edge transfer equations remain at their finite/restricted scopes. No thermodynamic result or solution of the original general connectivity iff is claimed.",
+    "code_files": [
+      "manuscript/make_core_spectrum.py",
+      "scripts/certify_parity_crossing.py",
+      "scripts/edge_transfer_analysis.py",
+      "scripts/finite_size_isolation.py",
+      "scripts/isolated_corner_polynomial.py",
+      "scripts/replay_isolated_corner_polynomial.py"
+    ],
+    "dependency_files": [
+      "requirements.txt"
+    ],
+    "display_number": 54,
+    "id": "phys-smallmac00021-p03",
+    "original_internal_id": "phys-00021-p03",
+    "original_status": "unresolved",
+    "original_topic_title": "Breathing-kagome 角态的 A 子晶格公共核 iff 扰动判据",
+    "paper_title": "Comment on “Band topology of the breathing kagome lattice”",
+    "pdf_sha256": "e13c9b3df8f62a76a2aea0c268f73574b02943751d9896a6b1feb4df6dc1707c",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "README_REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "5840851e0a329fb457150d5bc144e937c65440400db7eb20a92244ced6807e92",
+    "source_bundle_sha256": "b60e9b5832da72eceec0a6b660f54f1b8283b005fe3fd2b9126665a5280933b4",
+    "source_release_manifest_sha256": "5840851e0a329fb457150d5bc144e937c65440400db7eb20a92244ced6807e92"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For the Eq. (15) state rho_r at r=1/2 and base-2 von Neumann order alpha=1, in the fixed minimal ancillary split (d_A',d_B')=(4,4), the product-canonical two-copy purification W_0=I_16 is a strict local minimum modulo the local ancillary U(4) x U(4) orbit over the complete complex orthonormal-flag manifold U(16), including support-opening directions. This does not assert global optimality, larger-ancilla local stability, or additivity.",
+    "code_files": [
+      "evidence/analyze_u16_tangent.py",
+      "evidence/certify_u16_hessian.py",
+      "evidence/compare_reconstructions.py",
+      "evidence/reproduce_input_a.py",
+      "evidence/reproduce_input_b.py",
+      "evidence/verify_tangent_high_precision.py"
+    ],
+    "dependency_files": [],
+    "display_number": 55,
+    "id": "phys-smallmac00022-p01",
+    "original_internal_id": "phys-00022-p01",
+    "original_status": "unresolved",
+    "original_topic_title": "经典二比特态在冯诺依曼阶的二副本纯化局部稳定性",
+    "paper_title": "Local stability of a two-copy entanglement-of-purification ansatz at the von Neumann boundary",
+    "pdf_sha256": "150163d4f29804cc68db5f26e0675d3739c59e064dda66819cf2dc466a3a3f3b",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "manuscript/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "8f01df1428b8401deb5ee4b82800b5c7c0804df6f493047ed034cb58d6ed76ab",
+    "source_bundle_sha256": "7cc74e903ad317a5b620f2489995f2940a43ceec1973f3a8d1bf2aeb6e53bb4a",
+    "source_release_manifest_sha256": "8f01df1428b8401deb5ee4b82800b5c7c0804df6f493047ed034cb58d6ed76ab"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "For the no-dagger three-output Bell functional I3 of arXiv:2606.21362v3 Eq. (6), every tensor-product strategy of arbitrary local dimension with three-output projective measurements satisfies I3<=4. The bound is attained by the stated maximally entangled qutrit strategy. Equivalently, 4*1-I3 has the submitted exact rank-16 Q(omega) noncommutative SOS on the 35-word 1+AB span. Equality rigidity, self-testing, robustness and randomness certification are not claimed.",
+    "code_files": [
+      "evidence/verify_exact_sos_independent.py"
+    ],
+    "dependency_files": [
+      "manuscript/requirements.txt"
+    ],
+    "display_number": 56,
+    "id": "phys-smallmac00022-p02",
+    "original_internal_id": "phys-00022-p02",
+    "original_status": "unresolved",
+    "original_topic_title": "三输出 Bell 泛函 I3 的精确 Tsirelson 证书与等号刚性",
+    "paper_title": "Exact Tsirelson bound for a three-output Bell functional",
+    "pdf_sha256": "5f8c5259c44c4f967667887d5e7c0bd0de935932df28e730bb4358a94987404e",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "d57dd658ebb5e3644b97322055d148f9ef5cad75a65e16db2225e8f1010211bf",
+    "source_bundle_sha256": "2b5b0e54f73b4507cbcbbc31a879a641150a0ccd0c87fde9826a83df12bc3dfa",
+    "source_release_manifest_sha256": "d57dd658ebb5e3644b97322055d148f9ef5cad75a65e16db2225e8f1010211bf"
+  },
+  {
+    "candidate_kind": "result-note",
+    "claim_class": "Partial result",
+    "claim_statement": "Let T_q be the tree with q ordinary leaves adjacent to C and two further edges C--A--B. For every q in {1,2,3,4,5,6} and every real 0<s<1, the coefficient-one Hamiltonian H_s=-sum_e (|00>+s|11>)(<00|+s<11|)_e has finite-volume spectral gap Delta(T_q,s)>1-s^2.",
+    "code_files": [
+      "evidence/certify_subdivided_star_continuum.py",
+      "evidence/verify_subdivided_star_continuum.py"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "display_number": 57,
+    "id": "phys-smallmac00022-p03",
+    "original_internal_id": "phys-00022-p03",
+    "original_status": "unresolved",
+    "original_topic_title": "树上变形 EPR 哈密顿量的谱隙下界与等号分类",
+    "paper_title": "Exact all-parameter spectral-gap certificates for deformed-EPR Hamiltonians on small subdivided stars",
+    "pdf_sha256": "8f8b0bea51bf04826e7e6858f9551a42b45239d8997d7ac252e1da17b59094ed",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "032f75bc1a7d7a6e5dc56a424f16adb1423fcbb2f4b94e051c0d8ad6ae371a5c",
+    "source_bundle_sha256": "68d589d4278ef99fa872eec71e99bd2a07567ba89a3965b2c7c45ca0fb091722",
+    "source_release_manifest_sha256": "032f75bc1a7d7a6e5dc56a424f16adb1423fcbb2f4b94e051c0d8ad6ae371a5c"
+  },
+  {
+    "candidate_kind": "resolution-paper",
+    "claim_class": "Proof",
+    "claim_statement": "For N^(3)_(lambda,ln2) defined exactly in immutable source.md, with lambda in[0,1] and normalized A,B Choi, anti-degradability holds if and only if lambda<=r, where r is the unique root in[66454426803/10^11,66454426804/10^11] of601r^6-714r^5+113r^4-1040r^3+2080r^2-1280r+256 (approximately0.664544268033). The exact rank4 X_r supplied in evidence/research-endpoint-proof.md is PSD, trace1, swap invariant and has both marginalsJ_r. That proof supplies explicit Hermitian strict separating H_lambda with W_Hlambda PSD in the full27-dimensional space and Tr(H_lambda J_lambda)<0 for every lambda>r, and exact post-loss extensions for every lambda<=r.",
+    "code_files": [
+      "supplementary/code/reproduction/compare_inputs.py",
+      "supplementary/code/reproduction/input_a_number_states.py",
+      "supplementary/code/reproduction/input_b_kraus.py",
+      "supplementary/code/reproduction/qubit_baseline.py",
+      "supplementary/code/research/composition_check.py",
+      "supplementary/code/research/endpoint_symbolic_replay.py",
+      "supplementary/code/research/exact_certificate.py",
+      "supplementary/code/research/reduce_extension.py",
+      "supplementary/reproduce.py"
+    ],
+    "dependency_files": [
+      "supplementary/requirements.txt"
+    ],
+    "display_number": 58,
+    "id": "phys-smallmac00023-p03",
+    "original_internal_id": "phys-00023-p03",
+    "original_status": "proved",
+    "original_topic_title": "固定 (e^{-\\gamma}=1/2) 时三 Fock 能级 loss–dephasing 信道的精确反可降阈值",
+    "paper_title": "An exact anti-degradability threshold for the three-level bosonic loss–dephasing channel",
+    "pdf_sha256": "a5611cdd26e15196b85bab2e55a58f81f2c253b08d38085b364b390225ebf374",
+    "release_status": "draft_ready_author_review_required",
+    "reproduction_guides": [
+      "supplementary/README.md"
+    ],
+    "series": "small_mac",
+    "source_bundle_manifest_sha256": "2d36c1094403dc3418fb2535847617141bda1ae0da87578bfa3f24b3437db32c",
+    "source_bundle_sha256": "9b4ae4fa9883457eadcdd4033fc9ae363e52364af5af08dd715c54fab094d889",
+    "source_release_manifest_sha256": "2d36c1094403dc3418fb2535847617141bda1ae0da87578bfa3f24b3437db32c"
+  }
+]

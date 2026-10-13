@@ -1,0 +1,14 @@
+\begin{tikzpicture}[>=Stealth, line width=0.8pt,
+  vertex/.style={circle,draw,fill=white,minimum size=7mm,inner sep=0pt},
+  every edge/.style={draw,->}, every node/.style={font=\small}]
+\node[vertex] (n0) at (0,3.0) {$0$};
+\node[vertex] (n2) at (-2.65,0) {$2$};
+\node[vertex] (n3) at (2.65,0) {$3$};
+\node[vertex] (n1) at (0,1.0) {$1$};
+\path (n0) edge node[right] {$A$} (n1)
+      (n1) edge node[above,sloped] {$A+B+C$} (n2)
+      (n2) edge node[above,sloped] {$A+C$} (n0)
+      (n0) edge node[above,sloped] {$C$} (n3)
+      (n3) edge node[above,sloped] {$B+C$} (n1)
+      (n2) edge node[below] {$B$} (n3);
+\end{tikzpicture}

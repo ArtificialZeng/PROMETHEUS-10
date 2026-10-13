@@ -1,0 +1,197 @@
+\documentclass[aps,pre,twocolumn,showpacs,amsmath,amssymb]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+
+\title{Weak regulation increases stationary abundance noise in a three-species stochastic feedback ring}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+
+\begin{abstract}
+We study an exact, infinite-state birth--death model of a three-species biochemical feedback ring. Each birth adds one molecule at a bounded rate that depends only on the preceding species; degradation is linear. For rates $f_i=a_i+\epsilon h_i$ with fixed $a_i>0$ and bounded, nonconstant $h_i$, we prove that every stationary Fano factor satisfies $F_i-1=\epsilon^2 S_i/a_i+R_i$, where $S_i$ is a strictly positive, exponentially filtered autocovariance of the unregulated predecessor and $|R_i|\leq K_i|\epsilon|^3$ with an explicit finite constant. Therefore, every species is super-Poissonian at sufficiently weak nonzero regulation, including frustrated and nonmonotone rings. The result uses neither a high-copy approximation nor a finite-state truncation. An exact rational example certifies a nonzero parameter interval. The conjectured restriction on how many species can be sub-Poissonian at arbitrary coupling strength remains open.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Intrinsic birth and death events set a Poisson abundance benchmark for an unregulated molecular species. A network can change the stationary variance relative to this benchmark, but its directed structure limits what noise control is possible. Yan \emph{et al.}\ considered stochastic biochemical feedback rings and proposed that, in a ring, at most one component can have sub-Poissonian abundance fluctuations \cite{Yan2019}. Their exact low-copy question is distinct from the stable high-copy linear-noise analysis in that work. Ripsman \emph{et al.}\ derived a general weighted sum bound on Fano excesses for unit-birth networks, which excludes simultaneous suppression of \emph{all} components but does not establish the stronger three-ring rule \cite{Ripsman2025}. Anderson subsequently supplied an infinite-state mathematical justification and a termwise nonnegative bound under signed monotonicity and structural balance \cite{Anderson2026Balance}; an odd-repression ring or a nonmonotone regulatory rate need not meet those conditions. Numerical and approximate treatments of more detailed repressilator models address different rate and state spaces \cite{JiaGrima2024}.
+
+Here we answer a narrower, analytically controlled question: what is the first nonzero stationary Fano response when all three production rates depart weakly from constants? The leading coefficient is positive for \emph{every} bounded nonconstant regulatory function, regardless of its sign pattern. The proof also identifies why a return path cannot enter that coefficient on a directed three-cycle and supplies an explicit remainder on the unbounded state space. It does not settle the arbitrary-strength ring conjecture.
+
+\section{Model and result}
+Let $x=(x_1,x_2,x_3)\in\mathbb N_0^3$, with indices interpreted modulo three and $x_0=x_3$. The generator is
+\begin{equation}
+\begin{split}
+(\mathcal L_\epsilon g)(x)=\sum_{i=1}^3\bigl\{&f_i(x_{i-1})[g(x+e_i)-g(x)]\\
+&+\gamma_i x_i[g(x-e_i)-g(x)]\bigr\},
+\end{split}\label{eq:generator}
+\end{equation}
+where $\gamma_i=1/\tau_i>0$; the death term vanishes at $x_i=0$. Counts and $\epsilon$ are dimensionless, $\tau_i$ has units of time, and $f_i$ and $a_i$ have units of inverse time. Every birth or death changes exactly one count by one. We take
+\begin{equation}
+f_i(n)=a_i+\epsilon h_i(n),\qquad a_i>0,\quad H_i=\sup_{n\geq0}|h_i(n)|<\infty.\label{eq:rates}
+\end{equation}
+The rate condition $|\epsilon|H_i\leq a_i/2$ makes every propensity positive and bounded. Linear deaths and bounded births give a unique stationary law $\pi_\epsilon$ with finite moments; in particular, its $i$th marginal is dominated by an immigration--death stationary Poisson law of mean $\tau_i(a_i+|\epsilon|H_i)$. Write $F_i=\operatorname{Var}_{\pi_\epsilon}(X_i)/\mathbb E_{\pi_\epsilon}X_i$. At $\epsilon=0$, the stationary law is the product of independent Poisson laws with means $\lambda_i=a_i\tau_i$, so $F_i=1$ exactly.
+
+Let $Y_j$ be the stationary immigration--death chain with birth rate $a_j$ and lifetime $\tau_j$. Define
+\begin{equation}
+S_i=\int_0^\infty e^{-\gamma_i t}
+\operatorname{Cov}_0\!\left[h_i(Y_{i-1}(0)),h_i(Y_{i-1}(t))\right]dt .\label{eq:S}
+\end{equation}
+The subscript $0$ denotes the product-Poisson baseline. The following result applies to fixed $a_i,\tau_i,h_i$, not uniformly over all such functions.
+
+\textit{Result.} If each $h_i$ is bounded and nonconstant, then $S_i>0$ and, whenever $|\epsilon|H_k\leq a_k/2$ for all $k$,
+\begin{equation}
+\left|F_i(\epsilon)-1-\frac{\epsilon^2 S_i}{a_i}\right|\leq K_i|\epsilon|^3,\qquad i=1,2,3,\label{eq:bound}
+\end{equation}
+with the explicit $K_i$ in Eqs.~\eqref{eq:constants}--\eqref{eq:K}. Consequently $F_i(\epsilon)>1$ for every $i$ whenever $0<|\epsilon|<\min_i S_i/(a_iK_i)$ and the rate condition holds. This is a statement about the exact stationary distribution of Eq.~\eqref{eq:generator}; it has no large-copy or finite-box assumption.
+
+\section{Positive coefficient and topology}
+For $j=i-1$, stationary generator identities for $X_i$ and $X_i(X_i-1)$ yield
+\begin{equation}
+F_i-1=\frac{\operatorname{Cov}_{\pi_\epsilon}[X_i,f_i(X_j)]}
+{\mathbb E_{\pi_\epsilon}f_i(X_j)}.
+\label{eq:moment}
+\end{equation}
+This is exact: $\mathbb E X_i=\tau_i\mathbb E f_i$ and $\operatorname{Var}(X_i)-\mathbb E X_i=\tau_i\operatorname{Cov}(X_i,f_i)$. It is useful to separate the Poisson baseline from the stationary change induced by $\epsilon$.
+
+Put $\bar h_i=\mathbb E_0h_i(Y_j)$, $\phi_i=(X_i-\lambda_i)[h_i(X_j)-\bar h_i]$, and $\mathcal L_\epsilon=\mathcal L_0+\epsilon V$, where $Vg=\sum_k h_k(x_{k-1})\Delta_k g$ and $\Delta_k g(x)=g(x+e_k)-g(x)$. For a centered baseline observable, write $R_0g=\int_0^\infty P_t^0g\,dt$, where $P_t^0$ is the product immigration--death semigroup. Since $P_t^0(X_i-\lambda_i)=e^{-\gamma_i t}(X_i-\lambda_i)$ and the coordinates are independent,
+\begin{align}
+R_0\phi_i&=(X_i-\lambda_i)B_i(X_j),\nonumber\\
+B_i(z)&=\int_0^\infty e^{-\gamma_i t}
+\bigl[P_t^jh_i(z)-\bar h_i\bigr]dt .
+\label{eq:firstR}
+\end{align}
+The stationary perturbation identity $\pi_\epsilon\phi_i=\epsilon\pi_\epsilon VR_0\phi_i$ gives
+\begin{equation}
+VR_0\phi_i=h_i(X_j)B_i(X_j)
++h_j(X_{j-1})(X_i-\lambda_i)\Delta_jB_i(X_j).
+\label{eq:firstV}
+\end{equation}
+At the product-Poisson baseline, the second term averages to zero: $j-1$ is the third species, distinct from $i$, so its factors other than $X_i-\lambda_i$ are independent of $X_i$. The first term averages to $S_i$ by stationary semigroup correlation. Thus $\pi_0VR_0\phi_i=S_i$. This is the topological step. A reciprocal two-species connection can instead contribute a return term already at second order.
+
+The immigration--death chain is reversible in its Poisson law. For $q_i=h_i-\bar h_i$,
+\begin{equation}
+\operatorname{Cov}_0[h_i(Y_j(0)),h_i(Y_j(t))]
+=\|P_{t/2}^jq_i\|_{L^2(\pi_0)}^2\geq0.\label{eq:positive}
+\end{equation}
+Full Poisson support and strong continuity at $t=0$ make the integral in Eq.~\eqref{eq:S} strictly positive whenever $h_i$ is nonconstant. No monotonicity or consistent edge-sign assignment is used.
+
+\section{Infinite-state error control}
+For clarity, define $C_i,A_i,B_i^*,M_i,D_i$ by
+\begin{align}
+C_i&=\frac{2H_jH_i}{\gamma_i+\gamma_j},\nonumber\\
+A_i&=4H_jH_i^2\tau_i\tau_j+H_iC_i\tau_i,\nonumber\\
+B_i^*&=2C_i\sum_{k\ne i}\frac{H_k}{\gamma_i+\gamma_k},\nonumber\\
+M_i&=A_i+\frac52\lambda_iB_i^*,\qquad
+D_i=2\tau_i\tau_jH_jH_i^2,
+\label{eq:constants}
+\end{align}
+and
+\begin{equation}
+K_i=\frac{2H_iS_i}{a_i^2}+\frac{2(M_i+D_i)}{a_i}.\label{eq:K}
+\end{equation}
+These are finite for every fixed admissible parameter choice. Their units match Eq.~\eqref{eq:bound}: $S_i/a_i$ is dimensionless and so is $K_i$ when $\epsilon$ is dimensionless.
+
+We give the bounds behind Eq.~\eqref{eq:bound}. A common-death coupling of two baseline chains initially differing by one molecule yields, for any bounded $b$,
+\begin{equation}
+|\Delta_kP_t^0b|\leq2\|b\|_\infty e^{-\gamma_kt}.
+\label{eq:coupling}
+\end{equation}
+It follows that $\|B_i\|_\infty\leq2H_i\tau_i$ and $\|\Delta_jB_i\|_\infty\leq2H_i/(\gamma_i+\gamma_j)$. In Eq.~\eqref{eq:firstV}, write $g_1=b_1(X_j)+(X_i-\lambda_i)b_2(X_j,X_{j-1})$. Then $\|b_1\|_\infty\leq2H_i^2\tau_i$, $\|b_2\|_\infty\leq C_i$, and $\pi_0g_1=S_i$. The second baseline resolvent has a bounded-observable part and a part $(X_i-\lambda_i)c(X_j,X_{j-1})$, where
+\begin{equation}
+c=\int_0^\infty e^{-\gamma_it}P_t^0b_2\,dt,
+\qquad \|c\|_\infty\leq C_i\tau_i.
+\end{equation}
+By Eq.~\eqref{eq:coupling}, $\|\Delta_kc\|_\infty\leq2C_i/(\gamma_i+\gamma_k)$ for $k\ne i$. The $b_1$ term has only a $j$-coordinate difference, bounded by $2\|b_1\|_\infty\tau_j$. Applying $V$ therefore gives the pointwise bound
+\begin{equation}
+|VR_0(g_1-S_i)|\leq A_i+B_i^*|X_i-\lambda_i|.
+\label{eq:secondbound}
+\end{equation}
+Under the rate condition, $\mathbb E_{\pi_\epsilon}|X_i-\lambda_i|\leq\mathbb E_{\pi_\epsilon}X_i+\lambda_i\leq5\lambda_i/2$. Reapplying the stationary resolvent identity to $g_1-S_i$ yields
+\begin{equation}
+|\pi_\epsilon\phi_i-\epsilon S_i|\leq M_i\epsilon^2.
+\label{eq:phierror}
+\end{equation}
+
+The covariance in Eq.~\eqref{eq:moment} uses actual stationary centering. The mean identity gives $|\pi_\epsilon(X_i-\lambda_i)|\leq|\epsilon|\tau_iH_i$. A bounded-observable resolvent applied to $h_i(X_j)$ gives $|\pi_\epsilon h_i-\bar h_i|\leq2|\epsilon|H_jH_i\tau_j$. Hence
+\begin{equation}
+|\operatorname{Cov}_{\pi_\epsilon}(X_i,h_i)-\epsilon S_i|
+\leq(M_i+D_i)\epsilon^2.
+\label{eq:coverror}
+\end{equation}
+Finally $\mathbb E_{\pi_\epsilon}f_i\geq a_i/2$, and replacing this denominator by $a_i$ costs at most $2H_iS_i|\epsilon|/a_i^2$ inside the coefficient of $\epsilon^2$. Equations~\eqref{eq:moment} and \eqref{eq:coverror} give Eq.~\eqref{eq:bound}.
+
+No stationary reflected-box limit enters this argument. To justify each resolvent identity on the infinite state space, first integrate only to a finite time $T$. The resulting generator identity has a terminal $P_T^0$ term. Coupling gives exponential decay for its bounded differences; the centered linear factors in Eqs.~\eqref{eq:firstR} and \eqref{eq:secondbound} have at most linear growth. Poisson domination supplies an integrable stationary majorant, so the terminal terms vanish in $L^1(\pi_\epsilon)$ as $T\to\infty$. This also justifies applying the stationary moment identities to the unbounded coordinate observables.
+
+OpenAI Codex (GPT-5.6-sol) assisted with the derivation and code used for the exact rational checks. The calculation was separately replayed with a direct Poisson two-time correlation integral and independently constructed generator diagnostics. Those AI-assisted checks do not constitute human verification, which remains pending for this draft.
+
+\section{A legal low-copy instance}
+Take $\tau=(1,2,3/2)$, $a=(1,1/2,2/3)$, and therefore $\lambda=(1,1,1)$. Let $h_1(n)=\mathbf1_{\{n=0\}}$, $h_2(n)=(-1)^n$, and $h_3(n)=\mathbf1_{\{n=0\}}$. The second rate is nonmonotone. All $H_i=1$, so the synthesis rates remain positive for the interval used below. Bivariate-Poisson correlations give the exact positive series
+\begin{equation}
+S_i=e^{-d_i}\sum_{m=1}^\infty
+\frac{c_i^m}{m!(\gamma_i+m\gamma_{i-1})}.
+\label{eq:series}
+\end{equation}
+Here $(c_2,d_2)=(4,4)$ and $(c_1,d_1)=(c_3,d_3)=(1,2)$.
+The numerical values in Table~\ref{tab:example} evaluate this analytic series; they are not estimates of a finite-box stationary sign. The rational lower and upper bounds follow from the first positive series term, $e<87/32<11/4$, $S_i\leq H_i^2\tau_i$, and Eqs.~\eqref{eq:constants}--\eqref{eq:K}. The elementary inequality $e<87/32$ follows by bounding the exponential tail after $1/3!$ by $(1/4!)/(1-1/5)$.
+
+\begin{table}[t]
+\caption{Exact-series coefficients and rational bounds for the three-species example. Displayed decimals are diagnostic evaluations; strict rational comparisons support the conclusion.}
+\label{tab:example}
+\begin{ruledtabular}
+\begin{tabular}{cccc}
+$i$ & $S_i/a_i$ (decimal) & $S_i/a_i>$ & $K_i<$\\
+\hline
+1 & 0.1195612961 & $48/605$ & $188/5$\\
+2 & 0.5294182223 & $4096/43923$ & $7264/63$\\
+3 & 0.2543128928 & $144/847$ & $20763/196$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+In particular, every coefficient exceeds $3/40$, and every $K_i$ is below $120$. Therefore, throughout the \emph{infinite-state} model,
+\begin{align}
+F_i(\epsilon)-1&>\epsilon^2\left(\frac3{40}-120|\epsilon|\right)\nonumber\\
+&\geq\frac{3\epsilon^2}{200}>0,
+\quad 0<|\epsilon|\leq1/2000
+\label{eq:interval}
+\end{align}
+for all three species. This is a deliberately conservative demonstration of a nonempty legal interval, not a practical design threshold. A reflected finite generator gives useful numerical cross-checks of the coefficient but may produce a false negative Fano excess at small $\epsilon$ if its boundary bias exceeds the $O(\epsilon^2)$ signal. It supplies no part of the proof of Eq.~\eqref{eq:interval}.
+
+\section{Discussion}
+The positive coefficient has a simple interpretation: at weak regulation a species receives fluctuations from its predecessor, filtered by its own lifetime. On a directed three-ring, the returning perturbation must traverse an additional edge and cannot cancel this transmitted variance at second order. The exact result rules out infinitesimal-gain sub-Poisson abundance noise in the stated unit-birth model even when an odd inhibitory pattern frustrates a global sign assignment or the rate functions are nonmonotone. Any suppression within this model must occur outside the sufficiently weak neighborhood, where higher-order feedback terms can matter.
+
+The same coefficient-level mechanism applies to a larger unit-birth network without reciprocal pairs of regulatory edges. In its product-Poisson baseline, a nonzero cross-edge term in the first response requires an edge $j\to i$; absence of $i\to j$ makes that term independent of the centered count $X_i-\lambda_i$. This observation concerns the second-order coefficient only; no graph-wide remainder constant is asserted here. The distinction matters: in a two-species reciprocal network with $a_i=\tau_i=1$, $h_1(n)=\mathbf1_{\{n=0\}}$, and $h_2(n)=3\mathbf1_{\{n\geq1\}}$, the coefficient of $F_1-1$ at order $\epsilon^2$ is $e^{-2}(e-7/2)<0$. Its positive autocovariance contribution $e^{-2}(e-2)$ is outweighed by a return contribution $-3e^{-2}/2$. This is an exact coefficient comparison, not a certified finite-$\epsilon$ Fano sign or a counterexample to the three-ring conjecture.
+
+The statement depends on fixed positive baseline birth rates, bounded regulatory perturbations, unit births, and linear degradation. It does not describe burst production, promoter states, environmental forcing, or microscopic thermodynamic dissipation. The threshold depends on the chosen functions and can be very small. Most importantly, it neither proves nor disproves the conjecture that an arbitrary-strength three-ring has at most one sub-Poisson component. We have compared the precise coefficient and error bound with the cited principal works, but an exhaustive priority check, including the 2019 supplemental material and older perturbative treatments, remains to be done before submission.
+
+\textit{Code availability.} The accompanying source package contains \texttt{weak\_feedback\_bounds.py} for exact rational comparisons, \texttt{weak\_feedback\_check.py} for series evaluation and finite-box diagnostics, their JSON outputs, and \texttt{REPRODUCE.md} with software versions and regeneration commands. The finite-box output is not an infinite-state error certificate.
+
+\appendix
+\section{Two-time Poisson correlations for the example}
+For completeness, the analytic coefficient in Eq.~\eqref{eq:series} can be evaluated without a master-equation truncation. Let a stationary immigration--death process have Poisson mean $\lambda$ and death rate $\gamma$. At times $0$ and $t$, its two counts admit the decomposition $Y(0)=Z+U$ and $Y(t)=Z+W$, where $Z,U,W$ are independent Poisson variables with means $\lambda q$, $\lambda(1-q)$, and $\lambda(1-q)$, respectively, and $q=e^{-\gamma t}$. The common variable $Z$ counts molecules surviving from the first time to the second. Thus, for $h(n)=\mathbf1_{\{n=0\}}$,
+\begin{equation}
+\operatorname{Cov}[h(Y(0)),h(Y(t))]
+=e^{-2\lambda}\bigl(e^{\lambda q}-1\bigr).
+\label{eq:zero-cov}
+\end{equation}
+For $h(n)=(-1)^n$, the shared $Z$ contributes an even total exponent and therefore
+\begin{equation}
+\operatorname{Cov}[h(Y(0)),h(Y(t))]
+=e^{-4\lambda}\bigl(e^{4\lambda q}-1\bigr).
+\label{eq:parity-cov}
+\end{equation}
+Setting $\lambda=1$, expanding the last exponentials into positive power series, and integrating each term against $e^{-\gamma_i t}$ gives Eq.~\eqref{eq:series}. Monotone convergence justifies interchange of the sum and integral. Since $e<87/32<11/4$, the first positive term alone gives the rational coefficient bounds in Table~\ref{tab:example}; the rough upper bound $S_i\leq H_i^2\tau_i$ inserted in Eq.~\eqref{eq:K} gives its rational $K_i$ uppers. These exact inequalities, rather than the printed decimals, establish Eq.~\eqref{eq:interval}.
+
+The reciprocal two-species comparison in the Discussion follows from the same first-resolvent calculation. Its local term is $S_1=e^{-2}(e-2)$ by Eq.~\eqref{eq:zero-cov}. At the product-Poisson baseline, $\mathbb E[h_2(X_1)(X_1-1)]=3e^{-1}$ and $\mathbb E[\Delta_2B_1(X_2)]=-e^{-1}/2$. The returning term in Eq.~\eqref{eq:firstV} is therefore $-3e^{-2}/2$, giving $S_1-3e^{-2}/2=e^{-2}(e-7/2)<0$. This comparison uses only a second-order coefficient; it has no finite-gain remainder claim.
+
+\begin{acknowledgments}
+OpenAI Codex (GPT-5.6-sol) also assisted with source comparison and manuscript drafting. Its work was directed by a specified stochastic model and tested by separate source reconstruction and exact rational calculations. The named author's final verification and approval of this local draft are pending.
+\end{acknowledgments}
+
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
+
+\end{document}

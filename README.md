@@ -2,13 +2,36 @@
 
 **AI Physics, Made Verifiable**
 
-[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md)
+[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [Русский](README.ru.md)
 
 Ten AI-driven physics manuscripts, with the code needed to inspect their claims. PROMETHEUS-10 brings automated proof search, counterexample construction and controlled computation into one inspectable research collection. The number 10 counts manuscripts—not ten universally solved problems.
 
 Historical internal review records: **4 proofs + 3 disproofs, 2 partial-result notes and 1 computational paper**. No conjecture-only PDF. These are research drafts awaiting author review, not externally peer-reviewed or accepted publications.
 
 AI contributed to derivations, code, numerical searches, checking and manuscript preparation under human direction. Separate AI review contexts are not external peer review. The novelty column states the manuscript’s proposed contribution; this packaging pass does not establish priority through a new comprehensive literature review.
+
+<!-- SMALL_MAC_COLLECTION -->
+
+## small_mac extension: 48 manuscripts by result class
+
+This repository contains **58 manuscripts**: the original ten PROMETHEUS-10 projects and **48 small_mac physics manuscripts**. The original ten projects and their scientific scope are documented below.
+
+Every small_mac item passed the recorded local science, manuscript and release gates. Human author review remains required; these are not externally peer-reviewed or accepted publications.
+
+Classification follows the frozen release record. Proof and Disproof refer to the stated claim and its assumptions; partial and computational results do not imply that the original question is fully solved. Consult each PDF and author handoff for the exact scientific scope and limitations.
+
+[Full small_mac collection](collections/small_mac/README.md)
+
+| Category | Manuscripts |
+|---|---:|
+| [Proof](collections/small_mac/categories/proofs/README.md) | **21** |
+| [Disproof](collections/small_mac/categories/disproofs/README.md) | **7** |
+| [Partial result](collections/small_mac/categories/partial-results/README.md) | **19** |
+| [Computational result](collections/small_mac/categories/computational-papers/README.md) | **1** |
+
+Display numbers 11–58, batch identifiers and original internal project IDs are preserved. The public `phys-smallmac` IDs point to the canonical project directories. The mapping is recorded in [`id-map.json`](collections/small_mac/id-map.json).
+
+<!-- END_SMALL_MAC_COLLECTION -->
 
 | Project | Claim class | Details |
 |---|---|---|

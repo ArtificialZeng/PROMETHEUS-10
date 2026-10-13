@@ -1,0 +1,587 @@
+{
+  "E_sector_gap_scaling_fit": {
+    "A_at_N8": 0.0004399319056016481,
+    "fit_range": "N=8,...,14",
+    "interpretation": "the same-parity avoided gap decreases exponentially over the resolved range",
+    "maximum_relative_fit_residual": 0.030382331975765453,
+    "model": "gap_N=gap_at_N8*q^(N-8) (log-linear fit)",
+    "q": 0.14678924936841473
+  },
+  "crossing_conclusion": "For every tested N=8,...,20, the continued mirror-even corner branch and a mirror-odd edge branch reverse order inside a residual-separated bracket. Opposite mirror parity forbids hybridization, so the finite-spectrum isolation gap reaches zero between the bracket endpoints.",
+  "crossing_lambda_scaling_fit": {
+    "A": 1.5006276722216013e-06,
+    "fit_range": "N=12,...,20",
+    "interpretation": "descriptive finite-size fit, not an analytic thermodynamic-limit proof",
+    "lambda_infinity": 0.7919395246790464,
+    "maximum_absolute_fit_residual": 3.8936631696628865e-12,
+    "model": "lambda_N=lambda_infinity+A*q^(N-12)",
+    "q": -0.1454854296873892
+  },
+  "error_control": {
+    "brackets": "Endpoint signs are opposite and each energy-difference magnitude exceeds 20 times the sum of the two computed sector eigenpair residuals.",
+    "dtype": "float64",
+    "eigensolver": "scipy.linalg.eigh driver=evr",
+    "limitation": "No directed-rounding interval eigensolver was used; lambda fits and E-sector gaps are controlled numerical evidence, not exact algebraic certificates.",
+    "maximum_lifted_eigenpair_residual": 4.6753687865527365e-15,
+    "root_solver": "scipy.optimize.brentq"
+  },
+  "job_id": "phys-00021-p03-research-0e0b8f4a71ad",
+  "parameters": {
+    "side_cells": [
+      8,
+      20
+    ],
+    "t": 0.1,
+    "t_prime": 1.0
+  },
+  "records": [
+    {
+      "A1_corner_branch_index_zero_based": 9,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308138188533027,
+        "corner_region_radius4_weight": 0.5585845457341607,
+        "ipr": 0.03261930800271396,
+        "three_corner_site_weight": 0.007841189035432615
+      },
+      "A1_dimension": 20,
+      "A2_dimension": 16,
+      "A2_edge_branch_index_zero_based": 4,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7602663298151061,
+        "corner_region_radius4_weight": 0.49814261952895356,
+        "ipr": 0.03508983318619814,
+        "three_corner_site_weight": 0.0
+      },
+      "E_sector_avoided_crossing": {
+        "gap": 0.0004269598691177823,
+        "indices_zero_based": [
+          13,
+          14
+        ],
+        "lambda": 0.79032928375254
+      },
+      "crossing_energy": -0.5597110829449322,
+      "crossing_lambda": 0.7952232860116342,
+      "independent_full_matrix_check": {
+        "four_nearest_scipy_energies": [
+          -0.559711082944932,
+          -0.5597110829449325,
+          -0.5592916528591665,
+          -0.5592916528591664
+        ],
+        "maximum_distance_of_two_nearest_levels_from_sector_crossing": 3.3306690738754696e-16,
+        "maximum_numpy_scipy_spectrum_difference": 3.4416913763379853e-15
+      },
+      "lifted_eigenpair_residuals": {
+        "A1": 2.6985110457926044e-15,
+        "A2": 3.0793383612003934e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.008704396734174e-13,
+        "difference_right": -3.0020430585864233e-13,
+        "left": 0.7952232860096342,
+        "right": 0.7952232860136341,
+        "sum_residual_bound_left": 4.997124332416626e-15,
+        "sum_residual_bound_right": 5.684036641503672e-15
+      },
+      "sector_energy_mismatch_at_root": 2.220446049250313e-16,
+      "side_cells": 8,
+      "sites": 108
+    },
+    {
+      "A1_corner_branch_index_zero_based": 11,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308387014398586,
+        "corner_region_radius4_weight": 0.561774769727843,
+        "ipr": 0.03271771430592811,
+        "three_corner_site_weight": 0.008188943475229717
+      },
+      "A1_dimension": 25,
+      "A2_dimension": 20,
+      "A2_edge_branch_index_zero_based": 6,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7624261241286958,
+        "corner_region_radius4_weight": 0.5000435787812182,
+        "ipr": 0.0350749731433192,
+        "three_corner_site_weight": 0.0
+      },
+      "E_sector_avoided_crossing": {
+        "gap": 6.567918837530051e-05,
+        "indices_zero_based": [
+          16,
+          17
+        ],
+        "lambda": 0.7921780935017259
+      },
+      "crossing_energy": -0.554236882523957,
+      "crossing_lambda": 0.791463418940793,
+      "lifted_eigenpair_residuals": {
+        "A1": 1.6917646989545185e-15,
+        "A2": 1.832981983010278e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1952218648712005e-13,
+        "difference_right": -3.157474282033945e-13,
+        "left": 0.791463418938793,
+        "right": 0.7914634189427929,
+        "sum_residual_bound_left": 3.16912366296461e-15,
+        "sum_residual_bound_right": 3.367655107143852e-15
+      },
+      "sector_energy_mismatch_at_root": 2.220446049250313e-15,
+      "side_cells": 9,
+      "sites": 135
+    },
+    {
+      "A1_corner_branch_index_zero_based": 13,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308440854613709,
+        "corner_region_radius4_weight": 0.5612737208037174,
+        "ipr": 0.03269891480557349,
+        "three_corner_site_weight": 0.008137078808451836
+      },
+      "A1_dimension": 30,
+      "A2_dimension": 25,
+      "A2_edge_branch_index_zero_based": 7,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621051598996278,
+        "corner_region_radius4_weight": 0.49980256149283353,
+        "ipr": 0.03508174926653234,
+        "three_corner_site_weight": 0.0
+      },
+      "E_sector_avoided_crossing": {
+        "gap": 9.634236378008865e-06,
+        "indices_zero_based": [
+          20,
+          21
+        ],
+        "lambda": 0.7919041959156957
+      },
+      "crossing_energy": -0.5550334182098943,
+      "crossing_lambda": 0.7920101989792689,
+      "lifted_eigenpair_residuals": {
+        "A1": 2.1638918600762412e-15,
+        "A2": 2.3665462480873192e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1397107136399427e-13,
+        "difference_right": -3.157474282033945e-13,
+        "left": 0.792010198977269,
+        "right": 0.7920101989812689,
+        "sum_residual_bound_left": 5.791380103838327e-15,
+        "sum_residual_bound_right": 5.8303744621841185e-15
+      },
+      "sector_energy_mismatch_at_root": 2.4424906541753444e-15,
+      "side_cells": 10,
+      "sites": 165
+    },
+    {
+      "A1_corner_branch_index_zero_based": 15,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308413784515933,
+        "corner_region_radius4_weight": 0.5613537471231872,
+        "ipr": 0.032702386666439584,
+        "three_corner_site_weight": 0.008144825473248626
+      },
+      "A1_dimension": 36,
+      "A2_dimension": 30,
+      "A2_edge_branch_index_zero_based": 9,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.762154943832624,
+        "corner_region_radius4_weight": 0.4998331977547434,
+        "ipr": 0.035080043524048796,
+        "three_corner_site_weight": 0.0
+      },
+      "E_sector_avoided_crossing": {
+        "gap": 1.4064590887485906e-06,
+        "indices_zero_based": [
+          24,
+          25
+        ],
+        "lambda": 0.7919446810981694
+      },
+      "crossing_energy": -0.5549153941205646,
+      "crossing_lambda": 0.7919292206498653,
+      "lifted_eigenpair_residuals": {
+        "A1": 1.2618505450600077e-15,
+        "A2": 1.8312477977089293e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1441516057384433e-13,
+        "difference_right": -3.170796958329447e-13,
+        "left": 0.7919292206478653,
+        "right": 0.7919292206518652,
+        "sum_residual_bound_left": 3.672169113249403e-15,
+        "sum_residual_bound_right": 3.674333656746224e-15
+      },
+      "sector_energy_mismatch_at_root": 1.1102230246251565e-15,
+      "side_cells": 11,
+      "sites": 198
+    },
+    {
+      "A1_corner_branch_index_zero_based": 18,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308420691243229,
+        "corner_region_radius4_weight": 0.5613412112261886,
+        "ipr": 0.03270177879030282,
+        "three_corner_site_weight": 0.00814368326679786
+      },
+      "A1_dimension": 42,
+      "A2_dimension": 36,
+      "A2_edge_branch_index_zero_based": 11,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621473153244442,
+        "corner_region_radius4_weight": 0.499829473536346,
+        "ipr": 0.035080395731969485,
+        "three_corner_site_weight": 0.0
+      },
+      "E_sector_avoided_crossing": {
+        "gap": 2.0471803763300045e-07,
+        "indices_zero_based": [
+          28,
+          29
+        ],
+        "lambda": 0.7919387748815575
+      },
+      "crossing_energy": -0.5549326011552711,
+      "crossing_lambda": 0.7919410253066215,
+      "lifted_eigenpair_residuals": {
+        "A1": 2.0733196889322503e-15,
+        "A2": 2.1220302070633717e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.164135620181696e-13,
+        "difference_right": -3.141931159689193e-13,
+        "left": 0.7919410253046215,
+        "right": 0.7919410253086214,
+        "sum_residual_bound_left": 4.2465155768622926e-15,
+        "sum_residual_bound_right": 4.138580991803027e-15
+      },
+      "sector_energy_mismatch_at_root": 1.7763568394002505e-15,
+      "side_cells": 12,
+      "sites": 234
+    },
+    {
+      "A1_corner_branch_index_zero_based": 20,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308419245900985,
+        "corner_region_radius4_weight": 0.5613431646734044,
+        "ipr": 0.032701882240576116,
+        "three_corner_site_weight": 0.008143851436115814
+      },
+      "A1_dimension": 49,
+      "A2_dimension": 42,
+      "A2_edge_branch_index_zero_based": 13,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621484823216981,
+        "corner_region_radius4_weight": 0.49982990747748574,
+        "ipr": 0.03508032925324331,
+        "three_corner_site_weight": 0.0
+      },
+      "E_sector_avoided_crossing": {
+        "gap": 2.9783068900002263e-08,
+        "indices_zero_based": [
+          33,
+          34
+        ],
+        "lambda": 0.7919396346039816
+      },
+      "crossing_energy": -0.554930095428131,
+      "crossing_lambda": 0.7919393063583027,
+      "lifted_eigenpair_residuals": {
+        "A1": 4.6753687865527365e-15,
+        "A2": 1.7066310111278503e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.168576512280197e-13,
+        "difference_right": -3.135269821541442e-13,
+        "left": 0.7919393063563027,
+        "right": 0.7919393063603026,
+        "sum_residual_bound_left": 5.822684423017304e-15,
+        "sum_residual_bound_right": 5.9696764444924495e-15
+      },
+      "sector_energy_mismatch_at_root": 2.4424906541753444e-15,
+      "side_cells": 13,
+      "sites": 273
+    },
+    {
+      "A1_corner_branch_index_zero_based": 23,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308419520429549,
+        "corner_region_radius4_weight": 0.5613428617829472,
+        "ipr": 0.0327018650112454,
+        "three_corner_site_weight": 0.00814382669892921
+      },
+      "A1_dimension": 56,
+      "A2_dimension": 49,
+      "A2_edge_branch_index_zero_based": 15,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621483042947581,
+        "corner_region_radius4_weight": 0.49982986013836495,
+        "ipr": 0.035080341140646676,
+        "three_corner_site_weight": 0.0
+      },
+      "E_sector_avoided_crossing": {
+        "gap": 4.359058225489321e-09,
+        "indices_zero_based": [
+          38,
+          39
+        ],
+        "lambda": 0.7919395118698461
+      },
+      "crossing_energy": -0.5549304599750648,
+      "crossing_lambda": 0.7919395564374534,
+      "independent_full_matrix_check": {
+        "four_nearest_scipy_energies": [
+          -0.5549304599750636,
+          -0.5549304599750636,
+          -0.5549304557422684,
+          -0.5549304557422676
+        ],
+        "maximum_distance_of_two_nearest_levels_from_sector_crossing": 1.2212453270876722e-15,
+        "maximum_numpy_scipy_spectrum_difference": 1.4876988529977098e-14
+      },
+      "lifted_eigenpair_residuals": {
+        "A1": 4.133876976691909e-15,
+        "A2": 2.244782829075363e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1596947280831955e-13,
+        "difference_right": -3.1441516057384433e-13,
+        "left": 0.7919395564354534,
+        "right": 0.7919395564394534,
+        "sum_residual_bound_left": 5.002369406338925e-15,
+        "sum_residual_bound_right": 5.048371728934986e-15
+      },
+      "sector_energy_mismatch_at_root": 3.552713678800501e-15,
+      "side_cells": 14,
+      "sites": 315
+    },
+    {
+      "A1_corner_branch_index_zero_based": 26,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308419471138205,
+        "corner_region_radius4_weight": 0.5613429085649558,
+        "ipr": 0.032701867834741945,
+        "three_corner_site_weight": 0.008143830336748993
+      },
+      "A1_dimension": 64,
+      "A2_dimension": 56,
+      "A2_edge_branch_index_zero_based": 18,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621483313935906,
+        "corner_region_radius4_weight": 0.49982986472576,
+        "ipr": 0.035080339088850054,
+        "three_corner_site_weight": 0.0
+      },
+      "crossing_energy": -0.5549304069470874,
+      "crossing_lambda": 0.7919395200603856,
+      "lifted_eigenpair_residuals": {
+        "A1": 2.7245003373719556e-15,
+        "A2": 2.054934836550661e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1374902675906924e-13,
+        "difference_right": -3.168576512280197e-13,
+        "left": 0.7919395200583856,
+        "right": 0.7919395200623855,
+        "sum_residual_bound_left": 4.542874670483709e-15,
+        "sum_residual_bound_right": 4.3326393978098005e-15
+      },
+      "sector_energy_mismatch_at_root": 1.5543122344752192e-15,
+      "side_cells": 15,
+      "sites": 360
+    },
+    {
+      "A1_corner_branch_index_zero_based": 29,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308419479669316,
+        "corner_region_radius4_weight": 0.5613429013640869,
+        "ipr": 0.03270186737788699,
+        "three_corner_site_weight": 0.00814382980186291
+      },
+      "A1_dimension": 72,
+      "A2_dimension": 64,
+      "A2_edge_branch_index_zero_based": 20,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621483272769238,
+        "corner_region_radius4_weight": 0.4998298643929204,
+        "ipr": 0.03508033943423461,
+        "three_corner_site_weight": 0.0
+      },
+      "crossing_energy": -0.5549304146602643,
+      "crossing_lambda": 0.7919395253516028,
+      "lifted_eigenpair_residuals": {
+        "A1": 1.2781753049406842e-15,
+        "A2": 1.858777555131354e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1397107136399427e-13,
+        "difference_right": -3.157474282033945e-13,
+        "left": 0.7919395253496029,
+        "right": 0.7919395253536028,
+        "sum_residual_bound_left": 2.716065934704201e-15,
+        "sum_residual_bound_right": 2.5634764559506774e-15
+      },
+      "sector_energy_mismatch_at_root": 1.3322676295501878e-15,
+      "side_cells": 16,
+      "sites": 408
+    },
+    {
+      "A1_corner_branch_index_zero_based": 32,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308419478230393,
+        "corner_region_radius4_weight": 0.5613429024691129,
+        "ipr": 0.032701867451053315,
+        "three_corner_site_weight": 0.008143829880500164
+      },
+      "A1_dimension": 81,
+      "A2_dimension": 72,
+      "A2_edge_branch_index_zero_based": 23,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.762148327901165,
+        "corner_region_radius4_weight": 0.49982986439268756,
+        "ipr": 0.035080339377169145,
+        "three_corner_site_weight": 0.0
+      },
+      "crossing_energy": -0.5549304135383545,
+      "crossing_lambda": 0.7919395245819764,
+      "lifted_eigenpair_residuals": {
+        "A1": 2.6861521000671176e-15,
+        "A2": 1.658172052311767e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1308289294429414e-13,
+        "difference_right": -3.1796787425264483e-13,
+        "left": 0.7919395245799764,
+        "right": 0.7919395245839763,
+        "sum_residual_bound_left": 4.3955097212692294e-15,
+        "sum_residual_bound_right": 4.56245025079743e-15
+      },
+      "sector_energy_mismatch_at_root": 2.4424906541753444e-15,
+      "side_cells": 17,
+      "sites": 459
+    },
+    {
+      "A1_corner_branch_index_zero_based": 36,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308419478468492,
+        "corner_region_radius4_weight": 0.5613429022999986,
+        "ipr": 0.03270186743943431,
+        "three_corner_site_weight": 0.008143829868940276
+      },
+      "A1_dimension": 90,
+      "A2_dimension": 81,
+      "A2_edge_branch_index_zero_based": 26,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621483278066663,
+        "corner_region_radius4_weight": 0.49982986439979926,
+        "ipr": 0.03508033938646263,
+        "three_corner_site_weight": 0.0
+      },
+      "crossing_energy": -0.554930413701541,
+      "crossing_lambda": 0.7919395246939223,
+      "lifted_eigenpair_residuals": {
+        "A1": 2.0391676743323432e-15,
+        "A2": 3.055715742148666e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.133049375492192e-13,
+        "difference_right": -3.1796787425264483e-13,
+        "left": 0.7919395246919223,
+        "right": 0.7919395246959222,
+        "sum_residual_bound_left": 4.026962926824048e-15,
+        "sum_residual_bound_right": 5.501172120850861e-15
+      },
+      "sector_energy_mismatch_at_root": 3.1086244689504383e-15,
+      "side_cells": 18,
+      "sites": 513
+    },
+    {
+      "A1_corner_branch_index_zero_based": 39,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308419478429678,
+        "corner_region_radius4_weight": 0.5613429023258178,
+        "ipr": 0.03270186744126642,
+        "three_corner_site_weight": 0.008143829870639578
+      },
+      "A1_dimension": 100,
+      "A2_dimension": 90,
+      "A2_edge_branch_index_zero_based": 29,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621483278209498,
+        "corner_region_radius4_weight": 0.4998298643977358,
+        "ipr": 0.03508033938496635,
+        "three_corner_site_weight": 0.0
+      },
+      "crossing_energy": -0.5549304136778049,
+      "crossing_lambda": 0.7919395246776386,
+      "lifted_eigenpair_residuals": {
+        "A1": 3.349833947872632e-15,
+        "A2": 2.0209855801225864e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1397107136399427e-13,
+        "difference_right": -3.1818991885756986e-13,
+        "left": 0.7919395246756387,
+        "right": 0.7919395246796386,
+        "sum_residual_bound_left": 4.5548020082267174e-15,
+        "sum_residual_bound_right": 5.41515233520605e-15
+      },
+      "sector_energy_mismatch_at_root": 2.4424906541753444e-15,
+      "side_cells": 19,
+      "sites": 570
+    },
+    {
+      "A1_corner_branch_index_zero_based": 43,
+      "A1_corner_branch_localization": {
+        "boundary_weight": 0.8308419478435922,
+        "corner_region_radius4_weight": 0.5613429023218831,
+        "ipr": 0.032701867440979304,
+        "three_corner_site_weight": 0.008143829870389701
+      },
+      "A1_dimension": 110,
+      "A2_dimension": 100,
+      "A2_edge_branch_index_zero_based": 32,
+      "A2_edge_branch_localization": {
+        "boundary_weight": 0.7621483278187933,
+        "corner_region_radius4_weight": 0.49982986439818494,
+        "ipr": 0.03508033938520489,
+        "three_corner_site_weight": 0.0
+      },
+      "crossing_energy": -0.5549304136812576,
+      "crossing_lambda": 0.7919395246800078,
+      "independent_full_matrix_check": {
+        "four_nearest_scipy_energies": [
+          -0.5549304136812578,
+          -0.5549304136812586,
+          -0.5549304136812179,
+          -0.5549304136812176
+        ],
+        "maximum_distance_of_two_nearest_levels_from_sector_crossing": 9.992007221626409e-16,
+        "maximum_numpy_scipy_spectrum_difference": 1.1546319456101628e-14
+      },
+      "lifted_eigenpair_residuals": {
+        "A1": 3.0792710782571308e-15,
+        "A2": 2.2858131066932854e-15
+      },
+      "residual_separated_bracket": {
+        "difference_left": 3.1596947280831955e-13,
+        "difference_right": -3.1374902675906924e-13,
+        "left": 0.7919395246780079,
+        "right": 0.7919395246820078,
+        "sum_residual_bound_left": 5.2334159822849456e-15,
+        "sum_residual_bound_right": 5.665498938639659e-15
+      },
+      "sector_energy_mismatch_at_root": 8.881784197001252e-16,
+      "side_cells": 20,
+      "sites": 630
+    }
+  ],
+  "schema_version": 1,
+  "source_inputs": [
+    "evidence/geschner-input-a.json",
+    "evidence/geschner-input-b.json",
+    "literature/2412.20460v1-source/live_version.tex"
+  ],
+  "symmetry_resolution": "Exact graph C3 and mirror symmetries; dense float64 Hamiltonians projected into mirror-even A1, mirror-odd A2, and complex C3 E sectors."
+}

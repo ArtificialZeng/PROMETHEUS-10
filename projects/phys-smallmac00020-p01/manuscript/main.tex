@@ -1,0 +1,263 @@
+\documentclass[aps,pra,reprint,superscriptaddress,nofootinbib]{revtex4-2}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{capt-of}
+\usepackage{graphicx}
+
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\begin{document}
+
+\title{The largest Liouvillian exceptional point need not maximize the spectral gap:
+An exact two-qubit counterexample}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+
+\date{September 14, 2026}
+
+\begin{abstract}
+Liouvillian exceptional points can accelerate selected relaxation processes, but
+the exceptional point at the largest dissipation need not optimize the slowest
+asymptotic spectral rate.  We establish this distinction exactly in a published
+two-qubit XYZ Lindblad model.  At the fixed anisotropies
+$(\gamma,\Delta)=(3/5,2/5)$, the largest positive Liouvillian exceptional point
+is $\Gamma_{\mathrm{cr}}=8$.  Exact Routh--Hurwitz calculations over the
+rationals nevertheless give
+\begin{equation*}
+ g(73/10)>\frac32>1>g(8),
+\end{equation*}
+where $g$ is the gap of the complete nonstationary Liouvillian spectrum.
+Thus $\Gamma_{\mathrm{cr}}$ is excluded from the set of global gap maximizers
+without a floating-point or branch-tracking assumption.  This result concerns
+the state-independent asymptotic spectral rate and does not contradict
+exceptional-point optimization for specified quenches.  The existence,
+location, and uniqueness of the actual global maximizer remain open.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Exceptional points are non-Hermitian degeneracies at which eigenvalues and
+eigenvectors coalesce.  In Markovian quantum dynamics, the full Liouvillian
+rather than a no-jump Hamiltonian determines such degeneracies
+\cite{Minganti2019}.  When a slow decay mode participates in a Liouvillian
+exceptional point (LEP), tuning to the LEP can enlarge the Liouvillian gap and
+accelerate relaxation in experimentally relevant models \cite{Zhou2023}.
+The resulting optimization question is, however, objective dependent: the
+ordinary gap fixes an asymptotic spectral exponent, whereas eigenvector
+conditioning, Jordan prefactors, mode overlaps, and the chosen norm or initial
+state can control finite-time behavior \cite{MoriShirai2023}.
+
+Popkov, Presilla, and Salerno recently solved the spectrum of an open
+two-qubit XYZ model and described its LEP manifolds and effective Zeno regime
+\cite{Popkov2025}.  For $(\gamma,\Delta)=(0.6,0.4)$, their largest positive LEP
+is $\Gamma_{\mathrm{cr}}=8$.  Their relaxation comparison uses specified
+nonequilibrium-steady-state quenches and Hilbert--Schmidt distance.  Here we
+ask the different, all-mode question of whether that largest LEP maximizes the
+complete nonzero spectral gap.  A rational counterexample settles the
+exclusion part of this question: at $\Gamma=73/10$, every nonstationary mode
+decays faster than $3/2$, while at $\Gamma=8$ two modes decay more slowly than
+$1$.  The proof is a finite exact root count, not a numerical scan.
+
+\section{Model, symmetry, and scope}
+
+On $\mathcal H=\CC^2\otimes\CC^2$, consider the GKSL generator
+\cite{Gorini1976,Lindblad1976}
+\begin{align}
+ \LL_\Gamma(\rho)={}&-i[H,\rho]
+ +\Gamma\left(L\rho L^\dagger-\frac12\{L^\dagger L,\rho\}\right),            \label{eq:L}\\
+ H={}&\sigma^x\otimes\sigma^x+\frac35\sigma^y\otimes\sigma^y
+       +\frac25\sigma^z\otimes\sigma^z,                                      \label{eq:H}\\
+ L={}&\sigma^+\otimes I_2 .                                                   \label{eq:jump}
+\end{align}
+Here $\sigma^+=(\sigma^x+i\sigma^y)/2$, and $I_2$ is the one-qubit identity.
+We use the source normalization $J_x=\hbar=1$ and restrict throughout to the
+physical half-axis $\Gamma>0$.  If the spectrum is counted with algebraic
+multiplicity, define
+\begin{equation}
+ g(\Gamma)=-\max_{\lambda\in\operatorname{spec}(\LL_\Gamma),\,\lambda\ne0}
+                  \operatorname{Re}\lambda .                                 \label{eq:gap}
+\end{equation}
+
+Let $S=\sigma^z\otimes\sigma^z$ and
+$\mathcal P(\rho)=S\rho S$.  Although $S$ anticommutes with $L$, conjugation
+leaves the dissipator in Eq.~\eqref{eq:L} invariant; also $[S,H]=0$.
+Consequently $[\mathcal P,\LL_\Gamma]=0$, and Liouville space splits exactly
+into two eight-dimensional parity sectors, denoted $\Sigma_+$ and $\Sigma_-$.
+Direct construction from Eq.~\eqref{eq:L} agrees entry by entry with the
+vectorized source generator and reproduces its two characteristic factors.
+
+The stationary eigenvalue is algebraically simple for every $\Gamma>0$ in
+this fixed model.  In the normalization used for the reconstructed factors,
+the derivative of the plus-sector characteristic polynomial at zero and the
+minus-sector value at zero are, respectively,
+\begin{align}
+ p_+'(0)&=\frac{\Gamma^3(425\Gamma^2+1024)}{625}>0,\\
+ p_-(0)&=\frac{625\Gamma^6+19300\Gamma^4+203712\Gamma^2+112896}{15625}>0.
+                                                                            \label{eq:zero}
+\end{align}
+Thus Eq.~\eqref{eq:gap} unambiguously removes one zero root.
+
+For reference, the discriminant of the source's plus-sector quartic reduces
+at the fixed anisotropies to
+\begin{equation}
+ \frac{256}{390625}(\Gamma-8)^2(\Gamma+8)^2
+ (5\Gamma-24)^2(5\Gamma+24)^2 .                                             \label{eq:disc}
+\end{equation}
+The positive plus-sector branching values are therefore $24/5$ and $8$.
+Exact isolation of the minus-sector discriminant places all its positive
+branching values below $8$.  At $\Gamma=8$, the plus-sector eigenvalues
+$-12/5$ and $-28/5$ each have algebraic multiplicity two, geometric
+multiplicity one, and squared-kernel dimension two.  Hence $8$ is a genuine
+LEP and reproduces the largest positive value
+$\Gamma_{\mathrm{cr}}=8$ reported in Ref.~\cite{Popkov2025}.
+
+\section{Exact rational exclusion certificate}
+
+For a real characteristic factor $p(\lambda)$ and a proposed decay threshold
+$r>0$, set
+\begin{equation}
+ q(s)=p(s-r),\qquad s=\lambda+r.                                             \label{eq:shift}
+\end{equation}
+All roots of $p$ lie strictly to the left of
+$\operatorname{Re}\lambda=-r$ exactly when $q$ is Hurwitz stable.  For a
+real polynomial with positive leading coefficient, strict positivity of all
+leading principal Hurwitz determinants is necessary and sufficient for this
+property.  More generally, when no first-column entry vanishes, the number of
+sign changes in the Routh first column equals the number of roots in
+$\operatorname{Re}s>0$.
+
+At $\Gamma=73/10$, remove the unique stationary factor from $p_+$ and take
+$r=3/2$.  Clearing denominators and choosing positive leading coefficients
+gives the following exact coefficient vectors, ordered from the highest power
+of $s$ to the constant term:
+{\small
+\begin{align}
+ \mathbf a_{73,+}={}&(40000000,748000000,5668600000,\nonumber\\
+ &22630120000,51613722250,68431977325,\nonumber\\
+ &51034832940,17835041673),\nonumber\\
+ \mathbf a_{73,-}={}&(80000000,1376000000,9298000000,\nonumber\\
+ &30896360000,51691644500,41256835900,\nonumber\\
+ &18322078865,8141339726,592083829).                                        \label{eq:coeff73}
+\end{align}
+At $\Gamma=8$ and $r=1$, the required minus-sector vector is
+\begin{align}
+ \mathbf a_{8,-}={}&(15625,375000,3647500,\nonumber\\
+ &18405000,51193350,77020200,\nonumber\\
+ &59217324,28420344,17748921).                                               \label{eq:coeff8}
+\end{align}
+}
+These integer vectors are themselves compact certificates: the Hurwitz
+matrices and Routh tables follow by rational arithmetic alone.  Their decisive
+sign data are shown in Table~\ref{tab:signs}.  No zero Routh pivot occurs.
+
+\begin{table}[!htbp]
+\caption{Exact sign certificates for the shifted sector polynomials.  The
+last column is the number $N_+$ of roots in $\operatorname{Re}s>0$.
+Repeated plus signs are denoted by $+^k$.}
+\label{tab:signs}
+\begin{ruledtabular}
+\begin{tabular}{cccc}
+$\Gamma$ & sector & Hurwitz determinant signs / Routh signs & $N_+$\\
+\hline
+$73/10$ & $+$ & $+^7\;/\;+^8$ & 0\\
+$73/10$ & $-$ & $+^8\;/\;+^9$ & 0\\
+$8$     & $-$ & $+^6,-,-\;/\;+^7,-,+$ & 2\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The two stable polynomials at $73/10$ cover all fifteen nonstationary roots,
+so
+\begin{equation}
+ \operatorname{Re}\lambda<-\frac32\quad(\lambda\ne0),
+ \qquad g(73/10)>\frac32.                                                    \label{eq:lower}
+\end{equation}
+At $\Gamma=8$, the two sign changes in the minus-sector Routh column show that
+exactly two roots obey $\operatorname{Re}(\lambda+1)>0$.  Therefore
+\begin{equation}
+ g(8)<1.                                                                     \label{eq:upper}
+\end{equation}
+Combining Eqs.~\eqref{eq:lower} and \eqref{eq:upper} yields
+\begin{equation}
+ \boxed{g(73/10)>\frac32>1>g(8)}.                                           \label{eq:main}
+\end{equation}
+The comparison point $73/10$ belongs to the same physical domain.
+Equation~\eqref{eq:main} therefore excludes the reproduced largest LEP,
+$\Gamma_{\mathrm{cr}}=8$, from the set of global gap maximizers.
+
+\section{Independent checks and physical interpretation}
+
+Two independent generator constructions were used.  The first transcribes
+the source's vectorized $16\times16$ matrix.  The second applies
+Eq.~\eqref{eq:L} separately to all sixteen matrix units and never imports the
+first superoperator.  They agree exactly after the explicit row/column
+vectorization permutation.  The primary certificate then uses the parity
+blocks and Hurwitz determinants.  A separate replay starts from the full
+matrix of the first construction, forms its degree-15 nonstationary
+polynomial, and builds a recursive Routh array without a parity split.  Its
+first-column signs are $+^{16}$ at $73/10$, and $+^{14},-,+$ at $8$, again
+giving zero and two right-half-plane shifted roots, respectively.
+
+High-precision diagonalization provides only a diagnostic visualization:
+it gives gaps $1.5572286353\ldots$ at $73/10$ and
+$0.9723556613\ldots$ at $8$ (Fig.~\ref{fig:gaps}).  These decimal values are
+not used in the proof; Eqs.~\eqref{eq:lower} and \eqref{eq:upper} follow from
+integer signs alone.
+
+\begin{center}
+ \includegraphics[width=0.98\columnwidth]{manuscript/figure-gap-comparison.pdf}
+ \captionof{figure}{Comparison at the two certified dissipation strengths.  The
+ circle and square are 105-digit diagnostic eigenspectrum values.  The blue
+ lower-bound segment and orange upper-bound segment encode
+ $g(73/10)>3/2$ and $g(8)<1$, respectively; the numerical markers do not enter
+ the certificate.}
+ \label{fig:gaps}
+\end{center}
+
+The gap in Eq.~\eqref{eq:gap} is an all-mode asymptotic quantity.  The exact
+comparison shows that tuning this model to its largest LEP sacrifices more
+than $1/2$ in the guaranteed slowest exponential rate relative to the explicit
+nearby choice $73/10$.  It does not say that every state, observable, norm, or
+finite time window relaxes faster at $73/10$.  In particular, Jordan
+polynomials and mode overlaps at an LEP can favor a specified quench, which is
+the setting studied in Ref.~\cite{Popkov2025}.  The broader difference between
+ordinary gaps and finite-time relaxation is known \cite{MoriShirai2023}; the
+new content here is the exact fixed-model exclusion in Eq.~\eqref{eq:main}.
+
+\section{Conclusion and limitations}
+
+An exact rational root count disproves largest-LEP optimality for the complete
+spectral gap of the fixed two-qubit generator.  The result requires neither a
+floating-point optimizer nor a choice of active eigenvalue branch and applies
+to all fifteen nonstationary modes.  Its scope is deliberately narrower than
+the original global optimization problem: we have not proved that the gap has
+a global maximizer on $(0,\infty)$, nor located or classified all maximizers.
+Establishing those facts requires a whole-axis certificate for branch changes
+and the small- and large-$\Gamma$ tails.
+
+\section*{Data availability}
+
+The exact input matrices, integer-polynomial certificates, independent Routh
+replay, source code, runtime versions, and figure-generation script are
+provided as ancillary files with this manuscript.  No experimental data were
+used.
+
+\medskip
+\section*{Artificial-intelligence use disclosure}
+
+Generative artificial-intelligence tools assisted with proposing the research
+question, literature screening, code generation, exact symbolic calculations,
+computational cross-checks, and manuscript drafting.  They are not authors.
+The human author is responsible for independently reviewing, correcting, and
+approving all content before submission.
+
+\bibliography{manuscript/references}
+
+\end{document}

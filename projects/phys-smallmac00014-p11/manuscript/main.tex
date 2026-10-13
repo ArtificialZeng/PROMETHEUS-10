@@ -1,0 +1,563 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={No history advantage in repeated environment-assisted qubit recovery},
+  pdfauthor={Xiaojian Zeng}
+}
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\Tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\one}{\mathbb{1}}
+\newcommand{\dd}{\mathrm{d}}
+
+\title{No history advantage in repeated environment-assisted qubit recovery}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We compare current-outcome polar recovery with recovery conditioned on the
+complete measurement history for repeated uses of a qubit channel.  The same
+four-outcome projective measurement is made on each fresh minimal environment.
+For every channel with full Choi rank and every positive use count, we prove
+that the separately optimized entanglement fidelities coincide and equal
+$(1+\lVert Q\rVert_*^n)/2$, where $Q$ polarizes the Kraus determinant.  The key
+step is a quaternionic two-plane lemma that constructs, inside the complete
+real Takagi-optimal family, a Kraus frame with pairwise commuting effects.
+Thus retaining the outcome history gives no optimized fidelity advantage,
+including at three uses where fixed noncommuting measurements can first have
+complex branch traces.
+\end{abstract}
+
+\noindent\textbf{Keywords:} quantum feedback; environment-assisted error
+correction; qubit channel; entanglement fidelity; Kraus decomposition; Takagi
+factorization
+
+\section{Introduction}
+
+Measuring an environment after it interacts with a quantum system reveals a
+classical error record.  Conditional operations on the system can then remove
+the unitary part of the observed error.  This environment-assisted viewpoint
+connects quantum feedback and error correction without introducing a code
+subspace.  For a fixed fine-grained channel decomposition, polar recovery is
+optimal at one step, and the optimal qubit recovery over several discrete
+steps can be represented by one final polar correction
+\cite{gregoratti2004}.  The latter representation makes the entire outcome
+history available to the recovery.
+
+Rexiti, Khabbazi Oskouei, and Mancini recently compared such history-dependent
+(``Bayesian'') recovery with a memoryless (`Markovian') strategy that applies
+the polar correction associated only with the current outcome
+\cite{rexiti2024}.  In the version used here, equality is established for
+Kraus-rank-two channels and for a special rank-three family, while selected
+rank-three and rank-four cases are supported numerically.  Their Conjecture~9
+asserts equality for every qubit channel and every number of uses.  The
+remaining issue is not the optimal recovery for a fixed decomposition.  It is
+whether an environment measurement can be chosen that is simultaneously
+optimal for the history-dependent score and for memoryless polar recovery.
+
+Three uses expose this issue sharply.  A trace of two positive $2\times2$
+matrices is real, whereas a trace of three positive matrices can be complex.
+Consequently, identities adequate at two uses do not by themselves close the
+three-use comparison.  A generic environment measurement can indeed give a
+strict pointwise history advantage.  A counterexample to the optimized
+conjecture, however, would require a gap between two separately optimized
+scores, not merely a gap at one nonoptimal measurement.
+
+We prove that no such optimized gap exists for a qubit channel with
+positive-definite Choi matrix.  More strongly, within the same fixed-measurement
+and fresh-environment model, the optimized scores coincide for every positive
+integer number of uses.  The proof has two ingredients.  First, Takagi
+factorization identifies the global history-dependent optimum and leaves an
+entire real orthogonal family of optimal Kraus frames.  Second, a new
+four-dimensional quadratic-form lemma selects a member of this family whose
+four effects commute.  The lemma uses quaternionic left--right multiplication
+to find a two-plane on which three traceless quadratic forms are simultaneously
+trace neutral.  Bases in that plane and its complement are then aligned by an
+intersection argument.
+
+The result is deliberately restricted.  The environment is fresh at each use,
+the same orthogonal projective measurement is repeated, the outcome record is
+perfect, and corrections are unitary polar recoveries.  Adaptive environment
+measurements, additional-outcome positive-operator-valued measures, correlated
+uses, imperfect records, higher system dimension, and nonunitary recovery
+models are not covered.
+
+\section{Channel, measurement, and feedback scores}
+\label{sec:model}
+
+Let $\cE:M_2(\C)\to M_2(\C)$ be completely positive and trace preserving
+(CPTP), with positive-definite Choi matrix.  Its minimal Kraus rank is four.
+Fix a minimal frame $A=(A_0,A_1,A_2,A_3)$,
+\begin{equation}
+  \cE(\rho)=\sum_{a=0}^{3}A_a\rho A_a^\dagger,
+  \qquad
+  \sum_{a=0}^{3}A_a^\dagger A_a=\one_2 .
+  \label{eq:kraus}
+\end{equation}
+An orthogonal projective measurement of a minimal four-dimensional environment
+is parametrized by $U\in U(4)$ and produces
+\begin{equation}
+  K_x(U)=\sum_{a=0}^{3}U_{xa}A_a,
+  \qquad x=0,1,2,3 .
+  \label{eq:mix}
+\end{equation}
+The same $U$ is used at every fresh, independent application of $\cE$.
+Optimization over $U(4)$ removes dependence on the initially selected minimal
+frame.
+
+Write the polar decomposition as $K_x=V_xP_x$, where
+$P_x=|K_x|=(K_x^\dagger K_x)^{1/2}\geq0$.  A partial isometry $V_x$ can be
+extended unitarily on an unused kernel.  Applying $V_x^\dagger$ after the
+current outcome gives the one-step corrected channel
+\begin{equation}
+  \cM_U(\rho)=\sum_xP_x\rho P_x,
+  \qquad \sum_xP_x^2=\one_2 .
+  \label{eq:markov-channel}
+\end{equation}
+After $n$ repetitions, its normalized entanglement fidelity is
+\begin{equation}
+ F^{\mathrm M}_n(U)
+ =\frac14\sum_{x_1,\ldots,x_n}
+ \left|\Tr(P_{x_n}\cdots P_{x_1})\right|^2 .
+ \label{eq:markov-score}
+\end{equation}
+The modulus in Eq.~\eqref{eq:markov-score} is essential for $n\geq3$.
+
+In the history-dependent protocol the correction at a given step may depend
+on every outcome observed so far.  The optimal qubit score for a fixed
+fine-grained decomposition is equivalently obtained by delaying the polar
+recovery until the end \cite{gregoratti2004}.  In the present notation it is
+\begin{equation}
+ F^{\mathrm B}_n(U)
+ =\frac14\sum_{x_1,\ldots,x_n}
+ \left(\Tr\left|K_{x_n}\cdots K_{x_1}\right|\right)^2 .
+ \label{eq:bayes-score}
+\end{equation}
+We compare the separately optimized quantities
+\begin{equation}
+ F^{\mathrm M,*}_n(\cE)=\max_{U\in U(4)}F^{\mathrm M}_n(U),
+ \qquad
+ F^{\mathrm B,*}_n(\cE)=\max_{U\in U(4)}F^{\mathrm B}_n(U).
+ \label{eq:optimized}
+\end{equation}
+Because current-outcome polar recovery is an admissible history-dependent
+policy, $F^{\mathrm M}_n(U)\leq F^{\mathrm B}_n(U)$ for each fixed $U$.
+
+\section{Determinant reduction and the three-use obstruction}
+\label{sec:reduction}
+
+For every complex $2\times2$ matrix $X$,
+\begin{equation}
+  (\Tr|X|)^2=\Tr(X^\dagger X)+2|\det X| .
+  \label{eq:two-singular-values}
+\end{equation}
+Summing the first term over all length-$n$ Kraus histories gives
+$\Tr\one_2=2$, while determinants factor along a history.  Hence, with
+\begin{equation}
+  s(U)=\sum_x|\det K_x(U)|,
+  \label{eq:s-def}
+\end{equation}
+the fixed-measurement Bayesian score reduces exactly to
+\begin{equation}
+  F^{\mathrm B}_n(U)=\frac{1+s(U)^n}{2}.
+  \label{eq:bayes-reduction}
+\end{equation}
+
+The determinant of a linear combination of $2\times2$ matrices is a
+homogeneous quadratic form.  There is therefore a complex symmetric matrix
+$Q=Q^{\mathsf T}\in M_4(\C)$ such that
+\begin{equation}
+  \det\!\left(\sum_a z_aA_a\right)=z^{\mathsf T}Qz .
+  \label{eq:q-def}
+\end{equation}
+Equation~\eqref{eq:mix} gives
+\begin{equation}
+  s(U)=\sum_x |(UQU^{\mathsf T})_{xx}|
+  \leq \|UQU^{\mathsf T}\|_*=\|Q\|_* ,
+  \label{eq:pinching}
+\end{equation}
+where $\|Q\|_*=\Tr\sqrt{Q^\dagger Q}$ is the trace norm.  If
+$Q=V\Sigma V^{\mathsf T}$ is a Takagi factorization with
+$\Sigma=\operatorname{diag}(\sigma_0,\ldots,\sigma_3)\geq0$, then
+$U=V^\dagger$ attains the bound.  Thus
+\begin{equation}
+ F^{\mathrm B,*}_n(\cE)=\frac{1+\|Q\|_*^n}{2}.
+ \label{eq:bayes-optimum}
+\end{equation}
+Takagi decompositions play an analogous determinant-ensemble role in
+two-qubit concurrence problems \cite{laustsen2003}; Eq.~\eqref{eq:bayes-optimum}
+is not the missing part of the feedback comparison.
+
+To see what is missing at three uses, expand each positive effect square root
+as
+\begin{equation}
+  P_x=a_x\one_2+\bm b_x\cdot\bm\sigma,
+  \qquad a_x\in\R,\quad \bm b_x\in\R^3,
+\end{equation}
+and set $G=\sum_x\bm b_x\bm b_x^{\mathsf T}\geq0$.  Trace preservation in
+Eq.~\eqref{eq:markov-channel} implies
+\begin{equation}
+  s(U)=1-2\Tr G,
+  \qquad R(U)=s(U)I_3+2G,
+  \label{eq:bloch-map}
+\end{equation}
+where $R(U)$ is the Bloch matrix of $\cM_U$.  Consequently
+\begin{equation}
+  F^{\mathrm M}_n(U)=\frac{1+\Tr R(U)^n}{4}.
+  \label{eq:markov-bloch}
+\end{equation}
+Let $\beta_1,\beta_2,\beta_3\geq0$ be the eigenvalues of $G$,
+$t=\sum_i\beta_i=(1-s)/2$,
+$e_2=\sum_{i<j}\beta_i\beta_j$, and
+$e_3=\beta_1\beta_2\beta_3$.  Direct expansion yields
+\begin{equation}
+ F^{\mathrm B}_3(U)-F^{\mathrm M}_3(U)
+ =6\big[(s+t)e_2-e_3\big]\geq0.
+ \label{eq:three-deficit}
+\end{equation}
+Apart from the noiseless boundary, equality holds precisely when
+$\rank G\leq1$, or equivalently when all $P_x$ commute.  Thus a three-use
+proof requires a Kraus frame that both attains Eq.~\eqref{eq:pinching} and has
+commuting effects.  Takagi factorization alone does not provide the second
+property.
+
+\section{A collinear-diagonal basis for three quadratic forms}
+\label{sec:lemma}
+
+We now prove the geometric statement that supplies the missing compatibility.
+It is distinct from simultaneous hollowization of a prescribed pair of
+matrices \cite{damm2020}: the output line is free to be chosen, and three
+traceless forms are treated in the special dimension four.
+
+\begin{lemma}[Collinear diagonals]
+\label{lem:collinear}
+Let $H_1,H_2,H_3$ be real symmetric $4\times4$ matrices with zero trace.
+There is an orthonormal basis $w_1,\ldots,w_4$ of $\R^4$ such that the four
+vectors
+\begin{equation}
+ q(w_j)=\bigl(w_j^{\mathsf T}H_1w_j,
+                    w_j^{\mathsf T}H_2w_j,
+                    w_j^{\mathsf T}H_3w_j\bigr)\in\R^3
+ \label{eq:q-vector}
+\end{equation}
+are collinear.  Zero vectors are allowed.
+\end{lemma}
+
+\begin{proof}
+Identify $\R^4$ with the quaternions $\mathbb H$ in the orthonormal basis
+$(1,i,j,k)$.  For pure unit quaternions $u,v$, denote left and right
+multiplication by $L_u$ and $R_v$.  These real matrices are skew symmetric,
+square to $-I_4$, and commute with one another.  Hence
+\begin{equation}
+  \Gamma(u,v)=L_uR_v
+\end{equation}
+is a symmetric orthogonal involution.  It has zero trace, so
+\begin{equation}
+  P(u,v)=\frac{I_4+\Gamma(u,v)}{2}
+  \label{eq:projection}
+\end{equation}
+is a rank-two orthogonal projection.
+
+Put $(e_1,e_2,e_3)=(i,j,k)$.  For a traceless symmetric $H$, define the real
+$3\times3$ matrix
+\begin{equation}
+ C(H)_{ab}=\Tr\bigl(HL_{e_a}R_{e_b}\bigr).
+ \label{eq:c-matrix}
+\end{equation}
+Writing pure quaternions in their three real coordinates and using
+$\Tr H=0$ gives
+\begin{equation}
+ \Tr\bigl(P(u,v)H\bigr)=\frac12u^{\mathsf T}C(H)v .
+ \label{eq:neutral-identity}
+\end{equation}
+For $C_k=C(H_k)$, consider the continuous cubic
+\begin{equation}
+ g(u)=\det\big[C_1^{\mathsf T}u,C_2^{\mathsf T}u,C_3^{\mathsf T}u\big],
+ \qquad u\in S^2 .
+ \label{eq:odd-cubic}
+\end{equation}
+It is odd.  A path from $u$ to $-u$ therefore contains a zero $u_*$.  At
+that zero the three vectors $C_k^{\mathsf T}u_*$ span a subspace of dimension
+at most two.  Choose a unit $v_*$ perpendicular to their span.  By
+Eq.~\eqref{eq:neutral-identity},
+\begin{equation}
+ \Tr(PH_k)=0,\qquad k=1,2,3,
+ \label{eq:neutral-plane}
+\end{equation}
+for $P=P(u_*,v_*)$.  Since $\Tr H_k=0$, the same identities hold on
+$P^\perp$.  We have therefore split $\R^4$ into two orthogonal two-planes on
+which all three compressed forms are trace neutral.
+
+Choose an orthonormal basis $(p_1,p_2)$ in the range of $P$.  Each compressed
+form has the shape
+\begin{equation}
+ \begin{pmatrix}a_k&b_k\\ b_k&-a_k\end{pmatrix}.
+\end{equation}
+For $p(\theta)=\cos\theta\,p_1+\sin\theta\,p_2$,
+\begin{equation}
+ q(p(\theta))=\bm a\cos(2\theta)+\bm b\sin(2\theta),
+ \label{eq:ellipse}
+\end{equation}
+where $\bm a=(a_1,a_2,a_3)$ and
+$\bm b=(b_1,b_2,b_3)$.  Its orthogonal partner has the negative $q$ vector.
+The same description holds on $P^\perp$.  Each pair therefore traces a
+centered ellipse contained in a linear subspace of $\R^3$ of dimension at
+most two.
+
+If either ellipse map has rank at most one, its $3\times2$ defining map has a
+nonzero kernel.  Choosing the corresponding angle makes both $q$ vectors in
+that two-plane zero; any orthonormal pair in the other plane gives an opposite
+pair, so all four vectors are collinear.  If both maps have rank two, their
+two-dimensional ranges in $\R^3$ intersect in a line.  Choose angles whose
+images lie on that common line.  The orthogonal partners again give the
+negatives.  These cases include every possible degeneracy and prove the
+claim.
+\end{proof}
+
+\section{A Takagi-optimal frame with commuting effects}
+\label{sec:construction}
+
+The real freedom left after Takagi factorization is exactly large enough to
+apply Lemma~\ref{lem:collinear}.  Start from
+$Q=V\Sigma V^{\mathsf T}$ and mix the original frame by $V^\dagger$, writing
+the resulting Kraus operators as $B_0,\ldots,B_3$.  For a real vector
+$r\in\R^4$, put
+\begin{equation}
+  K(r)=\sum_{j=0}^{3}r_jB_j .
+\end{equation}
+Then
+\begin{equation}
+  \det K(r)=r^{\mathsf T}\Sigma r\geq0.
+  \label{eq:positive-det}
+\end{equation}
+Consequently, for every $O\in O(4)$, the four rows $r_x$ define a frame mixed
+by $U=OV^\dagger$ for which
+\begin{equation}
+ \sum_x|\det K(r_x)|
+ =\sum_{x,j}\sigma_jO_{xj}^2
+ =\Tr\Sigma=\|Q\|_* .
+ \label{eq:real-takagi-family}
+\end{equation}
+Every member of this real orthogonal family is globally optimal for the
+Bayesian score.
+
+Expand the effect of $K(r)$ in the Pauli basis:
+\begin{equation}
+ K(r)^\dagger K(r)
+ =\alpha(r)\one_2+\sum_{k=1}^{3}(r^{\mathsf T}H_kr)\sigma_k .
+ \label{eq:effect-forms}
+\end{equation}
+Because $r$ is real, each coefficient is a real quadratic form and the
+$H_k$ may be chosen real symmetric.  More explicitly,
+\begin{equation}
+ r^{\mathsf T}H_kr=\frac12\Tr\bigl[\sigma_kK(r)^\dagger K(r)\bigr].
+\end{equation}
+Completeness of the Takagi-mixed frame gives
+\begin{equation}
+ \Tr_{\R^4}H_k
+ =\frac12\Tr\!\left[\sigma_k\sum_jB_j^\dagger B_j\right]
+ =\frac12\Tr\sigma_k=0 .
+ \label{eq:traceless-forms}
+\end{equation}
+Apply Lemma~\ref{lem:collinear} to $(H_1,H_2,H_3)$ and use its basis vectors
+as the rows of $O$.  Equation~\eqref{eq:effect-forms} then says that the Bloch
+vectors of the four effects $K(r_x)^\dagger K(r_x)$ lie on one line.  Two
+qubit Hermitian matrices commute precisely when their Bloch vectors are
+collinear.  The four effects, and hence their positive square roots, commute.
+Combined with Eq.~\eqref{eq:real-takagi-family}, this proves the following.
+
+\begin{proposition}[Optimal commuting frame]
+\label{prop:commuting-frame}
+Every full-Choi-rank qubit CPTP map has a four-outcome orthogonal environment
+measurement that simultaneously satisfies
+\begin{enumerate}
+ \item $\sum_x|\det K_x|=\|Q\|_*$, and
+ \item $[K_x^\dagger K_x,K_y^\dagger K_y]=0$ for all $x,y$.
+\end{enumerate}
+\end{proposition}
+
+No nondegeneracy of the Takagi singular values or of the individual outcome
+operators was used.  In particular, zero or singular outcomes do not obstruct
+the construction.
+
+\section{Equality for every use count}
+\label{sec:main}
+
+\begin{theorem}[No optimized history advantage]
+\label{thm:main}
+Let $\cE$ be a qubit CPTP map with positive-definite Choi matrix.  Use the
+same four-outcome orthogonal projective measurement on every fresh minimal
+environment.  For every positive integer $n$, the separately optimized
+entanglement fidelities of current-outcome polar recovery and full-history
+optimal recovery satisfy
+\begin{equation}
+ \boxed{
+ F^{\mathrm M,*}_n(\cE)=F^{\mathrm B,*}_n(\cE)
+ =\frac{1+\|Q\|_*^n}{2}.}
+ \label{eq:main-result}
+\end{equation}
+In particular, the optimized three-use gap is zero.
+\end{theorem}
+
+\begin{proof}
+Choose the frame from Proposition~\ref{prop:commuting-frame} and diagonalize
+its commuting square roots in one system basis:
+\begin{equation}
+ P_x=|K_x|=\begin{pmatrix}p_x&0\\0&q_x\end{pmatrix},
+ \qquad p_x,q_x\geq0 .
+\end{equation}
+Trace preservation and determinant optimality give
+\begin{equation}
+ \sum_xp_x^2=\sum_xq_x^2=1,
+ \qquad \sum_xp_xq_x=\sum_x|\det K_x|=\|Q\|_* .
+ \label{eq:diagonal-sums}
+\end{equation}
+The corrected channel $\cM_U$ preserves the longitudinal Bloch component and
+multiplies both transverse components by $\|Q\|_*$.  Its Bloch eigenvalues are
+therefore $(1,\|Q\|_*,\|Q\|_*)$, and Eq.~\eqref{eq:markov-bloch} gives
+\begin{equation}
+ F^{\mathrm M}_n(U)=\frac{1+\|Q\|_*^n}{2}.
+\end{equation}
+By Eqs.~\eqref{eq:bayes-reduction} and
+\eqref{eq:real-takagi-family}, the Bayesian score at the same $U$ has exactly
+this value, which is its global optimum in Eq.~\eqref{eq:bayes-optimum}.
+Finally, $F^{\mathrm M,*}_n\leq F^{\mathrm B,*}_n$ because the memoryless
+policy is a special history-dependent policy, whereas the constructed frame
+shows the reverse inequality at the common optimum.  This proves
+Eq.~\eqref{eq:main-result}.
+\end{proof}
+
+The theorem does not say that history is useless at a prescribed environment
+measurement.  Equation~\eqref{eq:three-deficit} shows that a noncommuting
+fixed frame can have a strict three-use advantage.  Rather, it says that an
+optimal measurement can always be chosen from the Takagi family so that the
+memoryless corrected channel already reaches the global history-dependent
+ceiling.  This separation between pointwise and optimized statements is
+essential to the physical interpretation.
+
+\section{Deterministic numerical checks}
+\label{sec:checks}
+
+The argument above is finite dimensional and exact; numerical evidence is not
+used to infer Theorem~\ref{thm:main}.  Deterministic scripts accompanying this
+article implement the quaternionic construction and independently enumerate
+Kraus histories as diagnostic checks.  Twelve arbitrary triples of traceless
+real symmetric forms and eight nonunital channels with strictly positive Choi
+spectra were tested.  The latter used $n=1,\ldots,7$ transfer calculations and
+an explicit $4^3=64$-history calculation at $n=3$.  Table~\ref{tab:checks}
+reports the largest residual in each class.
+
+\begin{table}[ht]
+\centering
+\caption{Floating-point diagnostics for the exact construction.  These
+residuals check the implementation and are not substitutes for the proof.}
+\label{tab:checks}
+\begin{tabular}{lr}
+\toprule
+Diagnostic & largest residual \\
+\midrule
+generic three-form construction & $1.639\times10^{-15}$ \\
+Takagi diagonalization & $1.364\times10^{-15}$ \\
+determinant optimum $s=\|Q\|_*$ & $4.441\times10^{-16}$ \\
+effect commutators & $1.316\times10^{-16}$ \\
+score identity, $n=1,\ldots,7$ & $1.554\times10^{-15}$ \\
+explicit 64-history identity, $n=3$ & $3.331\times10^{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The smallest Choi eigenvalue among these eight channel instances was
+$3.662\times10^{-3}$.  The same package reproduces the published special
+rank-three baseline of Ref.~\cite{rexiti2024} for three interior parameters
+and $n=1,2,3,5$, with largest residual $1.887\times10^{-15}$.  It also checks
+the one-step polar-recovery result of Ref.~\cite{gregoratti2004} and verifies
+the complex-modulus convention in Eq.~\eqref{eq:markov-score} by a direct
+normalized Choi--Bell contraction.
+
+\section{Discussion and limitations}
+\label{sec:discussion}
+
+The trace norm of the determinant polarization $Q$ controls the common
+optimum, but the main structural result is not the Takagi bound itself.  The
+nontrivial step is compatibility: among all determinant-optimal measurements,
+there is one whose four effects commute.  Lemma~\ref{lem:collinear} establishes
+this without assuming a unital channel, distinct Takagi singular values, or
+invertible outcome operators.  It also explains why a generic simultaneous
+hollowization result for a fixed pair of matrices is insufficient: the proof
+must exploit both four real Kraus coordinates and the freedom to select the
+surviving common Bloch axis.
+
+At three uses, noncommuting positive factors may have a complex trace, and a
+fixed measurement can make full outcome history operationally useful.  The
+optimization over the projective environment basis nevertheless removes this
+advantage.  The all-$n$ extension follows because the constructed channel has
+the exact Bloch spectrum $(1,s,s)$; it is not a perturbative extrapolation from
+the three-use case.
+
+Several nearby questions remain open outside the theorem's domain.  An
+adaptive choice of environment basis changes the admissible optimization.
+Extra-outcome nonprojective measurements are not parametrized by $U(4)$.
+Correlated environments invalidate the product-history factorization behind
+Eq.~\eqref{eq:bayes-reduction}.  Nonunitary correcting channels, imperfect
+records, and higher-dimensional systems require different optimality
+arguments.  No experimental performance or implementation-cost claim is made.
+Finally, the literature comparison supporting priority is bounded rather than
+exhaustive and requires human review before submission.
+
+\section*{Statements and declarations}
+
+\paragraph{Data and code availability.}
+There are no experimental data.  The reproducibility package accompanying
+this draft contains the Python source, fixed-seed logs, environment
+requirements, and commands for the published-baseline and construction
+checks described in Sec.~\ref{sec:checks}.
+
+\paragraph{Funding.}
+No funding information was supplied during preparation of this draft.  The
+author must confirm or replace this statement before submission.
+
+\paragraph{Competing interests.}
+No competing-interest declaration was supplied during preparation of this
+draft.  The author must provide and approve the final declaration before
+submission.
+
+\paragraph{Use of generative artificial intelligence.}
+OpenAI Codex was used on 12--13 September 2026 to propose and develop the
+analytic argument, derive and check equations, write verification code,
+conduct a bounded literature comparison, perform AI-only scientific checking,
+and draft the manuscript.  AI-only checking is not human peer review.  The
+listed author has not yet completed independent verification of the argument,
+code, sources, or final text; this draft must not be submitted until the author
+has done so and accepts scholarly responsibility for the work.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "full_dimension": 27,
+  "marginals_checked": 2,
+  "entries_each": 81,
+  "source_entries_checked": 81,
+  "trace": "TrY=3 exactly; X=Y/3",
+  "swap": "all component amplitudes exactly invariant",
+  "remaining_formal_residual": "f/2 only at(4,8),(8,4); exact Sturm/branch proof establishes f(r)=0",
+  "dual_blocks_checked": {
+    "plus": 5,
+    "minus": 3
+  },
+  "independence": "Separate direct pure-component embedding and full computational W entries; no cached marginal/constraint maps. Same worker and SymPy shared, not a fresh referee.",
+  "root_certificate": "evidence/qutrit-exact-certificate.json"
+}

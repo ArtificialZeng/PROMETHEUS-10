@@ -1,0 +1,9 @@
+command=python3 scripts/verify_global_bound_constants.py
+job_id=phys-00016-p01-research-eb734eed1a1f
+t_cross=49/54
+gram_boundary_identity=441/400=49c2=441/400
+endpoint_derivative_lower=2991/1274
+one_clock_frobenius_squared_bound=189/100
+exact_F2M=289/400
+history_witness_advantage=99/10000
+exact_constant_checks=PASS

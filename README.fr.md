@@ -2,13 +2,36 @@
 
 **Une physique par l’IA que l’on peut vérifier**
 
-[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md)
+[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [Русский](README.ru.md)
 
 Dix manuscrits de physique assistés par IA, accompagnés du code permettant d’examiner leurs conclusions. PROMETHEUS-10 réunit recherche de preuves, construction de contre-exemples et calcul contrôlé dans une collection vérifiable. Le nombre 10 désigne les manuscrits, pas dix problèmes généraux entièrement résolus.
 
 Bilans des contrôles internes historiques : **4 preuves, 3 réfutations, 2 notes de résultats partiels et 1 article computationnel**. Aucun PDF uniquement conjectural. Tous sont des brouillons soumis à validation finale de l’auteur, sans prétendre à une évaluation externe ou à une acceptation éditoriale.
 
 Sous direction humaine, l’IA a participé aux dérivations, au code, aux recherches numériques, aux contrôles et à la rédaction. Des contextes IA distincts ne constituent pas une évaluation externe. La colonne contribution expose les nouveautés revendiquées ; ce conditionnement ne refait pas une revue exhaustive de priorité bibliographique.
+
+<!-- SMALL_MAC_COLLECTION -->
+
+## Extension small_mac : 48 manuscrits par catégorie de résultat
+
+Ce dépôt contient **58 manuscrits** : les dix projets PROMETHEUS-10 d’origine et **48 manuscrits de physique small_mac**. Les dix projets d’origine et leurs limites scientifiques sont décrits ci-dessous.
+
+Chaque élément small_mac a franchi les contrôles locaux documentés de science, de manuscrit et de diffusion. Une revue humaine par l’auteur reste requise ; aucune évaluation externe ni acceptation éditoriale n’est revendiquée.
+
+La classification suit le registre de diffusion figé. Preuve et Réfutation concernent l’énoncé formulé et ses hypothèses ; les résultats partiels et computationnels ne signifient pas que la question initiale est entièrement résolue. Chaque PDF et note de transmission précise la portée scientifique et les limites.
+
+[Collection small_mac complète](collections/small_mac/README.fr.md)
+
+| Catégorie | Manuscrits |
+|---|---:|
+| [Preuve](collections/small_mac/categories/proofs/README.fr.md) | **21** |
+| [Réfutation](collections/small_mac/categories/disproofs/README.fr.md) | **7** |
+| [Résultat partiel](collections/small_mac/categories/partial-results/README.fr.md) | **19** |
+| [Résultat computationnel](collections/small_mac/categories/computational-papers/README.fr.md) | **1** |
+
+Les numéros d’affichage 11–58, les identifiants de lot et les identifiants internes d’origine sont conservés. Les identifiants publics `phys-smallmac` renvoient aux répertoires canoniques des projets. La correspondance figure dans [`id-map.json`](collections/small_mac/id-map.json).
+
+<!-- END_SMALL_MAC_COLLECTION -->
 
 | Projet | Type de conclusion | Détails |
 |---|---|---|

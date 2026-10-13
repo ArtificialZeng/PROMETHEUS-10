@@ -1,0 +1,14 @@
+Exact all-n reduction regression checks
+centered binomial-transform kernel: PASS; T(-r/2) B_r T(-r/2)^T has the stated rational generating function
+simultaneous-sign parity: PASS; E(-u,-v)=-E(u,v), hence E_ij=0 for i+j even
+source kernel split: PASS; A=(I+S)B_r(I+S)^T
+BFK last-column Laurent coefficients: PASS; independent exact extraction from the source rational function for i=1..14
+final scalar reduction: PASS; the minor relation converts the BFK low-t formula to the target RHS
+finite symbolic-polynomial regression n=2: PASS; C1=(1+1r)C0 at matrix order 4
+finite symbolic-polynomial regression n=3: PASS; C1=(1+2r)C0 at matrix order 6
+finite symbolic-polynomial regression n=4: PASS; C1=(1+3r)C0 at matrix order 8
+finite symbolic-polynomial regression n=5: PASS; C1=(1+4r)C0 at matrix order 10
+finite symbolic-polynomial regression n=6: PASS; C1=(1+5r)C0 at matrix order 12
+finite symbolic-polynomial regression n=7: PASS; C1=(1+6r)C0 at matrix order 14
+finite symbolic-polynomial regression n=8: PASS; C1=(1+7r)C0 at matrix order 16
+OVERALL: PASS

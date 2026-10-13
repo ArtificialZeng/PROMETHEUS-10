@@ -1,0 +1,244 @@
+{
+  "provenance": "portable copy of separate symbolic replay",
+  "method": "fresh Pauli compression and exact symbolic normal-cone certificates",
+  "source_files_read_by_code": [],
+  "python": "3.9.6 (default, Nov 11 2024, 03:15:38) \n[Clang 16.0.0 (clang-1600.0.26.6)]",
+  "sympy": "1.14.0",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "checks": [
+    {
+      "name": "symmetric isometry",
+      "pass": true
+    },
+    {
+      "name": "Jz and positive ladder convention",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S11",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S12",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S13",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S21",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S22",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S23",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S31",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S32",
+      "pass": true
+    },
+    {
+      "name": "Pauli compression equals spin moment S33",
+      "pass": true
+    },
+    {
+      "name": "generic complex traceless inverse identity",
+      "pass": true
+    },
+    {
+      "name": "generic Hilbert-Schmidt metric factor 1/4",
+      "pass": true
+    },
+    {
+      "name": "generic affine trace and 00 identities",
+      "pass": true
+    },
+    {
+      "name": "Gamma spectrum after a spatial rotation",
+      "pass": true
+    },
+    {
+      "name": "normal norm before normalization",
+      "pass": true
+    },
+    {
+      "name": "kappa minus 2/3 factorization",
+      "pass": true
+    },
+    {
+      "name": "Frobenius orthogonal projection",
+      "pass": true
+    },
+    {
+      "name": "published_lambda_minus_one exact normal-cone stationarity",
+      "pass": true
+    },
+    {
+      "name": "published_lambda_minus_one complementarity",
+      "pass": true
+    },
+    {
+      "name": "published_lambda_minus_one rank3 feasible classical matrix",
+      "pass": true
+    },
+    {
+      "name": "published_lambda_minus_one exact density and Bloch distances",
+      "pass": true
+    },
+    {
+      "name": "published_lambda_minus_one density positivity",
+      "pass": true
+    },
+    {
+      "name": "published_lambda_minus_one bound and equality condition",
+      "pass": true
+    },
+    {
+      "name": "submitted_zero_dipole exact normal-cone stationarity",
+      "pass": true
+    },
+    {
+      "name": "submitted_zero_dipole complementarity",
+      "pass": true
+    },
+    {
+      "name": "submitted_zero_dipole rank3 feasible classical matrix",
+      "pass": true
+    },
+    {
+      "name": "submitted_zero_dipole exact density and Bloch distances",
+      "pass": true
+    },
+    {
+      "name": "submitted_zero_dipole density positivity",
+      "pass": true
+    },
+    {
+      "name": "submitted_zero_dipole bound and equality condition",
+      "pass": true
+    },
+    {
+      "name": "submitted_nonzero_dipole exact normal-cone stationarity",
+      "pass": true
+    },
+    {
+      "name": "submitted_nonzero_dipole complementarity",
+      "pass": true
+    },
+    {
+      "name": "submitted_nonzero_dipole rank3 feasible classical matrix",
+      "pass": true
+    },
+    {
+      "name": "submitted_nonzero_dipole exact density and Bloch distances",
+      "pass": true
+    },
+    {
+      "name": "submitted_nonzero_dipole density positivity",
+      "pass": true
+    },
+    {
+      "name": "submitted_nonzero_dipole bound and equality condition",
+      "pass": true
+    },
+    {
+      "name": "nonphysical_target_control exact normal-cone stationarity",
+      "pass": true
+    },
+    {
+      "name": "nonphysical_target_control complementarity",
+      "pass": true
+    },
+    {
+      "name": "nonphysical_target_control rank3 feasible classical matrix",
+      "pass": true
+    },
+    {
+      "name": "nonphysical_target_control exact density and Bloch distances",
+      "pass": true
+    },
+    {
+      "name": "nonphysical_target_control density positivity",
+      "pass": true
+    },
+    {
+      "name": "nonphysical_target_control bound and equality condition",
+      "pass": true
+    },
+    {
+      "name": "complex SU2 unitary",
+      "pass": true
+    },
+    {
+      "name": "complex rotation moment covariance",
+      "pass": true
+    },
+    {
+      "name": "complex rotation retains exact projection",
+      "pass": true
+    },
+    {
+      "name": "complex rotation retains norm",
+      "pass": true
+    }
+  ],
+  "examples": [
+    {
+      "name": "published_lambda_minus_one",
+      "rho_eigenvalues": {
+        "0": 2,
+        "1": 1
+      },
+      "lambda": "-1",
+      "Q_squared": "3/8",
+      "kernel_time_square": "0",
+      "bound_squared_margin": "0"
+    },
+    {
+      "name": "submitted_zero_dipole",
+      "rho_eigenvalues": {
+        "3/20": 1,
+        "1/20": 1,
+        "4/5": 1
+      },
+      "lambda": "-3/5",
+      "Q_squared": "27/200",
+      "kernel_time_square": "0",
+      "bound_squared_margin": "0"
+    },
+    {
+      "name": "submitted_nonzero_dipole",
+      "rho_eigenvalues": {
+        "4/9": 1,
+        "23/45": 1,
+        "2/45": 1
+      },
+      "lambda": "22/45 - sqrt(853)/45",
+      "Q_squared": "2/225",
+      "kernel_time_square": "1/10",
+      "bound_squared_margin": "1289/5400 - 11*sqrt(853)/1350"
+    },
+    {
+      "name": "nonphysical_target_control",
+      "rho_eigenvalues": {
+        "-1/4": 2,
+        "3/2": 1
+      },
+      "lambda": "-2",
+      "Q_squared": "3/2",
+      "kernel_time_square": "0",
+      "bound_squared_margin": "0"
+    }
+  ],
+  "wall_seconds": 0.853539125,
+  "numeric_sdp_is_proof": false
+}

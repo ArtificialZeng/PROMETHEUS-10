@@ -1,0 +1,107 @@
+{
+  "symbolic": {
+    "checks": {
+      "isometry_completeness": true,
+      "receiver_partial_trace": true,
+      "full_environment_partial_trace": true,
+      "rho_determinant": true,
+      "dephased_determinant": true,
+      "dephasing_env_determinant": true
+    },
+    "receiver": "Matrix([[(1 - q)*(z + 1)/2, (1 - 2*p)*(1 - q)*(x - I*y)/2, 0], [(1 - 2*p)*(1 - q)*(x + I*y)/2, (1 - q)*(1 - z)/2, 0], [0, 0, q]])",
+    "environment": "Matrix([[(1 - p)*(1 - q), z*sqrt(p*(1 - p))*(1 - q), 0, 0], [z*sqrt(p*(1 - p))*(1 - q), p*(1 - q), 0, 0], [0, 0, q*(z/2 + 1/2), q*(x/2 - I*y/2)], [0, 0, q*(x/2 + I*y/2), q*(1/2 - z/2)]])",
+    "squared_spectral_radii": {
+      "rho": "x^2+y^2+z^2",
+      "receiver_qubit": "(1-2p)^2(x^2+y^2)+z^2",
+      "environment_dephase": "(1-2p)^2+4p(1-p)z^2"
+    },
+    "source_map": "S1 PDF p.7 (C1), p.9 (D1), p.5 (16). E uses [d0,d1,er0,er1]; C1 uses [er0,er1,d0,d1]."
+  },
+  "state_channel_cases": 500,
+  "matrix_scalar_max_abs_bits": 7.105427357601002e-15,
+  "minimum_output_eigenvalue_float": -9.44458904540279e-17,
+  "maximum_trace_error_float": 6.661338147750939e-16,
+  "diagnostic_tolerance_bits": 2e-12,
+  "baselines": {
+    "0.1": {
+      "r": "0.953910973817904649159595825801009202691953895925418623263557991704649710503",
+      "B_bits": "0.0800696650924465549818927405606491021160452039773703128803636002486532521403",
+      "arb_global_enclosure": {
+        "root_decimal_numerator": "953910973817904649159595825801009202691953895925418623263557",
+        "root_denominator": "10^60",
+        "lower_derivative": "[3.231485976456700e-60 +/- 4.88e-76]",
+        "upper_derivative": "[-2.7030536079164e-62 +/- 6.67e-76]",
+        "B_enclosure": "[0.08006966509244655498189274056064910211604520397737031288036 +/- 5.09e-60]",
+        "globality": "Strictly decreasing positive power-series coefficient ratio atanh(a r)/atanh(r), plus derivative signs at 0+ and 1-."
+      },
+      "stinespring_pair_rate": 0.0800696650924464,
+      "pair_scalar_error": 1.5265566588595902e-16
+    },
+    "0.108": {
+      "r": "0.885336224008947691551148151597858267351977596399508175043152465467637627576",
+      "B_bits": "0.0374241967948684152747523251228063910625436055743277146195728036538091316147",
+      "arb_global_enclosure": {
+        "root_decimal_numerator": "885336224008947691551148151597858267351977596399508175043152",
+        "root_denominator": "10^60",
+        "lower_derivative": "[4.68025041067654e-61 +/- 3.91e-76]",
+        "upper_derivative": "[-5.37469226399344e-61 +/- 1.18e-76]",
+        "B_enclosure": "[0.03742419679486841527475232512280639106254360557432771461957 +/- 4.16e-60]",
+        "globality": "Strictly decreasing positive power-series coefficient ratio atanh(a r)/atanh(r), plus derivative signs at 0+ and 1-."
+      },
+      "stinespring_pair_rate": 0.0374241967948683,
+      "pair_scalar_error": 1.1102230246251565e-16
+    },
+    "0.10925": {
+      "r": "0.867523196500944564092623722165066469905653582705395636540418577145443921617",
+      "B_bits": "0.0317346647928649776161669761821855516883899604859339387743543436478962118039",
+      "arb_global_enclosure": {
+        "root_decimal_numerator": "867523196500944564092623722165066469905653582705395636540418",
+        "root_denominator": "10^60",
+        "lower_derivative": "[4.70398084157560e-61 +/- 1.37e-76]",
+        "upper_derivative": "[-3.44644448173044e-61 +/- 3.44e-76]",
+        "B_enclosure": "[0.03173466479286497761616697618218555168838996048593393877435 +/- 5.67e-60]",
+        "globality": "Strictly decreasing positive power-series coefficient ratio atanh(a r)/atanh(r), plus derivative signs at 0+ and 1-."
+      },
+      "stinespring_pair_rate": 0.03173466479286513,
+      "pair_scalar_error": 1.5265566588595902e-16
+    },
+    "0.11": {
+      "r": "0.855397054963718219072113907582388491430153528615075723147857976695974247118",
+      "B_bits": "0.0284775148947528375744994723146358045064135649754051584193453101090159408281",
+      "arb_global_enclosure": {
+        "root_decimal_numerator": "855397054963718219072113907582388491430153528615075723147857",
+        "root_denominator": "10^60",
+        "lower_derivative": "[6.97910414081309e-61 +/- 2.38e-76]",
+        "upper_derivative": "[-1.6652185114539e-62 +/- 4.31e-76]",
+        "B_enclosure": "[0.02847751489475283757449947231463580450641356497540515841935 +/- 6.00e-60]",
+        "globality": "Strictly decreasing positive power-series coefficient ratio atanh(a r)/atanh(r), plus derivative signs at 0+ and 1-."
+      },
+      "stinespring_pair_rate": 0.028477514894753364,
+      "pair_scalar_error": 5.273559366969494e-16
+    },
+    "0.1105": {
+      "r": "0.84662726072268572999063199812228017314663094719389694961534738910435748974",
+      "B_bits": "0.0263752928372554528398231849411566755183022782756838505887869977955771679854",
+      "arb_global_enclosure": {
+        "root_decimal_numerator": "846627260722685729990631998122280173146630947193896949615347",
+        "root_denominator": "10^60",
+        "lower_derivative": "[2.54009899067749e-61 +/- 3.12e-76]",
+        "upper_derivative": "[-3.98796717517045e-61 +/- 3.07e-76]",
+        "B_enclosure": "[0.02637529283725545283982318494115667551830227827568385058879 +/- 4.31e-60]",
+        "globality": "Strictly decreasing positive power-series coefficient ratio atanh(a r)/atanh(r), plus derivative signs at 0+ and 1-."
+      },
+      "stinespring_pair_rate": 0.026375292837255593,
+      "pair_scalar_error": 1.3877787807814457e-16
+    }
+  },
+  "ensemble_count": 240,
+  "signal_count": 1480,
+  "ensemble_full_holevo_vs_scalar_error": 1.0564465968698755e-15,
+  "minimum_penalized_bound_margin": 0.013142209725909931,
+  "minimum_lower_envelope_margin": 0.0016571800925204016,
+  "minimum_upper_envelope_margin": -2.888314587501384e-16,
+  "existing_bound_slack_at_p011_arb": "[0.002716672014711516340821872704640014638999464782346207248813180590763365773 +/- 5.57e-76]",
+  "slack_argument": "max F - min F - B >= G(16/25)-C, since min F <= m and B=C-m. Legal z=4/5; no numerical global maximizer is assumed.",
+  "all_pass": true,
+  "limitations": "Finite matrix/ensemble tests are floating diagnostic checks, not proof. Universal scope comes from reviewed analytic reductions and the separate continuum interval replay. Pure-state roundoff is tolerated explicitly."
+}

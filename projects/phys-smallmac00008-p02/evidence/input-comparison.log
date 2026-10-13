@@ -1,0 +1,10 @@
+COMMAND: python3 evidence/compare_inputs.py
+UTC: 2026-09-13T12:21:18Z
+EXIT: 0
+comparison: exact
+basis_map: B's successive ket images are exactly A's matrix columns; both use rows=output, columns=input.
+environment_map: A's U rows multiply (T1,T2,T3)^T and reproduce B's independently derived K1,K2,K3 actions.
+choi_map: column-major vec(K) orders input first and output second: (K00,K10,K01,K11).
+original_matrix_residuals: three exact 2-by-2 zero matrices
+mixed_matrix_residuals: three exact 2-by-2 zero matrices
+U_transpose_U: exact identity(3)

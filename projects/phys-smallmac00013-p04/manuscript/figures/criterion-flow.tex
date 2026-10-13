@@ -1,0 +1,15 @@
+\begin{tikzpicture}[
+  node distance=7mm and 7mm,
+  box/.style={draw,rounded corners=2pt,align=center,inner sep=5pt,
+              text width=0.205\textwidth,font=\small},
+  arrow/.style={-{Latex[length=2mm]},thick}
+]
+  \node[box] (n) {Condition (N)\\$\langle y|K^\dagger G|x\rangle=0$};
+  \node[box,right=of n] (s) {Choi-support invariance\\$Z\ran V\subseteq\ran V$};
+  \node[box,below=of s] (a) {Induced Kraus action\\$ZV=VA$};
+  \node[box,left=of a] (p) {Exact quotient test\\$I_r-\lambda AA^\dagger\succeq0$};
+  \draw[<->,thick] (n) -- (s);
+  \draw[<->,thick] (s) -- (a);
+  \draw[<->,thick] (a) -- (p);
+  \draw[arrow] (p) -- node[left,font=\scriptsize,align=center] {$\lambda\opnorm{A}^2\leq1$} (n);
+\end{tikzpicture}

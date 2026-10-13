@@ -1,0 +1,290 @@
+[
+  {
+    "display_number": 11,
+    "id": "phys-smallmac00000-p13",
+    "original_internal_id": "PHY-13",
+    "paper_title": "Finite total dephasing and an isolated natural occupation in an open XX chain"
+  },
+  {
+    "display_number": 12,
+    "id": "phys-smallmac00000-p14",
+    "original_internal_id": "PHY-14",
+    "paper_title": "A second-order obstruction to localized edge-mode continuation in a non-Hermitian interacting Kitaev chain"
+  },
+  {
+    "display_number": 13,
+    "id": "phys-smallmac00001-p01",
+    "original_internal_id": "phys-smallmac00001-p01",
+    "paper_title": "Certified local optimality of a qubit counting process over a finite mean interval"
+  },
+  {
+    "display_number": 14,
+    "id": "phys-smallmac00001-p06",
+    "original_internal_id": "phys-smallmac00001-p06",
+    "paper_title": "A missing spectral arc at finite cycle affinity in four-state Markov generators"
+  },
+  {
+    "display_number": 15,
+    "id": "phys-smallmac00002-p01",
+    "original_internal_id": "phys-smallmac00002-p01",
+    "paper_title": "Absence of reflection-symmetric two-periodic boundary laws in the competing three-state SOS model"
+  },
+  {
+    "display_number": 16,
+    "id": "phys-smallmac00002-p09",
+    "original_internal_id": "phys-smallmac00002-p09",
+    "paper_title": "A counterexample to the forward waiting-time entropy bound in periodically driven Markov networks"
+  },
+  {
+    "display_number": 17,
+    "id": "phys-smallmac00003-p01",
+    "original_internal_id": "phys-smallmac00003-p01",
+    "paper_title": "Maximum purity of absolutely PPT states of two qutrits"
+  },
+  {
+    "display_number": 18,
+    "id": "phys-smallmac00004-p01",
+    "original_internal_id": "phys-smallmac00004-p01",
+    "paper_title": "Optimal single-letter private information of the dephrasure channel on a noise interval"
+  },
+  {
+    "display_number": 19,
+    "id": "phys-smallmac00003-p02",
+    "original_internal_id": "phys-smallmac00003-p02",
+    "paper_title": "A rank-three projection bound for the quantumness of spin-1 states"
+  },
+  {
+    "display_number": 20,
+    "id": "phys-smallmac00005-p01",
+    "original_internal_id": "phys-smallmac00005-p01",
+    "paper_title": "Three-copy universal qubit purification under complete stabilizer preservation"
+  },
+  {
+    "display_number": 21,
+    "id": "phys-smallmac00005-p02",
+    "original_internal_id": "phys-smallmac00005-p02",
+    "paper_title": "A computer-assisted three-state counterexample to a nonlinear phase-lag bound"
+  },
+  {
+    "display_number": 22,
+    "id": "phys-smallmac00005-p03",
+    "original_internal_id": "phys-smallmac00005-p03",
+    "paper_title": "A third magnetic Neumann level below the Dirichlet ground state on the disk"
+  },
+  {
+    "display_number": 23,
+    "id": "phys-smallmac00006-p01",
+    "original_internal_id": "phys-smallmac00006-p01",
+    "paper_title": "Activity above one half in finite Glauber annealing"
+  },
+  {
+    "display_number": 24,
+    "id": "phys-smallmac00006-p02",
+    "original_internal_id": "phys-smallmac00006-p02",
+    "paper_title": "Coherent information in uniformly noisy graph states is not ordered by subsystem size"
+  },
+  {
+    "display_number": 25,
+    "id": "phys-smallmac00006-p04",
+    "original_internal_id": "phys-smallmac00006-p04",
+    "paper_title": "指定两浓度幂律反应系统，能否严格认证四条嵌套极限环？"
+  },
+  {
+    "display_number": 26,
+    "id": "phys-smallmac00007-p01",
+    "original_internal_id": "phys-smallmac00007-p01",
+    "paper_title": "Common output bias matters in randomness certification from quantum speed limits"
+  },
+  {
+    "display_number": 27,
+    "id": "phys-smallmac00007-p03",
+    "original_internal_id": "phys-smallmac00007-p03",
+    "paper_title": "A two-pineapple envelope for split-core threshold random walks"
+  },
+  {
+    "display_number": 28,
+    "id": "phys-smallmac00008-p01",
+    "original_internal_id": "phys-smallmac00008-p01",
+    "paper_title": "Comment on “Distinguishing graph states by the properties of their marginals”"
+  },
+  {
+    "display_number": 29,
+    "id": "phys-smallmac00008-p02",
+    "original_internal_id": "phys-smallmac00008-p02",
+    "paper_title": "No optimized history gain in two-use environment feedback for full-rank qubit channels"
+  },
+  {
+    "display_number": 30,
+    "id": "phys-smallmac00009-p01",
+    "original_internal_id": "phys-smallmac00009-p01",
+    "paper_title": "Unique spanning-tree families bound the static response of every complete four-state Markov network"
+  },
+  {
+    "display_number": 31,
+    "id": "phys-smallmac00009-p02",
+    "original_internal_id": "phys-smallmac00009-p02",
+    "paper_title": "Pure-state uniqueness under common-axis measurements of three qubits excludes mixed-state impostors"
+  },
+  {
+    "display_number": 32,
+    "id": "phys-smallmac00010-p01",
+    "original_internal_id": "phys-00010-p01",
+    "paper_title": "Exact flat-noise transition rays from Hadamard involutions in four-level systems"
+  },
+  {
+    "display_number": 33,
+    "id": "phys-smallmac00010-p04",
+    "original_internal_id": "phys-00010-p04",
+    "paper_title": "A seven-$T$ fixed measurement accessing 220 four-qubit Pauli directions"
+  },
+  {
+    "display_number": 34,
+    "id": "phys-smallmac00010-p02",
+    "original_internal_id": "phys-00010-p02",
+    "paper_title": "Weak regulation increases stationary abundance noise in a three-species stochastic feedback ring"
+  },
+  {
+    "display_number": 35,
+    "id": "phys-smallmac00011-p02",
+    "original_internal_id": "phys-00011-p02",
+    "paper_title": "Directional stability of the reverse-depolarizing entanglement-assistance benchmark for qubit entanglement-breaking channels"
+  },
+  {
+    "display_number": 36,
+    "id": "phys-smallmac00012-p01",
+    "original_internal_id": "phys-00012-p01",
+    "paper_title": "Order-three unistochastic matrices form a monoid: exact compression of measured qutrit dynamics"
+  },
+  {
+    "display_number": 37,
+    "id": "phys-smallmac00012-p02",
+    "original_internal_id": "phys-00012-p02",
+    "paper_title": "A hypocycloid spectral bound for circulant unistochastic matrices without symmetric amplitudes"
+  },
+  {
+    "display_number": 38,
+    "id": "phys-smallmac00014-p01",
+    "original_internal_id": "phys-00014-p01",
+    "paper_title": "The third magnetic Neumann eigenvalue does not exceed the Dirichlet ground state on an annulus"
+  },
+  {
+    "display_number": 39,
+    "id": "phys-smallmac00014-p11",
+    "original_internal_id": "phys-00014-p11",
+    "paper_title": "No history advantage in repeated environment-assisted qubit recovery"
+  },
+  {
+    "display_number": 40,
+    "id": "phys-smallmac00014-p03",
+    "original_internal_id": "phys-00014-p03",
+    "paper_title": "A sharp weak-driving phase-lag bound for a symmetric three-state Markov cycle"
+  },
+  {
+    "display_number": 41,
+    "id": "phys-smallmac00015-p01",
+    "original_internal_id": "phys-00015-p01",
+    "paper_title": "A sharp weak-driving phase bound for symmetric complete Markov networks"
+  },
+  {
+    "display_number": 42,
+    "id": "phys-smallmac00015-p06",
+    "original_internal_id": "phys-00015-p06",
+    "paper_title": "A two-use history advantage under one-bit coarse-grained environment feedback"
+  },
+  {
+    "display_number": 43,
+    "id": "phys-smallmac00016-p01",
+    "original_internal_id": "phys-00016-p01",
+    "paper_title": "Exact current-bit optimum and a robust history advantage for coarse-grained generalized-amplitude-damping feedback"
+  },
+  {
+    "display_number": 44,
+    "id": "phys-smallmac00018-p01",
+    "original_internal_id": "phys-00018-p01",
+    "paper_title": "Exact indirect-gap boundary in a flux-one-third Harper–Hofstadter model with a period-three mass"
+  },
+  {
+    "display_number": 45,
+    "id": "phys-smallmac00013-p03",
+    "original_internal_id": "phys-00013-p03",
+    "paper_title": "Exact unrestricted Gaussian rank of two canonical matchgate magic states"
+  },
+  {
+    "display_number": 46,
+    "id": "phys-smallmac00013-p04",
+    "original_internal_id": "phys-00013-p04",
+    "paper_title": "An exact criterion for removing an elementary amplitude-damping factor from a quantum channel"
+  },
+  {
+    "display_number": 47,
+    "id": "phys-smallmac00013-p07",
+    "original_internal_id": "phys-00013-p07",
+    "paper_title": "The third boundary coefficient of even off-diagonally symmetric alternating-sign matrices"
+  },
+  {
+    "display_number": 48,
+    "id": "phys-smallmac00019-p01",
+    "original_internal_id": "phys-00019-p01",
+    "paper_title": "Exact signed-sum spectral locus of a six-term three-qubit Pauli Hamiltonian"
+  },
+  {
+    "display_number": 49,
+    "id": "phys-smallmac00020-p01",
+    "original_internal_id": "phys-00020-p01",
+    "paper_title": "The largest Liouvillian exceptional point need not maximize the spectral gap: An exact two-qubit counterexample"
+  },
+  {
+    "display_number": 50,
+    "id": "phys-smallmac00020-p02",
+    "original_internal_id": "phys-00020-p02",
+    "paper_title": "Strict separable non-saturation for a seven-state prepare-and-measure witness"
+  },
+  {
+    "display_number": 51,
+    "id": "phys-smallmac00020-p03",
+    "original_internal_id": "phys-00020-p03",
+    "paper_title": "Two-scale finite-size edge splitting at a repeated root of an extended Su–Schrieffer–Heeger chain"
+  },
+  {
+    "display_number": 52,
+    "id": "phys-smallmac00021-p01",
+    "original_internal_id": "phys-00021-p01",
+    "paper_title": "Exact finite-depth crossings in a Sierpinski–Hanoi free-fermion spin model"
+  },
+  {
+    "display_number": 53,
+    "id": "phys-smallmac00021-p02",
+    "original_internal_id": "phys-00021-p02",
+    "paper_title": "A unique cubic-coupling cancellation locus for collinear constant-vorticity capillary–gravity triads"
+  },
+  {
+    "display_number": 54,
+    "id": "phys-smallmac00021-p03",
+    "original_internal_id": "phys-00021-p03",
+    "paper_title": "Comment on “Band topology of the breathing kagome lattice”"
+  },
+  {
+    "display_number": 55,
+    "id": "phys-smallmac00022-p01",
+    "original_internal_id": "phys-00022-p01",
+    "paper_title": "Local stability of a two-copy entanglement-of-purification ansatz at the von Neumann boundary"
+  },
+  {
+    "display_number": 56,
+    "id": "phys-smallmac00022-p02",
+    "original_internal_id": "phys-00022-p02",
+    "paper_title": "Exact Tsirelson bound for a three-output Bell functional"
+  },
+  {
+    "display_number": 57,
+    "id": "phys-smallmac00022-p03",
+    "original_internal_id": "phys-00022-p03",
+    "paper_title": "Exact all-parameter spectral-gap certificates for deformed-EPR Hamiltonians on small subdivided stars"
+  },
+  {
+    "display_number": 58,
+    "id": "phys-smallmac00023-p03",
+    "original_internal_id": "phys-00023-p03",
+    "paper_title": "An exact anti-degradability threshold for the three-level bosonic loss–dephasing channel"
+  }
+]

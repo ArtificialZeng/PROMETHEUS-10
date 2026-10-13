@@ -1,0 +1,132 @@
+{
+  "all_depth_flat_locus": {
+    "A_k_at_s_zero": "1-3^(k-2)*t",
+    "D_reduced_coefficient": "(D_k/s^c_k)|_(s=0)=b_k*z^(3^(k-2)), b_k=15^((3^(k-2)-2k+3)/4), hence nonzero for z!=0",
+    "R_k_at_s_zero": "5^(k-2)",
+    "U_k_at_s_zero": "3^(k-2)",
+    "channel": "the extra simple root is the boundary-symmetric A1 channel alpha+2 beta; cycle-flat modes have zero corner response",
+    "characteristic_remainder": "(C_k/s^c_k)|_(s=0)=(-1)^(c_k-1)*b_k*3^(k-1)*t^(c_k+1)*(1-3^(k-3)*t)",
+    "cycle_exponent": "c_k=(3^(k-2)-1)/2",
+    "domain": "integer k>=2; nonzero real J for collision classification",
+    "exact_divisibility": "r_k-3=s*R_k(s,t)",
+    "multiplicity": "generic positive flat band c_k; at J=+/-J_k each physical sign x=+/-|J_k| has multiplicity exactly c_k+1",
+    "r_k_at_s_zero": "3",
+    "scaling": "J_(k+1)/J_k=lambda_(k+1)/lambda_k=1/sqrt(3), Delta_k=0 for the tracked crossing",
+    "unique_nonzero_collision": "J_k^2=3^(-(k-3)), so J_k^+=3^(-(k-3)/2) and J_k^-=-J_k^+ for every k>=3"
+  },
+  "environment": {
+    "numpy_version": "2.3.5",
+    "python_executable": "python3",
+    "python_version": "3.12.14",
+    "scipy_version": "1.18.1",
+    "sympy_version": "1.14.0"
+  },
+  "finite_table": [
+    {
+      "collision_J": "1",
+      "collision_J_squared": "1",
+      "cycle_flat_positive_multiplicity": 1,
+      "dispersive_dx_dJ": "0",
+      "first_order_x_separation": "1",
+      "k": 3,
+      "source_lambda": "1/2"
+    },
+    {
+      "collision_J": "3^(-1/2)",
+      "collision_J_squared": "1/3",
+      "cycle_flat_positive_multiplicity": 4,
+      "dispersive_dx_dJ": "2/11",
+      "first_order_x_separation": "9/11",
+      "k": 4,
+      "source_lambda": "3^(-1/2)/2"
+    },
+    {
+      "collision_J": "3^(-2/2)",
+      "collision_J_squared": "1/9",
+      "cycle_flat_positive_multiplicity": 13,
+      "dispersive_dx_dJ": "2/5",
+      "first_order_x_separation": "3/5",
+      "k": 5,
+      "source_lambda": "3^(-2/2)/2"
+    },
+    {
+      "collision_J": "3^(-3/2)",
+      "collision_J_squared": "1/27",
+      "cycle_flat_positive_multiplicity": 40,
+      "dispersive_dx_dJ": "116/197",
+      "first_order_x_separation": "81/197",
+      "k": 6,
+      "source_lambda": "3^(-3/2)/2"
+    },
+    {
+      "collision_J": "3^(-4/2)",
+      "collision_J_squared": "1/81",
+      "cycle_flat_positive_multiplicity": 121,
+      "dispersive_dx_dJ": "220/301",
+      "first_order_x_separation": "81/301",
+      "k": 7,
+      "source_lambda": "3^(-4/2)/2"
+    },
+    {
+      "collision_J": "3^(-5/2)",
+      "collision_J_squared": "1/243",
+      "cycle_flat_positive_multiplicity": 364,
+      "dispersive_dx_dJ": "3542/4271",
+      "first_order_x_separation": "729/4271",
+      "k": 8,
+      "source_lambda": "3^(-5/2)/2"
+    }
+  ],
+  "input_binding": {
+    "direct_graph_used_by_producer": false,
+    "normalization": "A_k=2h_k, C_k(z,J)=det(zI-A_k), t=J^2, y=z^2, s=t+y; physical x uses y=-x^2 and source lambda=|x|/2",
+    "pass3_recurrence_file": "evidence/cycle-schur-pass3.json",
+    "pass3_recurrence_sha256": "9f722f8029bb7e3ede95f2fea0aa0c91db13b5af1e5475ccaa7871fa7fa2850c",
+    "sector": "all canonical Hermitian cycle generators projected to +1",
+    "source_sha256": "2277938a2d7c3fb54fd70b23283223428aed10897daeb1379f36c16fe85b2d12"
+  },
+  "job_id": "phys-00021-p01-research-2f16d322a2e4",
+  "k6_collision": {
+    "J_decimal": 0.19245008972987526,
+    "J_exact": "sqrt(3)/9=1/(3*sqrt(3))",
+    "cycle_exponent": 40,
+    "isolated_root_count": 1,
+    "nonzero_collision_polynomial_in_J": "1-27*J^2",
+    "positive_root_count_on_0_lt_J_le_2": 1,
+    "positive_root_isolating_interval": [
+      "1539600717839/8000000000000",
+      "48112522432469/250000000000000"
+    ],
+    "predicted_positive_multiplicity": 41,
+    "primitive_normalized_flat_locus_remainder": "-27*t**42 + t**41",
+    "reduced_D_constant_exponent": {
+      "base": 15,
+      "exponent": 18
+    },
+    "source_lambda_exact": "sqrt(3)/18",
+    "x_exact": "sqrt(3)/9"
+  },
+  "limitations": [
+    "The all-depth statement is conditional on the signed recurrence proved in pass 3 and remains restricted to the all-cycle-+1 finite open single-particle sector.",
+    "No physical fermion-parity projection, many-body gap, other cycle sector, or thermodynamic phase transition is inferred.",
+    "This producer does not independently reconstruct the graph; the separate replay performs the direct k=6 test.",
+    "Literature novelty is not assessed by this calculation."
+  ],
+  "schema_version": 1,
+  "status": "pass",
+  "transversality": {
+    "dispersive_dx_dJ": "(5^(n+1)-6*3^n+1)/(5^(n+1)+6*3^n+1)",
+    "first_order_x_separation_from_flat": "12*3^n/(5^(n+1)+6*3^n+1)",
+    "k6": {
+      "dispersive_dx_dJ": "116/197",
+      "first_order_source_lambda_separation": "81/394",
+      "first_order_x_separation": "81/197",
+      "flat_dx_dJ": "1",
+      "partial_fixed_y": "116/3",
+      "partial_y": "197/3"
+    },
+    "n_definition": "n=k-3",
+    "partial_A_(k-1)_partial_y_at_collision": "(5^(n+1)+6*3^n+1)/12",
+    "source_lambda_separation": "one half of the x separation"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "job_id": "phys-smallmac00008-p01-research-77290a585cd8",
+  "origin": "Exact first hit, sample 678, seed 77290585; to be independently verified. All labels 1-based.",
+  "n": 6,
+  "C": [
+    1,
+    2,
+    3
+  ],
+  "G_edges": [
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      4,
+      6
+    ]
+  ],
+  "Gprime_edges": [
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      5,
+      6
+    ]
+  ],
+  "LC_word": [
+    3,
+    1,
+    5
+  ],
+  "condensed_labels": [
+    4,
+    5,
+    6,
+    "c"
+  ],
+  "witness_cut": [
+    4,
+    5
+  ]
+}

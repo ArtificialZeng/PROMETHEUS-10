@@ -1,0 +1,10 @@
+Independent exact order-16 reserved hold-out comparison
+matrix order: PASS; both routes report the predeclared order-16 hold-out
+order-16 [t^3] coefficient vector: PASS; definition transfer versus BFK low-t Pfaffian
+order-16 predicted RHS: PASS; independent constructions
+order-16 zero difference: PASS; exact integer/polynomial zero
+order-14 unrefined coefficient vector: PASS; definition transfer versus BFK Eq. (8.10)
+order-16 minor relation: PASS; C1=(1+7r)C0 exactly
+r=1 boundary factor: PASS; [t^3] total equals 7 times the order-14 OSASM total
+r=1 minor factor: PASS; specialization of C1=(1+7r)C0
+OVERALL: PASS

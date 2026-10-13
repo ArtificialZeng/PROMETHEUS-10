@@ -1,0 +1,1129 @@
+{
+  "environment": {
+    "numpy_version": "2.3.5",
+    "python_executable": "python3",
+    "python_version": "3.12.14",
+    "scipy_version": "1.18.1",
+    "sympy_version": "1.14.0"
+  },
+  "exact_bivariate_factorization": {
+    "P_hat_factors": [
+      {
+        "exponent": 24,
+        "factor": "x"
+      },
+      {
+        "exponent": 3,
+        "factor": "J**2 - x**2 + 3"
+      },
+      {
+        "exponent": 4,
+        "factor": "J**2 - x**2 + 5"
+      },
+      {
+        "exponent": 13,
+        "factor": "-(-J + x)*(J + x)"
+      },
+      {
+        "exponent": 1,
+        "factor": "J**4 - 2*J**2*x**2 + 5*J**2 + x**4 - 5*x**2 + 5"
+      },
+      {
+        "exponent": 1,
+        "factor": "-J**6*x**2 + J**6 + 3*J**4*x**4 - 11*J**4*x**2 + 6*J**4 - 3*J**2*x**6 + 19*J**2*x**4 - 30*J**2*x**2 + 8*J**2 + x**8 - 9*x**6 + 24*x**4 - 17*x**2 + 1"
+      },
+      {
+        "exponent": 2,
+        "factor": "-J**14*x**2 + J**14 + 7*J**12*x**4 - 25*J**12*x**2 + 16*J**12 - 21*J**10*x**6 + 129*J**10*x**4 - 224*J**10*x**2 + 98*J**10 + 35*J**8*x**8 - 305*J**8*x**6 + 880*J**8*x**4 - 944*J**8*x**2 + 286*J**8 - 35*J**6*x**10 + 395*J**6*x**8 - 1600*J**6*x**6 + 2796*J**6*x**4 - 1977*J**6*x**2 + 403*J**6 + 21*J**4*x**12 - 291*J**4*x**10 + 1520*J**4*x**8 - 3704*J**4*x**6 + 4215*J**4*x**4 - 1953*J**4*x**2 + 248*J**4 - 7*J**2*x**14 + 115*J**2*x**12 - 736*J**2*x**10 + 2306*J**2*x**8 - 3643*J**2*x**6 + 2697*J**2*x**4 - 775*J**2*x**2 + 49*J**2 + x**16 - 19*x**14 + 144*x**12 - 552*x**10 + 1119*x**8 - 1147*x**6 + 527*x**4 - 76*x**2"
+      }
+    ],
+    "degree": 108,
+    "det_zI_minus_A_factors": [
+      {
+        "exponent": 24,
+        "factor": "z"
+      },
+      {
+        "exponent": 3,
+        "factor": "J**2 + z**2 + 3"
+      },
+      {
+        "exponent": 4,
+        "factor": "J**2 + z**2 + 5"
+      },
+      {
+        "exponent": 13,
+        "factor": "J**2 + z**2"
+      },
+      {
+        "exponent": 1,
+        "factor": "J**4 + 2*J**2*z**2 + 5*J**2 + z**4 + 5*z**2 + 5"
+      },
+      {
+        "exponent": 1,
+        "factor": "J**6*z**2 + J**6 + 3*J**4*z**4 + 11*J**4*z**2 + 6*J**4 + 3*J**2*z**6 + 19*J**2*z**4 + 30*J**2*z**2 + 8*J**2 + z**8 + 9*z**6 + 24*z**4 + 17*z**2 + 1"
+      },
+      {
+        "exponent": 2,
+        "factor": "J**14*z**2 + J**14 + 7*J**12*z**4 + 25*J**12*z**2 + 16*J**12 + 21*J**10*z**6 + 129*J**10*z**4 + 224*J**10*z**2 + 98*J**10 + 35*J**8*z**8 + 305*J**8*z**6 + 880*J**8*z**4 + 944*J**8*z**2 + 286*J**8 + 35*J**6*z**10 + 395*J**6*z**8 + 1600*J**6*z**6 + 2796*J**6*z**4 + 1977*J**6*z**2 + 403*J**6 + 21*J**4*z**12 + 291*J**4*z**10 + 1520*J**4*z**8 + 3704*J**4*z**6 + 4215*J**4*z**4 + 1953*J**4*z**2 + 248*J**4 + 7*J**2*z**14 + 115*J**2*z**12 + 736*J**2*z**10 + 2306*J**2*z**8 + 3643*J**2*z**6 + 2697*J**2*z**4 + 775*J**2*z**2 + 49*J**2 + z**16 + 19*z**14 + 144*z**12 + 552*z**10 + 1119*z**8 + 1147*z**6 + 527*z**4 + 76*z**2"
+      }
+    ],
+    "dispersive_factor": "-J**6*x**2 + J**6 + 3*J**4*x**4 - 11*J**4*x**2 + 6*J**4 - 3*J**2*x**6 + 19*J**2*x**4 - 30*J**2*x**2 + 8*J**2 + x**8 - 9*x**6 + 24*x**4 - 17*x**2 + 1",
+    "dispersive_on_flat_locus": "-(3*J - 1)*(3*J + 1)",
+    "persistent_flat_factor": "(J^2-x^2)^13",
+    "term_count_before_factoring": 43
+  },
+  "input_binding": {
+    "augmented_dimension": 108,
+    "depth_k": 5,
+    "generator": "evidence/reproduce_sierpinski_hanoi.py",
+    "generator_sha256": "250c38822cce55240885b93fc8879a65aafdbd861d8e309612c698c43a1f4fee",
+    "local_pendant_edges": 39,
+    "root_edges": 81,
+    "root_vertices": 69,
+    "sector": "all 13 canonical cycle generators projected to +1",
+    "source_sha256": "2277938a2d7c3fb54fd70b23283223428aed10897daeb1379f36c16fe85b2d12"
+  },
+  "job_id": "phys-00021-p01-research-10e483bf8edf",
+  "normalization": {
+    "characteristic_polynomial_computed": "det(z I-A(J)) over ZZ[J,z]",
+    "physical_spectral_polynomial": "P_hat_5(x,J)=det(x I-iA(J))=det(x I-2ih_5(J))",
+    "source_plot": "lambda=|x|/2",
+    "symbolic_matrix": "A(J)=2h_5(J), real antisymmetric"
+  },
+  "rational_branch_tracking": [
+    {
+      "G_at_flat_x": "199/10000",
+      "J": "33/100",
+      "dispersive_lambda_interval": [
+        "830006995009/5000000000000",
+        "3320027980037/20000000000000"
+      ],
+      "dispersive_x_interval": [
+        "830006995009/2500000000000",
+        "3320027980037/10000000000000"
+      ],
+      "dispersive_x_interval_decimal": [
+        0.3320027980036,
+        0.3320027980037
+      ],
+      "flat_lambda_exact": "33/200",
+      "flat_x_exact": "33/100",
+      "isolated_root_count": 1,
+      "mirrored_negative_J": "-33/100",
+      "ordering": "dispersive_above_flat"
+    },
+    {
+      "G_at_flat_x": "-201/10000",
+      "J": "101/300",
+      "dispersive_lambda_interval": [
+        "334669419399/2000000000000",
+        "3346694193991/20000000000000"
+      ],
+      "dispersive_x_interval": [
+        "334669419399/1000000000000",
+        "3346694193991/10000000000000"
+      ],
+      "dispersive_x_interval_decimal": [
+        0.334669419399,
+        0.3346694193991
+      ],
+      "flat_lambda_exact": "101/600",
+      "flat_x_exact": "101/300",
+      "isolated_root_count": 1,
+      "mirrored_negative_J": "-101/300",
+      "ordering": "dispersive_below_flat"
+    }
+  ],
+  "schema_version": 1,
+  "scope": {
+    "established": "both k=5 Figure-5 landmarks are exact finite-size crossings at J=+/-1/3 and lambda=1/6 in the reconstructed all-cycle-+1 sector",
+    "not_established": "no claim for k other than 5, other cycle sectors, a many-body physical-parity gap, a boundary recursion, thermodynamic scaling, or literature novelty"
+  },
+  "special_point_certificate": {
+    "J_sign_equivalence": "B(-1/3)=D B(1/3) D, D=+1 on 69 root modes and -1 on 39 pendant modes",
+    "algebraic_multiplicity_of_each_x_sign": 14,
+    "combined_kernel": "ker(B^2+I)",
+    "combined_kernel_dimension": 28,
+    "combined_kernel_modular_ranks": {
+      "1000003": 80,
+      "1000033": 80
+    },
+    "geometric_multiplicity_of_each_x_sign": 14,
+    "hermiticity_reason": "iA(J) is Hermitian for real J, so algebraic and geometric multiplicities agree and no exceptional point is possible",
+    "kernel_basis_file": "evidence/exact-k5-kernel-basis.json",
+    "kernel_basis_sha256": "cd15d9f563eaf90b73068e0b01a0b92a3363becf75e45afd9f3c617fe810a246",
+    "points": [
+      {
+        "J": "1/3",
+        "lambda": "1/6",
+        "x": "1/3"
+      },
+      {
+        "J": "-1/3",
+        "lambda": "1/6",
+        "x": "1/3"
+      }
+    ],
+    "scaled_characteristic_factors_at_J_plus_1_over_3": [
+      {
+        "exponent": 24,
+        "factor": "z"
+      },
+      {
+        "exponent": 3,
+        "factor": "z**2 + 28"
+      },
+      {
+        "exponent": 4,
+        "factor": "z**2 + 46"
+      },
+      {
+        "exponent": 14,
+        "factor": "z**2 + 1"
+      },
+      {
+        "exponent": 1,
+        "factor": "z**4 + 47*z**2 + 451"
+      },
+      {
+        "exponent": 1,
+        "factor": "z**6 + 83*z**4 + 2035*z**2 + 12888"
+      },
+      {
+        "exponent": 2,
+        "factor": "z**16 + 178*z**14 + 12720*z**12 + 464678*z**10 + 9149543*z**8 + 94463508*z**6 + 469089907*z**4 + 904372759*z**2 + 391908789"
+      }
+    ],
+    "target_scaled_factor": "(z^2+1)^14"
+  },
+  "symmetry_blocks": {
+    "J_sign_gauge_commutes_with_lift": true,
+    "extra_dispersive_branch_characters": {
+      "identity": 1,
+      "reflection": 1,
+      "three_cycle": 1
+    },
+    "extra_dispersive_branch_irreps": {
+      "A1_trivial": 1,
+      "A2_sign": 0,
+      "E_standard_2d": 0
+    },
+    "generator_signed_permutations": {
+      "reflection": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          18,
+          1
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          24,
+          1
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          30,
+          -1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          38,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          40,
+          1
+        ],
+        [
+          39,
+          -1
+        ],
+        [
+          36,
+          -1
+        ],
+        [
+          33,
+          1
+        ],
+        [
+          32,
+          1
+        ],
+        [
+          35,
+          -1
+        ],
+        [
+          34,
+          1
+        ],
+        [
+          55,
+          1
+        ],
+        [
+          54,
+          1
+        ],
+        [
+          58,
+          1
+        ],
+        [
+          57,
+          -1
+        ],
+        [
+          56,
+          1
+        ],
+        [
+          64,
+          1
+        ],
+        [
+          63,
+          1
+        ],
+        [
+          65,
+          -1
+        ],
+        [
+          62,
+          -1
+        ],
+        [
+          60,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          61,
+          -1
+        ],
+        [
+          53,
+          -1
+        ],
+        [
+          42,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          45,
+          1
+        ],
+        [
+          44,
+          -1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          51,
+          1
+        ],
+        [
+          50,
+          1
+        ],
+        [
+          52,
+          -1
+        ],
+        [
+          49,
+          -1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          46,
+          1
+        ],
+        [
+          48,
+          -1
+        ],
+        [
+          66,
+          1
+        ],
+        [
+          68,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          70,
+          1
+        ],
+        [
+          69,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          72,
+          -1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          80,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          82,
+          1
+        ],
+        [
+          81,
+          -1
+        ],
+        [
+          78,
+          -1
+        ],
+        [
+          75,
+          1
+        ],
+        [
+          74,
+          1
+        ],
+        [
+          77,
+          -1
+        ],
+        [
+          76,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          96,
+          1
+        ],
+        [
+          100,
+          1
+        ],
+        [
+          99,
+          -1
+        ],
+        [
+          98,
+          1
+        ],
+        [
+          106,
+          1
+        ],
+        [
+          105,
+          1
+        ],
+        [
+          107,
+          -1
+        ],
+        [
+          104,
+          -1
+        ],
+        [
+          102,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          103,
+          -1
+        ],
+        [
+          95,
+          -1
+        ],
+        [
+          84,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          87,
+          1
+        ],
+        [
+          86,
+          -1
+        ],
+        [
+          85,
+          1
+        ],
+        [
+          93,
+          1
+        ],
+        [
+          92,
+          1
+        ],
+        [
+          94,
+          -1
+        ],
+        [
+          91,
+          -1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          88,
+          1
+        ],
+        [
+          90,
+          -1
+        ]
+      ],
+      "rotation": [
+        [
+          13,
+          -1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          12,
+          -1
+        ],
+        [
+          16,
+          -1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          15,
+          -1
+        ],
+        [
+          10,
+          -1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          9,
+          -1
+        ],
+        [
+          22,
+          -1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          21,
+          -1
+        ],
+        [
+          25,
+          -1
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          24,
+          -1
+        ],
+        [
+          19,
+          -1
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          18,
+          -1
+        ],
+        [
+          4,
+          -1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          3,
+          -1
+        ],
+        [
+          7,
+          -1
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          6,
+          -1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          48,
+          -1
+        ],
+        [
+          46,
+          -1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          43,
+          -1
+        ],
+        [
+          52,
+          -1
+        ],
+        [
+          50,
+          -1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          51,
+          1
+        ],
+        [
+          45,
+          -1
+        ],
+        [
+          44,
+          -1
+        ],
+        [
+          41,
+          -1
+        ],
+        [
+          42,
+          1
+        ],
+        [
+          34,
+          -1
+        ],
+        [
+          61,
+          -1
+        ],
+        [
+          59,
+          -1
+        ],
+        [
+          62,
+          1
+        ],
+        [
+          60,
+          1
+        ],
+        [
+          56,
+          -1
+        ],
+        [
+          65,
+          -1
+        ],
+        [
+          63,
+          -1
+        ],
+        [
+          64,
+          1
+        ],
+        [
+          58,
+          -1
+        ],
+        [
+          57,
+          -1
+        ],
+        [
+          54,
+          -1
+        ],
+        [
+          55,
+          1
+        ],
+        [
+          40,
+          -1
+        ],
+        [
+          35,
+          -1
+        ],
+        [
+          32,
+          -1
+        ],
+        [
+          36,
+          1
+        ],
+        [
+          33,
+          1
+        ],
+        [
+          29,
+          -1
+        ],
+        [
+          39,
+          -1
+        ],
+        [
+          37,
+          -1
+        ],
+        [
+          38,
+          1
+        ],
+        [
+          31,
+          -1
+        ],
+        [
+          30,
+          -1
+        ],
+        [
+          27,
+          -1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          67,
+          -1
+        ],
+        [
+          68,
+          1
+        ],
+        [
+          66,
+          -1
+        ],
+        [
+          90,
+          -1
+        ],
+        [
+          88,
+          -1
+        ],
+        [
+          91,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          85,
+          -1
+        ],
+        [
+          94,
+          -1
+        ],
+        [
+          92,
+          -1
+        ],
+        [
+          95,
+          1
+        ],
+        [
+          93,
+          1
+        ],
+        [
+          87,
+          -1
+        ],
+        [
+          86,
+          -1
+        ],
+        [
+          83,
+          -1
+        ],
+        [
+          84,
+          1
+        ],
+        [
+          76,
+          -1
+        ],
+        [
+          103,
+          -1
+        ],
+        [
+          101,
+          -1
+        ],
+        [
+          104,
+          1
+        ],
+        [
+          102,
+          1
+        ],
+        [
+          98,
+          -1
+        ],
+        [
+          107,
+          -1
+        ],
+        [
+          105,
+          -1
+        ],
+        [
+          106,
+          1
+        ],
+        [
+          100,
+          -1
+        ],
+        [
+          99,
+          -1
+        ],
+        [
+          96,
+          -1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          82,
+          -1
+        ],
+        [
+          77,
+          -1
+        ],
+        [
+          74,
+          -1
+        ],
+        [
+          78,
+          1
+        ],
+        [
+          75,
+          1
+        ],
+        [
+          71,
+          -1
+        ],
+        [
+          81,
+          -1
+        ],
+        [
+          79,
+          -1
+        ],
+        [
+          80,
+          1
+        ],
+        [
+          73,
+          -1
+        ],
+        [
+          72,
+          -1
+        ],
+        [
+          69,
+          -1
+        ],
+        [
+          70,
+          1
+        ]
+      ]
+    },
+    "generic_flat_positive_band_characters_at_J_half": {
+      "identity": 13,
+      "reflection": -3,
+      "three_cycle": 1
+    },
+    "generic_flat_positive_band_irreps": {
+      "A1_trivial": 1,
+      "A2_sign": 4,
+      "E_standard_2d": 4
+    },
+    "generic_flat_real_combined_kernel_characters_at_J_half": {
+      "identity": 26,
+      "reflection": -6,
+      "three_cycle": 2
+    },
+    "group": "S3 peg permutations with signed orientation-gauge lifts",
+    "interpretation": "the 14-fold point is a transverse meeting of a 13-fold flat band with one additional A1 singlet; the flat band already contains one A1 singlet, so the meeting is within the same one-dimensional symmetry block, not a distinct-irrep protected crossing",
+    "lift_convention": "r=(0 1 2) is globally signed so Q_r^3=I; s=(1 2) has root-mode-0 sign +1; Q_s Q_r Q_s=Q_r^2",
+    "reflection_lift_note": "multiplying every reflection lift by -1 swaps the names A1 and A2 but leaves all dimensions and the same-irrep conclusion unchanged",
+    "relations_exact": true,
+    "special_positive_eigenspace_characters": {
+      "identity": 14,
+      "reflection": -2,
+      "three_cycle": 2
+    },
+    "special_positive_eigenspace_irreps": {
+      "A1_trivial": 2,
+      "A2_sign": 4,
+      "E_standard_2d": 4
+    },
+    "special_real_combined_kernel_characters": {
+      "identity": 28,
+      "reflection": -4,
+      "three_cycle": 4
+    }
+  },
+  "transversality": {
+    "at_J_x_plus_one_third": {
+      "dispersive_dx_dJ": "2/5",
+      "first_order_lambda_separation_coefficient": "3/10",
+      "first_order_x_separation_coefficient": "3/5",
+      "flat_dx_dJ": "1",
+      "partial_G_partial_J": "4",
+      "partial_G_partial_x": "-10"
+    },
+    "negative_point": "by exact J-sign gauge, slopes are -2/5 (dispersive) and -1 (positive flat branch)"
+  }
+}

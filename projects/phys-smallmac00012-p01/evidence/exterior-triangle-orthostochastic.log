@@ -1,0 +1,48 @@
+EXTERIOR-ALGEBRA ORTHOSTOCHASTIC-FACTOR AUDIT
+COMMAND: python3 -B code/exterior_triangle_orthostochastic.py
+SCOPE: exact qutrit lemma; not a proof of closure for two arbitrary interior factors
+PASS: complex Lagrange identity holds as a polynomial identity
+PASS: Heron polynomial reduces to four times a real-Gram determinant
+PASS: summed inner-product component contracts with diag(Q^T Q)
+PASS: summed wedge component (0,1) contracts with (Q^T Q)[0,1]
+PASS: summed wedge component (0,2) contracts with (Q^T Q)[0,2]
+PASS: summed wedge component (1,2) contracts with (Q^T Q)[1,2]
+PASS: row pair (0,1): first proportionality obstruction factors exactly
+PASS: row pair (0,1): second proportionality obstruction factors exactly
+PASS: row pair (0,2): first proportionality obstruction factors exactly
+PASS: row pair (0,2): second proportionality obstruction factors exactly
+PASS: row pair (1,2): first proportionality obstruction factors exactly
+PASS: row pair (1,2): second proportionality obstruction factors exactly
+PASS: strict: P is exactly unitary
+PASS: strict: Q is exactly orthogonal
+PASS: strict: the three certificate vectors sum exactly to zero
+PASS: strict: ||z_0||^2=M[0,0]M[0,1]
+PASS: strict: ||z_1||^2=M[1,0]M[1,1]
+PASS: strict: ||z_2||^2=M[2,0]M[2,1]
+PASS: strict: product is exactly bistochastic
+PASS: strict: h equals the exact real-Gram nonnegativity certificate
+PASS: strict: every P entry is nonzero
+PASS: strict: every Q entry is nonzero
+PASS: strict: z_0 and z_1 are not proportional
+PASS: strict: z_0 and z_2 are not proportional
+PASS: strict: z_1 and z_2 are not proportional
+PASS: strict: exact product witness h is positive
+PASS: degenerate: P is exactly unitary
+PASS: degenerate: Q is exactly orthogonal
+PASS: degenerate: the three certificate vectors sum exactly to zero
+PASS: degenerate: ||z_0||^2=M[0,0]M[0,1]
+PASS: degenerate: ||z_1||^2=M[1,0]M[1,1]
+PASS: degenerate: ||z_2||^2=M[2,0]M[2,1]
+PASS: degenerate: product is exactly bistochastic
+PASS: degenerate: h equals the exact real-Gram nonnegativity certificate
+PASS: degenerate: zero-entry factor permits saturated h=0
+strict_Q=Matrix([[-2/3, 2/15, 11/15], [2/3, -1/3, 2/3], [1/3, 14/15, 2/15]])
+strict_product=Matrix([[90725524/274730625, 67011001/274730625, 4679764/10989225], [151225/439569, 120628/439569, 167716/439569], [89489476/274730625, 132327124/274730625, 2116561/10989225]])
+strict_product_h=36977026841252780032/1228789356545963671875
+degenerate_product_h=0
+RESULT: if the left qutrit factor is orthostochastic and the right factor is
+unistochastic, the product satisfies the exact triangle criterion; by
+transposition the same holds with the factor order reversed.
+STRICTNESS: if both displayed realizers have no zero entries, the product lies
+in the strict unistochastic interior h>0.
+LIMITATION: two arbitrary non-orthostochastic interior factors remain unresolved.

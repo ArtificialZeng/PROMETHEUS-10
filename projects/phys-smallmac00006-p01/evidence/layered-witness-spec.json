@@ -1,0 +1,53 @@
+{
+  "job_id": "phys-smallmac00006-p01-research-184a84a17ff0",
+  "frozen_at": "2026-09-12T17:47:55.233071+00:00",
+  "status": "test_specification_not_referee_acceptance",
+  "vertex_sets": {
+    "A": [
+      0,
+      1,
+      2
+    ],
+    "B": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "C": [
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "edges_rule": "All A-B edges; B_j-C_j for j=0..3; all C-C edges. No others.",
+  "n": 11,
+  "degree": 4,
+  "energy_unit": "epsilon>0; beta epsilon dimensionless",
+  "energies": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    64,
+    64,
+    64,
+    64
+  ],
+  "q_protocol": [
+    "10001/10000",
+    "33/32",
+    "64"
+  ],
+  "initial_condition": "p0=Gibbs(q0), per-vertex weights q0^(-E/epsilon)",
+  "observable_indices": [
+    0,
+    1
+  ],
+  "target": "A1>1/2. Also independently test (A0+A1)/2>1/2 without presupposing the answer.",
+  "derivation_route": "Energy-separated layered regular graph: in beta0->0, beta1->0 with beta1 E_C->infinity, beta2->infinity, first-step per-vertex pA,pB,pC tend to (1,5/4,3/4)/11. Second-bath activities per vertex tend to (0,3/4,5/8), predicting A1->45/88. All limiting arguments are discovery only until a finite exact witness is computed."
+}

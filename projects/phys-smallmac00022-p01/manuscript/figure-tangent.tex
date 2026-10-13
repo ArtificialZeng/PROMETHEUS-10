@@ -1,0 +1,25 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw,rounded corners,align=center,minimum height=11mm,minimum width=34mm,font=\small},
+  arr/.style={-{Stealth[length=2.2mm]},thick},
+  note/.style={font=\footnotesize,align=center}
+]
+\node[box] (all) {$T_{I_{16}}U(16)$\\$256$ real dimensions};
+\node[box,below left=16mm and 9mm of all] (kernel) {$\ker N$\\$112$ rank-preserving};
+\node[box,below right=16mm and 9mm of all] (opening) {$(\ker N)^\perp$\\$144$ support-opening};
+\node[box,below left=16mm and -2mm of kernel] (gauge) {$T_{I_{16}}\mathcal O$\\$31$ gauge};
+\node[box,below right=16mm and -2mm of kernel] (quotient) {$\ker N/T\mathcal O$\\$81=9+36+36$};
+\draw[arr] (all) -- (kernel);
+\draw[arr] (all) -- (opening);
+\draw[arr] (kernel) -- (gauge);
+\draw[arr] (kernel) -- (quotient);
+\node[note,below=4mm of opening] {$\|N(K)\|_F^2\geq(5/338)\|K\|_F^2$};
+\node[note,below=4mm of quotient] {$\lambda_{\min}(H)>0.159$};
+\end{tikzpicture}
+\caption{Exact tangent decomposition at the product-canonical point.  The
+ordinary Hessian acts on the 81-dimensional fixed-rank quotient; the
+144-dimensional complement is controlled through the support-opening map and
+the logarithmic entropy tail.}
+\label{fig:split}
+\end{figure}

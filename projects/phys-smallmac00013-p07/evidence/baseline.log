@@ -1,0 +1,11 @@
+Executed under the bound Python 3.12.14 runtime on 2026-09-14:
+python3 code/enumerate_osasm.py --max-order 12 --output evidence/input-a-enumeration.json
+Result: Table 3 totals 1,1,4,3,32,26,640,646,34048,45885,4945920,9304650.
+python3 code/pfaffian_osasm.py --max-order 10 --output evidence/input-b-pfaffian.json
+Result: exact totals through order 10 and exact Eq. (8.11) t=1 / Eq. (8.10) consistency.
+python3 code/compare_reproduction.py --input-a evidence/input-a-enumeration.json --input-b evidence/input-b-pfaffian.json --output evidence/input-comparison.log
+Result: PASS; full polynomials agree coefficientwise through order 10; Eq. (8.3), all Table 3 entries, and Eq. (8.32) through even order 12 pass.
+SHA256 source.md=6574cbf68ca2df43218bfd16f4607dc97e700b343a99d548cb51756e4d2f2306
+SHA256 input-a=df5d5ecda2e12fa5999158079d69054eea867b32b695129264de88ebb10d67ec
+SHA256 input-b=77730642fb5636e7b76df268dda3987c95e2d755d89084abd6fac18e530d1459
+SHA256 comparison=0a9170904c196c697139525de713eb85dd242d7f1d3774d3633e854f448abcef

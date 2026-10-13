@@ -1,0 +1,6 @@
+# Versions used for the manuscript rendering and the independent replay.
+# This file is an environment record, not an instruction to install software.
+numpy==2.0.2
+scipy==1.13.1
+sympy==1.14.0
+matplotlib==3.9.4

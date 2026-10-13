@@ -1,0 +1,10 @@
+{
+  "job_id": "PHY-14-referee-5a932658dcd5",
+  "precision_bits": 224,
+  "exact_clifford_commutator_vs_exterior_formula": true,
+  "quintic_coefficients_checked": 156,
+  "interval_contraction_difference": "[+/- 3.05e-19] + [+/- 3.09e-19]j",
+  "cutoff_crossing_bond_contribution": "[-0.004729814098162056 +/- 6.50e-19] + [-0.002999947271740962 +/- 4.87e-19]j",
+  "cutoff_crossing_nonzero": true,
+  "test_input": "30 deterministic random Gaussian-integer cubic coefficients, seed 51932658, L=6; full physical crossing bond included."
+}

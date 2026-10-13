@@ -1,0 +1,41 @@
+PRIMARY REPLAY COMMANDS (run independently)
+UTC: 2026-09-13T12:21:18Z
+
+$ python3 evidence/reproduce-a.py
+EXIT: 0
+method: direct matrices; Hermitian eigensolver for positive parts; full-SVD null-space unitary extension; recovered Kraus Choi/Bell evaluation
+float64_tolerance: 2e-12
+U unitarity residual (inf): 1.1102230246251565e-16
+source-channel TP residual (inf): 1.1102230246251565e-16
+mixed-channel TP residual (inf): 2.220446049250313e-16
+one-step recovered TP residual (inf): 2.220446049250313e-16
+two-step Markov TP residual (inf): 4.440892098500626e-16
+two-step Bayesian TP residual (inf): 4.440892098500626e-16
+minimum Choi eigenvalue for all five tested channels: 0.0
+source/mixed Choi rank at 1e-12: 3/3
+polar reconstruction residual maximum: 0.0
+positive-part commutator maximum (Frobenius): 0.0
+first-step singular branch count: 1
+two-step branch count: 9
+zero two-step branches: 0
+Bayesian correction unitarity residual on each of 9 branches: 0.0
+raw Eq. (35) F1 control: 0.625
+optimized F1 from recovered-Kraus Choi/Bell: 0.7499999999999997
+F2 Markov from recovered-Kraus Choi/Bell: 0.6249999999999997
+F2 Bayesian from recovered-Kraus Choi/Bell: 0.6249999999999997
+
+$ python3 evidence/reproduce-b.py
+EXIT: 0
+method: independently derived ket actions; exact SymPy arithmetic; direct 2x2 trace-determinant trace norm; CP from explicit Kraus factorization
+one-step TP: exact identity(2)
+two-step Markov TP: exact identity(2)
+two-step Bayesian pre-unitary TP: exact identity(2)
+CP: every map is an explicit Kraus sum; conditional unitary recovery preserves CP and TP.
+branch count per two-step strategy: 9
+Markov branch trace-square terms (i major, j minor):
+  25/256, 3/64, 75/256, 3/64, 9/16, 9/64, 75/256, 9/64, 225/256
+Bayesian branch trace-norm-square terms (i major, j minor):
+  25/256, 3/64, 75/256, 3/64, 9/16, 9/64, 75/256, 9/64, 225/256
+F1 exact: 3/4
+F2 Markov exact: 5/8
+F2 Bayesian exact: 5/8

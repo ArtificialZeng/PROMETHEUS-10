@@ -1,0 +1,34 @@
+{
+  "source_id": "S1",
+  "source_locator": "arXiv:2402.18941v1, PDF pp. 7-8, Example 8, Eqs. (35), (38), and (42)-(46)",
+  "method": "Direct row-by-row transcription from the rendered primary PDF; no values were read from input B.",
+  "lambda": "3/4",
+  "basis": {
+    "system_input_columns": ["|0>", "|1>"],
+    "system_output_rows": ["|0>", "|1>"],
+    "environment_order": ["T1", "T2", "T3"],
+    "matrix_action": "row=output, column=input"
+  },
+  "kraus_matrices": {
+    "T1": [["sqrt(3)/2", "0"], ["0", "0"]],
+    "T2": [["0", "sqrt(3)/2"], ["0", "0"]],
+    "T3": [["1/2", "0"], ["0", "1/2"]]
+  },
+  "u_eq38": [
+    ["exp(-I*delta)*cos(theta13)", "0", "exp(-I*delta)*sin(theta13)"],
+    ["-sin(theta13)*sin(theta23)", "cos(theta23)", "cos(theta13)*sin(theta23)"],
+    ["-cos(theta23)*sin(theta13)", "-sin(theta23)", "cos(theta13)*cos(theta23)"]
+  ],
+  "specialization": {
+    "delta": "0",
+    "theta13": "-pi/6",
+    "theta23": "0",
+    "U": [["sqrt(3)/2", "0", "-1/2"], ["0", "1", "0"], ["1/2", "0", "sqrt(3)/2"]],
+    "mixing_rule": "K_i=sum_a U[i,a] T_a"
+  },
+  "published_targets": {
+    "F1_eq42": "3/4",
+    "F2_bayesian_eq44": "5/8",
+    "F2_markovian_eq45": "5/8"
+  }
+}

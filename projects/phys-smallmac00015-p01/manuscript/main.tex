@@ -1,0 +1,413 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,bm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={A sharp weak-driving phase bound for symmetric complete Markov networks},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\one}{\bm{1}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\avg}[1]{\left\langle #1\right\rangle_T}
+
+\title{A sharp weak-driving phase bound for symmetric complete Markov networks}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Periodically driven Markov networks generally respond with a phase lag.  For a
+complete $N$-state network with a common attempt rate and symmetric splitting of
+energy differences, we prove a sharp bound on the leading weak-driving response.
+For every $N\geq3$, every finite vector of energy offsets, and every finite real
+Fourier drive, the quadratic response coefficients obey
+$A_2\geq 2k_0B_2$.  The proof first expresses $A_2/B_2$ as a positive weighted
+average of the nonzero relaxation rates.  The symmetrized generator is then reduced
+to the rank-one matrix $\diag(1/q_i)-\one\one^{\mathsf T}$, whose smallest positive
+eigenvalue is shown to be strictly larger than $2$ for every positive probability
+vector $q$ when $N\geq3$.  We also classify equality: at finite offsets it occurs
+only for zero-response drives, whereas every drive that changes an energy difference
+gives a strict inequality.  An explicit two-heavy-state family approaches the bound
+as the remaining stationary weights vanish, proving that the constant $2$ is optimal
+but unattained by a response-active finite-offset system.  The result is confined to
+the weak-amplitude, equal-prefactor, symmetric-splitting complete graph; broader
+finite-amplitude and heterogeneous-network bounds remain open.
+\end{abstract}
+
+\noindent\textbf{Keywords:} stochastic thermodynamics; periodic driving; phase lag;
+Markov networks; spectral gap; rank-one perturbation
+
+\section{Introduction}
+
+A periodic modulation of a stochastic system is followed by a delayed response.
+For finite-state Markov dynamics, Deg\"unther, Koyuk and Seifert introduced a
+generalized phase that remains meaningful for multi-harmonic driving and related it
+to cycle-averaged contractions of the probability distribution with the first and
+second time derivatives of the energies \cite{Deguenther2022}.  They established a
+tight two-state bound.  For multi-state networks with a common rate amplitude they
+reported numerical evidence and left the corresponding general proof open; their
+heterogeneous-amplitude statement is broader still.
+
+Here we resolve a sharply delimited part of that problem.  We consider the complete
+graph $K_N$, a common attempt rate $k_0$, symmetric splitting, finite energy offsets,
+and the leading nonvanishing order in the driving amplitude.  The response problem
+then becomes a spectral-gap problem for a nonuniform diagonal matrix minus a rank-one
+matrix.  Rank-one perturbations are a standard tool in graph spectral theory
+\cite{KleeStamps2020}, but the offset-dependent matrix here has kernel proportional to
+a nonuniform vector, and immediate interlacing does not settle the regime in which a
+single auxiliary weight exceeds one half.
+
+Our main result is
+\begin{equation}
+  A_2\geq 2k_0B_2 .                                           \label{eq:main-bound}
+\end{equation}
+For $N\geq3$ and finite offsets, the inequality is strict whenever the drive changes
+at least one energy difference.  Equality is precisely the zero-response class.  The
+constant is nevertheless sharp because a family with two equally weighted dominant
+states converges to the symmetric two-state mechanism.  Besides proving
+\eqref{eq:main-bound}, this identifies why adding finitely occupied states cannot
+increase the weak-drive lag beyond that limiting mechanism.
+
+Section~\ref{sec:model} defines the physical domain and derives the modal response.
+Section~\ref{sec:gap} proves the exact spectral inequality.  Section~\ref{sec:phase}
+classifies equality and establishes sharpness.  We close with the physical scope and
+the unresolved extensions.
+
+\section{Model and weak response}                         \label{sec:model}
+
+\subsection{Complete detailed-balance network}
+
+Let $N\geq3$, $k_0>0$, and $T>0$, with fundamental frequency
+$\Omega=2\pi/T$.  Energies are measured in units in which
+$k_{\mathrm B}T_{\mathrm bath}=1$.  The rate from state $i$ to state $j$ is
+\begin{equation}
+ k_{ij}^{(\varepsilon)}(t)
+ =k_0\exp\!\left[\frac{E_i^{(\varepsilon)}(t)
+                         -E_j^{(\varepsilon)}(t)}{2}\right],
+ \qquad
+ E_i^{(\varepsilon)}(t)=E_i^0+\varepsilon e_i(t),          \label{eq:rates}
+\end{equation}
+where all $E_i^0$ are finite and each $e_i$ is a finite real Fourier series of
+period $T$.  With $p(t)$ a normalized column vector, the master equation is
+\begin{equation}
+ \dot p_i(t)=\sum_{j\ne i}
+ \left[p_j(t)k_{ji}(t)-p_i(t)k_{ij}(t)\right].              \label{eq:master}
+\end{equation}
+All rates are positive, so the long-time $T$-periodic state is unique.
+
+For that periodic state, define
+\begin{equation}
+ \mathcal A(\varepsilon)=\frac1T\int_0^T
+ p^{(\varepsilon)}(t)\mathbin{\cdot}\ddot E^{(\varepsilon)}(t)\,dt,
+ \qquad
+ \mathcal B(\varepsilon)=\frac1T\int_0^T
+ p^{(\varepsilon)}(t)\mathbin{\cdot}\dot E^{(\varepsilon)}(t)\,dt. \label{eq:AB}
+\end{equation}
+The constant and linear terms vanish by periodicity.  We use the coefficient
+convention
+\begin{equation}
+ A_2=\lim_{\varepsilon\to0}\frac{\mathcal A(\varepsilon)}{\varepsilon^2},
+ \qquad
+ B_2=\lim_{\varepsilon\to0}\frac{\mathcal B(\varepsilon)}{\varepsilon^2}. \label{eq:A2B2}
+\end{equation}
+Thus $A_2$ has units of inverse time squared, $B_2$ has units of inverse time,
+and $A_2/B_2$ is a relaxation rate when $B_2>0$.
+
+At $\varepsilon=0$, introduce
+\begin{equation}
+ x_i=e^{-E_i^0/2},\qquad S=\sum_i x_i,\qquad
+ Q=\sum_i x_i^2,\qquad \pi_i=\frac{x_i^2}{Q}.               \label{eq:weights}
+\end{equation}
+The equilibrium vector is $\pi$.  If $L_0$ denotes the column-conservative
+generator in \eqref{eq:master} and $\Pi=\diag(\pi_i)$, detailed balance gives the
+real symmetric, symmetrized negative generator
+\begin{equation}
+ M=-\Pi^{-1/2}L_0\Pi^{1/2}
+  =k_0\left[S\diag(x_1^{-1},\ldots,x_N^{-1})
+              -\one\one^{\mathsf T}\right],
+ \qquad Mx=0.                                                \label{eq:M}
+\end{equation}
+
+\subsection{Spectral representation of the response}
+
+Write the first-order periodic response as
+$p^{(\varepsilon)}=\pi+\varepsilon r+O(\varepsilon^2)$ and set
+$r=\Pi^{1/2}z$.  For
+\begin{equation}
+ \widetilde e(t)=e(t)-\one\,\pi^{\mathsf T}e(t),
+ \qquad h(t)=\Pi^{1/2}\widetilde e(t),                       \label{eq:centered}
+\end{equation}
+The tangent to the instantaneous equilibrium distribution is
+$\delta\pi=-\Pi\widetilde e$.  Differentiating
+$L(E)\pi(E)=0$ therefore gives
+$L'[e]\pi=L_0\Pi\widetilde e$.  Substitution in the first-order master equation
+$\dot r=L_0r+L'[e]\pi$, followed by the similarity transform in \eqref{eq:M}, gives
+\begin{equation}
+ \dot z=-Mz-Mh .                                             \label{eq:z}
+\end{equation}
+Normalization makes $z$ orthogonal to $\ker M$, so only the positive modes enter.
+
+To make all Fourier factors explicit, write
+\begin{equation}
+ e(t)=e^{(0)}+\sum_{n=1}^{H}\operatorname{Re}
+       \left[c_n e^{\mathrm i\omega_nt}\right],
+ \qquad \omega_n=n\Omega,                                   \label{eq:fourier}
+\end{equation}
+and let $h_n=\Pi^{1/2}(c_n-\one\pi^{\mathsf T}c_n)$.  Choose an
+orthonormal positive-mode eigenbasis $Mu_\mu=\lambda_\mu u_\mu$, and put
+$a_{n\mu}=u_\mu^{\mathsf T}h_n$.
+
+\begin{proposition}[Modal response]
+For the model \eqref{eq:rates}--\eqref{eq:fourier},
+\begin{align}
+ A_2&=\frac12\sum_{n,\mu>0}
+ \frac{\omega_n^2\lambda_\mu^2|a_{n\mu}|^2}
+      {\lambda_\mu^2+\omega_n^2},                           \label{eq:Amodal}\\
+ B_2&=\frac12\sum_{n,\mu>0}
+ \frac{\omega_n^2\lambda_\mu|a_{n\mu}|^2}
+      {\lambda_\mu^2+\omega_n^2}.                           \label{eq:Bmodal}
+\end{align}
+Consequently, when $B_2>0$, $A_2/B_2$ is a positive weighted average of the
+nonzero eigenvalues of $M$.
+\end{proposition}
+
+\begin{proof}
+For a mode with frequency $\omega_n$ and eigenvalue $\lambda_\mu$,
+\eqref{eq:z} gives the complex response amplitude
+\begin{equation}
+ Z_{n\mu}=-\frac{\lambda_\mu}{\lambda_\mu+\mathrm i\omega_n}
+ a_{n\mu}.                                                   \label{eq:Z}
+\end{equation}
+Expanding \eqref{eq:AB} to order $\varepsilon^2$ yields
+$A_2=\avg{r\cdot\ddot e}$ and $B_2=\avg{r\cdot\dot e}$.
+Because $z$ is orthogonal to $\Pi^{1/2}\one$, these contractions equal
+$\avg{z\cdot\ddot h}$ and $\avg{z\cdot\dot h}$.  Taking the real-period
+average of each complex harmonic in \eqref{eq:Z} gives
+\eqref{eq:Amodal} and \eqref{eq:Bmodal}.  Every weight in the latter is
+nonnegative and is positive exactly when the corresponding $a_{n\mu}$ is nonzero.
+\end{proof}
+
+For $N=2$ at equal offsets, the sole positive eigenvalue is $2k_0$, recovering
+$A_2=2k_0B_2$ and the symmetric two-state phase reported in
+Ref.~\cite{Deguenther2022}.  The remaining task is therefore an all-$N$ lower bound
+on the positive spectrum of \eqref{eq:M}.
+
+\section{A sharp spectral gap}                              \label{sec:gap}
+
+Normalize $x$ in the one-norm by defining $q_i=x_i/S$.  Then $q_i>0$,
+$\sum_iq_i=1$, and
+\begin{equation}
+ \frac{M}{k_0}=A(q),\qquad
+ A(q)=\diag(q_1^{-1},\ldots,q_N^{-1})-\one\one^{\mathsf T}. \label{eq:Aq}
+\end{equation}
+
+\begin{lemma}[Positivity and kernel]
+$A(q)$ is positive semidefinite and $\ker A(q)=\operatorname{span}\{q\}$.
+\end{lemma}
+
+\begin{proof}
+For $y\in\mathbb R^N$, put $b_i=y_i/q_i$.  Then
+\begin{align}
+ y^{\mathsf T}A(q)y
+ &=\sum_iq_i b_i^2-\left(\sum_iq_i b_i\right)^2 \\
+ &=\sum_{i<j}q_iq_j(b_i-b_j)^2\geq0.                         \label{eq:variance}
+\end{align}
+Since every $q_i$ is positive, equality holds exactly when all $b_i$ are equal,
+or equivalently when $y$ is proportional to $q$.
+\end{proof}
+
+\begin{theorem}[Strict finite-offset gap]
+\label{thm:gap}
+For every $N\geq3$ and every positive vector $q$ with $\sum_iq_i=1$,
+\begin{equation}
+ \lambda_{\min}^{+}\!\left(A(q)\right)>2.                  \label{eq:gap}
+\end{equation}
+Equivalently, every nonzero relaxation rate in \eqref{eq:M} is larger than
+$2k_0$.
+\end{theorem}
+
+\begin{proof}
+Relabel the coordinates so that $q_1\geq q_2\geq\cdots\geq q_N$, and set
+$d_i=1/q_i$, so $d_1\leq\cdots\leq d_N$.  Let the eigenvalues of $A(q)$ be
+$0=\lambda_1<\lambda_2\leq\cdots\leq\lambda_N$.  Rank-one interlacing gives
+\begin{equation}
+ 0=\lambda_1\leq d_1\leq\lambda_2\leq d_2\leq\cdots .      \label{eq:interlace}
+\end{equation}
+
+If $q_1<1/2$, then $d_1>2$, and \eqref{eq:interlace} immediately gives
+$\lambda_2>2$.
+
+If $q_1=1/2$, interlacing gives $\lambda_2\geq2$.  The value $2$ cannot be an
+eigenvalue.  Indeed, $A(q)y=2y$ would imply
+\begin{equation}
+ (d_i-2)y_i=c,\qquad c=\one^{\mathsf T}y.                    \label{eq:exclude2}
+\end{equation}
+The first coordinate gives $c=0$.  Since $N\geq3$ and all $q_i$ are positive,
+$q_i<1/2$ for $i\geq2$, so \eqref{eq:exclude2} gives $y_i=0$ for those indices.
+It then also gives $y_1=c=0$, excluding a nonzero eigenvector.
+
+It remains to consider $q_1>1/2$.  This largest coordinate is unique.  Put
+$s=1-q_1\in(0,1/2)$; then $d_1<2<d_2$.  On $(d_1,d_2)$ the determinant lemma
+gives the secular function
+\begin{equation}
+ F(\lambda)=1-\sum_{i=1}^N\frac{1}{d_i-\lambda},
+ \qquad F'(\lambda)=-\sum_{i=1}^N\frac{1}{(d_i-\lambda)^2}<0. \label{eq:secular}
+\end{equation}
+It decreases from $+\infty$ to $-\infty$, and its unique zero is $\lambda_2$.
+
+For $g(t)=t/(1-2t)$ on $[0,1/2)$, direct algebra gives
+\begin{equation}
+ g(a+b)-g(a)-g(b)
+ =\frac{4ab(1-a-b)}
+ {(1-2a)(1-2b)(1-2a-2b)}>0                                 \label{eq:superadd}
+\end{equation}
+whenever $a,b>0$ and $a+b<1/2$.  The $N-1\geq2$ positive numbers
+$q_2,\ldots,q_N$ sum to $s$, so repeated strict superadditivity yields
+$\sum_{i\geq2}g(q_i)<g(s)$.  Hence
+\begin{align}
+ \sum_{i=1}^N\frac{1}{d_i-2}
+ &=-\frac{1-s}{1-2s}+\sum_{i\geq2}g(q_i) \\
+ &<-\frac{1-s}{1-2s}+\frac{s}{1-2s}=-1.                    \label{eq:F2}
+\end{align}
+Thus $F(2)>0$.  Since $F$ is strictly decreasing and vanishes at $\lambda_2$,
+we conclude that $\lambda_2>2$.  The three cases exhaust the positive simplex.
+\end{proof}
+
+The strictness in \eqref{eq:gap} depends on both positivity of every $q_i$ and
+$N\geq3$.  It is therefore a finite-offset statement; it does not assert a uniform
+positive margin above $2$ as the boundary of the simplex is approached.
+
+\section{Phase bound, equality, and optimality}             \label{sec:phase}
+
+\begin{corollary}[Weak-response phase bound]
+For every finite-offset model \eqref{eq:rates} with $N\geq3$ and every finite real
+Fourier drive,
+\begin{equation}
+ A_2-2k_0B_2
+ =\frac12\sum_{n,\mu>0}
+ \frac{\omega_n^2\lambda_\mu(\lambda_\mu-2k_0)
+       |a_{n\mu}|^2}{\lambda_\mu^2+\omega_n^2}\geq0.        \label{eq:response-diff}
+\end{equation}
+If at least one time-dependent energy difference is nonconstant, then
+$A_2>2k_0B_2>0$.  Equality holds exactly when all positive-frequency Fourier
+coefficients are common to every state, in which case $A_2=B_2=0$.
+\end{corollary}
+
+\begin{proof}
+Equation~\eqref{eq:response-diff} follows by subtracting twice $k_0$ times
+\eqref{eq:Bmodal} from \eqref{eq:Amodal}.  Every nonzero factor
+$\lambda_\mu-2k_0$ is strictly positive by Theorem~\ref{thm:gap}.  Moreover, all
+$a_{n\mu}$ vanish if and only if
+$c_n-\one\pi^{\mathsf T}c_n=0$ for every $n\geq1$, which is precisely a common
+time-dependent energy shift.  Such a shift leaves every rate invariant.  Arbitrary
+zero-frequency shifts likewise make no contribution to the cycle averages.
+\end{proof}
+
+In the phase convention of Ref.~\cite{Deguenther2022}, a nonzero weak response obeys
+\begin{equation}
+ \tan\Delta\varphi=\Omega\frac{B_2}{A_2}
+ <\frac{\Omega}{2k_0}.                                      \label{eq:phase}
+\end{equation}
+Thus every response-active finite-offset $N\geq3$ system lies strictly below the
+symmetric two-state ceiling.  The strict inequality does not mean that the constant
+can be improved uniformly.
+
+\begin{proposition}[Sharpness]
+For each fixed $N\geq3$, the constant $2$ in \eqref{eq:main-bound} is the optimal
+uniform constant over response-active systems with finite offsets, but it is not
+attained.
+\end{proposition}
+
+\begin{proof}
+For $0<\delta\leq1$, take
+\begin{equation}
+ x_1=x_2=1,\qquad x_3=\cdots=x_N=\delta,
+ \qquad S=2+(N-2)\delta.                                    \label{eq:boundary-family}
+\end{equation}
+The vector $v=(1,-1,0,\ldots,0)^{\mathsf T}$ is orthogonal to $\one$ and is an
+exact eigenvector of \eqref{eq:M} with eigenvalue $k_0S$.  The two smallest diagonal
+entries of $S\diag(1/x_i)$ are both $S$; interlacing therefore shows that this is the
+smallest positive eigenvalue.  A single real harmonic proportional to $v$ is centered
+because $\pi_1=\pi_2$, and it excites only this mode.  Consequently,
+\begin{equation}
+ \frac{A_2}{B_2}=k_0\left[2+(N-2)\delta\right].              \label{eq:sharp-ratio}
+\end{equation}
+Every $\delta>0$ corresponds to finite energies.  As $\delta\downarrow0$, the
+energies of states $3,\ldots,N$ diverge and \eqref{eq:sharp-ratio} approaches
+$2k_0$ from above.  Hence any larger uniform constant fails for sufficiently small
+positive $\delta$, whereas Theorem~\ref{thm:gap} excludes attainment at a finite offset.
+\end{proof}
+
+\section{Discussion and limitations}
+
+The response formulas separate the physical and spectral parts of the result.  The
+drive, frequency, and observable determine nonnegative modal weights, whereas the
+offsets determine the relaxation spectrum.  Complete connectivity with a common
+attempt rate forces every response-active mode above $2k_0$.  The sharp family shows
+that the slowest allowed mechanism is not a genuinely multi-state interior point: it
+is approached when only two equally weighted states remain dynamically relevant.
+
+The nonuniform gap is not obtained from the ordinary unweighted complete-graph
+spectrum alone.  When $\max_i q_i\leq1/2$, interlacing almost settles the question;
+when one weight is dominant, the sign of the first secular root is controlled by the
+strict superadditivity identity \eqref{eq:superadd}.  This is the only regime in which
+the elementary diagonal lower bound is insufficient.
+
+Several restrictions are essential.  First, the statement concerns only the
+coefficients defined by the limit $\varepsilon\to0$; it is not a finite-amplitude
+theorem.  Second, all edges have the same prefactor $k_0$ and use symmetric splitting.
+Third, the graph is complete and all offsets are finite.  Missing links,
+edge-dependent prefactors, asymmetric splitting, transient states, and singular
+offsets are outside the proof.  In particular, the broader multi-state conjectures in
+Ref.~\cite{Deguenther2022} remain unresolved.
+
+\section{Conclusion}
+
+We have proved the weak-driving inequality $A_2\geq2k_0B_2$ for every finite-offset
+symmetric complete $N$-state Markov network with $N\geq3$.  The exact spectral
+reduction yields more than the non-strict bound: a response-active interior system is
+always strict, equality is exactly the zero-response gauge class, and the constant is
+an unattained sharp infimum.  The result turns the two-state phase scale into a precise
+limiting benchmark for this complete multi-state model while leaving finite-amplitude
+and heterogeneous-network extensions as distinct open problems.
+
+\section*{Data and code availability}
+
+No experimental data were generated.  The analytic result is supported by accompanying
+Python programs that (i) reconstruct the weak-response formula in both the probability
+and detailed-balance bases, (ii) perform exact-rational finite-instance gap checks, and
+(iii) verify the secular and superadditivity identities symbolically.  These programs
+are verification aids and do not replace the proof.  A repository location and
+persistent identifier should be added by the author before submission.
+
+\section*{Acknowledgments and generative-AI disclosure}
+
+OpenAI Codex using model \texttt{gpt-5.6-sol} assisted with research ideation, algebraic calculations,
+verification code, literature discovery, and manuscript drafting.  All scientific
+claims, references, calculations, and wording require the named author's independent
+review and approval before submission.  No AI system is listed as an author.
+
+\section*{Conflict of interest}
+
+The author must confirm the conflict-of-interest declaration before submission.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,470 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{newtxtext,newtxmath}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[colorlinks=true,allcolors=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\proj}[1]{\lvert #1\rangle\!\langle #1\rvert}
+
+\title{Local stability of a two-copy entanglement-of-purification ansatz at the von Neumann boundary}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Entanglement of purification requires an optimization over purifications, and
+its additivity at von Neumann order remains open even for classical states.
+For a diagonal two-qubit family recently studied at other R\'enyi orders, we
+analyze two copies at $r=1/2$ in the minimal $4\times4$ ancillary split.  We
+prove, with a computer-assisted interval certificate, that the
+product-canonical purification is a strict local minimum modulo local
+ancillary unitaries throughout the full complex $U(16)$ flag manifold,
+including rank-opening directions.  The proof combines an 81-dimensional
+quotient-Hessian bound with a logarithmic tail estimate.  No global
+optimality, enlarged-ancilla, or additivity claim is made.
+\end{abstract}
+
+\noindent\textbf{Keywords:} entanglement of purification; von Neumann entropy;
+purification landscape; interval arithmetic; local minimum
+
+\section{Introduction}
+
+The entanglement of purification (EoP) of a bipartite state $\rho_{AB}$ is
+the least entanglement entropy across $AA':BB'$ among all of its
+purifications~\cite{Terhal2002}.  Its regularization has operational meanings
+in correlation preparation and visible compression~\cite{Terhal2002,Hayashi2006},
+but it is not known in general whether the one-copy quantity is additive.
+Numerical work on two-qubit Werner states supplied evidence for
+nonadditivity~\cite{ChenWinter2012}, without resolving the von Neumann
+problem analytically.
+
+Negari and Baghali Khanian recently isolated a simple diagonal two-qubit
+family for which the one-copy optimization can be solved exactly at every
+R\'enyi order~\cite{NegariKhanian2026}.  For two copies they proved strict
+nonadditivity for every order below one using a signed-canonical witness, and
+proved strong additivity, under their stated classical premise, for orders at
+least two.  The interval $1\leq\alpha<2$, including the von Neumann point
+$\alpha=1$, remains open in that work.  Their finite sign search does not
+cover continuous complex purifying flags, while a positive ordinary Hessian
+alone cannot settle directions that open zero eigenvalues of the reduced
+state.
+
+Here we resolve one deliberately local part of that open landscape.  At the
+exact state parameter $r=1/2$, and only in the minimal ancillary split
+$(d_{A'},d_{B'})=(4,4)$, we show that the product-canonical two-copy
+purification is a strict local minimum modulo local ancillary unitaries over
+the complete complex flag manifold $U(16)$.  The tangent space separates
+into 112 rank-preserving and 144 support-opening directions.  Removing the
+31-dimensional ancillary gauge orbit leaves an 81-dimensional analytic
+Hessian.  An outward-rounded ball-arithmetic calculation certifies its least
+eigenvalue to exceed $0.159$.  A separate Schur-complement argument uses the
+$-t^2\log t^2$ entropy generated at the rank boundary to make this Hessian
+result uniform for mixed rank-preserving and support-opening paths.
+
+The conclusion is local and dimension-specific.  It neither minimizes over
+distant points of $U(16)$ nor compares larger ancillary splits, and therefore
+does not prove two-copy additivity.  Its role is instead to identify a
+rigorous obstruction: within the minimal split, a von Neumann improvement at
+this state cannot bifurcate infinitesimally from the canonical purification.
+
+\section{Model and main result}
+
+For $0\leq r\leq1$, consider the classical state
+\begin{equation}
+ \rho_r=\frac{r^2\proj{00}+\proj{01}+\proj{10}+\proj{11}}{3+r^2}.
+ \label{eq:state}
+\end{equation}
+All logarithms below have base two, so entropies are measured in bits.  The
+von Neumann EoP is
+\begin{equation}
+ E_P(\rho_{AB})=\inf_{\ket{\Psi}:\,\Tr_{A'B'}\proj{\Psi}=\rho_{AB}}
+ S\!\left(\Tr_{BB'}\proj{\Psi}\right),\qquad
+ S(\sigma)=-\Tr(\sigma\log_2\sigma).
+ \label{eq:eop}
+\end{equation}
+
+For two copies, write $I=(i_1,i_2)$ and $J=(j_1,j_2)$, each ordered
+lexicographically as $00,01,10,11$, and let
+$P_{IJ}=p_{i_1j_1}p_{i_2j_2}$.  At $r>0$ all sixteen probabilities are
+positive.  In the minimal split $\cH_{A'}\otimes\cH_{B'}\cong
+\mathbb C^4\otimes\mathbb C^4$, every orthonormal flag family is an
+orthonormal basis and hence can be represented by $W\in U(16)$:
+\begin{equation}
+ \ket{\Psi_W}=\sum_{I,J}\sqrt{P_{IJ}}\,\ket{I}_A\ket{J}_B
+ W\ket{IJ}_{A'B'}.
+ \label{eq:flags}
+\end{equation}
+Let
+\begin{equation}
+ F(W)=S\!\left(\Tr_{BB'}\proj{\Psi_W}\right).
+ \label{eq:objective}
+\end{equation}
+The product-canonical purification is $W_0=I_{16}$.
+
+At $r=1/2$, the normalized one-copy coefficient matrix across $AA':BB'$ is
+\begin{equation}
+ C_1=\frac{1}{\sqrt{13}}
+ \begin{pmatrix}1&2\\2&2\end{pmatrix},\qquad C=C_1\otimes C_1.
+ \label{eq:C}
+\end{equation}
+The eigenvalues of $C_1C_1^\dagger$ are
+\begin{equation}
+ \lambda_{\pm}=\frac{13\pm3\sqrt{17}}{26}.
+ \label{eq:lambdapm}
+\end{equation}
+Consequently the four nonzero Schmidt weights at $W_0$ are
+$\lambda_-^2,\lambda_-\lambda_+,\lambda_-\lambda_+,\lambda_+^2$, and
+\begin{equation}
+ F(W_0)=2h_2(\lambda_+)=0.329435221224950\ldots .
+ \label{eq:F0}
+\end{equation}
+The one-copy optimality needed to identify this as twice the one-copy EoP is
+the exact result of Ref.~\cite{NegariKhanian2026}; the local theorem below
+does not reprove that global one-copy statement.
+
+Local unitaries on the ancillary factors preserve the entropy.  Define their
+image and orbit by
+\begin{equation}
+ \cG=\{U\otimes V:U,V\in U(4)\},\qquad \cO=\cG W_0.
+ \label{eq:gauge}
+\end{equation}
+
+\begin{theorem}[minimal-split local stability]
+\label{thm:main}
+For the state $\rho_{1/2}$ in Eq.~\eqref{eq:state}, there is a neighborhood
+$\mathcal N$ of $\cO$ in $U(16)$ such that
+\begin{equation}
+ F(W)\geq F(W_0)\quad (W\in\mathcal N),
+\end{equation}
+with equality only for $W\in\cO$ after $\mathcal N$ is reduced if necessary.
+Thus $W_0$ is a strict local minimum modulo $\cG$ among all complex
+orthonormal flags in the fixed $(4,4)$ ancillary split, including paths that
+open new Schmidt support.
+\end{theorem}
+
+\section{Tangent geometry and gauge quotient}
+
+Index a flag input by $x=(I,J)$ and a flag output by $y=(u,v)$, with all four
+indices in $\{0,1,2,3\}$.  Across $AA':BB'$, the $16\times16$ coefficient
+matrix of Eq.~\eqref{eq:flags} is
+\begin{equation}
+ M(W)_{(I,u),(J,v)}=C_{IJ}W_{(u,v),(I,J)},\qquad F(W)=S(MM^\dagger).
+ \label{eq:Mmap}
+\end{equation}
+At $W_0$, only the rows $(I,I)$ and columns $(J,J)$ are active; their
+$4\times4$ block is the invertible matrix $C$.
+
+Let $K^\dagger=-K$ be a tangent and use $W(t)=\exp(tK)$.  If $P$ and $Q$
+project onto the active row and column spaces, the normal--normal part of the
+first variation is the real-linear map
+\begin{equation}
+ N(K)_{(I,u),(J,v)}=C_{IJ}K_{(u,v),(I,J)},\qquad
+ u\neq I,\quad v\neq J.
+ \label{eq:Nmap}
+\end{equation}
+Because every $C_{IJ}$ is nonzero, $N(K)=0$ precisely when no off-diagonal
+entry of $K$ connects two points of the $4\times4$ flag grid whose two
+coordinates both change.
+
+This gives an exact count.  The kernel contains 16 imaginary diagonal
+generators.  There are 24 unordered grid edges sharing $I$ and 24 sharing
+$J$, each with real and imaginary anti-Hermitian generators.  Hence
+\begin{equation}
+ \dim_{\mathbb R}\ker N=16+2(24+24)=112,
+ \qquad \dim_{\mathbb R}(\ker N)^\perp=144.
+ \label{eq:split}
+\end{equation}
+The tangent to $\cO$ consists of $X\otimes I_4+I_4\otimes Y$ with
+$X,Y\in\mathfrak u(4)$.  The kernel of $(X,Y)\mapsto X\otimes I+I\otimes Y$
+is $(\ii cI,-\ii cI)$, so this gauge tangent has dimension $31$ and lies in
+$\ker N$.
+
+For completeness, an exact orthonormal complement of the gauge tangent in
+$\ker N$ is constructed from the three Helmert contrasts
+\begin{equation}
+ h_1=\frac{(1,-1,0,0)}{\sqrt2},\quad
+ h_2=\frac{(1,1,-2,0)}{\sqrt6},\quad
+ h_3=\frac{(1,1,1,-3)}{\sqrt{12}}.
+ \label{eq:helmert}
+\end{equation}
+It contains nine diagonal phase tables $h_p h_q^{\mathsf T}$, 36
+same-$I$ rook-edge contrasts, and 36 same-$J$ rook-edge contrasts.  Thus the
+physical fixed-rank quotient has dimension $9+36+36=81$.  Figure~\ref{fig:split}
+summarizes the decomposition.
+
+\input{manuscript/figure-tangent.tex}
+
+The 144 normalized opening generators have mutually orthogonal images under
+$N$.  For an unordered edge between $x=(I,J)$ and $y=(u,v)$ with both
+coordinates different, either its real or imaginary normalized generator has
+\begin{equation}
+ \lVert N(K)\rVert_F^2=\frac{C_{IJ}^2+C_{uv}^2}{2}.
+ \label{eq:opening-scale}
+\end{equation}
+Exact enumeration gives
+\begin{equation}
+ \min_{K\in(\ker N)^\perp,\,\lVert K\rVert_F=1}
+ \lVert N(K)\rVert_F^2=\frac{5}{338}.
+ \label{eq:opening-gap}
+\end{equation}
+In particular, the opening map is quantitatively injective on its
+144-dimensional complement.
+
+The point $W_0$ is stationary in every tangent direction.  For a diagonal
+$K_{(I,J),(I,J)}=\ii\theta_{IJ}$, the active part of
+$\rho'(0)$, where $\rho=MM^\dagger$, is purely imaginary and antisymmetric
+after removal of the factor $\ii$, whereas $\log\rho(0)$ is real symmetric.
+Their trace pairing vanishes.  Rook-edge directions have only
+active--normal first variations, and the remaining directions have
+normal--normal first variations, so they also have zero first entropy
+variation.  In an opening direction the new weights are $O(t^2)$ and their
+entropy is $O(-t^2\log t^2)$, whose first derivative at zero is again zero.
+
+\section{Certified Hessian on the fixed-rank quotient}
+
+We equip $\mathfrak u(16)$ with
+$\langle K,L\rangle=\operatorname{Re}\Tr(K^\dagger L)$.  Write
+\begin{equation}
+ M(t)=M_0+tM_1+\frac{t^2}{2}M_2+O(t^3),
+ \quad M_1=L(K),\quad M_2=L(K^2),
+\end{equation}
+where $L$ is the linear coefficient map in Eq.~\eqref{eq:Mmap}.  Then
+\begin{align}
+ \rho_1&=M_1M_0^\dagger+M_0M_1^\dagger,\\
+ \rho_2&=M_2M_0^\dagger+M_0M_2^\dagger+2M_1M_1^\dagger.
+ \label{eq:rho12}
+\end{align}
+Let $P$ now denote the four-dimensional positive support of $\rho_0$ and
+$Q_0=I-P$.  Let $U$ diagonalize $P\rho_0P$, with eigenvalues
+$\{\lambda_a\}_{a=1}^4=\{\lambda_-^2,\lambda_-\lambda_+,
+\lambda_-\lambda_+,\lambda_+^2\}$.  Put
+\begin{equation}
+ X=U^\dagger P\rho_1PU,\quad Z=U^\dagger P\rho_2PU,
+ \quad Y=Q_0\rho_1PU.
+\end{equation}
+For $f(x)=-x\log_2x$, define the divided difference
+\begin{equation}
+ f'^{[1]}(x,y)=
+ \begin{cases}
+ [f'(x)-f'(y)]/(x-y),&x\neq y,\\
+ f''(x),&x=y.
+ \end{cases}
+\end{equation}
+Hermitian spectral perturbation, including the double eigenvalue
+$\lambda_-\lambda_+$, gives the second directional derivative
+\begin{equation}
+ q(K)=\sum_a f'(\lambda_a)Z_{aa}
+ +\sum_{a,b}f'^{[1]}(\lambda_a,\lambda_b)|X_{ab}|^2
+ +2\sum_a\frac{f'(\lambda_a)}{\lambda_a}\lVert Y_{:a}\rVert_2^2.
+ \label{eq:hessian}
+\end{equation}
+The last term records motion of the positive eigenspace into the zero
+eigenspace.  If $K\in\ker N$, the small singular values of $M(\exp(tK))$ are
+$O(t^2)$, so their squared Schmidt weights are $O(t^4)$ and their entropy is
+$O(-t^4\log|t|)$.  They therefore have zero second derivative.  Thus
+Eq.~\eqref{eq:hessian} is the Hessian of the full entropy on $\ker N$.
+
+The 81-by-81 matrix $H$ of $q$ in the basis described after
+Eq.~\eqref{eq:helmert} was evaluated with 320-bit Arb midpoint-radius balls
+through \texttt{python-flint}; Arb implements outward-rounded ball
+arithmetic~\cite{Johansson2017}.  The calculation uses exact rational and
+radical input expressions and analytic divided differences, not finite
+differences.  It then performs an interval, no-pivot $LDL^{\mathsf T}$
+factorization of
+\begin{equation}
+ H-\frac{159}{1000}I_{81}.
+ \label{eq:shift}
+\end{equation}
+Every interval pivot is strictly positive.  Sylvester's criterion therefore
+certifies
+\begin{equation}
+ \boxed{\lambda_{\min}(H)>0.159}
+ \quad\text{bits per squared unit tangent.}
+ \label{eq:hessian-gap}
+\end{equation}
+Table~\ref{tab:certificate} records the decisive checks.  The smallest pivot
+is not itself an eigenvalue bound; it certifies the factorization of the
+already shifted matrix.  Likewise, the binary64 midpoint eigenvalue is a
+diagnostic only.
+
+\begin{table}[t]
+\centering
+\caption{Interval-certificate summary.  All inequalities in the certificate
+use outward-rounded balls; the midpoint eigensolver is not part of the proof.}
+\label{tab:certificate}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Quantity & Certified or recorded value \\
+\midrule
+Quotient dimension & $81=9+36+36$ \\
+Arithmetic precision & 320 bits \\
+Largest Hessian-entry radius & $<1.64\times10^{-93}$ \\
+Rational shift & $159/1000$ \\
+Strictly positive $LDL^{\mathsf T}$ pivots & 81 of 81 \\
+Smallest pivot lower endpoint & $>0.0290093$ \\
+Reconstruction residual & every entry encloses zero \\
+Opening-map least squared scale & $5/338$ exactly \\
+Midpoint $\lambda_{\min}$ (diagnostic) & $0.159148973002032$ \\
+Independent precision replays & 256 and 384 bits, both pass \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Uniform control of support opening}
+
+Positive definiteness on $\ker N$ does not by itself prove
+Theorem~\ref{thm:main}: the reduced state at $W_0$ has twelve zero
+eigenvalues.  We now keep their logarithmic entropy explicitly.
+
+Use the active and normal row and column decompositions to write, near $W_0$,
+\begin{equation}
+ M(W)=\begin{pmatrix}A&B\\E&D\end{pmatrix},\qquad A(W_0)=C,
+\end{equation}
+and define the analytic Schur complement
+\begin{equation}
+ \mathcal Z(W)=D-EA^{-1}B.
+ \label{eq:schur}
+\end{equation}
+Its derivative at $W_0$ is $N$.  The exact factorization
+\begin{equation}
+ M=
+ \begin{pmatrix}I&0\\EA^{-1}&I\end{pmatrix}
+ \begin{pmatrix}A&0\\0&\mathcal Z\end{pmatrix}
+ \begin{pmatrix}I&A^{-1}B\\0&I\end{pmatrix}
+ \label{eq:blockfact}
+\end{equation}
+has uniformly bounded outer factors and inverses in a sufficiently small
+neighborhood.  By the characterization of the Frobenius distance to matrices
+of rank at most four, the total small-weight mass
+\begin{equation}
+ \tau(W)=\sum_{j=5}^{16}s_j(M(W))^2
+ \label{eq:tau}
+\end{equation}
+satisfies $\tau(W)\geq c_0\lVert\mathcal Z(W)\rVert_F^2$ there for some
+$c_0>0$.
+
+Let $\Pi$ be the orthogonal projection onto the real 144-dimensional image of
+$N$ and set $z=\Pi\mathcal Z(W)$.  Work on a local slice perpendicular to the
+31 gauge directions.  The exact gap in Eq.~\eqref{eq:opening-gap} makes the
+derivative from opening coordinates to $z$ invertible.  The inverse-function
+theorem therefore gives local coordinates $(k,z)$ on the slice, where
+$k\in\mathbb R^{81}$ is the fixed-rank quotient coordinate, and after
+shrinking the chart,
+\begin{equation}
+ \tau(k,z)\geq c\lVert z\rVert^2.
+ \label{eq:taulower}
+\end{equation}
+
+Let $G(k,z)$ be the entropy contribution of the four eigenvalues separated
+from zero.  This is analytic despite their internal double eigenvalue.  Full
+stationarity and Eq.~\eqref{eq:hessian-gap}, followed by an ordinary Taylor
+bound on the remaining Hessian blocks, yield constants $A,B>0$ such that
+\begin{equation}
+ G(k,z)-G(0,0)\geq A\lVert k\rVert^2
+ -B\lVert k\rVert\lVert z\rVert-B\lVert z\rVert^2.
+ \label{eq:Gbound}
+\end{equation}
+For sufficiently small $\tau$, the entropy $T$ of the other twelve weights
+obeys
+\begin{equation}
+ T=\sum_{j=5}^{16}-s_j^2\log_2s_j^2
+ \geq-\tau\log_2\tau
+ \geq-c\lVert z\rVert^2\log_2(c\lVert z\rVert^2).
+ \label{eq:tailbound}
+\end{equation}
+The first inequality uses $s_j^2\leq\tau$; the second uses
+Eq.~\eqref{eq:taulower} and monotonicity of $-x\log_2x$ near zero.
+
+Young's inequality absorbs the mixed term in Eq.~\eqref{eq:Gbound} into half
+of the positive $k$ term plus a constant multiple of $\lVert z\rVert^2$.
+The logarithm in Eq.~\eqref{eq:tailbound} uniformly dominates every such
+bounded quadratic penalty as $z\to0$.  Hence $F(k,z)>F(0,0)$ at every
+sufficiently small nonzero point of the slice.  Equality occurs only at its
+origin.  Finally, the compact ancillary action admits a tubular local slice,
+and $F$ is constant on each ancillary orbit.  This transfers the strict slice
+minimum to a neighborhood of $\cO$ and completes the proof of
+Theorem~\ref{thm:main}.
+
+\section{Interpretation and limitations}
+
+The result controls all complex flags in the smallest bipartite ancillary
+space capable of holding the sixteen occupied two-copy branches.  It is
+stronger than a scan of sign patterns or a direction-by-direction numerical
+test: the fixed-rank part is certified on the complete gauge quotient, and
+the rank boundary is controlled uniformly rather than inferred from an
+ordinary Hessian.
+
+At the same time, the statement is intentionally narrow.  The neighborhood
+radius is existential and has not been optimized.  Only $r=1/2$ and
+$\alpha=1$ are treated.  A purification at finite distance in $U(16)$ could
+still have smaller entropy, and a larger ancillary split has additional
+directions absent here.  Thus neither
+$E_P(\rho_{1/2}^{\otimes2})=2E_P(\rho_{1/2})$ nor any regularized correlation
+cost follows.  The rigorous consequence is instead a landscape constraint:
+at this state and in this split, any von Neumann improvement must occupy a
+separate finite-distance basin or enter through ancillary enlargement.
+
+Two natural next steps are to turn the existence proof into an explicit
+certified neighborhood radius, and to repeat the tangent-plus-boundary
+analysis in a padded ancillary embedding.  Either extension requires new
+scientific certification and is not assumed here.
+
+\section{Reproducibility and data availability}
+
+The accompanying source package contains the exact basis construction, the
+analytic Hessian evaluator, the 320-bit Arb certificate, its 256- and 384-bit
+precision replays, independent finite-difference diagnostics, and the source
+baseline reconstruction.  The designated certificate is generated from the
+project root by
+\begin{verbatim}
+python3 evidence/certify_u16_hessian.py
+\end{verbatim}
+and must report 81 positive pivots for the shift in
+Eq.~\eqref{eq:shift}.  The recorded environment uses Python 3.12.14,
+\texttt{python-flint} 0.9.0, NumPy 2.3.5, SciPy 1.18.1, and mpmath 1.3.0.
+The reproducibility README distinguishes the rigorous interval output from
+diagnostic floating-point calculations.  No experimental or personal data
+were used.  A permanent public repository and identifier remain decisions
+for the author before submission.
+
+\section*{Declarations}
+
+\paragraph{AI use.}
+Generative AI (OpenAI Codex, GPT-5.6 Sol, accessed September 2026) assisted
+with formulating the scoped question, mathematical derivations, code,
+literature checks, computational verification, an independent AI referee
+replay, and manuscript drafting.  AI is not an author and cannot assume
+accountability.  The named author must independently review the claims,
+proof, code, citations, and prose, and approve an accurate final declaration
+before any submission.
+
+\paragraph{Author contributions, funding, and competing interests.}
+These declarations require confirmation and completion by the author before
+submission.  No external submission has been made from this draft.
+
+\bibliographystyle{unsrtnat}
+\bibliography{manuscript/references}
+
+\end{document}

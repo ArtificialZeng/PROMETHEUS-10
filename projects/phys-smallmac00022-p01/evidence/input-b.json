@@ -1,0 +1,20 @@
+{
+  "representation": "physical-plus-flag ket followed by an explicit partial trace",
+  "source_locator": "arXiv:2608.28897v1, Eqs. (15)-(18) and (C1)-(C12)",
+  "r_exact": "1/5",
+  "alpha_exact": "1/2",
+  "probability_numerators": {
+    "00": "r^2",
+    "01": "1",
+    "10": "1",
+    "11": "1"
+  },
+  "probability_normalization": "D=3+r^2",
+  "single_copy_tensor_axes": ["A", "B", "A_prime", "B_prime"],
+  "canonical_flag_rule": "A_prime=A and B_prime=B on each nonzero branch",
+  "two_copy_tensor_axes": ["A1A2", "B1B2", "A1_prime A2_prime", "B1_prime B2_prime"],
+  "two_copy_amplitude_rule": "sqrt(p[i1,j1]*p[i2,j2])",
+  "signed_witness_rule": "change the sign only when i1=j1=i2=j2=0",
+  "reduction_rule": "sum ket amplitudes times conjugate amplitudes explicitly over the physical B and flag B_prime indices",
+  "left_basis_map": "combined AA_prime index is 4*A+A_prime; the logical subspace has A_prime=A"
+}

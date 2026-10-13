@@ -1,0 +1,39 @@
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  node distance=5mm and 7mm,
+  every node/.style={font=\footnotesize,align=center},
+  box/.style={draw,rounded corners,inner sep=4pt,text width=31mm},
+  leaf/.style={draw,rounded corners,inner sep=4pt,text width=35mm,fill=black!3},
+  arr/.style={-{Latex[length=2mm]},thin}
+]
+\node[box] (root) {$0<a<1$, $b>0$};
+\node[leaf,below left=of root,xshift=-27mm] (low)
+  {$0<b\leq2$\\quotient monotonicity\\and Barta bound};
+\node[leaf,below=of root] (mid)
+  {$2<b\leq6$\\restricted $b=2$ modes\\and width bound};
+\node[box,below right=of root,xshift=27mm] (high) {$b>6$};
+\draw[arr] (root)--(low);
+\draw[arr] (root)--(mid);
+\draw[arr] (root)--(high);
+\node[leaf,below left=of high,xshift=-9mm] (ints)
+  {$\#\bigl(\Z\cap[ba^2/2,b/2]\bigr)\geq3$\\three Landau trials};
+\node[box,below right=of high,xshift=9mm] (short)
+  {at most two integers\\hence $b(1-a^2)<6$};
+\draw[arr] (high)--(ints);
+\draw[arr] (high)--(short);
+\node[leaf,below left=of short,xshift=-12mm] (thick)
+  {$a\leq1/4$\\two exact moment bounds};
+\node[leaf,below right=of short,xshift=12mm] (thin)
+  {$a\geq1/4$\\constant angular trials\\and transverse confinement};
+\draw[arr] (short)--(thick);
+\draw[arr] (short)--(thin);
+\end{tikzpicture}%
+}
+\caption{Exhaustive case partition used in the proof.  The diagram records
+logical branches and exact estimates, not numerical data.  It was rendered
+directly in \LaTeX{} with the generative-AI assistance disclosed at the end
+of the article.}
+\label{fig:regime-map}
+\end{figure}

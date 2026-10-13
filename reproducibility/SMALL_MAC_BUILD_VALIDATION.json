@@ -1,0 +1,939 @@
+{
+  "command": "python3 reproducibility/build_small_mac_papers.py --all --timeout 240 --output-dir <external-output-dir>",
+  "environment": {
+    "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+    "pdfinfo": "pdfinfo version 26.08.0",
+    "pdftex": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+    "platform": "macOS-26.6-arm64-arm-64bit",
+    "python": "3.9.6"
+  },
+  "results": [
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "fcee6d6950505fa78e3293ca57dd9741c2e1b422592cf73970513ec7de260299",
+      "pages": 7,
+      "pdf_exists": true,
+      "project": "phys-smallmac00000-p13",
+      "rebuilt_pdf_sha256": "c2a61513a7c88ff03b90c7bfe66727537ff759700f54ff1f0ac2166102968bcd",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "849d7791d21613836bfffc605b8fb4cff69c00eba5d9808ecd981c431587fa87",
+      "pages": 10,
+      "pdf_exists": true,
+      "project": "phys-smallmac00000-p14",
+      "rebuilt_pdf_sha256": "b691ef9849a4369551b8148a61fcd2986fa47a1c7197175bc41c9607f6aa982f",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "4d17f085c196dcfda48eb1312f06f5158f2217b9bfed8c5294a5e0f01a52504a",
+      "pages": 5,
+      "pdf_exists": true,
+      "project": "phys-smallmac00001-p01",
+      "rebuilt_pdf_sha256": "9d53c3ba79e2eedccb3e2cbcd39e1fdfd1f6b70982908f01fab8e6fc02632541",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "7a23a9f10f2a577268d4097459cb208384c69b6d4c0580e5b33e4c9191ba6955",
+      "pages": 10,
+      "pdf_exists": true,
+      "project": "phys-smallmac00001-p06",
+      "rebuilt_pdf_sha256": "b39afb7a8724fdf7c80d6d0c2418e64d6c4516a1d9d69362bd6a0a6b2bcc0b9e",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "7adef55ae6e320d0067ad5827f7f557d45c5cb2b322a67fbecfce637d145e5a8",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00002-p01",
+      "rebuilt_pdf_sha256": "41fa0605a94fd4b4be22f7ec0edd7adfacce4cb41fe71af892922c0fa2b50bc1",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "a25a9e49e6590710d118c7b1068dcedef2880a5721bcddf78e77ceaf5c3f1e49",
+      "pages": 9,
+      "pdf_exists": true,
+      "project": "phys-smallmac00002-p09",
+      "rebuilt_pdf_sha256": "3ef3f91f8bb982096f4f0463d6561bdc7da6e51660b1471e77120ae05f24e716",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "660c59d93e3eb67783602fd77504141dc76b1f0802a90486321cc6b0dc2f4c7c",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00003-p01",
+      "rebuilt_pdf_sha256": "f500e700203f4e89058aef2dbce4cc0895de8ecd2c211fbfa56ab668054ddc0c",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "54dbd5d736e5dc8ebbc90c57670659316401856fcf684e1ecec600915eba5533",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00004-p01",
+      "rebuilt_pdf_sha256": "19a237e4d1e78a9a4f8d176d69c1a456f78b0bfcf2edf78c163552c817295ee4",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "e912d436757449cbfbbe36e9e79a892082092e8ed80d06443f78380102ee6b78",
+      "pages": 5,
+      "pdf_exists": true,
+      "project": "phys-smallmac00003-p02",
+      "rebuilt_pdf_sha256": "f0b30b421477807807d71bb405f2e0e2109352c43518e269a59af2ab6ed62ded",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "5d02826eb5a82df3cd32e908df21f532dced4b7b8f5a673721f113b7f912fac6",
+      "pages": 4,
+      "pdf_exists": true,
+      "project": "phys-smallmac00005-p01",
+      "rebuilt_pdf_sha256": "8d151c872c8d095ee9c6d35167cb6ec9c624bbd4e3215ed71a1a0f74f8d8cae1",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "6697c89ee1b15b92515dad09e64e0871ca583834774dde4309bccd3ea3824f3c",
+      "pages": 5,
+      "pdf_exists": true,
+      "project": "phys-smallmac00005-p02",
+      "rebuilt_pdf_sha256": "732ced0ec8956dc3aaa92ba0e820959ea95583e832be97b321e605debd0cb15c",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "f957bb25ce61058689f52c75e972c7cb1e15d6fcdfd9d62badff72f7e9e639b0",
+      "pages": 5,
+      "pdf_exists": true,
+      "project": "phys-smallmac00005-p03",
+      "rebuilt_pdf_sha256": "07b15e2fe4189573035b75f09a05d6bf9ba14731924295d86e19f653c07c697e",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "3a3cec2685def83ed0c4c46a04743a22ebce4aea0f3efd71a85c6533b1c252d8",
+      "pages": 4,
+      "pdf_exists": true,
+      "project": "phys-smallmac00006-p01",
+      "rebuilt_pdf_sha256": "428abe14e329bdc2c957d15d922b293c55299d583f82ddf260b4880429c7115e",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "8d295e2ffd9d17b8751cd3b3b25b9ae6d0f46d3e561bb098c6dadd04cbc4f4be",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00006-p02",
+      "rebuilt_pdf_sha256": "5376a9c116447d26017cf473312a9ac1d9621c7295ac0061332b5c1c77d7da43",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "04bfeb3951de0252c11b28e6566a9f0bb2a14a3d41edaee148567e191bce70fb",
+      "pages": 9,
+      "pdf_exists": true,
+      "project": "phys-smallmac00006-p04",
+      "rebuilt_pdf_sha256": "67515a2d4b64adc641cfaf1069bb38e1ffa98eaca29d0dd4e7f05c1a58b8cb73",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "a1994501160ec2eed59ec1378f02751da11d306eac3f4469b85e8a1664e5d0da",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00007-p01",
+      "rebuilt_pdf_sha256": "ce73abc8348527eb87b35e5a0e41ac1844ceab1efc8c0d5e10717920a8e1ba7e",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "f6c5b57ad77a924e6c310f0746838c1fedb0c92042115506eab63777462157d1",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00007-p03",
+      "rebuilt_pdf_sha256": "91e080128b29ddb56377a922474f22f7f99e694c1190c5ef57c180b5f6de6867",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "417843338999d3f4c563bf066e2f94855e46d9fda68f46dccb0516228766219e",
+      "pages": 2,
+      "pdf_exists": true,
+      "project": "phys-smallmac00008-p01",
+      "rebuilt_pdf_sha256": "630170960488536b123ede4727b81684da1594db937df90d0f8efd28ee729153",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "2cc36fa48cf77d4d51e346c2d4a0f298a9514dba427a232e5316eceb12e79c2a",
+      "pages": 5,
+      "pdf_exists": true,
+      "project": "phys-smallmac00008-p02",
+      "rebuilt_pdf_sha256": "4714e7930772c89fccc01f1c0bdd02cec4e72fa50ab642250f27489e1d1b8ce9",
+      "working_directory": "."
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "26f826957040c23e464241003da01f14b5c980853a996e09e3782b9bfbca6344",
+      "pages": 11,
+      "pdf_exists": true,
+      "project": "phys-smallmac00009-p01",
+      "rebuilt_pdf_sha256": "e108aac9e926e68efe735f9b100657a039424fbcba07966f15c9e8d9a6b978ad",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "ef29bed2f17d9c95d5185a0d81ce6d8d2820abf202849514ea4e07eafdc728b4",
+      "pages": 5,
+      "pdf_exists": true,
+      "project": "phys-smallmac00009-p02",
+      "rebuilt_pdf_sha256": "d5ebafbf7e0835aa4b915b1661ea7e8fc8c2f852ca9248e316e391bdc35307c0",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "f89b4ce1ab63f4be2f84fa0102197b8f10e3d3dff48909e4bfdd4f348d9e0d51",
+      "pages": 7,
+      "pdf_exists": true,
+      "project": "phys-smallmac00010-p01",
+      "rebuilt_pdf_sha256": "c0adfac989ce19d2458f67057e7cd32ef6916603083e22c7ac1b25e290835b07",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "02352e55e3611fe04413a6afae1d3ff40f24238bd3f927cd0f5a6ddb2628c5c2",
+      "pages": 3,
+      "pdf_exists": true,
+      "project": "phys-smallmac00010-p04",
+      "rebuilt_pdf_sha256": "f83cd960401f603e41c96b8c7381bd5b870b4364aaca64e805128298af30dd97",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "bb1252722499a02f40f70fb1bb4a6791a5c78dd570b24569b0ec8174502a3ee6",
+      "pages": 4,
+      "pdf_exists": true,
+      "project": "phys-smallmac00010-p02",
+      "rebuilt_pdf_sha256": "12ecfe31247656223bcdc11bc96ad6a695003cb1404fb40e5b730f960972685c",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "216c77190c909ea710dbc306582af1206cfbaf915ad991d845768ca9b89aba03",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00011-p02",
+      "rebuilt_pdf_sha256": "a6427a59d9b3b4c50795b2667d12f1d4a0d056e9ce78d90a7bea86785bdd577b",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "986afda7b9d558cb5bd7ce7a6675e8d99c47524fe90f8a2e608f2bf46bac5c9f",
+      "pages": 11,
+      "pdf_exists": true,
+      "project": "phys-smallmac00012-p01",
+      "rebuilt_pdf_sha256": "1beafb54270f57947a7a2942650b57cfb2732c2049a0b56e5b2b2848f831e720",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "7bda93704c8eec4722429cd2d5081a78a72664a6f21e93603819671cdfe7b79a",
+      "pages": 8,
+      "pdf_exists": true,
+      "project": "phys-smallmac00012-p02",
+      "rebuilt_pdf_sha256": "a39fc9cf80ff377aa9727e101f5d95f5c5aea67f653734025361b8a0d720114a",
+      "working_directory": "."
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "b2a77694667726fdd010640767e60f33595b210e4d9ebd537c7324cfc0712fdb",
+      "pages": 8,
+      "pdf_exists": true,
+      "project": "phys-smallmac00014-p01",
+      "rebuilt_pdf_sha256": "f474d779668e05ac5da3dfd90f86e28f06acba3d2f10adc99faed24c52c9ad88",
+      "working_directory": "."
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "dad7b08ec20a51fa85fb42476bfd34eb7a7d7e5cf73c63b6fada30f8a49174da",
+      "pages": 8,
+      "pdf_exists": true,
+      "project": "phys-smallmac00014-p11",
+      "rebuilt_pdf_sha256": "0b8df888943fc3d58280aea15bab7d4512e33273900fd5db424af94780fb3734",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "54afe405a4fe303d67e48c001352560bbe7129b5925c109d8771d5ac5d1a715b",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00014-p03",
+      "rebuilt_pdf_sha256": "fcbf555d9ecffe34ccefb7ea5c80003841e7cfd6af3f5787d051096e341c97e5",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "8632196b3fa4f41545684d60f79761f5aa5bed1b345f7cc212b10e07102e6832",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00015-p01",
+      "rebuilt_pdf_sha256": "aa6bb5ba0ba6ff6b85ac68901ea5fe56244e0a9289c41cec5ced52f4b12fff86",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "ef8cd5791bc673de5bf4035dd4b4cce0a4501fdd157ad813d0711f2f5ac58fdd",
+      "pages": 5,
+      "pdf_exists": true,
+      "project": "phys-smallmac00015-p06",
+      "rebuilt_pdf_sha256": "4c9fae71dfce325138f987346759e6655b9882bdde5e3fbf0b3c3102cad5d68f",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "3b3d82e889c631feda9e3fd6fd3360f7c2747f8d93724530c3268614e0668212",
+      "pages": 8,
+      "pdf_exists": true,
+      "project": "phys-smallmac00016-p01",
+      "rebuilt_pdf_sha256": "cbf11ca2c0b191a54be2905d618e334367ac61bdf01a973f1dbf817f126a2703",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "4ad571ab12ef17332f3ed2d06d912145178506e1c0460ea0cfa8b7bd9bab015e",
+      "pages": 14,
+      "pdf_exists": true,
+      "project": "phys-smallmac00018-p01",
+      "rebuilt_pdf_sha256": "1507a6a44e928e0aa54d7b1d23faba73307cd3a8f0537fbcf75714f99affeb92",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "e23d784b01d54620b989b7bf384e581d4cf53d0c1ce6610a231af132619601c1",
+      "pages": 4,
+      "pdf_exists": true,
+      "project": "phys-smallmac00013-p03",
+      "rebuilt_pdf_sha256": "92a02c725ad00110992e8916b0d5918197b04de6ed1e9856f309b9ce97a5f9b0",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "f1a80de3c99a2bb5c4351f191aa37ee07f04634a4fc22c9398dc5094f0c64fb9",
+      "pages": 9,
+      "pdf_exists": true,
+      "project": "phys-smallmac00013-p04",
+      "rebuilt_pdf_sha256": "97f19a6b7d689a6b6c92d63834bf73cc1adaaf958fd583af579984347dc36fe5",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "c1c35a2f81ac431f7c1dc9c6c599682e6708b171dc99c9542f14938c66db8fd6",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00013-p07",
+      "rebuilt_pdf_sha256": "11953606c53cde4f04468319faa0a54a44376f121ba28126c1cdc4b80619c085",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "463060a9cd0b8f5a2ea92f78f1a64599c1098b2d5725d0973586776b44767fbd",
+      "pages": 4,
+      "pdf_exists": true,
+      "project": "phys-smallmac00019-p01",
+      "rebuilt_pdf_sha256": "afa0ef3d960f923091c6b75514df02dc5e995186851f39184f0beaa78747df43",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "b08b4c72d461c9a5ea34a275dcba1b2d8c4cc5a57994d37aaff205d20d57f681",
+      "pages": 3,
+      "pdf_exists": true,
+      "project": "phys-smallmac00020-p01",
+      "rebuilt_pdf_sha256": "433e40a874c2a991d1cf71cc7fec0930c43f73fcac4693eea44d11556f2be77c",
+      "working_directory": "."
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "9b7def73126a9b33e24349cd22cf45b6fcd164566341cb82e34c7f5b0c133653",
+      "pages": 7,
+      "pdf_exists": true,
+      "project": "phys-smallmac00020-p02",
+      "rebuilt_pdf_sha256": "8a6a5f30ebefc70b9475d38fca4b38eba201d490530ea0cfc5e8aae01e09a945",
+      "working_directory": "."
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "98b98edc453f1067d8fe50b21adf4e79117a9f482d23f3b2cf847b0d50131e25",
+      "pages": 5,
+      "pdf_exists": true,
+      "project": "phys-smallmac00020-p03",
+      "rebuilt_pdf_sha256": "a390d1551e834c8daa1528448b6587009be9ea78a42d2bda6a5deb2e8cd4cfac",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "248adb8f58f20fbb744166618b0ed9992b097fc40c71ccfa008de56cddfec2df",
+      "pages": 9,
+      "pdf_exists": true,
+      "project": "phys-smallmac00021-p01",
+      "rebuilt_pdf_sha256": "93d2ed8c9bea2921a6b3764bde75afe2d0ac350b469323958770399557e889d5",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "a1d1f23710bf8fff0c3f524ed413572de7c561a9f2d2faec770b96b1638ee037",
+      "pages": 6,
+      "pdf_exists": true,
+      "project": "phys-smallmac00021-p02",
+      "rebuilt_pdf_sha256": "544ddc73247fa0a3fa909cfca340a231b4ee109a5a1df10368004707b37e2d70",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "fac348f2f90cacc9c3b1ceac33a7abf39d7f54148ac8e540714da03b1a096330",
+      "pages": 3,
+      "pdf_exists": true,
+      "project": "phys-smallmac00021-p03",
+      "rebuilt_pdf_sha256": "ce79637b9f6d7e4375b5b294e8440f765fb7eb93f0e607810fe954de83d9b2b4",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "c82480a69f0e4fa90c25a055c6464c55edd84d070eb77cad2331cd856d2365dc",
+      "pages": 7,
+      "pdf_exists": true,
+      "project": "phys-smallmac00022-p01",
+      "rebuilt_pdf_sha256": "6ea149c2036279745f206d0f60faf4f092fe8bbe038bb4ae8d562bbdafdbd449",
+      "working_directory": "."
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "manuscript/main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "4dad571d368bf2384bad04db62f05b0636b3ae1dd74bfef88f579031d18e44bd",
+      "pages": 4,
+      "pdf_exists": true,
+      "project": "phys-smallmac00022-p02",
+      "rebuilt_pdf_sha256": "391e657385df258db65b6d652ec71835b200e04102bac20cd147fcf16234ad55",
+      "working_directory": "."
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "0a3b4e29272f9548d3fd262239a242ab1114ada2553123e3902c482c4211f92b",
+      "pages": 7,
+      "pdf_exists": true,
+      "project": "phys-smallmac00022-p03",
+      "rebuilt_pdf_sha256": "7582eddcdf7ecfe9a4c5ad8f05ec06dce84588bdc14527f361642d6ae41e69b9",
+      "working_directory": "manuscript"
+    },
+    {
+      "citations_clean": true,
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=rebuild",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "final_log_sha256": "9d3dc64ccf92866a209e8d32a78e21e011dfd195cecb4e37c0e7d6e87d371763",
+      "pages": 8,
+      "pdf_exists": true,
+      "project": "phys-smallmac00023-p03",
+      "rebuilt_pdf_sha256": "39eee59846cdcbb28c2ef72d9167c20a02131933b50a56a06914db2babb82eb6",
+      "working_directory": "manuscript"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "48 SmallMac manuscripts; disposable clean copies; frozen packaged PDFs were not modified",
+  "summary": {
+    "latex_errors": 0,
+    "manuscript_cwd_builds": 41,
+    "missing_characters": 0,
+    "overfull_boxes": 0,
+    "passed": 48,
+    "pdfinfo_passed": 48,
+    "project_root_fallback_builds": 7,
+    "projects": 48,
+    "undefined_citations": 0,
+    "undefined_references": 0
+  },
+  "validated_at": "2026-10-13T17:55:02.265383+00:00"
+}

@@ -1,0 +1,24 @@
+O(4) RANK-ONE LEMMA EXACT REPLAY
+Run during job window beginning 2026-09-13T12:54:02Z; the command's exact
+wall-clock second was not captured, so none is asserted here.
+
+Pre-computation launcher-environment probe (non-login shell):
+command -v python3
+python3
+
+COMMAND:
+python3 evidence/o4_rank_one_lemma_replay.py
+
+OUTPUT:
+EXACT O(4) QUATERNION REPLAY: PASS
+python=3.12.14
+numpy=2.3.5
+scipy=1.18.1
+sympy=1.14.0
+nine_basis_gram=4*I9
+S_transpose=S; trace(S)=0
+S^2=(a.a)(b.b)I4
+trace(S*G(M))=4*a^T*M*b
+
+The command completed with exit code 0. These checks are exact symbolic
+identity checks, not an independent referee assessment of the whole proof.

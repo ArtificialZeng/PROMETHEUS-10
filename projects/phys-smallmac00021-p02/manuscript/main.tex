@@ -1,0 +1,417 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={A unique cubic-coupling cancellation locus for collinear constant-vorticity capillary–gravity triads},
+  pdfauthor={Xiaojian Zeng}
+}
+\usepackage{microtype}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\title{A unique cubic-coupling cancellation locus for collinear\\
+constant-vorticity capillary--gravity triads}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We classify a degeneracy of the leading resonant interaction in the
+co-propagating constant-vorticity capillary--gravity wave model of Ivanov and
+Martin. Let \(g,\sigma>0\), let \(k_1,k_2>0\) be distinct, and set
+\(k_3=k_1+k_2\), where \(\sigma\) is surface tension divided by density.
+Starting from the polynomial dispersion relations and
+\(\omega_3=\omega_1+\omega_2\), we obtain all real solutions without
+squaring a radical equation. There are exactly two: a common-positive
+frequency solution and its simultaneous frequency--vorticity sign reversal.
+On either sheet the cubic interaction numerator is a rational function of
+\(q_j=k_j(g+\sigma k_j^2)\). Requiring this numerator to vanish reduces
+exactly to a quartic equation for \(r=g/\sigma\). Its four linear factors are
+positive and increasing on \(r\geq0\), while its value at the origin is
+strictly negative. Hence every distinct positive pair \((k_1,k_2)\) has
+exactly one \(r_*>0\) at which the linear resonance persists but the retained
+cubic triad coefficient vanishes. The vorticity is negative on the
+positive-frequency sheet and positive on its sign-reversed companion. The
+result concerns only the source model's short-wave, cubic-order envelope
+truncation; it neither suppresses higher-order transfer nor establishes a
+finite-depth or full-Euler cancellation.
+\end{abstract}
+
+\noindent\textbf{Keywords:} capillary--gravity waves; constant vorticity;
+resonant triad; Hamiltonian interaction coefficient; exact classification
+
+\medskip
+\noindent\textbf{Mathematics Subject Classification (2020):}
+76B15, 76B45, 35Q35
+
+\section{Introduction}
+
+Three-wave resonance requires both a wave-vector relation and a frequency
+relation. Constant vorticity can enable such resonances for collinear
+capillary and capillary--gravity waves even when the corresponding
+irrotational configuration is nonresonant
+\cite{ConstantinKartashova2009,Martin2017}. Ivanov and Martin
+\cite{IvanovMartin2019} derived a weakly nonlinear Hamiltonian and envelope
+system for three distinct, co-propagating modes in a constant-vorticity flow.
+The resulting dynamics contains a common cubic interaction numerator, so
+linear resonance and nonlinear coupling are logically separate conditions.
+
+The linear-resonance part is substantially understood. Martin
+\cite{Martin2017} derived the vorticity magnitude with an explicit sign
+restoration, and Martin and Basu \cite{MartinBasu2021} obtained the
+equation-equivalent positive-frequency root and its uniqueness in the
+capillary regime for a surface layer of piecewise-constant vorticity.
+Accordingly, neither that magnitude nor negative-vorticity uniqueness is
+claimed here as new. For the pure-capillary boundary \(g=0\), Constantin,
+Kartashova, and Wahl{\'e}n \cite{ConstantinKartashovaWahlen2010} gave a
+Hamiltonian coupling coefficient and studied resonance clusters.
+
+Our question is instead simultaneous: when do the dispersion equations,
+linear resonance, and the cubic coefficient from
+\cite{IvanovMartin2019} vanish together? We first retain the unrestricted
+real polynomial dispersion system and show that it has exactly two
+total-sign-related sheets. We then reduce the simultaneous zero to one
+strictly increasing quartic in \(r=g/\sigma\), proving existence and
+uniqueness of a positive zero for every distinct positive wave-number pair.
+This is not the same mechanism as the fixed-amplitude and fixed-phase
+no-exchange states studied by Chabane and Choi \cite{ChabaneChoi2019}.
+
+The scope is deliberately narrow. The calculation uses the short-wave
+Fourier-multiplier replacement and the cubic, slow-envelope truncation of
+\cite{IvanovMartin2019}. A zero of its cubic coefficient is not a statement
+about all perturbative orders, finite depth, dissipation, or an experiment.
+
+\section{Model and conventions}
+
+The parent setting is a two-dimensional inviscid, incompressible fluid with a
+free surface, a flat bed, gravity \(g>0\), and constant vorticity
+\(\gamma=u_y-v_x\). We write
+\[
+  \sigma=\frac{\widetilde{\sigma}}{\rho}>0,
+\]
+where \(\widetilde{\sigma}\) is surface tension and \(\rho\) is density.
+Thus
+\[
+ [k]=L^{-1},\qquad [\omega]=[\gamma]=T^{-1},\qquad
+ [g]=LT^{-2},\qquad [\sigma]=L^3T^{-2}.
+\]
+At the short-wave level retained in \cite{IvanovMartin2019}, a positive
+co-propagating wave number satisfies
+\begin{equation}
+  \omega^2+\gamma\omega-k(g+\sigma k^2)=0.       \label{eq:dispersion}
+\end{equation}
+The selected carrier frequency is the positive root
+\begin{equation}
+  \omega^+_\gamma(k)
+  =\frac{-\gamma+\sqrt{\gamma^2+4k(g+\sigma k^2)}}{2}>0. \label{eq:positive}
+\end{equation}
+
+Let \(k_1,k_2>0\), \(k_1\neq k_2\), and \(k_3=k_1+k_2\). The resonance
+condition is
+\begin{equation}
+  \omega_3=\omega_1+\omega_2.                   \label{eq:resonance}
+\end{equation}
+For convenience define
+\begin{equation}
+  q_j=k_j(g+\sigma k_j^2),\qquad
+  C=\gamma^2+2\gamma\omega_3+2\omega_1\omega_2. \label{eq:Cdef}
+\end{equation}
+Direct summation of the four resonant cubic Hamiltonian terms in
+\cite[Eq.~(4.31)]{IvanovMartin2019} gives \(C\). Each nonlinear right-hand
+side of the three envelope equations in its Eq.~(4.32) is proportional to
+\(k_j C/(2\omega_j+\gamma)\), multiplied by the appropriate quadratic
+amplitude monomial. Hence \(C=0\), provided the denominators are regular,
+removes precisely the displayed cubic resonant interaction.
+
+\section{Complete real resonance sheets}
+
+Write
+\begin{equation}
+\begin{gathered}
+ a=q_1,\qquad b=q_2,\qquad c=q_3,\qquad
+ \ell=c-a-b=3\sigma k_1k_2k_3,\\
+ p=\frac{\ell}{2},\qquad
+ Q=c^2-(a-b)^2,\qquad
+ N=\ell^2-4ab,\qquad D=2\ell Q.                 \label{eq:invariants}
+\end{gathered}
+\end{equation}
+Because \(q(k)=k(g+\sigma k^2)\) is strictly increasing for \(k>0\),
+\(c>a,b\), and therefore
+\[
+ Q=(c-a+b)(c+a-b)>0,\qquad D>0.
+\]
+
+\begin{theorem}[Two-sheet classification]\label{thm:sheets}
+Every real solution of the three dispersion polynomials
+\(\omega_j^2+\gamma\omega_j-q_j=0\) and
+\eqref{eq:resonance} is, for one
+\(\varepsilon\in\{+1,-1\}\),
+\begin{equation}
+\begin{aligned}
+ \omega_1^{(\varepsilon)}
+   &=\varepsilon\sqrt{p}\,\frac{c+a-b}{\sqrt Q},&
+ \omega_2^{(\varepsilon)}
+   &=\varepsilon\sqrt{p}\,\frac{c-a+b}{\sqrt Q},\\
+ \omega_3^{(\varepsilon)}
+   &=\varepsilon\,\frac{2c\sqrt p}{\sqrt Q},&
+ \gamma^{(\varepsilon)}
+   &=-\varepsilon\,\frac{N}{\sqrt D}.
+                                                        \label{eq:sheets}
+\end{aligned}
+\end{equation}
+In particular, the physical positive-frequency sheet is
+\(\varepsilon=+1\). The other solution is the simultaneous sign reversal
+\((\omega_j,\gamma)\mapsto(-\omega_j,-\gamma)\); there are no mixed-sign
+real branches.
+\end{theorem}
+
+\begin{proof}
+Subtract the first two dispersion equations from the third after using
+\(\omega_3=\omega_1+\omega_2\). This gives
+\begin{equation}
+  2\omega_1\omega_2=\ell>0.                     \label{eq:product}
+\end{equation}
+Thus \(\omega_1\) and \(\omega_2\) are nonzero and have the same sign, which
+is also the sign of \(\omega_3\). Differences of the dispersion equations
+also yield
+\begin{equation}
+ c+a-b=2\omega_1(\omega_3+\gamma),\qquad
+ c-a+b=2\omega_2(\omega_3+\gamma).              \label{eq:ratio}
+\end{equation}
+The positive left-hand sides show that the common factor does not vanish.
+Taking the ratio in \eqref{eq:ratio} and combining it with
+\eqref{eq:product} fixes \(\omega_1,\omega_2\), up to their common sign, as
+the first line of \eqref{eq:sheets}. Their sum gives the displayed
+\(\omega_3\). Finally, substituting either frequency into its dispersion
+equation and simplifying gives
+\(\gamma=-\varepsilon N/\sqrt D\). Direct substitution of
+\eqref{eq:sheets} verifies all four equations. The product, common sign,
+and ratio arguments force every real solution to this list, proving
+completeness.
+\end{proof}
+
+\begin{remark}
+Eliminating the frequencies gives only
+\[
+  D\gamma^2-N^2=0,
+\]
+which loses the sheet label. At \(N=0\), both solutions have
+\(\gamma=0\), but their three nonzero frequencies still have opposite
+signs.
+\end{remark}
+
+For example, with \(g=\sigma=1\) and \((k_1,k_2,k_3)=(1,3,4)\), the two
+solutions are
+\begin{equation}
+ (\gamma,\omega_1,\omega_2,\omega_3)
+ =\frac{(-11,15,36,51)}{\sqrt{30}},\qquad
+ \frac{(11,-15,-36,-51)}{\sqrt{30}}.            \label{eq:example-sheets}
+\end{equation}
+The first is the selected positive-frequency solution.
+
+\section{The unique cubic-coupling zero}
+
+\begin{lemma}\label{lem:C}
+On either resonance sheet in Theorem~\ref{thm:sheets},
+\begin{equation}
+ C=\frac{4ab}{\ell}-\gamma^2
+  =\frac{16ab(c-a)(c-b)-\ell^4}
+  {2\ell\{c^2-(a-b)^2\}}.                       \label{eq:Crational}
+\end{equation}
+In particular, \(C\) is invariant under total sign reversal.
+\end{lemma}
+
+\begin{proof}
+The dispersion equations and \eqref{eq:product} give
+\[
+ ab=\omega_1\omega_2(\omega_1+\gamma)(\omega_2+\gamma)
+   =\frac{\ell}{2}\left(\frac{\ell}{2}
+     +\gamma\omega_3+\gamma^2\right).
+\]
+Comparing this identity with \eqref{eq:Cdef} proves the first equality in
+\eqref{eq:Crational}. Inserting \(\gamma^2=N^2/D\) and factoring proves the
+second.
+\end{proof}
+
+Set \(x=k_1\), \(y=k_2\), and
+\[
+ r=\frac{g}{\sigma},
+\]
+which has dimensions \(L^{-2}\).
+
+\begin{theorem}[Unique cancellation locus]\label{thm:zero}
+For every distinct \(x,y>0\), there is exactly one \(r_*(x,y)>0\) for which
+the dispersion equations, resonance, and \(C=0\) hold simultaneously.
+It is the unique positive root of
+\begin{equation}
+\begin{split}
+ P_{x,y}(r)={}&16(r+x^2)(r+y^2)
+ (r+3x^2+3xy+y^2)\\
+ &\quad\times(r+x^2+3xy+3y^2)
+ -81x^2y^2(x+y)^4.                              \label{eq:quartic}
+\end{split}
+\end{equation}
+Moreover, \(C<0\) for \(0\leq r<r_*\) and \(C>0\) for \(r>r_*\) on both
+sheets. At \(r_*\), the positive-frequency sheet has \(\gamma<0\), while
+its total-sign companion has \(\gamma>0\).
+\end{theorem}
+
+\begin{proof}
+The numerator of \eqref{eq:Crational} factors exactly as
+\[
+ \sigma^4x^2y^2P_{x,y}(r).
+\]
+The removed factor and the denominator in \eqref{eq:Crational} are strictly
+positive. Each of the four linear factors in the product in
+\eqref{eq:quartic} is positive and strictly increasing on \(r\geq0\);
+therefore \(P_{x,y}\) is strictly increasing there. At the endpoint,
+\begin{equation}
+ P_{x,y}(0)=-x^2y^2\{33(x+y)^4-16x^2y^2\}<0,    \label{eq:P0}
+\end{equation}
+and \(P_{x,y}(r)\to+\infty\) as \(r\to+\infty\). The intermediate value
+theorem and strict monotonicity prove existence, uniqueness, and the sign
+change.
+
+On the positive-frequency sheet, solving \(C=0\) at the simultaneous
+solution gives
+\[
+ \gamma=-(\omega_1+\omega_2)
+       \pm\sqrt{\omega_1^2+\omega_2^2}.
+\]
+Both values are negative because
+\(\sqrt{\omega_1^2+\omega_2^2}<\omega_1+\omega_2\). The other sheet is the
+total sign reversal, so its vorticity is positive.
+\end{proof}
+
+The amplitude denominators are nonsingular at the zero:
+\begin{equation}
+ 2\omega_j+\gamma=\sqrt{\gamma^2+4q_j}>0
+ \quad\text{on the positive-frequency sheet}.   \label{eq:denominators}
+\end{equation}
+For \((k_1,k_2)=(1,3)\),
+\[
+ r_*=0.5179682428904992165\ldots,\qquad
+ \gamma_*=-2.194536665566565812\ldots
+\]
+when \(\sigma=1\). These decimals illustrate the exact result; they are not
+used in its proof.
+
+\section{Relation to earlier formulas}
+
+The convention in Martin \cite{Martin2017} uses
+\[
+ \omega=\frac{\gamma_M+\sqrt{\gamma_M^2+4q}}{2},
+\]
+so its scalar equation maps to the present one by
+\(\gamma_M=-\gamma\). Its squared vorticity formula agrees with
+\(\gamma^2=N^2/D\), while its unsquared equation restores the sign.
+Likewise, after the surface-current Doppler terms cancel under
+\(k_1+k_2=k_3\), the \(\lambda_1\) dispersion branch of Martin and Basu
+\cite{MartinBasu2021} is \eqref{eq:positive}. Their variables reduce to
+\[
+ E=-\ell/\sigma,\qquad F=N/\sigma^2,\qquad
+ 4\sigma\Sigma^2=N^2/D.
+\]
+Their result therefore supplies prior linear-resonance input, but it does not
+contain \(C\) or the simultaneous quartic \eqref{eq:quartic}.
+
+The pure-capillary Hamiltonian study
+\cite{ConstantinKartashovaWahlen2010} is the closest coupling-coefficient
+antecedent. It lies at \(r=0\), where \eqref{eq:P0} shows that the present
+coefficient is not zero; the cancellation locus is strictly inside
+\(r>0\).
+
+Two formula issues should be kept version-specific. In the inspected
+arXiv-v1 rendering of \cite{IvanovMartin2019}, the displayed Eq.~(3.3) lacks
+the square root needed when recovering a vorticity from the squared
+resonance relation. It is dimensionally inconsistent as printed. For
+\((k_1,k_2,k_3)=(1,3,4)\) and \(g=\sigma=1\), its literal value is
+\(11/5760\), for which direct evaluation of the selected branch gives the
+nonzero resonance residual
+\[
+ \omega_1+\omega_2-\omega_3=-1.3557266246176232\ldots.
+\]
+Equation~\eqref{eq:example-sheets} gives the substitution-consistent
+replacement. The sentence after its Eq.~(4.33) also prints
+\(\gamma=\omega_1+\omega_2\pm\sqrt{\omega_1^2+\omega_2^2}\). For positive
+frequencies these values are positive and cannot zero the all-positive-term
+expression \eqref{eq:Cdef}. The leading sign must instead be negative, as
+in the proof of Theorem~\ref{thm:zero}, and dispersion and resonance must
+still be imposed simultaneously.
+
+These observations concern the checked arXiv v1 only. We did not inspect the
+equation rendering in the version of record, and we do not assert the absence
+of an unindexed author correction or a formal publisher correction.
+
+\section{Physical interpretation and limitations}
+
+At \(r_*\), the linear phase matching \eqref{eq:resonance} remains exact,
+while the common numerator of all three displayed cubic envelope couplings
+vanishes. Thus the leading retained resonant exchange degenerates. Calling
+this \emph{no energy exchange} without an order qualifier would be too strong:
+quartic and higher Hamiltonian terms, finite-depth corrections, dissipation,
+or other modes may supply the first nonzero transfer. The rescaling used to
+normalize a nonzero three-wave system is singular at \(C=0\) and cannot be
+used there.
+
+The analysis does not test the replacement of the finite-depth multiplier by
+its short-wave sign limit. It excludes counter-propagating and noncollinear
+triads, and it does not address stability, detuning width, experimental
+accessibility, or the full Euler evolution. The all-negative-frequency
+solution is algebraic bookkeeping for the unrestricted polynomial system,
+not a second physical carrier at the same fixed vorticity.
+
+\section{Conclusion}
+
+The source-model resonance manifold has exactly two total-sign-related real
+sheets. On that manifold, the cubic interaction coefficient admits the
+closed form \eqref{eq:Crational}, and its zero is equivalent to the monotone
+quartic \eqref{eq:quartic}. Every distinct positive wave-number pair
+therefore determines one and only one positive gravity-to-capillarity ratio
+at which linear resonance survives but the retained cubic coupling
+vanishes. This exact separation of phase matching from leading nonlinear
+transfer is the principal result; determining the first nonzero omitted
+interaction is a separate problem.
+
+\section*{Statements and declarations}
+
+\paragraph{Funding.}
+No funding information was supplied for this draft.
+
+\paragraph{Competing interests.}
+No competing-interest declaration was supplied for this draft.
+
+\paragraph{Data and code availability.}
+The proof is analytic and all central identities appear in the text.
+Symbolic verification code, its recorded environment, and deterministic
+output accompany the local source package.
+
+\paragraph{Author contributions.}
+Xiaojian Zeng is the sole prospective author. The contribution statement and
+all authorship criteria require the prospective author's confirmation before
+submission.
+
+\paragraph{Generative-AI declaration.}
+OpenAI Codex using the \texttt{gpt-5.6-sol} model was used on
+14--15 September 2026 to assist with primary-literature comparison, prompts
+for reconstructing and challenging the algebra, symbolic-verification code,
+independent computational replays, and substantial manuscript drafting.
+This use materially affected scientific content and presentation. The
+prospective author has not yet completed final human verification or assumed
+accountability for this draft; it must not be submitted until that review is
+complete and the declaration is confirmed against the venue policy.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

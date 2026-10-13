@@ -1,0 +1,97 @@
+{
+  "published_source": "Mele et al. arXiv:2401.15634v3",
+  "locators": "Eq.(62), Lemma7 (unnumbered qubit criterion), Theorem38 Proof3, Lemma39 Fact3",
+  "exact_threshold": "2/3",
+  "gap_general": "-(lam*r + lam - 1)/2",
+  "method": "Exact symbolic substitution, determinant and trace identities; Lemma7 is used only for two qubits.",
+  "precision": "Exact rational/algebraic/symbolic expressions, zero residual; no SDP, finite-tolerance feasibility, statistical fit or discretization.",
+  "endpoint_extension_basis": "A,B1,B2 lexicographic number basis",
+  "endpoint_extension": [
+    [
+      "1/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "sqrt(3)/6",
+      "sqrt(3)/6",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "sqrt(3)/6",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1/6",
+      "1/6",
+      "0"
+    ],
+    [
+      "sqrt(3)/6",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1/6",
+      "1/6",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1/6"
+    ]
+  ],
+  "endpoint_extension_eigenvalues": [
+    "5/6",
+    "1/6",
+    "0 (multiplicity 6)"
+  ],
+  "scope": "Published qubit baseline only. The qutrit gamma=ln2 endpoint, any improved bracket, and Fig.4 numerical point remain uncomputed."
+}

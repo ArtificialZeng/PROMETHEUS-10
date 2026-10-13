@@ -1,0 +1,150 @@
+{
+  "implementation": "Independent characteristic invariants / adjugate / implicit root; no Fourier resolvent, no imported discovery code or cache.",
+  "sympy_version": "1.14.0",
+  "checks": [
+    {
+      "name": "companion determinant from entries",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "companion column conservation",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "companion zero diagonal",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "exact companion arc root",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "strict separation polynomial",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "published ring spectrum",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "stationary ring vector",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "ring cycle product ratio",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "all-coordinate first real derivative",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "all-coordinate first tangent excess",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "chord first coefficient",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "complete arbitrary-direction Hessian",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "quadratic optimizer",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "quadratic maximum",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "full completion of square",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "triangle constrained coefficient",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "normalization of 1/5 coefficient",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "primary strict Jensen Hessian determinant",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "name": "primary strict Jensen Hessian trace",
+      "pass": true,
+      "residual": "0"
+    }
+  ],
+  "all_pass": true,
+  "details": {
+    "arc_parameter_derivative": "4*(6*delta**2 - 4*delta + 1)",
+    "ring_generator_row_convention": [
+      [
+        "-1",
+        "3/4",
+        "0",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "-1",
+        "3/4",
+        "0"
+      ],
+      [
+        "0",
+        "1/4",
+        "-1",
+        "3/4"
+      ],
+      [
+        "3/4",
+        "0",
+        "1/4",
+        "-1"
+      ]
+    ],
+    "first_eigenvalue_coefficient": "-c0*(2 + I)/8 - c1*(2 + I)/8 - c2*(2 + I)/8 - c3*(2 + I)/8 - 3*I*m/4 + s0*(2 - I)/8 + s1*(2 - I)/8 + s2*(2 - I)/8 + s3*(2 - I)/8",
+    "quadratic_form_from_characteristic_invariants": "-c0**2/64 + 5*c0*c1/32 - 9*c0*c2/32 + 5*c0*c3/32 - 3*c0*u0/10 - 2*c0*u1/5 - c0*u2/10 - c1**2/64 + 5*c1*c2/32 - 9*c1*c3/32 + c1*u0/10 - c1*u1/5 - 3*c1*u2/10 - c2**2/64 + 5*c2*c3/32 + 3*c2*u0/10 + 2*c2*u1/5 + c2*u2/10 - c3**2/64 - c3*u0/10 + c3*u1/5 + 3*c3*u2/10 - 7*u0**2/3 - 4*u0*u1/3 - 10*u0*u2/3 - 4*u1**2/3 - 4*u1*u2/3 - 7*u2**2/3",
+    "real_second_eigenvalue_coefficient": "-c0**2/8 + c0*c2/4 + 3*c0*u0/10 + 2*c0*u1/5 + c0*u2/10 - c1**2/8 + c1*c3/4 - c1*u0/10 + c1*u1/5 + 3*c1*u2/10 - c2**2/8 - 3*c2*u0/10 - 2*c2*u1/5 - c2*u2/10 - c3**2/8 + c3*u0/10 - c3*u1/5 - 3*c3*u2/10",
+    "imag_second_eigenvalue_coefficient": "-5*c0**2/64 + 5*c0*c1/32 - 5*c0*c2/32 + 5*c0*c3/32 - 3*c0*u0/20 - c0*u1/5 - c0*u2/20 - 5*c1**2/64 + 5*c1*c2/32 - 5*c1*c3/32 + c1*u0/20 - c1*u1/10 - 3*c1*u2/20 - 5*c2**2/64 + 5*c2*c3/32 + 3*c2*u0/20 + c2*u1/5 + c2*u2/20 - 5*c3**2/64 - c3*u0/20 + c3*u1/10 + 3*c3*u2/20 - 7*u0**2/3 - 4*u0*u1/3 - 10*u0*u2/3 - 4*u1**2/3 - 4*u1*u2/3 - 7*u2**2/3",
+    "hessian_leading_minors": [
+      "-14/3",
+      "32/3",
+      "-640/27"
+    ],
+    "quadratic_optimizer": {
+      "u0": "-3*c0/40 + 3*c1/20 + 3*c2/40 - 3*c3/20",
+      "u1": "-3*c0/20 - 3*c1/40 + 3*c2/20 + 3*c3/40",
+      "u2": "3*c0/40 - 3*c1/20 - 3*c2/40 + 3*c3/20"
+    },
+    "quadratic_maximum": "(7*c0**2 + 50*c0*c1 - 114*c0*c2 + 50*c0*c3 + 7*c1**2 + 50*c1*c2 - 114*c1*c3 + 7*c2**2 + 50*c2*c3 + 7*c3**2)/320",
+    "Jensen_determinant": "-4*r*(4*r**4*v**2 + r**4 + 8*r**3*v**3 - 8*r**3*v - 16*r**2*v**4 + 28*r**2*v**2 - 2*r**2 - 8*r*v**3 + 8*r*v + 4*v**2 + 1)/((r - 2*v)**3*(2*r*v + 1)**3)",
+    "strictness_argument": "N,M>0; v>0 and r>0 make the first numerator summand strictly positive; 1-v^2>=0. Trace>0 follows N/r-M*r=(r+1/r)/2>0. Domain xi<log(2 sin phi) is convex."
+  },
+  "script_sha256": "f071aa4ea913a0569496285011eb702dafa48f4be4a6713afbcbb893b7ab047a",
+  "limitations": "Exact algebra checks are not by themselves the universal nonattainment proof. The analytic uniformity, rigidity, compactness and physical-domain arguments are in the accompanying manuscript."
+}

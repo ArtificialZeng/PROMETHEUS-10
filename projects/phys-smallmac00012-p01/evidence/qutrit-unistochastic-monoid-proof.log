@@ -1,0 +1,35 @@
+EXACT QUTRIT UNISTOCHASTIC MONOID PROOF AUDIT
+COMMAND: python3 -B code/exact_qutrit_monoid_proof.py
+SCOPE: the frozen order-three proposition; exact finite-dimensional arithmetic
+PASS: Heron and four-coordinate qutrit witnesses agree identically
+PASS: exact phase-chord quadratic coefficient is identified
+PASS: concavity-form determinant is 4ab(1-a-b)
+PASS: quadratic coefficient equals the negative-semidefinite form
+CERTIFICATE: for a>=0, b>=0, a+b<=1 the form has nonpositive diagonal and nonnegative determinant, hence h is concave along the full CKM chord.
+PASS: every CKM probability matrix is the affine chord of its two real endpoints
+PASS: the CKM chord has the rank-one opposite-row direction
+PASS: CKM endpoint -1 is orthogonal modulo the three circle identities
+PASS: CKM endpoint -1 realizes its probability matrix entry by entry
+PASS: CKM endpoint +1 is orthogonal modulo the three circle identities
+PASS: CKM endpoint +1 realizes its probability matrix entry by entry
+PASS: holdout right realizer is exactly unitary
+PASS: holdout left realizer is exactly unitary
+PASS: holdout right factor is entrywise positive
+PASS: holdout left factor is entrywise positive
+PASS: both holdout factors are strict interior points
+PASS: holdout product witness is exactly quadratic on the left CKM chord
+PASS: holdout chord is strictly concave
+PASS: holdout orthostochastic endpoint products have h>=0
+PASS: holdout target equals the CKM-chord polynomial at cos(delta_C)=3/5
+PASS: exact concavity lower bound certifies holdout h>0
+PASS: exact holdout completion W is unitary
+PASS: exact holdout W realizes C*A entry by entry
+PASS: s13=0 singular chart collapses the CKM chord
+PASS: collapsed singular endpoint remains exactly orthostochastic
+concavity_leading_coefficient=-a**2*s**2 + 2*a*b*r*s + 2*a*r*s + 2*a*s**2 - b**2*r**2 + 2*b*r**2 + 2*b*r*s - r**2 - 2*r*s - s**2
+holdout_endpoint_h_minus=35993442252887011886287454208/1079246266063035135245725390625
+holdout_endpoint_h_plus=34230738769643930669616365568/1079246266063035135245725390625
+holdout_linear_endpoint_bound=12037340573022118660964352/375651328250273280628515625
+holdout_product_h=10075071324703818162689014136832/311902170892217154086014637890625
+RESULT: every order-three unistochastic product is unistochastic.  The two orthostochastic endpoints are admissible by the exterior certificate, and concavity carries h>=0 across the entire CKM chord.
+PHYSICAL RESULT: every two-step measured qutrit channel in the frozen model has a one-step U(3) realization.

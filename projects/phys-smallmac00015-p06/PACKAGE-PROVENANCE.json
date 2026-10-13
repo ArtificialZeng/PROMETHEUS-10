@@ -1,0 +1,13 @@
+{
+  "original_internal_id": "phys-00015-p06",
+  "packaged_paper_pdf_sha256": "907dd621c523c7bc3eb799f6c1f4b44ab843cf036199103d7f16a9a7c5c598c2",
+  "pdf_bytes_preserved": true,
+  "portability_changes_record": "../../reproducibility/small_mac-portability-changes.json",
+  "public_id": "phys-smallmac00015-p06",
+  "schema_version": 1,
+  "series": "small_mac",
+  "source_bundle_manifest_sha256": "7b3f2ad26beb2eea45051deb261a135d70251e6fe670467246771d3d0df4ea63",
+  "source_bundle_sha256": "04737c73e365bce8050e351af5221a0375eff628bfa8b3e391f970bbb9ce9eb2",
+  "source_main_pdf_sha256": "907dd621c523c7bc3eb799f6c1f4b44ab843cf036199103d7f16a9a7c5c598c2",
+  "source_release_manifest_sha256": "7b3f2ad26beb2eea45051deb261a135d70251e6fe670467246771d3d0df4ea63"
+}

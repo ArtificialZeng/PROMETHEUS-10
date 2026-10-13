@@ -1,0 +1,235 @@
+{
+  "scope": "Exact rational counterexample to Gamma=8 being a global spectral-gap maximizer; the actual global maximizer remains unresolved.",
+  "model": "Fixed two-qubit XYZ GKSL generator in problem.md with gamma=3/5, Delta=2/5, Gamma>0, Jx=hbar=1.",
+  "statement_certified": "g(73/10)>3/2>1>g(8), while the reproduced largest Liouvillian exceptional point is Gamma_cr=8.",
+  "exact_method": "Routh-Hurwitz stability of the shifted exact parity-block characteristic polynomials q(s)=p(s-r), all over Q. Positive Hurwitz determinants put every shifted root in Re(s)<0; the nonzero Routh first column at Gamma=8 has two sign changes and therefore exactly two roots in Re(s)>0.",
+  "matrix_source_for_exact_certificate": "evidence/input-b.json (independent matrix-unit action construction)",
+  "parity_block_check": {
+    "plus_dimension": 8,
+    "minus_dimension": 8,
+    "both_off_diagonal_blocks_exactly_zero": true
+  },
+  "Gamma_73_over_10": {
+    "Gamma": "73/10",
+    "shift_r": "3/2",
+    "zero_mode": {
+      "Sigma_plus_algebraic_multiplicity": 1,
+      "Sigma_minus_characteristic_value_at_zero": "51315585613/5000000",
+      "conclusion": "The stationary eigenvalue is unique, and it is removed before the Sigma-plus Hurwitz test."
+    },
+    "Sigma_plus_nonzero_shifted": {
+      "degree": 7,
+      "primitive_integer_polynomial": "40000000*s**7 + 748000000*s**6 + 5668600000*s**5 + 22630120000*s**4 + 51613722250*s**3 + 68431977325*s**2 + 51034832940*s + 17835041673",
+      "coefficients_descending": [
+        "40000000",
+        "748000000",
+        "5668600000",
+        "22630120000",
+        "51613722250",
+        "68431977325",
+        "51034832940",
+        "17835041673"
+      ],
+      "hurwitz_determinants": [
+        "748000000",
+        "3334908000000000000",
+        "48638768936760000000000000000",
+        "1439885499378054390000000000000000000000",
+        "54776866706159265296731919250000000000000000000000",
+        "1684405999045858205553690212004445312500000000000000000000000",
+        "30041451187234079334099064970031487009687007812500000000000000000000000"
+      ],
+      "hurwitz_determinant_signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "routh_first_column_signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "routh_right_half_plane_root_count": 0,
+      "no_zero_first_column_entries": true
+    },
+    "Sigma_minus_shifted": {
+      "degree": 8,
+      "primitive_integer_polynomial": "80000000*s**8 + 1376000000*s**7 + 9298000000*s**6 + 30896360000*s**5 + 51691644500*s**4 + 41256835900*s**3 + 18322078865*s**2 + 8141339726*s + 592083829",
+      "coefficients_descending": [
+        "80000000",
+        "1376000000",
+        "9298000000",
+        "30896360000",
+        "51691644500",
+        "41256835900",
+        "18322078865",
+        "8141339726",
+        "592083829"
+      ],
+      "hurwitz_determinants": [
+        "1376000000",
+        "10322339200000000000",
+        "225592541364352000000000000000",
+        "8178919628282791586816000000000000000000",
+        "236254075574520232365631777868800000000000000000000",
+        "1289321445142308317118006195309915411584000000000000000000000",
+        "5856007916489209536427799368790581417802815649024000000000000000000000",
+        "3467247589849243419511486432317310544988939856455250032896000000000000000000000"
+      ],
+      "hurwitz_determinant_signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "routh_first_column_signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "routh_right_half_plane_root_count": 0,
+      "no_zero_first_column_entries": true
+    },
+    "exact_conclusion": "Every nonzero full-Liouvillian eigenvalue satisfies Re(lambda)<-3/2, hence g(73/10)>3/2."
+  },
+  "Gamma_8": {
+    "Gamma": "8",
+    "shift_r": "1",
+    "Sigma_minus_shifted": {
+      "degree": 8,
+      "primitive_integer_polynomial": "15625*s**8 + 375000*s**7 + 3647500*s**6 + 18405000*s**5 + 51193350*s**4 + 77020200*s**3 + 59217324*s**2 + 28420344*s + 17748921",
+      "coefficients_descending": [
+        "15625",
+        "375000",
+        "3647500",
+        "18405000",
+        "51193350",
+        "77020200",
+        "59217324",
+        "28420344",
+        "17748921"
+      ],
+      "hurwitz_determinants": [
+        "375000",
+        "1080234375000",
+        "13133939062500000000",
+        "414062135266289062500000000",
+        "20483654639183059500000000000000000",
+        "810540918990875067945187500000000000000000",
+        "-2370615583538156914644153523200000000000000000000",
+        "-42075868713587647563622823995148467200000000000000000000"
+      ],
+      "hurwitz_determinant_signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "routh_first_column_signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "routh_right_half_plane_root_count": 2,
+      "no_zero_first_column_entries": true
+    },
+    "exact_conclusion": "Exactly two Sigma-minus eigenvalues satisfy Re(lambda)>-1, hence g(8)<1."
+  },
+  "logical_conclusion": "Because 73/10>0 and g(73/10)>3/2>1>g(8), Gamma=8 cannot belong to the set of global maximizers of g. This does not identify the maximizer.",
+  "independent_high_precision_replay": [
+    {
+      "Gamma": "7.3",
+      "gap_100_digit_replay": "1.557228635336748666175116662280885116867799348911459909094321586502247",
+      "leading_nonzero_eigenvalues": [
+        {
+          "real": "-1.55722863533674866617511666228088511686779934891145990909432",
+          "imag": "-0.532277915679662876104236087200904524389788151128953490004186"
+        },
+        {
+          "real": "-1.55722863533674866617511666228088511686779934891145990909432",
+          "imag": "0.532277915679662876104236087200904524389788151128953490004186"
+        },
+        {
+          "real": "-1.5866723264059442135678228637918858018071714124332055802773",
+          "imag": "-1.31195851982033461065260708382655982013708427177903867002277e-104"
+        },
+        {
+          "real": "-2.275",
+          "imag": "-0.818153408597678580862661586552967640460385027702096781476256"
+        }
+      ]
+    },
+    {
+      "Gamma": "8",
+      "gap_100_digit_replay": "0.9723556612811225977364718235614871621075367594957287118604504592071699",
+      "leading_nonzero_eigenvalues": [
+        {
+          "real": "-0.97235566128112259773647182356148716210753675949572871186045",
+          "imag": "-0.652851258498694277282610589582806786833552695608234116651999"
+        },
+        {
+          "real": "-0.97235566128112259773647182356148716210753675949572871186045",
+          "imag": "0.652851258498694277282610589582806786833552695608234116651999"
+        },
+        {
+          "real": "-2.4",
+          "imag": "-3.43178956299441156089744098395453082572050864873402297009756e-53"
+        },
+        {
+          "real": "-2.4",
+          "imag": "3.43178956299441156089744098395453082572050864873402297009756e-53"
+        }
+      ]
+    }
+  ],
+  "error_control": "The central inequalities and Routh root counts use exact SymPy rational/integer arithmetic; no floating-point value enters the proof. The 105-digit eigenspectra are noncertifying cross-checks only.",
+  "physical_domain": "Both tested rates are strictly positive and use the same fixed Hamiltonian, jump operator, normalization, and complete 16-dimensional Liouville space as the reproduced source model.",
+  "limitations": [
+    "The exact counterexample does not prove existence, uniqueness, or the location of the global maximizer.",
+    "It compares asymptotic spectral gaps, not finite-time Hilbert-Schmidt relaxation for every state or quench.",
+    "Novelty is subject to the bounded successor/literature comparison recorded separately."
+  ],
+  "software": {
+    "Python": "3.12.14",
+    "NumPy": "2.3.5",
+    "SciPy": "1.18.1",
+    "SymPy": "1.14.0",
+    "mpmath": "1.3.0",
+    "mpmath_replay_digits": 105
+  },
+  "integrity": {
+    "source.md": "1e40c2d1e0d97a0914adb5519109136282ee9620f22b5a786eefb4809b6a787a",
+    "evidence/input-a.json": "f98a3c0e8e734c68a874426cbffec37738f797816c1696877bfcc543ed222318",
+    "evidence/input-b.json": "769a508098dfc9fcb4d431b47596b4f38c9cb1b03a6c36f2496d1721730f75b7",
+    "intake-evidence/primary-sources/phys-00020-p01-01-2412.13674v2.pdf": "ccba2269f3c1b935a80703edd41fb579ce33e54bcb072fe565c55b701ae4cf77"
+  }
+}

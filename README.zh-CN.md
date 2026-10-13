@@ -2,13 +2,36 @@
 
 **让 AI 的物理结论经得起复算**
 
-[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md)
+[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [Русский](README.ru.md)
 
 十份由 AI 参与推导、反例搜索和计算的物理论文草稿，以及用于检查结论的源代码。PROMETHEUS-10 希望把自动研究的突破口留在可检验的公式与程序里。“10”指十份文稿，并不等于十个问题全部解决。
 
 历史内部审查记录：**4 项证明、3 项反证、2 篇局部结果稿、1 篇计算稿**；没有纯猜想 PDF。全部仍需作者最终审核，不代表外部同行评审通过或期刊接收。
 
 AI 在人类设定的目标和约束下参与推导、编程、数值搜索、检查及写作。独立 AI 上下文不等于外部同行评审。“创新”列描述文稿提出的贡献，本次整理未重新进行覆盖全部后续文献的新颖性审计。
+
+<!-- SMALL_MAC_COLLECTION -->
+
+## small_mac 扩展：48 篇论文按成果分类
+
+本仓库共含 **58 篇论文草稿**：原 PROMETHEUS-10 的十项，以及 **48 篇 small_mac 物理论文草稿**。原有十项及其科学边界保留在下方。
+
+每个 small_mac 项目均通过已记录的本地科学、文稿和发布门禁，但仍须作者人工审阅；这不等于外部同行评审或期刊接收。
+
+分类依据冻结的发布记录。“证明”与“反证”针对文稿所述命题及其假设；部分结果与计算结果不代表原题已完全解决。具体科学范围和局限须查阅各篇 PDF 与作者交接文件。
+
+[完整 small_mac 成果集](collections/small_mac/README.zh-CN.md)
+
+| 成果类型 | 篇数 |
+|---|---:|
+| [证明](collections/small_mac/categories/proofs/README.zh-CN.md) | **21** |
+| [反证](collections/small_mac/categories/disproofs/README.zh-CN.md) | **7** |
+| [部分结果](collections/small_mac/categories/partial-results/README.zh-CN.md) | **19** |
+| [计算结果](collections/small_mac/categories/computational-papers/README.zh-CN.md) | **1** |
+
+保留显示序号 11–58、批次编号和原始内部项目 ID。公开 `phys-smallmac` ID 均指向同一项目目录，映射记录见 [`id-map.json`](collections/small_mac/id-map.json).
+
+<!-- END_SMALL_MAC_COLLECTION -->
 
 | 课题 | 结论类别 | 展开详情 |
 |---|---|---|

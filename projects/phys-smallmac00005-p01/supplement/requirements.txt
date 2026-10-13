@@ -1,0 +1,3 @@
+# Versions used for the exact calculations; no automatic installation is performed.
+sympy==1.14.0
+numpy==2.0.2

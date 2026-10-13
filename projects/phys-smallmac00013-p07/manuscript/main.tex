@@ -1,0 +1,407 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={The third boundary coefficient of even off-diagonally symmetric alternating-sign matrices},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\OSASM}{\operatorname{OSASM}}
+\newcommand{\Pf}{\operatorname{Pf}}
+\newcommand{\ogf}{\operatorname{ogf}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\title{The third boundary coefficient of even off-diagonally symmetric
+alternating-sign matrices}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(X^{\mathrm O}_{2n}(r,t)\) be the generating polynomial of
+off-diagonally symmetric alternating-sign matrices of order \(2n\), where
+\(r\) records the number of nonzero entries strictly above the diagonal and
+\(t\) records the position of the \(1\) in the first row.  Behrend, Fischer
+and Koutschan conjectured a closed expression for its third boundary
+coefficient.  We prove, for every \(n\geq 2\) and as an identity in
+\(\Z[r]\),
+\[
+ [t^3]X^{\mathrm O}_{2n}(r,t)
+ =r\bigl(1+(n-2)r^2\bigr)X^{\mathrm O}_{2n-2}(r,1).
+\]
+The source Pfaffian reduces the problem to a relation between two adjacent
+minors of a skew coefficient matrix.  A lower-triangular binomial
+congruence centres its kernel and makes the resulting matrix bipartite with
+respect to index parity.  Pfaffian minor summation then annihilates the
+exceptional shifted minor and proves the required relation for all sizes.
+The result is an exact finite-size boundary identity for the associated
+six-vertex model; no thermodynamic limit is taken.
+\end{abstract}
+
+\noindent\textbf{Keywords:} alternating-sign matrix; six-vertex model;
+Pfaffian; boundary correlation; exact enumeration
+
+\section{Introduction}
+
+Alternating-sign matrices (ASMs) and six-vertex partition functions provide
+a well-developed bridge between exact enumeration and integrable statistical
+mechanics.  Symmetry classes of ASMs lead to modified boundary geometries and
+to determinant or Pfaffian partition functions
+\cite{Kuperberg2002,RazumovStroganov2004}.  In particular, Behrend, Fischer
+and Koutschan (BFK) introduced a triangular-domain six-vertex construction
+for diagonally symmetric ASMs and obtained Pfaffian generating functions for
+several statistics \cite{BFK2026}.
+
+The even off-diagonally symmetric specialization has zero diagonal.  BFK
+proved a reflection relation and the coefficient formula at the second
+admissible boundary position, but stated the corresponding third-position
+formula for a general weight \(r\) as a conjecture
+\cite[Eq.~(8.33)]{BFK2026}.  Refined enumeration at \(r=1\) follows from
+earlier work \cite{RazumovStroganov2004}, while the domino-tiling result of
+Lee supplies the \(r=\sqrt 2\) specialization
+\cite{Lee2024,BFK2026}.  Kumari's subsequent results resolve the three
+OSASM conjectures from the earlier version of BFK, rather than this new
+formal-\(r\) identity \cite{Kumari2026,BFK2026}.
+
+Here we prove the formal-\(r\) conjecture in full.  The mechanism has two
+parts.  First, a low-\(t\) Laurent expansion of the last column in the BFK
+Pfaffian reduces the desired coefficient to two adjacent Pfaffian minors.
+Second, a binomial change of basis centres the bulk kernel.  In the centred
+basis, entries with equal index parity vanish.  A parity imbalance therefore
+kills the only extra term in the Pfaffian minor-summation formula
+\cite{IshikawaWakayama1995}.
+
+\section{Model and result}
+
+An ASM of order \(m\) is a matrix with entries in
+\(\{-1,0,1\}\) whose nonzero entries alternate in each row and column and
+whose row and column sums are all \(1\).  For \(n\geq 1\), let
+\[
+ \OSASM(2n)=
+ \left\{A:\ A\text{ is an ASM of order }2n,\quad
+ A=A^{\mathsf T},\quad A_{ii}=0\right\}.
+\]
+For \(A\in\OSASM(2n)\), define
+\[
+ R(A)=\sum_{1\leq i<j\leq 2n}|A_{ij}|,\qquad
+ T(A)=\text{the column of the unique \(1\) in the first row}.
+\]
+Thus \(T(A)\in\{2,\ldots,2n\}\).  The refined polynomial is
+\begin{equation}
+ X^{\mathrm O}_{2n}(r,t)
+ =\sum_{A\in\OSASM(2n)}r^{R(A)}t^{T(A)}
+ \in\Z[r,t].
+ \label{eq:generator}
+\end{equation}
+Under the BFK bijection, this is a finite triangular-domain six-vertex
+partition function with a marked boundary position \cite{BFK2026}.  Both
+weights in \eqref{eq:generator} are dimensionless.
+
+\begin{theorem}
+\label{thm:main}
+For every integer \(n\geq2\),
+\begin{equation}
+ [t^3]X^{\mathrm O}_{2n}(r,t)
+ =r\bigl(1+(n-2)r^2\bigr)X^{\mathrm O}_{2n-2}(r,1)
+ \qquad\text{in }\Z[r].
+ \label{eq:main}
+\end{equation}
+\end{theorem}
+
+Equivalently, if \(N_n(\rho,\tau)\) counts the matrices with
+\((R,T)=(\rho,\tau)\), and \(C_n(\rho)\) counts them with \(R=\rho\), then
+\begin{equation}
+ N_n(\rho,3)
+ =C_{n-1}(\rho-1)+(n-2)C_{n-1}(\rho-3).
+ \label{eq:coefficientwise}
+\end{equation}
+Equation \eqref{eq:coefficientwise} is an algebraic consequence of the
+proof; a direct bijection realizing its two terms is not asserted.
+
+\section{Reduction to an adjacent Pfaffian minor}
+
+Let \(m=2n\) and \(k=n-1\).  Write \(A=(a_{ij})_{i,j\geq0}\) for the skew
+coefficient matrix with ordinary generating function
+\begin{equation}
+ A(u,v)=\sum_{i,j\geq0}a_{ij}u^iv^j
+ =\frac{(v-u)(1+u)(1+v)}
+ {(1-uv)\bigl((1-ru)(1-rv)-uv\bigr)}.
+ \label{eq:A-kernel}
+\end{equation}
+This is the coefficient kernel in the BFK Pfaffians
+\cite[Eqs.~(8.10)--(8.11)]{BFK2026}.  For an even-cardinality index set
+\(I\), \(A_I\) denotes the corresponding principal submatrix.  Define
+\begin{equation}
+ C_0=\Pf A_{\{0,1,\ldots,2k-1\}},\qquad
+ C_1=\Pf A_{\{0,1,\ldots,2k-2,2k\}}.
+ \label{eq:C0C1}
+\end{equation}
+
+\begin{lemma}
+\label{lem:reduction}
+The BFK Pfaffian formula implies
+\begin{align}
+ [t^3]X^{\mathrm O}_{2n}(r,t)
+ &=r^n\bigl((1-r-r^2)C_0+rC_1\bigr),
+ \label{eq:lowt}\\
+ X^{\mathrm O}_{2n-2}(r,1)&=r^{n-1}C_0.
+ \label{eq:unrefined}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+For even \(m\), the non-Pfaffian term in BFK Eq.~(8.11) is absent.
+The interior block of its skew matrix is \eqref{eq:A-kernel}; if
+\(b_i(t)\) is the entry in row \(i\) of the last column, then
+\begin{equation}
+ b_i(t)=[u^i]\,
+ \frac{(t-1-rtu)(1+u)}
+ {(rt-(t-1)u)\bigl(r-(t-1+r^2)u\bigr)}.
+ \label{eq:last-column}
+\end{equation}
+For \(i\geq1\), expansion of the two denominator factors as geometric
+series gives the two lowest Laurent coefficients
+\begin{equation}
+ [t^{-i-1}]b_i=(-1)^{i+1}r^{-i-2},\qquad
+ [t^{-i}]b_i=(-1)^i(i+r+r^2)r^{-i-2}.
+ \label{eq:Laurent}
+\end{equation}
+For the first equality, only the constant term of the numerator and the
+summand with geometric degrees \((i,0)\) contribute.  At the next power,
+the contributions have degrees \((i,0)\), \((i-1,1)\), and
+\((i-1,0)\) from the term linear in \(u\); their sum yields the second
+coefficient in \eqref{eq:Laurent}.
+
+Expanding the Pfaffian along its last column, with sign \((-1)^i\) for
+row \(i\), shows that only \(i=m-2,m-3\) can affect \([t^3]\).
+Equations \eqref{eq:C0C1} and \eqref{eq:Laurent} give
+\begin{align}
+ [t^{-(m-1)}]\Pf M&=-r^{-m}C_0,\nonumber\\
+ [t^{-(m-2)}]\Pf M
+ &=r^{-m}(m-2+r+r^2)C_0-r^{-(m-1)}C_1.
+ \label{eq:pf-laurent}
+\end{align}
+Now BFK Eq.~(8.11) reads
+\[
+ X^{\mathrm O}_{m}(r,t)
+ =r^{3m/2}t^{m+1}(t-1)^{-(m-1)}\Pf M.
+\]
+Since \(m-1\) is odd,
+\[
+ (t-1)^{-(m-1)}
+ =-\bigl(1+(m-1)t+O(t^2)\bigr).
+\]
+Substitution of \eqref{eq:pf-laurent}, followed by \(m=2n\), proves
+\eqref{eq:lowt}.  The specialization of BFK Eq.~(8.10) at order \(m-2\)
+is exactly \eqref{eq:unrefined}.
+\end{proof}
+
+By Lemma~\ref{lem:reduction}, Theorem~\ref{thm:main} will follow once we
+establish
+\begin{equation}
+ C_1=(1+kr)C_0.
+ \label{eq:minor-target}
+\end{equation}
+
+\section{Binomial centring of the skew kernel}
+
+Remove the two elementary boundary factors from \eqref{eq:A-kernel}:
+\begin{equation}
+ B_r(u,v)=
+ \frac{v-u}{(1-uv)\bigl((1-ru)(1-rv)-uv\bigr)},\qquad
+ A(u,v)=(1+u)(1+v)B_r(u,v).
+ \label{eq:B-kernel}
+\end{equation}
+For a scalar \(c\), introduce the infinite unit lower-triangular binomial
+matrix
+\begin{equation}
+ T(c)_{ij}=
+ \begin{cases}
+ \binom{i}{j}c^{i-j},&i\geq j,\\
+ 0,&i<j.
+ \end{cases}
+ \label{eq:T}
+\end{equation}
+It satisfies \(T(c)T(d)=T(c+d)\).  If \(K(u,v)\) is the ordinary
+generating function of a coefficient matrix \(K\), direct summation in
+\eqref{eq:T} gives
+\begin{equation}
+ \ogf\!\left(T(c)KT(c)^{\mathsf T}\right)
+ =\frac{1}{(1-cu)(1-cv)}
+ K\!\left(\frac{u}{1-cu},\frac{v}{1-cv}\right).
+ \label{eq:congruence-ogf}
+\end{equation}
+
+Apply \eqref{eq:congruence-ogf} to \(B_r\) with \(c=-r/2\), and denote
+the transformed coefficient matrix by \(E\).  Rational simplification
+yields
+\begin{equation}
+ E(u,v)=
+ \frac{v-u}{
+ \bigl((1+ru/2)(1+rv/2)-uv\bigr)
+ \bigl((1-ru/2)(1-rv/2)-uv\bigr)}.
+ \label{eq:E-kernel}
+\end{equation}
+The two denominator factors in \eqref{eq:E-kernel} are interchanged by
+\((u,v)\mapsto(-u,-v)\), whereas the numerator changes sign.  Hence
+\begin{equation}
+ E(-u,-v)=-E(u,v),\qquad
+ E_{ij}=0\quad\text{if }i+j\text{ is even}.
+ \label{eq:parity}
+\end{equation}
+Thus \(E\) only couples even indices to odd indices.
+
+Let \(S_{i,j}=\delta_{i,j+1}\).  Because \(T(-r/2)^{-1}=T(r/2)\),
+restoring the boundary factors in \eqref{eq:B-kernel} gives
+\begin{equation}
+ A=MEM^{\mathsf T},\qquad
+ M=(I+S)T(r/2).
+ \label{eq:A-MEM}
+\end{equation}
+The matrix \(M\) is unit lower triangular.  Its relevant
+first-subdiagonal entry is
+\begin{equation}
+ M_{2k,2k-1}
+ =T(r/2)_{2k,2k-1}+T(r/2)_{2k-1,2k-1}
+ =1+kr.
+ \label{eq:M-subdiag}
+\end{equation}
+
+\section{Evaluation of the adjacent minor}
+
+For any finite, even-cardinality row set \(I\), Pfaffian
+minor summation gives
+\begin{equation}
+ \Pf(MEM^{\mathsf T})_I
+ =\sum_{\substack{J\subset\Z_{\geq0}\\ |J|=|I|}}
+ \det(M_{I,J})\,\Pf(E_J).
+ \label{eq:minor-summation}
+\end{equation}
+Although the matrices have been written with infinite indices, the sum in
+\eqref{eq:minor-summation} is finite: lower triangularity bounds every
+column index by the largest row index.  Formula
+\eqref{eq:minor-summation} may also be obtained directly by expanding the
+alternating two-form associated with \(E\).
+
+Set
+\[
+ I_0=\{0,\ldots,2k-1\},\qquad
+ I_1=\{0,\ldots,2k-2,2k\}.
+\]
+For \(I_0\), unit lower triangularity leaves only \(J=I_0\), so
+\begin{equation}
+ C_0=\Pf E_{I_0}.
+ \label{eq:C0-centred}
+\end{equation}
+For \(I_1\), the first \(2k-1\) rows force the columns
+\(0,\ldots,2k-2\).  The last column is consequently either \(2k-1\)
+or \(2k\).  Equations \eqref{eq:A-MEM} and
+\eqref{eq:minor-summation} therefore give
+\begin{equation}
+ C_1=M_{2k,2k-1}\Pf E_{I_0}+\Pf E_{I_1}.
+ \label{eq:C1-centred}
+\end{equation}
+
+The set \(I_1\) contains \(k+1\) even indices and \(k-1\) odd indices.
+By \eqref{eq:parity}, every nonzero entry of \(E\) pairs indices of
+opposite parity.  No perfect matching of \(I_1\) can therefore contribute,
+and
+\[
+ \Pf E_{I_1}=0.
+\]
+Using \eqref{eq:M-subdiag} and \eqref{eq:C0-centred} in
+\eqref{eq:C1-centred} proves \eqref{eq:minor-target}, without division by
+\(C_0\).  Finally, Lemma~\ref{lem:reduction} gives
+\begin{align*}
+ [t^3]X^{\mathrm O}_{2n}(r,t)
+ &=r^n\left((1-r-r^2)+r(1+(n-1)r)\right)C_0\\
+ &=r^n\bigl(1+(n-2)r^2\bigr)C_0\\
+ &=r\bigl(1+(n-2)r^2\bigr)X^{\mathrm O}_{2n-2}(r,1),
+\end{align*}
+which completes the proof of Theorem~\ref{thm:main}.
+
+\begin{remark}
+The Laurent extraction is initially performed over \(\Q(r)\), and the
+binomial congruence over \(\Q[r]\).  The final equality is between
+polynomials in \(\Z[r]\); it therefore includes \(r=0\) and does not depend
+on dividing by a possibly vanishing partition function.
+\end{remark}
+
+\section{Finite-size interpretation and checks}
+
+For positive \(r\), the coefficients of \eqref{eq:generator} are
+nonnegative Boltzmann weights.  Theorem~\ref{thm:main} fixes the weighted
+boundary one-point contribution at \(T=3\) in terms of the unrefined
+partition function two sizes lower.  Coefficientwise,
+\eqref{eq:coefficientwise} says that the weight-\(\rho\) sector receives
+one shifted copy of the smaller model and \(n-2\) copies shifted by three
+powers of \(r\).  This statement is exact at finite size and under the BFK
+triangular/reflection boundary conditions.
+
+At the first two sizes the identity reads
+\[
+ [t^3]X^{\mathrm O}_{4}(r,t)=r^2,\qquad
+ [t^3]X^{\mathrm O}_{6}(r,t)=3r^3+3r^5,
+\]
+in agreement with direct definition-level enumeration and independent
+evaluation of the source Pfaffian.  Exact integer-polynomial
+implementations also agree coefficientwise through the reserved order-16
+check.  These computations test conventions, signs and low-order cases;
+the all-\(n\) conclusion follows from the parity argument above, not from
+finite extrapolation.
+
+No thermodynamic limit, boundary free energy, phase transition or
+experimental observable is inferred here.  The result concerns the exact
+finite partition polynomial and its formal weight.  The binomial-centred
+form \eqref{eq:E-kernel} may nevertheless be useful for other nearby
+boundary minors, since any centred index set with unequal even and odd
+cardinalities has vanishing Pfaffian.
+
+\section{Conclusion}
+
+The formal-\(r\) third-boundary identity conjectured by BFK follows from a
+short structural property of their Pfaffian kernel.  Binomial centring
+exposes an opposite-parity support rule; Pfaffian minor summation then
+reduces the shifted minor to a single first-subdiagonal entry of the
+change-of-basis matrix.  This proves the conjecture for every \(n\geq2\)
+while retaining the exact finite-size six-vertex boundary conditions.
+
+\section*{Data and code availability}
+
+The accompanying reproducibility package contains the exact symbolic
+checker, two independent finite-size implementations, coefficient data and
+the commands used to regenerate the reported checks.  No experimental or
+personal data are involved.
+
+\section*{Acknowledgements and generative-AI disclosure}
+
+OpenAI Codex (model \texttt{gpt-5.6-sol}, reasoning effort
+\texttt{ultra}) was used to assist with literature discovery, symbolic
+derivation, exact-computation code, independent checking in a separate model
+context, and generation and revision of the manuscript text.  Its outputs,
+the cited sources and the underlying calculations require critical review by
+the author before submission; the AI system is not an author and cannot
+assume responsibility for the work.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,556 @@
+{
+  "qubits": 4,
+  "source_input": "evidence/input-a.json",
+  "basis": "input1,input2,input3,output",
+  "pauli_alphabet": "IXZY",
+  "pauli_integer_encoding": "big-endian 2 bits per qubit, I=0 X=1 Z=2 Y=3",
+  "isotropic_subspace_counts": [
+    1,
+    255,
+    5355,
+    11475,
+    2295
+  ],
+  "pure_stabilizer_rays": 36720,
+  "enumeration_method": "All isotropic spaces by commuting-vector coset extension; all 16 eigenvalue choices per Lagrangian. Completeness is proved in research/proof.md.",
+  "operator_identity": "H(t)=t*((1-t^2)*(B-3I)/48+t^2*H(1)), t=1-delta",
+  "H1_spectrum": {
+    "-1/5": 5,
+    "0": 11
+  },
+  "ray_polynomial": "g_phi(t)=t*(alpha+beta*t^2)/240",
+  "sign_certificate": "Every alpha<=0 and alpha+beta<=0; alpha+beta*t^2=(1-t^2)*alpha+t^2*(alpha+beta).",
+  "classes": [
+    {
+      "alpha": -30,
+      "beta": -18,
+      "alpha_plus_beta": -48,
+      "count": 18
+    },
+    {
+      "alpha": -25,
+      "beta": -5,
+      "alpha_plus_beta": -30,
+      "count": 432
+    },
+    {
+      "alpha": -20,
+      "beta": -12,
+      "alpha_plus_beta": -32,
+      "count": 63
+    },
+    {
+      "alpha": -20,
+      "beta": -8,
+      "alpha_plus_beta": -28,
+      "count": 360
+    },
+    {
+      "alpha": -20,
+      "beta": -6,
+      "alpha_plus_beta": -26,
+      "count": 576
+    },
+    {
+      "alpha": -20,
+      "beta": -4,
+      "alpha_plus_beta": -24,
+      "count": 216
+    },
+    {
+      "alpha": -20,
+      "beta": -2,
+      "alpha_plus_beta": -22,
+      "count": 864
+    },
+    {
+      "alpha": -20,
+      "beta": 0,
+      "alpha_plus_beta": -20,
+      "count": 3168
+    },
+    {
+      "alpha": -20,
+      "beta": 2,
+      "alpha_plus_beta": -18,
+      "count": 864
+    },
+    {
+      "alpha": -20,
+      "beta": 4,
+      "alpha_plus_beta": -16,
+      "count": 108
+    },
+    {
+      "alpha": -20,
+      "beta": 6,
+      "alpha_plus_beta": -14,
+      "count": 576
+    },
+    {
+      "alpha": -20,
+      "beta": 8,
+      "alpha_plus_beta": -12,
+      "count": 450
+    },
+    {
+      "alpha": -20,
+      "beta": 20,
+      "alpha_plus_beta": 0,
+      "count": 45
+    },
+    {
+      "alpha": -15,
+      "beta": -15,
+      "alpha_plus_beta": -30,
+      "count": 144
+    },
+    {
+      "alpha": -15,
+      "beta": -7,
+      "alpha_plus_beta": -22,
+      "count": 864
+    },
+    {
+      "alpha": -15,
+      "beta": -5,
+      "alpha_plus_beta": -20,
+      "count": 3312
+    },
+    {
+      "alpha": -15,
+      "beta": -3,
+      "alpha_plus_beta": -18,
+      "count": 1056
+    },
+    {
+      "alpha": -15,
+      "beta": -1,
+      "alpha_plus_beta": -16,
+      "count": 4752
+    },
+    {
+      "alpha": -15,
+      "beta": 1,
+      "alpha_plus_beta": -14,
+      "count": 5688
+    },
+    {
+      "alpha": -15,
+      "beta": 3,
+      "alpha_plus_beta": -12,
+      "count": 576
+    },
+    {
+      "alpha": -15,
+      "beta": 5,
+      "alpha_plus_beta": -10,
+      "count": 4320
+    },
+    {
+      "alpha": -15,
+      "beta": 7,
+      "alpha_plus_beta": -8,
+      "count": 288
+    },
+    {
+      "alpha": -15,
+      "beta": 9,
+      "alpha_plus_beta": -6,
+      "count": 504
+    },
+    {
+      "alpha": -15,
+      "beta": 15,
+      "alpha_plus_beta": 0,
+      "count": 96
+    },
+    {
+      "alpha": -10,
+      "beta": -6,
+      "alpha_plus_beta": -16,
+      "count": 135
+    },
+    {
+      "alpha": -10,
+      "beta": -4,
+      "alpha_plus_beta": -14,
+      "count": 864
+    },
+    {
+      "alpha": -10,
+      "beta": -2,
+      "alpha_plus_beta": -12,
+      "count": 756
+    },
+    {
+      "alpha": -10,
+      "beta": 0,
+      "alpha_plus_beta": -10,
+      "count": 3456
+    },
+    {
+      "alpha": -10,
+      "beta": 2,
+      "alpha_plus_beta": -8,
+      "count": 540
+    },
+    {
+      "alpha": -10,
+      "beta": 4,
+      "alpha_plus_beta": -6,
+      "count": 864
+    },
+    {
+      "alpha": -10,
+      "beta": 10,
+      "alpha_plus_beta": 0,
+      "count": 135
+    },
+    {
+      "alpha": -5,
+      "beta": -9,
+      "alpha_plus_beta": -14,
+      "count": 72
+    },
+    {
+      "alpha": -5,
+      "beta": -5,
+      "alpha_plus_beta": -10,
+      "count": 288
+    },
+    {
+      "alpha": -5,
+      "beta": -1,
+      "alpha_plus_beta": -6,
+      "count": 72
+    },
+    {
+      "alpha": 0,
+      "beta": -12,
+      "alpha_plus_beta": -12,
+      "count": 18
+    },
+    {
+      "alpha": 0,
+      "beta": 0,
+      "alpha_plus_beta": 0,
+      "count": 180
+    }
+  ],
+  "ABC_classes": [
+    {
+      "A": -3,
+      "B": -1,
+      "C": 5,
+      "count": 45
+    },
+    {
+      "A": -3,
+      "B": 0,
+      "C": 0,
+      "count": 96
+    },
+    {
+      "A": -3,
+      "B": 1,
+      "C": -5,
+      "count": 36
+    },
+    {
+      "A": -3,
+      "B": 3,
+      "C": -15,
+      "count": 3
+    },
+    {
+      "A": -1,
+      "B": -1,
+      "C": -1,
+      "count": 108
+    },
+    {
+      "A": -1,
+      "B": -1,
+      "C": 1,
+      "count": 576
+    },
+    {
+      "A": -1,
+      "B": -1,
+      "C": 3,
+      "count": 450
+    },
+    {
+      "A": -1,
+      "B": 0,
+      "C": -4,
+      "count": 504
+    },
+    {
+      "A": -1,
+      "B": 0,
+      "C": -2,
+      "count": 288
+    },
+    {
+      "A": -1,
+      "B": 0,
+      "C": 0,
+      "count": 4320
+    },
+    {
+      "A": -1,
+      "B": 0,
+      "C": 2,
+      "count": 288
+    },
+    {
+      "A": -1,
+      "B": 0,
+      "C": 4,
+      "count": 504
+    },
+    {
+      "A": -1,
+      "B": 1,
+      "C": -11,
+      "count": 27
+    },
+    {
+      "A": -1,
+      "B": 1,
+      "C": -7,
+      "count": 72
+    },
+    {
+      "A": -1,
+      "B": 1,
+      "C": -3,
+      "count": 252
+    },
+    {
+      "A": -1,
+      "B": 1,
+      "C": -1,
+      "count": 576
+    },
+    {
+      "A": -1,
+      "B": 1,
+      "C": 5,
+      "count": 99
+    },
+    {
+      "A": -1,
+      "B": 3,
+      "C": -5,
+      "count": 36
+    },
+    {
+      "A": 0,
+      "B": -1,
+      "C": -2,
+      "count": 864
+    },
+    {
+      "A": 0,
+      "B": -1,
+      "C": 0,
+      "count": 3168
+    },
+    {
+      "A": 0,
+      "B": -1,
+      "C": 2,
+      "count": 864
+    },
+    {
+      "A": 0,
+      "B": 0,
+      "C": -5,
+      "count": 144
+    },
+    {
+      "A": 0,
+      "B": 0,
+      "C": -3,
+      "count": 192
+    },
+    {
+      "A": 0,
+      "B": 0,
+      "C": -1,
+      "count": 4752
+    },
+    {
+      "A": 0,
+      "B": 0,
+      "C": 1,
+      "count": 5184
+    },
+    {
+      "A": 0,
+      "B": 0,
+      "C": 3,
+      "count": 288
+    },
+    {
+      "A": 0,
+      "B": 1,
+      "C": -4,
+      "count": 288
+    },
+    {
+      "A": 0,
+      "B": 1,
+      "C": -2,
+      "count": 288
+    },
+    {
+      "A": 0,
+      "B": 1,
+      "C": 0,
+      "count": 3456
+    },
+    {
+      "A": 0,
+      "B": 1,
+      "C": 2,
+      "count": 288
+    },
+    {
+      "A": 0,
+      "B": 1,
+      "C": 4,
+      "count": 288
+    },
+    {
+      "A": 0,
+      "B": 3,
+      "C": 0,
+      "count": 96
+    },
+    {
+      "A": 1,
+      "B": -2,
+      "C": 0,
+      "count": 432
+    },
+    {
+      "A": 1,
+      "B": -1,
+      "C": -7,
+      "count": 63
+    },
+    {
+      "A": 1,
+      "B": -1,
+      "C": -3,
+      "count": 360
+    },
+    {
+      "A": 1,
+      "B": -1,
+      "C": -1,
+      "count": 576
+    },
+    {
+      "A": 1,
+      "B": -1,
+      "C": 1,
+      "count": 216
+    },
+    {
+      "A": 1,
+      "B": 0,
+      "C": -2,
+      "count": 864
+    },
+    {
+      "A": 1,
+      "B": 0,
+      "C": 0,
+      "count": 3168
+    },
+    {
+      "A": 1,
+      "B": 0,
+      "C": 2,
+      "count": 864
+    },
+    {
+      "A": 1,
+      "B": 1,
+      "C": -1,
+      "count": 108
+    },
+    {
+      "A": 1,
+      "B": 1,
+      "C": 1,
+      "count": 576
+    },
+    {
+      "A": 1,
+      "B": 1,
+      "C": 3,
+      "count": 396
+    },
+    {
+      "A": 1,
+      "B": 2,
+      "C": -4,
+      "count": 72
+    },
+    {
+      "A": 1,
+      "B": 2,
+      "C": 0,
+      "count": 288
+    },
+    {
+      "A": 1,
+      "B": 2,
+      "C": 4,
+      "count": 72
+    },
+    {
+      "A": 1,
+      "B": 3,
+      "C": 5,
+      "count": 45
+    },
+    {
+      "A": 3,
+      "B": -3,
+      "C": -3,
+      "count": 18
+    },
+    {
+      "A": 3,
+      "B": 0,
+      "C": 0,
+      "count": 144
+    },
+    {
+      "A": 3,
+      "B": 3,
+      "C": 3,
+      "count": 18
+    }
+  ],
+  "projector_checks": "All 36720 M=16phi satisfy exact Hermiticity, trace=16, M^2=16M, and unique signed Pauli support.",
+  "arithmetic": "Python integers and rational polynomials; NumPy int64 only for 16x16 Gaussian integer projector checks.",
+  "integer_bound": "Each M entry <=16. Each real or imaginary M^2 entry <=2*16*16^2=8192, safely below int64 range.",
+  "maximum_observed_abs_real_or_imag_entry": 16,
+  "raw_rays": "evidence/stabilizer4-rays.jsonl",
+  "raw_rays_sha256": "b6dd702e66029f6839b1916d9786e17f137c78cb01eae79e53ce30fa361a85b5",
+  "environment": {
+    "python": "3.9.6",
+    "sympy": "1.14.0",
+    "numpy": "2.0.2"
+  },
+  "elapsed_seconds": 3.282423875,
+  "limitations": "Researcher-generated evidence, not fresh scientific review. No n>=4-input claim, Clifford implementation, or free failure completion."
+}

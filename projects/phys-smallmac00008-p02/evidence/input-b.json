@@ -1,0 +1,23 @@
+{
+  "source_id": "S1",
+  "source_locator": "arXiv:2402.18941v1, PDF pp. 7-8, Example 8, Eqs. (35), (39)-(46)",
+  "method": "Independent ket-action derivation from the primary rendering and Eqs. (39)-(41); no file or cached value from input A was used while deriving these actions.",
+  "parameters": {"lambda": "3/4", "theta13": "-pi/6", "theta23": "0"},
+  "basis_action_convention": "Each pair [a,b] denotes a|0>+b|1>; the two listed pairs are the images of |0> and |1> respectively.",
+  "original_actions": {
+    "T1": [["sqrt(3)/2", "0"], ["0", "0"]],
+    "T2": [["0", "0"], ["sqrt(3)/2", "0"]],
+    "T3": [["1/2", "0"], ["0", "1/2"]]
+  },
+  "derived_mixed_actions": {
+    "K1": [["1/2", "0"], ["0", "-1/4"]],
+    "K2": [["0", "0"], ["sqrt(3)/2", "0"]],
+    "K3": [["sqrt(3)/2", "0"], ["0", "sqrt(3)/4"]]
+  },
+  "derivation": [
+    "K1=cos(theta13)T1+sin(theta13)T3",
+    "K2=T2 at theta23=0",
+    "K3=-sin(theta13)T1+cos(theta13)T3"
+  ],
+  "convention_map_to_a": "Input-A matrices have action columns; input B lists those same columns as ket images. Input-A row mixing U acts on (T1,T2,T3)^T. The Bell/Choi convention is input tensor output, with column-major vec(K)=(K00,K10,K01,K11)."
+}

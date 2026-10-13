@@ -1,0 +1,2 @@
+# Exact symbolic checks; the TeX build uses the installed system TeX distribution.
+sympy==1.14.0

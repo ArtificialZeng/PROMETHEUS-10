@@ -1,0 +1,32 @@
+TAKAGI_COMMUTING_FRAME_REPLAY_V1
+command=python3 code/takagi_commuting_frame.py
+run_utc=2026-09-13T17:57Z
+runtime_python=3.12.14 numpy=2.3.5 scipy=1.18.1
+generic_triple_worst_residual=1.639e-15
+CHANNEL seed=14011 choi_min=8.604367253512e-03 takagi=3.658e-16 s=1.110e-16 commute=9.404e-17 score_n1_7=2.220e-16 brute_n3=7.772e-16
+CHANNEL seed=14022 choi_min=3.207641670173e-02 takagi=7.836e-16 s=1.110e-16 commute=1.006e-16 score_n1_7=7.772e-16 brute_n3=3.331e-16
+CHANNEL seed=14033 choi_min=3.259370519401e-02 takagi=4.483e-16 s=0.000e+00 commute=1.316e-16 score_n1_7=2.220e-16 brute_n3=4.441e-16
+CHANNEL seed=14044 choi_min=5.017538911743e-02 takagi=4.905e-16 s=2.220e-16 commute=3.280e-17 score_n1_7=7.772e-16 brute_n3=9.992e-16
+CHANNEL seed=14055 choi_min=3.659180250504e-02 takagi=1.364e-15 s=4.441e-16 commute=2.240e-17 score_n1_7=1.443e-15 brute_n3=3.331e-15
+CHANNEL seed=14066 choi_min=3.189974095252e-02 takagi=3.664e-16 s=1.110e-16 commute=2.429e-17 score_n1_7=3.331e-16 brute_n3=7.772e-16
+CHANNEL seed=14077 choi_min=4.567526567925e-02 takagi=5.789e-16 s=4.441e-16 commute=7.580e-18 score_n1_7=1.443e-15 brute_n3=6.661e-16
+CHANNEL seed=14088 choi_min=3.661532280541e-03 takagi=4.254e-16 s=1.110e-16 commute=5.011e-17 score_n1_7=1.554e-15 brute_n3=1.443e-15
+WORST takagi=1.364e-15 s=4.441e-16 commutator=1.316e-16 score=1.554e-15 construction=1.331e-15 brute=3.331e-15
+STATUS=PASS_FLOATING_POINT_REPLAY_EXACT_PROOF_IS_SEPARATE
+
+EXACT_QUATERNION_CORE_CHECK
+command=python3 inline integer-matrix assertions importing code/takagi_commuting_frame.py
+LEFT_skew_and_square_minus_identity=PASS
+RIGHT_skew_and_square_minus_identity=PASS
+LEFT_RIGHT_commutation=PASS
+all_nine_products_symmetric_involutory_traceless=PASS
+gamma_gram_diagonal=4
+gamma_gram_offdiagonal=0
+status=PASS
+
+Interpretation: the deterministic implementation of the proof construction
+produced a Takagi-optimal commuting-effect frame for all eight strict
+full-Choi-rank nonunital controls.  Fast scores agree for n=1,...,7 and the
+independent explicit 64-history n=3 replay agrees at the displayed residuals.
+The twelve arbitrary traceless-symmetric triples test the standalone
+quadratic-form lemma.  These floating-point checks are not the exact proof.

@@ -1,0 +1,23 @@
+{
+  "source": "Saved independently transcribed Hermitian-state replay at exact repaired mean; rounded values are illustrative, complete branch certification is separate.",
+  "records": [
+    {
+      "mean": "3",
+      "CF2": "-1.161968051481770190563545269397793557967",
+      "cost_enclosure": "[-1.161968051481770190563545269398 +/- 7.95e-31]",
+      "mean_enclosure": "[3.0000000000000000000000000000000 +/- 2.26e-32]"
+    },
+    {
+      "mean": "4",
+      "CF2": "-3.713447886836112299903865693775786578399",
+      "cost_enclosure": "[-3.71344788683611229990386569378 +/- 5.22e-30]",
+      "mean_enclosure": "[4.0000000000000000000000000000000 +/- 3.34e-32]"
+    },
+    {
+      "mean": "6",
+      "CF2": "-12.46077088365418080161306736984267241766",
+      "cost_enclosure": "[-12.46077088365418080161306736984 +/- 4.36e-30]",
+      "mean_enclosure": "[6.0000000000000000000000000000000 +/- 4.20e-32]"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "N20_uniform_edge_tail": {
+    "A1": {
+      "energy": -0.5549304136812567,
+      "samples": [
+        {
+          "A_i_1_over_A_i_0": -0.12121494548004766,
+          "A_i_plus_1_over_A_i": -0.13658109981930427,
+          "B_i_over_A_i": -0.07716391046617492,
+          "C_i_over_A_i": -0.06239500936955102,
+          "i": 3
+        },
+        {
+          "A_i_1_over_A_i_0": -0.0786916034094565,
+          "A_i_plus_1_over_A_i": -0.1426073880376292,
+          "B_i_over_A_i": -0.08038209545067268,
+          "C_i_over_A_i": -0.01999081443373701,
+          "i": 4
+        },
+        {
+          "A_i_1_over_A_i_0": -0.0645415979390801,
+          "A_i_plus_1_over_A_i": -0.14462125875994256,
+          "B_i_over_A_i": -0.08146048788559522,
+          "C_i_over_A_i": -0.005836434810674226,
+          "i": 5
+        },
+        {
+          "A_i_1_over_A_i_0": -0.060306531548299624,
+          "A_i_plus_1_over_A_i": -0.14522743947998573,
+          "B_i_over_A_i": -0.08178693946637779,
+          "C_i_over_A_i": -0.0015862067203045037,
+          "i": 6
+        },
+        {
+          "A_i_1_over_A_i_0": -0.05912608305688343,
+          "A_i_plus_1_over_A_i": -0.145431816949324,
+          "B_i_over_A_i": -0.0819413939202768,
+          "C_i_over_A_i": -0.0003995467703682506,
+          "i": 7
+        },
+        {
+          "A_i_1_over_A_i_0": -0.05870705956459348,
+          "A_i_plus_1_over_A_i": -0.14713565189283195,
+          "B_i_over_A_i": -0.08495614459808894,
+          "C_i_over_A_i": -9.096575376903147e-05,
+          "i": 8
+        }
+      ]
+    },
+    "A2": {
+      "energy": -0.5549304136812592,
+      "samples": [
+        {
+          "A_i_1_over_A_i_0": -0.1495899810346387,
+          "A_i_plus_1_over_A_i": -0.13267509751771145,
+          "B_i_over_A_i": -0.07511727118433192,
+          "C_i_over_A_i": -0.09009760855217196,
+          "i": 3
+        },
+        {
+          "A_i_1_over_A_i_0": -0.09193782449977017,
+          "A_i_plus_1_over_A_i": -0.1407624139359758,
+          "B_i_over_A_i": -0.07940783643888519,
+          "C_i_over_A_i": -0.033034095885886995,
+          "i": 4
+        },
+        {
+          "A_i_1_over_A_i_0": -0.06963742755775645,
+          "A_i_plus_1_over_A_i": -0.14390606882075416,
+          "B_i_over_A_i": -0.08108091598429097,
+          "C_i_over_A_i": -0.010881974280632933,
+          "i": 5
+        },
+        {
+          "A_i_1_over_A_i_0": -0.06206866857101216,
+          "A_i_plus_1_over_A_i": -0.1449771308483963,
+          "B_i_over_A_i": -0.08165166489615579,
+          "C_i_over_A_i": -0.0033386133018492455,
+          "i": 6
+        },
+        {
+          "A_i_1_over_A_i_0": -0.059696455163509646,
+          "A_i_plus_1_over_A_i": -0.14527982323583763,
+          "B_i_over_A_i": -0.08176924797808223,
+          "C_i_over_A_i": -0.0009641937104693081,
+          "i": 7
+        },
+        {
+          "A_i_1_over_A_i_0": -0.059110128925689585,
+          "A_i_plus_1_over_A_i": -0.14371968516888556,
+          "B_i_over_A_i": -0.07883118856170683,
+          "C_i_over_A_i": -0.00026138910604659306,
+          "i": 8
+        }
+      ]
+    }
+  },
+  "best_pre_roundoff_ratio_comparison": {
+    "energy_difference_ratio": -0.14545365748492162,
+    "lambda_difference_ratio": -0.14545357683183266,
+    "lambda_ratio_minus_transfer_r": -4.971214043469896e-07,
+    "relative_difference": 3.4177440954613783e-06,
+    "side_cells": 17
+  },
+  "finite_size_extrapolation": {
+    "energy_infinity_estimate": -0.5549304136808189,
+    "energy_ratio_in_extrapolation_triple": -0.14545417660991572,
+    "inside_exact_N20_crossing_bracket": true,
+    "lambda_infinity_estimate": 0.7919395246797069,
+    "lambda_ratio_in_extrapolation_triple": -0.14545484183256088,
+    "limitation": "This is a descriptive extrapolation, not a directed-rounding enclosure of the semi-infinite corner-core secular equation.",
+    "method": "three-point geometric/Aitken extrapolation using N=16,17,18"
+  },
+  "interpretation": "The alternating finite-size correction factor is quantitatively identified with the negative longitudinal evanescent multiplier of the uniform edge. A local corner mode communicates with the other corners through a tail proportional to r^N, explaining both exponential convergence and alternating sign. The equality of the leading coefficient and the absence of competing transfer channels still require a full semi-infinite corner-core determinant.",
+  "job_id": "phys-00021-p03-research-64db9546ea0d",
+  "next_exact_reduction": "Attach the finite 15-bond corner core to the decaying uniform-edge modes, construct mirror-even and mirror-odd secular determinants F_plus(E,lambda) and F_minus(E,lambda), and isolate their common real zero.",
+  "parameters": {
+    "t": 0.1,
+    "t_prime": 1.0
+  },
+  "schema_version": 1,
+  "source_inputs": [
+    "evidence/finite-size-isolation.json",
+    "evidence/parity-crossing-certificate.json",
+    "evidence/geschner-input-a.json",
+    "evidence/geschner-input-b.json"
+  ],
+  "successive_finite_size_ratios": [
+    {
+      "energy_difference_ratio": -0.145507220175068,
+      "lambda_difference_ratio": -0.14542536429449837,
+      "lambda_ratio_minus_transfer_r": 2.7715415929940868e-05,
+      "side_cells": 10
+    },
+    {
+      "energy_difference_ratio": -0.14817175352391668,
+      "lambda_difference_ratio": -0.14810037621232455,
+      "lambda_ratio_minus_transfer_r": -0.0026472965018962402,
+      "side_cells": 11
+    },
+    {
+      "energy_difference_ratio": -0.14579256492686016,
+      "lambda_difference_ratio": -0.1457755036827497,
+      "lambda_ratio_minus_transfer_r": -0.0003224239723213784,
+      "side_cells": 12
+    },
+    {
+      "energy_difference_ratio": -0.14562225176196744,
+      "lambda_difference_ratio": -0.14561612034099317,
+      "lambda_ratio_minus_transfer_r": -0.00016304063056485352,
+      "side_cells": 13
+    },
+    {
+      "energy_difference_ratio": -0.14548548723694313,
+      "lambda_difference_ratio": -0.14548381006362882,
+      "lambda_ratio_minus_transfer_r": -3.073035320050321e-05,
+      "side_cells": 14
+    },
+    {
+      "energy_difference_ratio": -0.14546268951371397,
+      "lambda_difference_ratio": -0.1454622174523195,
+      "lambda_ratio_minus_transfer_r": -9.137741891179774e-06,
+      "side_cells": 15
+    },
+    {
+      "energy_difference_ratio": -0.1454548569523776,
+      "lambda_difference_ratio": -0.14545474832837996,
+      "lambda_ratio_minus_transfer_r": -1.6686179516445243e-06,
+      "side_cells": 16
+    },
+    {
+      "energy_difference_ratio": -0.14545365748492162,
+      "lambda_difference_ratio": -0.14545357683183266,
+      "lambda_ratio_minus_transfer_r": -4.971214043469896e-07,
+      "side_cells": 17
+    },
+    {
+      "energy_difference_ratio": -0.14545417660991572,
+      "lambda_difference_ratio": -0.14545484183256088,
+      "lambda_ratio_minus_transfer_r": -1.7621221325703207e-06,
+      "side_cells": 18
+    },
+    {
+      "energy_difference_ratio": -0.14545332084228832,
+      "lambda_difference_ratio": -0.14545991893438484,
+      "lambda_ratio_minus_transfer_r": -6.839223956528473e-06,
+      "side_cells": 19
+    },
+    {
+      "energy_difference_ratio": -0.14546177412942304,
+      "lambda_difference_ratio": -0.14549669325697143,
+      "lambda_ratio_minus_transfer_r": -4.361354654311422e-05,
+      "side_cells": 20
+    }
+  ],
+  "transfer_at_extrapolated_energy": {
+    "B_over_A": -0.08190771057030531,
+    "C_row_constraint_residual_float64": 0.0,
+    "S": -7.020522359720352,
+    "dispersion_residual_float64": -3.3306690738754696e-16,
+    "longitudinal_decaying_root_r": -0.1454530797104283,
+    "longitudinal_reciprocal_root": -6.875069280009924,
+    "transverse_decaying_root_z": -0.05873455611720005
+  },
+  "uniform_edge_ansatz": {
+    "dispersion": "E^2=t^2+t_prime^2+t*t_prime*(r+r^-1)",
+    "domain": "unmodified lower edge beyond the finite corner core, i>=3",
+    "equations": [
+      "E*a=-(t+t_prime/r)*b",
+      "E*b=-(t+t_prime*r)*a",
+      "0=-(t+t_prime*z)*a-(t+t_prime*z/r)*b"
+    ],
+    "form": "(A,B,C)_(i,j)=r^i z^j (a,b,0)",
+    "physical_branch": "real -1<r<0 and |z|<1 for the observed in-gap energy"
+  }
+}

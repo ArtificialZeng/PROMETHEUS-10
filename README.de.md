@@ -2,13 +2,36 @@
 
 **KI-Physik, die sich überprüfen lässt**
 
-[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md)
+[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [Русский](README.ru.md)
 
 Zehn KI-gestützte Physikmanuskripte mit Code zur Prüfung ihrer Aussagen. PROMETHEUS-10 verbindet automatisierte Beweissuche, Gegenbeispiele und kontrollierte Rechnungen in einer nachvollziehbaren Sammlung. Die 10 zählt Manuskripte, nicht zehn vollständig gelöste allgemeine Probleme.
 
 Historische interne Prüfprotokolle: **4 Beweise, 3 Widerlegungen, 2 Beiträge mit Teilergebnissen und 1 numerischer Beitrag**. Kein reines Vermutungs-PDF. Alle sind Entwürfe zur abschließenden Autorenprüfung, keine extern begutachteten oder angenommenen Veröffentlichungen.
 
 KI half unter menschlicher Anleitung bei Herleitungen, Code, numerischen Suchen, Prüfungen und Texten. Getrennte KI-Prüfkontexte sind kein externes Peer-Review. Die Beitragsspalte beschreibt beanspruchte Neuerungen; diese Paketierung enthält keine neue vollständige Prioritätsprüfung der Literatur.
+
+<!-- SMALL_MAC_COLLECTION -->
+
+## small_mac-Erweiterung: 48 Manuskripte nach Ergebnisklasse
+
+Dieses Repository enthält **58 Manuskripte**: die ursprünglichen zehn PROMETHEUS-10-Projekte und **48 small_mac-Physikmanuskripte**. Die ursprünglichen zehn Projekte und ihre wissenschaftlichen Grenzen sind unten dokumentiert.
+
+Alle small_mac-Einträge haben die dokumentierten lokalen Wissenschafts-, Manuskript- und Freigabekontrollen bestanden. Eine menschliche Autorenprüfung bleibt erforderlich; externe Begutachtung oder Annahme wird nicht behauptet.
+
+Die Einteilung folgt dem eingefrorenen Freigabevermerk. Beweis und Widerlegung betreffen die formulierte Aussage unter ihren Annahmen; Teil- und Rechenergebnisse lösen die Ausgangsfrage nicht notwendigerweise vollständig. Die genaue wissenschaftliche Reichweite und Grenzen stehen im PDF und in der Autorenübergabe.
+
+[Vollständige small_mac-Sammlung](collections/small_mac/README.de.md)
+
+| Ergebnisklasse | Manuskripte |
+|---|---:|
+| [Beweis](collections/small_mac/categories/proofs/README.de.md) | **21** |
+| [Widerlegung](collections/small_mac/categories/disproofs/README.de.md) | **7** |
+| [Teilergebnis](collections/small_mac/categories/partial-results/README.de.md) | **19** |
+| [Rechenergebnis](collections/small_mac/categories/computational-papers/README.de.md) | **1** |
+
+Anzeigenummern 11–58, Chargenkennungen und ursprüngliche interne Projektkennungen bleiben erhalten. Öffentliche `phys-smallmac`-Kennungen verweisen auf die kanonischen Projektverzeichnisse. Die Zuordnung steht in [`id-map.json`](collections/small_mac/id-map.json).
+
+<!-- END_SMALL_MAC_COLLECTION -->
 
 | Projekt | Aussagentyp | Details |
 |---|---|---|

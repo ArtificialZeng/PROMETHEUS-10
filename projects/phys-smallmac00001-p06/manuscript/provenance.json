@@ -1,0 +1,50 @@
+{
+  "accepted_snapshot_digest": "f63005999e452a2e783bd6c841ce25b32be7a51feaaee2cf1104376fce5a89bc",
+  "original_status": "disproved",
+  "candidate_kind": "resolution-paper",
+  "referee_job_id": "phys-smallmac00001-p06-referee-874040fd36a6",
+  "referee_verdict": "accept",
+  "scientific_scope_unchanged": true,
+  "original_files_sha256": {
+    "source.md": "8ec9c3cb7d32c8288406b253490686f8db0f38858dfadbe654b4319ca617a55f",
+    "claim.json": "bbe66b40977e74be8ef0d0a23e21d44b2d85f669750215493baa0ad0a936c7c6",
+    "evidence/research/curvature-proof.md": "a0a255e37039916225286b5c114b98155e9a2bdccfc52dc5a52079d51ff5df2e",
+    "audit/science.json": "6454371760a161f98c5a988bf30c91c3254d89295c38594a435fd3952af44a9f",
+    "audit/science.md": "935bc58b881f9c80f24b03892b660a2057b62bc8c6de1e7a99261d09b8eb1779",
+    "audit/referee_replay.py": "7d7c971943c2d078b6d5afc4027270a817cde8a16ecc4945dc960218ce1de6e2",
+    "audit/referee_fraction_check.py": "1ae21aaed972182a9f27745bb6716d2590182a07040b76301dc50fa2fdd24992"
+  },
+  "replay_packaging": [
+    {
+      "original": "audit/referee_replay.py",
+      "original_sha256": "7d7c971943c2d078b6d5afc4027270a817cde8a16ecc4945dc960218ce1de6e2",
+      "packaged": "manuscript/repro/verify_symbolic.py",
+      "packaged_sha256": "f071aa4ea913a0569496285011eb702dafa48f4be4a6713afbcbb893b7ab047a",
+      "adaptations": [
+        "introductory documentation",
+        "argparse output directory",
+        "removed workflow job/time metadata",
+        "result filename/location",
+        "manuscript wording in output limitation"
+      ],
+      "scientific_calculation_statements_changed": false
+    },
+    {
+      "original": "audit/referee_fraction_check.py",
+      "original_sha256": "1ae21aaed972182a9f27745bb6716d2590182a07040b76301dc50fa2fdd24992",
+      "packaged": "manuscript/repro/verify_rational.py",
+      "packaged_sha256": "01fd093debf5fb52bd39e9649813e008727ef4c963b477cec38965fec389a1c5",
+      "adaptations": [
+        "introductory documentation",
+        "argparse output directory",
+        "removed workflow job/time metadata",
+        "result filename/location",
+        "manuscript wording in output limitation"
+      ],
+      "scientific_calculation_statements_changed": false
+    }
+  ],
+  "fresh_release_review": "Citations, fresh clean build and all ten rendered pages reviewed by phys-smallmac00001-p06-release-b89f118e9c8c; current hash-bound records are audit/citations.json, audit/build.json and audit/visual.json in the local dossier.",
+  "human_author_approval": "pending",
+  "note": "Current actual science records are hashed; historical pre-adapter manifests are not copied as active audit bindings."
+}

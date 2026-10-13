@@ -1,0 +1,40 @@
+{
+  "adaptations": [
+    {
+      "source": "audit/referee_replay.py",
+      "destination": "supplement/phase_replay.py",
+      "original_sha256": "99c2347051ef3003b00bce7c232130ef141c384621cb514d5736e5b6a09fee52",
+      "destination_sha256": "207b172da182d85fe8b75abccfe3a89a1c49d096311a8af489bbd611b569cf63",
+      "changes": [
+        {
+          "from": "'audit/referee-replay-data.json'",
+          "to": "'generated/phase-replay-data.json'"
+        },
+        {
+          "from": "'job_id':'phys-smallmac00005-p01-referee-21dd7db15df1'",
+          "to": "'replay_kind':'independent phase-integral representation'"
+        }
+      ],
+      "scope": "Output-path and descriptive-metadata changes only; no mathematical expression or test altered."
+    },
+    {
+      "source": "audit/referee_affine_replay.py",
+      "destination": "supplement/affine_replay.py",
+      "original_sha256": "ec58d26d982137851446c33e2fb56010e2e24e5498dd7a052b878d68f78d7e63",
+      "destination_sha256": "b6b500b38264ffa9fc58cb5b036dbd387e57112c3435e16164c3a2c8c8c162ae",
+      "changes": [
+        {
+          "from": "'audit/referee-replay-data.json'",
+          "to": "'generated/phase-replay-data.json'"
+        },
+        {
+          "from": "'audit/referee-affine-data.json'",
+          "to": "'generated/affine-replay-data.json'"
+        }
+      ],
+      "scope": "Output-path and descriptive-metadata changes only; no mathematical expression or test altered."
+    }
+  ],
+  "source_science_report": "audit/science.md",
+  "note": "The original audit files are preserved. Replays of these exported scripts are reproducibility checks, not a new independent scientific verdict."
+}

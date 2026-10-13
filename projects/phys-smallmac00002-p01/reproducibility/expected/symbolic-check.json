@@ -1,0 +1,987 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "independence": "Two-variable sum/product elimination and Hamiltonian matrix reconstruction, separate from the integer composition checker. This is the packaged replay of a previously constructed check, not a new independent review.",
+  "created_at_utc": "2026-09-12T10:43:07.118085+00:00",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "sympy": "1.14.0",
+    "platform": "macOS-26.6-arm64-arm-64bit"
+  },
+  "code_sha256": "0071476e3ad301c7322621fd2bb7335a5494e41c3526f1374d2dd1da6e881f0d",
+  "arithmetic": "exact integers/rationals and exact symbolic polynomial identities; no floating point",
+  "checks": [
+    {
+      "name": "local weight 000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 001",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 002",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 010",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 011",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 012",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 020",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 021",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 022",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "matrix and spin sum component 0",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 100",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 101",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 102",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 110",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 111",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 112",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 120",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 121",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 122",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "matrix and spin sum component 1",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 200",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 201",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 202",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 210",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 211",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 212",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 220",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 221",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "local weight 222",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "matrix and spin sum component 2",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "reflection plane invariant",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "rendered source numerator",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "rendered source denominator",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "N positive at all positive inputs",
+      "status": "pass",
+      "detail": {
+        "nonzero_monomials": 4
+      }
+    },
+    {
+      "name": "D positive at all positive inputs",
+      "status": "pass",
+      "detail": {
+        "nonzero_monomials": 6
+      }
+    },
+    {
+      "name": "nearest-neighbor h=1 factorization component 0",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "nearest-neighbor h=1 factorization component 1",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "nearest-neighbor h=1 factorization component 2",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "zero nearest-neighbor coupling t=1 gives f=1",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "nearest-neighbor scalar baseline",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "n2=1",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "d2=t^2",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "antisymmetric two-cycle identity",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "symmetric two-cycle identity",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "linear system yields p=C/A",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "independently derived A equals submitted A",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "independently derived B equals submitted B",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "independently derived C equals submitted C",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "strict bound A>t^6",
+      "status": "pass",
+      "detail": {
+        "nonzero_monomials": 5
+      }
+    },
+    {
+      "name": "strict bound C>t^8",
+      "status": "pass",
+      "detail": {
+        "nonzero_monomials": 9
+      }
+    },
+    {
+      "name": "strict bound B>1-t^4",
+      "status": "pass",
+      "detail": {
+        "nonzero_monomials": 8
+      }
+    },
+    {
+      "name": "submitted square remainder has positive coefficients",
+      "status": "pass",
+      "detail": {
+        "nonzero_monomials": 24
+      }
+    },
+    {
+      "name": "square remainder has constant 1",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "square remainder has 24 monomials",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "full homogeneous composition identity",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "composition denominator is positive",
+      "status": "pass",
+      "detail": {
+        "nonzero_monomials": 75
+      }
+    },
+    {
+      "name": "published diagonal excluded baseline",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "off-diagonal transcription discriminator",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "diagonal B has a manifest positive expression",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "negative-B strict chain at t=3/2 h=1/1000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=3/2 h=1/1000 u=1/100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=3/2 h=1/1000 u=5/7",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=3/2 h=1/1000 u=100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "negative-B strict chain at t=7 h=1/100000000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=7 h=1/100000000 u=1/100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=7 h=1/100000000 u=5/7",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=7 h=1/100000000 u=100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=1/1000 h=1000 u=1/100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=1/1000 h=1000 u=5/7",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=1/1000 h=1000 u=100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=1 h=11/13 u=1/100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=1 h=11/13 u=5/7",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=1 h=11/13 u=100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=2 h=2 u=1/100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=2 h=2 u=5/7",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Q>1 exact attack t=2 h=2 u=100000",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "retained B-positive Delta-positive control",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "level-0 kernel normalized parent=0",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "level-1 kernel normalized parent=0",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "level-0 kernel normalized parent=1",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "level-1 kernel normalized parent=1",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "level-0 kernel normalized parent=2",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "level-1 kernel normalized parent=2",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "2187 finite-cylinder probabilities normalized",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "2187 cylinders equal direct Hamiltonian weights",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "all 27 first-generation marginals project consistently",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "729 internal-site DLR conditionals retain crossing sibling bond",
+      "status": "pass",
+      "detail": null
+    }
+  ],
+  "check_count": 87,
+  "source_reconstruction": {
+    "weights": [
+      {
+        "parent": 0,
+        "left": 0,
+        "right": 0,
+        "exponents_t_h": [
+          0,
+          0
+        ]
+      },
+      {
+        "parent": 0,
+        "left": 0,
+        "right": 1,
+        "exponents_t_h": [
+          1,
+          1
+        ]
+      },
+      {
+        "parent": 0,
+        "left": 0,
+        "right": 2,
+        "exponents_t_h": [
+          2,
+          2
+        ]
+      },
+      {
+        "parent": 0,
+        "left": 1,
+        "right": 0,
+        "exponents_t_h": [
+          1,
+          1
+        ]
+      },
+      {
+        "parent": 0,
+        "left": 1,
+        "right": 1,
+        "exponents_t_h": [
+          2,
+          0
+        ]
+      },
+      {
+        "parent": 0,
+        "left": 1,
+        "right": 2,
+        "exponents_t_h": [
+          3,
+          1
+        ]
+      },
+      {
+        "parent": 0,
+        "left": 2,
+        "right": 0,
+        "exponents_t_h": [
+          2,
+          2
+        ]
+      },
+      {
+        "parent": 0,
+        "left": 2,
+        "right": 1,
+        "exponents_t_h": [
+          3,
+          1
+        ]
+      },
+      {
+        "parent": 0,
+        "left": 2,
+        "right": 2,
+        "exponents_t_h": [
+          4,
+          0
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 0,
+        "right": 0,
+        "exponents_t_h": [
+          2,
+          0
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 0,
+        "right": 1,
+        "exponents_t_h": [
+          1,
+          1
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 0,
+        "right": 2,
+        "exponents_t_h": [
+          2,
+          2
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 1,
+        "right": 0,
+        "exponents_t_h": [
+          1,
+          1
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 1,
+        "right": 1,
+        "exponents_t_h": [
+          0,
+          0
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 1,
+        "right": 2,
+        "exponents_t_h": [
+          1,
+          1
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 2,
+        "right": 0,
+        "exponents_t_h": [
+          2,
+          2
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 2,
+        "right": 1,
+        "exponents_t_h": [
+          1,
+          1
+        ]
+      },
+      {
+        "parent": 1,
+        "left": 2,
+        "right": 2,
+        "exponents_t_h": [
+          2,
+          0
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 0,
+        "right": 0,
+        "exponents_t_h": [
+          4,
+          0
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 0,
+        "right": 1,
+        "exponents_t_h": [
+          3,
+          1
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 0,
+        "right": 2,
+        "exponents_t_h": [
+          2,
+          2
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 1,
+        "right": 0,
+        "exponents_t_h": [
+          3,
+          1
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 1,
+        "right": 1,
+        "exponents_t_h": [
+          2,
+          0
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 1,
+        "right": 2,
+        "exponents_t_h": [
+          1,
+          1
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 2,
+        "right": 0,
+        "exponents_t_h": [
+          2,
+          2
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 2,
+        "right": 1,
+        "exponents_t_h": [
+          1,
+          1
+        ]
+      },
+      {
+        "parent": 2,
+        "left": 2,
+        "right": 2,
+        "exponents_t_h": [
+          0,
+          0
+        ]
+      }
+    ],
+    "full_update": [
+      "2*h**2*t**2*v + 2*h*t**3*u*v + 2*h*t*u + t**4*v**2 + t**2*u**2 + 1",
+      "2*h**2*t**2*v + 2*h*t*u*v + 2*h*t*u + t**2*v**2 + t**2 + u**2",
+      "2*h**2*t**2*v + 2*h*t**3*u + 2*h*t*u*v + t**4 + t**2*u**2 + v**2"
+    ],
+    "N": "2*h**2*t**2 + 4*h*t*u + 2*t**2 + u**2",
+    "D": "2*h**2*t**2 + 2*h*t**3*u + 2*h*t*u + t**4 + t**2*u**2 + 1"
+  },
+  "independent_cycle_reduction": {
+    "antisymmetric_factor": "-a*b*t**2 + a + b + 2*h**2*t**2 + 4*h*t + t**4 + 1",
+    "symmetric_reduction": "2*a*b*(2*h*t**3 + 2*h*t + 1) - 4*h**2*t**2 - 4*t**2 + 2*(a + b)*(2*h**2*t**2 + t**4 + 1)",
+    "A": "2*h**2*t**4 + 2*h*t**3 + 2*h*t + t**6 + t**2 + 1",
+    "B": "4*h**3*t**5 + 4*h**3*t**3 + 6*h**2*t**4 + 10*h**2*t**2 + 2*h*t**7 + 2*h*t**5 + 2*h*t**3 + 6*h*t - t**4 + 1",
+    "C": "4*h**4*t**4 + 8*h**3*t**3 + 4*h**2*t**6 + 6*h**2*t**2 + 4*h*t**5 + 4*h*t + t**8 + 2*t**4 + 2*t**2 + 1",
+    "necessary_relations": [
+      "a+b=-B/A",
+      "a*b=C/A",
+      "A^2*(a-b)^2=B^2-4*A*C"
+    ],
+    "contradiction": "If a,b>0 and a!=b form a cycle, then B<0, t>1 and B^2<(t^4-1)^2<t^8<4*t^14<4*A*C, contradicting real a,b.",
+    "denominators": "D(a),D(b),A,t^2 are positive. Division by a-b is only after assuming a!=b."
+  },
+  "secondary_submitted_certificate": {
+    "square": "t**2*(t**2*u - 1/2)**2",
+    "positive_remainder": "4*h**4*t**4 + 4*h**3*t**5*u + 4*h**3*t**3*u + 8*h**3*t**3 + 4*h**2*t**6 + 2*h**2*t**4*u**2 + 6*h**2*t**4*u + 10*h**2*t**2*u + 6*h**2*t**2 + 2*h*t**7*u + 2*h*t**5*u + 4*h*t**5 + 2*h*t**3*u**2 + 2*h*t**3*u + 2*h*t*u**2 + 6*h*t*u + 4*h*t + t**8 + 2*t**4 + t**2*u**2 + 7*t**2/4 + u**2 + u + 1",
+    "positive_remainder_terms": [
+      {
+        "powers": [
+          8,
+          0,
+          0
+        ],
+        "coefficient": "1"
+      },
+      {
+        "powers": [
+          7,
+          1,
+          1
+        ],
+        "coefficient": "2"
+      },
+      {
+        "powers": [
+          6,
+          2,
+          0
+        ],
+        "coefficient": "4"
+      },
+      {
+        "powers": [
+          5,
+          3,
+          1
+        ],
+        "coefficient": "4"
+      },
+      {
+        "powers": [
+          5,
+          1,
+          1
+        ],
+        "coefficient": "2"
+      },
+      {
+        "powers": [
+          5,
+          1,
+          0
+        ],
+        "coefficient": "4"
+      },
+      {
+        "powers": [
+          4,
+          4,
+          0
+        ],
+        "coefficient": "4"
+      },
+      {
+        "powers": [
+          4,
+          2,
+          2
+        ],
+        "coefficient": "2"
+      },
+      {
+        "powers": [
+          4,
+          2,
+          1
+        ],
+        "coefficient": "6"
+      },
+      {
+        "powers": [
+          4,
+          0,
+          0
+        ],
+        "coefficient": "2"
+      },
+      {
+        "powers": [
+          3,
+          3,
+          1
+        ],
+        "coefficient": "4"
+      },
+      {
+        "powers": [
+          3,
+          3,
+          0
+        ],
+        "coefficient": "8"
+      },
+      {
+        "powers": [
+          3,
+          1,
+          2
+        ],
+        "coefficient": "2"
+      },
+      {
+        "powers": [
+          3,
+          1,
+          1
+        ],
+        "coefficient": "2"
+      },
+      {
+        "powers": [
+          2,
+          2,
+          1
+        ],
+        "coefficient": "10"
+      },
+      {
+        "powers": [
+          2,
+          2,
+          0
+        ],
+        "coefficient": "6"
+      },
+      {
+        "powers": [
+          2,
+          0,
+          2
+        ],
+        "coefficient": "1"
+      },
+      {
+        "powers": [
+          2,
+          0,
+          0
+        ],
+        "coefficient": "7/4"
+      },
+      {
+        "powers": [
+          1,
+          1,
+          2
+        ],
+        "coefficient": "2"
+      },
+      {
+        "powers": [
+          1,
+          1,
+          1
+        ],
+        "coefficient": "6"
+      },
+      {
+        "powers": [
+          1,
+          1,
+          0
+        ],
+        "coefficient": "4"
+      },
+      {
+        "powers": [
+          0,
+          0,
+          2
+        ],
+        "coefficient": "1"
+      },
+      {
+        "powers": [
+          0,
+          0,
+          1
+        ],
+        "coefficient": "1"
+      },
+      {
+        "powers": [
+          0,
+          0,
+          0
+        ],
+        "coefficient": "1"
+      }
+    ]
+  },
+  "diagnostic_cases": [
+    {
+      "t": "3/2",
+      "h": "1/1000",
+      "A": "117203081/8000000",
+      "B": "-31978701649/8000000000",
+      "C": "165161361358081/4000000000000",
+      "discriminant": "-153836725947415744261287/64000000000000000000"
+    },
+    {
+      "t": "7",
+      "h": "1/100000000",
+      "A": "588495000035000002401/5000000000000000",
+      "B": "-11999915928599992551999657/5000000000000000000000",
+      "C": "144242550016814001177225000068600002401/25000000000000000000000000000000",
+      "discriminant": "-84885839479715578384928945041824510081328333862083458703551/31250000000000000000000000000000000000000000000"
+    },
+    {
+      "t": "1/1000",
+      "h": "1000",
+      "A": "3000005000000000001/1000000000000000000",
+      "B": "10500006000000500001/500000000000000000",
+      "C": "23000002000010000000000001/1000000000000000000000000",
+      "discriminant": "41250005000006499954000007249986000000999999/250000000000000000000000000000000000000000"
+    },
+    {
+      "t": "1",
+      "h": "11/13",
+      "A": "1321/169",
+      "B": "58124/2197",
+      "C": "766180/28561",
+      "discriminant": "-670095744/4826809"
+    },
+    {
+      "t": "2",
+      "h": "2",
+      "A": "237",
+      "B": "2505",
+      "C": "3225",
+      "discriminant": "3217725"
+    }
+  ],
+  "finite_cylinder_check": {
+    "vertices": 7,
+    "configurations": 2187,
+    "lower_marginals": 27,
+    "internal_DLR_exteriors": 729,
+    "t": "3/2",
+    "h": "2/5",
+    "terminal_message": [
+      "1",
+      "5/7",
+      "1"
+    ],
+    "scope": "Exact finite sanity check; infinite DLR conclusion rests on the analytic telescoping argument in the article."
+  }
+}

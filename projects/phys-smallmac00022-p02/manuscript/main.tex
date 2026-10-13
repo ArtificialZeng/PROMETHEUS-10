@@ -1,0 +1,334 @@
+\documentclass[aps,pra,reprint,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\hypersetup{
+  hidelinks,
+  pdftitle={Exact Tsirelson bound for a three-output Bell functional},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newcommand{\id}{\mathbf{1}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Tr}{\operatorname{Tr}}
+
+\begin{document}
+
+\title{Exact Tsirelson bound for a three-output Bell functional}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+
+\date{September 15, 2026}
+
+\begin{abstract}
+We determine the exact quantum value of the three-output, two-versus-three-input
+Bell functional that forms the $d=3$ member of the first family introduced by
+Perito \textit{et al.}  The defining work exhibited a maximally entangled
+qutrit strategy with value $4$ and found a matching upper bound at the
+$1+AB$ level of the Navascu\'es--Pironio--Ac\'in hierarchy to numerical
+precision.  Here we give a finite exact certificate over the cyclotomic field
+$\Q(\omega)$, $\omega^3=1$, $\omega\ne1$.  A $35\times35$ Hermitian Gram
+matrix has exact rank $16$, is positive semidefinite by a rational
+pivoted-$LDL^\dagger$ factorization, and expands to $4\,\id-I_3$ using only the
+order-three measurement relations and Alice--Bob commutation.  Consequently
+$I_3\leq4$ in arbitrary local dimension, while the qutrit construction proves
+attainability.  The result fixes the Tsirelson value but does not classify
+equality strategies or by itself imply self-testing, robustness, or
+device-independent randomness.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Bell inequalities turn restrictions on quantum correlations into quantitative
+operator bounds.  For inequalities with several inputs and outputs, sharp
+quantum values are often first identified through semidefinite relaxations of
+the quantum moment problem, notably the Navascu\'es--Pironio--Ac\'in (NPA)
+hierarchy~\cite{NPA2007,NPA2008,Doherty2008}.  A numerical optimum, however,
+does not by itself give an exact dimension-independent operator inequality.
+When a finite NPA dual can be reconstructed as a noncommutative
+sum of Hermitian squares (SOS), the numerical observation can instead be
+replaced by an algebraic certificate~\cite{Helton2002}.
+
+Perito \textit{et al.} recently introduced two families of multi-output Bell
+functionals motivated by optimal global-randomness certification
+\cite{Perito2026}.  For their first family, they conjectured an exact quantum
+value in every output dimension.  At $d=3$, the conjectured value is $4$.
+Their work supplies an explicit value-$4$ qutrit strategy and a $1+AB$ NPA
+upper bound agreeing with $4$ to within $10^{-6}$, whereas the available
+analytic estimate is $3\sqrt{2}$~\cite{Perito2026}.  The exact SOS and
+self-testing arguments in that work concern its distinct second family.
+
+In this paper we close the value gap for the $d=3$ member of the first family.
+The central object is a machine-readable Gram matrix over $\Q(\omega)$ on the
+complete $35$-word Fourier-unitary $1+AB$ span.  Both the coefficient identity
+and positive semidefiniteness are checked with exact rational arithmetic.  The
+certificate proves the upper bound without a local-dimension cutoff.  We keep
+the stronger equality problem separate: neither the certificate rank nor its
+kernel alone establishes rigidity or randomness.
+
+\section{Bell scenario and convention}
+
+Alice chooses $x\in\{0,1\}$, Bob chooses $y\in\{0,1,2\}$, and both outcomes
+belong to $\mathbb Z_3$.  For three-output projective measurements
+$\{M^A_{a|x}\}_{a=0}^2$ and $\{M^B_{b|y}\}_{b=0}^2$, define the Fourier
+observables
+\begin{equation}
+ A_x=\sum_{a=0}^2\omega^a M^A_{a|x},\qquad
+ B_y=\sum_{b=0}^2\omega^b M^B_{b|y},
+ \label{eq:fourier}
+\end{equation}
+where $\omega=e^{2\pi i/3}$.  They obey
+\begin{equation}
+ A_x^3=B_y^3=\id,\qquad A_x^\dagger=A_x^2,
+ \qquad B_y^\dagger=B_y^2.
+ \label{eq:relations}
+\end{equation}
+Operators assigned to different parties commute; no relation is imposed
+between distinct inputs of the same party.
+
+We use the no-dagger convention of Eq.~(6) of Ref.~\cite{Perito2026}:
+\begin{align}
+ I_3=\frac12\bigg[&A_0\otimes(B_0+B_1+B_2) \nonumber\\
+ &+A_1\otimes(B_0+\omega B_1+\omega^2B_2)
+ +\mathrm{h.c.}\bigg].
+ \label{eq:I3}
+\end{align}
+Appendix A of that reference writes $B_y^\dagger$ instead.  The two conventions
+are equivalent only after recording the Bob outcome inversion
+\begin{equation}
+ M^B_{b|y}\longmapsto M^B_{-b\,\mathrm{mod}\,3|y},
+ \qquad B_y\longmapsto B_y^\dagger.
+ \label{eq:outcome-inversion}
+\end{equation}
+All statements below refer to Eq.~\eqref{eq:I3}.
+
+\section{Exact cyclotomic Gram certificate}
+
+Let $\mathcal A$ be the unital $*$-algebra generated by
+$A_0,A_1,B_0,B_1,B_2$, quotiented by Eq.~\eqref{eq:relations} and by
+$[A_x,B_y]=0$.  Define the ordered word column
+\begin{equation}
+ W=\left(\id,\ \{A_x^k\}_{x,k},\ \{B_y^\ell\}_{y,\ell},\
+ \ \{A_x^kB_y^\ell\}_{x,k,y,\ell}\right)^{\mathsf T},
+ \label{eq:words}
+\end{equation}
+where $x=0,1$, $y=0,1,2$, and $k,\ell=1,2$, with indices in lexicographic
+order.  Thus $W$ contains $1+4+6+24=35$ words.
+
+The supplemental certificate gives a Hermitian matrix
+$Y\in M_{35}[\Q(\omega)]$.  An entry is stored as a rational pair $[a,b]$
+representing $a+b\omega$; the overline below denotes entrywise complex
+conjugation.  Its Gram convention is
+\begin{equation}
+ 4\,\id-I_3
+ =\sum_{i,j=1}^{35}\overline{Y_{ij}}\,w_i^\dagger w_j
+ =W^\dagger\overline{Y}\,W .
+ \label{eq:gram-identity}
+\end{equation}
+Complex conjugation does not change positive semidefiniteness, so it is enough
+to certify $Y\succeq0$.
+
+\begin{table}[b]
+\caption{Exact checks encoded in the supplemental certificate and replayed by
+the independent verifier.  No tolerance enters these checks.}
+\label{tab:checks}
+\begin{ruledtabular}
+\begin{tabular}{lc}
+Quantity & Exact result\\
+\hline
+Word count & $35$\\
+Gram-matrix dimension & $35\times35$\\
+Coefficient mismatches in Eq.~\eqref{eq:gram-identity} & $0$\\
+Positive $LDL^\dagger$ pivots & $16$\\
+Identically zero remainder dimension & $19$\\
+Gram rank & $16$\\
+Trace of $Y$ & $4$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+Two exact checks establish Eq.~\eqref{eq:gram-identity}.  First, every
+$w_i^\dagger w_j$ is reduced by moving Alice words past Bob words and combining
+adjacent powers of the same setting modulo $3$.  Collecting coefficients gives
+exactly the constant $4$, the six terms of $-I_3/2$ displayed in
+Eq.~\eqref{eq:I3}, and their adjoints; all other reduced-word coefficients
+vanish.  Second, simultaneous exact row and column pivoting produces
+\begin{equation}
+ PYP^\dagger=L\,\mathrm{diag}(d_1,\ldots,d_{16},0_{19})L^\dagger,
+ \qquad d_r\in\Q_{>0},
+ \label{eq:ldl}
+\end{equation}
+with all $d_r$ stored explicitly as positive rational numbers.  The trailing
+$19\times19$ Schur complement is identically zero, not merely numerically
+small.  Equation~\eqref{eq:ldl} proves $Y\succeq0$ and rank$(Y)=16$.
+The exact field operations and replay procedure are summarized in the
+Appendix.
+
+It follows that $\overline{Y}=R^\dagger R$ for a $16\times35$ matrix $R$ over
+the algebraic closure, and hence
+\begin{equation}
+ 4\,\id-I_3=\sum_{r=1}^{16}P_r^\dagger P_r,
+ \qquad P_r=\sum_i R_{ri}w_i .
+ \label{eq:sos}
+\end{equation}
+This immediately gives the upper bound in every representation of the frozen
+relations.
+
+\section{Attainability and exact quantum value}
+
+For completeness, consider the normalized maximally entangled qutrit state
+\begin{equation}
+ |\Phi_3\rangle=\frac1{\sqrt3}\sum_{k=0}^2|kk\rangle,
+ \label{eq:phi}
+\end{equation}
+and generalized Pauli operators
+\begin{equation}
+ Z=\sum_{k=0}^2\omega^k|k\rangle\langle k|,
+ \qquad X=\sum_{k=0}^2|k+1\rangle\langle k|.
+\end{equation}
+Take $A_0=Z$, $A_1=X$, and~\cite{Perito2026}
+\begin{equation}
+ B_y=\frac13\left(2Z^2+2\omega^{2y}X-\omega^{y+1}X^2Z\right).
+ \label{eq:By}
+\end{equation}
+Direct multiplication in $\Q(\omega)$ gives
+$B_y^\dagger B_y=B_y^3=\id$, so the inverse Fourier transform of each $B_y$
+is a valid three-projector measurement.  The same arithmetic gives
+\begin{equation}
+ \sum_{y=0}^2B_y=2Z^2,\qquad
+ \sum_{y=0}^2\omega^yB_y=2X.
+ \label{eq:fourier-sums}
+\end{equation}
+Because $|\Phi_3\rangle$ is stabilized by $Z\otimes Z^2$ and $X\otimes X$,
+Eqs.~\eqref{eq:I3} and \eqref{eq:fourier-sums} yield
+\begin{equation}
+ \langle\Phi_3|I_3|\Phi_3\rangle=4.
+ \label{eq:lower}
+\end{equation}
+
+Combining Eqs.~\eqref{eq:sos} and \eqref{eq:lower} proves the main result.
+
+\textit{Theorem.}---For every tensor-product quantum strategy on arbitrary
+local Hilbert spaces with the three-output projective measurements of
+Eq.~\eqref{eq:fourier},
+\begin{equation}
+ \Tr(\rho I_3)\leq4.
+\end{equation}
+The bound is attained by the two-qutrit strategy
+\eqref{eq:phi}--\eqref{eq:By}; therefore the Tsirelson value of
+Eq.~\eqref{eq:I3} is exactly $4$.
+
+The operator identity actually uses only cross-party commutation, so the same
+upper bound also holds for commuting-operator representations of these
+relations.  Attainability is already finite dimensional.
+
+\section{Comparison and limitations}
+
+The certificate lies on the same $1+AB$ word span that produced the published
+numerical upper bound~\cite{Perito2026}, but its logical status is different.
+The matrix entries, coefficient comparison, and $LDL^\dagger$ pivots are all
+exact.  Floating-point semidefinite optimization was used only to locate a
+rational point in the affine Gram family and is not used in accepting the
+identity or positivity.  The resulting inequality therefore has no numerical
+error bar and no local-dimension truncation.
+
+This conclusion is deliberately narrower than global-randomness certification.
+If a strategy saturates the bound, the sixteen polynomials in
+Eq.~\eqref{eq:sos} annihilate the state on its support.  Turning those kernel
+conditions into a classification up to local isometries would require a
+separate rigidity argument.  The $19$-dimensional null space of the Gram
+matrix is not such a classification.  We consequently make no claim about
+self-testing, robustness, uniqueness of the behavior, or the guessing
+probability of the extended functional.  Numerical robustness calculations
+for the surrounding randomness protocol address a complementary question
+\cite{DAvino2026}.
+
+Nor does the present certificate establish the conjectured first-family value
+for $d>3$.  Its field, word list, and symmetry reduction are specialized to
+$\omega^3=1$.  Generalizing it requires a new dimension-dependent construction
+rather than a relabeling of Eq.~\eqref{eq:gram-identity}.
+
+\section{Conclusion}
+
+We have converted the numerical value-$4$ observation for a three-output Bell
+functional into a finite exact noncommutative SOS.  A rank-$16$ cyclotomic Gram
+matrix proves $I_3\leq4$ in arbitrary dimension, and the known qutrit strategy
+attains the bound.  This supplies a rigorous baseline for future analyses of
+equality and randomness while leaving those stronger questions open.
+
+\appendix
+
+\section{Exact replay of the certificate}
+
+This appendix records the algebra used by the supplied verifier.  Elements of
+$\Q(\omega)$ are represented by pairs $(a,b)\in\Q^2$ with
+$a+b\omega$.  From $\omega^2=-1-\omega$,
+\begin{align}
+ (a,b)(c,d)&=(ac-bd,\ ad+bc-bd),\\
+ \overline{(a,b)}&=(a-b,-b).
+ \label{eq:field-arithmetic}
+\end{align}
+Thus every operation required by the proof reduces to integer and rational
+arithmetic.
+
+Each word is stored as an Alice sequence and a Bob sequence.  The reducer
+combines adjacent occurrences of one setting modulo $3$ and deletes exponent
+$0$.  Alice and Bob sequences are maintained separately, implementing only
+their mutual commutation.  For each canonical reduced word $u$, the verifier
+forms
+\begin{equation}
+ c(u)=\sum_{i,j:\,\operatorname{red}(w_i^\dagger w_j)=u}
+ \overline{Y_{ij}}.
+ \label{eq:coefficient-map}
+\end{equation}
+The target map has
+\begin{align}
+ c(\id)&=4,\\
+ c(A_0B_y)=c(A_0^2B_y^2)&=-\tfrac12,\\
+ c(A_1B_y)&=-\tfrac12\omega^y,\\
+ c(A_1^2B_y^2)&=-\tfrac12\omega^{-y},
+\end{align}
+for $y=0,1,2$, and zero for every other word.  Exact dictionary equality
+therefore verifies the full operator identity, rather than selected moments or
+a trace.
+
+For positivity, the verifier performs simultaneous row and column swaps, takes
+a strictly positive rational diagonal pivot, and updates the remaining Schur
+complement in $\Q(\omega)$.  After sixteen pivots, every entry in the remaining
+$19\times19$ block is exactly $(0,0)$.  This is the factorization in
+Eq.~\eqref{eq:ldl}.  The machine-readable matrix, permutation, positive pivots,
+and independent replay script are supplied with the manuscript.
+
+\section*{Data and code availability}
+
+No experimental or external numerical data were used.  The machine-readable
+exact Gram matrix and its rational $LDL^\dagger$ data are provided in
+\nolinkurl{exact-sos-certificate.json};
+\nolinkurl{verify_exact_sos_independent.py} reconstructs all $35$ words,
+checks every coefficient, and repeats the exact positivity test.  The included
+reproducibility instructions specify the environment and command.  NumPy is
+used only for a non-certifying floating-point eigenvalue diagnostic.
+
+\begin{acknowledgments}
+OpenAI Codex (gpt-5.6-sol) was used substantively for literature synthesis,
+scientific reasoning, exact-algebra code development and debugging, and
+manuscript drafting.  It was directed to preserve the stated Bell-operator
+convention and to accept the central result only after exact arithmetic checks;
+the supplied independent implementation rechecks the complete coefficient
+identity and positive-semidefinite factorization.  The AI system is not an
+author, and responsibility for final verification and any submission rests
+with the human author.
+\end{acknowledgments}
+
+\bibliography{manuscript/references}
+
+\end{document}

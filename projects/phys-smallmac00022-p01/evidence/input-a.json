@@ -1,0 +1,18 @@
+{
+  "representation": "source coefficient matrices across the logical L:R cut",
+  "source_locator": "arXiv:2608.28897v1, Eqs. (C1)-(C7)",
+  "r_exact": "1/5",
+  "alpha_exact": "1/2",
+  "D": "3+r^2",
+  "one_copy_coefficient_numerator": [
+    ["r", "1"],
+    ["1", "1"]
+  ],
+  "one_copy_normalization": "sqrt(D)",
+  "row_basis": ["0_L", "1_L"],
+  "column_basis": ["0_R", "1_R"],
+  "two_copy_row_basis": ["00_L", "01_L", "10_L", "11_L"],
+  "two_copy_column_basis": ["00_R", "01_R", "10_R", "11_R"],
+  "two_copy_rule": "Kronecker product of the independently transcribed one-copy coefficient matrix in lexicographic copy order",
+  "signed_witness_rule": "multiply only the (00_L,00_R) coefficient by -1"
+}

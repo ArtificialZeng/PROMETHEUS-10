@@ -1,0 +1,330 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\D}{\mathbb D}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\qb}{q_b}
+\newcommand{\Rb}{\mathcal R_b}
+
+\hypersetup{
+  pdftitle={A third magnetic Neumann level below the Dirichlet ground state on the disk},
+  pdfauthor={Xiaojian Zeng},
+  pdfsubject={An exact Dirichlet--Neumann eigenvalue comparison for the magnetic unit disk},
+  pdfkeywords={magnetic Laplacian, unit disk, Dirichlet--Neumann inequality, min--max principle}
+}
+
+\title{A third magnetic Neumann level below the Dirichlet ground state on the disk}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $H_b=(-i\nabla-b(-y,x)/2)^2$ be the spinless magnetic Laplacian on the
+unit disk, and let $\lambda_k(b)$ and $\mu_k(b)$ denote its Dirichlet and
+magnetic-Neumann eigenvalues, respectively, counted with multiplicity.  We
+prove that $\mu_3(b)\leq\lambda_1(b)$ for every $b>0$.  The previously
+unresolved part of this comparison is the bounded-field interval
+$0<b\leq4$.  There, the positive radial function
+$(1-r^2)e^{-r^2/2}$ gives a piecewise explicit lower bound on the
+Dirichlet ground energy.  We compare that bound with the Rayleigh quotients
+of three mutually orthogonal magnetic-Neumann form-domain states.  Two
+states work throughout the interval, while the third is chosen from one of
+the two angular-momentum states meeting the Dirichlet ground state at
+$b=2$.  The differences factor into elementary expressions whose signs are
+fixed on $0<b\leq2$ and $2\leq b\leq4$.  Min--max then avoids any spectral
+branch ordering or truncation.  Combining this variational certificate with
+the published magnetic-Pauli counting argument for $b>4$ proves the
+all-field statement.
+\end{abstract}
+
+\noindent\textbf{Keywords:} magnetic Laplacian; unit disk; Dirichlet--Neumann
+inequality; eigenvalue comparison; min--max principle
+
+\medskip
+\noindent\textbf{Mathematics Subject Classification (2020):}
+35P15; 35J10; 81Q10
+
+\section{Introduction}
+
+Inequalities between Dirichlet and Neumann spectra measure how much the
+low-energy state count changes when a hard boundary is replaced by a
+reflecting one.  For the homogeneous magnetic Laplacian on a bounded convex
+planar domain, Lotoreichik proved the index-shifted comparison
+$\mu_{k+1}\leq\lambda_k$ \cite{Lotoreichik2025}.  On the disk, numerical
+evidence in the same work suggested the sharper first-index relation
+$\mu_3(b)\leq\lambda_1(b)$.  The cited paper proved this relation for
+$b>4$ and identified an exact three-branch crossing at $b=2$, but left the
+continuous interval $0<b\leq4$ at the numerical level.  The nonmagnetic
+analogue and its geometric extensions form a related but distinct problem;
+see, for example, \cite{Rohleder2025}.  Recent detailed work on the magnetic
+Neumann disk has focused on its lowest eigenvalue and angular-momentum
+crossings \cite{HelfferLena2025}.
+
+The purpose of this note is to close the disk comparison by an exact
+low-field argument.  Its ingredients are deliberately elementary: a
+ground-state representation for a positive Dirichlet comparison function,
+four explicit trial functions, angular orthogonality, and the min--max
+principle.  In particular, the proof never has to determine which radial
+branch is the third eigenvalue.
+
+Let
+\[
+  \D=\{(x,y)\in\R^2:x^2+y^2<1\},\qquad
+  A_b(x,y)=\frac b2(-y,x),\qquad b>0,
+\]
+and set $H_b=(-i\nabla-A_b)^2$.  The Dirichlet and magnetic-Neumann
+realizations are defined by the common quadratic form
+\[
+  \qb[u]=\int_{\D}|(-i\nabla-A_b)u|^2\,dx\,dy
+\]
+on $H_0^1(\D)$ and $H^1(\D)$, respectively.  Their eigenvalues, repeated
+according to multiplicity, are denoted by $\lambda_k(b)$ and $\mu_k(b)$.
+Our main result is the following.
+
+\begin{theorem}\label{thm:main}
+For every $b>0$,
+\[
+  \mu_3(b)\leq\lambda_1(b).
+\]
+\end{theorem}
+
+The normalization is dimensionless.  For a disk of radius $R$, dilation
+replaces $b$ by $bR^2$ and multiplies both spectra by $R^{-2}$.
+
+\section{Angular decomposition and a Dirichlet lower bound}
+
+With the convention $u(r,\theta)=f(r)e^{im\theta}$, $m\in\mathbb Z$, the
+radial expression in $L^2((0,1);r\,dr)$ is
+\begin{equation}\label{eq:fiber}
+  T_{b,m}=-\frac{d^2}{dr^2}-\frac1r\frac d{dr}
+           +\left(\frac mr-\frac{br}{2}\right)^2.
+\end{equation}
+The regular solution behaves as $O(r^{|m|})$ at the origin.  Dirichlet data
+give $f(1)=0$.  Since $A_b$ is tangent to the circle, magnetic-Neumann data
+reduce in this gauge to $f'(1)=0$.  Distinct angular sectors are orthogonal
+both for the $L^2$ inner product and for $\qb$.
+
+We use the established disk fact that the Dirichlet ground energy is the
+ground energy of the $m=0$ fiber \cite[Sec.~5]{Lotoreichik2025}.
+
+\begin{lemma}\label{lem:dirichlet}
+For $0<b\leq4$,
+\begin{equation}\label{eq:L}
+  \lambda_1(b)\geq L(b):=
+  \begin{cases}
+    5+b^2/4,&0<b\leq2,\\
+    6,&2\leq b\leq4.
+  \end{cases}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put
+\[
+  \phi(r)=(1-r^2)e^{-r^2/2}.
+\]
+This function belongs to the radial Dirichlet form domain and is positive
+for $0<r<1$.  Direct differentiation in \eqref{eq:fiber} gives
+\begin{equation}\label{eq:pointwise}
+  \frac{T_{b,0}\phi}{\phi}
+  =6+\frac{b^2-4}{4}r^2.
+\end{equation}
+For a smooth radial form-core function $f$, integration by parts yields the
+ground-state representation
+\begin{equation}\label{eq:gst}
+\begin{aligned}
+ &\int_0^1\left(|f'|^2+\frac{b^2r^2}{4}|f|^2\right)r\,dr
+ -\int_0^1\frac{T_{b,0}\phi}{\phi}|f|^2r\,dr \\
+ &\hspace{35mm}=
+ \int_0^1\phi^2\left|\left(\frac f\phi\right)'\right|^2r\,dr\geq0.
+\end{aligned}
+\end{equation}
+The inequality extends to the radial Dirichlet form domain by closure.  For
+$0<b\leq2$, the infimum of the right-hand side of
+\eqref{eq:pointwise} is $5+b^2/4$; for $2\leq b\leq4$, it is $6$.
+The radial characterization of the Dirichlet ground state now gives
+\eqref{eq:L}.
+\end{proof}
+
+\section{An explicit three-dimensional trial space}
+
+For a nonzero $u\in H^1(\D)$, write
+\[
+  \Rb[u]=\frac{\qb[u]}{\|u\|_{L^2(\D)}^2}.
+\]
+Two trial functions will be used for the whole interval $0<b\leq4$:
+\[
+  u_0(r,\theta)=1,\qquad
+  u_1(r,\theta)=re^{i\theta}.
+\]
+Direct radial integration gives
+\begin{equation}\label{eq:twoR}
+  \Rb[u_0]=\frac{b^2}{8},\qquad
+  \Rb[u_1]=4-b+\frac{b^2}{6}.
+\end{equation}
+Consequently $\Rb[u_0]\leq2$ and $\Rb[u_1]\leq4$ on this interval,
+so both are strictly below $L(b)$.
+
+The third state changes at $b=2$.  Define
+\begin{align*}
+  v_-(r,\theta)&=re^{-r^2/2}e^{-i\theta},\\
+  v_+(r,\theta)&=r^2(3-r^2)e^{-r^2/2}e^{2i\theta}.
+\end{align*}
+Both are regular $H^1(\D)$ functions.  At $b=2$, their radial parts satisfy
+$T_{2,-1}v_-=6v_-$ and $T_{2,2}v_+=6v_+$, respectively, as well as the
+Neumann condition at $r=1$ \cite[Sec.~5]{Lotoreichik2025}.  Set
+\begin{equation}\label{eq:rho}
+  \rho_\pm=
+  \frac{\int_0^1r^2|v_\pm(r)|^2r\,dr}
+       {\int_0^1|v_\pm(r)|^2r\,dr}.
+\end{equation}
+Only the exact support bound
+\begin{equation}\label{eq:rho-range}
+  0<\rho_\pm<1
+\end{equation}
+will be needed.
+
+\begin{lemma}\label{lem:third}
+The trial state $v_-$ satisfies $\Rb[v_-]\leq L(b)$ for $0<b\leq2$,
+and $v_+$ satisfies $\Rb[v_+]\leq L(b)$ for $2\leq b\leq4$.
+\end{lemma}
+
+\begin{proof}
+Changing $b$ in \eqref{eq:fiber} changes only the potential
+\[
+  \left(\frac mr-\frac{br}{2}\right)^2
+  =\frac{m^2}{r^2}-mb+\frac{b^2r^2}{4}.
+\]
+Using the exact eigenvalue $6$ at $b=2$ therefore gives
+\begin{equation}\label{eq:vminusR}
+  \Rb[v_-]=6+(b-2)+\frac{b^2-4}{4}\rho_-.
+\end{equation}
+For $0<b\leq2$, subtraction of the first branch of \eqref{eq:L}
+factorizes as
+\begin{equation}\label{eq:vminusfactor}
+  \Rb[v_-]-\left(5+\frac{b^2}{4}\right)
+  =\frac{b-2}{4}
+   \left((\rho_--1)b+2(1+\rho_-)\right).
+\end{equation}
+The expression in parentheses is positive: it decreases with $b$, and at
+$b=2$ it equals $4\rho_->0$.  Thus \eqref{eq:vminusfactor} is nonpositive.
+
+For the $m=2$ state, the same potential shift gives
+\begin{equation}\label{eq:vplusfactor}
+  \Rb[v_+]-6=(b-2)
+  \left(-2+\frac{b+2}{4}\rho_+\right).
+\end{equation}
+When $2\leq b\leq4$, \eqref{eq:rho-range} implies
+\[
+  -2+\frac{b+2}{4}\rho_+
+  <-2+\frac{b+2}{4}\leq-\frac12.
+\]
+Hence \eqref{eq:vplusfactor} is also nonpositive.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main} for $0<b\leq4$]
+For $0<b\leq2$, take
+\[
+  \mathcal V_b=\operatorname{span}\{u_0,u_1,v_-\},
+\]
+whose elements have angular momenta $0,1,-1$.  For $2\leq b\leq4$,
+take instead
+\[
+  \mathcal V_b=\operatorname{span}\{u_0,u_1,v_+\},
+\]
+with angular momenta $0,1,2$.  In either case $\dim\mathcal V_b=3$ and
+angular orthogonality diagonalizes both the norm and the quadratic form.
+The Rayleigh quotient of every nonzero element of $\mathcal V_b$ is thus a
+weighted average of the three individual quotients.  Equations
+\eqref{eq:twoR}, \eqref{eq:L}, and Lemma~\ref{lem:third} show that its
+maximum is at most $\lambda_1(b)$.  The magnetic-Neumann min--max principle
+then yields
+\[
+  \mu_3(b)\leq
+  \max_{0\ne u\in\mathcal V_b}\Rb[u]
+  \leq\lambda_1(b).
+\]
+The switch point $b=2$ and the endpoint $b=4$ are included.
+\end{proof}
+
+\section{The high-field interval}
+
+For completeness, we recall how the published high-field result joins the
+preceding argument.  The normalized flux of the constant field through the
+unit disk is
+\[
+  \Phi=\frac{1}{2\pi}\int_{\D}b\,dx\,dy=\frac b2.
+\]
+The magnetic-Pauli counting theorem of Fournais, Frank, Goffeng, Kachmar,
+and Sundqvist \cite[Prop.~2.1]{FournaisEtAl2025}, specialized to the disk in
+\cite[Sec.~5]{Lotoreichik2025}, implies that $b>4$ gives at least three
+magnetic-Neumann eigenvalues strictly below $b$.  Thus
+\begin{equation}\label{eq:highN}
+  \mu_3(b)<b\qquad(b>4).
+\end{equation}
+
+On the Dirichlet form domain, if
+$\Pi_x=-i\partial_x+by/2$ and $\Pi_y=-i\partial_y-bx/2$, then
+$[\Pi_x,\Pi_y]=ib$ and integration by parts gives
+\[
+  \qb[u]-b\|u\|^2
+  =\|(\Pi_x+i\Pi_y)u\|^2\geq0.
+\]
+Consequently $\lambda_1(b)\geq b$.  Together with
+\eqref{eq:highN}, this proves
+$\mu_3(b)<\lambda_1(b)$ for $b>4$.  Combining it with the low-field proof
+completes Theorem~\ref{thm:main}.
+
+\section{Interpretation and limitations}
+
+The theorem is a spectral statement for two self-adjoint boundary
+realizations of the same spinless constant-field Hamiltonian.  It says that
+replacing the hard-wall boundary by magnetic reflection puts at least three
+levels, counted with multiplicity, at or below the hard-wall ground energy.
+The proof is nonperturbative and uses no finite angular-momentum cutoff,
+radial discretization, or numerical ordering of crossing branches.
+
+The circular geometry is essential to the present certificate: it supplies
+the angular-sector orthogonality and the explicit states at $b=2$.  No
+conclusion is asserted here for noncircular domains, variable fields, Robin
+conditions, Pauli operators with a Zeeman term, or comparisons involving
+higher indices.
+
+\section*{Statements and declarations}
+
+\paragraph{Data and code availability.}
+The result is analytic and uses no empirical data.  The accompanying source
+package contains a symbolic verification script and its recorded output for
+the differentiations, Rayleigh quotients, and factorizations used above.
+
+\paragraph{Competing interests and funding.}
+No competing-interest or funding declaration has been supplied for this
+pre-submission draft.  The corresponding author must provide and approve the
+applicable declarations before submission.
+
+\paragraph{Artificial-intelligence assistance.}
+OpenAI Codex was used in September 2026 as an assistive tool for literature
+triage, proof search, algebraic checking, adversarial review, and manuscript
+drafting.  It is not an author and cannot assume responsibility.  The named
+author has not yet completed the independent scientific and editorial review
+required before submission and must verify the argument, citations,
+disclosures, and final text before assuming accountability for them.
+
+\bibliographystyle{amsplain}
+\bibliography{references}
+
+\end{document}

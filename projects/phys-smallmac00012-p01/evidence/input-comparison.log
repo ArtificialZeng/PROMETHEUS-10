@@ -1,0 +1,17 @@
+A/B INPUT COMPARISON — exact symbolic convention audit
+PASS: distinct A and B records loaded
+PASS: A is a transcription and B is a derivation
+PASS: both inputs concern order three
+PASS: both inputs select columns 0 and 1 after indexing map
+PASS: row-by-row length entries agree after B->M symbol rename
+PASS: derived h equals the four-factor Heron polynomial identically
+PASS: A Eq. (24) first cosine is the triangle cosine law
+PASS: A Eq. (24) second cosine is the triangle cosine law
+PASS: A Eq. (25) relative cosine is the triangle cosine law
+MAP: S1 indices 0,1,2 map directly to project indices 0,1,2; S2 indices 1,2,3 map by j_project=j_source-1.
+MAP: source B_ij and derived M_ij both mean output row i, input column j; project dynamics is p'=M p.
+MAP: |L1-L2|<=L0<=L1+L2 gives all three triangle inequalities; symmetrically this is 2*max(Li)<=sum(Li).
+MAP: source dephasing sets the L0 term phase to zero; B permits arbitrary common phase and fixes it to zero only for comparison.
+MAP: the source cosine quotients exclude zero denominators; B supplies explicit two-positive, one-positive, and all-zero branches.
+INDEPENDENCE: A was transcribed from two official primary renderings. B was derived from normalization, pair orthogonality, and 3D completion; it did not execute or import A. This comparison script reads both only after they were recorded. Same-worker independence is weaker than a fresh referee reconstruction.
+RESULT: exact agreement after the stated basis/index/phase convention map.

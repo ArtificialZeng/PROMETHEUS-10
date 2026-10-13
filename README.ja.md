@@ -2,13 +2,36 @@
 
 **AI の物理学を、検証できる形に**
 
-[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md)
+[English](README.md) · [中文](README.zh-CN.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [Русский](README.ru.md)
 
 AI が推論・反例探索・計算に参加した十本の物理学草稿と、主張を調べるためのコードをまとめました。PROMETHEUS-10 は自動研究を検証可能な成果として残す試みです。「10」は原稿数であり、十個の一般問題をすべて解決したという意味ではありません。
 
 過去の内部審査記録は **証明 4 件、反証 3 件、部分結果 2 件、計算論文 1 件**。猜想のみの PDF はありません。すべて著者の最終確認を要する草稿で、外部査読や掲載承認を意味しません。
 
 人間が定めた目標の下、AI が導出、プログラミング、数値探索、検査、執筆を支援しました。別の AI コンテキストによる検査は外部査読ではありません。「貢献」は原稿が提案する内容で、本パッケージ化で文献全体の先取性を再審査したわけではありません。
+
+<!-- SMALL_MAC_COLLECTION -->
+
+## small_mac 拡張：成果区分別の 48 本の原稿
+
+このリポジトリには **58 本の原稿**、すなわち元の PROMETHEUS-10 の 10 プロジェクトと **48 本の small_mac 物理学草稿**が含まれます。元の 10 プロジェクトと科学的範囲は以下に記載されています。
+
+small_mac の各項目は記録されたローカルの科学・原稿・公開ゲートを通過していますが、著者による最終確認が必要です。外部査読や掲載受理を意味しません。
+
+分類は凍結済みの公開記録に基づきます。「証明」と「反証」は記載された命題と仮定に対するものです。部分結果と計算結果は元の問題の完全解決を意味しません。科学的範囲と限界は各 PDF と著者引継ぎ資料をご確認ください。
+
+[small_mac 全コレクション](collections/small_mac/README.ja.md)
+
+| 成果区分 | 原稿数 |
+|---|---:|
+| [証明](collections/small_mac/categories/proofs/README.ja.md) | **21** |
+| [反証](collections/small_mac/categories/disproofs/README.ja.md) | **7** |
+| [部分結果](collections/small_mac/categories/partial-results/README.ja.md) | **19** |
+| [計算結果](collections/small_mac/categories/computational-papers/README.ja.md) | **1** |
+
+表示番号 11–58、バッチ番号、元の内部プロジェクト ID を保持しています。公開 `phys-smallmac` ID は共通のプロジェクトディレクトリを指します。対応表： [`id-map.json`](collections/small_mac/id-map.json).
+
+<!-- END_SMALL_MAC_COLLECTION -->
 
 | 課題 | 結論の種類 | 詳細 |
 |---|---|---|

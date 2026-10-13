@@ -1,0 +1,4 @@
+# Existing tested packages. No installation is performed by this package.
+# Python 3.9.6 was used; scalar and matrix certificates need only the stdlib.
+sympy==1.14.0
+matplotlib==3.9.4

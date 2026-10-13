@@ -1,0 +1,105 @@
+{
+  "scope": "Exact model-level upper-bound counterexample; not a scientific referee verdict",
+  "dimensionless_units": "x=tau/t_star; reported entropy is t_star*hat_sigma",
+  "rates_family": [
+    [
+      "r",
+      "1",
+      "1"
+    ],
+    [
+      "1",
+      "r",
+      "1"
+    ],
+    [
+      "1",
+      "1",
+      "r"
+    ]
+  ],
+  "killed_matrices_r10": [
+    [
+      [
+        "-11",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-11",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "-2"
+      ]
+    ],
+    [
+      [
+        "-2",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-11",
+        "10"
+      ],
+      [
+        "1",
+        "10",
+        "-11"
+      ]
+    ],
+    [
+      [
+        "-11",
+        "0",
+        "10"
+      ],
+      [
+        "0",
+        "-2",
+        "1"
+      ],
+      [
+        "10",
+        "1",
+        "-11"
+      ]
+    ]
+  ],
+  "weighted_boundary_commutator_entries": [
+    "-r*(r - 1)",
+    "(r - 1)*(r + 1)",
+    "-r*(r - 1)"
+  ],
+  "delta_x3_coefficient_family": "-(r - 1)**2/(6*(r + 2))",
+  "absorbing_row_series_coefficients": [
+    "0",
+    "0",
+    "-(r - 1)**2/(6*(r + 2))"
+  ],
+  "delta_x3_coefficient_r10": "-9/8",
+  "reversed_protocol_coefficient": "(r - 1)**2/(6*(r + 2))",
+  "constant_protocol_r1_coefficient": "0",
+  "strict_interval_delta": "1/20000",
+  "remainder_bound_divided_by_x3": "1331/4281",
+  "remainder_bound_below": "9/16",
+  "density_difference_bound": "Psi_++ - Psi_-- <= -(9/16)*x^3 for 0<x<=1/20000",
+  "strict_entropy_lower_bound": "27/5734400000000000000000000000000000",
+  "strict_entropy_lower_decimal": "4.70842633929e-33",
+  "full_entropy_exact": "0",
+  "base_minus_half_identity_leading_minors": [
+    "3/2",
+    "9/4",
+    "3/8"
+  ],
+  "density_bounds": "(x^2/2) exp(-11x) <= Psi_++,Psi_-- <= 10 exp(-x/2)",
+  "entropy_tail_H80_formula": "80*(2*log(20) + 1804)*exp(-40)/3",
+  "entropy_tail_H80_decimal": "2.05052931745e-13",
+  "normalization_tail_H80_bound": "sqrt(3)*exp(-40)",
+  "precision": "symbolic rational arithmetic; displayed tail decimals illustrative, formula is the bound"
+}

@@ -1,0 +1,894 @@
+{
+  "characteristic_polynomial": "E**15 - 15*E**13*lambda**2 + 16*E**13*lambda - 10*E**13 + 2*E**12*lambda**3 + 4*E**12*lambda**2 - 8*E**12*lambda + 4*E**12 + 86*E**11*lambda**4 - 188*E**11*lambda**3 + 224*E**11*lambda**2 - 128*E**11*lambda + 39*E**11 - 20*E**10*lambda**5 - 24*E**10*lambda**4 + 128*E**10*lambda**3 - 172*E**10*lambda**2 + 104*E**10*lambda - 28*E**10 - 235*E**9*lambda**6 + 800*E**9*lambda**5 - 1440*E**9*lambda**4 + 1484*E**9*lambda**3 - 970*E**9*lambda**2 + 368*E**9*lambda - 72*E**9 + 70*E**8*lambda**7 + 36*E**8*lambda**6 - 612*E**8*lambda**5 + 1392*E**8*lambda**4 - 1588*E**8*lambda**3 + 1060*E**8*lambda**2 - 400*E**8*lambda + 72*E**8 + 309*E**7*lambda**8 - 1496*E**7*lambda**7 + 3714*E**7*lambda**6 - 5500*E**7*lambda**5 + 5417*E**7*lambda**4 - 3596*E**7*lambda**3 + 1612*E**7*lambda**2 - 448*E**7*lambda + 63*E**7 - 100*E**6*lambda**9 - 8*E**6*lambda**8 + 1232*E**6*lambda**7 - 4076*E**6*lambda**6 + 6900*E**6*lambda**5 - 7328*E**6*lambda**4 + 5128*E**6*lambda**3 - 2356*E**6*lambda**2 + 656*E**6*lambda - 88*E**6 - 171*E**5*lambda**10 + 1180*E**5*lambda**9 - 3904*E**5*lambda**8 + 7616*E**5*lambda**7 - 9921*E**5*lambda**6 + 8992*E**5*lambda**5 - 5830*E**5*lambda**4 + 2692*E**5*lambda**3 - 863*E**5*lambda**2 + 176*E**5*lambda - 18*E**5 + 50*E**4*lambda**11 + 20*E**4*lambda**10 - 1120*E**4*lambda**9 + 4796*E**4*lambda**8 - 10834*E**4*lambda**7 + 15896*E**4*lambda**6 - 16244*E**4*lambda**5 + 11876*E**4*lambda**4 - 6174*E**4*lambda**3 + 2200*E**4*lambda**2 - 488*E**4*lambda + 52*E**4 + 24*E**3*lambda**12 - 296*E**3*lambda**11 + 1326*E**3*lambda**10 - 3200*E**3*lambda**9 + 4841*E**3*lambda**8 - 4688*E**3*lambda**7 + 2736*E**3*lambda**6 - 548*E**3*lambda**5 - 541*E**3*lambda**4 + 568*E**3*lambda**3 - 260*E**3*lambda**2 + 64*E**3*lambda - 7*E**3 - 44*E**2*lambda**12 + 420*E**2*lambda**11 - 1968*E**2*lambda**10 + 5460*E**2*lambda**9 - 10208*E**2*lambda**8 + 13716*E**2*lambda**7 - 13748*E**2*lambda**6 + 10424*E**2*lambda**5 - 5956*E**2*lambda**4 + 2504*E**2*lambda**3 - 736*E**2*lambda**2 + 136*E**2*lambda - 12*E**2 + 16*E*lambda**12 - 152*E*lambda**11 + 733*E*lambda**10 - 2140*E*lambda**9 + 4114*E*lambda**8 - 5592*E*lambda**7 + 5594*E*lambda**6 - 4192*E*lambda**5 + 2348*E*lambda**4 - 960*E*lambda**3 + 272*E*lambda**2 - 48*E*lambda + 4*E + 4*lambda**12 - 22*lambda**11 + 60*lambda**10 - 80*lambda**9 + 60*lambda**8 - 24*lambda**7 + 4*lambda**6",
+  "coefficient_gcd_in_QE": "E**2 - 2*E + 1",
+  "coprime_quotient_witness": {
+    "gcd": "1",
+    "lambda_11": "50*E**2 - 196*E - 22",
+    "lambda_12": "24*E + 4"
+  },
+  "counting": {
+    "component_dimension": 15,
+    "lambda_independent_factor_degree": 2,
+    "nonconstant_root_degree_per_corner": 13,
+    "three_disjoint_corners": 39
+  },
+  "edge_counts": {
+    "lambda": 7,
+    "one": 2,
+    "one_minus_lambda": 8
+  },
+  "edges": [
+    {
+      "i": 0,
+      "j": 1,
+      "kind": "lambda"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "kind": "lambda"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "kind": "lambda"
+    },
+    {
+      "i": 1,
+      "j": 3,
+      "kind": "one_minus_lambda"
+    },
+    {
+      "i": 2,
+      "j": 5,
+      "kind": "one_minus_lambda"
+    },
+    {
+      "i": 3,
+      "j": 4,
+      "kind": "lambda"
+    },
+    {
+      "i": 4,
+      "j": 6,
+      "kind": "one_minus_lambda"
+    },
+    {
+      "i": 5,
+      "j": 7,
+      "kind": "lambda"
+    },
+    {
+      "i": 6,
+      "j": 8,
+      "kind": "lambda"
+    },
+    {
+      "i": 7,
+      "j": 11,
+      "kind": "one_minus_lambda"
+    },
+    {
+      "i": 8,
+      "j": 9,
+      "kind": "one_minus_lambda"
+    },
+    {
+      "i": 8,
+      "j": 12,
+      "kind": "one_minus_lambda"
+    },
+    {
+      "i": 9,
+      "j": 12,
+      "kind": "one"
+    },
+    {
+      "i": 10,
+      "j": 13,
+      "kind": "one_minus_lambda"
+    },
+    {
+      "i": 10,
+      "j": 14,
+      "kind": "one"
+    },
+    {
+      "i": 11,
+      "j": 13,
+      "kind": "lambda"
+    },
+    {
+      "i": 13,
+      "j": 14,
+      "kind": "one_minus_lambda"
+    }
+  ],
+  "endpoints": {
+    "lambda_0": "E*(E - 1)**8*(E + 1)**4*(E + 2)**2",
+    "lambda_1": "(E - 1)**8*(E + 1)**6*(E + 2)"
+  },
+  "expanded_coefficients": [
+    {
+      "E_power": 15,
+      "coefficient": 1,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 13,
+      "coefficient": -15,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 13,
+      "coefficient": 16,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 13,
+      "coefficient": -10,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 12,
+      "coefficient": 2,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 12,
+      "coefficient": 4,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 12,
+      "coefficient": -8,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 12,
+      "coefficient": 4,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 11,
+      "coefficient": 86,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 11,
+      "coefficient": -188,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 11,
+      "coefficient": 224,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 11,
+      "coefficient": -128,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 11,
+      "coefficient": 39,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 10,
+      "coefficient": -20,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 10,
+      "coefficient": -24,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 10,
+      "coefficient": 128,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 10,
+      "coefficient": -172,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 10,
+      "coefficient": 104,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 10,
+      "coefficient": -28,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 9,
+      "coefficient": -235,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 9,
+      "coefficient": 800,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 9,
+      "coefficient": -1440,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 9,
+      "coefficient": 1484,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 9,
+      "coefficient": -970,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 9,
+      "coefficient": 368,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 9,
+      "coefficient": -72,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 8,
+      "coefficient": 70,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 8,
+      "coefficient": 36,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 8,
+      "coefficient": -612,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 8,
+      "coefficient": 1392,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 8,
+      "coefficient": -1588,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 8,
+      "coefficient": 1060,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 8,
+      "coefficient": -400,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 8,
+      "coefficient": 72,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 7,
+      "coefficient": 309,
+      "lambda_power": 8
+    },
+    {
+      "E_power": 7,
+      "coefficient": -1496,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 7,
+      "coefficient": 3714,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 7,
+      "coefficient": -5500,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 7,
+      "coefficient": 5417,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 7,
+      "coefficient": -3596,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 7,
+      "coefficient": 1612,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 7,
+      "coefficient": -448,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 7,
+      "coefficient": 63,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 6,
+      "coefficient": -100,
+      "lambda_power": 9
+    },
+    {
+      "E_power": 6,
+      "coefficient": -8,
+      "lambda_power": 8
+    },
+    {
+      "E_power": 6,
+      "coefficient": 1232,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 6,
+      "coefficient": -4076,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 6,
+      "coefficient": 6900,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 6,
+      "coefficient": -7328,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 6,
+      "coefficient": 5128,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 6,
+      "coefficient": -2356,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 6,
+      "coefficient": 656,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 6,
+      "coefficient": -88,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 5,
+      "coefficient": -171,
+      "lambda_power": 10
+    },
+    {
+      "E_power": 5,
+      "coefficient": 1180,
+      "lambda_power": 9
+    },
+    {
+      "E_power": 5,
+      "coefficient": -3904,
+      "lambda_power": 8
+    },
+    {
+      "E_power": 5,
+      "coefficient": 7616,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 5,
+      "coefficient": -9921,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 5,
+      "coefficient": 8992,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 5,
+      "coefficient": -5830,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 5,
+      "coefficient": 2692,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 5,
+      "coefficient": -863,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 5,
+      "coefficient": 176,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 5,
+      "coefficient": -18,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 4,
+      "coefficient": 50,
+      "lambda_power": 11
+    },
+    {
+      "E_power": 4,
+      "coefficient": 20,
+      "lambda_power": 10
+    },
+    {
+      "E_power": 4,
+      "coefficient": -1120,
+      "lambda_power": 9
+    },
+    {
+      "E_power": 4,
+      "coefficient": 4796,
+      "lambda_power": 8
+    },
+    {
+      "E_power": 4,
+      "coefficient": -10834,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 4,
+      "coefficient": 15896,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 4,
+      "coefficient": -16244,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 4,
+      "coefficient": 11876,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 4,
+      "coefficient": -6174,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 4,
+      "coefficient": 2200,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 4,
+      "coefficient": -488,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 4,
+      "coefficient": 52,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 3,
+      "coefficient": 24,
+      "lambda_power": 12
+    },
+    {
+      "E_power": 3,
+      "coefficient": -296,
+      "lambda_power": 11
+    },
+    {
+      "E_power": 3,
+      "coefficient": 1326,
+      "lambda_power": 10
+    },
+    {
+      "E_power": 3,
+      "coefficient": -3200,
+      "lambda_power": 9
+    },
+    {
+      "E_power": 3,
+      "coefficient": 4841,
+      "lambda_power": 8
+    },
+    {
+      "E_power": 3,
+      "coefficient": -4688,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 3,
+      "coefficient": 2736,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 3,
+      "coefficient": -548,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 3,
+      "coefficient": -541,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 3,
+      "coefficient": 568,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 3,
+      "coefficient": -260,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 3,
+      "coefficient": 64,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 3,
+      "coefficient": -7,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 2,
+      "coefficient": -44,
+      "lambda_power": 12
+    },
+    {
+      "E_power": 2,
+      "coefficient": 420,
+      "lambda_power": 11
+    },
+    {
+      "E_power": 2,
+      "coefficient": -1968,
+      "lambda_power": 10
+    },
+    {
+      "E_power": 2,
+      "coefficient": 5460,
+      "lambda_power": 9
+    },
+    {
+      "E_power": 2,
+      "coefficient": -10208,
+      "lambda_power": 8
+    },
+    {
+      "E_power": 2,
+      "coefficient": 13716,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 2,
+      "coefficient": -13748,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 2,
+      "coefficient": 10424,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 2,
+      "coefficient": -5956,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 2,
+      "coefficient": 2504,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 2,
+      "coefficient": -736,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 2,
+      "coefficient": 136,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 2,
+      "coefficient": -12,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 1,
+      "coefficient": 16,
+      "lambda_power": 12
+    },
+    {
+      "E_power": 1,
+      "coefficient": -152,
+      "lambda_power": 11
+    },
+    {
+      "E_power": 1,
+      "coefficient": 733,
+      "lambda_power": 10
+    },
+    {
+      "E_power": 1,
+      "coefficient": -2140,
+      "lambda_power": 9
+    },
+    {
+      "E_power": 1,
+      "coefficient": 4114,
+      "lambda_power": 8
+    },
+    {
+      "E_power": 1,
+      "coefficient": -5592,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 1,
+      "coefficient": 5594,
+      "lambda_power": 6
+    },
+    {
+      "E_power": 1,
+      "coefficient": -4192,
+      "lambda_power": 5
+    },
+    {
+      "E_power": 1,
+      "coefficient": 2348,
+      "lambda_power": 4
+    },
+    {
+      "E_power": 1,
+      "coefficient": -960,
+      "lambda_power": 3
+    },
+    {
+      "E_power": 1,
+      "coefficient": 272,
+      "lambda_power": 2
+    },
+    {
+      "E_power": 1,
+      "coefficient": -48,
+      "lambda_power": 1
+    },
+    {
+      "E_power": 1,
+      "coefficient": 4,
+      "lambda_power": 0
+    },
+    {
+      "E_power": 0,
+      "coefficient": 4,
+      "lambda_power": 12
+    },
+    {
+      "E_power": 0,
+      "coefficient": -22,
+      "lambda_power": 11
+    },
+    {
+      "E_power": 0,
+      "coefficient": 60,
+      "lambda_power": 10
+    },
+    {
+      "E_power": 0,
+      "coefficient": -80,
+      "lambda_power": 9
+    },
+    {
+      "E_power": 0,
+      "coefficient": 60,
+      "lambda_power": 8
+    },
+    {
+      "E_power": 0,
+      "coefficient": -24,
+      "lambda_power": 7
+    },
+    {
+      "E_power": 0,
+      "coefficient": 4,
+      "lambda_power": 6
+    }
+  ],
+  "factorization": {
+    "P6": "E**6 - E**5*lambda + E**5 - 6*E**4*lambda**2 + 7*E**4*lambda - 4*E**4 + 5*E**3*lambda**3 - 10*E**3*lambda**2 + 7*E**3*lambda - 2*E**3 + 9*E**2*lambda**4 - 23*E**2*lambda**3 + 31*E**2*lambda**2 - 19*E**2*lambda + 5*E**2 - 5*E*lambda**5 + 15*E*lambda**4 - 20*E*lambda**3 + 15*E*lambda**2 - 6*E*lambda + E - 2*lambda**6 + 11*lambda**5 - 30*lambda**4 + 40*lambda**3 - 30*lambda**2 + 12*lambda - 2",
+    "P6_sector": "mirror_odd",
+    "P7": "E**7 + E**6*lambda + E**6 - 8*E**5*lambda**2 + 9*E**5*lambda - 4*E**5 - 5*E**4*lambda**3 + E**4*lambda - 2*E**4 + 19*E**3*lambda**4 - 41*E**3*lambda**3 + 41*E**3*lambda**2 - 21*E**3*lambda + 5*E**3 + 5*E**2*lambda**5 - 3*E**2*lambda**4 + 4*E**2*lambda**3 + E**2*lambda**2 - 2*E**2*lambda + E**2 - 12*E*lambda**6 + 37*E*lambda**5 - 58*E*lambda**4 + 56*E*lambda**3 - 34*E*lambda**2 + 12*E*lambda - 2*E - 2*lambda**6",
+    "P7_sector": "mirror_even_after_one_fixed_E=1_factor",
+    "form": "(E - 1)^2 * P6(E,lambda) * P7(E,lambda)"
+  },
+  "hamiltonian_convention": "det(E I-H), H_ij=-w_ij, t'=1, t=0, H_lambda=(1-lambda)H+lambda H'",
+  "job_id": "phys-00021-p03-research-09fdc4c78c93",
+  "reflection": [
+    0,
+    2,
+    1,
+    5,
+    7,
+    3,
+    11,
+    4,
+    13,
+    10,
+    9,
+    6,
+    14,
+    8,
+    12
+  ],
+  "schema_version": 1,
+  "scope": "Exact for each raster-defined invariant corner component at t=0; three-corner count assumes the three D3-related components are disjoint, as in the N=20 flake. It is not a t=0.1 or thermodynamic claim.",
+  "source": {
+    "figure": "literature/2412.20460v1-source/figures/interpolation.png",
+    "figure_sha256": "534aa78a818fea7c89fef3dda729cf8a271e6322a175751a76de6fc5f1c299ff",
+    "identifier": "arXiv:2412.20460v1, Fig. 3 and Eq. (5)",
+    "published_doi": "10.1103/vfyz-74qy",
+    "tex": "literature/2412.20460v1-source/live_version.tex",
+    "tex_sha256": "bef74a92134c486a91404927d08c08616c7f1612b8c9d5a69294380bb59f2087"
+  },
+  "three_corner_decomposition": {
+    "all_changed_edges_inside_three_cores": true,
+    "components_pairwise_disjoint": true,
+    "corner_component_sizes": [
+      15,
+      15,
+      15
+    ],
+    "flake_N": 20,
+    "ramp_off_edges": 24,
+    "ramp_on_edges": 21,
+    "site_count": 630
+  },
+  "vertices": [
+    {
+      "index": 0,
+      "plot_coordinate": [
+        0,
+        0
+      ],
+      "site": "A:0,0"
+    },
+    {
+      "index": 1,
+      "plot_coordinate": [
+        1,
+        1
+      ],
+      "site": "C:0,0"
+    },
+    {
+      "index": 2,
+      "plot_coordinate": [
+        2,
+        0
+      ],
+      "site": "B:0,0"
+    },
+    {
+      "index": 3,
+      "plot_coordinate": [
+        3,
+        3
+      ],
+      "site": "A:0,1"
+    },
+    {
+      "index": 4,
+      "plot_coordinate": [
+        4,
+        4
+      ],
+      "site": "C:0,1"
+    },
+    {
+      "index": 5,
+      "plot_coordinate": [
+        6,
+        0
+      ],
+      "site": "A:1,0"
+    },
+    {
+      "index": 6,
+      "plot_coordinate": [
+        6,
+        6
+      ],
+      "site": "A:0,2"
+    },
+    {
+      "index": 7,
+      "plot_coordinate": [
+        8,
+        0
+      ],
+      "site": "B:1,0"
+    },
+    {
+      "index": 8,
+      "plot_coordinate": [
+        8,
+        6
+      ],
+      "site": "B:0,2"
+    },
+    {
+      "index": 9,
+      "plot_coordinate": [
+        10,
+        4
+      ],
+      "site": "C:1,1"
+    },
+    {
+      "index": 10,
+      "plot_coordinate": [
+        11,
+        3
+      ],
+      "site": "B:1,1"
+    },
+    {
+      "index": 11,
+      "plot_coordinate": [
+        12,
+        0
+      ],
+      "site": "A:2,0"
+    },
+    {
+      "index": 12,
+      "plot_coordinate": [
+        12,
+        6
+      ],
+      "site": "A:1,2"
+    },
+    {
+      "index": 13,
+      "plot_coordinate": [
+        13,
+        1
+      ],
+      "site": "C:2,0"
+    },
+    {
+      "index": 14,
+      "plot_coordinate": [
+        15,
+        3
+      ],
+      "site": "A:2,1"
+    }
+  ]
+}

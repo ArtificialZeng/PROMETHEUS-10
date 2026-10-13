@@ -1,0 +1,13 @@
+Command: command -v python3
+Output: python3
+
+PHYSICS_PYTHON: python3
+
+Command: python3 -c 'import platform,sys,numpy,scipy; ...'
+python=3.12.14
+executable=python3
+numpy=2.3.5
+scipy=1.18.1
+
+Probe performed before the first scientific computation of research pass 2.
+The resolved executable, sys.executable, and PHYSICS_PYTHON agree exactly.

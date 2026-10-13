@@ -1,0 +1,662 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\K}{\mathcal K}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\av}[1]{\overline{#1}}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\Bstar}{B_*}
+\newcommand{\Nloc}{\mathcal N}
+\newcommand{\trans}{^{\mathsf T}}
+\setlength{\emergencystretch}{2em}
+\title{A missing spectral arc at finite cycle affinity\protect\\ in four-state Markov generators}
+\author{Xiaojian Zeng\thanks{Email: \href{mailto:xiaojianzeng@foxmail.com}{xiaojianzeng@foxmail.com}.}\\[3pt]
+\small PBC School of Finance, Tsinghua University, 100190}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Cycle affinities constrain the decay rates and oscillation frequencies of a
+Markov process, but a spectral localization bound need not describe all
+attainable eigenvalues. We disprove the proposed equality between the
+finite-affinity spectral set and a vertical compression of the unrestricted
+set, already for four states. At maximum allowed escape rate one and cycle
+budget $B_*=(\log 3)/2$, an entire sufficiently small compressed Karpelevich
+arc near $-1+\ii/2$ is absent. The exclusion holds in a compact class defined
+by all oriented cycle-product inequalities, including reducible and
+zero-rate limits. The proof combines the equality case of cycle-winding
+localization with a uniform quadratic expansion about a biased square.
+Opening chords creates triangles whose affinity constraints give an upper
+quadratic coefficient $1/5$, whereas the compressed arc has coefficient
+$1/2$. A coercive estimate controls unequal escape rates, unused affinity,
+and arbitrary approaches to the endpoint. The validity interval is
+existential: no numerical radius, sharpness of $1/5$, or full boundary
+classification is asserted.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Markov generators; cycle affinity; spectral
+localization; nonequilibrium relaxation; inverse spectral problem.
+
+\section{Spectral localization and attainability}
+
+An eigenvalue of a continuous-time Markov generator specifies a possible
+decay rate and, when it is nonreal, an oscillation frequency. Thermodynamic
+restrictions on these quantities provide information about relaxation
+without specifying all transition rates. Uhl and Seifert proposed an
+affinity-dependent spectral ellipse and studied perturbations of a uniform
+biased cycle \cite{UhlSeifert2019}. Xu \emph{et al.}\ established an ellipse
+based on edge forces and posed a stronger question about the complete
+spectral set: does vertical compression of the unrestricted region give
+exactly the finite-force region \cite[End Matter and Supplementary
+Eq.~(S3)]{Xu2025}? The later cycle-winding localization theorem of
+Kolchinsky, Ohga and Ito proves the cycle-affinity ellipse for general
+finite generators \cite[Theorem~3 and Table~I]{Kolchinsky2026}.
+An outer localization theorem, however, does not establish attainability
+of every point in a proposed region.
+
+Here we address this distinction for four states. We exhibit a continuum
+of points in the proposed compressed region that no admissible generator
+can realize. These points approach the spectrum of a uniform biased square.
+At that endpoint the known localization theorem is rigid. Nearby,
+the triangle affinities created by adding chords restrict the quadratic
+spectral response. Controlling these new constraints over all supports,
+rather than assuming a fixed ring, is essential to the exclusion.
+
+\subsection{Conventions and the spectral-set question}
+
+Use a row generator $Q=(q_{ij})_{i,j=0}^3$: for $i\ne j$, $q_{ij}\geq0$
+is the rate from $i$ to $j$, and $q_{ii}=-\sum_{j\ne i}q_{ij}$.
+Column probabilities obey $\dot p=Q\trans p$. Transposition preserves
+the spectrum, and backward observables satisfy $\dot f=Qf$.
+The maximum escape rate is
+\begin{equation}
+ r(Q)=\max_i\sum_{j\ne i}q_{ij}.
+\end{equation}
+Rates and eigenvalues have inverse-time units. We normalize by the allowed
+maximum escape rate, set that bound to one, and henceforth use
+dimensionless rates and eigenvalues. Physical units can be restored by
+multiplying every rate and eigenvalue by the same positive rate scale.
+
+For an irreducible generator with paired support
+($q_{ij}>0$ if and only if $q_{ji}>0$), define, for every present simple
+oriented cycle $\gamma$ of length $\ell_\gamma\geq3$,
+\begin{equation}\label{eq:affinity}
+ F_\gamma=\log\frac{\prod_{(i\to j)\in\gamma}q_{ij}}
+                          {\prod_{(i\to j)\in\gamma}q_{ji}},
+ \qquad B(Q)=\max_\gamma\frac{|F_\gamma|}{2\ell_\gamma}.
+\end{equation}
+Set $B(Q)=0$ when no such cycles occur. On four states their lengths
+are three or four; backtracking two-cycles have zero affinity.
+Both orientations are included. Stationary-probability factors telescope
+around a cycle, so under local detailed balance $F_\gamma$ is the entropy
+change in the environment per completed cycle, in units of $k_{\rm B}$.
+The spectral argument uses the rate ratios and does not require an
+additional reservoir model.
+
+Let $\Sigma_{4,B}$ be the union of individual eigenvalues over this
+irreducible, paired-support class with $r(Q)=1$ and $B(Q)=B$.
+Let $\Omega'_4$ be the corresponding union over all four-state generators
+with $r(Q)=1$, without an affinity restriction and allowing irreversible
+or reducible matrices. Define
+\begin{equation}
+ D_B(x+\ii y)=x+\ii\tanh(B)y.
+\end{equation}
+The equality under consideration is
+\begin{equation}\label{eq:question}
+ \Sigma_{4,B}\stackrel{?}{=}D_B(\Omega'_4)
+ \qquad\text{for every finite }B\geq0.
+\end{equation}
+This is a question about individual eigenvalues, not prescribed complete
+spectra. We keep exact maximum rate and exact affinity on the left of
+\eqref{eq:question}. The exclusion below holds in a larger bounded class,
+so it also covers these exact constraints.
+
+The unrestricted spectral region is related to the stochastic
+Karpelevich region by uniformization. We need only one explicit
+zero-diagonal stochastic companion to prove membership in
+$\Omega'_4$. We therefore do not assume a global equivalence between
+the exact-rate and bounded-rate spectral unions.
+
+\section{The missing arc}\label{sec:result}
+
+Fix $\Bstar=(\log3)/2$, for which $\tanh\Bstar=1/2$.
+Define $\K$ as the set of four-state row generators with $r(Q)\leq1$
+and the polynomial inequalities
+\begin{equation}\label{eq:cycleproducts}
+ \prod_{(i\to j)\in\gamma}q_{ij}
+ \leq 3^{\ell_\gamma}\prod_{(i\to j)\in\gamma}q_{ji}
+ \quad\text{for every oriented simple three- or four-cycle }\gamma.
+\end{equation}
+These conditions are imposed even when a product vanishes. The set $\K$
+is a closed subset of the bounded rate cube, hence compact. It contains
+the closure of the paired-support class with $r\leq1$ and $B\leq\Bstar$;
+we do not need or claim equality with that closure. One-way edges between
+components are allowed, but no positive directed cycle can contain an
+irreversible edge: its positive forward product in
+\eqref{eq:cycleproducts} forces every reverse rate positive.
+
+\begin{theorem}\label{thm:missing}
+There exists $\eta\in(0,1/2)$ such that every $Q\in\K$ and every
+$\lambda\in\spec(Q)$ with $\delta=-1-\Rea\lambda\in(0,\eta)$ obey
+\begin{equation}\label{eq:mainbound}
+ |\Ima\lambda|\leq\frac12-\frac\delta2+\frac{\delta^2}{4}.
+\end{equation}
+For every $\delta\in(0,\eta)$, the point
+\begin{equation}\label{eq:compressed}
+ \Lambda(\delta)=-1-\delta+
+       \frac{\ii}{2}\sqrt{1-2\delta+3\delta^2}
+\end{equation}
+belongs to $D_{\Bstar}(\Omega'_4)$ and lies outside
+$\bigcup_{Q\in\K}\spec(Q)$. Each such point has positive distance
+from that spectral union. In particular, \eqref{eq:question} is false.
+\end{theorem}
+
+The proof gives the stronger uniform asymptotic estimate
+\begin{equation}\label{eq:strongbound}
+ h\leq\frac{\delta^2}{5}+C_2\delta^3,
+ \qquad h=\Ima\lambda-\frac12+\frac\delta2,
+\end{equation}
+for $h\geq0$ and sufficiently small positive $\delta$, with one finite
+constant $C_2\geq0$ over the full class. By comparison,
+\begin{equation}\label{eq:arcexpansion}
+ \Ima\Lambda(\delta)=\frac12-\frac\delta2+
+                  \frac{\delta^2}{2}+O(\delta^3).
+\end{equation}
+The coefficient $1/5$ is an upper bound; its attainability is not proved.
+Neither $\eta$ nor the positive distance in the theorem is supplied
+numerically. The argument does not decide an arbitrary fixed interior
+point of the arc.
+
+\section{Rigidity of the limiting generator}\label{sec:rigidity}
+
+We use the following published localization input
+\cite[Theorem~3]{Kolchinsky2026}. For a nonreal eigenvalue $x+\ii y$,
+$y>0$, of a finite generator with maximum escape rate $r$, and each
+$\tau\in[0,1]$, a certifying cycle $\gamma$ of length $\ell$ and
+eigenvector winding $w\in\{1,\ldots,\lceil\ell/2\rceil-1\}$ satisfies
+\begin{equation}\label{eq:sourcebound}
+ \tau\frac{y}{-x}\tan\frac{\pi w}{\ell}
+ +(1-\tau)\frac{y}{2r+x}\cot\frac{\pi w}{\ell}
+ \leq\tanh\frac{F_\gamma}{2\ell}.
+\end{equation}
+The theorem applies to arbitrary finite generators, and its
+left-eigenvector convention for $Q\trans$ is the right-eigenvector
+equation $Qf=\lambda f$ used here. For $Q\in\K$ every positive cycle
+has finite affinity by \eqref{eq:cycleproducts}.
+
+For a nonreal eigenvalue, $-2r<x<0$. Choose $\tau=-x/(2r)$ in
+\eqref{eq:sourcebound}. Its left side becomes
+$y/[r\sin(2\pi w/\ell)]$. Thus
+\begin{equation}\label{eq:frequencybound}
+ y\leq r/2\leq1/2 \qquad (Q\in\K).
+\end{equation}
+If $\lambda_0=-1+\ii/2$ occurs, necessarily $r=1$. With $\tau=1/2$,
+the left side of \eqref{eq:sourcebound} for a three-cycle is
+$1/\sqrt3>1/2$. A certifying cycle must therefore have length four,
+winding one, and affinity $4\log3$.
+
+\begin{lemma}\label{lem:rigidity}
+Every generator in $\K$ with eigenvalue $\lambda_0=-1+\ii/2$ is, up
+to a permutation of the states, the uniform biased square
+\begin{equation}\label{eq:ring}
+ Q_0=\begin{pmatrix}
+ -1&3/4&0&1/4\\
+ 1/4&-1&3/4&0\\
+ 0&1/4&-1&3/4\\
+ 3/4&0&1/4&-1
+ \end{pmatrix}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+We retain the equality information in the finite-affinity proof of
+\eqref{eq:sourcebound} \cite[SM3, Eq.~(S55), and SM5]{Kolchinsky2026}.
+On the certifying Hamiltonian cycle, write the eigenvector ratios as
+$f_{j+1}/f_j=\exp(-\xi_j+\ii\phi_j)$. At the present endpoint the
+source parameters are $\gamma=0$ and $\sigma=1/2$, and its cycle
+construction yields
+\begin{equation}\label{eq:jensen}
+ 4\log3\geq F_\gamma\geq\sum_{j=0}^3 J(\phi_j,\xi_j)
+ \geq 4J(\pi/2,0)=4\log3,
+\end{equation}
+where
+\begin{equation}\label{eq:J}
+ J(\phi,\xi)=\log\frac{e^\xi\sin\phi+1/2}
+                              {e^{-\xi}\sin\phi-1/2},
+ \qquad 0<\phi<\pi,\quad \xi<\log(2\sin\phi).
+\end{equation}
+The phase and log-modulus averages are $(\pi/2,0)$.
+The open domain is convex, and $J$ is strictly convex there; an explicit
+Hessian check is given in Appendix~\ref{app:jensen}.
+Equality in \eqref{eq:jensen} forces $(\phi_j,\xi_j)=(\pi/2,0)$
+for all four edges. Thus $f$ is a nonzero multiple of
+$(1,\ii,-1,-\ii)\trans$ in cycle order.
+
+Let $a_j=q_{j,j+1}$, $b_j=q_{j,j-1}$ and $c_j=q_{j,j+2}$, with
+indices modulo four. The certifying ring edges and their reverses are
+positive. Dividing the $j$th eigenvector equation by $f_j$ gives
+\begin{equation}\label{eq:endpointeigen}
+ a_j+b_j+2c_j=1,\qquad a_j-b_j=1/2.
+\end{equation}
+Hence $a_j=3/4-c_j$, $b_j=1/4-c_j>0$, and
+\begin{equation}
+ \frac{a_j}{b_j}=\frac{3/4-c_j}{1/4-c_j}\geq3,
+\end{equation}
+with strict inequality for $c_j>0$. The Hamiltonian cycle has
+$\prod_j a_j/b_j\leq3^4$. Every chord rate therefore vanishes, giving
+\eqref{eq:ring}. This also excludes other reducible or zero-rate
+limits at the endpoint.
+\end{proof}
+
+The characteristic polynomial of $Q_0$ is
+$\lambda(\lambda+2)((\lambda+1)^2+1/4)$. Its spectrum reproduces the
+uniform-cycle formula in Ref.~\cite[Eq.~(S66)]{Kolchinsky2026}; in
+particular, $\lambda_0$ is simple. Compactness now implies that any
+sequence of generators in $\K$ with eigenvalues tending to $\lambda_0$
+has distance tending to zero from the finite set of labelled copies of
+$Q_0$.
+
+\section{Uniform expansion with escape and affinity slack}\label{sec:expansion}
+
+In a fixed neighborhood of $Q_0$ all eight ring rates remain positive.
+Let $\av x=\tfrac14\sum_{j=0}^3x_j$, and introduce
+\begin{align}
+ s_j&=1-\sum_{k\ne j}q_{jk}\geq0,&
+ v_j&=\tfrac12\log(a_j/b_j)-\Bstar,\nonumber\\
+ m&=-\av v\geq0,&w_j&=v_j+m,&\av w&=0.\label{eq:coordinates}
+\end{align}
+Here $m\geq0$ follows exactly from the Hamiltonian cycle inequality.
+The four nonnegative $c_j$ describe both directions of both chords.
+All nearby generators are represented by
+\begin{align}
+ a_j&=\frac{1-s_j-c_j}{2}\bigl[1+\tanh(\Bstar+w_j-m)\bigr],\nonumber\\
+ b_j&=\frac{1-s_j-c_j}{2}\bigl[1-\tanh(\Bstar+w_j-m)\bigr].\label{eq:logistic}
+\end{align}
+Set $a=3/4$, $b=1/4$, and $u_j=2ab\,w_j=3w_j/8$, so $\av u=0$.
+With fixed Euclidean norms, write
+\begin{equation}
+ \Nloc=\|c\|+\|s\|+\|u\|+m.
+\end{equation}
+All remainder constants below are uniform in a sufficiently small fixed
+neighborhood. Indeed, \eqref{eq:logistic} extends analytically to signed
+coordinates in an open neighborhood. Simplicity of $\lambda_0$ gives one
+analytic upper eigenvalue branch there, with bounded third derivatives
+on a smaller closed ball. Feasibility is imposed after this analytic
+extension; no differentiable parametrization of feasible matrices is
+assumed.
+
+The homogeneous linear coefficient of that eigenvalue is
+\begin{equation}\label{eq:linear}
+ \lambda^{(1)}=-(1+\ii/2)\av c+(1-\ii/2)\av s-\frac{3\ii}{4}m.
+\end{equation}
+Consequently, for $\delta=-1-\Rea\lambda$ and
+$h=\Ima\lambda-1/2+\delta/2$,
+\begin{align}
+ \delta&=\av c-\av s+O(\Nloc^2),\label{eq:deltaexp}\\
+ h&=-\av s-\frac34m+K(c,u)
+       +O\bigl((\av s+m)\Nloc+\Nloc^3\bigr).\label{eq:hexp}
+\end{align}
+Every quadratic term omitted from $K$ contains an escape or affinity
+slack. Nonnegativity of $s_j$ and $m$ bounds their sum by a constant
+times $(\av s+m)\Nloc$. Thus \eqref{eq:hexp} retains unequal escape
+rates and unused affinity explicitly.
+
+\subsection{The quadratic form}
+
+The following formulas specify the complete slack-free quadratic form.
+Let $V$ have zero diagonal and entries
+\begin{equation}\label{eq:V}
+ V_{j,j+1}=-ac_j+u_j,\qquad
+ V_{j,j-1}=-bc_j-u_j,\qquad V_{j,j+2}=c_j.
+\end{equation}
+Let $U_{jk}=\ii^{jk}/2$, $M=U^*VU$, and
+$(\ell_0,\ell_1,\ell_2,\ell_3)=(0,-1+\ii/2,-2,-1-\ii/2)$.
+The standard simple-root expansion in this diagonal basis gives
+\begin{align}
+ W&=\sum_{k\ne1}\frac{M_{1k}M_{k1}}{\ell_1-\ell_k},\nonumber\\
+ K(c,u)&=\Ima W-\tfrac12\Rea W
+       -\frac14\sum_{j=0}^3\left(2c_ju_j+\frac83u_j^2\right).
+       \label{eq:quadratic}
+\end{align}
+The last term comes from the nonlinear coordinates, not from the
+resolvent: $\tanh(\Bstar+v)=1/2+3v/4-3v^2/8+O(v^3)$, and its
+product with $1-s_j-c_j$ gives the intrinsic quadratic rate correction.
+Appendix~\ref{app:invariants} supplies a second representation of
+\eqref{eq:quadratic} using characteristic invariants.
+
+Eliminate $u_3=-u_0-u_1-u_2$ and write
+$\widehat u=(u_0,u_1,u_2)\trans$. Direct expansion of
+\eqref{eq:quadratic} gives the Hessian
+\begin{equation}\label{eq:hessian}
+ H=\begin{pmatrix}
+ -14/3&-4/3&-10/3\\
+ -4/3&-8/3&-4/3\\
+ -10/3&-4/3&-14/3
+ \end{pmatrix}.
+\end{equation}
+Its leading principal minors are $-14/3$, $32/3$, and $-640/27$;
+therefore it is negative definite. The unique maximizer at fixed $c$ is
+\begin{align}
+ u_0^*&=(-3c_0+6c_1+3c_2-6c_3)/40,\nonumber\\
+ u_1^*&=(-6c_0-3c_1+6c_2+3c_3)/40,\label{eq:optimizer}\\
+ u_2^*&=-u_0^*,\qquad u_3^*=-u_1^*.\nonumber
+\end{align}
+Define opposite-pair sums and differences by
+\begin{equation}\label{eq:pairs}
+ S=c_0+c_2,\quad T=c_1+c_3,\quad
+ D=(c_0-c_2)/2,\quad E=(c_1-c_3)/2.
+\end{equation}
+Exact completion of the square yields
+\begin{align}
+ K(c,u)&=K_{\max}(c)+\tfrac12(\widehat u-\widehat u^*)\trans
+                         H(\widehat u-\widehat u^*),\label{eq:completion}\\
+ K_{\max}(c)&=\frac25(D^2+E^2)-\frac5{64}(S-T)^2.\label{eq:Kmax}
+\end{align}
+These are homogeneous polynomial identities, with no constraint on
+$\sum_jc_j$. In particular, the optimization does not impose the
+other cycle inequalities or assert that its maximizing direction is
+realized by an exact feasible family.
+
+\subsection{A coercive bound fixes the scale of approach}\label{sec:bootstrap}
+
+A quadratic expansion alone would not constrain arbitrary approaches to
+the endpoint: initially a rate deviation could be much larger than
+$\delta$. We now control that possibility. Put
+\begin{equation}
+ C=\av c,\qquad L=\av s+m,\qquad U_0=\|u\|.
+\end{equation}
+Since $c_j\geq0$, $\|c\|\leq4C$. Negative definiteness in
+\eqref{eq:completion}, linearity of $u^*(c)$, and Young's inequality
+give constants $A,k>0$ such that
+\begin{equation}\label{eq:coerciveK}
+ K(c,u)\leq AC^2-kU_0^2.
+\end{equation}
+Norm equivalence and nonnegative slacks also give
+$\Nloc\leq C_0(C+L+U_0)$. In a ball $\Nloc\leq\varepsilon$,
+\begin{equation}\label{eq:absorption}
+ L\Nloc\leq\varepsilon L,\qquad
+ \Nloc^3\leq C_3\varepsilon(C^2+U_0^2)
+                   +C_4\varepsilon^2L.
+\end{equation}
+For example, cube the preceding norm bound, absorb mixed terms into
+the individual cubes, and use $C,U_0,L=O(\varepsilon)$.
+Choosing $\varepsilon$ sufficiently small in
+\eqref{eq:hexp}--\eqref{eq:absorption} absorbs the slack and $U_0^2$
+remainders into the negative terms. For fixed $A_1,k_1>0$,
+\begin{equation}\label{eq:bootstrapineq}
+ h\leq A_1C^2-k_1(L+U_0^2).
+\end{equation}
+
+On the part with $h\geq0$, this implies
+$L=O(C^2)$, $U_0=O(C)$, and $\Nloc=O(C)$. Equation
+\eqref{eq:deltaexp} then gives $\delta=C+O(C^2)$.
+If $C=0$, \eqref{eq:bootstrapineq} forces every coordinate to vanish
+and hence $\delta=0$. If $C>0$ is sufficiently small, then
+$C/2\leq\delta\leq3C/2$. Substitution proves the uniform estimates
+\begin{equation}\label{eq:bootstrap}
+ C=\delta+O(\delta^2),\qquad
+ \Nloc=O(\delta),\qquad L=O(\delta^2).
+\end{equation}
+No smoothness of a sequence of feasible generators enters this argument.
+
+\section{Triangle constraints and exclusion}\label{sec:exclusion}
+
+\subsection{The triangles opened by chords}
+
+The cycle $j\to j+1\to j+2\to j$ in
+\eqref{eq:cycleproducts} gives
+\begin{equation}\label{eq:triangle}
+ a_ja_{j+1}c_{j+2}\leq27b_{j+1}b_{j+2}c_j.
+\end{equation}
+The forward triangle starting at $j+2$ supplies the opposite comparison.
+Since $a_j=3/4+O(\Nloc)$ and $b_j=1/4+O(\Nloc)$, and ring
+rates stay bounded away from zero, these inequalities imply
+\begin{equation}\label{eq:chordratios}
+ c_{j+2}\leq3[1+O(\Nloc)]c_j,\qquad
+ c_j\leq3[1+O(\Nloc)]c_{j+2}.
+\end{equation}
+Only positive ring rates were divided out. Thus the estimates remain
+valid on zero-chord faces; one zero direction forces its reverse to
+vanish. In the variables \eqref{eq:pairs},
+\begin{equation}\label{eq:pairbound}
+ |D|\leq S/4+O(\Nloc)S,\qquad
+ |E|\leq T/4+O(\Nloc)T.
+\end{equation}
+Combining this with the nonpositive square in
+\eqref{eq:completion} gives
+\begin{align}
+ K(c,u)&\leq\frac{(S+T)^2}{80}
+       -\frac{21}{320}(S-T)^2+O(\Nloc)C^2\nonumber\\
+       &\leq\frac{C^2}{5}+O(\Nloc)C^2,\label{eq:trianglecurvature}
+\end{align}
+because $S+T=4C$. The other cycle constraints can only decrease
+the allowed class.
+
+On $h\geq0$, apply \eqref{eq:bootstrap} to
+\eqref{eq:hexp} and \eqref{eq:trianglecurvature}. The negative
+linear slack terms may be dropped, while all remaining errors are
+$O(\delta^3)$. This proves
+\begin{equation}\label{eq:localfinal}
+ h\leq\frac{\delta^2}{5}+O(\delta^3)
+\end{equation}
+uniformly near every labelled copy of $Q_0$.
+
+\subsection{Compactness covers the full class}
+
+Suppose generators in $\K$ with $\delta\to0^+$ and $h\geq0$
+could remain outside fixed small neighborhoods of those finitely many
+copies of $Q_0$. By \eqref{eq:frequencybound},
+$1/2-\delta/2\leq\Ima\lambda\leq1/2$, so the eigenvalues tend to
+$\lambda_0$. A compact subsequence of generators converges, and the
+limit has eigenvalue $\lambda_0$ by continuity of the characteristic
+polynomial. Lemma~\ref{lem:rigidity} puts that limit in the finite
+set, a contradiction.
+
+Thus one uniform constant $C_2$ in \eqref{eq:strongbound} covers all
+such generators for sufficiently small positive $\delta$. Shrink
+$\eta<1/2$ further so that $C_2\eta\leq1/20$.
+Then \eqref{eq:mainbound} holds for upper eigenvalues with $h\geq0$.
+If $h<0$, it is immediate. Real eigenvalues satisfy the bound as well,
+and negative imaginary parts follow by conjugation. This proves
+the exclusion bound for the entire compact class, including all
+support changes and reducible limits.
+
+\subsection{Exact membership of the compressed comparison arc}
+
+For $0\leq t\leq1$ consider the column-stochastic companion
+\begin{equation}\label{eq:companion}
+ P(t)=\begin{pmatrix}
+ 0&0&0&1-t\\
+ 1&0&0&t\\
+ 0&1&0&0\\
+ 0&0&1&0
+ \end{pmatrix}.
+\end{equation}
+Its diagonal vanishes, so $P(t)-I$ is a column generator with every
+escape rate exactly one. The row generator $P(t)\trans-I$ therefore
+belongs to the unrestricted class defining $\Omega'_4$.
+For $0<t<1$ it is irreducible. Its characteristic polynomial before
+the shift is
+\begin{equation}\label{eq:companionpoly}
+ z^4-tz-(1-t)=(z-1)(z^3+z^2+z+1-t).
+\end{equation}
+This is the four-state arc polynomial obtained from the Karpelevich
+parametrization in Ref.~\cite[Supplementary Eq.~(S2)]{Xu2025} for
+denominators three and four. The explicit matrix proves the needed
+membership without appealing to a global description of $\Omega'_4$.
+
+For $0<\delta<1/2$, set
+\begin{equation}\label{eq:tandz}
+ t(\delta)=4\delta-8\delta^2+8\delta^3,\qquad
+ z(\delta)=-\delta+\ii\sqrt{1-2\delta+3\delta^2}.
+\end{equation}
+Direct substitution into the cubic in \eqref{eq:companionpoly}
+gives zero. Moreover,
+$t'(\delta)=4(6\delta^2-4\delta+1)>0$, with $t(0)=0$ and
+$t(1/2)=1$. This traces the upper arc from $\ii$ to
+$e^{2\pi\ii/3}$. In particular, $z(\delta)-1\in\Omega'_4$ and
+$D_{\Bstar}(z(\delta)-1)=\Lambda(\delta)$.
+
+To compare with \eqref{eq:mainbound}, both quantities to be squared
+are positive on this interval, and
+\begin{equation}\label{eq:separation}
+ (1-2\delta+3\delta^2)-(1-\delta+\delta^2/2)^2
+ =\delta^2+\delta^3-\delta^4/4>0.
+\end{equation}
+Therefore $\Ima\Lambda(\delta)>1/2-\delta/2+\delta^2/4$.
+For $0<\delta<\eta$ these points are absent from $\spec(\K)$,
+where $\spec(\K)$ denotes the union of individual spectra.
+Finally,
+\begin{equation}
+ \{(Q,\lambda):Q\in\K,\ |\lambda|\leq2,
+                  \det(\lambda I-Q)=0\}
+\end{equation}
+is compact and projects onto $\spec(\K)$; the modulus bound follows
+from Gershgorin's theorem. Each excluded point has positive distance
+from this compact union. Since the exact-rate, exact-affinity class
+is contained in $\K$, Theorem~\ref{thm:missing} follows.
+
+\section{Physical meaning and scope}
+
+At the endpoint, the uniform square has clockwise and counterclockwise
+rates $3/4$ and $1/4$. Increasing the normalized decay displacement
+$\delta=-1-\Rea\lambda$ while staying above the endpoint tangent
+requires chord rates of order $\delta$. Those transitions also generate
+three-state cycles. Their affinity budgets restrict opposite chord rates
+to a ratio approaching the interval $[1/3,3]$, which limits the
+second-order frequency response. This explains why a deformation based
+only on compressing the unrestricted shape overestimates attainability.
+
+The distinction from earlier results is specific. The perturbation
+class in Uhl and Seifert \cite[Sec.~4.1, condition~(i), and
+Sec.~4.2]{UhlSeifert2019} retains the existing edges of a ring.
+It does not incorporate the triangles opened here. The more recent
+kinetic refinement of Xu and Meng \cite[Secs.~II--III and
+Corollary~3]{XuMeng2026} assumes a unicyclic generator and incorporates
+geometric means of forward and backward rates. Uniform-cycle rigidity
+within that model is not the contribution claimed here. The general
+localization theorem \cite{Kolchinsky2026} is our starting point;
+the additional all-support curvature estimate gives the nonattainment
+conclusion. These comparisons concern the stated results and assumptions
+of the cited works, without claiming an exhaustive classification of
+related spectral inequalities.
+
+The theorem concerns an exact, time-independent four-state Markov model.
+Second-order perturbation theory is part of a proof with a uniform
+remainder, not a finite-order replacement of the dynamics. It excludes
+normalized decay--frequency pairs even from the closure of the
+bounded-affinity class. It does not give the full attainable boundary,
+establish $1/5$ as its sharp curvature, or provide an effective value of
+$\eta$. In particular, the point at the companion parameter $t=1/2$
+is undecided by this proof. No general inclusion in the compressed
+Karpelevich region is proved or disproved: the set equality fails by
+nonattainment. Determining a quantitative validity interval or the actual
+sharp local boundary remains a separate problem.
+
+\section*{Acknowledgements and generative AI use}
+
+Substantial generative-AI assistance through OpenAI Codex was used for
+problem exploration, analytic reasoning, symbolic and exact-arithmetic
+code, source checks, internal consistency checks, and preparation of this
+draft. The writing environment identifies its model as GPT-6. Exact
+model/version information for earlier automated stages remains to be
+confirmed. Internal checks in separate AI contexts do not constitute
+external peer review. Human scientific and bibliographic review of this
+local draft has not yet been completed.
+
+\section*{Data and code availability}
+
+The accompanying reproducibility material contains the exact symbolic
+and rational-arithmetic checks, their expected outputs, and instructions
+for regeneration. No experimental data or numerical parameter scan is
+used in the proof. The scripts check algebraic identities; the uniform
+remainder, scale control, and compactness arguments are given in the text.
+
+\appendix
+\section{Strictness of the endpoint Jensen step}\label{app:jensen}
+
+For completeness, the strict convexity needed in
+Lemma~\ref{lem:rigidity} can be checked explicitly from \eqref{eq:J}.
+Put $v=\sin\phi$, $\rho=e^\xi$, $N=\rho v+1/2$,
+and $M=v/\rho-1/2$. On the open domain in \eqref{eq:J},
+$0<v\leq1$, $0<\rho<2v$, and $N,M>0$. Direct differentiation gives
+\begin{equation}
+ \partial_\xi^2J=\frac{\rho v}{2N^2}+
+                         \frac{v}{2\rho M^2}>0
+\end{equation}
+and the specialization of the Hessian identity of
+Ref.~\cite[SM5]{Kolchinsky2026},
+\begin{equation}\label{eq:detJ}
+ \det\nabla^2J=
+ \frac{\frac54v^2\bigl((\rho+\rho^{-1})/2\bigr)^2
+ +\frac14(1-v^2)\bigl((\rho-\rho^{-1})/2-2v\bigr)^2}
+ {N^3M^3}>0.
+\end{equation}
+The first numerator term is strictly positive everywhere in the domain.
+The Hessian is positive definite, and the domain is convex because
+$\log(2\sin\phi)$ is concave on $(0,\pi)$. Hence equality in Jensen's
+inequality forces identical phase and log-modulus pairs.
+
+\section{Reconstruction from characteristic invariants}\label{app:invariants}
+
+The quadratic form may be verified without an eigenbasis. With $s=m=0$,
+write $A=Q+I$. Its diagonal is zero and its row sums are one. Let
+\begin{equation}
+ P_2=\sum_{i<j}A_{ij}A_{ji},\qquad
+ P_3=\sum_{i<j<k}\bigl(A_{ij}A_{jk}A_{ki}+A_{ik}A_{kj}A_{ji}\bigr).
+\end{equation}
+The trace identities give the $z^2$ and $z$ coefficients of
+$\det(zI-A)$ as $-P_2$ and $-P_3$. Since one is an eigenvalue,
+factoring $z-1$ leaves
+\begin{equation}\label{eq:invariantcubic}
+ f(z)=z^3+z^2+(1-P_2)z+1-P_2-P_3.
+\end{equation}
+
+Introduce a formal scalar $\epsilon$ by replacing $(c,u)$ with
+$(\epsilon c,\epsilon u)$ in \eqref{eq:logistic}. Through degree two,
+\begin{align}
+ A_{j,j+1}&=\tfrac34+\epsilon(u_j-3c_j/4)
+        -\epsilon^2(c_ju_j+4u_j^2/3)+O(\epsilon^3),\nonumber\\
+ A_{j,j-1}&=\tfrac14+\epsilon(-u_j-c_j/4)
+        +\epsilon^2(c_ju_j+4u_j^2/3)+O(\epsilon^3),\label{eq:intrinsic}\\
+ A_{j,j+2}&=\epsilon c_j.\nonumber
+\end{align}
+Write $f=f_0+\epsilon f_1+\epsilon^2f_2+O(\epsilon^3)$ and
+$z=z_0+\epsilon z_1+\epsilon^2z_2+O(\epsilon^3)$, where $z_0=\ii/2$.
+Since $f_0'(z_0)\ne0$,
+\begin{equation}\label{eq:implicit}
+ z_1=-\frac{f_1(z_0)}{f_0'(z_0)},\qquad
+ z_2=-\frac{f_2(z_0)+f_1'(z_0)z_1+\tfrac12f_0''(z_0)z_1^2}
+                 {f_0'(z_0)}.
+\end{equation}
+Substitution gives $z_1=-(1+\ii/2)\av c$ and
+$K(c,u)=\Ima z_2-\Rea z_2/2$, reproducing
+\eqref{eq:hessian}--\eqref{eq:Kmax} as identities in all seven
+independent variables $(c_0,c_1,c_2,c_3,u_0,u_1,u_2)$.
+
+The supplied symbolic program implements these invariants. A separate
+program uses Gaussian rational arithmetic and a bordered linear system
+for the eigenvector derivative. Because the resulting coefficient is a
+homogeneous quadratic polynomial in seven variables, the seven basis
+directions and their twenty-one pair sums determine all twenty-eight
+coefficients exactly. Five further first-order directions check the four
+escape slacks and the mean-affinity slack in \eqref{eq:linear}.
+This is a complete check of the finite quadratic identity, not a fit or
+a numerical argument for the universal validity interval.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

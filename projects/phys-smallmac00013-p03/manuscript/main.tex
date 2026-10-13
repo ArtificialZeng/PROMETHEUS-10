@@ -1,0 +1,420 @@
+\documentclass[aps,pra,reprint,groupedaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage{amsmath,amssymb,bm,booktabs,array}
+\usepackage[colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
+\hypersetup{
+  pdftitle={Exact unrestricted Gaussian rank of two canonical matchgate magic states},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\G}{\mathcal{G}}
+
+\begin{document}
+
+\title{Exact unrestricted Gaussian rank of two canonical matchgate magic states}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+
+\date{\today}
+
+\begin{abstract}
+Gaussian rank is the smallest number of pure fermionic Gaussian states whose
+complex linear combination equals a target state, and it controls the branch
+count in rank-based simulations of matchgate circuits with non-Gaussian inputs.
+For the canonical four-mode state
+$\ket{M}=(\ket{0000}+\ket{1111})/\sqrt{2}$, previous work established rank four
+for $\ket{M}^{\otimes 2}$ only when every summand obeys two additional blockwise
+symmetries, and conjectured the same value without those restrictions.  We prove
+the unrestricted statement over $\C$.  After a parity reduction, a nonzero
+Chevalley pairing places any hypothetical three-Gaussian decomposition, up to
+$\operatorname{Spin}(16,\C)$, in one of 15 normal forms
+$a\,1+b\,\Omega+c\,g_{q,i}$.  A two-form Clifford flattening has exact rank 78
+on the target.  Exact characteristic-zero certificates put the 15 normal forms
+on the two sides of a strict rank gap: eleven have rank at most 74 and four have
+rank at least 83.  The certificate is checked by two separately implemented
+exterior-algebra calculations.  Together with the four computational-basis
+Gaussian summands, this gives $\chi_G(\ket{M}^{\otimes2})=4$ with no reality,
+particle-number, copy-exchange, block-symmetry, or Pfaffian-chart assumption.
+The result concerns exact rank for this finite eight-mode state; it does not
+determine border rank, approximate rank, or many-copy asymptotics.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Matchgate circuits and fermionic linear optics form a nontrivial class of quantum
+processes admitting efficient classical descriptions
+\cite{Valiant2002,TerhalDiVincenzo2002,Bravyi2005}.  Supplementing them with
+non-Gaussian resources changes their computational power
+\cite{BrodGalvao2011,Hebenstreit2019}.  One way to simulate such a supplemented
+circuit is to decompose its input into pure fermionic Gaussian states and
+propagate each Gaussian branch.  The minimum exact number of branches is the
+Gaussian rank.
+
+Cudby and Strelchuk introduced and studied this rank-based viewpoint for
+matchgate magic states \cite{CudbyStrelchuk2025}.  For their canonical
+four-mode state $\ket M$, they displayed the immediate four-term Gaussian
+decomposition of two copies.  They proved the matching lower bound when each
+Gaussian summand is constrained to the $+1$ eigenspaces of two blockwise
+$ZZ$ operators.  Their numerical search found no unrestricted decomposition
+with three terms, leading to the conjecture
+\begin{equation}
+  \chi_G(\ket M^{\otimes2})=4 .
+  \label{eq:conjecture}
+\end{equation}
+The symmetry-restricted lower bound does not decide Eq.~\eqref{eq:conjecture},
+because individual terms in a decomposition need not inherit a symmetry of the
+sum.
+
+Here we resolve Eq.~\eqref{eq:conjecture} without restrictions on the Gaussian
+summands.  The proof combines a complete pure-spinor normal-form reduction with
+an exact Clifford-flattening certificate.  Secant varieties of spinor varieties
+have been studied at the level of dimensions and defectivity
+\cite{Angelini2011}; those global dimensions do not by themselves decide whether
+this particular target lies on the affine third secant.  The target-specific
+rank gap below does.
+
+The argument is organized as follows.  Section~\ref{sec:model} fixes the
+fermionic conventions and the exact-rank question.  Section~\ref{sec:reduction}
+reduces every possible three-term decomposition to 15 normal forms.  Sections
+\ref{sec:flattening} and \ref{sec:certificate} construct and certify the rank
+gap.  Section~\ref{sec:verification} records the computer-assisted component
+and error control.  We close with the operational meaning and explicit scope
+limitations.
+
+\section{Eight-mode target and Gaussian rank}
+\label{sec:model}
+
+Let $\mathcal H_8=(\C^2)^{\otimes8}$ be the Fock space of eight ordered
+fermionic modes.  We use the Jordan--Wigner Majoranas
+\begin{align}
+ c_{2j-1}&=Z_1\cdots Z_{j-1}X_j, &
+ c_{2j}&=Z_1\cdots Z_{j-1}Y_j,
+ \label{eq:majoranas}
+\end{align}
+for $j=1,\ldots,8$, so that $\{c_r,c_s\}=2\delta_{rs}I$.  Define
+\begin{equation}
+ \Lambda_8=\sum_{r=1}^{16}c_r\otimes c_r .
+\end{equation}
+In the intrinsic criterion used in Ref.~\cite{CudbyStrelchuk2025}, a normalized
+pure state is fermionic Gaussian precisely when
+\begin{equation}
+ \Lambda_8(\ket g\otimes\ket g)=0 .
+ \label{eq:gaussian-criterion}
+\end{equation}
+This definition allows either parity and does not assume particle-number
+conservation.
+
+For a nonzero state $\ket\phi$, its exact Gaussian rank over $\C$ is
+\begin{equation}
+ \begin{split}
+ \chi_G(\phi)=\min\biggl\{r:\ &\ket\phi=\sum_{k=1}^r\alpha_k\ket{g_k},\\
+ &\alpha_k\in\C,\quad \ket{g_k}\in\G_8\biggr\}.
+ \end{split}
+ \label{eq:rank-def}
+\end{equation}
+Normalization of each $\ket{g_k}$ causes no loss, since its scale can be
+absorbed into $\alpha_k$.
+
+The four-mode and eight-mode states of interest are
+\begin{align}
+ \ket M&=\frac{\ket{0000}+\ket{1111}}{\sqrt2},\\
+ \ket\Psi=\ket M^{\otimes2}
+ &=\frac12(\ket0+\ket{15}+\ket{240}+\ket{255}),
+ \label{eq:target}
+\end{align}
+where the decimal labels denote the corresponding eight-bit Fock strings.
+Every computational-basis vector is a pure Gaussian state, and direct
+substitution in Eq.~\eqref{eq:gaussian-criterion} gives zero.  Equation
+\eqref{eq:target} therefore proves $\chi_G(\Psi)\le4$.  We work below with the
+unnormalized vector
+\begin{equation}
+ x=2\ket\Psi=\ket0+\ket{15}+\ket{240}+\ket{255},
+ \label{eq:x}
+\end{equation}
+which has the same rank.
+
+\section{Complete reduction of three Gaussian summands}
+\label{sec:reduction}
+
+Set $E=\C^8$ and use the exterior model
+$S^+=\Lambda^{\mathrm{even}}E$ for the positive half-spin representation.
+Nonzero even Gaussian vectors are exactly the affine cone over the even
+pure-spinor variety \cite{Chevalley1954}.  Creation and annihilation operators
+act as exterior multiplication $\epsilon_j$ and contraction $\iota_j$.
+
+\subsection{Parity reduction}
+
+Pure fermionic Gaussian vectors have definite parity.  If the even nonzero
+vector $x$ were a sum of at most three definite-parity Gaussian vectors, its odd
+projection would have to vanish.  One odd term must therefore have zero
+coefficient; two odd terms must be proportional and cancel; and three odd terms
+would leave no nonzero even part.  In the two-odd-term case the remaining even
+part would be a single pure spinor.  More generally, the flattening introduced
+in Sec.~\ref{sec:flattening} has rank 29 on each pure spinor and rank 78 on $x$,
+so neither one nor two pure spinors can sum to $x$.  It is therefore sufficient
+to exclude sums of three even pure spinors.
+
+\subsection{A transverse pair}
+
+Let $\Omega=e_1\wedge\cdots\wedge e_8$ and define the invariant Chevalley
+pairing by
+\begin{equation}
+ B(s,t)=[\tau(s)\wedge t]_{\Lambda^8E},
+ \label{eq:chevalley}
+\end{equation}
+where $\tau$ reverses wedge order.  A pure spinor pairs to zero with itself.
+Direct evaluation of the four components in Eq.~\eqref{eq:x} gives
+\begin{equation}
+ B(x,x)=4\ne0 .
+ \label{eq:target-pairing}
+\end{equation}
+Consequently, in any equality $x=s_1+s_2+s_3$ of pure spinors, at least one
+pair $s_j,s_k$ has nonzero pairing.
+
+For pure spinors, nonzero Chevalley pairing is equivalent to transversality of
+their maximal-isotropic annihilators.  The complex spin group acts transitively
+on ordered transverse pairs, taking their projective lines to those of $1$ and
+$\Omega$.  The common projective stabilizer is the lifted $GL(E)$.  Hence a
+hypothetical three-term decomposition can be transformed into
+\begin{equation}
+ u=a\,1+b\,\Omega+c\,g,
+ \qquad a,b,c\in\C^*,
+ \label{eq:three-normal}
+\end{equation}
+with $g$ an even pure spinor.  The coefficients are nonzero: if any vanished,
+the flattening subadditivity bound would give rank at most $2\times29=58$, in
+conflict with the target rank 78.
+
+\subsection{Fifteen GL(8) orbits}
+
+For completeness, the required pure-spinor normal form can be obtained directly
+from its annihilator equations.  If $q$ is the lowest nonzero exterior degree
+of $g$, its degree-$q$ component is decomposable.  A change of basis makes it
+$e_1\wedge\cdots\wedge e_q$, and purity recursively gives
+\begin{equation}
+ g=e_1\wedge\cdots\wedge e_q\wedge\exp(\omega),
+ \qquad
+ \omega\in\Lambda^2\Span(e_{q+1},\ldots,e_8).
+ \label{eq:pure-normal-general}
+\end{equation}
+Because $g\in S^+$, $q\in\{0,2,4,6,8\}$.  Complex skew congruence reduces
+$\omega$ to a Darboux form of rank $2i$.  Absorbing the projective scale into
+$c$ leaves
+\begin{equation}
+ g_{q,i}=e_1\cdots e_q
+ \prod_{j=1}^{i}\left(1+e_{q+2j-1}e_{q+2j}\right),
+ \quad 0\le i\le\frac{8-q}{2}.
+ \label{eq:gqi}
+\end{equation}
+Thus $5+4+3+2+1=15$ cases exhaust all even pure spinors, including those with
+zero vacuum amplitude.  No real structure or target symmetry has entered this
+reduction.
+
+\section{Two-form Clifford flattening}
+\label{sec:flattening}
+
+Let $V=E\oplus E^*$ be the 16-dimensional quadratic space and let
+$\Gamma_1,\ldots,\Gamma_{16}$ be split Clifford generators.  For $u\in S^+$,
+define
+\begin{align}
+ F_u &:S^+\longrightarrow\Lambda^2V^*,\\
+ [F_u(y)]_{rs}&=B(u,\Gamma_r\Gamma_s y),\qquad r<s.
+ \label{eq:flattening}
+\end{align}
+This is a $120\times128$ matrix in the natural exterior bases.  Invariance of
+$B$ and covariance of Clifford multiplication imply
+\begin{equation}
+ \rank F_{h\cdot u}=\rank F_u,
+ \qquad h\in\operatorname{Spin}(16,\C).
+ \label{eq:equivariance}
+\end{equation}
+The physical Majoranas in Eq.~\eqref{eq:majoranas} correspond to
+$\epsilon_j+\iota_j$ and $i(\epsilon_j-\iota_j)$.  Relative to the split
+generators they only multiply rows of $F_u$ by nonzero powers of $i$, so the
+rank is unchanged.
+
+For the vacuum, only the degree-eight and degree-six columns supply complementary
+top forms in Eq.~\eqref{eq:flattening}.  Direct basis action gives
+\begin{equation}
+ \rank F_1=1+\binom82=29.
+ \label{eq:pure-rank}
+\end{equation}
+Equivariance then gives rank 29 for every nonzero even pure spinor.  This also
+justifies the rank-at-most-58 assertions used above.
+
+The flattening is used here as an orbit-separating covariant
+\cite{Landsberg2012}, not as the usual
+subadditive lower bound alone.  Indeed, the generic bound from three pure terms
+would only be $3\times29=87$, whereas the target rank is 78.  The decisive fact
+is that the complete normal forms in Eq.~\eqref{eq:gqi} avoid rank 78.
+
+\section{Exact characteristic-zero rank-gap certificate}
+\label{sec:certificate}
+
+Rows are ordered lexicographically by the 120 pairs $r<s$, and columns by the
+128 even occupation masks.  All entries of $F_x$ are integers.  The certificate
+exhibits a $78\times78$ minor with
+\begin{equation}
+ \det=2361183241434822606848=2^{71},
+\end{equation}
+together with 50 linearly independent right-null vectors.  These give matching
+lower and upper bounds,
+\begin{equation}
+ \rank F_x=78.
+ \label{eq:target-rank}
+\end{equation}
+
+For each normal form
+\begin{equation}
+ u_{q,i}(a,b,c)=a\,1+b\,\Omega+c\,g_{q,i},
+ \label{eq:uqiform}
+\end{equation}
+the same matrix is treated over the rational-function field $\mathbb Q(a,b,c)$.
+Table~\ref{tab:gap} summarizes the certified alternatives.
+
+\begin{table*}[t]
+\caption{Exact bounds for all 15 normal forms with $abc\ne0$.  An upper bound
+over $\mathbb Q(a,b,c)$ holds after every complex specialization because all
+larger minors vanish identically.  Each lower bound is supplied by mutually
+row- and column-disjoint nonzero minors.}
+\label{tab:gap}
+\begin{ruledtabular}
+\begin{tabular}{c c c c}
+Type & $(q,i)$ & Certified statement & Separation from $\rank F_x=78$\\
+\hline
+Low & $(0,0),(0,1),(2,0),(6,0),(6,1),(8,0)$ & $\rank F_{u_{q,i}}\le57$ & at most $74$\\
+Low & $(0,2),(2,1),(4,0),(4,1),(4,2)$ & $\rank F_{u_{q,i}}\le74$ & at most $74$\\
+High & $(0,3),(2,3)$ & $\rank F_{u_{q,i}}\ge84$ & at least $83$\\
+High & $(0,4),(2,2)$ & $\rank F_{u_{q,i}}\ge83$ & at least $83$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+For the eleven low cases, the certificate supplies 71 independent rational
+right-null vectors when the upper bound is 57, and 54 when it is 74.  A possible
+denominator zero creates no exceptional loophole: the nullspace identities over
+$\mathbb Q(a,b,c)$ imply that every $58$- or $75$-minor, respectively, is the
+zero polynomial.  Matrix rank cannot increase under specialization.
+
+For the four high cases, the nonzero pattern separates into seven bipartite
+row-column support components.  Selecting a minor in each component gives
+disjoint rows and columns, so the minor sizes add.  The bounds are 84 for
+$(0,3)$, 83 for $(0,4)$, 83 for $(2,2)$, and 84 for $(2,3)$.  All selected
+determinants are nonzero monomials in $a,b,c$ except for the first component of
+$(0,4)$.  There the certificate provides two alternative $11\times11$ minors,
+\begin{align}
+ -128a^2b^3c^5(a-b),\qquad
+  64a^2b^3c^5(a+b).
+ \label{eq:exception-minors}
+\end{align}
+For $abc\ne0$ in characteristic zero, $a-b$ and $a+b$ cannot vanish
+simultaneously.  Thus the bound 83 holds on both exceptional loci as well as
+generically.
+
+We may now state the result.
+
+\textit{Theorem.}  For $\ket M=(\ket{0000}+\ket{1111})/\sqrt2$, the exact
+unrestricted fermionic Gaussian rank over $\C$ is
+\begin{equation}
+ \boxed{\chi_G(\ket M^{\otimes2})=4}.
+\end{equation}
+
+\textit{Proof.}  The four Fock-basis components in Eq.~\eqref{eq:target} are
+Gaussian and give rank at most four.  Suppose the rank were at most three.
+Parity reduces the putative decomposition to three even pure spinors.  Equations
+\eqref{eq:target-pairing}--\eqref{eq:gqi} transform it, without changing
+flattening rank, to one of the 15 matrices in Eq.~\eqref{eq:uqiform}.  Equation
+\eqref{eq:target-rank} requires rank 78.  Table~\ref{tab:gap} and the exceptional
+certificates \eqref{eq:exception-minors} instead give rank at most 74 or at
+least 83 in every case, a contradiction.  Therefore the rank is at least four,
+which meets the upper bound. \hfill$\square$
+
+\section{Computer-assisted verification and error control}
+\label{sec:verification}
+
+The computer-assisted part is a finite exact certificate, not a numerical scan.
+The generator constructs $F_u$ from bit-mask wedge and contraction operations,
+computes the target pivot minor and nullspace, obtains rational-function
+nullspaces for all low strata, and verifies every indexed high-stratum minor
+before emitting a machine-readable record.  A second implementation reconstructs
+the matrices through separately written wedge, contraction, and top-wedge
+reversal operations.  It reads only the claimed certificate indices and vectors,
+then recomputes every dot product, determinant, support component, and rank.
+Both implementations use exact integer and rational-function arithmetic in
+SymPy \cite{SymPy2017}.
+
+OpenAI Codex workers assisted with certificate design and code generation.  The
+registered model identifier was \texttt{gpt-5.6-sol}, with reasoning effort
+\texttt{ultra}.  They were directed to reproduce the baseline, restrict the claim
+to exact eight-mode rank, and require a separate replay.  Conclusions rest on the
+retained exact identities, not model confidence; human inspection remains required.
+
+The replay additionally substitutes directly on $a=b$ and $a=-b$ for the
+$(0,4)$ stratum and obtains exact ranks 83 and 84, respectively.  It checks all
+15 strata and reconstructs the target from the two four-mode factor supports.
+The submitted certificate and scripts provide the row/column indices and sparse
+null vectors; thus no trust in a reported rank routine is needed to check the
+central identities.
+
+There is no floating-point tolerance, statistical sampling, truncation, fitted
+degree bound, finite-field lifting, or perturbative remainder.  A prior
+finite-field scan was used only to discover the rank pattern and is not part of
+the proof.  The analytic inputs that remain for human inspection are the parity,
+transverse-pair, and pure-spinor normal-form reductions; the exact replay checks
+the finite matrices conditional on those reductions.
+
+\section{Physical meaning and limitations}
+\label{sec:meaning}
+
+The theorem closes the gap between the known four-branch decomposition and the
+previous lower bound restricted by two blockwise $ZZ$ symmetries
+\cite{CudbyStrelchuk2025}.  It shows that symmetry breaking, arbitrary complex
+phases, non-number-conserving Gaussian states, and zero-vacuum-amplitude charts
+cannot reduce the exact branch count below four for this two-copy input.  In a
+simulation that propagates an exact Gaussian decomposition branch by branch, the
+input therefore requires exactly four Gaussian branches.
+
+This operational statement is deliberately finite.  Exact rank is not border
+rank: the proof neither excludes a sequence of three-term states converging to
+$\ket\Psi$ nor supplies an error-versus-cost bound for approximate simulation.
+It also does not determine $\chi_G(\ket M^{\otimes k})$ for $k\ge3$, a
+regularized rank, or an asymptotic runtime exponent.  The result is a property of
+the specified eight-mode state and Gaussian resource set, not evidence for a new
+particle, phase, or experimental effect.
+
+\section{Conclusion}
+
+An unrestricted rank-three decomposition of two canonical matchgate magic states
+would, after an intrinsic pure-spinor reduction, have to occupy one of only 15
+$GL(8)$ normal forms.  The two-form Clifford flattening places the target at rank
+78 and every such form outside the interval from 75 through 82.  This exact rank
+gap proves Gaussian rank four over $\C$ and removes all auxiliary symmetries from
+the earlier two-copy lower bound.  The same strategy---orbit reduction followed
+by a covariant rank gap---may be useful for other target-specific secant-membership
+questions, although no many-copy claim follows from the present calculation.
+
+\begin{acknowledgments}
+In addition to the research uses disclosed in Sec.~\ref{sec:verification},
+OpenAI Codex assisted with literature synthesis and drafting.  The tool is not an
+author, and this draft requires the named author's independent review and
+refinement before submission.
+\end{acknowledgments}
+
+\section*{Data availability}
+
+The exact certificate and the two Python programs needed to regenerate and replay
+the computer-assisted statements accompany this manuscript.  No experimental or
+personal data were used.
+
+\bibliography{references}
+
+\end{document}

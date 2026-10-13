@@ -1,0 +1,614 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\hypersetup{pdftitle={Four nested limit cycles in a planar power-law reaction system},
+pdfauthor={Xiaojian Zeng},pdfsubject={Local draft; human scientific review pending},
+pdfkeywords={limit cycles, power-law kinetics, weak focus, interval arithmetic}}
+\newcommand{\doi}[1]{\url{https://doi.org/#1}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\D}{\mathrm D}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\bino}[2]{\binom{#1}{#2}}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\title{Four nested limit cycles in a planar\texorpdfstring{\\}{ }power-law reaction system}
+\author{Xiaojian Zeng\\[3pt]
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that a planar power-law reaction system considered by Boros and
+Hofbauer admits a stable positive equilibrium surrounded by four nested
+hyperbolic limit cycles. From the innermost to the outermost, their
+stability alternates between repelling and attracting. The system
+therefore supports a stable resting state and two stable oscillations at
+the same parameter values. The proof starts from a two-parameter
+reduction of the Hopf and first-focus conditions. Directed integer
+interval arithmetic isolates a common zero of the next two focus
+coefficients, proves that the ninth-order radial coefficient is negative,
+and verifies a nonsingular four-parameter unfolding. A separate real
+Lyapunov-polynomial calculation with directed decimal intervals confirms
+the decisive root, sign, and rank conditions. A parameter-dependent finite
+normal form and a uniform continuously differentiable remainder estimate
+then produce four simple fixed points of the return map of the original
+analytic differential equation. All cycles lie in a compact annulus
+strictly inside the positive quadrant. The result is existential and
+local: it does not specify a finite-amplitude parameter example or a
+physical period, and it allows real reaction orders.
+\end{abstract}
+\noindent\textbf{Keywords:} limit cycles; power-law kinetics; weak focus;
+Hopf bifurcation; interval arithmetic.\\
+\textbf{Mathematics Subject Classification:} 34C07, 34C23, 80A30.
+
+\section{Introduction}
+Uniqueness of a positive steady state does not preclude several attracting
+oscillations in a nonlinear reaction model. A particularly economical
+example was proposed by Boros and Hofbauer \cite[Section~5.1]{BorosHofbauer2024}.
+They identified approximate parameters at which three focus values vanish
+and a fourth is negative, and left the existence of four limit cycles
+as a conjecture. We establish the corresponding existence statement for
+their specified four-parameter family.
+
+The issue is more than the accuracy of a numerical weak-focus location.
+One must prove that the simultaneous zero exists, certify the sign of the
+next coefficient, verify enough independent parameter directions, and
+control the difference between a finite normal form and the original
+equation. We supply these four ingredients. The finite coefficient
+calculations are checked in two different representations and two
+different arithmetic implementations; the final passage to periodic
+orbits uses the true return map.
+
+Multiple nested reaction-system cycles, including alternating stability,
+are already known in other families. In particular, Craciun and Erban
+\cite[Theorem~1, equations~(4.27)--(4.30), and Section~5]{CraciunErban2025}
+construct nested algebraic cycles using polynomial products. Our
+contribution concerns the particular sparse power-law family below,
+rather than the general coexistence pattern or the general method of
+unfolding a weak focus. The calculation does not depend on the optional
+notebook cited by Boros and Hofbauer, whose contents were unavailable for
+comparison. No exhaustive priority claim about that material is made.
+
+\section{Model and result}\label{sec:model}
+Consider, in the original dimensionless time $t$,
+\begin{equation}\label{eq:ode}
+ \dot x=y^{-1}-x^a y^b,\qquad
+ \dot y=K\bigl[-(d-1)-y^{-1}+d x^a y^b\bigr]
+\end{equation}
+on $\R_{>0}^2$, with parameter domain
+\begin{equation}\label{eq:domain}
+ \mathcal P=\{(K,a,b,d):K>0,\ a>0,\ b>-1,\ d>1,\ 1+bd>0\}.
+\end{equation}
+These are the normalized equations and inequalities of
+\cite[Section~5.1]{BorosHofbauer2024}, with $d>1$ enforcing existence of
+the positive steady state. Real powers have their usual positive-real
+meaning. Consequently the vector field is jointly real analytic in
+state and parameters on its stated domain. No boundary condition on an
+axis is imposed or needed for the local construction.
+
+Solving the first equilibrium equation gives $x^a y^b=y^{-1}$; the second
+then gives $(d-1)(y^{-1}-1)=0$. Thus the unique positive equilibrium is
+$(1,1)$. Its Jacobian, trace, and determinant are
+\begin{equation}\label{eq:linear}
+ J=\begin{pmatrix}-a&-(1+b)\\Kda&K(1+bd)\end{pmatrix},\qquad
+ T=-a+K(1+bd),\qquad \Delta=Ka(d-1)>0.
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+There exist parameters in $\mathcal P$ for which the unique positive
+equilibrium of \eqref{eq:ode} is hyperbolically asymptotically stable
+and is surrounded by at least four disjoint nested hyperbolic periodic
+orbits. From the innermost to the outermost, the four orbits are repelling,
+attracting, repelling, and attracting. They are all contained in a compact
+annulus in $\R_{>0}^2$ that has positive distance from $(1,1)$ and from
+the coordinate axes.
+\end{theorem}
+
+The parameters will approach a rigorously isolated fourth-order weak
+focus $p_*$, approximately
+\begin{equation}\label{eq:pstar}
+ \begin{split}
+ a_*&\simeq1.0128219986803146,\qquad b_*\simeq0.6546256211042382,\\
+ d_*&\simeq3.2886104393099358,\qquad K_*\simeq0.3212443603989608.
+ \end{split}
+\end{equation}
+These rounded values locate the organizing weak focus, not a parameter
+example with four cycles. The cycles occur at nearby parameters
+constructed in Section~\ref{sec:cycles}. Hyperbolicity refers to the
+nontrivial multiplier of each periodic orbit.
+
+\section{Focus coefficients and reduction}\label{sec:coefficients}
+Write $q=1+bd$. On the Hopf hypersurface $K=a/q$, put
+$\omega^2=\Delta$ and set
+\begin{equation}\label{eq:basis}
+ u=x-1,\quad v=y-1,\quad X=u,\quad
+ Y=\frac{au+(1+b)v}{\omega},\quad z=X+\ii Y.
+\end{equation}
+The linear field is $\dot z=\ii\omega z$ with positive angular orientation.
+All coefficient definitions below retain time $t$.
+
+For $i+j\geq1$, the coefficients of the original real Taylor jet are
+\begin{equation}\label{eq:jet}
+ \begin{split}
+ f_{ij}&=\mathbf1_{i=0}\bino{-1}{j}-\bino a i\bino b j,\\
+ g_{ij}&=K\left[-\mathbf1_{i=0}\bino{-1}{j}
+                  +d\bino a i\bino b j\right].
+ \end{split}
+\end{equation}
+Here $\binom\alpha0=1$ and
+$\binom\alpha{j+1}=\binom\alpha j(\alpha-j)/(j+1)$; the constant
+coefficients cancel. Setting $s=\ii\omega$, substitute
+\begin{equation}\label{eq:complex-jet}
+ u=\frac{z+\bar z}{2},\qquad
+ v=\frac{(-a-s)z+(-a+s)\bar z}{2(1+b)},\qquad
+ \mathcal F=f+\frac{s}{\omega^2}\bigl[af+(1+b)g\bigr].
+\end{equation}
+Computations in the algebra $s^2=-\omega^2$ use rational operations only.
+
+We fix the following finite normal-form convention. Find $H=z+O(|z|^2)$
+and $G=sz+O(|z|^2)$ satisfying, through degree nine,
+\begin{equation}\label{eq:conjugacy}
+ \mathcal F(H,\bar H)=H_zG+H_{\bar z}\bar G.
+\end{equation}
+All resonant coefficients $H_{m+1,m}$ are set to zero. If degrees below
+$n$ have been determined, let $\mathcal R_n$ be the degree-$n$ residual
+of the left side minus the right side of \eqref{eq:conjugacy}. For
+$j+k=n$, the next coefficients are
+\begin{equation}\label{eq:recurrence}
+ \begin{cases}
+ G_{jk}=(\mathcal R_n)_{jk},\quad H_{jk}=0,&j-k=1,\\[2pt]
+ H_{jk}=\dfrac{(\mathcal R_n)_{jk}}{(j-k-1)s},\quad G_{jk}=0,&j-k\ne1.
+ \end{cases}
+\end{equation}
+Indeed, adding $H_{jk}$ changes this residual by
+$-(j-k-1)sH_{jk}$, and adding $G_{jk}$ changes it by $-G_{jk}$.
+Every nonresonant denominator is nonzero. Define
+\begin{equation}\label{eq:focus}
+ F_m=\Rea G_{m+1,m},\qquad 1\leq m\leq4.
+\end{equation}
+If $F_1,\ldots,F_{m-1}$ vanish, the first nonzero radial return
+coefficient is $(2\pi/\omega)F_m$. This follows by writing
+$z=r e^{\ii\theta}$ and integrating the first radial drift over one
+positive angular revolution. Coefficients beyond the first nonzero one
+need not agree across different normal-form conventions.
+
+The degree-three instance of \eqref{eq:jet}--\eqref{eq:recurrence} gives
+the rational identity
+\begin{equation}\label{eq:F1}
+ F_1=\frac{a(2a^2d+aq-q^2)}{16q^2}.
+\end{equation}
+After multiplying by $2\pi/\omega$, this is the first focus value
+printed in \cite[Section~5.1]{BorosHofbauer2024}. Introduce $h>2$ by
+\begin{equation}\label{eq:reduction}
+ d=\frac{h(h-1)}2,\qquad b=\frac{ah-1}{d},\qquad K=\frac1h.
+\end{equation}
+Then $q=ah$, so $T=F_1=0$ identically. Taking the derivative with respect
+to $b$ on the Hopf hypersurface first, and then imposing
+\eqref{eq:reduction}, yields
+\begin{equation}\label{eq:bderivative}
+ \left.\partial_bF_1\right|_{T=0,\,\eqref{eq:reduction}}
+       =-\frac{(h-1)(2h-1)}{32h}<0.
+\end{equation}
+Thus eliminating the first focus equation has not removed its transverse
+parameter direction. In what follows $f(a,h)=(F_2,F_3)$ denotes the
+restriction to \eqref{eq:reduction}.
+
+\subsection{Exact calibrations}
+The calculation has two useful published checks. For the system of
+\cite[equation~(12), Proposition~3]{BorosHofbauer2024},
+\begin{equation}\label{eq:calibration}
+ \begin{split}
+ \dot x&=y^{-q_c}-xy^{1/2},\\
+ \dot y&=K_c\bigl[-(q_c+r_c+1/2)+(q_c+1/2)y^{-q_c}+r_cxy^{1/2}\bigr],
+ \end{split}
+\end{equation}
+at $(q_c,r_c,K_c)=(1/4,15/8,4/3)$, the convention above gives
+\begin{equation}\label{eq:benchmark}
+ \omega^2=\frac78,\qquad F_1=F_2=0,\qquad
+ F_3=-\frac{4375}{884736},\qquad
+ \frac{2\pi F_3}{\omega}=-\frac{625\pi}{110592}\sqrt{\frac72}.
+\end{equation}
+For the endpoint $(a,h)=(1,22/7)$ of the target family, corresponding
+to $d=165/49$, exact rational arithmetic instead gives
+\begin{equation}\label{eq:endpoint}
+ F_1=F_2=0,\qquad F_3=-\frac{18125}{2404233216}<0.
+\end{equation}
+The zero and sign in \eqref{eq:endpoint} agree with the boundary
+statement in \cite[Section~5.1]{BorosHofbauer2024}; its displayed fraction
+is our calculation in convention \eqref{eq:focus}. The two benchmark
+systems are distinct.
+
+\section{An interval certificate for the weak focus}\label{sec:certificate}
+The following two finite decimals are exact rational inputs:
+\begin{equation}\label{eq:center}
+ \begin{split}
+ a_0&=1.012821998680314600068208268899051820974352006,\\
+ h_0&=3.112895114354931694231478861591838762886663535.
+ \end{split}
+\end{equation}
+Let $x_0=(a_0,h_0)$ and $\delta=10^{-20}$. For the interval calculation
+we use an outward dyadic enclosure $\mathcal X$ of
+$x_0+[-\delta,\delta]^2$, with grid spacing $2^{-384}$. The exact
+rational preconditioner is given entrywise by
+\begin{equation}\label{eq:preconditioner}
+ \begin{split}
+ R_{11}&=-523.0513662343578025786281282452785879709,\\
+ R_{12}&= 1724.438413838856510805394172256443795935,\\
+ R_{21}&= 1632.401201395760086859367561999686168763,\\
+ R_{22}&=-3959.57512664182068880590301715606501281.
+ \end{split}
+\end{equation}
+Its determinant is nonzero by exact rational arithmetic. Neither the
+center nor the preconditioner is assumed accurate in advance.
+
+\begin{proposition}\label{prop:certificate}
+The box $x_0+[-10^{-20},10^{-20}]^2$ contains a unique common zero
+$(a_*,h_*)$ of $(F_2,F_3)$. At this zero $F_4<0$, and
+$\det\D_{(a,h)}(F_2,F_3)\ne0$. The corresponding parameters
+\eqref{eq:reduction} belong to $\mathcal P$.
+\end{proposition}
+
+\begin{proof}
+Evaluate \eqref{eq:jet}--\eqref{eq:recurrence} with integer interval
+endpoints on the $2^{-384}$ grid. Addition and subtraction are exact on
+this grid. For multiplication and division, all endpoint products or
+quotients are considered and rounded outward using integer floor and
+ceiling. A division is allowed only when the denominator interval
+excludes zero. All divisions in this calculation satisfy that check.
+First derivatives with respect to $a,h$ are propagated by the product
+and quotient rules along the same recurrence. The resulting interval
+matrix $J_f(\mathcal X)$ therefore encloses $\D f(x)$ at every
+$x\in\mathcal X$.
+
+Table~\ref{tab:certificate} records convenient rational outer bounds
+on the resulting intervals. Full integer endpoints and the executable
+recurrence are supplied in Online Resource~1. In particular, the table
+is a rounded outward display of strict enclosures, not floating-point
+error estimates.
+\begin{table}[htbp]
+\centering
+\caption{Directed dyadic enclosures on $\mathcal X$. Every displayed
+interval has been widened from the exact computed endpoints.}
+\label{tab:certificate}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Quantity & Rational outer bound\\
+\midrule
+$(J_f)_{11}$ & $[0.005322623692367449,\ 0.005322623692367584]$\\
+$(J_f)_{12}$ & $[0.002318061020176081,\ 0.002318061020176173]$\\
+$(J_f)_{21}$ & $[0.002194340814884875,\ 0.002194340814887489]$\\
+$(J_f)_{22}$ & $[0.000703107152964103,\ 0.000703107152965913]$\\
+$\det J_f$ & $[-1.344241117333,\ -1.344241117316]\,10^{-6}$\\
+$F_4$ & $[-3.54349145,\ -3.54349141]\,10^{-7}$\\
+First row sum of $|I-RJ_f|$ & $<3.872\,10^{-12}$\\
+Second row sum of $|I-RJ_f|$ & $<8.938\,10^{-12}$\\
+Both coordinates of $|\mathcal Y-x_0|$ & $<9\,10^{-32}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Here the interval image is
+\begin{equation}\label{eq:image}
+ \mathcal Y=x_0-Rf(x_0)
+                  +(I-RJ_f(\mathcal X))(\mathcal X-x_0).
+\end{equation}
+The map $\Phi(x)=x-Rf(x)$ maps $\mathcal X$ into $\mathcal Y$ by
+the integral mean-value formula. The row-sum bounds make it a strict
+contraction in the maximum norm, and the image bound places
+$\mathcal Y$ strictly inside the original rational box. Banach's
+fixed-point theorem gives one and only one fixed point in $\mathcal X$.
+Since $R$ is nonsingular, this is exactly a zero of $f$. The fixed point
+belongs to $\mathcal Y$, so it also lies in the original box without
+dyadic enlargement.
+
+The determinant and $F_4$ intervals prove the two remaining coefficient
+claims. Direct interval evaluation of \eqref{eq:reduction} gives
+$a>0$, $b>-1$, $d>1$, $K>0$, $1+bd>0$, and $\omega^2>0$ on the
+whole box. For example, deliberately coarse enclosures are
+$1<a<1.02$, $0.65<b<0.66$, $3.28<d<3.30$, $0.32<K<0.33$,
+and $0.74<\omega^2<0.75$. This also establishes admissibility.
+\end{proof}
+
+The code uses only the Python standard library for strict certification.
+Its input is \eqref{eq:center}--\eqref{eq:preconditioner}, not previously
+calculated focus values. A separate real scalar recurrence and directed
+decimal interval implementation certify the same zero and signs;
+Appendix~\ref{app:independent} states its conventions and bounds.
+
+\section{A full parameter unfolding}\label{sec:unfolding}
+First extend the finite normal form smoothly off the Hopf hypersurface.
+For $p=(K,a,b,d)$ near $p_*$, set
+\begin{equation}\label{eq:offhopf}
+ \tau=T/2,\qquad \nu=\sqrt{\Delta-\tau^2}>0,\qquad
+ X=u,\quad Y=\frac{(a+\tau)u+(1+b)v}{\nu}.
+\end{equation}
+The linear field is $(\tau X-\nu Y,\nu X+\tau Y)$.
+With $\lambda=\tau+\ii\nu$, use
+$j\lambda+k\bar\lambda-\lambda$ as the nonresonant denominator in
+\eqref{eq:recurrence}, still retaining all terms with $j-k=1$.
+For $j-k\ne1$, the imaginary part $(j-k-1)\nu$ is bounded away
+from zero after restricting the parameter neighborhood. This is a
+finite polynomial change of variables depending smoothly on $p$.
+Its linear part is the identity, so it is a local diffeomorphism on
+a uniform sufficiently small state neighborhood.
+
+The actual transformed field, including its remainder, has the form
+\begin{equation}\label{eq:fullnf}
+ \dot z=(\tau+\ii\nu)z+\sum_{m=1}^4 C_m(p)z|z|^{2m}+E_p(z),
+\end{equation}
+where $\Rea C_m=F_m$ on $T=0$. On a sufficiently small closed
+parameter neighborhood and state ball there is a uniform constant $C$
+such that
+\begin{equation}\label{eq:remainder}
+ |E_p(z)|\leq C|z|^{10},\qquad
+ \|\D_zE_p(z)\|\leq C|z|^9.
+\end{equation}
+These estimates follow from Taylor's theorem for the jointly analytic
+original field and the finite coordinate change on a compact set.
+They do not assume convergence of an infinite normal-form series.
+
+Define
+\begin{equation}\label{eq:beta}
+ \beta(p)=(\beta_0,\beta_1,\beta_2,\beta_3)
+      =(T/2,\Rea C_1,\Rea C_2,\Rea C_3).
+\end{equation}
+We next verify that these four coefficients are local parameter
+coordinates. Replace $(K,a,b,d)$ by $(T,b,a,h)$, where
+$K=(T+a)/(1+bd)$ and $d=h(h-1)/2$. On $T=0$, the first-focus
+zero is the graph in \eqref{eq:reduction}. By the chain rule, or
+equivalently the Schur complement,
+\begin{equation}\label{eq:schur}
+ \det\frac{\partial(F_1,F_2,F_3)}{\partial(b,a,h)}
+   = (\partial_bF_1)\det\D_{(a,h)} f
+\end{equation}
+at $p_*$. Accounting for $\tau=T/2$ and the parameter order gives
+\begin{equation}\label{eq:fullrank}
+ \det\D_{(K,a,b,d)}\beta(p_*)
+ =-\frac{1+bd}{2h-1}(\partial_bF_1)\det\D f(a_*,h_*)\ne0.
+\end{equation}
+The factors are nonzero by \eqref{eq:bderivative} and
+Proposition~\ref{prop:certificate}; a strict outer enclosure of the
+determinant is $[-8.990,-8.989]\,10^{-8}$. Derivatives of $C_m$ in
+the $T$ direction do not change this triangular determinant argument.
+The inverse function theorem therefore applies to $\beta$ at $p_*$.
+
+The unfolding varies $a,b,d$ as well as $K$: reaction powers and a
+reaction-vector component change. It is not an unfolding by rate
+constants of a single fixed network. Thus it does not contradict the
+rate-constant codimension bound in
+\cite[Theorem~35]{BanajiBorosHofbauer2024}. Likewise, the inheritance
+theorem in \cite[Theorem~3.2]{BanajiBorosHofbauer2025} assumes an already
+transverse source bifurcation; it does not replace the coefficient and
+rank calculation above.
+
+\section{Four cycles of the original analytic equation}\label{sec:cycles}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $\ell=F_4(p_*)<0$ and $\omega_*=\sqrt{\Delta(p_*)}>0$.
+By \eqref{eq:fullrank}, for every sufficiently small $\eps>0$ there
+is a fixed parameter vector $p(\eps)$ satisfying
+\begin{equation}\label{eq:unfolding}
+ \begin{aligned}
+ \beta_0&=24\ell\eps^8,&\qquad \beta_1&=-50\ell\eps^6,\\
+ \beta_2&=35\ell\eps^4,&\qquad \beta_3&=-10\ell\eps^2.
+ \end{aligned}
+\end{equation}
+Moreover $p(\eps)-p_*=O(\eps^2)$, so
+$\Rea C_4(p(\eps))=\ell+O(\eps^2)$. These parameters remain in
+the open set $\mathcal P$. The equilibrium has eigenvalues
+$\beta_0\pm\ii\nu$ with $\beta_0<0$, hence is hyperbolically stable.
+
+Put $z=\eps R e^{\ii\theta}$ and consider a fixed compact $R$
+interval away from zero, such as $[1/2,5/2]$, together with a slightly
+larger interval for controlling the flow. Equations
+\eqref{eq:fullnf}--\eqref{eq:unfolding} imply
+$\dot\theta=\omega_*+O(\eps^2)>0$. Define
+\begin{equation}\label{eq:polynomial}
+ P(R)=R(R^2-1)(R^2-2)(R^2-3)(R^2-4).
+\end{equation}
+The identity
+$\prod_{j=1}^4(S-j)=S^4-10S^3+35S^2-50S+24$ and the uniform
+remainder bounds give
+\begin{equation}\label{eq:radial}
+ \frac{dR}{d\theta}
+       =\eps^8\frac{\ell}{\omega_*}P(R)+O_{C^1}(\eps^9).
+\end{equation}
+The notation $O_{C^1}$ means a uniform bound on the function and
+its first $R$ derivative, also uniform in $\theta$. In particular,
+the radial projection of $E_p$ is $O(\eps^{10})$; dividing by
+$\eps$ makes its contribution $O(\eps^9)$, with the same order
+for the $R$ derivative by \eqref{eq:remainder}. The angular-speed
+correction and the change in $C_4$ contribute only $O(\eps^{10})$
+to \eqref{eq:radial}.
+
+Let $\Pi_\eps$ be the actual return map on $\theta=0$, after an
+increase of $2\pi$ in $\theta$. Its definition uses solutions of
+\eqref{eq:fullnf} including $E_p$, hence solutions of
+\eqref{eq:ode}. Over this fixed angular interval, $R$ changes by
+$O(\eps^8)$. Integrating \eqref{eq:radial} and its variational
+equation gives
+\begin{equation}\label{eq:return}
+ \frac{\Pi_\eps(R)-R}{\eps^8}
+       =\frac{2\pi\ell}{\omega_*}P(R)+O_{C^1}(\eps).
+\end{equation}
+For completeness, a uniform bound on the right side of
+\eqref{eq:radial} keeps the flow in the slightly larger interval
+through $2\pi$; its $R$ derivative is $O(\eps^8)$, so the
+variational solution is $1+O(\eps^8)$ by Gronwall's inequality.
+Substitution into the integral equations yields both estimates in
+\eqref{eq:return}. No long-time numerical approximation is involved.
+
+The four positive roots $R_j=\sqrt j$ of $P$ are simple. Choose
+four disjoint small closed intervals around them. On each interval
+the limiting displacement in \eqref{eq:return} has opposite endpoint
+signs and a derivative of constant nonzero sign. Uniform $C^1$
+convergence preserves these properties for sufficiently small fixed
+$\eps>0$. There is exactly one simple return-map fixed point in
+each of the four intervals.
+
+The derivatives $P'(R_j)$ are $-12,8,-12,48$ in order. Since
+$\ell<0$, the signs of $\Pi_\eps'-1$ at the four fixed points are
+$+,-,+,-$. Each multiplier is positive and approaches one as
+$\eps\to0$, so these signs give the asserted alternating
+repelling and attracting stability. Positive angular speed makes
+each periodic orbit wind once around the equilibrium. Uniqueness
+of planar solutions makes the four Jordan curves disjoint and nested.
+The local coordinate transformations preserve this geometry and
+orbital stability.
+
+Finally fix one sufficiently small positive $\eps$. All four curves
+lie in a neighborhood of $(1,1)$ with closure in the positive
+quadrant. Their compact union avoids the equilibrium and the axes.
+Choosing an inner Jordan curve inside the innermost orbit and an
+outer Jordan curve outside the outermost orbit gives the required
+compact annulus. This proves the theorem for the original equation.
+\end{proof}
+
+\subsection{Physical meaning and limitations}
+At the constructed parameters, a stable rest state and two attracting
+oscillations coexist in the same dimensionless two-concentration
+model. The two repelling cycles are local separators of the nearby
+attracting dynamics. The result concerns a neighborhood of the steady
+state; it gives neither global permanence nor an upper bound on the
+total number of cycles in the positive quadrant.
+
+The finite normal form determines a sufficiently small parameter
+unfolding, while analyticity supplies the existence of a uniform
+remainder constant. We have not evaluated that constant to give a
+numerical upper bound for $\eps$. Thus \eqref{eq:pstar} must not be
+used as a directly simulated four-cycle example. Computing explicit
+finite-amplitude parameters and enclosing their four return roots is
+a further task. No physical period is reported. The argument retains
+the dimensionless time in \eqref{eq:ode}; a positive monomial change
+of time would preserve orbits but would not preserve periods.
+Finally, real reaction orders and the permitted reaction-vector
+variation do not establish an integer-stoichiometric chemical
+implementation or an experimentally observed oscillator.
+
+\appendix
+\section{Independent scalar Lyapunov calculation}\label{app:independent}
+A second calculation avoids the complex conjugacy recurrence. On the
+Hopf hypersurface use $X=u$, $Z=au+(1+b)v$, $w=\omega^2$, and
+$Q=wX^2+Z^2$. The linear field is $(-Z,wX)$. Reconstruct the real
+field directly from \eqref{eq:jet} and $v=(Z-aX)/(1+b)$ and seek
+\begin{equation}\label{eq:lyapunov}
+ H=Q+\sum_{n=3}^{10}H_n,\qquad
+ \nabla H\cdot(\dot X,\dot Z)=\sum_{m=2}^5 c_m Q^m
+                                    +O(\|(X,Z)\|^{11}),
+\end{equation}
+where $H_n$ is homogeneous of degree $n$. Although $H$ is computed
+through degree ten, only the degree-nine vector-field jet is needed.
+
+Let $B_n$ be the contribution at degree $n$ of the previously computed
+$H_k$ and the nonlinear field, and let
+$L=-Z\partial_X+wX\partial_Z$. For odd $n$ solve $LH_n=-B_n$.
+For $n=2m$, set $c_m$ equal to the angular mean of $B_n$ on $Q=1$
+and solve $LH_n=c_mQ^m-B_n$. The required averages are
+\begin{equation}\label{eq:average}
+ \left\langle X^{2p}Z^{2q}\right\rangle_{Q=1}
+ =\frac{(2p)!(2q)!}{4^{p+q}p!q!(p+q)!w^p},
+\end{equation}
+and are zero when either exponent is odd. If
+$H_n=\sum_{j=0}^n h_jX^{n-j}Z^j$, the scalar recurrence is
+\begin{equation}\label{eq:scalar}
+ w(j+1)h_{j+1}-(n-j+1)h_{j-1}=(\mathrm{rhs})_j,
+\end{equation}
+with coefficients outside $0\leq j\leq n$ equal to zero. At even
+degree impose $h_0=0$ to fix the radial kernel; at odd degree the
+last equation fixes $h_0$. These equations give an independent
+finite coefficient generator.
+
+The scalar and complex coefficients have a triangular relation. If
+$F_1=\cdots=F_{k-1}=0$, the first nonzero term satisfies
+\begin{equation}\label{eq:conversion}
+ c_{k+1}=\frac{2F_k}{w^k}.
+\end{equation}
+To see this, pull $H$ into the finite complex normal form. Its
+quadratic term is $wr^2$, whose first radial derivative term is
+$2wF_kr^{2k+2}$. Division by $Q^{k+1}=w^{k+1}r^{2k+2}$ gives
+\eqref{eq:conversion}. Changes in lower radial kernel terms add
+only multiples of lower focus values. This proves a smooth
+invertible lower-triangular change between the two focus sequences.
+In particular, on their common lower-zero locus,
+\begin{equation}\label{eq:detconversion}
+ \det\D(c_3,c_4)=4w^{-5}\det\D(F_2,F_3),\qquad
+ F_4=\tfrac12w^4c_5.
+\end{equation}
+The derivative determinants here use the reduced variables $(a,h)$.
+These equalities are used at the simultaneous zero; a general
+off-zero high-order coefficient is not identified across gauges.
+
+The second implementation uses 90-digit decimal endpoints, with
+floor and ceiling rounding at every interval operation. It computes
+its own exact rational preconditioner by inverting the rational
+midpoint of its center derivative enclosure. Its only shared
+numerical proposals are \eqref{eq:center} and the radius $10^{-20}$.
+Table~\ref{tab:independent} summarizes its strict outer bounds.
+\begin{table}[htbp]
+\centering
+\caption{Independent directed-decimal calculation. The last two
+rows use \eqref{eq:detconversion} only at the certified common zero.}
+\label{tab:independent}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Quantity & Rational outer bound\\
+\midrule
+Two contraction row sums & $<2.802\,10^{-11}$, $<6.423\,10^{-11}$\\
+Two image displacements & $<2.802\,10^{-31}$, $<6.423\,10^{-31}$\\
+$\det\D(c_3,c_4)$ & $[-2.3487381622,-2.3487381619]\,10^{-5}$\\
+$c_5$ & $[-2.305150908,-2.305150598]\,10^{-6}$\\
+$F_4$ at the common zero & $[-3.543491671,-3.543491195]\,10^{-7}$\\
+$\det\D(F_2,F_3)$ at that zero & $[-1.344241118,-1.344241117]\,10^{-6}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The same contraction argument establishes the zero independently.
+Exact rational evaluations also give $c_2=c_3=0$ and
+$c_4=-625/42336$ for \eqref{eq:calibration}, reproducing
+\eqref{eq:benchmark}, and reproduce \eqref{eq:endpoint}.
+All homogeneous-equation residuals in those rational checks vanish
+exactly. The independent implementation does not import the complex
+coefficient generator, its arithmetic module, its preconditioner,
+or cached focus outputs.
+
+\section*{Statements and declarations}
+\paragraph{Data and code availability.}
+Online Resource~1 contains the two coefficient generators, directed
+arithmetic implementations, exact rational certificate inputs,
+reference output bounds, and instructions for reproducing the
+certificates and exact calibrations. No experimental data are used.
+No third-party paper is included in the supplementary package.
+
+\paragraph{Use of artificial intelligence.}
+OpenAI Codex was used substantively for literature analysis, candidate
+derivations, implementation of the calculations, computational checks,
+and drafting. A separate AI session implemented the scalar verification
+described in Appendix~\ref{app:independent}. These automated checks
+are not external peer review and do not establish completed human
+scientific review. Human review of the reasoning, code, citations, and
+final text remains pending for this local draft.
+
+\paragraph{Author declarations.}
+Final author confirmation of affiliation, contributions, funding,
+competing interests, and approval of the manuscript is pending.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

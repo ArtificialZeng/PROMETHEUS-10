@@ -1,0 +1,10 @@
+Write job runtime preflight
+job_id: phys-00015-p06-write-6f26b11a0d1a
+checked_at_utc: 2026-09-13T21:06:56Z
+command -v python3: python3
+PHYSICS_PYTHON: python3
+sys.executable: python3
+Python: 3.12.14
+NumPy: 2.3.5
+SciPy: 1.18.1
+status: pass; all executable paths match the authoritative scientific Python.

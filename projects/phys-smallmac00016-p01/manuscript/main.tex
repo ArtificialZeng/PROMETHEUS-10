@@ -1,0 +1,542 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\hypersetup{
+  pdftitle={Exact current-bit optimum and a robust history advantage for coarse-grained generalized-amplitude-damping feedback},
+  pdfauthor={Xiaojian Zeng}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ee}{\bm e}
+
+\title{Exact current-bit optimum and a robust history advantage for\\
+coarse-grained generalized-amplitude-damping feedback}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Classical feedback from a measured environment is usually analysed with every Kraus
+outcome resolved. We study two uses of a full-Choi-rank generalized-amplitude-damping
+qubit instrument whose four outcomes are disclosed only through the bit $03|12$.
+For $p=18/25$ and $\gamma=3/10$, arbitrary clock-dependent current-bit CPTP
+recoveries have exact maximal entanglement fidelity $289/400$, attained by identity
+recovery. A feasible controller retaining the first bit reaches $1831/2500$, an
+advantage of $99/10000$ over the current-bit optimum. We also certify a rational
+parameter rectangle on which the full-history advantage is uniformly at least
+$1/1000$.
+\end{abstract}
+
+\noindent\textbf{Keywords:} environment-assisted correction; quantum feedback;
+coarse-grained measurement; entanglement fidelity; generalized amplitude damping
+
+\section{Introduction}
+
+Measuring an environment converts a quantum noise process into a classical record
+and a quantum instrument. When each record value resolves one Kraus operator,
+conditional recovery can exploit its polar decomposition. Gregoratti and Werner
+developed this discrete-time framework and obtained exact qubit recovery formulas for
+resolved records~\cite{GregorattiWerner2004}. More recently, Rexiti, Khabbazi Oskouei,
+and Mancini compared current-outcome and history-conditioned feedback in the same
+resolved-record setting~\cite{RexitiEtAl2024}. Related Bayesian--Markovian distinctions
+also occur in continuously monitored feedback, although there the dynamics and
+objective are different~\cite{WisemanEtAl2002}.
+
+A finite classical readout need not resolve the environment outcome. If several
+orthogonal outcomes are assigned the same symbol, the disclosed branch is a
+multi-Kraus completely positive operation: the hidden alternatives must be added
+incoherently before recovery. Consequently, the controller cannot apply a separate
+polar correction to each hidden Kraus operator. This information restriction is
+distinct from optimizing a single recovery after fixed noise, which is a semidefinite
+program~\cite{FletcherShorWin2007}, and from monotone alternating optimization of
+encoding and decoding maps~\cite{ReimpellWerner2005}. The two-stage problem considered
+below is bilinear even though either stage becomes convex when the other is fixed.
+
+We give an exact analysis for two uses of a standard generalized-amplitude-damping
+(GAD) qubit channel~\cite{CafaroVanLoock2014}. Its ordered four-outcome environment
+measurement is coarse grained into the disclosed bit $03|12$. The controller knows
+the clock and the current bit but retains no earlier record. At the reference point
+$(p,\gamma)=(18/25,3/10)$, we prove a sharp global upper bound over four arbitrary,
+possibly nonunital, qubit completely positive trace-preserving (CPTP) recovery maps.
+The bound is attained by identity recovery and gives
+\begin{equation}
+  F_2^M=\frac{289}{400}.
+  \label{eq:intro-optimum}
+\end{equation}
+An explicit controller that retains the first disclosed bit reaches $1831/2500$.
+Thus its advantage over the optimal current-bit controller is exactly $99/10000$,
+and a history advantage occurs at the earliest possible depth, two uses. We then
+prove a uniform, all-CPTP separation on the closed rectangle
+\begin{equation}
+ \mathsf R=\left[\frac{71}{100},\frac{723}{1000}\right]
+ \times\left[\frac{29}{100},\frac{303}{1000}\right].
+ \label{eq:intro-rectangle}
+\end{equation}
+The rectangle is a sufficient certified region, not a maximality statement. We do
+not determine the exact full-history optimum, exact off-centre current-bit optima,
+or the behaviour of other environment pairings.
+
+\section{Instrument, policies, and fidelity}
+\label{sec:model}
+
+Let $0<p<1$, $q=1-p$, $0<\gamma<1$, and $s=\sqrt{1-\gamma}$.
+In the ordered energy basis $(|0\rangle,|1\rangle)$, fix the Kraus tuple
+\begin{equation}
+ \begin{aligned}
+ K_0&=\sqrt p\,\diag(1,s), &
+ K_1&=\sqrt{p\gamma}\,|0\rangle\langle1|,\\
+ K_2&=\sqrt q\,\diag(s,1), &
+ K_3&=\sqrt{q\gamma}\,|1\rangle\langle0|.
+ \end{aligned}
+ \label{eq:kraus}
+\end{equation}
+The ordering is part of the physical specification: the environment is measured in
+this fixed minimal Kraus basis. Direct summation gives
+$\sum_xK_x^\dagger K_x=I$. The two off-diagonal operators occupy distinct matrix
+units, while the squared determinant of the coordinate vectors of $K_0,K_2$ in the
+diagonal subspace is $pq\gamma^2$. Hence the four operators are linearly independent
+whenever $p,q,\gamma>0$, and the channel has Choi rank four.
+
+Only a balanced bit is disclosed. With
+\begin{equation}
+ G_0=\{0,3\},\qquad G_1=\{1,2\},
+ \label{eq:groups}
+\end{equation}
+the observed instrument is
+\begin{equation}
+ \cI_b(\rho)=\sum_{x\in G_b}K_x\rho K_x^\dagger.
+ \label{eq:instrument}
+\end{equation}
+The fine label $x$ is summed incoherently before control. Two identical channel uses
+have fresh, independent environments.
+
+For a current-bit policy, choose an arbitrary qubit CPTP map $\cR_{k,b}$ for each
+clock $k\in\{1,2\}$ and disclosed bit $b\in\{0,1\}$. The clock is available, so
+$\cR_{1,b}$ and $\cR_{2,b}$ need not agree. At the second use the controller does
+not know the first bit, either hidden Kraus label, or any retained quantum state.
+The unconditional corrected channel factorizes exactly:
+\begin{equation}
+ \Phi^M_{\bm R}=\cC_2\circ\cC_1,
+ \qquad
+ \cC_k=\sum_{b=0}^1\cR_{k,b}\circ\cI_b.
+ \label{eq:factorization}
+\end{equation}
+This is a time-inhomogeneous current-bit class, not a stationary-policy restriction.
+A full-history policy may instead use $\cR_{2,b_1b_2}$.
+
+We use entanglement fidelity for the maximally mixed qubit,
+\begin{equation}
+ F_e(\Phi)=\langle\Omega| (\id\otimes\Phi)
+ (|\Omega\rangle\langle\Omega|)|\Omega\rangle,
+ \qquad |\Omega\rangle=\frac{|00\rangle+|11\rangle}{\sqrt2}.
+ \label{eq:fidelity}
+\end{equation}
+Let $F_2^M$ and $F_2^B$ denote the maxima over the current-bit and full-history
+classes. Compactness of the finite products of qubit-CPTP Choi sets ensures that
+both maxima are attained.
+
+For later use, write a trace-preserving qubit map in affine Bloch form
+$\bm r\mapsto\bm t+T\bm r$. Its entanglement fidelity is
+\begin{equation}
+ F_e(\Phi)=\frac{1+\Tr T}{4}.
+ \label{eq:bloch-fidelity}
+\end{equation}
+The affine translation does not enter the superoperator trace. Consequently, for
+the composition in Eq.~\eqref{eq:factorization},
+\begin{equation}
+ F_e(\cC_2\circ\cC_1)=\frac{1+\Tr(T_2T_1)}4.
+ \label{eq:composition-fidelity}
+\end{equation}
+
+\section{A feasible retained-history controller}
+\label{sec:witness}
+
+Let $X$ be the Pauli bit flip. Consider the parameter-independent policy
+\begin{equation}
+ R_{1,0}=I,\qquad R_{1,1}=X,
+ \qquad
+ R_{2,b_1b_2}=\begin{cases}I,&b_1=0,\\X,&b_1=1.
+ \end{cases}
+ \label{eq:history-policy}
+\end{equation}
+The second recovery retains $b_1$ but happens not to use $b_2$. All recoveries are
+unitary, so the policy is physically admissible. Expanding the incoherent branches
+only for evaluation gives
+\begin{equation}
+ F_{\rm hist}=\frac14\sum_{x_1,x_2=0}^3
+ \left|\Tr\!\left[R_{2,g(x_1)g(x_2)}K_{x_2}
+ R_{1,g(x_1)}K_{x_1}\right]\right|^2.
+ \label{eq:path-fidelity}
+\end{equation}
+The nonzero trace amplitudes form the multiset
+\begin{equation}
+ \begin{split}
+ &p(2-\gamma),\quad 2\sqrt{pq(1-\gamma)},\quad
+ \gamma\sqrt{pq},\quad p\gamma,\\
+ &\sqrt{pq}(2-\gamma),\quad 2q\sqrt{1-\gamma}.
+ \end{split}
+ \label{eq:path-amplitudes}
+\end{equation}
+Squaring and simplifying yields the exact formula
+\begin{equation}
+ H(p,\gamma):=F_{\rm hist}
+ =1-\gamma+\frac{p\gamma^2}{2}.
+ \label{eq:history-value}
+\end{equation}
+At the reference point this is $H=1831/2500$. Equation~\eqref{eq:history-value}
+is a feasible value, so $F_2^B\ge H$; it is not asserted to be the exact
+full-history optimum.
+
+\section{Exact current-bit optimum at the reference point}
+\label{sec:exact}
+
+We now set
+\begin{equation}
+ p=\frac{18}{25},\qquad q=\frac7{25},\qquad
+ \gamma=\frac3{10},\qquad r=1-\gamma=\frac7{10},
+ \qquad c=\frac\gamma2=\frac3{20}.
+ \label{eq:reference}
+\end{equation}
+
+\subsection{Branch contraction constraints}
+
+For $x\in\mathbb R^3$, direct evaluation of Eq.~\eqref{eq:instrument} on the
+traceless Hermitian input $x\cdot\bm\sigma$ gives scalar/Bloch pairs
+\begin{equation}
+ \cI_0(x\cdot\bm\sigma): (cx_z,D_0x),\qquad
+ \cI_1(x\cdot\bm\sigma): (-cx_z,D_1x),
+ \label{eq:branch-pairs}
+\end{equation}
+where
+\begin{equation}
+ \begin{gathered}
+ d_0=p\sqrt r,\qquad d_1=q\sqrt r,\\
+ z_0=p-c=\frac{57}{100},\qquad
+ z_1=q-c=\frac{13}{100},\qquad
+ D_b=\diag(d_b,d_b,z_b).
+ \end{gathered}
+ \label{eq:D-definitions}
+\end{equation}
+Here $(a,v)$ denotes the operator $aI+v\cdot\bm\sigma$.
+
+After arbitrary CPTP recoveries, let $B_bx$ be the Bloch vector of
+$\cR_b\circ\cI_b(x\cdot\bm\sigma)$. This definition includes the recovery's
+nonunital translation multiplied by the branch scalar $\pm cx_z$. Trace
+preservation leaves the scalar component unchanged, and positivity implies
+trace-norm contraction on Hermitian inputs. Since
+\begin{equation}
+ \|aI+v\cdot\bm\sigma\|_1=2\max\{|a|,\|v\|_2\},
+ \label{eq:qubit-trace-norm}
+\end{equation}
+we obtain
+\begin{align}
+ \|B_0x\|_2&\le \|D_0x\|_2,
+ \label{eq:branch0-bound}\\
+ \|B_1x\|_2^2&\le
+ \max\!\left\{d_1^2(x_x^2+x_y^2)+z_1^2x_z^2,
+ c^2x_z^2\right\}.
+ \label{eq:branch1-bound}
+\end{align}
+For Eq.~\eqref{eq:branch0-bound}, $\|D_0x\|_2\ge |cx_z|$ at the
+reference point. Thus $B_0^TB_0\preceq D_0^2$, and, because $D_0$ is invertible,
+\begin{equation}
+ B_0=CD_0\quad\hbox{for some real }C\hbox{ with }\|C\|_{\rm op}\le1.
+ \label{eq:douglas}
+\end{equation}
+
+\subsection{A sharp Gram and nuclear-norm bound}
+
+Let $G=B_1^TB_1$. Average $G$ over rotations about the input $z$ axis. The
+right-hand side of Eq.~\eqref{eq:branch1-bound} is rotation invariant, so the
+average remains feasible and has the form
+$\overline G=\diag(a,a,b)$. The averaging preserves $\Tr G$. It is also valid
+for the nuclear-norm estimate below: the function
+\begin{equation}
+ G\longmapsto \Tr\sqrt{D_0GD_0}
+ \label{eq:concave-functional}
+\end{equation}
+is concave on positive semidefinite matrices, while $D_0$ commutes with the
+rotations. Therefore its value at $\overline G$ is at least its value at $G$.
+
+For a unit vector, put $t=x_z^2$. The two linear pieces on the right-hand side
+of Eq.~\eqref{eq:branch1-bound} cross at
+\begin{equation}
+ t_0=\frac{d_1^2}{d_1^2+c^2-z_1^2}=\frac{49}{54}.
+ \label{eq:crossing}
+\end{equation}
+Checking the endpoints and the crossing on their respective linear intervals
+gives precisely
+\begin{equation}
+ 0\le a\le d_1^2,\qquad 0\le b\le c^2,
+ \qquad 5a+49b\le49c^2.
+ \label{eq:gram-polytope}
+\end{equation}
+The reference parameters obey the exact identity
+\begin{equation}
+ 5d_1^2+49z_1^2=49c^2.
+ \label{eq:exact-identity}
+\end{equation}
+Because $2-5/49>0$, Eqs.~\eqref{eq:gram-polytope} and
+\eqref{eq:exact-identity} imply
+\begin{equation}
+ \|B_1\|_F^2=\Tr G\le2d_1^2+z_1^2.
+ \label{eq:B1-frob}
+\end{equation}
+
+The same symmetrization and concavity give
+\begin{equation}
+ \|B_1D_0\|_*=\Tr\sqrt{D_0GD_0}
+ \le2d_0\sqrt a+z_0\sqrt b.
+ \label{eq:nuclear-start}
+\end{equation}
+The right side increases with $b$, so Eq.~\eqref{eq:gram-polytope} reduces the
+remaining maximization to
+\begin{equation}
+ f(a)=2d_0\sqrt a+z_0\sqrt{c^2-\frac{5a}{49}},
+ \qquad 0\le a\le d_1^2.
+ \label{eq:f-function}
+\end{equation}
+Its derivative decreases on the open interval, and at the right endpoint
+\begin{equation}
+ f'(d_1^2)=\frac{d_0}{d_1}-\frac{5z_0}{98z_1}
+ =\frac{18}{7}-\frac{285}{1274}
+ =\frac{2991}{1274}>0.
+ \label{eq:endpoint-derivative}
+\end{equation}
+Hence $f$ is increasing throughout the interval. Equations
+\eqref{eq:exact-identity} and \eqref{eq:nuclear-start} yield
+\begin{equation}
+ \|B_1D_0\|_*\le2d_0d_1+z_0z_1.
+ \label{eq:nuclear-bound}
+\end{equation}
+
+\subsection{Attained global bound}
+
+The Bloch block of an arbitrary corrected one-use channel is $T=B_0+B_1$.
+Using Eq.~\eqref{eq:douglas}, operator/nuclear-norm duality, and
+Eqs.~\eqref{eq:B1-frob} and \eqref{eq:nuclear-bound},
+\begin{align}
+ \|T\|_F^2
+ &=\|CD_0+B_1\|_F^2\nonumber\\
+ &\le \|D_0\|_F^2+\|B_1\|_F^2+2\|B_1D_0\|_*\nonumber\\
+ &\le2(d_0+d_1)^2+(z_0+z_1)^2
+ =2r+r^2=\frac{189}{100}.
+ \label{eq:sharp-one-clock}
+\end{align}
+
+\begin{theorem}[Exact current-bit optimum]
+\label{thm:exact}
+For the ordered instrument in Eqs.~\eqref{eq:kraus}--\eqref{eq:groups} at the
+reference point \eqref{eq:reference}, allowing arbitrary clock-dependent qubit
+CPTP recoveries conditioned only on the current bit,
+\begin{equation}
+ \boxed{F_2^M=\frac{289}{400}}.
+\end{equation}
+Identity recovery $\cR_{k,b}=\id$ for every $k,b$ attains the optimum.
+\end{theorem}
+
+\begin{proof}
+Let $T_1,T_2$ be the two one-clock Bloch blocks. Frobenius
+Cauchy--Schwarz and Eq.~\eqref{eq:sharp-one-clock} give
+\begin{equation}
+ \Tr(T_2T_1)=\langle T_2^T,T_1\rangle_F
+ \le\|T_2\|_F\|T_1\|_F\le\frac{189}{100}.
+ \label{eq:two-clock-bound}
+\end{equation}
+By Eq.~\eqref{eq:composition-fidelity}, every current-bit policy therefore has
+$F_e\le(1+189/100)/4=289/400$.
+
+For identity recovery, each one-clock block is the uncorrected GAD block
+\begin{equation}
+ T_1=T_2=D_0+D_1=\diag(\sqrt r,\sqrt r,r).
+\end{equation}
+It saturates Eq.~\eqref{eq:two-clock-bound}. The identities are exact CPTP maps,
+with the single Kraus operator $I$, so the upper bound is attained.
+\end{proof}
+
+Combining Theorem~\ref{thm:exact} with the feasible history value gives
+\begin{equation}
+ H\!\left(\frac{18}{25},\frac3{10}\right)-F_2^M
+ =\frac{1831}{2500}-\frac{289}{400}
+ =\frac{99}{10000}.
+ \label{eq:exact-witness-gap}
+\end{equation}
+This is the exact advantage of the fixed witness over the optimal current-bit
+controller. Since $F_2^B$ may exceed the witness, Eq.~\eqref{eq:exact-witness-gap}
+implies $F_2^B-F_2^M\ge99/10000$ but does not determine that optimum gap.
+At one use the current-bit and full-history information sets coincide. Thus the
+earliest depth at which retained coarse history can help is exactly two uses.
+
+\section{A uniform rational robustness rectangle}
+\label{sec:rectangle}
+
+The sharp Gram argument above is specialized to the reference point. A simpler
+trace-norm bound is weaker there but holds throughout a parameter region. For one
+corrected use, direct calculation gives
+\begin{align}
+ \cI_0(X)&=psX, & \cI_1(X)&=qsX,\nonumber\\
+ \cI_0(Y)&=psY, & \cI_1(Y)&=qsY,\label{eq:pauli-images}\\
+ \cI_0(Z)&=\diag(p,\gamma-p), &
+ \cI_1(Z)&=\diag(q-\gamma,-q).\nonumber
+\end{align}
+Hermitian trace-norm contraction after each branch, followed by the triangle
+inequality, bounds the columns of every attainable one-clock block $T$ by
+\begin{equation}
+ \|T\ee_x\|_2,\|T\ee_y\|_2\le\sqrt{1-\gamma},
+ \qquad
+ \|T\ee_z\|_2\le z(p,\gamma),
+ \label{eq:column-bounds}
+\end{equation}
+where
+\begin{equation}
+ z(p,\gamma)=\frac{1+|p-\gamma|+|1-p-\gamma|}{2}.
+ \label{eq:z-general}
+\end{equation}
+The factorization \eqref{eq:factorization}, Eq.~\eqref{eq:composition-fidelity},
+and Frobenius Cauchy--Schwarz then give every current-bit policy the global bound
+\begin{equation}
+ F_2^M(p,\gamma)\le
+ U(p,\gamma):=\frac{1+2(1-\gamma)+z(p,\gamma)^2}{4}.
+ \label{eq:uniform-upper}
+\end{equation}
+No unitality, unitarity, or stationarity assumption enters this bound.
+
+\begin{theorem}[Uniform history advantage]
+\label{thm:rectangle}
+For every $(p,\gamma)$ in the closed rectangle $\mathsf R$ of
+Eq.~\eqref{eq:intro-rectangle}, the channel in Eq.~\eqref{eq:kraus} remains full
+Choi rank and
+\begin{equation}
+ F_2^B(p,\gamma)-F_2^M(p,\gamma)\ge\frac1{1000}.
+ \label{eq:uniform-gap}
+\end{equation}
+The same policy \eqref{eq:history-policy} is feasible at every point.
+\end{theorem}
+
+\begin{proof}
+On all of $\mathsf R$,
+\begin{equation}
+ 1-p\le\gamma\le p,
+\end{equation}
+including equality $1-p=\gamma$ at the lower-left corner. Thus
+Eq.~\eqref{eq:z-general} reduces, on the entire closed rectangle, to $z=p$.
+The difference between the feasible history value \eqref{eq:history-value} and
+the upper bound \eqref{eq:uniform-upper} is consequently
+\begin{equation}
+ G(p,\gamma):=H-U
+ =\frac{1-2\gamma+2p\gamma^2-p^2}{4}.
+ \label{eq:G}
+\end{equation}
+Its partial derivatives have uniform exact signs:
+\begin{align}
+ \partial_pG&=\frac{\gamma^2-p}{2}<0,
+ &p-\gamma^2&\ge\frac{618191}{10^6},\label{eq:p-margin}\\
+ \partial_\gamma G&=p\gamma-\frac12<0,
+ &\frac12-p\gamma&\ge\frac{280931}{10^6}.
+ \label{eq:gamma-margin}
+\end{align}
+Therefore the minimum lies at the upper-right corner, where exact arithmetic gives
+\begin{equation}
+ \min_{\mathsf R}G
+ =G\!\left(\frac{723}{1000},\frac{303}{1000}\right)
+ =\frac{2013407}{2000000000}
+ =\frac1{1000}+\frac{13407}{2000000000}.
+ \label{eq:corner-value}
+\end{equation}
+Since $F_2^B\ge H$ and $F_2^M\le U$, this proves
+Eq.~\eqref{eq:uniform-gap}.
+
+Finally, $p,q,\gamma$ are strictly positive throughout the rectangle, and
+\begin{equation}
+ pq\gamma^2\ge\frac{168427911}{10^{10}}>0.
+\end{equation}
+The Kraus-independence argument from Sec.~\ref{sec:model} therefore proves uniform
+full Choi rank.
+\end{proof}
+
+The lower-left point of $\mathsf R$ lies on an absolute-value chamber boundary;
+the proof includes it algebraically rather than by an open-neighbourhood continuity
+argument. The rectangle is deliberately conservative. For example, the larger box
+$[71/100,29/40]\times[29/100,61/200]$ stays in the same chamber, but the
+right-hand side of Eq.~\eqref{eq:G} is $-591/3200000$ at its upper-right corner.
+This only shows failure of the sufficient bound there; it is not evidence that the
+true history advantage is nonpositive.
+
+\section{Discussion and limitations}
+\label{sec:discussion}
+
+At the reference channel, identity is globally optimal among all current-bit
+recoveries, even though an environment bit is supplied after each use. Retaining the
+first bit changes the information structure: the simple bit-flip policy
+\eqref{eq:history-policy} exceeds the exact current-bit optimum. The mechanism is
+coarse graining. Each disclosed operation contains two hidden Kraus alternatives,
+so results based on resolved individual outcomes do not collapse this model to the
+known qubit case~\cite{GregorattiWerner2004,RexitiEtAl2024}.
+
+The result is finite dimensional and exact. It uses no perturbative expansion,
+sampling argument, or numerical optimizer. Nonunital recovery translations are
+included in the branch matrices $B_b$ and disappear from the final fidelity only
+through the exact trace-preserving Bloch identity. The rectangle theorem further
+shows that the separation is not an isolated rational coincidence: the same witness
+beats every admissible current-bit policy by a fixed amount on a two-parameter closed
+set.
+
+Several boundaries matter. First, $99/10000$ is the exact advantage of the displayed
+history witness over $F_2^M$, not the exact value of $F_2^B-F_2^M$. Second, the
+off-centre current-bit optimum is not known; Theorem~\ref{thm:rectangle} uses the
+upper bound $U$. Third, neither the rectangle nor the pairing $03|12$ is optimized.
+Other coarse grainings, correlated environments, more than two uses, persistent
+quantum memory, and experimental implementation are outside the claim. Finally, the
+literature comparison is bounded rather than an exhaustive priority determination;
+the author should extend it before submission.
+
+\section*{Reproducibility}
+
+The accompanying source bundle contains independent direct-Kraus and Liouville
+reconstructions, an exact checker for the centre certificate, and a separate exact
+checker for the robustness rectangle. Rational and symbolic arithmetic establish the
+reported constants. Floating-point calculations are limited to convention and
+residual checks and are not used to prove either theorem. No empirical data were used.
+The included reproducibility guide gives the interpreter, dependency versions, and
+commands.
+
+\section*{Statements and declarations}
+
+\paragraph{Funding.} No funding information was available in the materials used to
+prepare this draft.
+
+\paragraph{Competing interests.} No competing-interest declaration was supplied in
+the materials used to prepare this draft.
+
+\paragraph{Data and code availability.} No empirical data were used. Exact input
+records, verification programs, and regeneration instructions accompany the local
+source package.
+
+\paragraph{Use of generative AI.} Generative AI systems assisted with problem
+formulation, bounded literature discovery, analytic derivation, code generation,
+independent computational checks, and manuscript drafting. The systems are not authors.
+This pre-submission draft requires the named author's independent verification,
+revision where necessary, approval of the text, and acceptance of full responsibility
+before submission.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

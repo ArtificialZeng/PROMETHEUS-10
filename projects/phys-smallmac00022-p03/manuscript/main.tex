@@ -1,0 +1,440 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\opnorm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\Tq}{T_q}
+
+\title{Exact all-parameter spectral-gap certificates for\\
+deformed-EPR Hamiltonians on small subdivided stars}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study the coefficient-one deformed-EPR Hamiltonian
+\(H_s=-\sum_{e}(\ket{00}+s\ket{11})(\bra{00}+s\bra{11})_e\)
+on finite trees, where \(0<s<1\) and the rank-one edge term is not
+normalized.  A recent conjecture gives the lower bound
+\(\Delta(H_s)\geq 1-s^2\), with equality on stars.  We give an exact
+finite-family result for the subdivided star \(T_q\), obtained from a star
+by subdividing one edge: for every \(q=1,\ldots,6\) and every real
+\(0<s<1\),
+\[
+  \Delta(T_q,s)>1-s^2.
+\]
+The case \(q=1\), the four-vertex path, is proved by an explicit quartic
+root-ordering argument.  For \(q=2,\ldots,6\), permutation symmetry and a
+conserved staggered occupation reduce the full Hamiltonian to real
+symmetric blocks of dimension at most eight.  Exact characteristic
+polynomials and crossing resultants over \(\Q[t,x]\), with \(t=s^2\),
+reduce a possible failure to 171 algebraic parameter neighborhoods.
+Rational root isolation and Weyl-continuity enclosures prove a positive
+margin on every neighborhood, while an exact reference sign fixes each
+remaining component.  The result excludes these six non-star trees as
+additional equality cases.  It does not prove the conjecture for arbitrary
+trees or for \(q\geq7\).
+\end{abstract}
+
+\section{Introduction}
+
+Wong, Bravyi, Gosset and Liu introduced a family of two-local Hamiltonians
+whose edge interactions favor a deformed EPR vector and connected its
+spectral properties to Lee--Yang tensors~\cite{wong2026}.  In the
+coefficient-one convention used here, the Hamiltonian on a finite graph
+\(G=(V,E)\) is
+\begin{equation}
+ H_s(G)=-\sum_{\{i,j\}\in E}
+ \bigl(\ket{00}+s\ket{11}\bigr)
+ \bigl(\bra{00}+s\bra{11}\bigr)_{ij},
+ \qquad 0\leq s<1.                                      \label{eq:H}
+\end{equation}
+This model lies in the Suzuki--Fisher class~\cite{suzuki1971}.  The source
+proved uniqueness and even parity of the ground state and found the exact
+gap \(1-s^2\) on every star with at least three vertices.  It then
+conjectured the lower bound
+\begin{equation}
+       \Delta(G,s)\geq 1-s^2                            \label{eq:conj}
+\end{equation}
+for every finite connected graph.  Its evidence included exact
+diagonalization at 100 uniformly spaced parameter values for all trees with
+at most 18 vertices and all connected graphs with at most 10 vertices, as
+well as a mixed exact-diagonalization and matrix-product-state study of
+paths~\cite{wong2026}.  Those finite grids are strong evidence, but do not
+order the spectrum over an uncountable parameter interval.
+
+Two subsequent Lee--Yang gap results give broad but differently normalized
+bounds.  Bravyi, Gosset, Liu and Wong proved a gap of at least twice the
+minimum longitudinal field for the Suzuki--Fisher family~\cite{bravyi2026}.
+Using the Pauli expansion of~\eqref{eq:H}, this gives
+\(\Delta\geq \tfrac12(1-s^2)\delta(G)\), where \(\delta(G)\) is the
+minimum degree.  It therefore supplies only half of~\eqref{eq:conj} on a
+tree.  Rayudu and Takahashi proved another uniform-field Lee--Yang gap
+bound~\cite{rayudu2026}.  Neither result provides the sharp all-parameter
+ordering established below for the specified finite family.
+
+Our graph \(T_q\) has ordinary leaves \(L_1,\ldots,L_q\), a centre \(C\),
+and two further vertices \(A,B\), with edges
+\begin{equation}
+  CL_i\quad(1\leq i\leq q),\qquad CA,\qquad AB.          \label{eq:Tq}
+\end{equation}
+Thus \(T_q\) has \(q+3\) vertices and \(q+2\) edges; it is obtained by
+subdividing one edge of the star \(K_{1,q+1}\).  Every \(T_q\) is a
+non-star, including \(T_1=P_4\).  The main result is deliberately finite.
+
+\begin{theorem}[Finite subdivided-star result]             \label{thm:main}
+For each integer \(q\in\{1,2,3,4,5,6\}\) and every real
+\(0<s<1\), the Hamiltonian~\eqref{eq:H} on \(T_q\) satisfies
+\begin{equation}
+             \Delta(T_q,s)>1-s^2.                        \label{eq:main}
+\end{equation}
+\end{theorem}
+
+The restriction in \(q\) is part of the theorem, not a finite-size proxy
+for an asymptotic claim.  The proof is analytic for \(q=1\) and exact
+computer-assisted for \(2\leq q\leq6\).  It controls both the lowest odd
+state and the second even state.  This is essential: controlling only the
+odd excitation would assume a separate conjecture made in
+Ref.~\cite{wong2026}.
+
+\section{Hamiltonian, normalization and gap channels}
+
+Put \(t=s^2\) and work with the positive semidefinite operator
+\begin{equation}
+ K_s=-H_s=\sum_{e\in E}\ket{\phi_s}\!\bra{\phi_s}_e,
+ \qquad \ket{\phi_s}=\ket{00}+s\ket{11}.              \label{eq:K}
+\end{equation}
+In the ordered basis \((\ket{00},\ket{01},\ket{10},\ket{11})\), one edge
+term is
+\begin{equation}
+ \ket{\phi_s}\!\bra{\phi_s}=
+ \begin{pmatrix}
+ 1&0&0&s\\0&0&0&0\\0&0&0&0\\s&0&0&s^2
+ \end{pmatrix}.                                       \label{eq:local}
+\end{equation}
+It has rank one and sole nonzero eigenvalue \(1+s^2\).  In particular,
+it is not a projector in the convention of~\eqref{eq:H}.  Energies and
+gaps below are dimensionless, with coefficient one on every edge.
+
+The parity \(P=Z^{\otimes |V|}\) commutes with \(K_s\).  Let \(\mu_e\)
+and \(\mu_o\) be the largest eigenvalues in the even and odd sectors,
+and let \(\nu_e\) be the second-largest even eigenvalue.  The ground-state
+uniqueness result of Ref.~\cite{wong2026} implies that the top eigenvalue
+of \(K_s\) is \(\mu_e\).  Reversing the order of the spectrum when
+passing from \(K_s\) to \(H_s=-K_s\) gives
+\begin{equation}
+ \Delta(T_q,s)=\mu_e-\max\{\mu_o,\nu_e\}.              \label{eq:gap}
+\end{equation}
+It is therefore enough, and necessary for our method, to prove positivity
+of both margins
+\begin{equation}
+ M_o(t)=\mu_e-\mu_o-(1-t),\qquad
+ M_e(t)=\mu_e-\nu_e-(1-t).                            \label{eq:margins}
+\end{equation}
+
+The endpoint behavior illustrates why the strict statement uses the open
+interval.  At \(s=0\), \(K_0\) is diagonal and counts zero--zero edges;
+every finite tree has \(\Delta=1\).  At \(s=1\) the target bound vanishes.
+Neither endpoint is included in Theorem~\ref{thm:main}.
+
+\section{Spin and staggered-charge reduction}              \label{sec:blocks}
+
+Permutations of the \(q\) ordinary leaves commute with \(K_s\).  Their
+Hilbert space decomposes into spin
+\begin{equation}
+ j=\frac q2-r,\qquad 0\leq r\leq\left\lfloor\frac q2\right\rfloor,
+ \qquad
+ d_{q,r}=\binom qr-\binom q{r-1},                       \label{eq:spin}
+\end{equation}
+where \(d_{q,r}\) is the multiplicity and \(\binom q{-1}=0\).  In one
+copy of a spin sector, use the orthonormal basis
+\(\ket{c,a,b;k,r}\), where \(c,a,b\in\{0,1\}\) are the bits at
+\(C,A,B\), and \(r\leq k\leq q-r\) is the physical Hamming weight of
+the ordinary leaves.  The diagonal contribution from the \(q\) ordinary
+edges is
+\begin{equation}
+ q-k\quad(c=0),\qquad tk\quad(c=1),                    \label{eq:diag}
+\end{equation}
+and their nonzero off-diagonal matrix element is
+\begin{equation}
+ \ket{0,a,b;k,r}\longleftrightarrow\ket{1,a,b;k+1,r},
+ \qquad s\sqrt{(q-r-k)(k-r+1)}.                        \label{eq:offdiag}
+\end{equation}
+The edges \(CA\) and \(AB\) add the same two-state action as
+Eq.~\eqref{eq:local} on the corresponding core bits.
+
+There is a further reduction that uses bipartiteness.  Assign positive
+sign to \(L_i,A\), negative sign to \(C,B\), and define
+\begin{equation}
+                 Q=k+a-c-b.                            \label{eq:charge}
+\end{equation}
+Every off-diagonal transition flips \(00\leftrightarrow11\) across the
+bipartition, so \(Q\) is conserved.  Moreover,
+\((k+a+c+b)-Q=2(c+b)\), hence parity equals \(Q\bmod2\).  For fixed
+\((r,Q)\), Eq.~\eqref{eq:charge} determines
+\(k=Q-a+c+b\) from three core bits.  Each real symmetric block
+\(B_{q,r,Q}(t)\) therefore has dimension at most eight, independently of
+\(q\).
+
+The complete parity characteristic polynomial factors as
+\begin{equation}
+ \chi_p(x,t)=
+ \prod_{r=0}^{\lfloor q/2\rfloor}
+ \prod_{Q\equiv p\ ({\rm mod}\ 2)}
+ \det\!\left[xI-B_{q,r,Q}(t)\right]^{d_{q,r}}.          \label{eq:factor}
+\end{equation}
+The dimension identity
+\begin{equation}
+ \sum_r d_{q,r}\sum_Q\dim B_{q,r,Q}=2^{q+3}            \label{eq:dimension}
+\end{equation}
+is checked symbolically for every certified \(q\), so no permutation or
+parity channel is omitted.  Since each parity matrix is entrywise
+nonnegative, a top eigenvector can be chosen nonnegative and averaged over
+leaf permutations without vanishing.  Thus the top eigenvalue in either
+parity lies in \(r=0\).  At \(s=0\), the unique top state is the all-zero
+state in \((r,Q)=(0,0)\).  Ground-state simplicity for \(0\leq s<1\)
+prevents this root from changing invariant sectors.  Consequently the
+physical ground root is always the largest root of the \((0,0)\) block.
+For \(q\geq2\), after an identically zero factor is removed, its
+characteristic polynomial has degree six.
+
+\section{Analytic proof for \texorpdfstring{\(T_1=P_4\)}{T1 = P4}}
+\label{sec:p4}
+
+For the four-vertex path, exact construction of the parity blocks gives
+\begin{equation}
+ \chi_e(x)=x^3(x-1-t)Q_t(x),                            \label{eq:chie}
+\end{equation}
+where
+\begin{align}
+Q_t(x)={}&x^4-5(1+t)x^3+(7+18t+7t^2)x^2 \nonumber\\
+ &-3(1+t)(1+4t+t^2)x+2t(1+4t+t^2),                    \label{eq:quartic}
+\end{align}
+and
+\begin{equation}
+ \chi_o(x)=x^2(x-1-t)^2
+ \left[x^2-2(1+t)x+2t\right]^2.                       \label{eq:chio}
+\end{equation}
+The largest odd eigenvalue is
+\begin{equation}
+ b(t)=1+t+r,\qquad r=\sqrt{1+t^2}.                   \label{eq:b}
+\end{equation}
+All roots of \(Q_t\) are real because it is a factor of the
+characteristic polynomial of a real symmetric invariant block.  At
+\(t=0\), \(Q_0=x(x-1)^2(x-3)\), so exactly one root of \(Q_0\) lies
+above \(b(0)=2\).  Reduction modulo \(r^2=1+t^2\) yields the exact identity
+\begin{equation}
+ Q_t(b(t))=-(1-t)^2(1+t)b(t)<0\qquad(0<t<1).           \label{eq:qb}
+\end{equation}
+No root can cross the continuous threshold \(b(t)\) without making the
+left side zero.  Hence exactly one even root remains above \(b(t)\), and
+the first excitation is odd throughout the interval.
+
+At the target-shifted odd root, the second exact identity is
+\begin{equation}
+ Q_t\bigl(b(t)+1-t\bigr)=Q_t(2+r)
+ =-8t(1-t)\bigl[(1-t)r+t^2-t+1\bigr]<0.               \label{eq:qshift}
+\end{equation}
+Since \(Q_t\) is monic, its largest root is strictly larger than
+\(b(t)+1-t\).  That root is \(\mu_e\), so
+\begin{equation}
+       \Delta(P_4,s)=\mu_e-b(t)>1-t=1-s^2.            \label{eq:p4done}
+\end{equation}
+This proves Theorem~\ref{thm:main} for \(q=1\).
+
+\section{Exact crossing certificates for
+\texorpdfstring{\(2\leq q\leq6\)}{2 <= q <= 6}}
+                                                                  \label{sec:cert}
+
+This section describes the finite, independently checkable certificate
+used for the remaining cases.  Let \(P_q(x,t)\) be the nonzero degree-six
+factor containing the ground root, and let \(F_{q,r,Q}(x,t)\) run over
+all nonzero charge--spin factors in~\eqref{eq:factor}.  The ground factor
+itself is included when comparing its lower roots.  All these polynomials
+are computed over \(\Q[t,x]\).
+
+If either margin in~\eqref{eq:margins} vanished at an interior parameter,
+then for some physical competitor \(\lambda\),
+\begin{equation}
+ P_q(\mu_e,t)=0,
+ \qquad
+ F_{q,r,Q}\bigl(\mu_e-(1-t),t\bigr)=0.                \label{eq:crossing}
+\end{equation}
+Thus \(t\) must be a zero of the exact resultant
+\begin{equation}
+ R_{q,r,Q}(t)=\operatorname{Res}_x
+ \left(P_q(x,t),F_{q,r,Q}(x-(1-t),t)\right).           \label{eq:res}
+\end{equation}
+For every listed block, this resultant is nonzero.  Powers of \(t\) and
+\(t-1\) are removed because the theorem concerns the open interval, and
+the remaining univariate polynomial is replaced by its square-free part.
+Exact real-root isolation then returns every root in \((0,1)\).  Across
+\(q=2,\ldots,6\), retaining duplicates between different resultants,
+there are 171 candidate intervals.
+
+At the rational midpoint \(t_0\) of each isolating interval \([a,b]\),
+all real roots of all physical block polynomials are isolated over
+\(\Q\).  Taking a rational lower endpoint for the ground root and rational
+upper endpoints for every competing root gives an exact lower bound
+\(m_0\) on
+\begin{equation}
+ g_q(t_0)=\mu_e(t_0)-\max\{\mu_o(t_0),\nu_e(t_0)\}-(1-t_0).
+                                                                    \label{eq:g}
+\end{equation}
+The pointwise bound must also control every parameter inside the isolating
+interval.  Differentiating one edge term in the
+\((\ket{00},\ket{11})\) subspace gives
+\begin{equation}
+ \opnorm{\frac{d}{ds}\ket{\phi_s}\!\bra{\phi_s}}
+ =s+\sqrt{1+s^2}<\frac52.                              \label{eq:deriv}
+\end{equation}
+With \(q+2\) edges, Weyl's inequality therefore makes every ordered
+eigenvalue \(L_q\)-Lipschitz in \(s\), where
+\begin{equation}
+                    L_q=\frac52(q+2).                 \label{eq:L}
+\end{equation}
+The maximum of the competitors has the same Lipschitz constant.  If
+\(t_0=(a+b)/2\), then
+\begin{equation}
+ |\sqrt t-\sqrt{t_0}|
+ =\frac{|t-t_0|}{\sqrt t+\sqrt{t_0}}
+ \leq \frac{b-a}{4a}.
+\end{equation}
+Combining the variation of two eigenvalues with that of \(1-t\) gives the
+rational enclosure
+\begin{equation}
+ |g_q(t)-g_q(t_0)|
+ \leq \frac{b-a}{2}\left(\frac{L_q}{a}+1\right).       \label{eq:weylbound}
+\end{equation}
+For every one of the 171 candidate intervals, the exact lower bound
+\(m_0\) is strictly larger than the right side of
+Eq.~\eqref{eq:weylbound}.  Table~\ref{tab:cert} summarizes the inventory.
+The displayed decimals are readability aids; every comparison is stored
+and checked as a rational inequality.
+
+\begin{table}[ht]
+\centering
+\caption{Exact certificate summary.  ``Blocks'' counts nonzero
+charge--spin factors.  Candidate intervals retain duplicates across
+resultants.  The reference margin is at \(t=1/4\).}
+\label{tab:cert}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+\(q\)&\(n\)&blocks&intervals&reference margin&minimum slack\\
+\midrule
+2&5& 8&18&0.1072347684&0.0196245177\\
+3&6&10&21&0.0668105392&0.0079834888\\
+4&7&16&33&0.0486643413&0.0041072985\\
+5&8&19&41&0.0383207710&0.0024037224\\
+6&9&26&58&0.0316288710&0.0010475231\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Exact root isolation also gives \(g_q(1/4)>0\) for every \(q\) in the
+table.  If \(g_q\) vanished anywhere in \((0,1)\),
+Eq.~\eqref{eq:res} would place that point in a certified neighborhood on
+which \(g_q>0\), a contradiction.  Continuity and the positive reference
+sign therefore prove \(g_q(t)>0\) throughout \((0,1)\).  Identically zero
+eigenvalue factors cannot be competitors: the all-zero trial state has
+Rayleigh quotient \(q+2\), so \(\mu_e-0>1-t\).  This completes the proof
+of Theorem~\ref{thm:main}.
+
+\subsection{Independent representation check}
+
+The exact generator uses fixed-size collective-weight matrices and checks
+Eq.~\eqref{eq:dimension}.  A separate checker constructs both parity
+matrices directly in the full computational basis from the local action
+\(00\leftrightarrow11\).  It verifies every saved rational neighborhood
+inequality and compares the full-basis spectrum at the exact reference
+point and the least-slack midpoint for each \(q\).  These floating-point
+diagonalizations corroborate the representation but are not used to prove
+the all-parameter result.  The proof rests on the exact polynomials,
+resultants, rational isolators and enclosure~\eqref{eq:weylbound}.  The
+symbolic calculations use SymPy~\cite{meurer2017}; the software environment
+and commands are specified in the accompanying reproducibility notes.
+
+\section{Physical interpretation and limitations}
+
+The star value \(1-s^2\) is the known tight benchmark for the conjectured
+graph-independent lower bound~\cite{wong2026}.  Theorem~\ref{thm:main}
+shows that subdividing one star edge does not create another equality case
+for the first six members of this family: on four through nine qubits the
+finite-volume gap is pointwise strictly larger for every \(0<s<1\).  In an
+adiabatic interpolation that stays inside this finite model, these graphs
+therefore have a larger instantaneous gap than the star benchmark at the
+same \(s\).
+
+Several qualifications are essential.  First, the strict excess is not
+uniform on the closed parameter interval; it can vanish as an endpoint is
+approached.  Second, the cutoff \(q\leq6\) is arbitrary and the certificate
+does not establish the whole subdivided-star family.  Third, no claim is
+made for an arbitrary tree, a graph with cycles, a weighted interaction, a
+normalized projector, a phase-deformed edge term, or the thermodynamic
+limit.  Finally, a finite-tree result alone does not supply a new algorithm
+for arbitrary bipartite Quantum Max-Cut.  Broader algorithmic consequences
+now follow from the general result of Ref.~\cite{bravyi2026}, by a route
+different from this finite-family certificate.
+
+The block reduction suggests a sharper next step.  Nonsymmetric leaf-spin
+sectors reduce to smaller symmetric problems with a positive but nonscalar
+field at \(C\).  A branch-selective Schur-complement or interlacing argument
+could compare the \((r,Q)=(0,0)\) Perron root directly with the leading
+\((0,1)\), \((0,2)\), and recursive \(r>0\) blocks.  Such an argument would
+avoid the irrelevant crossings that cause the resultant inventory to grow,
+and could either prove the result for every \(q\) or isolate the first exact
+failure.  That extension remains open.
+
+\section{Conclusion}
+
+We converted sampled evidence for six small non-star trees into an exact
+continuous-parameter statement.  The combination of a fixed-size
+spin--charge decomposition, exact crossing resultants, rational root
+isolation and Weyl enclosures proves
+\(\Delta(T_q,s)>1-s^2\) for \(q=1,\ldots,6\) and all real \(0<s<1\).
+The method controls all excitation sectors and distinguishes its exact
+certificate from a finite grid scan.  The universal tree bound and its
+complete equality classification remain unresolved.
+
+\section*{Data and code availability}
+
+The Python generator, exact JSON certificate, independent full-basis
+checker, environment specification and regeneration instructions are
+included as supplementary files with this draft.  The certificate uses
+open rational formats and does not require proprietary data.  A permanent
+public repository and identifier remain to be selected by the author before
+submission.
+
+\section*{Generative-AI disclosure}
+
+OpenAI Codex using the \texttt{gpt-5.6-sol} model assisted with problem
+development, literature-search support, symbolic derivations, code
+generation and execution, same-machine checking, and manuscript drafting.
+This local draft and its calculations require critical review and final
+approval by the named author before submission.  The AI system is not an
+author.
+
+\section*{Declaration of interests}
+
+The declaration of interests is pending confirmation by the named author.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

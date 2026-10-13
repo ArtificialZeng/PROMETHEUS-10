@@ -1,0 +1,47 @@
+Command: python3 evidence/analyze_u16_tangent.py
+Exit status: 0
+python=3.12.14 executable=python3
+numpy=2.3.5 scipy=1.18.1
+basis fixed_rank_kernel=112 support_opening=144 total=256 norm_range=[0.99999999999999989,1] antihermitian_residual=0.000e+00
+normal_block_map kernel_max_norm2=0.000e+00 opening_min_norm2=1.479289940828e-02 opening_max_norm2=9.467455621302e-02
+gauge columns=32 rank=31 quotient_dimension=81 smallest_nonzero_singular=2
+canonical_entropy_bits=0.32943522122495006
+hessian coarse=2.0e-03 quotient_min=0.15914897746506 quotient_max=1.57318518949656 full_near_zero=31 min_full=-9.794e-08 gauge_residual_op=2.299e-07
+hessian coarse=1.0e-03 quotient_min=0.159148970359836 quotient_max=1.57318519786054 full_near_zero=31 min_full=-1.205e-07 gauge_residual_op=4.446e-07
+quotient_spectrum_clusters_bits_per_t2
+  0.159148977465 multiplicity=1
+  0.237655761544 multiplicity=1
+  0.285571519987 multiplicity=1
+  0.298652989017 multiplicity=8
+  0.406278506684 multiplicity=8
+  0.447654259013 multiplicity=4
+  0.468780222007 multiplicity=1
+  0.550745074356 multiplicity=4
+  0.617301036229 multiplicity=4
+  0.642535919131 multiplicity=4
+  0.652734904351 multiplicity=2
+  0.734326766934 multiplicity=8
+  0.747892662038 multiplicity=1
+  0.752182904966 multiplicity=8
+  0.762807186046 multiplicity=1
+  1.008497621959 multiplicity=8
+  1.204580963559 multiplicity=4
+  1.242170273230 multiplicity=1
+  1.310306721958 multiplicity=4
+  1.573185185995 multiplicity=8
+hessian_scale_difference_op=5.547586e-08
+weakest_mode curvature=0.15914897746506 phase_weight=1 rook_weight=4.38722657692e-16
+weakest_phase_table
+  +0.74691523008180893 -0.24894407648606701 -0.24894407532978102 -0.24902707826596068
+  -0.24894407248467451 +0.079290476898495596 +0.05735117506208124 +0.11230242052409793
+  -0.24894407545520827 +0.057351175751901948 +0.079290477883514246 +0.11230242181979228
+  -0.24902708214192579 +0.11230242383566967 +0.11230242238418593 +0.024422235922070188
+stationarity_random step=2.0e-03 symmetric_slope=-1.830300355721e-07
+stationarity_random step=1.0e-03 symmetric_slope=-5.080258436152e-08
+stationarity_random step=5.0e-04 symmetric_slope=-1.396055493430e-08
+support_example edge=(0,0)-(1,1) mu_norm2=0.014792899408284026
+support_example step=2.00000e-02 delta_bits=1.310266086631e-04 leading_bits=6.679119751213e-05 ratio=1.961734683
+support_example step=1.00000e-02 delta_bits=3.571713425427e-05 leading_bits=1.965637925969e-05 ratio=1.817075962
+support_example step=5.00000e-03 delta_bits=9.669061298456e-06 leading_bits=5.653739785336e-06 ratio=1.710206282
+support_example step=2.50000e-03 delta_bits=2.602185731559e-06 leading_bits=1.598346188938e-06 ratio=1.628048886
+support_example step=1.25000e-03 delta_bits=6.967748699682e-07 leading_bits=4.458143578853e-07 ratio=1.562926042

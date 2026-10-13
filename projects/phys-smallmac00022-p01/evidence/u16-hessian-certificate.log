@@ -1,0 +1,26 @@
+Command: python3 evidence/certify_u16_hessian.py
+Exit status: 0
+python=3.12.14 executable=python3
+python_flint=0.9.0 arb_bits=320
+source_sha256=25da5eb8263fd208f72b5f834c8d8065245d326aab1f04ad6891a6b6a8c84e9c
+basis dimension=81 phase=9 same_I=36 same_J=36 orthonormal_enclosure=true antihermitian=true local_gauge_orthogonal=true
+active_spectrum=[0.000588404144707806381553301 +/- 3.58e-28],[0.0236686390532544378698225 +/- 1.48e-26],[0.0236686390532544378698225 +/- 1.48e-26],[0.952074317748783317878802 +/- 2.72e-25]
+active_eigenbasis_exact_enclosure=true
+opening_linear_map real_dimension=144 injective=true orthogonal_image_basis=true least_squared_scale=[0.0147928994082840236686390532544 +/- 3.79e-32] exact_value=5/338
+hessian_rows_completed=10/81
+hessian_rows_completed=20/81
+hessian_rows_completed=30/81
+hessian_rows_completed=40/81
+hessian_rows_completed=50/81
+hessian_rows_completed=60/81
+hessian_rows_completed=70/81
+hessian_rows_completed=80/81
+hessian_rows_completed=81/81
+hessian_dimension=81 max_entry_radius=[1.6320735e-93 +/- 2.71e-101]
+interval_ldl_shift=159/1000 all_pivots_positive=true pivot_count=81 minimum_pivot_lower=[0.0290093075266963170174737 +/- 3.07e-27]
+interval_ldl_reconstruction_zero_enclosed=true max_residual_radius=[2.7134114e-89 +/- 4.32e-97]
+binary64_midpoint_eigensolver=diagnostic_not_certificate
+midpoint_lambda_min=0.159148973002032
+midpoint_lambda_max=1.573185183867097
+rigorous_conclusion=lambda_min_gt_159_over_1000
+certificate=PASS

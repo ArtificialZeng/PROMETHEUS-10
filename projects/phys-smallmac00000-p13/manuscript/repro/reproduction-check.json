@@ -1,0 +1,222 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "N": 81,
+      "c": "1/2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.030756280959998206,
+      "IPR": 0.41275633822891705,
+      "zero_residual_inf": 1.1102230246251565e-16
+    },
+    {
+      "N": 161,
+      "c": "1/2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.029083443478547914,
+      "IPR": 0.41040105166646906,
+      "zero_residual_inf": 1.1102230246251565e-16
+    },
+    {
+      "N": 321,
+      "c": "1/2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.028043061053565937,
+      "IPR": 0.40920642285277764,
+      "zero_residual_inf": 2.498001805406602e-16
+    },
+    {
+      "N": 641,
+      "c": "1/2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.02739530455056341,
+      "IPR": 0.4086047088643619,
+      "zero_residual_inf": 1.1102230246251565e-16
+    },
+    {
+      "N": 1281,
+      "c": "1/2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.026991383174077847,
+      "IPR": 0.4083027317654121,
+      "zero_residual_inf": 2.220446049250313e-16
+    },
+    {
+      "N": 2561,
+      "c": "1/2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.026739105089026216,
+      "IPR": 0.4081514605926376,
+      "zero_residual_inf": 1.1102230246251565e-16,
+      "QR_spacing_difference": 6.427606984671959e-17,
+      "IPR_80_digits": "0.408151460592637466032678950197434760785844625",
+      "IPR_precision_difference": 1.610900906222545e-16
+    },
+    {
+      "N": 81,
+      "c": "2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.032614535824713166,
+      "IPR": 0.42605762354760957,
+      "zero_residual_inf": 1.1102230246251565e-16
+    },
+    {
+      "N": 161,
+      "c": "2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.028885405819191138,
+      "IPR": 0.41733987941935896,
+      "zero_residual_inf": 1.3877787807814457e-16
+    },
+    {
+      "N": 321,
+      "c": "2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.0265622424519918,
+      "IPR": 0.4127563382289169,
+      "zero_residual_inf": 1.1102230246251565e-16
+    },
+    {
+      "N": 641,
+      "c": "2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.02511751936783708,
+      "IPR": 0.4104010516664691,
+      "zero_residual_inf": 8.326672684688674e-17
+    },
+    {
+      "N": 1281,
+      "c": "2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.024219007273534262,
+      "IPR": 0.40920642285277736,
+      "zero_residual_inf": 1.1102230246251565e-16
+    },
+    {
+      "N": 2561,
+      "c": "2",
+      "denominator": "N-1",
+      "occupation_spacing": 0.02365958120275925,
+      "IPR": 0.4086047088643619,
+      "zero_residual_inf": 5.551115123125783e-17,
+      "QR_spacing_difference": 1.312081756375185e-16,
+      "IPR_80_digits": "0.408604708864361872563393334628484056860241286",
+      "IPR_precision_difference": 2.5960360445326375e-17
+    },
+    {
+      "N": 81,
+      "c": "1/2",
+      "denominator": "N",
+      "occupation_spacing": 0.030738747676636587,
+      "IPR": 0.4126987125960544,
+      "zero_residual_inf": 2.220446049250313e-16
+    },
+    {
+      "N": 161,
+      "c": "1/2",
+      "denominator": "N",
+      "occupation_spacing": 0.029081229140220394,
+      "IPR": 0.41038628242694275,
+      "zero_residual_inf": 6.938893903907228e-17
+    },
+    {
+      "N": 321,
+      "c": "1/2",
+      "denominator": "N",
+      "occupation_spacing": 0.02804400299323421,
+      "IPR": 0.4092026830308575,
+      "zero_residual_inf": 1.1102230246251565e-16
+    },
+    {
+      "N": 641,
+      "c": "1/2",
+      "denominator": "N",
+      "occupation_spacing": 0.027396413430366643,
+      "IPR": 0.4086037678255752,
+      "zero_residual_inf": 1.3877787807814457e-16
+    },
+    {
+      "N": 1281,
+      "c": "1/2",
+      "denominator": "N",
+      "occupation_spacing": 0.02699213601484616,
+      "IPR": 0.4083024957359631,
+      "zero_residual_inf": 2.220446049250313e-16
+    },
+    {
+      "N": 2561,
+      "c": "1/2",
+      "denominator": "N",
+      "occupation_spacing": 0.0267395432630154,
+      "IPR": 0.4081514014884617,
+      "zero_residual_inf": 2.7755575615628914e-17,
+      "QR_spacing_difference": 6.427739082312319e-17,
+      "IPR_80_digits": "0.408151401488461974440532051775479707627109305",
+      "IPR_precision_difference": 2.896660540074292e-16
+    },
+    {
+      "N": 81,
+      "c": "2",
+      "denominator": "N",
+      "occupation_spacing": 0.03260427334678708,
+      "IPR": 0.42584890928210384,
+      "zero_residual_inf": 1.1102230246251565e-16
+    },
+    {
+      "N": 161,
+      "c": "2",
+      "denominator": "N",
+      "occupation_spacing": 0.028891864765678125,
+      "IPR": 0.4172839238594442,
+      "zero_residual_inf": 5.551115123125783e-17
+    },
+    {
+      "N": 321,
+      "c": "2",
+      "denominator": "N",
+      "occupation_spacing": 0.026569129761248724,
+      "IPR": 0.4127417996620959,
+      "zero_residual_inf": 5.551115123125783e-17
+    },
+    {
+      "N": 641,
+      "c": "2",
+      "denominator": "N",
+      "occupation_spacing": 0.025122104521467705,
+      "IPR": 0.4103973422418524,
+      "zero_residual_inf": 2.220446049250313e-16
+    },
+    {
+      "N": 1281,
+      "c": "2",
+      "denominator": "N",
+      "occupation_spacing": 0.024221654202462372,
+      "IPR": 0.409205485718452,
+      "zero_residual_inf": 5.551115123125783e-17
+    },
+    {
+      "N": 2561,
+      "c": "2",
+      "denominator": "N",
+      "occupation_spacing": 0.023661014507973692,
+      "IPR": 0.4086044733297617,
+      "zero_residual_inf": 2.220446049250313e-16,
+      "QR_spacing_difference": 2.876691158111869e-16,
+      "IPR_80_digits": "0.40860447332976179266270219816892755462471509",
+      "IPR_precision_difference": 1.0666698199859771e-16
+    }
+  ],
+  "max_reference_differences": {
+    "occupation_spacing": 2.914335439641036e-16,
+    "IPR": 7.216449660063518e-16
+  },
+  "max_zero_residual_inf": 2.498001805406602e-16,
+  "elapsed_seconds": 0.406292292,
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "mpmath": "1.3.0"
+  },
+  "limits": "Floating-point diagnostics, not interval enclosures or proof of the size limit."
+}

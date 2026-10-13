@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-09-12T22:33:39.856869+00:00",
+  "python": "3.9.6",
+  "python_implementation": "CPython",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "machine": "arm64",
+  "sympy": "1.14.0",
+  "tex": "pdfTeX 1.40.29 / TeX Live 2026 / REVTeX 4.2",
+  "arithmetic": "exact integers, Gaussian integers, Fraction; SymPy exact algebra in discovery state-vector replay",
+  "witness_amplitudes": 64,
+  "largest_control_amplitudes": 128,
+  "largest_marginal_matrix_dimension": 32,
+  "independent_replay_seconds": 1.2376490420000001,
+  "independent_replay_peak_memory": "not measured",
+  "environment_installations": "none",
+  "concurrency": "three checkers run sequentially in the foreground"
+}

@@ -1,0 +1,18 @@
+{
+  "provenance": "Finite rational proposals from high precision discovery and approximate inverse. Their accuracy is not assumed by the checker.",
+  "center_decimal_rationals": [
+    "1.012821998680314600068208268899051820974352006",
+    "3.112895114354931694231478861591838762886663535"
+  ],
+  "radius_decimal_rational": "1e-20",
+  "preconditioner_exact_decimal_rationals": [
+    [
+      "-523.0513662343578025786281282452785879709",
+      "1724.438413838856510805394172256443795935"
+    ],
+    [
+      "1632.401201395760086859367561999686168763",
+      "-3959.57512664182068880590301715606501281"
+    ]
+  ]
+}

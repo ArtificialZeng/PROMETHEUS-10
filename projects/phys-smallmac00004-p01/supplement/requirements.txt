@@ -1,0 +1,5 @@
+# Versions actually used for the supplied replay. No installation is performed by the scripts.
+python-flint==0.9.0
+numpy==2.3.5
+sympy==1.14.0
+mpmath==1.3.0

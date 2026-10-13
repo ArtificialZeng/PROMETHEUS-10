@@ -1,0 +1,17 @@
+{
+  "python": "3.9.6 (default, Nov 11 2024, 03:15:38) \n[Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "float_dtype": "float64",
+  "threads": 1,
+  "maximum_matrix_shape": [
+    5,
+    5
+  ],
+  "random_sampling": false,
+  "versions": {
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "sympy": "1.14.0",
+    "matplotlib": "3.9.4"
+  }
+}

@@ -1,0 +1,1458 @@
+{
+  "cycle_flat_band": [
+    {
+      "compressed_core_connected": true,
+      "cycle_dimension_c_k": 1,
+      "depth_k": 3,
+      "exhaustion": {
+        "bivariate_flat_factor": "(J^2+z^2)^1",
+        "combined_exact_kernel": "ker(A(2/5)^2+(2/5)^2 I)",
+        "combined_nullity": 2,
+        "each_complex_eigenspace_dimension": 1,
+        "factor_source": "fresh exact bivariate characteristic polynomial",
+        "flat_factor_exponent": 1,
+        "generic_test_J": "2/5"
+      },
+      "fundamental_cycle_map": {
+        "basis_rank": 1,
+        "definition": "for N y=0, r_D=diag(column_gauge)y; Psi_+=(r_D,-i r_D) and Psi_-=(r_D,+i r_D)",
+        "mapped_rank": 1,
+        "symbolic_eigenvector_residual_zero": true,
+        "vectors": [
+          {
+            "basis_index": 0,
+            "compressed_chord_subdivision_vertex": 5,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 3
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 4
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 5
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 3
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 4
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 5
+              }
+            ]
+          }
+        ]
+      },
+      "root_counts": {
+        "augmented_modes": 12,
+        "degree_one_corners": 3,
+        "degree_three_core_vertices": 3,
+        "degree_two_subdivisions": 3,
+        "edges": 9,
+        "vertices": 9
+      },
+      "signed_incidence_factorization": {
+        "column_gauge_by_subdivision": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "exact_residual_zero": true,
+        "identity": "B=diag(row_gauge) N diag(column_gauge)",
+        "nullity_B": 1,
+        "rank_B": 2,
+        "row_gauge": [
+          1,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "compressed_core_connected": true,
+      "cycle_dimension_c_k": 4,
+      "depth_k": 4,
+      "exhaustion": {
+        "bivariate_flat_factor": "(J^2+z^2)^4",
+        "combined_exact_kernel": "ker(A(2/5)^2+(2/5)^2 I)",
+        "combined_nullity": 8,
+        "each_complex_eigenspace_dimension": 4,
+        "factor_source": "fresh exact bivariate characteristic polynomial",
+        "flat_factor_exponent": 4,
+        "generic_test_J": "2/5"
+      },
+      "fundamental_cycle_map": {
+        "basis_rank": 4,
+        "definition": "for N y=0, r_D=diag(column_gauge)y; Psi_+=(r_D,-i r_D) and Psi_-=(r_D,+i r_D)",
+        "mapped_rank": 4,
+        "symbolic_eigenvector_residual_zero": true,
+        "vectors": [
+          {
+            "basis_index": 0,
+            "compressed_chord_subdivision_vertex": 12,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 9
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 10
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 12
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 9
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 10
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 12
+              }
+            ]
+          },
+          {
+            "basis_index": 1,
+            "compressed_chord_subdivision_vertex": 16,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 14
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 15
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 16
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 14
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 15
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 16
+              }
+            ]
+          },
+          {
+            "basis_index": 2,
+            "compressed_chord_subdivision_vertex": 17,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 9
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 10
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 11
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 13
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 15
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 17
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 18
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 9
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 10
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 11
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 13
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 15
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 17
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 18
+              }
+            ]
+          },
+          {
+            "basis_index": 3,
+            "compressed_chord_subdivision_vertex": 20,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 18
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 19
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 20
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 18
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 19
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 20
+              }
+            ]
+          }
+        ]
+      },
+      "root_counts": {
+        "augmented_modes": 36,
+        "degree_one_corners": 3,
+        "degree_three_core_vertices": 9,
+        "degree_two_subdivisions": 12,
+        "edges": 27,
+        "vertices": 24
+      },
+      "signed_incidence_factorization": {
+        "column_gauge_by_subdivision": [
+          [
+            9,
+            -1
+          ],
+          [
+            10,
+            -1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            14,
+            -1
+          ],
+          [
+            15,
+            -1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            18,
+            -1
+          ],
+          [
+            19,
+            -1
+          ],
+          [
+            20,
+            1
+          ]
+        ],
+        "exact_residual_zero": true,
+        "identity": "B=diag(row_gauge) N diag(column_gauge)",
+        "nullity_B": 4,
+        "rank_B": 8,
+        "row_gauge": [
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "compressed_core_connected": true,
+      "cycle_dimension_c_k": 13,
+      "depth_k": 5,
+      "exhaustion": {
+        "bivariate_flat_factor": "(J^2+z^2)^13",
+        "combined_exact_kernel": "ker(A(2/5)^2+(2/5)^2 I)",
+        "combined_nullity": 26,
+        "each_complex_eigenspace_dimension": 13,
+        "factor_source": "bound pass-1 exact bivariate characteristic polynomial",
+        "flat_factor_exponent": 13,
+        "generic_test_J": "2/5"
+      },
+      "fundamental_cycle_map": {
+        "basis_rank": 13,
+        "definition": "for N y=0, r_D=diag(column_gauge)y; Psi_+=(r_D,-i r_D) and Psi_-=(r_D,+i r_D)",
+        "mapped_rank": 13,
+        "symbolic_eigenvector_residual_zero": true,
+        "vectors": [
+          {
+            "basis_index": 0,
+            "compressed_chord_subdivision_vertex": 30,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 27
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 28
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 30
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 27
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 28
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 30
+              }
+            ]
+          },
+          {
+            "basis_index": 1,
+            "compressed_chord_subdivision_vertex": 35,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 32
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 33
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 35
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 32
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 33
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 35
+              }
+            ]
+          },
+          {
+            "basis_index": 2,
+            "compressed_chord_subdivision_vertex": 36,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 27
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 28
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 29
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 31
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 33
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 36
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 37
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 27
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 28
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 29
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 31
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 33
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 36
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 37
+              }
+            ]
+          },
+          {
+            "basis_index": 3,
+            "compressed_chord_subdivision_vertex": 39,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 37
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 38
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 39
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 37
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 38
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 39
+              }
+            ]
+          },
+          {
+            "basis_index": 4,
+            "compressed_chord_subdivision_vertex": 44,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 41
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 42
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 44
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 41
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 42
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 44
+              }
+            ]
+          },
+          {
+            "basis_index": 5,
+            "compressed_chord_subdivision_vertex": 48,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 46
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 47
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 48
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 46
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 47
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 48
+              }
+            ]
+          },
+          {
+            "basis_index": 6,
+            "compressed_chord_subdivision_vertex": 49,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 41
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 42
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 43
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 45
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 47
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 49
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 50
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 41
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 42
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 43
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 45
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 47
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 49
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 50
+              }
+            ]
+          },
+          {
+            "basis_index": 7,
+            "compressed_chord_subdivision_vertex": 52,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 50
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 51
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 52
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 50
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 51
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 52
+              }
+            ]
+          },
+          {
+            "basis_index": 8,
+            "compressed_chord_subdivision_vertex": 53,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 27
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 28
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 29
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 31
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 32
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 34
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 38
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 40
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 42
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 45
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 51
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 53
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 54
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 56
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 59
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 27
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 28
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 29
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 31
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 32
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 34
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 38
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 40
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 42
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 45
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 51
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 53
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 54
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 56
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 59
+              }
+            ]
+          },
+          {
+            "basis_index": 9,
+            "compressed_chord_subdivision_vertex": 57,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 54
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 55
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 57
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 54
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 55
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 57
+              }
+            ]
+          },
+          {
+            "basis_index": 10,
+            "compressed_chord_subdivision_vertex": 61,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 59
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 60
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 61
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 59
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 60
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 61
+              }
+            ]
+          },
+          {
+            "basis_index": 11,
+            "compressed_chord_subdivision_vertex": 62,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 54
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 55
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 56
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 58
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 60
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 62
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 63
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 54
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 55
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 56
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 58
+              },
+              {
+                "coefficient": -1,
+                "root_vertex": 60
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 62
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 63
+              }
+            ]
+          },
+          {
+            "basis_index": 12,
+            "compressed_chord_subdivision_vertex": 65,
+            "cycle_flow": [
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 63
+              },
+              {
+                "coefficient": -1,
+                "subdivision_vertex": 64
+              },
+              {
+                "coefficient": 1,
+                "subdivision_vertex": 65
+              }
+            ],
+            "mapped_root_amplitudes": [
+              {
+                "coefficient": -1,
+                "root_vertex": 63
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 64
+              },
+              {
+                "coefficient": 1,
+                "root_vertex": 65
+              }
+            ]
+          }
+        ]
+      },
+      "root_counts": {
+        "augmented_modes": 108,
+        "degree_one_corners": 3,
+        "degree_three_core_vertices": 27,
+        "degree_two_subdivisions": 39,
+        "edges": 81,
+        "vertices": 69
+      },
+      "signed_incidence_factorization": {
+        "column_gauge_by_subdivision": [
+          [
+            27,
+            -1
+          ],
+          [
+            28,
+            -1
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            31,
+            1
+          ],
+          [
+            32,
+            -1
+          ],
+          [
+            33,
+            -1
+          ],
+          [
+            34,
+            1
+          ],
+          [
+            35,
+            1
+          ],
+          [
+            36,
+            1
+          ],
+          [
+            37,
+            -1
+          ],
+          [
+            38,
+            -1
+          ],
+          [
+            39,
+            1
+          ],
+          [
+            40,
+            1
+          ],
+          [
+            41,
+            -1
+          ],
+          [
+            42,
+            -1
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            1
+          ],
+          [
+            45,
+            1
+          ],
+          [
+            46,
+            -1
+          ],
+          [
+            47,
+            -1
+          ],
+          [
+            48,
+            1
+          ],
+          [
+            49,
+            1
+          ],
+          [
+            50,
+            -1
+          ],
+          [
+            51,
+            -1
+          ],
+          [
+            52,
+            1
+          ],
+          [
+            53,
+            1
+          ],
+          [
+            54,
+            -1
+          ],
+          [
+            55,
+            -1
+          ],
+          [
+            56,
+            1
+          ],
+          [
+            57,
+            1
+          ],
+          [
+            58,
+            1
+          ],
+          [
+            59,
+            -1
+          ],
+          [
+            60,
+            -1
+          ],
+          [
+            61,
+            1
+          ],
+          [
+            62,
+            1
+          ],
+          [
+            63,
+            -1
+          ],
+          [
+            64,
+            -1
+          ],
+          [
+            65,
+            1
+          ]
+        ],
+        "exact_residual_zero": true,
+        "identity": "B=diag(row_gauge) N diag(column_gauge)",
+        "nullity_B": 13,
+        "rank_B": 26,
+        "row_gauge": [
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "numpy_version": "2.3.5",
+    "python_executable": "python3",
+    "python_version": "3.12.14",
+    "scipy_version": "1.18.1",
+    "sympy_version": "1.14.0"
+  },
+  "input_binding": {
+    "generator": "evidence/reproduce_sierpinski_hanoi.py",
+    "generator_sha256": "250c38822cce55240885b93fc8879a65aafdbd861d8e309612c698c43a1f4fee",
+    "normalization": "A_k(J)=2h_k(J); x is an eigenvalue of iA_k and source lambda=|x|/2",
+    "prior_k5_certificate": "evidence/exact-k5-degeneracy.json",
+    "prior_k5_certificate_sha256": "ffe00a570fd68446334e0e70f3b2a211090edd9d91b5b99952277edd62605b23",
+    "sector": "all canonical cycle generators projected to +1",
+    "source_sha256": "2277938a2d7c3fb54fd70b23283223428aed10897daeb1379f36c16fe85b2d12"
+  },
+  "job_id": "phys-00021-p01-research-40f3a52f54dc",
+  "schema_version": 1,
+  "schur_closure": {
+    "closure_interpretation": {
+      "corner_response_alone_is_incomplete": "cycle-flat modes have zero corner amplitude and cancel from simplified S_k",
+      "explicit_linear_cycle_state_dimensions": {
+        "k=3": 4,
+        "k=4": 7,
+        "k=5": 16
+      },
+      "fixed_size_determinant_state": "the 3x3 corner response S_k plus one scalar interior determinant d_k",
+      "obstruction": "retaining eigenvectors rather than only their determinant factor requires 3+c_k linear coordinates, so that linear state is not fixed size"
+    },
+    "compositions": [
+      {
+        "characteristic_recursion": "P_{k+1}=d_k^3 z^3 det(G_k)",
+        "characteristic_residual_zero": true,
+        "global_ports": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "interface_ports": [
+          3,
+          4,
+          5
+        ],
+        "interior_determinant_recursion": "d_{k+1}=d_k^3 z^3 det(C_k)",
+        "interior_determinant_residual_zero": true,
+        "outer_ports": [
+          6,
+          7,
+          8
+        ],
+        "response_residual_zero": true,
+        "state_dimensions": {
+          "assembled_root_ports": 6,
+          "input_ports_per_copy": 3,
+          "interface_schur_dimension": 3,
+          "new_pendants_eliminated": 3,
+          "output_ports": 3
+        },
+        "subcopy_maps": [
+          {
+            "boundary_gauge": [
+              1,
+              1,
+              1
+            ],
+            "exact_response_match": true,
+            "group": 0,
+            "ports": [
+              3,
+              4,
+              6
+            ],
+            "reference_port_permutation": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "boundary_gauge": [
+              1,
+              1,
+              1
+            ],
+            "exact_response_match": true,
+            "group": 1,
+            "ports": [
+              3,
+              5,
+              7
+            ],
+            "reference_port_permutation": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "boundary_gauge": [
+              1,
+              -1,
+              1
+            ],
+            "exact_response_match": true,
+            "group": 2,
+            "ports": [
+              4,
+              5,
+              8
+            ],
+            "reference_port_permutation": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "transition": "k=2->k=3"
+      },
+      {
+        "characteristic_recursion": "P_{k+1}=d_k^3 z^3 det(G_k)",
+        "characteristic_residual_zero": true,
+        "global_ports": [
+          11,
+          13,
+          17,
+          21,
+          22,
+          23
+        ],
+        "interface_ports": [
+          11,
+          13,
+          17
+        ],
+        "interior_determinant_recursion": "d_{k+1}=d_k^3 z^3 det(C_k)",
+        "interior_determinant_residual_zero": true,
+        "outer_ports": [
+          21,
+          22,
+          23
+        ],
+        "response_residual_zero": true,
+        "state_dimensions": {
+          "assembled_root_ports": 6,
+          "input_ports_per_copy": 3,
+          "interface_schur_dimension": 3,
+          "new_pendants_eliminated": 3,
+          "output_ports": 3
+        },
+        "subcopy_maps": [
+          {
+            "boundary_gauge": [
+              1,
+              -1,
+              1
+            ],
+            "exact_response_match": true,
+            "group": 0,
+            "ports": [
+              11,
+              13,
+              21
+            ],
+            "reference_port_permutation": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "boundary_gauge": [
+              1,
+              1,
+              1
+            ],
+            "exact_response_match": true,
+            "group": 1,
+            "ports": [
+              11,
+              17,
+              22
+            ],
+            "reference_port_permutation": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "boundary_gauge": [
+              1,
+              -1,
+              1
+            ],
+            "exact_response_match": true,
+            "group": 2,
+            "ports": [
+              13,
+              17,
+              23
+            ],
+            "reference_port_permutation": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "transition": "k=3->k=4"
+      }
+    ],
+    "responses": {
+      "2": {
+        "alpha_k": "(z**2 + 1)/z",
+        "beta_k": "1/z",
+        "boundary_root_vertices": [
+          1,
+          2,
+          3
+        ],
+        "canonical_boundary_gauge": [
+          1,
+          1,
+          1
+        ],
+        "canonical_form": "S_k=alpha_k I_3+beta_k (ones-I_3)",
+        "det_identity_exact": true,
+        "flat_factor_visible_in_simplified_response": false,
+        "full_characteristic_polynomial": "z**2*(z**2 + 3)",
+        "interior_determinant_d_k": "z"
+      },
+      "3": {
+        "alpha_k": "(J**2*z**2 + J**2 + z**4 + 4*z**2 + 1)/(z*(J**2 + z**2 + 3))",
+        "beta_k": "1/(z*(J**2 + z**2 + 3))",
+        "boundary_root_vertices": [
+          6,
+          7,
+          8
+        ],
+        "canonical_boundary_gauge": [
+          1,
+          -1,
+          -1
+        ],
+        "canonical_form": "S_k=alpha_k I_3+beta_k (ones-I_3)",
+        "det_identity_exact": true,
+        "flat_factor_visible_in_simplified_response": false,
+        "full_characteristic_polynomial": "(J**2 + z**2)*(z**2 + 1)*(J**2*z**2 + J**2 + z**4 + 4*z**2)**2",
+        "interior_determinant_d_k": "z**3*(J**2 + z**2)*(J**2 + z**2 + 3)**2"
+      },
+      "4": {
+        "alpha_k": "(J**6*z**2 + J**6 + 3*J**4*z**4 + 11*J**4*z**2 + 6*J**4 + 3*J**2*z**6 + 19*J**2*z**4 + 30*J**2*z**2 + 8*J**2 + z**8 + 9*z**6 + 24*z**4 + 17*z**2 + 1)/(z*(J**2 + z**2 + 3)*(J**4 + 2*J**2*z**2 + 5*J**2 + z**4 + 5*z**2 + 3))",
+        "beta_k": "1/(z*(J**2 + z**2 + 3)*(J**4 + 2*J**2*z**2 + 5*J**2 + z**4 + 5*z**2 + 3))",
+        "boundary_root_vertices": [
+          21,
+          22,
+          23
+        ],
+        "canonical_boundary_gauge": [
+          1,
+          -1,
+          -1
+        ],
+        "canonical_form": "S_k=alpha_k I_3+beta_k (ones-I_3)",
+        "det_identity_exact": true,
+        "flat_factor_visible_in_simplified_response": false,
+        "full_characteristic_polynomial": "z**6*(J**2 + z**2)**4*(J**2 + z**2 + 5)*(J**2*z**2 + J**2 + z**4 + 4*z**2 + 1)*(J**6*z**2 + J**6 + 3*J**4*z**4 + 11*J**4*z**2 + 6*J**4 + 3*J**2*z**6 + 19*J**2*z**4 + 30*J**2*z**2 + 8*J**2 + z**8 + 9*z**6 + 24*z**4 + 17*z**2)**2",
+        "interior_determinant_d_k": "z**9*(J**2 + z**2)**4*(J**2 + z**2 + 3)**3*(J**2 + z**2 + 5)*(J**4 + 2*J**2*z**2 + 5*J**2 + z**4 + 5*z**2 + 3)**2"
+      }
+    }
+  },
+  "scope": {
+    "established": "exact injective and exhaustive cycle maps at k=3,4,5; exact three-port-plus-determinant Schur closure for k=2->3 and k=3->4",
+    "not_established": "no all-k induction, k>=6 computation, other cycle sector, parity-projected many-body statement, thermodynamic scaling, or novelty claim"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-09-12T22:56:08.389988+00:00",
+  "python": "3.9.6",
+  "python_executable": "python3",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "numpy": "2.0.2",
+  "scipy": "1.13.1",
+  "mpmath": "1.3.0",
+  "matplotlib": "3.9.4",
+  "numerical_threads": 1,
+  "processes": 1,
+  "maximum_N": 2561,
+  "arithmetic": "Float64 symmetric tridiagonal eigensolvers; four largest cases additionally use 80-digit mpmath recurrence. No interval enclosures.",
+  "tex": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)"
+}

@@ -1,0 +1,201 @@
+{
+  "arithmetic": "Python standard-library fractions.Fraction only; Gaussian rationals implemented here; no symbolic/numeric library and no input files.",
+  "complete_identity_justification": "E is linear and the intrinsic second-order rate term is quadratic. The bordered derivative solve is linear in E; lambda2 is homogeneous quadratic in the seven variables. Seven basis evaluations and 21 pair-sum evaluations uniquely determine all 28 coefficients.",
+  "checks": [
+    {
+      "name": "basis_0",
+      "K": "-1/64",
+      "expected": "-1/64",
+      "pass": true
+    },
+    {
+      "name": "basis_1",
+      "K": "-1/64",
+      "expected": "-1/64",
+      "pass": true
+    },
+    {
+      "name": "basis_2",
+      "K": "-1/64",
+      "expected": "-1/64",
+      "pass": true
+    },
+    {
+      "name": "basis_3",
+      "K": "-1/64",
+      "expected": "-1/64",
+      "pass": true
+    },
+    {
+      "name": "basis_4",
+      "K": "-7/3",
+      "expected": "-7/3",
+      "pass": true
+    },
+    {
+      "name": "basis_5",
+      "K": "-4/3",
+      "expected": "-4/3",
+      "pass": true
+    },
+    {
+      "name": "basis_6",
+      "K": "-7/3",
+      "expected": "-7/3",
+      "pass": true
+    },
+    {
+      "name": "basis_0_plus_1",
+      "K": "1/8",
+      "expected": "1/8",
+      "pass": true
+    },
+    {
+      "name": "basis_0_plus_2",
+      "K": "-5/16",
+      "expected": "-5/16",
+      "pass": true
+    },
+    {
+      "name": "basis_0_plus_3",
+      "K": "1/8",
+      "expected": "1/8",
+      "pass": true
+    },
+    {
+      "name": "basis_0_plus_4",
+      "K": "-2543/960",
+      "expected": "-2543/960",
+      "pass": true
+    },
+    {
+      "name": "basis_0_plus_5",
+      "K": "-1679/960",
+      "expected": "-1679/960",
+      "pass": true
+    },
+    {
+      "name": "basis_0_plus_6",
+      "K": "-2351/960",
+      "expected": "-2351/960",
+      "pass": true
+    },
+    {
+      "name": "basis_1_plus_2",
+      "K": "1/8",
+      "expected": "1/8",
+      "pass": true
+    },
+    {
+      "name": "basis_1_plus_3",
+      "K": "-5/16",
+      "expected": "-5/16",
+      "pass": true
+    },
+    {
+      "name": "basis_1_plus_4",
+      "K": "-2159/960",
+      "expected": "-2159/960",
+      "pass": true
+    },
+    {
+      "name": "basis_1_plus_5",
+      "K": "-1487/960",
+      "expected": "-1487/960",
+      "pass": true
+    },
+    {
+      "name": "basis_1_plus_6",
+      "K": "-2543/960",
+      "expected": "-2543/960",
+      "pass": true
+    },
+    {
+      "name": "basis_2_plus_3",
+      "K": "1/8",
+      "expected": "1/8",
+      "pass": true
+    },
+    {
+      "name": "basis_2_plus_4",
+      "K": "-1967/960",
+      "expected": "-1967/960",
+      "pass": true
+    },
+    {
+      "name": "basis_2_plus_5",
+      "K": "-911/960",
+      "expected": "-911/960",
+      "pass": true
+    },
+    {
+      "name": "basis_2_plus_6",
+      "K": "-2159/960",
+      "expected": "-2159/960",
+      "pass": true
+    },
+    {
+      "name": "basis_3_plus_4",
+      "K": "-2351/960",
+      "expected": "-2351/960",
+      "pass": true
+    },
+    {
+      "name": "basis_3_plus_5",
+      "K": "-1103/960",
+      "expected": "-1103/960",
+      "pass": true
+    },
+    {
+      "name": "basis_3_plus_6",
+      "K": "-1967/960",
+      "expected": "-1967/960",
+      "pass": true
+    },
+    {
+      "name": "basis_4_plus_5",
+      "K": "-5",
+      "expected": "-5",
+      "pass": true
+    },
+    {
+      "name": "basis_4_plus_6",
+      "K": "-8",
+      "expected": "-8",
+      "pass": true
+    },
+    {
+      "name": "basis_5_plus_6",
+      "K": "-5",
+      "expected": "-5",
+      "pass": true
+    },
+    {
+      "name": "slack_0",
+      "h_first": "-1/4",
+      "pass": true
+    },
+    {
+      "name": "slack_1",
+      "h_first": "-1/4",
+      "pass": true
+    },
+    {
+      "name": "slack_2",
+      "h_first": "-1/4",
+      "pass": true
+    },
+    {
+      "name": "slack_3",
+      "h_first": "-1/4",
+      "pass": true
+    },
+    {
+      "name": "slack_4",
+      "h_first": "-3/4",
+      "pass": true
+    }
+  ],
+  "all_pass": true,
+  "script_sha256": "01fd093debf5fb52bd39e9649813e008727ef4c963b477cec38965fec389a1c5"
+}

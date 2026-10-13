@@ -1,0 +1,34 @@
+Convention map: matrix order m is BFK subscript n; R=sum_{i<j}|A_ij|; T is one-based; monomial key (R,T) maps to r^R t^T.
+full polynomial order=1: PASS; terms=1; total=1
+full polynomial order=2: PASS; terms=1; total=1
+full polynomial order=3: PASS; terms=4; total=4
+full polynomial order=4: PASS; terms=3; total=3
+full polynomial order=5: PASS; terms=12; total=32
+full polynomial order=6: PASS; terms=9; total=26
+full polynomial order=7: PASS; terms=40; total=640
+full polynomial order=8: PASS; terms=29; total=646
+full polynomial order=9: PASS; terms=94; total=34048
+full polynomial order=10: PASS; terms=61; total=45885
+BFK Eq. (8.3) order=1: PASS
+BFK Eq. (8.3) order=2: PASS
+BFK Eq. (8.3) order=3: PASS
+BFK Eq. (8.3) order=4: PASS
+BFK Table 3 order=1: PASS; got=1; expected=1
+BFK Table 3 order=10: PASS; got=45885; expected=45885
+BFK Table 3 order=11: PASS; got=4945920; expected=4945920
+BFK Table 3 order=12: PASS; got=9304650; expected=9304650
+BFK Table 3 order=2: PASS; got=1; expected=1
+BFK Table 3 order=3: PASS; got=4; expected=4
+BFK Table 3 order=4: PASS; got=3; expected=3
+BFK Table 3 order=5: PASS; got=32; expected=32
+BFK Table 3 order=6: PASS; got=26; expected=26
+BFK Table 3 order=7: PASS; got=640; expected=640
+BFK Table 3 order=8: PASS; got=646; expected=646
+BFK Table 3 order=9: PASS; got=34048; expected=34048
+BFK Eq. (8.32) order=10: PASS; coefficient_terms=5
+BFK Eq. (8.32) order=12: PASS; coefficient_terms=9
+BFK Eq. (8.32) order=2: PASS; coefficient_terms=1
+BFK Eq. (8.32) order=4: PASS; coefficient_terms=1
+BFK Eq. (8.32) order=6: PASS; coefficient_terms=1
+BFK Eq. (8.32) order=8: PASS; coefficient_terms=3
+OVERALL: PASS

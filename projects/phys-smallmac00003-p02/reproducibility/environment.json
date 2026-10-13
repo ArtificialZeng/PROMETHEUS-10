@@ -1,0 +1,16 @@
+{
+  "python": "3.9.6 (default, Nov 11 2024, 03:15:38) \n[Clang 16.0.0 (clang-1600.0.26.6)]",
+  "sympy": "1.14.0",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "maximum_matrix_shape": [
+    4,
+    4
+  ],
+  "arithmetic": "exact rational and algebraic SymPy; float sorting for display only",
+  "peak_memory": "not measured",
+  "package_installation_performed": false,
+  "threads_for_exact_replay": 1,
+  "pdflatex": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "bibtex": "BibTeX 0.99e (TeX Live 2026)",
+  "pdftoppm": "pdftoppm version 26.08.0"
+}

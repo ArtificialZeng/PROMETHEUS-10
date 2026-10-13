@@ -1,0 +1,125 @@
+{
+  "job_id": "PHY-14-referee-5a932658dcd5",
+  "precision_bits": 224,
+  "cases": [
+    {
+      "L": 2,
+      "Delta": "1",
+      "mu": "0",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    },
+    {
+      "L": 2,
+      "Delta": "7/6",
+      "mu": "0",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    },
+    {
+      "L": 2,
+      "Delta": "7/6",
+      "mu": "2/7",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    },
+    {
+      "L": 4,
+      "Delta": "1",
+      "mu": "0",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    },
+    {
+      "L": 4,
+      "Delta": "7/6",
+      "mu": "0",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    },
+    {
+      "L": 4,
+      "Delta": "7/6",
+      "mu": "2/7",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    },
+    {
+      "L": 6,
+      "Delta": "1",
+      "mu": "0",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    },
+    {
+      "L": 6,
+      "Delta": "7/6",
+      "mu": "0",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    },
+    {
+      "L": 6,
+      "Delta": "7/6",
+      "mu": "2/7",
+      "fermion_vs_spin_gaussian_integer_equality": true
+    }
+  ],
+  "quadratic_and_quartic_clifford_source_exact": true,
+  "physical_parity_exact": true,
+  "left_scattering_all_n_symbolic_residuals": [
+    "0",
+    "0"
+  ],
+  "published_Eq5_Hermitian_gap_baseline": [
+    {
+      "eta": "0",
+      "sector": "A",
+      "U_over_t": "-1",
+      "cos_q": -1,
+      "frequency_squared_exact": "0"
+    },
+    {
+      "eta": "0",
+      "sector": "A",
+      "U_over_t": "1",
+      "cos_q": 1,
+      "frequency_squared_exact": "0"
+    },
+    {
+      "eta": "0",
+      "sector": "B",
+      "U_over_t": "-1",
+      "cos_q": -1,
+      "frequency_squared_exact": "0"
+    },
+    {
+      "eta": "0",
+      "sector": "B",
+      "U_over_t": "1",
+      "cos_q": 1,
+      "frequency_squared_exact": "0"
+    },
+    {
+      "eta": "1/5",
+      "sector": "A",
+      "U_over_t": "-2/3",
+      "cos_q": -1,
+      "frequency_squared_exact": "0"
+    },
+    {
+      "eta": "1/5",
+      "sector": "A",
+      "U_over_t": "2/3",
+      "cos_q": 1,
+      "frequency_squared_exact": "0"
+    },
+    {
+      "eta": "1/5",
+      "sector": "B",
+      "U_over_t": "-3/2",
+      "cos_q": -1,
+      "frequency_squared_exact": "0"
+    },
+    {
+      "eta": "1/5",
+      "sector": "B",
+      "U_over_t": "3/2",
+      "cos_q": 1,
+      "frequency_squared_exact": "0"
+    }
+  ],
+  "representation": "Independent occupation-bit matrices versus tensor Pauli and Clifford matrices; all scaled entries are exact Gaussian integers below 2^53."
+}

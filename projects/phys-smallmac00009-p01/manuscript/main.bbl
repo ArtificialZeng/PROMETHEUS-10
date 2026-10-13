@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{OwenHorowitz2023}
+Jeremy~A. Owen and Jordan~M. Horowitz.
+\newblock Size limits the sensitivity of kinetic schemes.
+\newblock {\em Nature Communications}, 14:1280, 2023.
+\newblock
+  \href{https://doi.org/10.1038/s41467-023-36705-8}{doi:10.1038/s41467-023-36705-8}.
+
+\bibitem{AslyamovEsposito2024}
+Timur Aslyamov and Massimiliano Esposito.
+\newblock General theory of static response for {Markov} jump processes.
+\newblock {\em Physical Review Letters}, 133:107103, 2024.
+\newblock
+  \href{https://doi.org/10.1103/PhysRevLett.133.107103}{doi:10.1103/PhysRevLett.133.107103};
+  \href{https://arxiv.org/abs/2402.13990v2}{arXiv:2402.13990v2}.
+
+\bibitem{DalCengio2025}
+Sara {Dal Cengio}, Pedro~E. Harunari, Vivien Lecomte, and Matteo Polettini.
+\newblock Mutual multilinearity of nonequilibrium network currents.
+\newblock {\em SciPost Physics}, 19:111, 2025.
+\newblock
+  \href{https://doi.org/10.21468/SciPostPhys.19.4.111}{doi:10.21468/SciPostPhys.19.4.111};
+  \href{https://arxiv.org/abs/2502.04298v2}{arXiv:2502.04298v2} (2026
+  revision).
+
+\bibitem{FancherHorowitz2026}
+Sean Fancher and Jordan~M. Horowitz.
+\newblock Topological building blocks of nonequilibrium response.
+\newblock \href{https://arxiv.org/abs/2607.12096v1}{arXiv:2607.12096v1}, 2026.
+\newblock Version 1, 13 July 2026.
+
+\end{thebibliography}

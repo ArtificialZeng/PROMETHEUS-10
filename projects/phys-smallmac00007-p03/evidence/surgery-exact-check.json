@@ -1,0 +1,186 @@
+{
+  "claim_tested": "Exact replay of strict domination by max{F_n(s+1),F_n(s+t+1)} for the two stated split-core families, plus literal full-graph checks.",
+  "coverage": {
+    "exact_formula_grid": "1<=t<=5, 1<=s<=12, 1<=q<=30, both families",
+    "grid_codes_checked": 3600,
+    "literal_full_graph_codes_checked": 10,
+    "selected_parameters": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        4,
+        1
+      ],
+      [
+        3,
+        5,
+        2
+      ],
+      [
+        2,
+        7,
+        4
+      ],
+      [
+        12,
+        48,
+        1
+      ]
+    ]
+  },
+  "error_control": "All comparisons use Python Fraction or python-flint fmpq arithmetic; tolerance is exactly zero.",
+  "job_id": "phys-smallmac00007-p03-research-94b57d5fe4fb",
+  "limitations": "The finite replay is not the proof of the all-parameter statement; that proof is the exact symbolic identity in evidence/surgery-symbolic.json. Neither record resolves threshold codes outside the two families.",
+  "method": "Independent direct implementation of Theorem 3.8 on explicit bit strings; selected cases are separately reconstructed by exact rational inversion of the literal full-graph fundamental matrix.",
+  "minimum_grid_gap": "13103/924480",
+  "minimum_grid_gap_location_family_s_q_t": [
+    "B",
+    12,
+    1,
+    1
+  ],
+  "one_bit_edge_cases": {
+    "family_B_s12_q48_fill_minus_defect": "0",
+    "family_B_s12_q48_low_pineapple_gap": "337/2640",
+    "s1_q1_fill_minus_defect": "-229/1980",
+    "s1_q4_fill_minus_defect": "11/840"
+  },
+  "result": "pass",
+  "schema": 1,
+  "selected_full_graph_records": [
+    {
+      "F_high": "489/110",
+      "F_low": "75/16",
+      "code": "010101",
+      "family": "A",
+      "literal_full_graph_value": "821/180",
+      "n": 6,
+      "q": 1,
+      "s": 1,
+      "t": 1,
+      "theorem_3_8_value": "821/180",
+      "two_pineapple_gap": "91/720"
+    },
+    {
+      "F_high": "489/110",
+      "F_low": "75/16",
+      "code": "010101",
+      "family": "B",
+      "literal_full_graph_value": "821/180",
+      "n": 6,
+      "q": 1,
+      "s": 1,
+      "t": 1,
+      "theorem_3_8_value": "821/180",
+      "two_pineapple_gap": "91/720"
+    },
+    {
+      "F_high": "279/35",
+      "F_low": "177/22",
+      "code": "010100001",
+      "family": "A",
+      "literal_full_graph_value": "191/24",
+      "n": 9,
+      "q": 4,
+      "s": 1,
+      "t": 1,
+      "theorem_3_8_value": "191/24",
+      "two_pineapple_gap": "23/264"
+    },
+    {
+      "F_high": "279/35",
+      "F_low": "177/22",
+      "code": "010100001",
+      "family": "B",
+      "literal_full_graph_value": "191/24",
+      "n": 9,
+      "q": 4,
+      "s": 1,
+      "t": 1,
+      "theorem_3_8_value": "191/24",
+      "two_pineapple_gap": "23/264"
+    },
+    {
+      "F_high": "527/44",
+      "F_low": "37/3",
+      "code": "0100111000001",
+      "family": "A",
+      "literal_full_graph_value": "16159/1344",
+      "n": 13,
+      "q": 5,
+      "s": 3,
+      "t": 2,
+      "theorem_3_8_value": "16159/1344",
+      "two_pineapple_gap": "139/448"
+    },
+    {
+      "F_high": "527/44",
+      "F_low": "37/3",
+      "code": "0111001000001",
+      "family": "B",
+      "literal_full_graph_value": "777/64",
+      "n": 13,
+      "q": 5,
+      "s": 3,
+      "t": 2,
+      "theorem_3_8_value": "777/64",
+      "two_pineapple_gap": "37/192"
+    },
+    {
+      "F_high": "11755/774",
+      "F_low": "1093/70",
+      "code": "0100001100000001",
+      "family": "A",
+      "literal_full_graph_value": "118909/7830",
+      "n": 16,
+      "q": 7,
+      "s": 2,
+      "t": 4,
+      "theorem_3_8_value": "118909/7830",
+      "two_pineapple_gap": "11728/27405"
+    },
+    {
+      "F_high": "11755/774",
+      "F_low": "1093/70",
+      "code": "0110000100000001",
+      "family": "B",
+      "literal_full_graph_value": "6871/450",
+      "n": 16,
+      "q": 7,
+      "s": 2,
+      "t": 4,
+      "theorem_3_8_value": "6871/450",
+      "two_pineapple_gap": "544/1575"
+    },
+    {
+      "F_high": "1055/16",
+      "F_low": "43603/660",
+      "code": "0101111111111110000000000000000000000000000000000000000000000001",
+      "family": "A",
+      "literal_full_graph_value": "2133917/32370",
+      "n": 64,
+      "q": 48,
+      "s": 12,
+      "t": 1,
+      "theorem_3_8_value": "2133917/32370",
+      "two_pineapple_gap": "33821/237380"
+    },
+    {
+      "F_high": "1055/16",
+      "F_low": "43603/660",
+      "code": "0111111111111010000000000000000000000000000000000000000000000001",
+      "family": "B",
+      "literal_full_graph_value": "1055/16",
+      "n": 64,
+      "q": 48,
+      "s": 12,
+      "t": 1,
+      "theorem_3_8_value": "1055/16",
+      "two_pineapple_gap": "337/2640"
+    }
+  ]
+}

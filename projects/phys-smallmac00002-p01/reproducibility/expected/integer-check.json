@@ -1,0 +1,204 @@
+{
+  "status": "pass",
+  "arithmetic": "Python integer sparse-polynomial arithmetic",
+  "weights": 27,
+  "two_generation_numerator_terms": 97,
+  "positive_denominator_terms": 75,
+  "positive_remainder_terms": 24,
+  "four_times_remainder": [
+    {
+      "exponents_t_h_u": [
+        0,
+        0,
+        0
+      ],
+      "coefficient": 4
+    },
+    {
+      "exponents_t_h_u": [
+        0,
+        0,
+        1
+      ],
+      "coefficient": 4
+    },
+    {
+      "exponents_t_h_u": [
+        0,
+        0,
+        2
+      ],
+      "coefficient": 4
+    },
+    {
+      "exponents_t_h_u": [
+        1,
+        1,
+        0
+      ],
+      "coefficient": 16
+    },
+    {
+      "exponents_t_h_u": [
+        1,
+        1,
+        1
+      ],
+      "coefficient": 24
+    },
+    {
+      "exponents_t_h_u": [
+        1,
+        1,
+        2
+      ],
+      "coefficient": 8
+    },
+    {
+      "exponents_t_h_u": [
+        2,
+        0,
+        0
+      ],
+      "coefficient": 7
+    },
+    {
+      "exponents_t_h_u": [
+        2,
+        0,
+        2
+      ],
+      "coefficient": 4
+    },
+    {
+      "exponents_t_h_u": [
+        2,
+        2,
+        0
+      ],
+      "coefficient": 24
+    },
+    {
+      "exponents_t_h_u": [
+        2,
+        2,
+        1
+      ],
+      "coefficient": 40
+    },
+    {
+      "exponents_t_h_u": [
+        3,
+        1,
+        1
+      ],
+      "coefficient": 8
+    },
+    {
+      "exponents_t_h_u": [
+        3,
+        1,
+        2
+      ],
+      "coefficient": 8
+    },
+    {
+      "exponents_t_h_u": [
+        3,
+        3,
+        0
+      ],
+      "coefficient": 32
+    },
+    {
+      "exponents_t_h_u": [
+        3,
+        3,
+        1
+      ],
+      "coefficient": 16
+    },
+    {
+      "exponents_t_h_u": [
+        4,
+        0,
+        0
+      ],
+      "coefficient": 8
+    },
+    {
+      "exponents_t_h_u": [
+        4,
+        2,
+        1
+      ],
+      "coefficient": 24
+    },
+    {
+      "exponents_t_h_u": [
+        4,
+        2,
+        2
+      ],
+      "coefficient": 8
+    },
+    {
+      "exponents_t_h_u": [
+        4,
+        4,
+        0
+      ],
+      "coefficient": 16
+    },
+    {
+      "exponents_t_h_u": [
+        5,
+        1,
+        0
+      ],
+      "coefficient": 16
+    },
+    {
+      "exponents_t_h_u": [
+        5,
+        1,
+        1
+      ],
+      "coefficient": 8
+    },
+    {
+      "exponents_t_h_u": [
+        5,
+        3,
+        1
+      ],
+      "coefficient": 16
+    },
+    {
+      "exponents_t_h_u": [
+        6,
+        2,
+        0
+      ],
+      "coefficient": 16
+    },
+    {
+      "exponents_t_h_u": [
+        7,
+        1,
+        1
+      ],
+      "coefficient": 8
+    },
+    {
+      "exponents_t_h_u": [
+        8,
+        0,
+        0
+      ],
+      "coefficient": 4
+    }
+  ],
+  "reads_cached_scientific_files": false,
+  "scope": "Exact polynomial identities; no empirical or unrestricted Gibbs-phase claim"
+}

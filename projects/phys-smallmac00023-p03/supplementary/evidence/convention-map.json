@@ -1,0 +1,41 @@
+{
+  "ab_order": [
+    "|0>_A|0>_B",
+    "|0>_A|1>_B",
+    "|0>_A|2>_B",
+    "|1>_A|0>_B",
+    "|1>_A|1>_B",
+    "|1>_A|2>_B",
+    "|2>_A|0>_B",
+    "|2>_A|1>_B",
+    "|2>_A|2>_B"
+  ],
+  "ba_order": [
+    "|0>_B|0>_A",
+    "|0>_B|1>_A",
+    "|0>_B|2>_A",
+    "|1>_B|0>_A",
+    "|1>_B|1>_A",
+    "|1>_B|2>_A",
+    "|2>_B|0>_A",
+    "|2>_B|1>_A",
+    "|2>_B|2>_A"
+  ],
+  "ab_index_to_ba_index": [
+    0,
+    3,
+    6,
+    1,
+    4,
+    7,
+    2,
+    5,
+    8
+  ],
+  "parameter_map": "lam=t^2, s^2=1-t^2, 0<=t<=1, s>=0",
+  "matrix_map": "J_AB=P J_BA P^T, P[3*m+b,3*b+m]=1",
+  "normalization": "Both representations use normalized Choi state (divide by d); unnormalized Choi would be d*J.",
+  "environment_phase": "B preserves Eq.(19) (-1)^ell branch signs; rephasing environment |ell> by (-1)^ell yields positive-loss Kraus without changing the channel.",
+  "comparison": "81 exact entries match after polynomial reduction s^2+t^2=1",
+  "independence_limit": "Same agent and SymPy shared. B was initially derived/run before A; a local matrix-accumulation bug was corrected after the first comparison. The repaired B code never reads A inputs/outputs or imports A. Debugging feedback is shared; no independent referee audit claimed."
+}

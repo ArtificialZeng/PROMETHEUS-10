@@ -1,0 +1,3 @@
+# Track curated SmallMac release evidence and frozen bibliography outputs.
+!phys-smallmac*/**/*.log
+!phys-smallmac*/**/*.bbl

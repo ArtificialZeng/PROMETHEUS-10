@@ -1,0 +1,92 @@
+{
+  "status": "pass",
+  "precision_bits": 192,
+  "parameter_interval": [
+    "27/250",
+    "221/2000"
+  ],
+  "q": "3p",
+  "kappa_lower": "3/250",
+  "kappa_upper": "11/1000",
+  "radius_split": "93/100",
+  "trial_radius": "7/8",
+  "tail_z_split": "99/100",
+  "partition": {
+    "p": 100,
+    "R": 500,
+    "y": 1000
+  },
+  "checks": {
+    "transverse_squared_convexity": {
+      "minimum_lower_bound_float": 0.0686058491240265,
+      "arb_at_worst_box": "[0.0687 +/- 9.42e-5]",
+      "box": [
+        "27/250",
+        "4321/40000"
+      ],
+      "boxes_checked": 100
+    },
+    "center_nonnegative": {
+      "minimum_lower_bound_float": 0.001799210044612392,
+      "arb_at_worst_box": "[0.002 +/- 2.01e-4]",
+      "box": [
+        "4419/40000",
+        "221/2000"
+      ],
+      "boxes_checked": 100
+    },
+    "interior_lower_envelope": {
+      "minimum_lower_bound_float": 0.0018137020985453773,
+      "arb_at_worst_box": "[0.0018 +/- 4.29e-5]",
+      "box": [
+        "4419/40000",
+        "221/2000"
+      ],
+      "boxes_checked": 100
+    },
+    "tail_A_positive": {
+      "minimum_lower_bound_float": 0.07417320474219329,
+      "arb_at_worst_box": "[0.074 +/- 3.46e-4]",
+      "box": [
+        "4419/40000",
+        "221/2000"
+      ],
+      "boxes_checked": 100
+    },
+    "diagonal_derivative_tail": {
+      "minimum_lower_bound_float": 0.06366091116891402,
+      "arb_at_worst_box": "[0.064 +/- 3.40e-4]",
+      "box": [
+        "4419/40000",
+        "221/2000"
+      ],
+      "boxes_checked": 100
+    },
+    "exterior_lower_envelope": {
+      "minimum_lower_bound_float": 0.0009905611568431362,
+      "arb_at_worst_box": "[0.001 +/- 5.20e-4]",
+      "box": [
+        "27/250",
+        "4321/40000",
+        "6047/6250",
+        "48383/50000"
+      ],
+      "boxes_checked": 50000
+    },
+    "diagonal_derivative_compact": {
+      "minimum_lower_bound_float": 0.00018114072853313702,
+      "arb_at_worst_box": "[+/- 5.35e-4]",
+      "box": [
+        "4419/40000",
+        "221/2000",
+        "0",
+        "9801/10000000"
+      ],
+      "boxes_checked": 100000
+    }
+  },
+  "failures": [],
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "python_flint": "0.9.0",
+  "arithmetic": "Exact Fraction grid; Arb rational conversion, outward arithmetic and union. H decreases and L increases; zero entropy and L(0)=1 evaluated by exact continuous limits. No grid maximum used as continuum upper bound."
+}

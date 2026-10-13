@@ -1,0 +1,399 @@
+\documentclass[aps,pra,reprint,amsmath,amssymb,superscriptaddress,longbibliography]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{bm}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\hypersetup{pdftitle={A rank-three projection bound for the quantumness of spin-1 states},pdfauthor={Xiaojian Zeng},pdfsubject={Spin-1 coherent-state geometry},pdfkeywords={spin one, quantumness, coherent states, Hilbert-Schmidt distance}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Id}{I}
+\newcommand{\Ccal}{\mathcal C}
+\newcommand{\Kcal}{\mathcal K}
+\newcommand{\Acal}{\mathcal A}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\begin{document}
+\title{A rank-three projection bound for the quantumness of spin-1 states}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190, China}
+\begin{abstract}
+The Hilbert--Schmidt distance from a spin-1 state to the convex hull of spin-coherent states is conjectured to be bounded by the corresponding pure-state distance at fixed smallest Bloch-matrix eigenvalue. We establish a restricted bound determined by the nearest classical state. If its real \(4\times4\) Bloch matrix \(W\) has rank three, then \(Q(\rho)\leq\sqrt{3/8}\,[-\lambda_{\min}(X(\rho))]\). Equality holds exactly when the one-dimensional kernel of \(W\) has zero time component. The proof uses the normal cone of the complete classical moment body, retaining both of its affine constraints. Nonclassical physical targets cannot project to rank-one or rank-four moment matrices; consequently, any counterexample to the proposed pure-state envelope must project to rank two. Two positive-definite mixed states illustrate equality and strict inequality. The all-state envelope and the rank-two case remain unresolved.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+Spin-coherent states provide a natural classical reference for a finite spin. Their convex hull includes classical statistical mixtures while retaining the directional structure of a spin. For spin one, Bohnet-Waldraff, Braun, and Giraud obtained an exact pure-state expression for the Hilbert--Schmidt distance to this hull and proposed that it also bounds the distance of mixed states at fixed smallest Bloch-matrix eigenvalue~\cite{Bohnet2016}. They supported the mixed-state bound numerically and proved it for mixtures of a pure state with its own closest classical state.
+
+This article addresses a class defined by the rank of the \emph{closest classical moment matrix}. The main result is a linear bound for every physical target whose closest matrix has rank three, together with a necessary and sufficient equality condition. It rules out this rank class as a location for counterexamples to the proposed pure-state envelope. The rank condition concerns a \(4\times4\) real moment matrix; it is distinct from the rank of the \(3\times3\) density operator.
+
+The argument uses the full continuous coherent-state hull. An unrestricted two-qubit separable-state projection has a different feasible set: for the Hilbert--Schmidt metric, the closest separable state need not retain support in the symmetric subspace~\cite{BohnetTensor2016}. The two affine constraints defining the spin-1 classical moment body are therefore kept throughout. The classicality criterion and the pure-state formula are established inputs~\cite{Bohnet2016}; the result here is the rank-three bound, its equality classification, and the remaining rank-two alternative.
+
+\section{State space and the proposed envelope}
+\label{sec:model}
+
+Let \(\rho\succeq0\), \(\tr\rho=1\), act on \(\mathbb C^3\). We use \(\hbar=1\) and the basis \(m=-1,0,1\), with
+\begin{align}
+ J_z\ket{1,m}&=m\ket{1,m},\nonumber\\
+ J_\pm\ket{1,m}&=\sqrt{2-m(m\pm1)}\ket{1,m\pm1},
+ \label{eq:spin}
+\end{align}
+where terms outside this basis vanish, \(J_x=(J_++J_-)/2\), and \(J_y=(J_+-J_-)/(2i)\). Define
+\begin{align}
+ S_{00}&=\Id_3,\qquad S_{a0}=S_{0a}=J_a,\nonumber\\
+ S_{ab}&=J_aJ_b+J_bJ_a-\delta_{ab}\Id_3,\nonumber\\
+ X_{\mu\nu}(\rho)&=\tr(\rho S_{\mu\nu}),
+ \label{eq:moments}
+\end{align}
+for \(a,b=1,2,3\) and \(\mu,\nu=0,1,2,3\). Then \(X\) is real symmetric even for a complex density matrix, \(X_{00}=1\), and \(\sum_{a=1}^3X_{aa}=1\). The index zero is called the time component solely as a label for this representation; no spacetime dynamics is involved.
+
+The classical set and its distance are
+\begin{align}
+ \Ccal&=\operatorname{conv}\{\ket{\theta,\phi}\bra{\theta,\phi}\},\nonumber\\
+ \ket{\theta,\phi}&=e^{-i\phi J_z}e^{-i\theta J_y}\ket{1,1},\nonumber\\
+ Q(\rho)&=\min_{\sigma\in\Ccal}
+       \sqrt{\tr[(\rho-\sigma)^2]},
+ \label{eq:distance}
+\end{align}
+where \(0\leq\theta\leq\pi\) and \(0\leq\phi<2\pi\). A coherent state pointing along a unit vector \(\bm n\) has moment matrix
+\begin{equation}
+ X_{\rm coh}=\begin{pmatrix}1\\ \bm n\end{pmatrix}
+                  \begin{pmatrix}1&\bm n^T\end{pmatrix}.
+ \label{eq:coherent}
+\end{equation}
+In these conventions~\cite{Bohnet2016},
+\begin{align}
+ \rho&=\frac14\sum_{\mu,\nu=0}^3X_{\mu\nu}S_{\mu\nu},
+ \nonumber\\
+ \norm{X(\rho)-X(\sigma)}_F^2
+       &=4\tr[(\rho-\sigma)^2].
+ \label{eq:metric}
+\end{align}
+Appendix~\ref{app:metric} derives this metric relation and explains the support restriction.
+
+For a nonclassical physical state, write
+\begin{equation}
+ \lambda=\lambda_{\min}(X)\in[-1,0).
+\end{equation}
+The pure-state result of Ref.~\cite{Bohnet2016}, Eqs.~(37)--(38), defines a function \(f(\lambda)\). Its mixed-state conjecture, Eq.~(41) of that reference, is
+\begin{equation}
+ Q(\rho)\leq f(\lambda).
+ \label{eq:conjecture}
+\end{equation}
+The present argument only requires the established pure-state comparison
+\begin{equation}
+ f(\lambda)\geq\sqrt{\frac38}(-\lambda),
+ \qquad -1\leq\lambda\leq0,
+ \label{eq:fcomparison}
+\end{equation}
+with equality on \([-1,-1/2]\). This follows from the pure-state lower bound and exact solution in Ref.~\cite{Bohnet2016}, Eqs.~(12), (23), and (37)--(38). Appendix~\ref{app:f} records the full function to fix the precise conjecture under discussion. The formulas used here were checked in the corrected article reproduced in Appendix A.1 of Ref.~\cite{BohnetThesis2017}.
+
+\section{Projection onto the complete classical body}
+\label{sec:projection}
+
+Let \(E_0=\diag(1,0,0,0)\) and \(E_s=\Id_4-E_0\). The moment image of \(\Ccal\) is exactly
+\begin{align}
+ \Acal&=\{W=W^T\in\mathbb R^{4\times4}:
+          W_{00}=1,\ \tr(E_sW)=1\},\nonumber\\
+ \Kcal&=\{W\in\Acal:W\succeq0\}.
+ \label{eq:body}
+\end{align}
+The forward inclusion follows from Eq.~\eqref{eq:coherent}. The converse is the known spin-1 classicality criterion~\cite{Bohnet2016}; an elementary convex-decomposition proof is given in Appendix~\ref{app:hull}. Thus Eq.~\eqref{eq:body} does not relax the physical classical set.
+
+By Eq.~\eqref{eq:metric}, the unique closest classical state corresponds to
+\begin{equation}
+ W=\underset{U\in\Kcal}{\operatorname{argmin}}\,
+                  \frac12\norm{X-U}_F^2,
+ \qquad Q=\frac12\norm{X-W}_F.
+ \label{eq:projection}
+\end{equation}
+Existence follows from compactness of \(\Kcal\); uniqueness follows from strict convexity. With the Frobenius inner product \(\ip{A}{B}=\tr(AB)\) for real symmetric matrices, the orthogonal projection onto the tangent space of \(\Acal\) is
+\begin{equation}
+ P(A)=A-A_{00}E_0-\frac{\tr(E_sA)}{3}E_s.
+ \label{eq:tangent}
+\end{equation}
+The necessary and sufficient optimality conditions take the form
+\begin{equation}
+ X-W=-P(Z),\qquad Z\succeq0,\qquad WZ=0.
+ \label{eq:normal}
+\end{equation}
+To obtain necessity, minimize the objective in Eq.~\eqref{eq:projection} with Lagrangian
+\begin{align}
+ L={}&\tfrac12\norm{W-X}_F^2-\tr(ZW)\nonumber\\
+    &+\alpha(W_{00}-1)+\beta[\tr(E_sW)-1].
+\end{align}
+The strictly feasible matrix \(\diag(1,1/3,1/3,1/3)\) ensures the multiplier conditions apply. Projecting stationarity onto the affine tangent gives Eq.~\eqref{eq:normal}. Complementarity for positive semidefinite \(W,Z\) gives \(WZ=0\).
+
+The sign and global sufficiency can also be checked directly. For every \(U\in\Kcal\), Eq.~\eqref{eq:normal} implies
+\begin{equation}
+ \ip{X-W}{U-W}=-\tr(ZU)\leq0.
+ \label{eq:certificate}
+\end{equation}
+This is the projection inequality over the entire classical body. In particular, a feasible \(W\) and a matrix \(Z\) satisfying Eq.~\eqref{eq:normal} certify the exact closest point without a finite angular dictionary.
+
+\section{The rank-three bound and equality}
+\label{sec:bound}
+
+\noindent\textbf{Rank-three projection bound.}
+Let \(\rho\) be any nonclassical physical spin-1 state, and let \(W\) be its closest classical moment matrix. If \(\rank W=3\), then
+\begin{equation}
+ \boxed{\ Q(\rho)\leq\sqrt{\frac38}(-\lambda)\ }.
+ \label{eq:bound}
+\end{equation}
+For a real unit vector \(v=(v_0,\bm v)\) spanning \(\ker W\), equality holds if and only if \(v_0=0\).
+
+\subsection{Rank-one normal and the kernel restriction}
+
+Since \(W\) has a one-dimensional kernel, Eq.~\eqref{eq:normal} forces
+\begin{equation}
+ Z=zvv^T,\qquad z>0,\qquad v^Tv=1.
+ \label{eq:dual}
+\end{equation}
+Here \(z=0\) would imply \(X=W\), contrary to nonclassicality. Set \(r=v_0^2\) and
+\begin{align}
+ \kappa&=\norm{P(vv^T)}_F^2
+       =1-r^2-\frac{(1-r)^2}{3}\nonumber\\
+       &=\frac23(1-r)(1+2r).
+ \label{eq:kappa}
+\end{align}
+Using \(Wv=0\) and the self-adjointness of \(P\), one obtains
+\begin{equation}
+ v^TXv=-z\kappa,\qquad Q=\frac z2\sqrt{\kappa}.
+ \label{eq:rayleighdata}
+\end{equation}
+
+The affine geometry of \(W\) implies
+\begin{equation}
+ 0\leq r<\frac12.
+ \label{eq:r}
+\end{equation}
+Indeed, a spatial rotation puts \(v=(a,0,0,b)\) with \(b\neq0\), because \(W_{00}=1\). From \(Wv=0\),
+\begin{equation}
+ W_{03}=-\frac ab,\qquad
+ W_{33}=\frac{a^2}{b^2},\qquad
+ W_{11}+W_{22}=1-\frac{a^2}{b^2}.
+\end{equation}
+Positivity yields \(a^2\leq b^2\). If equality held, \(W_{11}=W_{22}=0\). A zero diagonal entry in a positive semidefinite matrix makes its entire row and column vanish. The remaining \(0,3\) block has determinant zero and rank one, contradicting \(\rank W=3\). Thus \(a^2<b^2\), which proves Eq.~\eqref{eq:r}.
+
+There is also a direct spin interpretation of the same restriction. Define
+\begin{align}
+ \Gamma_v={}&(v_0^2-\norm{\bm v}^2)\Id_3
+       +2v_0\,\bm v\cdot\bm J
+       +2(\bm v\cdot\bm J)^2.
+ \label{eq:gamma}
+\end{align}
+Then \(v^TXv=\tr(\rho\Gamma_v)\), and the eigenvalues of \(\Gamma_v\) are
+\begin{equation}
+ (v_0-\norm{\bm v})^2,\quad
+ v_0^2-\norm{\bm v}^2,\quad
+ (v_0+\norm{\bm v})^2.
+\end{equation}
+The negative expectation in Eq.~\eqref{eq:rayleighdata} and \(\rho\succeq0\) again imply \(r<1/2\). This physical argument is sufficient, but the preceding proof shows that positivity of the target is not needed for this particular kernel restriction within the same affine body.
+
+\subsection{Bound and both directions of equality}
+
+The Rayleigh inequality gives \(-\lambda\geq z\kappa\). Equations~\eqref{eq:kappa} and \eqref{eq:r} also give
+\begin{equation}
+ \kappa-\frac23=\frac23r(1-2r)\geq0.
+\end{equation}
+Consequently,
+\begin{equation}
+ \frac{Q}{-\lambda}
+ \leq\frac{1}{2\sqrt{\kappa}}
+ \leq\sqrt{\frac38},
+ \label{eq:chain}
+\end{equation}
+which proves Eq.~\eqref{eq:bound}. If \(r>0\), the last inequality is strict.
+
+Conversely, suppose \(r=0\). Then
+\begin{equation}
+ P(vv^T)=vv^T-\frac13E_s,\qquad
+ Xv=-\frac{2z}{3}v.
+\end{equation}
+On \(v^\perp\), the restriction of \(X\) equals that of \(W+(z/3)E_s\), which is positive definite there because \(W\) has rank three. Thus \(\lambda=-2z/3\), and both inequalities in Eq.~\eqref{eq:chain} are equalities. This proves the stated equivalence. The result applies to arbitrary complex physical density matrices; no reality assumption on \(\rho\) has been introduced.
+
+\section{Why a counterexample must project to rank two}
+\label{sec:ranktwo}
+
+The rank-three result and Eq.~\eqref{eq:fcomparison} imply the proposed envelope~\eqref{eq:conjecture} whenever \(\rank W=3\). To identify the remaining alternative, first note that \(\rank W=4\) would force \(Z=0\) in Eq.~\eqref{eq:normal}, hence \(X=W\) classical.
+
+If \(\rank W=1\), Eq.~\eqref{eq:body} makes its density matrix \(\sigma\) a pure coherent state. The maximally mixed spin state \(\Id_3/3\) is in \(\Ccal\), for example by the uniform spherical mixture. The closest-point inequality in density-operator space therefore requires
+\begin{equation}
+ \tr[(\rho-\sigma)(\Id_3/3-\sigma)]
+          =1-\tr(\rho\sigma)\leq0.
+ \label{eq:rankone}
+\end{equation}
+For a positive trace-one \(\rho\), \(\tr(\rho\sigma)\leq1\), and equality forces \(\rho=\sigma\). This contradicts nonclassicality. Positivity of the physical target is used here. Rank zero is excluded by \(W_{00}=1\).
+
+It follows that every nonclassical physical target has a closest classical moment matrix of rank two or three. Hence
+\begin{equation}
+ Q(\rho)>f(\lambda)\quad\Longrightarrow\quad\rank W=2.
+ \label{eq:reduction}
+\end{equation}
+This implication does not determine the projection rank from \(\lambda\) alone. In particular, it is not a proof of the envelope for all mixed states with \(\lambda\leq-1/2\).
+
+\section{Exact mixed-state examples}
+\label{sec:examples}
+
+Both examples below are positive-definite density matrices in the basis fixed in Eq.~\eqref{eq:spin}. Their optimality follows from the same global certificate~\eqref{eq:normal}.
+
+\subsection{Equality with zero dipole}
+
+Consider
+\begin{equation}
+ \rho_{\rm eq}=
+ \begin{pmatrix}
+  1/10&0&1/20\\
+  0&4/5&0\\
+  1/20&0&1/10
+ \end{pmatrix}.
+ \label{eq:rhoeq}
+\end{equation}
+Its density eigenvalues are \(3/20,1/20,4/5\), and its dipole moment vanishes. The target and closest moments are
+\begin{align}
+ X_{\rm eq}&=\diag(1,9/10,7/10,-3/5),\nonumber\\
+ W_{\rm eq}&=\diag(1,3/5,2/5,0).
+\end{align}
+An explicit coherent decomposition of \(W_{\rm eq}\) assigns weight \(3/10\) to each of the directions \(\pm\bm e_x\) and weight \(1/5\) to each of \(\pm\bm e_y\). Taking \(Z=(9/10)e_3e_3^T\), with \(e_3=(0,0,0,1)^T\), verifies Eq.~\eqref{eq:normal}. Thus
+\begin{equation}
+ \lambda=-\frac35,\qquad Q^2=\frac{27}{200},\qquad r=0.
+\end{equation}
+This example saturates both Eq.~\eqref{eq:bound} and the pure-state envelope. It illustrates mixed-state equality; no separate novelty claim is attached to this zero-dipole calculation.
+
+\subsection{Strict inequality with nonzero dipole}
+
+Now take
+\begin{equation}
+ \rho_{\rm st}=\diag(4/9,23/45,2/45).
+ \label{eq:rhost}
+\end{equation}
+All density eigenvalues are positive, and \(\tr(\rho_{\rm st}J_z)=-2/5\). Its moment matrix is
+\begin{equation}
+ X_{\rm st}=
+ \begin{pmatrix}
+ 1&0&0&-2/5\\
+ 0&23/45&0&0\\
+ 0&0&23/45&0\\
+ -2/5&0&0&-1/45
+ \end{pmatrix}.
+\end{equation}
+The closest classical matrix is
+\begin{equation}
+ W_{\rm st}=
+ \begin{pmatrix}
+ 1&0&0&-1/3\\
+ 0&4/9&0&0\\
+ 0&0&4/9&0\\
+ -1/3&0&0&1/9
+ \end{pmatrix}.
+ \label{eq:wst}
+\end{equation}
+It is the equal mixture of four coherent directions
+\begin{equation}
+ (\pm\sqrt{8}/3,0,-1/3),\qquad
+ (0,\pm\sqrt{8}/3,-1/3).
+\end{equation}
+With \(b=(1/3,0,0,1)^T\), the choice \(Z=bb^T/5\) gives \(W_{\rm st}Z=0\) and \(X_{\rm st}-W_{\rm st}=-P(Z)\). Directly,
+\begin{equation}
+ \lambda=\frac{22-\sqrt{853}}{45},\qquad
+ Q^2=\frac{2}{225},\qquad r=\frac1{10}.
+ \label{eq:strictvalues}
+\end{equation}
+The displayed \(\lambda\) is the smaller eigenvalue of the \(0,3\) block of \(X_{\rm st}\); its other three eigenvalues are positive. Equation~\eqref{eq:bound} is strict because \(r>0\).
+
+The published pure-to-closest-state mixtures with a rank-three closest matrix have a purely spatial kernel, as follows from Eqs.~(23), (36), and (42) of Ref.~\cite{Bohnet2016}. The value \(r=1/10\) is invariant under spin rotations. Thus the rank-three class in the present result contains mixed directions beyond that established family.
+
+\section{Interpretation and limitations}
+
+The geometric obstruction has a simple source. A rank-three closest moment matrix has only one kernel direction, so its normal cone contributes a single positive rank-one multiplier. The affine constraints restrict that direction sufficiently to bound the distance by the smallest target eigenvalue. A purely spatial kernel yields the sharp coefficient; a nonzero time component makes the inequality strict. At a rank-two closest point, the multiplier can have rank two, and the one-direction argument no longer resolves the envelope.
+
+The result controls a static, dimensionless distance in a specified finite-dimensional model. It supplies a restriction on where a counterexample may occur and exact equality information. Checking the hypothesis may still require a closest-point optimization, so no method for inferring the rank from \(\lambda\), computational speedup, or full mixed-state envelope is claimed. Hilbert--Schmidt distance is used as a geometric quantity, without an assertion of monotonicity under arbitrary quantum channels.
+
+\subsection*{Calculation methods and AI use}
+
+The universal bound is established by the analytic projection argument. The accompanying exact symbolic calculation reconstructs the spin moments independently through symmetric two-qubit Pauli compression, checks the metric identity for a generic complex traceless Hermitian matrix, verifies the displayed optimality certificates, and checks a complex spin rotation. These finite checks support the algebra and examples; they do not replace the proof for all physical targets. The scripts use Python and SymPy with exact rational and algebraic arithmetic.
+
+OpenAI Codex was used substantively in deriving and checking the arguments, literature comparison, code development, and drafting. Separate AI sessions produced a proposed proof and an additional source-based symbolic check; this is not human peer review. The precise deployed model identifiers and the human author's verification of the AI-assisted work remain to be confirmed before submission.
+
+\section*{Data availability}
+
+All matrices and exact values needed for the result are specified in this article. The accompanying reproducibility files provide the symbolic checks and environment information. No experimental data were used.
+
+\begin{acknowledgments}
+AI assistance with manuscript organization and language was provided through OpenAI Codex in addition to the research uses described above. Scientific approval of this draft by the listed human author is pending.
+\end{acknowledgments}
+
+\appendix
+\section{Metric normalization and symmetric support}
+\label{app:metric}
+
+Let \(\tau_0=\Id_2\) and \(\tau_{1,2,3}\) be the Pauli matrices. Define the isometry
+\begin{align}
+ V\ket{1,-1}&=\ket{11},\nonumber\\
+ V\ket{1,0}&=(\ket{01}+\ket{10})/\sqrt2,\nonumber\\
+ V\ket{1,1}&=\ket{00}.
+\end{align}
+The operators in Eq.~\eqref{eq:moments} satisfy
+\begin{equation}
+ S_{\mu\nu}=V^\dagger(\tau_\mu\otimes\tau_\nu)V.
+\end{equation}
+For \(\widetilde\rho=V\rho V^\dagger\), the Pauli expansion is
+\begin{equation}
+ \widetilde\rho=\frac14\sum_{\mu,\nu}
+       X_{\mu\nu}\tau_\mu\otimes\tau_\nu.
+\end{equation}
+Compressing this identity gives the inverse map in Eq.~\eqref{eq:metric}. Orthogonality,
+\(\tr[(\tau_\mu\otimes\tau_\nu)(\tau_\alpha\otimes\tau_\beta)]
+=4\delta_{\mu\alpha}\delta_{\nu\beta}\),
+and the isometry give the norm identity there.
+
+The embedded coherent states are identical single-qubit products \(\ket{\bm n}\otimes\ket{\bm n}\). Conversely, in a separable decomposition of a positive state supported in the symmetric subspace, each product vector has zero antisymmetric component. Its two factors are therefore proportional. Thus separable states subject to this symmetric-subspace support restriction correspond exactly to \(\Ccal\). An unrestricted separable set includes states with antisymmetric population and can give a different Hilbert--Schmidt projection~\cite{BohnetTensor2016}.
+
+\section{A decomposition of the affine positive body}
+\label{app:hull}
+
+For completeness, take \(W\in\Kcal\) and factor it as \(W=BB^T\), with \(B\) real of size \(4\times k\) and full column rank. Put \(G=E_s-E_0\). Then \(H=B^TGB\) is real symmetric and
+\begin{equation}
+ \tr H=\tr(GW)=0.
+\end{equation}
+Every real symmetric trace-zero matrix has an orthonormal basis \(q_i\) with \(q_i^THq_i=0\). To see this, if \(H\neq0\), continuity between positive and negative Rayleigh quotients gives one such unit vector. Compression to its orthogonal complement again has trace zero, so induction completes the basis. If \(H=0\), any orthonormal basis works.
+
+Write \(y_i=Bq_i=(a_i,\bm b_i)^T\). Then
+\begin{equation}
+ W=\sum_i y_i y_i^T,\qquad
+ \norm{\bm b_i}^2=a_i^2.
+\end{equation}
+A term with \(a_i=0\) vanishes. For each remaining term, let \(p_i=a_i^2\) and \(\bm n_i=\bm b_i/a_i\). Since \(W_{00}=1\),
+\begin{equation}
+ \sum_i p_i=1,\quad \norm{\bm n_i}=1,\quad
+ W=\sum_i p_i
+       \begin{pmatrix}1\\\bm n_i\end{pmatrix}
+       \begin{pmatrix}1&\bm n_i^T\end{pmatrix}.
+\end{equation}
+This is a convex mixture of the coherent moments~\eqref{eq:coherent}, proving the converse inclusion in Eq.~\eqref{eq:body}.
+
+\section{The pure-state function}
+\label{app:f}
+
+An equivalent form of the pure-state formulas in Ref.~\cite{Bohnet2016}, Eqs.~(35)--(38), is
+\begin{equation}
+ f(\lambda)=\sqrt{\frac38}(-\lambda),
+ \qquad -1\leq\lambda\leq-\frac12.
+\end{equation}
+For \(-1/2<\lambda\leq0\), let \(s=\sqrt{1-\lambda^2}\) and let \(d\in(\sqrt3/2,1]\) be the unique root of
+\begin{equation}
+ 2d^3-(1+\lambda)d-s=0.
+\end{equation}
+Then
+\begin{align}
+ f(\lambda)^2=\frac14\big[&
+ \lambda^2+(1-d^2)^2+(d^2-1-\lambda)^2\nonumber\\
+ &+2(s-d)^2\big].
+\end{align}
+The two branches agree at \(\lambda=-1/2\), and \(f(0)=0\). This is a representation of the published pure-state solution, not an additional bound derived here. Classical states already have \(Q=0\); no extension of \(f\) to positive \(\lambda\) is required.
+
+\bibliography{references}
+\end{document}

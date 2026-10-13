@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-09-12T18:39:00.933881+00:00",
+  "python": "3.9.6 (default, Nov 11 2024, 03:15:38) \n[Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "sympy": "1.14.0",
+  "matplotlib": "3.9.4",
+  "scientific_arithmetic": "Python Fraction and SymPy Rational; exact signs",
+  "plotting": "Only final display uses binary floating point",
+  "compute": "One sequential foreground scientific process at a time; each replay below one second; no parallel workers",
+  "installation": "No software installed",
+  "model_disclosure": "Current drafting environment identifies GPT-6; earlier event streams examined only for explicit model metadata and contained none. No versions inferred."
+}

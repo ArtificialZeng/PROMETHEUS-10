@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-09-12T09:48:10.538669+00:00",
+  "copy_scope": "Unchanged scientific implementation, own witness data and own calculation records; no third-party full papers or private run transcripts. Original referee identity preserved in copied historical records. Fresh replays use a separate execution record, not a new referee verdict.",
+  "copies": [
+    {
+      "source": "audit/referee_check.py",
+      "copy": "reproducibility/checker_core.py",
+      "sha256": "d4cf606fe32a87bba0e3b015f3340dd0665443ad64f4a1ba1667f007faf12121"
+    },
+    {
+      "source": "evidence/research-halfline-Q1-L96-eta0.2.npz",
+      "copy": "reproducibility/data/witness96.npz",
+      "sha256": "3fad7557e6baa56cbec3347505e4632578bfb5ffe46dc637958c7a8d3c7f0f2d"
+    },
+    {
+      "source": "audit/referee-Q1-L80.npz",
+      "copy": "reproducibility/data/witness80.npz",
+      "sha256": "837a2550b4a7924c55096a1a7d7968dd4c8cf9a15270c248dc8287e3cf2ae2e8"
+    },
+    {
+      "source": "audit/referee-root-bounds.json",
+      "copy": "reproducibility/reference/bounds.json",
+      "sha256": "53314e13e44b9a084611fa0838bc677d05a4ec67b08289d0a60f0b8a88f35eac"
+    },
+    {
+      "source": "audit/referee-certificate-frozen-Q1-L96-eta0.2.json",
+      "copy": "reproducibility/reference/certificate96.json",
+      "sha256": "664f4877270ab4b6b18cd9c1ded0841491e9005584d16987d8764d14bab97c9e"
+    },
+    {
+      "source": "audit/referee-certificate-referee-Q1-L80.json",
+      "copy": "reproducibility/reference/certificate80.json",
+      "sha256": "139fa07d28c0961f8fa58aac2230da21952339ee51dc07b9dbf0493ad1aace34"
+    },
+    {
+      "source": "audit/referee-source.json",
+      "copy": "reproducibility/reference/source.json",
+      "sha256": "4e9f4b9803eeae0266ebf7fc07411974ae7e2148862119f455a82f55539113b5"
+    },
+    {
+      "source": "audit/referee-adversarial-controls.json",
+      "copy": "reproducibility/reference/controls.json",
+      "sha256": "475040447e31fa072069a350f9095f62d95f1e6fda73a67cb1d77b8b4837e356"
+    }
+  ]
+}

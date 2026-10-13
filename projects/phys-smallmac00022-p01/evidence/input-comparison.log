@@ -1,0 +1,28 @@
+{
+  "alpha_exact": "1/2",
+  "basis_convention_map": {
+    "A_rows": "A logical rows [0_L,1_L], two-copy lexicographic [00,01,10,11]",
+    "B_left_indices": "B combines physical A and flag A_prime as 4*A+A_prime; nonzero canonical rows satisfy A_prime=A and map in lexicographic I order",
+    "observable_equivalence": "squared singular values of A's coefficient matrix equal the nonzero eigenvalues after B's explicit partial trace",
+    "right_indices": "the same map holds for physical B and flag B_prime"
+  },
+  "caveat": "The 1e-12 bound is a conservative numerical roundoff/reconstruction bound supported by independent double-SVD and 100-digit partial-trace agreement; it is not an interval-arithmetic certificate for new research.",
+  "comparison_tolerance_bits_or_absolute_spectrum": 1e-12,
+  "conservative_reported_roundoff_bound_bits": 1e-12,
+  "cut": "AA_prime:BB_prime",
+  "entropy_convention": "base-2 Renyi entropy",
+  "observed_differences": {
+    "one_copy_spectrum_max_abs": 5.551115123125783e-16,
+    "one_entropy_abs_bits": 5.551115123125783e-16,
+    "product_entropy_abs_bits": 0.0,
+    "product_spectrum_max_abs": 5.551115123125783e-16,
+    "signed_entropy_abs_bits": 8.881784197001252e-16,
+    "signed_spectrum_max_abs": 2.220446049250313e-16,
+    "witness_difference_abs_bits": 9.141992718397773e-16
+  },
+  "r_exact": "1/5",
+  "signed_minus_product_bits_method_a": -0.005193811006145133,
+  "signed_minus_product_bits_method_b_100dps": "-0.0051938110061460466655369126002987705298082123532863241998917118451823040860899167",
+  "status": "pass",
+  "strict_negative_margin_over_reported_bound": 5193811006.146047
+}

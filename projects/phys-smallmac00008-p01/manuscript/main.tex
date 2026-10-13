@@ -1,0 +1,132 @@
+\documentclass[aps,pra,reprint,amsmath,amssymb,longbibliography]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue}
+\newcommand{\LC}{\mathrm{LC}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\begin{document}
+\title{Comment on ``Distinguishing graph states by the properties of their marginals''}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190, China}
+\date{September 12, 2026}
+\begin{abstract}
+Vandr\'e et al. [Phys. Rev. A \textbf{111}, 052449 (2025)] conjectured that a graph-condensation rule preserves local Clifford equivalence when each vertex of the condensed set has at most one external neighbor. We give an exact six-qubit counterexample with fixed vertex labels, satisfying this degree condition in both input graphs. Three local complementations connect the inputs, but their Boolean OR condensations have reduced-state ranks four and two on the same pair of external qubits. The condensed graph states are therefore not even locally unitarily equivalent at fixed labels. The condensed set is disconnected, and the intermediate graphs need not satisfy the degree condition. The example does not contradict the established rank-one-cut condensation rule and does not disprove a version allowing vertex permutations.
+\end{abstract}
+\maketitle
+
+Conjecture~1 in Sec.~V of Vandr\'e et al.~\cite{Vandre2025} proposes that at most one external neighbor per vertex of a condensation set suffices to preserve local Clifford (LC) equivalence. This Comment disproves the fixed-label statement even when the premise holds in \emph{both} inputs. Every original and condensed vertex label is fixed, as appropriate for qubits at specified network sites.
+
+\emph{Model and precise statement.}---Let $H=(V,E_H)$ be a finite, simple, undirected graph of $n$ distinguishable qubits. We use the conventions
+\begin{align}
+ |H\rangle&=\prod_{\{i,j\}\in E_H}CZ_{ij}|+\rangle^{\otimes n},
+ &|+\rangle&=\frac{|0\rangle+|1\rangle}{\sqrt2},\label{eq:state}\\
+ K_v(H)&=X_v\prod_{u\in N_H(v)}Z_u,
+ &CZ&=\operatorname{diag}(1,1,1,-1).\nonumber
+\end{align}
+LC equivalence means equivalence up to a global phase under a tensor product of single-qubit Clifford unitaries, without permuting tensor factors. Local complementation $\tau_v$ toggles every edge between distinct neighbors of $v$; it is implemented, up to phase, by~\cite{Vandre2025}
+\begin{equation}
+ U_v(H)=e^{-i\pi X_v/4}\prod_{u\in N_H(v)}e^{i\pi Z_u/4}.
+ \label{eq:unitary}
+\end{equation}
+
+For $C\subset V$ and a new label $c\notin V$, write $O=V\setminus C$. The Boolean OR condensation $Q_C(H)$ has vertex set $O\cup\{c\}$, retains $H[O]$, and has edge $\{u,c\}$ exactly when $u\in O$ has at least one neighbor in $C$. There are no loops. This is Definition~8 of Ref.~\cite{Vandre2025}; adjacency is determined by existence, not by addition modulo two. No connectedness condition on $H[C]$ is imposed.
+
+For connected $G,G'$ on the same $V$, with $n\ge4$ and $2\le |C|\le n-2$, consider
+\begin{equation}
+\begin{gathered}
+ |N_H(v)\cap O|\le1\\
+ (H\in\{G,G'\},\ v\in C),
+\end{gathered}\label{eq:premise}
+\end{equation}
+\begin{equation}
+ G\sim_{\LC}G'\quad\Longrightarrow\quad
+ Q_C(G)\sim_{\LC}Q_C(G').\label{eq:target}
+\end{equation}
+The published conjecture does not attach a graph subscript to its degree premise. Equation~\eqref{eq:premise} imposes the premise at both endpoints, so the counterexample is unaffected by requiring it at either one. Intermediate graphs along an LC sequence are unrestricted. We use the published numbering throughout.
+
+\emph{A six-qubit certificate.}---Set $V=\{1,2,3,4,5,6\}$ and $C=\{1,2,3\}$. With $ij$ denoting the unordered edge $\{i,j\}$, take
+\begin{align}
+ E(G)&=\{13,16,24,35,46\},\label{eq:edges}\\
+ E(G')&=\{13,15,24,36,46,56\}.\nonumber
+\end{align}
+The first graph is the path $2$--$4$--$6$--$1$--$3$--$5$; the second contains the spanning path $2$--$4$--$6$--$3$--$1$--$5$. Hence both are connected. With rows $(1,2,3)$ and columns $(4,5,6)$ their cross-adjacency matrices are
+\begin{equation}
+ A_{C,O}(G)=\begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},\qquad
+ A_{C,O}(G')=\begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix}.
+ \label{eq:inputcuts}
+\end{equation}
+Each row has exactly one nonzero entry, verifying Eq.~\eqref{eq:premise} at both endpoints. Both matrices have rank three over $\mathbb F_2$.
+
+Apply local complementations in the chronological order $(3,1,5)$. The respective current neighborhoods and toggled edges are
+\begin{equation}
+\begin{array}{c|c|l}
+ \text{pivot}&\text{current neighborhood}&\text{edge changes}\\ \hline
+ 3&\{1,5\}&+15\\
+ 1&\{3,5,6\}&-35,+36,+56\\
+ 5&\{1,6\}&-16.
+\end{array}\label{eq:word}
+\end{equation}
+The resulting edge set is exactly $E(G')$. Thus
+\begin{equation}
+ G'=\tau_5\tau_1\tau_3G,\qquad G\sim_{\LC}G'.\label{eq:lc}
+\end{equation}
+For $G_1=\tau_3G$ and $G_2=\tau_1G_1$, the explicit local unitary is $U=U_5(G_2)U_1(G_1)U_3(G)$. With Eq.~\eqref{eq:unitary}, direct evaluation gives $U|G\rangle=-|G'\rangle$. After each of the first two steps, vertex 1 has two external neighbors; the final step restores its external degree to one. This is allowed by the endpoint premise.
+
+Write $Q=Q_C(G)$ and $Q'=Q_C(G')$, ordered as $(4,5,6,c)$. Their complete edge sets are
+\begin{align}
+ E(Q)&=\{46,4c,5c,6c\},\label{eq:quotients}\\
+ E(Q')&=E(Q)\cup\{56\}.\nonumber
+\end{align}
+On the same bipartition $B=\{4,5\}$ and $\bar B=\{6,c\}$, the cross-adjacency matrices are
+\begin{equation}
+ A_{B,\bar B}(Q)=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
+ A_{B,\bar B}(Q')=\begin{pmatrix}1&1\\1&1\end{pmatrix}.
+ \label{eq:cutwitness}
+\end{equation}
+Their ranks over $\mathbb F_2$ are two and one.
+
+For completeness, the connection to a physical invariant follows directly from the stabilizer projector~\cite{Vandre2025}. Let $S_B(H)$ be the subgroup of graph-state stabilizers supported entirely in $B$, restricted to $B$, and set $m=|B|$ and $d_B=\log_2|S_B(H)|$. Partial trace gives
+\begin{equation}
+ \rho_B(H)=2^{-m}\sum_{s\in S_B(H)}s,
+ \qquad \rho_B(H)^2=2^{d_B-m}\rho_B(H).
+ \label{eq:projector}
+\end{equation}
+In the square, every subgroup element occurs $|S_B(H)|$ times. Since $\Tr\rho_B=1$, its rank is $2^{m-d_B}$. A product of graph-state generators is supported in $B$ exactly when its selection vector outside $B$ vanishes and its selection vector inside $B$ lies in $\ker A_{\bar B,B}$. Therefore
+\begin{equation}
+ d_B=m-\rank_{\mathbb F_2}A_{B,\bar B},\qquad
+ \rank\rho_B=2^{\rank_{\mathbb F_2}A_{B,\bar B}}.
+ \label{eq:rank}
+\end{equation}
+The two matrices in Eq.~\eqref{eq:cutwitness} already prove that the output reduced states have different ranks.
+
+More explicitly, the supported stabilizer subgroups are $\{I\}$ and $\{I,X_4X_5\}$, giving
+\begin{equation}
+ \rho_B(Q)=\frac{I_4}{4},\qquad
+ \rho_B(Q')=\frac{I_4+X_4\otimes X_5}{4}.
+ \label{eq:marginals}
+\end{equation}
+Their spectra are $(1/4,1/4,1/4,1/4)$ and $(1/2,1/2,0,0)$, with entropies two bits and one bit. A tensor product of single-qubit unitaries acts on a fixed-subsystem marginal by unitary conjugation. It preserves its spectrum, so $Q$ and $Q'$ are not locally unitarily equivalent, and in particular not LC equivalent. This disproves Eq.~\eqref{eq:target}.
+
+\emph{Relation to established rules and scope.}---Lemma~5 of Ref.~\cite{Vandre2025} proves condensation preserves LC equivalence when $d_C=|C|-1$, equivalently when $\rank_{\mathbb F_2}A_{C,O}=1$. Equation~\eqref{eq:inputcuts} has rank three and $d_C=0$, so that result is unaffected. The failed condensation examples in Appendix~C.2 of Ref.~\cite{Vandre2025} also do not supply the present certificate: the internal external-degree vectors in Fig.~15(a) change from $(1,0,1)$ to $(1,0,3)$, while those in Fig.~15(b) change from $(2,0,2)$ to $(2,2,2)$. Each violates the current premise at an endpoint.
+
+The foliage construction preserves LC equivalence for the corresponding foliage partition~\cite{Burchardt2025}. In $G$, its nontrivial foliage classes are $\{2,4\}$ and $\{3,5\}$, with singleton classes $\{1\}$ and $\{6\}$. Thus $C$ is not contained in one foliage class. The present counterexample concerns the additional external-degree proposal; it does not invalidate foliage condensation.
+
+Two restrictions are essential. First, $G[C]$ and $G'[C]$ each have only edge $13$, so $C$ is disconnected. No conclusion is drawn about a modified statement requiring connected $C$, nor about a condition imposed on every intermediate graph. Second, if $\pi_{5\leftrightarrow6}$ exchanges labels 5 and 6 and fixes 4 and $c$, then
+\begin{equation}
+ \pi_{5\leftrightarrow6}(Q')=\tau_c(Q).\label{eq:permutation}
+\end{equation}
+Consequently this pair does not disprove an equivalence notion allowing permutations. No minimality claim is made for the number of qubits or LC steps.
+
+Using Eq.~\eqref{eq:target} as a fixed-site equivalence filter would falsely exclude the equivalent pair in Eq.~\eqref{eq:edges}. OR condensation is a classical graph operation; no deterministic quantum compression channel is asserted. The model is finite and ideal, without perturbative or continuum approximations.
+
+\emph{Exact checks.}---The certificate was cross-checked using edge sets, explicit Clifford rotations of CZ-state amplitudes, and a separate implementation with Gaussian-integer numerators and rational partial traces. The latter checked all 152 nonempty proper-subset marginals of the four states against cut rank. The supplied Python code uses exact arithmetic; no floating-point tolerance or input-graph enumeration is needed for the proof. Software versions and finite computation limits are given with the code.
+
+OpenAI Codex was used for candidate searches, derivations, code generation, source comparisons, and drafting. Separate executions produced the computational cross-checks. These automated calculations do not substitute for author verification.
+
+\emph{Data availability.}---All graph inputs and the proof appear above. Exact code, machine-readable inputs, and regeneration instructions accompany this manuscript. No experimental data were generated.
+
+\bibliography{references}
+\end{document}
