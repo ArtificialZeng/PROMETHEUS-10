@@ -1,0 +1,323 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\id}{\mathbb I}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\EP}{E_{\mathrm P}}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\ket}[1]{\lvert#1\rangle}
+\newcommand{\bra}[1]{\langle#1\rvert}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\title{Positive pathwise entropy curvature at the canonical\protect\\
+two-copy purification of a binary classical state}
+\author{Xiaojian Zeng\thanks{Email: \href{mailto:xiaojianzeng@foxmail.com}{xiaojianzeng@foxmail.com}.}\\
+\small PBC School of Finance, Tsinghua University, 100190}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a strictly positive, nonproduct binary classical state, we study auxiliary-unitary perturbations of its canonical two-copy purification with a fixed four-by-four auxiliary split. Generic generators create new Schmidt weights and increase von Neumann entropy through a positive quadratic logarithmic term. For the exceptional 112-dimensional generator space, we derive the entropy quadratic form as controlled-rotation graph Laplacians and a phase sum of squares. Its kernel is exactly the 31-dimensional local auxiliary-unitary gauge, leaving an 81-dimensional positive quotient. Every fixed nongauge exponential path therefore initially increases entropy. This pathwise statement does not establish global entanglement-of-purification additivity.
+\end{abstract}
+\noindent\textbf{Keywords:} entanglement of purification; classical correlations;
+von Neumann entropy; auxiliary unitaries; entropy curvature.
+
+\section{Introduction}
+Entanglement of purification measures total correlations through the least entanglement of a bipartite purification. Its regularization has an operational interpretation as a state-preparation cost with asymptotically negligible communication \cite{Terhal2002}. Jointly optimizing purifications of several copies can consequently matter even when the physical state itself is separable.
+
+For binary states diagonal in a local product basis, Negari and Baghali Khanian determined the one-copy optimum at every R\'enyi order \cite{Negari2026}. They exhibited two-copy violations below order one and proved strong classical additivity from order two. Their von Neumann question for this family remains open. The subsequent Werner-state result establishes von Neumann nonadditivity in a different family: those separable states are not diagonal in a local product basis, and the paper explicitly retains the classical question \cite{Khanian2026}. Thus the general nonadditivity result does not settle the identical-two-copy binary classical problem considered here.
+
+We study a restricted mechanism for reducing the two-copy cost: infinitesimal environmental unitaries around the canonical product purification, keeping the full physical state fixed. The canonical Schmidt matrix has four positive singular values and twelve null directions on each side. A generic perturbation creates new Schmidt weights, yielding a positive logarithmic entropy term. That observation alone leaves a 112-dimensional exceptional generator space unresolved. Our contribution is its full entropy quadratic form and equality classification: controlled rotations give connected graph Laplacians, while the nine-dimensional phase quotient admits an explicit sum of squares. The only zero directions are local auxiliary unitaries.
+
+Local additivity of minimum output entropy is known for unit spheres of complex linear matrix subspaces \cite{Gour2011,Ruskai2023}. The present feasible set instead fixes every physical probability and the orthonormality of the environmental columns. Even its diagonal-phase sector is a fixed-modulus torus, with entry-dependent second-order corrections. We do not identify this orbit with a linear-subspace problem or invoke the local-additivity theorem to supply its hypotheses. The result below is an explicit constrained calculation. Its conclusion concerns each fixed exponential path; it supplies neither a global optimum nor a neighborhood uniform in generators or probabilities.
+
+\section{State, purification and scope}
+Let
+\begin{equation}\label{eq:state}
+ \rho_P=\sum_{a,b=0}^1 p_{ab}\ket{ab}\bra{ab},\qquad
+ p_{ab}>0,\qquad \sum_{a,b}p_{ab}=1,
+\end{equation}
+and write
+\begin{equation}\label{eq:M}
+ M=\begin{pmatrix}x&y\\z&w\end{pmatrix}
+   =\begin{pmatrix}\sqrt{p_{00}}&\sqrt{p_{01}}\\
+                    \sqrt{p_{10}}&\sqrt{p_{11}}\end{pmatrix},
+ \qquad \Delta=xw-yz\ne0.
+\end{equation}
+The excluded case $\Delta=0$ is a product table. Put
+\begin{equation}\label{eq:ab}
+ \delta=\sqrt{1-4\Delta^2},\qquad
+ a=\frac{1+\delta}{2},\quad b=\frac{1-\delta}{2},\qquad
+ h_2(a)=-a\log_2a-b\log_2b.
+\end{equation}
+Strict positivity makes the off-diagonal entries of both single-copy Gram matrices positive, so their eigenvalues cannot coincide. Invertibility of $M$ excludes a zero eigenvalue. Hence $0<\delta<1$ and $a>b>0$.
+
+For context, the optimization defining entanglement of purification is
+\begin{equation}\label{eq:EP}
+ \EP(\rho_{AB})=
+ \inf_{\substack{\dim R,\dim S<\infty\\
+       \Tr_{RS}\ket{\Psi}\bra{\Psi}=\rho_{AB}}}
+ S\bigl(\Tr_{BS}\ket{\Psi}\bra{\Psi}\bigr),
+ \qquad S(\sigma)=-\Tr\sigma\log_2\sigma.
+\end{equation}
+The canonical one-copy purification has occupied Schmidt matrix $M$ and weights $(a,b)$. The arbitrary-ancilla argument of Ref.~\cite{Negari2026}, Theorem 1 and Appendix A, bounds every competitor's largest Schmidt weight by $a$; $(a,b)$ then majorizes its spectrum. Thus $\EP(\rho_P)=h_2(a)$. This known optimum is the reference, rather than a new claim of the present note.
+
+For two copies let $i=(i_1,i_2)$ and $j=(j_1,j_2)$ run over $\{0,1\}^2$ in lexicographic order. The physical systems are $A=A_1A_2$ and $B=B_1B_2$, and throughout the calculation $R=S=\C^4$. Define
+\begin{equation}\label{eq:psi}
+ Q=M\otimes M,\qquad
+ \ket{\Psi(t)}=\sum_{i,j}Q_{ij}\ket{i}_A\ket{j}_B
+                   U(t)\ket{i}_R\ket{j}_S,\qquad
+ U(t)=e^{itH},\quad H=H^\dagger.
+\end{equation}
+Every $U(t)$ preserves normalization and the entire physical state $\rho_P^{\otimes2}$ because it acts only on the auxiliaries. The coefficient matrix across $AR:BS$ is
+\begin{equation}\label{eq:schmidt}
+ K(t)_{(i,r),(j,s)}=Q_{ij}U(t)_{(r,s),(i,j)},\qquad
+ S_H(t)=S\bigl(K(t)K(t)^\dagger\bigr).
+\end{equation}
+At zero, its only occupied block is the invertible $4\times4$ matrix $Q$, and $S_H(0)=2h_2(a)$. The parameter $t$ is dimensionless and labels purifications; it is not physical time, and $H$ is not a physical Hamiltonian. Entropies and their expansion coefficients are measured in bits.
+
+The first coefficient block between the left and right null Schmidt spaces is
+\begin{equation}\label{eq:null}
+ \mathcal N_H{}_{(i,r),(j,s)}
+   =iQ_{ij}H_{(r,s),(i,j)},\qquad r\ne i,\quad s\ne j.
+\end{equation}
+Let $\cE=\{H=H^\dagger:\mathcal N_H=0\}$ and
+\begin{equation}\label{eq:gauge}
+ \cG=\{H_R\otimes\id_4+\id_4\otimes H_S:
+                   H_R=H_R^\dagger,\ H_S=H_S^\dagger\}.
+\end{equation}
+Since all $Q_{ij}$ are positive, $\cE$ allows precisely the diagonal entries and the off-diagonal edges changing only one auxiliary label. Its real dimension is $16+2(4\cdot6+4\cdot6)=112$. The local gauge $\cG\subset\cE$ has dimension $16+16-1=31$.
+
+\begin{theorem}\label{thm:main}
+Under \eqref{eq:state}--\eqref{eq:M}, for the fixed auxiliary split and paths \eqref{eq:psi}, the following hold.
+\begin{enumerate}
+\item If $H\notin\cE$, then, as real $t\to0$,
+\begin{equation}\label{eq:generic}
+ S_H(t)=2h_2(a)+\|\mathcal N_H\|_F^2\,
+           t^2\log_2(1/t^2)+O(t^2).
+\end{equation}
+\item If $H\in\cE$, then
+\begin{equation}\label{eq:quadratic}
+ S_H(t)=2h_2(a)+c_P(H)t^2+o(t^2).
+\end{equation}
+The quadratic form $c_P$ is nonnegative and its kernel is exactly $\cG$. The induced form on the 81-dimensional quotient $\cE/\cG$ is positive definite.
+\end{enumerate}
+Consequently, for each fixed $H\notin\cG$ there is an $\varepsilon(P,H)>0$ such that $S_H(t)>2h_2(a)$ for $0<|t|<\varepsilon(P,H)$. For $H\in\cG$, $S_H(t)=2h_2(a)$ for every real $t$.
+\end{theorem}
+All remainder statements fix both $P$ and $H$. We make no common-neighborhood assertion, boundary-table or product-table extension, conclusion for larger auxiliary splits, or resolution of \eqref{eq:EP} for two copies.
+
+\section{Singular-spectrum entropy expansion}
+Expanding \eqref{eq:schmidt} gives $K'(0)_{(i,r),(j,s)}=iQ_{ij}H_{(r,s),(i,j)}$. Its occupied-to-occupied block is $D=iF$, where $F=Q\odot d$ and
+\begin{equation}\label{eq:diagphase}
+ d_{ij}=H_{(i,j),(i,j)}\in\R.
+\end{equation}
+Here $\odot$ denotes entrywise multiplication. The first occupied density correction is
+\begin{equation}\label{eq:T}
+ T=DQ^T+QD^\dagger=i(FQ^T-QF^T).
+\end{equation}
+It is purely imaginary and Hermitian, whereas any real spectral function of $G_L=QQ^T$ is real symmetric. Their trace pairing vanishes, proving a zero first entropy derivative, including at the repeated middle eigenvalue.
+
+The leading new Schmidt amplitudes in a generic direction are $t$ times the singular values of $\mathcal N_H$. The corresponding probabilities contribute
+$-t^2\log_2(t^2)\|\mathcal N_H\|_F^2+O(t^2)$ to entropy. The occupied spectrum changes entropy only by $O(t^2)$. This proves \eqref{eq:generic}. Finite-dimensional analytic perturbation also controls the remainder: additional smaller weights give higher-order logarithmic terms, and no linear entropy term is present.
+
+For $H\in\cE$, write its remaining off-diagonal entries as
+\begin{equation}\label{eq:controls}
+ X^{(j)}_{ri}=H_{(r,j),(i,j)}\ (r\ne i),\qquad
+ Y^{(i)}_{sj}=H_{(i,s),(i,j)}\ (s\ne j).
+\end{equation}
+Each $X^{(j)}$ and $Y^{(i)}$ is Hermitian with zero diagonal. In occupied/null block order,
+\begin{equation}\label{eq:block}
+ K(t)=\begin{pmatrix}
+       Q+tD+t^2E+O(t^3)&tB+O(t^2)\\
+       tC+O(t^2)&O(t^2)
+       \end{pmatrix},
+\end{equation}
+where
+\begin{align}\label{eq:blocks}
+ E_{ij}&=-\frac{Q_{ij}}{2}\left(d_{ij}^2+
+           \sum_{r\ne i}|X^{(j)}_{ri}|^2+
+           \sum_{s\ne j}|Y^{(i)}_{sj}|^2\right),\notag\\
+ B_{i,(j,s)}&=iQ_{ij}Y^{(i)}_{sj},\qquad
+ C_{(i,r),j}=iQ_{ij}X^{(j)}_{ri}.
+\end{align}
+The upper-left coefficient of $U(t)$ samples only its diagonal at $(i,j)$, and $(H^2)_{(i,j),(i,j)}$ is the sum of squared entry moduli. This accounts for the absence of phase/control cross terms at quadratic order.
+
+Put $f(\lambda)=-\lambda\log_2\lambda$ and $G_R=Q^TQ$. If $V^TG_LV=\diag(\lambda_1,\ldots,\lambda_4)$, define
+\begin{equation}\label{eq:divdiff}
+ L_{uv}=\begin{cases}
+ \displaystyle\frac{f'(\lambda_u)-f'(\lambda_v)}{\lambda_u-\lambda_v},
+                                  &\lambda_u\ne\lambda_v,\\[6pt]
+ f''(\lambda_u),&\lambda_u=\lambda_v,
+ \end{cases}
+ \qquad f''(\lambda)=-\frac{1}{\lambda\ln2}.
+\end{equation}
+Occupied/null eigenvalue perturbation and the trace spectral-function expansion give
+\begin{align}\label{eq:curvature}
+ c_P(H)={}&\Tr f'(G_L)(EQ^T+QE^\dagger+DD^\dagger+BB^\dagger)\notag\\
+          &+\Tr f'(G_R)C^\dagger C
+           +\frac12\sum_{u,v}L_{uv}|(V^TTV)_{uv}|^2.
+\end{align}
+In particular, $c_P(H)$ is the coefficient of $t^2$, or half the second derivative, when that derivative is finite.
+
+To see the second trace term, the coupling to the left null density space shifts an occupied eigenvalue by
+$\bra{v}QC^\dagger CQ^T\ket{v}/\lambda$. Functional calculus converts the weighted sum of these shifts into $\Tr f'(G_R)C^\dagger C$. After eliminating the first off-support coefficient blocks in \eqref{eq:block}, new Schmidt amplitudes are $O(t^2)$, so their entropy is $O(t^4\log(1/|t|))=o(t^2)$. This proves the remainder in \eqref{eq:quadratic}. Formula \eqref{eq:divdiff} uses the continuous limit on repeated eigenspaces; it does not discard their splitting. Normalization makes the constant part of $f'$ cancel from the total coefficient.
+
+\section{Controlled rotations as graph Laplacians}
+Consider an unordered row pair $i<u$ and put $z_j=X^{(j)}_{ui}$. Define $W_{ij}=Q_{ij}[Qf'(G_R)]_{ij}$ and let $Q_i$ denote row $i$ of $Q$. Substituting \eqref{eq:blocks} in \eqref{eq:curvature} gives the pair contribution $z^\dagger\mathcal L^{(i,u)}z$, with
+\begin{equation}\label{eq:lapmatrix}
+ \mathcal L^{(i,u)}=
+ \diag(Q_i)f'(G_R)\diag(Q_i)+
+ \diag(Q_u)f'(G_R)\diag(Q_u)-\diag(W_i+W_u).
+\end{equation}
+The identity $f'(G_L)Q=Qf'(G_R)$ ensures the diagonal contributions agree in the left and right descriptions. Direct summation shows that \eqref{eq:lapmatrix} has zero row sums.
+
+Let $g_R=M^TM$. The product structure gives
+\begin{equation}\label{eq:logproduct}
+ \ln G_R=\ln g_R\otimes\id_2+\id_2\otimes\ln g_R.
+\end{equation}
+For a positive definite $2\times2$ matrix with eigenvalues $a>b$, its logarithm has off-diagonal entry equal to the original off-diagonal entry times $(\ln a-\ln b)/(a-b)$. Since $(g_R)_{01}>0$, the off-diagonal entries of $f'(G_R)$ are strictly negative on the edges of the two-bit square and zero between opposite vertices. Consequently
+\begin{equation}\label{eq:lapform}
+ c_X^{(i,u)}=
+ \sum_{j<k}-f'(G_R)_{jk}
+       (Q_{ij}Q_{ik}+Q_{uj}Q_{uk})|z_j-z_k|^2\ge0.
+\end{equation}
+All square-edge weights are strictly positive and the graph is connected. Equality holds precisely when the four complex $z_j$ are equal. This is a local $R$-unitary generator. Applying the transposed argument to each unordered column pair gives the $Y$ contributions with $G_L$ and the local $S$-unitary kernel.
+
+There are six row pairs and six column pairs. Each pair has eight real control coordinates and two constant gauge coordinates; thus the controlled sectors contribute $12(8-2)=72$ positive real quotient directions. It remains to establish strict positivity of the nine phase coordinates.
+
+\section{An explicit phase sum of squares}
+Introduce positive $J,u,v$ and real $d_u,d_v$ by
+\begin{equation}\label{eq:uv}
+ J=xyzw,\quad u=xy+zw,\quad v=xz+yw,\quad
+ d_u=xy-zw,\quad d_v=xz-yw,
+\end{equation}
+and set
+\begin{equation}\label{eq:kappa}
+ \kappa=\frac{\ln(a/b)}{\delta}
+        =\frac{2\operatorname{artanh}\delta}{\delta}>2.
+\end{equation}
+Define row characters
+$\chi_1(i)=(-1)^{i_1}$, $\chi_2(i)=(-1)^{i_2}$ and
+$\chi_3(i)=(-1)^{i_1+i_2}$; define column characters $\eta_s(j)$ identically. Modulo phases depending only on the row or only on the column, there is a unique orthonormal real expansion
+\begin{equation}\label{eq:characters}
+ d_{ij}=\frac14\sum_{r,s=1}^3\alpha_{rs}\chi_r(i)\eta_s(j).
+\end{equation}
+The omitted seven coordinates are local phases and do not affect entropy.
+
+For $\epsilon_A,\epsilon_B\in\{1,-1\}$ put
+\begin{align}\label{eq:r12}
+ r_1(\epsilon_A,\epsilon_B)&=\alpha_{11}+\alpha_{13}\epsilon_B
+                  +\alpha_{31}\epsilon_A+\alpha_{33}\epsilon_A\epsilon_B,\notag\\
+ r_2(\epsilon_A,\epsilon_B)&=\alpha_{22}+\alpha_{23}\epsilon_B
+                  +\alpha_{32}\epsilon_A+\alpha_{33}\epsilon_A\epsilon_B,
+\end{align}
+and define
+\begin{align}\label{eq:Dphase}
+ B_+={}&uv(\alpha_{12}+\alpha_{21})
+       +u d_v(\alpha_{13}+\alpha_{23})\notag\\
+      &+v d_u(\alpha_{31}+\alpha_{32})+2d_ud_v\alpha_{33},\notag\\
+ D_{\mathrm{ph}}={}&J\sum_{m,n=0}^1p_{mn}
+       \left[r_1((-1)^m,(-1)^n)^2+r_2((-1)^m,(-1)^n)^2\right]
+       +\frac12 B_+^2.
+\end{align}
+Let $O$ be a real orthogonal eigenvector matrix of $g=MM^T$, with the first column corresponding to $a$. With $F=Q\odot d$ and $\mathcal R=FQ^T-QF^T$, define
+\begin{equation}\label{eq:zeta}
+ \zeta=\bigl[(O\otimes O)^T\mathcal R(O\otimes O)\bigr]_{01,10}.
+\end{equation}
+Its square is independent of the eigenvector sign choices.
+
+\begin{lemma}\label{lem:phase}
+The phase contribution to \eqref{eq:curvature} is
+\begin{equation}\label{eq:sos}
+ c_{\mathrm{ph}}=
+ \frac{1}{\ln2}\left[
+       \kappa D_{\mathrm{ph}}+
+       \left(\frac{\kappa}{2}-1\right)\frac{\zeta^2}{ab}\right].
+\end{equation}
+It is strictly positive for every nonzero phase quotient coordinate $\alpha$.
+\end{lemma}
+
+\begin{proof}
+The eigenvalues of $G_L=g\otimes g$ are $a^2,ab,ab,b^2$. Let $P_t,P_m,P_b$ denote the associated top, middle and bottom spectral projectors, and put $P_\Sigma=P_t+P_b$ and $\mathcal K=g\otimes\id_2+\id_2\otimes g$. The needed projectors and weighted projector are
+\begin{equation}\label{eq:projectors}
+ P_m=\frac{\delta^2\id_4-(2g-\id_2)\otimes(2g-\id_2)}{2\delta^2},
+ \qquad
+ \mathcal S=\frac{P_t}{a}+\frac{P_b}{b}
+            =\frac{2\id_4-P_m-\mathcal K}{2ab}.
+\end{equation}
+For the phase sector set
+\begin{equation}\label{eq:R2}
+ R_2=FF^T-\frac12\bigl[(Q\odot d^2)Q^T+Q(Q\odot d^2)^T\bigr],
+\end{equation}
+where $d^2$ is entrywise. Its trace vanishes. The between-group logarithmic divided differences, after removing $\kappa$, are $1/a$, $1/b$ and $2$; the within-middle factor is $1/(ab)$. Formula \eqref{eq:curvature} therefore becomes
+\begin{align}\label{eq:Aphase}
+ c_{\mathrm{ph}}\ln2&=\kappa A_{\mathrm{ph}}-\frac{\zeta^2}{ab},\notag\\
+ A_{\mathrm{ph}}&=-\Tr\mathcal K R_2
+     -\Tr\mathcal S\mathcal R P_m\mathcal R^T
+     -\Tr P_\Sigma\mathcal R P_\Sigma\mathcal R^T,\notag\\
+ \zeta^2&=\frac12\Tr P_m\mathcal R P_m\mathcal R^T.
+\end{align}
+In particular the negative contribution from splitting the repeated middle eigenvalue is retained. Substitution of \eqref{eq:characters} and \eqref{eq:projectors}, followed by expansion of the quadratic coefficients, gives the algebraic identity
+\begin{equation}\label{eq:identity}
+ A_{\mathrm{ph}}=D_{\mathrm{ph}}+\frac{\zeta^2}{2ab}.
+\end{equation}
+Equations \eqref{eq:Aphase}--\eqref{eq:identity} establish \eqref{eq:sos}. Appendix~\ref{app:identity} specifies a complete exact polynomial expansion for this step, with executable supplementary code; no fitted spectral data enter the identity.
+
+Every term in \eqref{eq:sos} is nonnegative. If $D_{\mathrm{ph}}=0$, positive $p_{mn}$ and $J$ force $r_1=r_2=0$ on all four sign pairs. Hence
+\[
+ \alpha_{11}=\alpha_{22}=\alpha_{13}=\alpha_{23}
+ =\alpha_{31}=\alpha_{32}=\alpha_{33}=0.
+\]
+The remaining condition $B_+=0$, together with $u,v>0$, leaves only $\alpha_{12}=h$, $\alpha_{21}=-h$. On this direction direct two-by-two Schmidt-basis multiplication yields
+\begin{equation}\label{eq:last}
+ \zeta^2=\frac{4h^2ab\,u^2v^2}{\delta^2}.
+\end{equation}
+For clarity, the cross-character matrices are $(ZM)\otimes(MZ)/4$ and $(MZ)\otimes(ZM)/4$, where $Z=\diag(1,-1)$. In the left and right single-copy Gram eigenbases, the squared off-diagonal entries of $Z$ are $4v^2/\delta^2$ and $4u^2/\delta^2$, respectively. Their cross terms have opposite signs in the $(01,10)$ antisymmetric entry and give \eqref{eq:last}. All factors are positive for $h\ne0$, and $\kappa/2-1>0$ by \eqref{eq:kappa}. Thus zero phase curvature forces $h=0$ and all nine coordinates vanish.
+\end{proof}
+
+\section{Equality structure and physical consequence}
+The diagonal phase space has sixteen real dimensions and seven local gauge directions. Equations \eqref{eq:lapform} and \eqref{eq:sos} show that zero curvature requires each row-control vector to be constant, each column-control vector to be constant, and the phase matrix to depend only on its row and column. These conditions are exactly
+$H=H_R\otimes\id_4+\id_4\otimes H_S$. Conversely, such generators exponentiate to $e^{itH_R}\otimes e^{itH_S}$; these are local across $AR:BS$ and preserve its entropy exactly. The kernel is therefore precisely $\cG$, with dimension $7+12+12=31$. The positive quotient consists of the nine phase directions and the 72 controlled-rotation directions, proving part 2 of Theorem~\ref{thm:main}. Part 1 and the pathwise consequence follow from the positive coefficient in \eqref{eq:generic}.
+
+The result excludes an infinitesimal collective-saving mechanism at the canonical product purification in this split. The exceptional directions are substantive: they avoid the generic logarithmic cost of opening Schmidt weights, yet their remaining quadratic coefficient is still positive unless the perturbation is a local gauge. The explicit forms also avoid taking unstable finite differences through a singular spectrum.
+
+This obstruction does not compare the canonical purification with finite-distance competitors, optimize over other auxiliary splits, or lower-bound the unrestricted two-copy entanglement of purification. Nor does it supply a preparation-rate improvement. In particular, the equality $\EP(\rho_P^{\otimes2})=2\EP(\rho_P)$ remains unresolved here. The exclusions $p_{ab}=0$ and $\Delta=0$ are essential to the present positivity and rank arguments; no extension is inferred by substituting singular parameters into the formulas. Finally, the small parameter in the remainder is $t$ at fixed $P,H$, so the statement gives no quantitative neighborhood uniform near the product or probability-boundary limits.
+
+\appendix
+\section{Exact expansion of the phase identity}\label{app:identity}
+The identity \eqref{eq:identity} can be checked entirely in the rational polynomial ring $\mathbb Q[x,y,z,w]$. Take four independent raw amplitudes and set
+\[
+ N=x^2+y^2+z^2+w^2,\qquad D_0=(xw-yz)^2,
+ \qquad E_0=N^2-4D_0.
+\]
+Normalize the single-copy matrix by $\sqrt N$. Since the two-copy matrix is then $(M\otimes M)/N$, all projector contractions appearing in \eqref{eq:identity} are rational functions of the raw amplitudes. The nine basis matrices are $d^{rs}_{ij}=\chi_r(i)\eta_s(j)/4$. Polarizing in these coordinates determines all $9\cdot10/2=45$ independent coefficients of the difference in \eqref{eq:identity}.
+
+The supplementary program \texttt{check\_phase\_identity.py} constructs $Q$, the middle projector numerator from \eqref{eq:projectors}, and the two sides of \eqref{eq:identity} for every pair of basis coordinates. Multiplying by
+\begin{equation}\label{eq:denominator}
+ 16D_0E_0^2N^4
+\end{equation}
+clears the explicit common denominator. Each of the 45 residual polynomials is identically zero over $\mathbb Q$; the accompanying JSON records every coefficient. On the stated domain $N>0$, $D_0>0$ and $E_0=N^2\delta^2>0$, so this denominator clearing is reversible. It establishes the identity throughout the domain, rather than at sampled probabilities. The calculation uses no logarithms, eigenvector fits, interpolation or floating-point tolerance. The remaining kernel-lift identity \eqref{eq:last} follows from the two-by-two calculation in the proof.
+
+\section*{Statements and declarations}
+\paragraph{Data and code availability.}
+The accompanying local supplement contains the exact polynomial checker, its coefficient record, numerical diagnostic implementations and outputs, and instructions specifying the environment and regeneration commands. Numerical diagnostics are consistency checks without interval enclosures; the sign conclusion uses the displayed exact identities and analytic arguments. No experimental data are used.
+
+\paragraph{AI involvement.}
+OpenAI Codex was used for literature screening, derivation development, code generation, symbolic and numerical checks, an additional AI scientific audit, and manuscript drafting. This involvement extends beyond language editing. Human scientific review, authorship confirmation and approval of the final text are pending for this local draft. The AI audit is not external peer review.
+
+\paragraph{Author declarations.}
+Funding, competing interests and the final author contribution statement require confirmation by the named author before submission.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

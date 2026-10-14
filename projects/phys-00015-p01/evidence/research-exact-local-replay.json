@@ -1,0 +1,112 @@
+{
+  "method": "direct differentiation and exact bordered full-matrix eigenderivative; algebraic sqrt(3) arithmetic",
+  "independence": "same worker; code reads no discovery matrices or eigenvalues; closed formula used only for post-computation comparison",
+  "checks": [
+    {
+      "n": 6,
+      "k": 1,
+      "H": 1,
+      "P": 0,
+      "S": 0,
+      "lambda_first": "0",
+      "lambda_second": "-3 + 3*sqrt(3)/2",
+      "log_g_shift_second": "1/4 - sqrt(3)/4",
+      "Y_second": "2 - sqrt(3)",
+      "closed_formula_difference": "0",
+      "pass": true
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "H": 0,
+      "P": 1,
+      "S": 0,
+      "lambda_first": "0",
+      "lambda_second": "-3*sqrt(3)/2",
+      "log_g_shift_second": "-3/4 - sqrt(3)/4",
+      "Y_second": "1",
+      "closed_formula_difference": "0",
+      "pass": true
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "H": 1,
+      "P": 1,
+      "S": 0,
+      "lambda_first": "0",
+      "lambda_second": "3*(1 - I)*(-3*sqrt(3) + 1 - 2*I)/4",
+      "log_g_shift_second": "-sqrt(3)/2 - 1/2",
+      "Y_second": "-sqrt(3) + log((sqrt(3) + 2)**(1/2 - sqrt(3)/2)) + 3",
+      "closed_formula_difference": "0",
+      "pass": true
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "H": 1,
+      "P": 0,
+      "S": 1,
+      "lambda_first": "0",
+      "lambda_second": "3*(1 - I)*(-5 + sqrt(3) - 2*I)/4",
+      "log_g_shift_second": "-sqrt(3)/2 - 1/2",
+      "Y_second": "-sqrt(3) - log(sqrt(3) + 2)/2 + sqrt(3)*log(sqrt(3) + 2)/6 + 3",
+      "closed_formula_difference": "0",
+      "pass": true
+    },
+    {
+      "n": 6,
+      "k": 2,
+      "H": 1,
+      "P": 0,
+      "S": 0,
+      "lambda_first": "0",
+      "lambda_second": "3*(1 - 2*I)*(-5 + 3*sqrt(3) - I)/10",
+      "log_g_shift_second": "-7/20 - sqrt(3)/20",
+      "Y_second": "-9*sqrt(3)/5 - 3*log(sqrt(3) + 2)/5 + 2*sqrt(3)*log(sqrt(3) + 2)/5 + 18/5",
+      "closed_formula_difference": "0",
+      "pass": true
+    },
+    {
+      "n": 6,
+      "k": 3,
+      "H": 1,
+      "P": 0,
+      "S": 0,
+      "lambda_first": "0",
+      "lambda_second": "-6 + sqrt(3)*(3 - 6*I) + 9*I",
+      "log_g_shift_second": "-1",
+      "Y_second": "-4*sqrt(3) + log((sqrt(3) + 2)**(-2 + 4*sqrt(3)/3)) + 8",
+      "closed_formula_difference": "0",
+      "pass": true
+    },
+    {
+      "n": 6,
+      "k": 3,
+      "H": 0,
+      "P": 1,
+      "S": 0,
+      "lambda_first": "0",
+      "lambda_second": "3*sqrt(3)*(-1 - I)",
+      "log_g_shift_second": "-3 - sqrt(3)",
+      "Y_second": "log((sqrt(3) + 2)**(2*sqrt(3)/3)) + 4",
+      "closed_formula_difference": "0",
+      "pass": true
+    },
+    {
+      "n": 6,
+      "k": 3,
+      "H": 1,
+      "P": 1,
+      "S": 0,
+      "lambda_first": "0",
+      "lambda_second": "-6 - 9*sqrt(3)*I + 9*I",
+      "log_g_shift_second": "-4 - sqrt(3)",
+      "Y_second": "-4*sqrt(3) - 2*log(sqrt(3) + 2) + 2*sqrt(3)*log(sqrt(3) + 2) + 12",
+      "closed_formula_difference": "0",
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 20.27648358407896,
+  "status": "pass"
+}

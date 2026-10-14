@@ -1,0 +1,433 @@
+{
+  "captured_at": "2026-10-14T05:14:59.778192+00:00",
+  "row_by_row_input_checks": [
+    {
+      "degree": 0,
+      "row": 0,
+      "equal": true
+    },
+    {
+      "degree": 0,
+      "row": 1,
+      "equal": true
+    },
+    {
+      "degree": 0,
+      "row": 2,
+      "equal": true
+    },
+    {
+      "degree": 0,
+      "row": 3,
+      "equal": true
+    },
+    {
+      "degree": 1,
+      "row": 0,
+      "equal": true
+    },
+    {
+      "degree": 1,
+      "row": 1,
+      "equal": true
+    },
+    {
+      "degree": 1,
+      "row": 2,
+      "equal": true
+    },
+    {
+      "degree": 1,
+      "row": 3,
+      "equal": true
+    },
+    {
+      "degree": 2,
+      "row": 0,
+      "equal": true
+    },
+    {
+      "degree": 2,
+      "row": 1,
+      "equal": true
+    },
+    {
+      "degree": 2,
+      "row": 2,
+      "equal": true
+    },
+    {
+      "degree": 2,
+      "row": 3,
+      "equal": true
+    },
+    {
+      "degree": 3,
+      "row": 0,
+      "equal": true
+    },
+    {
+      "degree": 3,
+      "row": 1,
+      "equal": true
+    },
+    {
+      "degree": 3,
+      "row": 2,
+      "equal": true
+    },
+    {
+      "degree": 3,
+      "row": 3,
+      "equal": true
+    }
+  ],
+  "basis_map": "A and B both use column vectors in |00>,|01>,|10>,|11>; map is the identity. A site permutation sends factor i to p(i); B binary matrices implement the same action.",
+  "full_R_map": "R=Pi_plus-(1+x)/(1-x)Pi_minus=(P-xI)/(1-x), Pi_plus=(I+P)/2, Pi_minus=(I-P)/2. This proves all-x equality, not only four Taylor coefficients.",
+  "derivative_map": "Taylor coefficients carry no factorial; raw Q_k restores (k-2)!. Right-leg x=-s and one outer minus are retained, never equated with left at all k.",
+  "transfer_comparisons": [
+    {
+      "L": 4,
+      "k": 2,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 256
+    },
+    {
+      "L": 4,
+      "k": 3,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 256
+    },
+    {
+      "L": 4,
+      "k": 4,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 256
+    },
+    {
+      "L": 5,
+      "k": 2,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 1024
+    },
+    {
+      "L": 5,
+      "k": 3,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 1024
+    },
+    {
+      "L": 5,
+      "k": 4,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 1024
+    },
+    {
+      "L": 6,
+      "k": 2,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 4096
+    },
+    {
+      "L": 6,
+      "k": 3,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 4096
+    },
+    {
+      "L": 6,
+      "k": 4,
+      "nonzero_residual_entries": 0,
+      "all_entries_checked": 4096
+    }
+  ],
+  "local_and_global_baselines": [
+    {
+      "L": 4,
+      "k": 2,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    },
+    {
+      "L": 4,
+      "k": 3,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    },
+    {
+      "L": 4,
+      "k": 4,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    },
+    {
+      "L": 5,
+      "k": 2,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    },
+    {
+      "L": 5,
+      "k": 3,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    },
+    {
+      "L": 5,
+      "k": 4,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    },
+    {
+      "L": 6,
+      "k": 2,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    },
+    {
+      "L": 6,
+      "k": 3,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    },
+    {
+      "L": 6,
+      "k": 4,
+      "left_density_sum_residual_entries": 0,
+      "right_density_sum_residual_entries": 0,
+      "published_charge_after_convention_map_residual_entries": 0
+    }
+  ],
+  "local_gradients": [
+    {
+      "k": 2,
+      "side": "left",
+      "equation": "left_density - q_raw_BBL = I tensor m - m tensor I",
+      "difference_nonzero_entries": 0,
+      "rank": 3,
+      "unknowns": 4,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "witness_m_shape": [
+        2,
+        2
+      ],
+      "witness_m_sparse_entries": []
+    },
+    {
+      "k": 2,
+      "side": "right",
+      "equation": "right_density - q_raw_BBL = I tensor m - m tensor I",
+      "difference_nonzero_entries": 0,
+      "rank": 3,
+      "unknowns": 4,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "witness_m_shape": [
+        2,
+        2
+      ],
+      "witness_m_sparse_entries": []
+    },
+    {
+      "k": 3,
+      "side": "left",
+      "equation": "left_density - q_raw_BBL = I tensor m - m tensor I",
+      "difference_nonzero_entries": 0,
+      "rank": 15,
+      "unknowns": 16,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "witness_m_shape": [
+        4,
+        4
+      ],
+      "witness_m_sparse_entries": []
+    },
+    {
+      "k": 3,
+      "side": "right",
+      "equation": "right_density - q_raw_BBL = I tensor m - m tensor I",
+      "difference_nonzero_entries": 0,
+      "rank": 15,
+      "unknowns": 16,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "witness_m_shape": [
+        4,
+        4
+      ],
+      "witness_m_sparse_entries": []
+    },
+    {
+      "k": 4,
+      "side": "left",
+      "equation": "left_density - q_raw_BBL = I tensor m - m tensor I",
+      "difference_nonzero_entries": 24,
+      "rank": 63,
+      "unknowns": 64,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "witness_m_shape": [
+        8,
+        8
+      ],
+      "witness_m_sparse_entries": [
+        [
+          2,
+          2,
+          "2"
+        ],
+        [
+          2,
+          4,
+          "-2"
+        ],
+        [
+          3,
+          3,
+          "2"
+        ],
+        [
+          3,
+          5,
+          "-2"
+        ],
+        [
+          4,
+          2,
+          "-2"
+        ],
+        [
+          4,
+          4,
+          "2"
+        ],
+        [
+          5,
+          3,
+          "-2"
+        ],
+        [
+          5,
+          5,
+          "2"
+        ]
+      ],
+      "named_witness": "2(I-P12)",
+      "named_witness_matrix_residual_entries": 0
+    },
+    {
+      "k": 4,
+      "side": "right",
+      "equation": "right_density - q_raw_BBL = I tensor m - m tensor I",
+      "difference_nonzero_entries": 50,
+      "rank": 63,
+      "unknowns": 64,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "witness_m_shape": [
+        8,
+        8
+      ],
+      "witness_m_sparse_entries": [
+        [
+          1,
+          2,
+          "-2"
+        ],
+        [
+          1,
+          4,
+          "2"
+        ],
+        [
+          2,
+          1,
+          "-2"
+        ],
+        [
+          2,
+          2,
+          "6"
+        ],
+        [
+          2,
+          4,
+          "-4"
+        ],
+        [
+          3,
+          3,
+          "2"
+        ],
+        [
+          3,
+          5,
+          "-4"
+        ],
+        [
+          3,
+          6,
+          "2"
+        ],
+        [
+          4,
+          1,
+          "2"
+        ],
+        [
+          4,
+          2,
+          "-4"
+        ],
+        [
+          4,
+          4,
+          "2"
+        ],
+        [
+          5,
+          3,
+          "-4"
+        ],
+        [
+          5,
+          5,
+          "6"
+        ],
+        [
+          5,
+          6,
+          "-2"
+        ],
+        [
+          6,
+          3,
+          "2"
+        ],
+        [
+          6,
+          5,
+          "-2"
+        ]
+      ],
+      "named_witness": "4(I-P12)+2(I-P23)-2(I-P13)",
+      "named_witness_matrix_residual_entries": 0
+    }
+  ],
+  "published_map": {
+    "Q2_BBL": "Q2_raw",
+    "Q3_BBL": "(i/2) Q3_raw",
+    "Q4_BBL": "-(1/6) Q4_raw",
+    "derivation": "Primary Eq.(2.9) fixes site permutation direction. Exact transfer coefficient expansion gives Q2= [1]-[2,1], Q3=[3,1,2]-[2,3,1], Q4=-2 times the seven-term bracket of published Eq.(2.16). The displayed i/2 and 1/3 coefficients give these maps without dropping scalar or lower charges."
+  }
+}

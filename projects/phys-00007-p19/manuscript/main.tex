@@ -1,0 +1,283 @@
+\documentclass[aps,pra,reprint,onecolumn,notitlepage,longbibliography]{revtex4-2}
+\usepackage{amsmath,amssymb,bm,booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+pdftitle={An exact counterexample to the reported spin-9/2 anticoherence extremum},
+pdfauthor={Xiaojian Zeng}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\sym}{\operatorname{Sym}}
+\newcommand{\A}{\mathcal A}
+\begin{document}
+\title{An exact counterexample to the reported spin-9/2 anticoherence extremum}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190, China}
+\date{October 12, 2026}
+\begin{abstract}
+For pure spin-$9/2$ probes whose one- and two-qubit symmetric reductions are maximally mixed, a published numerical study reported the third-order anticoherence value $2347/2352$ as the largest attainable value. We give an exactly feasible counterexample with $\A_3=(11623+40\sqrt{42})/11907$, exceeding the reported value by approximately $4.5530\times10^{-5}$. The state changes the relative phases on a previously known four-component support. Its reduced-state calculation makes the strict inequality an elementary radical comparison. Using the complete rotation-average fidelity polynomial, we also prove that this probe has lower uniform unknown-axis fidelity than every member of the reported phase family for $0<\eta\leq2\arcsin(1/10)$. The true global third-order extremum and the arbitrary-angle optimum remain undetermined.
+\end{abstract}
+\maketitle
+
+\section{The conditioned extremal question}
+Anticoherent spin states suppress directional dependence of low-order spin moments. Their relation to maximally mixed reductions of symmetric qubit states provides quantitative measures of this isotropy~\cite{Baguette2017}. For the detection of a rotation of prescribed angle about an unknown axis, Martin, Weigert, and Giraud expressed the axis-averaged fidelity in terms of these measures and numerically studied optimal probes~\cite{Martin2020}. This note concerns the spin-$9/2$ case of their Sec.~4.4.3.
+
+Set $\hbar=1$ and identify the spin space with $\sym^9(\mathbb C^2)$. We use normalized Dicke states and the convention
+\begin{equation}
+ \ket{j,m}=\ket{D_9^{m+j}},\qquad j=9/2.
+ \label{eq:convention}
+\end{equation}
+For a normalized pure state $\ket\psi=\sum_{k=0}^9c_k\ket{D_9^k}$, let $\rho_t$ be the ordinary partial trace over $9-t$ qubits, represented on its symmetric support of dimension $t+1$. Write
+\begin{equation}
+ P_t=\tr\rho_t^2,\qquad
+ \A_t=\frac{t+1}{t}(1-P_t).
+ \label{eq:measure}
+\end{equation}
+The identity on this support is $I_{t+1}$; at $t=2$ it is not the identity on the full four-dimensional two-qubit space. The conditioned set considered here is
+\begin{equation}
+ \|\psi\|=1,\qquad \rho_1=I_2/2,\qquad \rho_2=I_3/3.
+ \label{eq:constraints}
+\end{equation}
+Although the first reduction follows from the second, both will be displayed explicitly.
+
+Equation~(65) of Ref.~\cite{Martin2020} gives the family
+\begin{equation}
+ \ket{\psi_\chi}=\frac{\sqrt{13}}8\ket{D_9^0}
+    +e^{i\chi}\sqrt{\frac{15}{32}}\ket{D_9^4}
+    -\frac{\sqrt{21}}8\ket{D_9^8},
+ \qquad 0\leq\chi\leq\frac\pi2.
+ \label{eq:published}
+\end{equation}
+It obeys Eq.~\eqref{eq:constraints} and has
+\begin{equation}
+ P_3(\psi_\chi)=\frac{789}{3136},\qquad
+ \A_3(\psi_\chi)=\frac{2347}{2352}.
+ \label{eq:baseline}
+\end{equation}
+That paper reports this family as having the largest $\A_3$ among the two-anticoherent states found, and its small-angle optimality conclusion is explicitly motivated by numerical results. We test the corresponding universal inequality
+\begin{equation}
+ \A_3(\psi)\leq\frac{2347}{2352}
+ \quad\text{for every pure state satisfying Eq.~\eqref{eq:constraints}}.
+ \label{eq:bound}
+\end{equation}
+We do not attribute a formally named conjecture or an analytic extremal proof to the authors.
+
+The counterexample below retains the support and squared amplitudes of the spin-$9/2$ state tabulated by Bj\"ork \emph{et al.}~\cite{Bjork2015}, but alters the outer-component signs. Point-group methods for constructing anticoherent states are also established~\cite{Baguette2015}. The contribution is the strict correction of Eq.~\eqref{eq:bound} and its controlled fidelity consequence, rather than a new support construction or a new general characterization of anticoherence.
+
+\section{An exactly feasible counterexample}
+Consider
+\begin{equation}
+ \ket{\psi_*}=-\frac1{\sqrt6}\ket{D_9^0}
+ +\frac1{\sqrt3}\ket{D_9^3}
+ +\frac1{\sqrt3}\ket{D_9^6}
+ -\frac1{\sqrt6}\ket{D_9^9}.
+ \label{eq:witness}
+\end{equation}
+Its norm is one. An exact partial-trace calculation suffices to establish every premise of Eq.~\eqref{eq:bound}. The normalized Dicke decomposition is
+\begin{equation}
+ \ket{D_9^k}=\sum_a
+ \sqrt{\frac{\binom ta\binom{9-t}{k-a}}{\binom9k}}
+ \ket{D_t^a}\ket{D_{9-t}^{k-a}}.
+ \label{eq:schmidt}
+\end{equation}
+Consequently, for $0\leq a,b\leq t$,
+\begin{equation}
+ (\rho_t)_{ab}=\sqrt{\binom ta\binom tb}
+ \sum_{e=0}^{9-t}
+ \frac{\binom{9-t}{e}\,c_{a+e}\overline{c_{b+e}}}
+ {\sqrt{\binom9{a+e}\binom9{b+e}}}.
+ \label{eq:trace}
+\end{equation}
+Only terms with allowed indices are retained. This is a finite Gram-matrix representation of the ordinary partial trace.
+
+The occupied indices in Eq.~\eqref{eq:witness} are separated by multiples of three, so $\rho_1$ and $\rho_2$ are diagonal. Substituting the four weights into Eq.~\eqref{eq:trace} gives
+\begin{equation}
+ \rho_1=\operatorname{diag}(1/2,1/2),\qquad
+ \rho_2=\operatorname{diag}(1/3,1/3,1/3).
+ \label{eq:feasible}
+\end{equation}
+In the full two-qubit space the second identity is $\rho_2=P_{\mathrm{sym}}/3$. No constraint tolerance is used.
+
+At $t=3$ the diagonal entries are all $1/4$. The only possible off-diagonal elements are the two corners. In $(\rho_3)_{03}$ the contributions at $e=0,3,6$ are, respectively,
+\begin{equation}
+ -\frac1{6\sqrt{42}},\qquad \frac5{63},\qquad
+ -\frac1{6\sqrt{42}}.
+ \label{eq:interference}
+\end{equation}
+Thus, in the basis $(\ket{D_3^0},\ldots,\ket{D_3^3})$,
+\begin{equation}
+ \rho_3=
+ \begin{pmatrix}
+  1/4&0&0&h\\
+  0&1/4&0&0\\
+  0&0&1/4&0\\
+  h&0&0&1/4
+ \end{pmatrix},\qquad
+ h=\frac{10-\sqrt{42}}{126}.
+ \label{eq:rho3}
+\end{equation}
+Its eigenvalues are $1/4,1/4,1/4+h,1/4-h$; they are positive because $0<h<5/63<1/4$. The third marginal purity and anticoherence are
+\begin{align}
+ P_3(\psi_*)&=\frac14+2h^2
+     =\frac{4253}{15876}-\frac{10\sqrt{42}}{3969},
+     \label{eq:p3}\\
+ \A_3(\psi_*)&=\frac{11623+40\sqrt{42}}{11907}
+       \simeq0.99791967985.
+     \label{eq:a3}
+\end{align}
+Define the purity improvement
+\begin{equation}
+ D=\frac{789}{3136}-P_3(\psi_*)
+   =\frac{640\sqrt{42}-4139}{254016}.
+ \label{eq:gap}
+\end{equation}
+Both quantities in the numerator comparison are positive, and
+\begin{equation}
+ 640^2\,42-4139^2=71879>0.
+ \label{eq:integer}
+\end{equation}
+It follows that $D>0$ and
+\begin{equation}
+ \A_3(\psi_*)-\frac{2347}{2352}=\frac43D
+    \simeq4.55301870\times10^{-5}>0.
+ \label{eq:strict}
+\end{equation}
+This single admissible vector disproves Eq.~\eqref{eq:bound}, including its quantification over all complex spin-$9/2$ states. It does not determine the global maximum.
+
+The mechanism is phase interference rather than a change in lower-order moments. For arbitrary phases on these same four weights, the diagonal reductions remain fixed and the corner of $\rho_3$ is a sum of phasors with lengths $a,b,a$, where $a=1/(6\sqrt{42})$ and $b=5/63$. Since $b>2a$, its modulus is at least $b-2a$. Equation~\eqref{eq:witness} attains that minimum by opposing both endpoint contributions to the middle term. This observation is restricted to the fixed-weight phase family. The all-positive tabulated state has $P_3=4253/15876+10\sqrt{42}/3969$; the purity change cannot be removed by a global phase or a rigid spin rotation, under which $P_3$ is invariant.
+
+\section{A certified rotation-fidelity comparison}
+For a rotation angle $\eta$ in radians, define the dimensionless uniform unknown-axis fidelity
+\begin{equation}
+ F_\psi(\eta)=\frac1{4\pi}\int_{S^2}
+ \left|\bra\psi e^{-i\eta\bm n\cdot\bm J}\ket\psi\right|^2\,d\Omega.
+ \label{eq:fidelity}
+\end{equation}
+This is a finite, closed, pure-probe spin model; the mixed reductions arise only through partial traces. The comparison concerns the overlap criterion of Ref.~\cite{Martin2020}.
+
+Let $x=\sin^2(\eta/2)$. Specializing Eqs.~(41)--(42) of that reference to nine qubits gives the exact finite polynomial
+\begin{align}
+ F_\psi(x)&=\sum_{k=0}^9x^k(1-x)^{9-k}
+              \sum_{t=0}^9a_{t,k}P_t,
+              \label{eq:fullpoly}\\
+ a_{t,k}&=\frac{4^t(-1)^{k+t}\binom{18}{2k}\binom kt
+                     \binom{18-2t}{9-t}}
+                     {(2k+1)\binom{18}9},\qquad t\leq k,
+              \label{eq:coeff}
+\end{align}
+and $a_{t,k}=0$ for $t>k$. Here $P_0=P_9=1$ and $P_t=P_{9-t}$ because the full state is pure. Thus the traces through $t=4$ determine the entire polynomial. In addition to the values already given, Eq.~\eqref{eq:trace} yields
+\begin{align}
+ P_4(\psi_*)&=\frac{947-20\sqrt{42}}{3969},
+                    \label{eq:p4w}\\
+ P_4(\psi_\chi)&=\frac{25\bigl(7678-14\sqrt{273}\cos(2\chi)\bigr)}{903168}.
+                    \label{eq:p4b}
+\end{align}
+The latter agrees with the $\A_4$ value printed below Eq.~(65) of Ref.~\cite{Martin2020}.
+
+As $P_1$ and $P_2$ coincide, the first fidelity difference is of order $\eta^6$. The $x^3$ coefficient follows from $a_{3,3}=16128/5$ and Eq.~\eqref{eq:gap}:
+\begin{equation}
+ F_{\psi_*}(\eta)-F_{\psi_\chi}(\eta)
+   =-\frac{252}{5}D\eta^6+O(\eta^8).
+ \label{eq:leading}
+\end{equation}
+The coefficient is $4139/5040-8\sqrt{42}/63<0$, independently of $\chi$. This expansion alone leaves the size of the valid angle interval unspecified. We instead control every term of Eq.~\eqref{eq:fullpoly}.
+
+First compare with $\chi=0$. Write
+\begin{equation}
+ F_{\psi_*}(x)-F_{\psi_0}(x)=x^3q(x),\qquad
+ q(x)=\sum_{i=0}^6q_ix^i.
+ \label{eq:q}
+\end{equation}
+All $q_i$ are given in Appendix~\ref{app:certificate}. Enclose the two radicals by the rational inequalities
+\begin{equation}
+ \frac{648074}{100000}<\sqrt{42}<\frac{648075}{100000},\qquad
+ \frac{1652271}{100000}<\sqrt{273}<\frac{1652272}{100000}.
+ \label{eq:radicals}
+\end{equation}
+Each follows by squaring positive endpoints. If $[L_i,U_i]$ is the resulting coefficient enclosure, then for $0<x\leq\epsilon=1/100$,
+\begin{align}
+ q(x)&\leq U_0+\sum_{i=1}^6\max(|L_i|,|U_i|)\epsilon^i\\
+ &= -\frac{730364709499556213711}{6820094531250000000000}<0.
+ \label{eq:qbound}
+\end{align}
+There is no omitted higher-order remainder in this estimate.
+
+To cover the whole published phase family, observe that only $P_4$ and its partner $P_5$ depend on $\chi$. The coefficient of $\A_4$ in the fidelity is
+\begin{equation}
+ \varphi_4(x)=-\frac45\sum_{k=4}^9(a_{4,k}+a_{5,k})x^k(1-x)^{9-k}
+              =x^4u(x).
+ \label{eq:phi4}
+\end{equation}
+The six rational coefficients of $u$ are also listed in Appendix~\ref{app:certificate}. Directly bounding the constant and all remaining terms gives
+\begin{equation}
+ u(x)\leq-\frac{53287797135702528}{11276611328125}<0
+ \quad(0<x\leq1/100).
+ \label{eq:ubound}
+\end{equation}
+Equation~\eqref{eq:p4b} shows that $P_4$ is minimized, equivalently $\A_4$ maximized, at $\chi=0$. Therefore $F_{\psi_\chi}(x)\geq F_{\psi_0}(x)$ on this interval. Combining this fact with Eq.~\eqref{eq:qbound} proves
+\begin{equation}
+ F_{\psi_*}(\eta)<F_{\psi_\chi}(\eta),\qquad
+ 0\leq\chi\leq\pi/2,\quad
+ 0<\eta\leq2\arcsin(1/10).
+ \label{eq:comparison}
+\end{equation}
+The upper angle is approximately $0.2003$ radians. The endpoint $\eta=0$ is excluded because all fidelities equal one there.
+
+\section{Verification, context, and limitations}
+The reduced states were evaluated both by embedding normalized Dicke vectors in the full $2^9$-dimensional qubit space and by constructing the Schmidt Gram matrices in Eq.~\eqref{eq:trace}, with the opposite convention $q=j-m$ and an explicit basis reversal. These calculations agree exactly for all entries through $t=4$. A further rational/radical calculation verifies the strict sign in Eq.~\eqref{eq:integer}.
+
+The fidelity was also reconstructed from normalized irreducible polarization tensors. If $T_{\ell m}$ are Hilbert--Schmidt orthonormal, $T_{00}=I/\sqrt{10}$, and $r_\ell=\sum_m|\bra\psi T_{\ell m}\ket\psi|^2$, rotation-axis averaging gives
+\begin{equation}
+ F_\psi(\eta)=\sum_{\ell=0}^9\frac{r_\ell}{2\ell+1}
+     \left|\tr\bigl(e^{-i\eta J_z}T_{\ell0}\bigr)\right|^2.
+ \label{eq:tensor}
+\end{equation}
+This follows by expanding $e^{-i\eta J_z}$ in the tensor basis and using Wigner-matrix orthogonality under conjugating rotations. It is part of the established invariant approach to rotation metrology~\cite{Aragon2026}. Converting $\cos(d\eta)$ to the Chebyshev polynomial $T_d(1-2x)$ reproduces every coefficient of Eq.~\eqref{eq:fullpoly} for both $\psi_*$ and $\psi_0$. The exact code and input data accompany the draft. These algorithmic checks share the defining states and formulas; they do not establish a global extremum.
+
+Related work studies mixed-state rotation metrology~\cite{Serrano2025} and the dynamical generation and protection of anticoherent states~\cite{Denis2026}. Those objectives differ from the conditioned third-order pure-state question here. The present calculation does not provide a preparation protocol, a noise tolerance, or an experimental precision gain. In particular, Eq.~\eqref{eq:leading} changes the next nonidentical term after fixing two-anticoherence, while leaving the common order-$\eta^2$ response unchanged. A claim about a general multiparameter quantum Fisher information optimum would require a separate analysis.
+
+The literature comparison is bounded: the four-component support and its weights, point-group constructions, anticoherence measures, and fidelity identities are credited to earlier work. We do not claim worldwide priority for phase manipulation itself. The strict improvement in Eq.~\eqref{eq:strict} and the comparison in Eq.~\eqref{eq:comparison} are the conclusions established here. The true maximum of $\A_3$ over Eq.~\eqref{eq:constraints}, and the globally optimal fidelity at any fixed nonzero angle, remain undetermined. The certified interval is sufficient for the comparison, with no claim that it is maximal.
+
+\subsection*{Computational methods and AI-use disclosure}
+The symbolic calculations use Python and SymPy; the strict coefficient enclosures use rational arithmetic. OpenAI Codex, with recorded model configurations gpt-6.1-sol and gpt-5.6-sol, assisted with literature searches, candidate-state proposals, derivations, scientific interpretation, code generation, calculation checking, and manuscript drafting. Separately implemented deterministic arithmetic was used to check the exact claims. Human author review and approval of this draft are pending; the automated calculations and reviews do not constitute human verification or external peer review.
+
+\subsection*{Data availability}
+The state inputs, exact reconstruction scripts, and instructions for regenerating the reduced states and fidelity certificates are included in the accompanying local source package. No experimental data were collected.
+
+\appendix
+\section{Complete polynomial certificate}
+\label{app:certificate}
+For compactness set $r=\sqrt{42}$ and $s=\sqrt{273}$ in Table~\ref{tab:q}. These coefficients are obtained by inserting Eqs.~\eqref{eq:p3}, \eqref{eq:p4w}, \eqref{eq:baseline}, and \eqref{eq:p4b} at $\chi=0$ into Eq.~\eqref{eq:fullpoly}, along with $P_1=1/2$, $P_2=1/3$, and pure-state complementary purities.
+\begin{table}[h]
+\caption{Exact coefficients of $q$ in Eq.~\eqref{eq:q}. The polynomial is complete; $r=\sqrt{42}$ and $s=\sqrt{273}$.}
+\label{tab:q}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{cl}
+\toprule
+$i$ & $q_i$\\
+\midrule
+0 & $\displaystyle \frac{16556}{315}-\frac{512r}{63}$\\[5pt]
+1 & $\displaystyle -\frac{143803}{270}+\frac{5s}{2}+\frac{2048r}{27}$\\[5pt]
+2 & $\displaystyle \frac{631987}{297}-\frac{225s}{11}-\frac{81920r}{297}$\\[5pt]
+3 & $\displaystyle -\frac{509176}{117}+\frac{9000s}{143}+\frac{655360r}{1287}$\\[5pt]
+4 & $\displaystyle \frac{6236816}{1287}-\frac{1200s}{13}-\frac{655360r}{1287}$\\[5pt]
+5 & $\displaystyle -\frac{27854144}{9945}+\frac{14400s}{221}+\frac{524288r}{1989}$\\[5pt]
+6 & $\displaystyle \frac{124497536}{188955}-\frac{5760s}{323}-\frac{2097152r}{37791}$\\[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+
+The coefficients of $u(x)=\sum_{i=0}^5u_ix^i$ in Eq.~\eqref{eq:phi4}, in ascending order, are
+\begin{equation}
+ (u_0,\ldots,u_5)=\left(
+ -\frac{129024}{25},\frac{2322432}{55},
+ -\frac{18579456}{143},\frac{12386304}{65},
+ -\frac{148635648}{1105},\frac{297271296}{8075}
+ \right).
+ \label{eq:ucoeff}
+\end{equation}
+For the latter, Eq.~\eqref{eq:ubound} is precisely $u_0+\sum_{i=1}^5|u_i|/100^i$. For $q$, use the endpoint ordering in Eq.~\eqref{eq:radicals} according to the sign of each radical coefficient and apply Eq.~\eqref{eq:qbound}. Every operation is rational except for the two radicals enclosed by squared rational endpoints. These formulas provide a finite certificate that can be reproduced without floating-point sign tests.
+
+\bibliography{references}
+\end{document}

@@ -1,0 +1,2 @@
+# Exact verification; Python 3.12 was used.
+sympy==1.14.0

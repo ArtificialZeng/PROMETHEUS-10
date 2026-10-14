@@ -1,0 +1,443 @@
+{
+  "job_id": "phys-00014-p01-research-f15bfc274f9b",
+  "mode": "exact",
+  "symbols": "B,Q,r real; A=1-3B; physical inputs require A>0,B>0. All checks include Q=0.",
+  "zero_checks": [
+    {
+      "check": "Pauli-built real-star basis orthonormality",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "tetrahedral physical unitary 0",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "computational measurement-vector map 0",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "tetrahedral physical unitary 1",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "computational measurement-vector map 1",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "tetrahedral physical unitary 2",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "computational measurement-vector map 2",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "tetrahedral physical unitary 3",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "computational measurement-vector map 3",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "fixed rotation then Bell measurement identity 0",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "fixed rotation then Bell measurement identity 1",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "fixed rotation then Bell measurement identity 2",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "fixed rotation then Bell measurement identity 3",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "computational PVM basis orthonormality",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "PVM normalization",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "outcome 0 probability",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 0 first moment 0",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 0 first moment 1",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 0 first moment 2",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 1 probability",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 1 first moment 0",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 1 first moment 1",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 1 first moment 2",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 2 probability",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 2 first moment 0",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 2 first moment 1",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 2 first moment 2",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 3 probability",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 3 first moment 0",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 3 first moment 1",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "outcome 3 first moment 2",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "physical dual determinant factorization",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "physical dual trace",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "physical complementary slackness 0",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "physical complementary slackness 1",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "physical complementary slackness 2",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "physical complementary slackness 3",
+      "entries": 4,
+      "zero_entries": 4,
+      "failures": []
+    },
+    {
+      "check": "trace projector idempotence",
+      "entries": 81,
+      "zero_entries": 81,
+      "failures": []
+    },
+    {
+      "check": "trace projector symmetry",
+      "entries": 81,
+      "zero_entries": 81,
+      "failures": []
+    },
+    {
+      "check": "antisymmetric projector idempotence",
+      "entries": 81,
+      "zero_entries": 81,
+      "failures": []
+    },
+    {
+      "check": "antisymmetric projector symmetry",
+      "entries": 81,
+      "zero_entries": 81,
+      "failures": []
+    },
+    {
+      "check": "symmetric_traceless projector idempotence",
+      "entries": 81,
+      "zero_entries": 81,
+      "failures": []
+    },
+    {
+      "check": "symmetric_traceless projector symmetry",
+      "entries": 81,
+      "zero_entries": 81,
+      "failures": []
+    },
+    {
+      "check": "projector orthogonality",
+      "entries": 81,
+      "zero_entries": 81,
+      "failures": []
+    },
+    {
+      "check": "projector completeness",
+      "entries": 81,
+      "zero_entries": 81,
+      "failures": []
+    },
+    {
+      "check": "NH K positive-projector decomposition",
+      "entries": 144,
+      "zero_entries": 144,
+      "failures": []
+    },
+    {
+      "check": "NH dual diagonal 0",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual first-moment equality 0",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual off-diagonal Hermitian-sum 0,1",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual off-diagonal Hermitian-sum 0,2",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual diagonal 1",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual first-moment equality 1",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual off-diagonal Hermitian-sum 1,2",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual diagonal 2",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual first-moment equality 2",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH dual objective",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "NH dual bottom formula",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "NH sphere Schur PSD projector factorization",
+      "entries": 144,
+      "zero_entries": 144,
+      "failures": []
+    },
+    {
+      "check": "NH sphere primal objective",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "NH primal-dual complementarity",
+      "entries": 256,
+      "zero_entries": 256,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment commuting completion 0",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment square 0",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment commutator 0,1",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment commutator 0,2",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment commuting completion 1",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment square 1",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment commutator 1,2",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment commuting completion 2",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite first-moment square 2",
+      "entries": 16,
+      "zero_entries": 16,
+      "failures": []
+    },
+    {
+      "check": "finite PVM NH Schur Gram factorization",
+      "entries": 256,
+      "zero_entries": 256,
+      "failures": []
+    },
+    {
+      "check": "finite PVM NH objective",
+      "entries": 1,
+      "zero_entries": 1,
+      "failures": []
+    },
+    {
+      "check": "finite PVM NH complementarity",
+      "entries": 256,
+      "zero_entries": 256,
+      "failures": []
+    }
+  ],
+  "checked_entries": 2141,
+  "failure_count": 0,
+  "psd_argument": "NH dual has Z=F K F^T and K is a nonnegative combination of orthogonal projectors for A,B>0. Sphere primal Schur complement is (24Q^2/5) times a projector. Finite primal is a sum of Gram matrices. Physical dual slack has nonnegative diagonal entries and determinant AB(r^2-12Q^2)^2/9 for all r>=0. These algebraic arguments, not sampled eigenvalues, establish PSD.",
+  "scope": "Proposer exact checks for k=1 star moments; no independent referee or k>1 conclusion."
+}

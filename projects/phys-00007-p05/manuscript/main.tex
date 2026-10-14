@@ -1,0 +1,336 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newtheorem{theorem}{Theorem}
+\title{Exact conditional min-entropy of two-qubit unitary channels with white noise}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The conditional min-entropy of a bipartite channel involves a
+trace-preserving marginal constraint absent from the corresponding state
+optimization. For an arbitrary two-qubit unitary mixed with the maximally
+mixed replacer, we prove that this constraint does not change the optimum.
+If $\rho_U$ is the conditioning-side reduction of the normalized pure
+unitary Choi state and $L=\Tr\sqrt{\rho_U}$, both semidefinite objectives
+equal $(1-p)L^2+p/4$, where $p$ is the replacer weight.
+A common optimizer is $(1-p)L\sqrt{\rho_U}+(p/16)\I_4$.
+Matching positive witnesses establish the expression even when $\rho_U$
+is singular; the known square-root marginal property of locally maximally
+mixed two-qubit states makes the optimizer channel-feasible.
+This resolves the two-qubit white-noise extension posed by Badhani and Das
+(arXiv:2604.01217v2), using their noiseless result and qubit marginal lemma.
+The conclusion concerns single-use min-entropy for this specified noise
+family.
+\end{abstract}
+
+\section{Introduction}
+Conditional channel entropies quantify quantum processes in the presence
+of a conditioning process. Their optimization differs from the state
+problem because the comparison operator must correspond to a
+trace-preserving channel \cite{Das2024,Badhani2026}.
+For conditional min-entropy this distinction is a linear marginal
+constraint in a semidefinite program (SDP).
+Understanding when that constraint costs nothing allows a channel
+quantity to be evaluated directly from a normalized Choi state.
+
+Badhani and Das prove equality for noiseless two-qubit unitaries in
+Proposition~10 of Ref.~\cite{Badhani2026}.
+Their Figure~2 reports the same behavior for identity, CNOT and SWAP
+with white noise, and the following paragraph asks whether it holds for
+arbitrary noisy two-qubit unitaries.
+We establish that two-qubit extension and give the exact objective and
+a common optimizer for every noise weight.
+The essential ingredients are an explicit primal--dual certificate for
+a pure projector plus scalar noise, and the qubit square-root marginal
+lemma already given in Appendix~D of Ref.~\cite{Badhani2026}.
+The pure-state min-entropy formula \cite{KRS2009}, qubit normal forms and
+SDP averaging are established tools; no new general symmetry principle is
+needed.
+
+The statement of the open extension persists in version~2 of the source.
+A bounded primary-literature comparison through 12 October 2026 found
+no later resolution of this exact channel identity. This comparison does
+not establish exhaustive priority for the intermediate state formula.
+The tele-covariant von Neumann entropy identity in
+Ref.~\cite{Das2024} is a different result, and its examples mixing a gate
+with the identity channel use a different noise map.
+
+\section{Model and normalization}
+All four ports $A',B',A,B$ are qubits. For $U\in U(4)$ and $0\leq p\leq1$,
+define the completely positive, trace-preserving map
+\begin{equation}
+ \mathcal N_{p,U}(Z)=(1-p)UZU^\dagger
+                  +p\,\Tr(Z)\frac{\I_{AB}}4 .
+ \label{eq:channel}
+\end{equation}
+Thus $p$ denotes the white-noise weight, not the unitary weight.
+Let $\Phi_2$ be the projector on
+$(\ket{00}+\ket{11})/\sqrt2$, and set
+\begin{equation}
+ \Omega=(\id_{R_AR_B}\otimes\mathcal N_{p,U})
+       (\Phi_{R_AA'}\otimes\Phi_{R_BB'}).
+\end{equation}
+We group factors as $X=R_AA$ and $Y=R_BB$, each of dimension four.
+With this ordering,
+\begin{equation}
+ \Omega=(1-p)\ket u\bra u+\frac{p}{16}\I_{XY},\qquad
+ u_{r_a,a,r_b,b}=\frac12 U_{2a+b,\,2r_a+r_b}.
+ \label{eq:choi}
+\end{equation}
+Here $r_a,a,r_b,b\in\{0,1\}$ and $\bra u u\rangle=1$.
+In particular $\Tr\Omega=1$.
+Define the reduction of the \emph{pure unitary} Choi state by
+\begin{equation}
+ \rho_U=\Tr_X\ket u\bra u,\qquad L=\Tr\sqrt{\rho_U}.
+ \label{eq:rho}
+\end{equation}
+The distinction between $\rho_U$ and $\Tr_X\Omega$ is essential.
+
+The two objectives under comparison are
+\begin{align}
+ s(\Omega)&=\min_{Q\succeq0}
+       \{\Tr Q:\I_X\otimes Q\succeq\Omega\}, \label{eq:s}\\
+ t(\Omega)&=\min_{Q\succeq0}
+       \left\{\Tr Q:\I_X\otimes Q\succeq\Omega,\
+       \Tr_B Q=\frac{\Tr Q}{2}\I_{R_B}\right\}. \label{eq:t}
+\end{align}
+The state conditional min-entropy is
+$H_{\min}(X|Y)_\Omega=-\log_2 s(\Omega)$
+\cite{KRS2009}.
+In the channel convention of Refs.~\cite{Das2024,Badhani2026},
+\begin{equation}
+ S_\infty[A|B]_{\mathcal N}=-\log_2 t(\Omega)-1.
+ \label{eq:offset}
+\end{equation}
+For clarity, Eq.~(87) of Ref.~\cite{Das2024} uses the unnormalized
+Choi operator $\Gamma_{\mathcal N}=4\Omega$.
+Its variable $M=4Q$ has objective $\Tr M/|B'|=2\Tr Q$.
+Its marginal constraint becomes exactly that in Eq.~\eqref{eq:t},
+which explains the one-bit offset in Eq.~\eqref{eq:offset}.
+Scalar identity operators give feasible points, and trace-bounded
+positive operators form a compact set, so the minima are attained.
+
+\section{Exact objective and common optimizer}
+\begin{theorem}
+For every $U\in U(4)$ and every $p\in[0,1]$, the objectives
+in Eqs.~\eqref{eq:s}--\eqref{eq:t} satisfy
+\begin{equation}
+ s(\Omega)=t(\Omega)=(1-p)L^2+\frac p4.
+ \label{eq:result}
+\end{equation}
+A common optimizer is
+\begin{equation}
+ Q_*=(1-p)L\sqrt{\rho_U}+\frac p{16}\I_Y.
+ \label{eq:optimizer}
+\end{equation}
+Consequently,
+\begin{equation}
+ S_\infty[A|B]_{\mathcal N_{p,U}}
+ =H_{\min}(X|Y)_\Omega-1
+ =-\log_2\left((1-p)L^2+\frac p4\right)-1.
+ \label{eq:entropy}
+\end{equation}
+The result includes zero Schmidt coefficients, repeated eigenvalues,
+and both noise endpoints.
+\end{theorem}
+
+\begin{proof}
+First obtain matching bounds for the state problem. Write the
+positive-coefficient Schmidt decomposition as
+\[
+ \ket u=\sum_{i=1}^r c_i\ket{x_i}\ket{y_i},
+ \qquad c_i>0,\quad \sum_i c_i^2=1.
+\]
+Then $L=\sum_i c_i$ and
+$\sqrt{\rho_U}=\sum_i c_i\ket{y_i}\bra{y_i}$.
+For an arbitrary vector $z$, weighted Cauchy--Schwarz gives
+\begin{align}
+ |\bra u z\rangle|^2
+ &\leq L\sum_i c_i|\bra{x_i y_i}z\rangle|^2\\
+ &\leq \bra z(\I_X\otimes L\sqrt{\rho_U})\ket z.
+\end{align}
+The second inequality includes all components along $X$ for each
+$y_i$. Therefore
+$\I_X\otimes L\sqrt{\rho_U}\succeq\ket u\bra u$.
+Put $\alpha=1-p$ and $\beta=p/16$.
+Equation~\eqref{eq:optimizer} is state-feasible because its slack is
+$\alpha(\I_X\otimes L\sqrt{\rho_U}-\ket u\bra u)$,
+and its trace is $\alpha L^2+4\beta$.
+
+For a lower bound let
+\begin{equation}
+ \Pi=\sum_{i=1}^r\ket{y_i}\bra{y_i},\quad
+ \ket w=\sum_{i=1}^r\ket{x_i}\ket{y_i},\quad
+ W=\ket w\bra w+\frac{\I_X}{4}\otimes(\I_Y-\Pi).
+ \label{eq:dual}
+\end{equation}
+We have $W\succeq0$, $\Tr_X W=\I_Y$, $\Tr W=4$, and
+$\bra u W\ket u=L^2$. For every state-feasible $Q$,
+\begin{equation}
+ \Tr Q=\Tr[(\I_X\otimes Q)W]
+       \geq\Tr(\Omega W)=\alpha L^2+4\beta.
+\end{equation}
+This proves $s(\Omega)=\alpha L^2+4\beta$ by weak duality.
+The support-complement term in Eq.~\eqref{eq:dual} is needed for
+$r<4$ and $p>0$: omitting it loses $(4-r)\beta$ from the lower bound.
+No inverse or full-rank assumption has been used.
+
+It remains to show that $Q_*$ obeys the channel marginal.
+Unitarity gives both full reference and full output marginals
+$\I_4/4$ for $\ket u\bra u$.
+Tracing the other qubit then gives
+\begin{equation}
+ \Tr_B\rho_U=\frac{\I_{R_B}}2,\qquad
+ \Tr_{R_B}\rho_U=\frac{\I_B}2.
+ \label{eq:lmm}
+\end{equation}
+The square-root marginal lemma for such two-qubit states is
+Appendix~D, Lemma~9 of Ref.~\cite{Badhani2026}.
+For completeness, expand
+\[
+ \rho_U=\frac14\left(\I\otimes\I+
+       \sum_{i,j=1}^3 T_{ij}\sigma_i\otimes\sigma_j\right),
+ \qquad T_{ij}\in\mathbb R.
+\]
+There are no single-Pauli terms by Eq.~\eqref{eq:lmm}.
+A real singular-value decomposition, with reflection signs absorbed
+in the diagonal entries, diagonalizes $T$ using two proper rotations.
+Local qubit unitaries implement these rotations.
+In that local basis $\rho_U$ is a linear combination of
+$\I\otimes\I$, $\sigma_x\otimes\sigma_x$,
+$\sigma_y\otimes\sigma_y$ and $\sigma_z\otimes\sigma_z$.
+These commute and share the four Bell vectors as an eigenbasis.
+Its positive square root is therefore a sum of Bell projectors with
+weights $\sqrt{\lambda_j}$. Each projector has marginal $\I_2/2$.
+Returning to the original basis yields
+\begin{equation}
+ \Tr_B\sqrt{\rho_U}=\frac L2\I_{R_B}.
+ \label{eq:sqrt}
+\end{equation}
+Zero or repeated eigenvalues do not affect this spectral argument.
+Using $\Tr_B\I_Y=2\I_{R_B}$,
+\[
+ \Tr_B Q_*=\left(\frac{\alpha L^2}{2}+2\beta\right)\I_{R_B}
+          =\frac{\Tr Q_*}{2}\I_{R_B}.
+\]
+Thus $Q_*$ is feasible for $t$. Feasible-set inclusion gives
+$s\leq t\leq\Tr Q_*=s$, proving the assertion.
+All inequalities remain valid for $p=0$ and $p=1$.
+\end{proof}
+
+\subsection{Why the marginal constraint has zero cost}
+The same equality has a structural averaging interpretation.
+Choose a local-unitary Bell eigenbasis $\{y_i\}_{i=1}^4$ of $\rho_U$
+and corresponding Schmidt vectors $\{x_i\}$, completed orthonormally
+when an eigenvalue is zero. For each sign vector
+$\varepsilon\in\{-1,1\}^4$, define
+\[
+ V_X(\varepsilon)=\sum_i\varepsilon_i\ket{x_i}\bra{x_i},
+ \qquad
+ V_Y(\varepsilon)=\sum_i\varepsilon_i\ket{y_i}\bra{y_i}.
+\]
+Their tensor product fixes $\ket u$, and therefore fixes $\Omega$.
+Conjugation maps every state-feasible $Q$ to another feasible operator.
+Averaging over the sixteen signs preserves its trace and produces
+\[
+ \overline Q=\sum_i\bra{y_i}Q\ket{y_i}\ket{y_i}\bra{y_i}.
+\]
+Every $y_i$ has marginal $\I_2/2$, so $\overline Q$ obeys
+the channel constraint. This identifies the reason that the constraint
+has zero objective penalty. The averaging operations act on grouped
+spaces; their use in the proof does not assert their physical
+availability as local port operations.
+
+\section{Special gates, interpretation and limits}
+Let $\kappa=L^2$. Normalization and Cauchy--Schwarz give
+$1\leq\kappa\leq4$. Thus the gate dependence enters only through
+the Schmidt spectrum of its pure normalized Choi vector.
+The quantity $2^{-H_{\min}(X|Y)_\Omega}$ is affine in the replacer
+weight, although the entropy itself is logarithmic.
+The identity, CNOT and SWAP have $\kappa=1,2,4$, respectively.
+Their objectives and endpoints are shown in Table~\ref{tab:gates}.
+These are exact instances of Eq.~\eqref{eq:result}, recovering the
+three examples of Ref.~\cite{Badhani2026}.
+
+\begin{table}[ht]
+\centering
+\caption{Exact common objective $s=t$ for three gates, with $p$
+the maximally mixed replacer weight. Values are rational, not SDP
+solver estimates. Channel entropy is $-\log_2(s)-1$.}
+\label{tab:gates}
+\begin{tabular}{lcccc}
+\toprule
+Gate & $\kappa$ & $p=0$ & $p=1/2$ & $p=1$\\
+\midrule
+Identity & 1 & 1 & $5/8$ & $1/4$\\
+CNOT     & 2 & 2 & $9/8$ & $1/4$\\
+SWAP     & 4 & 4 & $17/8$ & $1/4$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For example, the noiseless SWAP has state entropy $-2$ bits and
+channel entropy $-3$ bits. The completely mixed replacer has
+state entropy $+2$ bits and channel entropy $+1$ bit for every $U$.
+These endpoints also check the normalized Choi convention and
+the one-bit channel offset.
+
+The result removes the need to solve either SDP once the four
+eigenvalues of $\rho_U$ are known. In the conditional athermality
+framework of Ref.~\cite{Badhani2026}, it evaluates the single-use
+channel min-entropy entering the trivial-Hamiltonian resource
+description. No additional thermodynamic conversion theorem is
+derived here. The proof relies on scalar white noise and a
+conditioning pair of qubits. It makes no extension to arbitrary
+mixed-unitary noise, higher dimensions, nontrivial Hamiltonians,
+continuous-time dynamics or regularized communication capacities.
+Neither the numerical gate checks nor the entropy sign should be
+interpreted as an entanglement-breaking criterion.
+
+\section{Methods and reproducibility}
+The result is exact and finite-dimensional. Its error control is
+the pair of analytical inequalities in the proof, with no
+perturbative, finite-size or floating-point approximation.
+The accompanying standard-library Python scripts reconstruct
+the Choi input in two tensor conventions and test special-gate
+certificates with rational arithmetic. A separate exact
+complex-rational check covers eight unitary gates and four noise
+weights, including rank-deficient and complex instances, with
+32 primal, dual and marginal certificates and 128 sign-invariance
+checks. The finite checks diagnose normalization and implementation
+errors; they do not establish the universal quantifiers.
+Regeneration instructions and the tested environment accompany the
+code. The self-contained proof is sufficient for the analytic result.
+
+Generative AI was used in proposing and developing the argument,
+in writing reconstruction and certificate-checking code, in
+literature searches and comparison, in automated scientific
+checking, and in drafting this manuscript. These checks do not
+constitute human verification or external peer review.
+
+\paragraph{Acknowledgments.}
+The research and drafting workflow used OpenAI Codex, including
+its language-model assistance for the tasks described above.
+Human author review and confirmation of the manuscript remain pending.
+
+\paragraph{Data availability.}
+No experimental data were used. The reproduction and exact
+certificate scripts, fixed test inputs and regeneration instructions
+are included in the accompanying source package.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

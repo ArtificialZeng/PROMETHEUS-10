@@ -1,0 +1,22 @@
+COMMAND: compare_and_baseline.py; captured exact-map and case-comparison output from this execution.
+EXACT: K_B=K_A^T entry by entry; G_A and G_B equal characteristic polynomials.
+EXACT: det(G_A)=det(G_B)=(x00*x11-x01*x10)^2; normalization supplies trace=1.
+CANONICAL ('uniform_product', 1): S_A=-0 S_B=-0 bits; marginal and basis map PASS
+CANONICAL ('uniform_product', 2): S_A=1.601713251907459e-16 S_B=-0 bits; marginal and basis map PASS
+CANONICAL ('biased_product', 1): S_A=3.203426503814918e-16 S_B=6.406853007629834e-16 bits; marginal and basis map PASS
+CANONICAL ('biased_product', 2): S_A=3.203426503814918e-16 S_B=-6.406853007629837e-16 bits; marginal and basis map PASS
+CANONICAL ('uniform_correlated', 1): S_A=0.9999999999999999 S_B=0.9999999999999999 bits; marginal and basis map PASS
+CANONICAL ('uniform_correlated', 2): S_A=2 S_B=2 bits; marginal and basis map PASS
+CANONICAL ('uniform_anticorrelated', 1): S_A=0.9999999999999999 S_B=0.9999999999999999 bits; marginal and basis map PASS
+CANONICAL ('uniform_anticorrelated', 2): S_A=2 S_B=2 bits; marginal and basis map PASS
+CANONICAL ('biased_correlated', 1): S_A=0.9182958340544896 S_B=0.9182958340544896 bits; marginal and basis map PASS
+CANONICAL ('biased_correlated', 2): S_A=1.836591668108979 S_B=1.836591668108979 bits; marginal and basis map PASS
+CANONICAL ('deterministic', 1): S_A=-0 S_B=-0 bits; marginal and basis map PASS
+CANONICAL ('deterministic', 2): S_A=-0 S_B=-0 bits; marginal and basis map PASS
+CANONICAL ('zero_row', 1): S_A=-0 S_B=3.203426503814918e-16 bits; marginal and basis map PASS
+CANONICAL ('zero_row', 2): S_A=-0 S_B=3.203426503814918e-16 bits; marginal and basis map PASS
+CANONICAL ('asymmetric', 1): S_A=0.02103352607526143 S_B=0.02103352607526111 bits; marginal and basis map PASS
+CANONICAL ('asymmetric', 2): S_A=0.04206705215052137 S_B=0.04206705215052257 bits; marginal and basis map PASS
+CANONICAL ('three_support', 1): S_A=0.3545789026652699 S_B=0.35457890266527 bits; marginal and basis map PASS
+CANONICAL ('three_support', 2): S_A=0.7091578053305396 S_B=0.7091578053305396 bits; marginal and basis map PASS
+MAX_ERRORS: {"coefficient": 1.1102230246251565e-16, "entropy_bits": 1.1934897514720433e-15, "physical_marginal": 1.1102230246251565e-16, "reference_entropy_bits": 1.0894063429134349e-15, "spectrum": 6.661338147750939e-16}

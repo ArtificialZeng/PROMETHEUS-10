@@ -1,0 +1,318 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\C}{\mathbb C}
+\title{The sharp overlap threshold for antidistinguishability of five pure states}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Five pure states with every pairwise overlap modulus at most
+$\sqrt{3/8}$ admit a zero-error exclusion measurement by a known universal
+criterion. We prove that this guarantee is sharp. For every
+$3/8<m<2/5$, we construct five normalized complex states of rank three,
+each pair having squared overlap $m$, and exhibit a finite Hermitian
+dual certificate with strictly positive trace. The certificate excludes
+every zero-error positive operator-valued measurement and supplies a
+positive lower bound on the minimum exclusion error for equal priors.
+Embedding the construction in $\C^5$ and taking $m$ down to $3/8$
+establishes that the infimum of the maximum overlap over non-excludable
+five-state ensembles is exactly $\sqrt{3/8}$. The boundary is included in
+the sufficient criterion, so the infimum is not attained by a
+non-excludable ensemble.
+\end{abstract}
+
+\section{Zero-error exclusion and the sharpness question}
+In quantum state exclusion, outcome $i$ announces that the prepared
+state was not $\psi_i$. For normalized pure states
+$\psi_1,\ldots,\psi_5\in\C^5$, a zero-error exclusion measurement is a
+positive operator-valued measurement (POVM) satisfying
+\begin{equation}
+ M_i\succeq0,\qquad \sum_{i=1}^5 M_i=I_5,\qquad
+ \bra{\psi_i}M_i\ket{\psi_i}=0\quad (1\leq i\leq5).
+ \label{eq:povm}
+\end{equation}
+We call such a tuple antidistinguishable. Linear dependence among the
+states and zero measurement effects are allowed. The problem is
+single-copy exclusion with arbitrary PSD effects, without postselection
+or restrictions to projective measurements.
+
+Let
+\begin{equation}
+ \mu(\psi_1,\ldots,\psi_5)=
+ \max_{i<j}|\langle\psi_i\mid\psi_j\rangle|,\qquad
+ t_5=\inf_{\text{non-antidistinguishable tuples}}\mu .
+ \label{eq:threshold}
+\end{equation}
+Johnston, Russo, and Sikora proved that $n$ pure states are
+antidistinguishable whenever their maximum overlap is at most
+$\sqrt{(n-2)/(2n-2)}$ \cite[Corollary 5.4]{JRS25}.
+Their Section 6 establishes sharpness through four states and leaves
+the higher-state question open. The subsequent classification framework
+of Johnston, Lovitz, Russo, and Sikora retains an open entrywise
+sharpness question, while proving sharpness of a distinct
+Frobenius-norm condition \cite[Section 1.1 and Section 3]{JLRS26}.
+Our contribution is the matching construction for five states.
+
+\begin{theorem}\label{thm:main}
+For the model in \eqref{eq:povm}, $t_5=\sqrt{3/8}$.
+For each real $m\in(3/8,2/5)$, there is a rank-three tuple with
+$|\langle\psi_i\mid\psi_j\rangle|^2=m$ for every $i\neq j$
+which is not antidistinguishable. The explicit certificate below
+also gives a uniform-prior exclusion error lower bound $s\eta/5>0$.
+\end{theorem}
+
+The family and the certificate are exact throughout this open
+interval. The result resolves the five-state sector; it makes no
+assertion about sharpness for six or more states, an exact minimum-error
+formula, or experimental robustness.
+
+\section{A rank-three equimodular family}
+Fix $3/8<m<2/5$ and define
+\begin{equation}
+ p=\frac{1+\sqrt{(4m-1)/3}}2,\quad q=\frac mp,\quad
+ h=\frac{\sqrt{m-(2q-1)^2}}2,\quad
+ k=\frac{\sqrt{1-m}}2,\quad \omega=e^{2\pi i/3}.
+ \label{eq:parameters}
+\end{equation}
+All square roots denote positive real roots. In an orthonormal basis
+$e_1,e_2,e_3$ of $\C^3$, set
+\begin{align}
+ \ket{a_j}&=\sqrt p\,e_1+\sqrt{1-p}\,\omega^j e_3
+       &&(j=0,1,2),\label{eq:orbit}\\
+ \ket{b_\pm}&=\sqrt q\,e_1+
+                \frac{h\pm ik}{\sqrt q}\,e_2 .
+       \label{eq:pair}
+\end{align}
+These five vectors, with two additional zero coordinates, are the
+desired states in $\C^5$.
+
+\begin{lemma}\label{lem:states}
+The vectors \eqref{eq:orbit}--\eqref{eq:pair} are normalized,
+span $\C^3$, and have squared pairwise overlap $m$.
+\end{lemma}
+\begin{proof}
+Equation \eqref{eq:parameters} gives
+$m=1-3p+3p^2$ and $7/10<p<3/4$. Hence
+$1/2<q<4/7$ and
+$0<(2q-1)^2<1/49<3/8<m<1$. All defining roots and
+denominators are legal. Moreover,
+\begin{equation}
+ h^2+k^2=q(1-q).
+ \label{eq:norm}
+\end{equation}
+This proves normalization. For distinct orbit states the phase
+difference has real part $-1/2$, giving
+\begin{equation}
+ |\langle a_i\mid a_j\rangle|^2
+   =p^2+(1-p)^2-p(1-p)=m.
+\end{equation}
+Each orbit-to-pair squared overlap is $pq=m$. For the final pair,
+\begin{equation}
+ \langle b_+\mid b_-\rangle=q+\frac{(h-ik)^2}{q},
+ \qquad
+ \left|q+\frac{(h-ik)^2}{q}\right|^2=1-4k^2=m,
+ \label{eq:pair-overlap}
+\end{equation}
+where the second equality uses \eqref{eq:norm}.
+Two orbit states span $e_1,e_3$; either pair state has a nonzero
+$e_2$ component. Thus the rank is exactly three.
+\end{proof}
+
+\section{A finite exclusion certificate}
+For any states with projectors $\rho_i$, a Hermitian operator $Y$
+satisfying $Y\preceq\rho_i$ for all $i$ obeys
+\begin{equation}
+ \sum_i\Tr(M_i\rho_i)
+  =\Tr Y+\sum_i\Tr\!\left[M_i(\rho_i-Y)\right]\geq\Tr Y
+ \label{eq:weak-duality}
+\end{equation}
+for every POVM. This is direct weak duality for the exclusion
+optimization \cite[Eq.~(2)]{JRS25}. A positive trace rules out
+\eqref{eq:povm}. No strong-duality assumption is needed.
+
+For the parameters in \eqref{eq:parameters}, define
+\begin{align}
+ r&=\frac{2p-1}{1-p},&
+ x&=\frac{rh}{1-q},&
+ L&=\frac{1+x^2}{r},\nonumber\\
+ R&=\frac{2q-1+2hx}{1-q},&
+ D&=R-L,&
+ V&=\frac{L+R}{2}.
+ \label{eq:auxiliary}
+\end{align}
+The positive gap driving the certificate is
+\begin{equation}
+ D=\frac{p^3(8m-3)}
+          {4(1-p)^2(2p-1)(3p-1)^2}>0.
+ \label{eq:gap}
+\end{equation}
+For completeness, substitution of $x$ first reduces it to
+\[
+ D=\frac{2q-1}{1-q}-\frac1r+\frac{rh^2}{(1-q)^2}.
+\]
+Using $q=m/p$, $h^2=[m-(2q-1)^2]/4$, and
+$1-q=(1-p)(3p-1)/p$, the numerator of the common-denominator
+expression becomes $p^3(24p^2-24p+5)=p^3(8m-3)$,
+which proves \eqref{eq:gap}. In particular $r,x,L,R,V$ are positive.
+
+Now put
+\begin{align}
+ \eta&=\frac{rD}{4(1+r)},&
+ A&=1+V+\eta,\nonumber\\
+ C_1&=\frac{pV^2}{(1-p)^2},&
+ C_2&=\frac{x^2}{1-q}+\frac{q+2hx}{(1-q)^2},\nonumber\\
+ s&=\frac{\eta}{2(C_1+C_2+1)},&
+ Y&=s\begin{pmatrix}A&x&0\\x&-1&0\\0&0&-V\end{pmatrix}.
+ \label{eq:dual}
+\end{align}
+These are finite quantities at each point of the open interval, and
+\begin{equation}
+ \Tr Y=s(A-1-V)=s\eta>0.
+ \label{eq:trace}
+\end{equation}
+The operator $Y$ acts on the physical three-dimensional state span.
+It is distinct from a dual witness acting on the five state labels
+of a Gram matrix.
+
+\begin{lemma}\label{lem:dual}
+For each of the five states in \eqref{eq:orbit}--\eqref{eq:pair},
+$\rho_i-Y$ is positive definite on $\C^3$.
+\end{lemma}
+\begin{proof}
+For an orbit state, the lower $e_2,e_3$ block of $\rho_i-Y$ is
+$\operatorname{diag}(s,1-p+sV)\succ0$. Its Schur complement is
+\begin{equation}
+ s[F_1(s)-A],\qquad F_1(s)=\frac{pV}{1-p+sV}-x^2.
+ \label{eq:schur1}
+\end{equation}
+The orbit phase cancels because $|\omega^j|=1$.
+For either pair state, the lower block is
+$\operatorname{diag}(1-q+s,sV)\succ0$, and the Schur complement is
+\begin{equation}
+ s[F_2(s)-A],\qquad
+ F_2(s)=\frac{q+2hx-sx^2}{1-q+s}.
+ \label{eq:schur2}
+\end{equation}
+The sign of $k$ drops out since $x$ is real and
+$h^2+k^2=q(1-q)$.
+
+At zero step, the exact slacks are
+\begin{equation}
+ F_1(0)-A=\frac{rD}{2}-\eta>\eta,\qquad
+ F_2(0)-A=\frac{D}{2}-\eta>\eta.
+ \label{eq:initial}
+\end{equation}
+Indeed, subtracting another $\eta$ from the two expressions gives
+$r^2D/[2(1+r)]$ and $D/[2(1+r)]$, respectively.
+Both are strictly positive without any ordering assumption on $r$.
+The finite changes satisfy the exact identities and bounds
+\begin{align}
+ F_1(0)-F_1(s)
+   &=\frac{spV^2}{(1-p)(1-p+sV)}\leq sC_1,
+       \label{eq:loss1}\\
+ F_2(0)-F_2(s)
+   &=\frac{s[(q+2hx)/(1-q)+x^2]}{1-q+s}\leq sC_2.
+       \label{eq:loss2}
+\end{align}
+The step in \eqref{eq:dual} gives $sC_i<\eta/2$ for
+$i=1,2$. Equations \eqref{eq:initial}--\eqref{eq:loss2}
+therefore imply $F_i(s)-A>\eta/2>0$.
+Both Schur complements are strictly positive, proving the lemma.
+The bounds hold at a finite step and contain no omitted expansion
+remainder.
+\end{proof}
+
+\section{The threshold and its operational meaning}
+\begin{proof}[Proof of Theorem \ref{thm:main}]
+Lemma \ref{lem:dual} and \eqref{eq:weak-duality} imply
+$\sum_i\Tr(M_i\rho_i)\geq s\eta>0$ for every POVM on $\C^3$.
+After embedding, $Y\oplus0_2\preceq\rho_i\oplus0_2$ on $\C^5$,
+so the same bound applies to all POVMs in the original model.
+This also covers measurements with zero effects. With equal priors,
+\begin{equation}
+ P_{\mathrm{err}}^{\mathrm{opt}}
+  :=\min_{\{M_i\}}\frac15\sum_i\Tr(M_i\rho_i)
+  \ \geq\ \frac{s\eta}{5}>0 .
+ \label{eq:error}
+\end{equation}
+Lemma \ref{lem:states} supplies maximum overlap $\sqrt m$.
+For every $\varepsilon>0$, choose
+$3/8<m<\min\{2/5,(\sqrt{3/8}+\varepsilon)^2\}$.
+The resulting non-antidistinguishable tuple gives
+$t_5\leq\sqrt{3/8}$.
+
+Conversely, the published overlap criterion
+\cite[Corollary 5.4]{JRS25} at $n=5$ guarantees
+antidistinguishability when $\mu\leq\sqrt{3/8}$.
+Equivalently, its sufficient Frobenius condition applies because
+$\|G\|_F^2\leq5+20(3/8)=25/2$ for the Gram matrix
+$G_{ij}=\langle\psi_i\mid\psi_j\rangle$.
+It follows that $t_5\geq\sqrt{3/8}$, completing the proof.
+\end{proof}
+
+The threshold determines what can be guaranteed using overlap
+magnitudes alone. Every five-state ensemble at or below it admits
+perfect exclusion, while arbitrarily close above it there are legal
+ensembles for which every exclusion measurement makes errors.
+The construction uses complex phases and a three-dimensional span;
+the operational obstruction is the positive trace of the feasible
+physical dual, rather than failure of a sufficient overlap test.
+
+The family approaches an excludable boundary. The certificate's
+positive trace is needed only at $m>3/8$, and \eqref{eq:error}
+is a lower bound rather than the exact optimum. We do not obtain
+a non-excludable ensemble at equality, a universal lower bound on
+error for other ensembles, or a noise tolerance.
+
+\section{Reproducibility and scope}
+The accompanying exact SymPy checker verifies the rational identity
+\eqref{eq:gap}, normalization and overlap relations, initial Schur
+slacks, and finite-step loss identities. It also constructs the five
+projectors and the dual directly at three rational values of $p$,
+checking all nonempty principal minors of each $\rho_i-Y$, all ten
+overlaps, and the positive trace. The analytic sign and Schur argument
+establishes the whole interval; those finite checks are supplementary.
+The proof does not use numerical optimization, an SDP solver status,
+or a perturbative approximation. All vectors, effects, and overlaps
+are dimensionless ideal quantum-state quantities.
+
+The literature comparison is restricted to the cited primary works
+and a targeted search through 12 October 2026; no exhaustive priority
+claim is intended. In particular, sharpness of a Frobenius bound does
+not by itself establish the maximum-entry overlap threshold considered
+here. The conclusions concern unrestricted single-copy pure-state
+exclusion and do not extend to a different measurement convention
+or a multiple-copy task.
+
+\section*{Author contribution and AI disclosure}
+OpenAI Codex was used in developing the construction and proof,
+symbolic and numerical exploratory calculations, code generation,
+literature searches, internal verification, and manuscript drafting.
+The internal checks used AI-assisted implementations and do not
+constitute external peer review. Human scientific review, confirmation
+of authorship and affiliation, and approval of the final manuscript
+remain pending for this local draft.
+
+\section*{Code availability}
+The accompanying source package contains an exact verification script,
+its recorded output, and instructions identifying the required SymPy
+version. No experimental data are used.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

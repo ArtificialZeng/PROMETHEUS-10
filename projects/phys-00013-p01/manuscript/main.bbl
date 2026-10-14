@@ -1,0 +1,152 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{8}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Haferkamp}\ and\ \citenamefont
+  {Hunter-Jones}(2021)}]{Haferkamp2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Haferkamp}}\ and\ \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Hunter-Jones}},\ }\bibfield  {title} {\bibinfo {title} {Improved spectral
+  gaps for random quantum circuits: Large local dimensions and all-to-all
+  interactions},\ }\href {https://doi.org/10.1103/PhysRevA.104.022417}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo
+  {volume} {104}},\ \bibinfo {pages} {022417} (\bibinfo {year} {2021})},\
+  \Eprint {https://arxiv.org/abs/2012.05259} {arXiv:2012.05259 [quant-ph]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Allen}\ \emph {et~al.}(2025)\citenamefont {Allen},
+  \citenamefont {Belkin},\ and\ \citenamefont {Clark}}]{Allen2025}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Allen}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Belkin}},\ and\
+  \bibinfo {author} {\bibfnamefont {B.~K.}\ \bibnamefont {Clark}},\ }\href
+  {https://arxiv.org/abs/2411.13739v2} {\bibinfo {title} {Conditional
+  $t$-independent spectral gap for random quantum circuits and implications for
+  $t$-design depths}} (\bibinfo {year} {2025}),\ \bibinfo {note} {version 2, 3
+  February 2025},\ \Eprint {https://arxiv.org/abs/2411.13739} {arXiv:2411.13739
+  [quant-ph]} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Deneris}\ \emph {et~al.}(2025)\citenamefont
+  {Deneris}, \citenamefont {Bermejo}, \citenamefont {Braccia}, \citenamefont
+  {Cincio},\ and\ \citenamefont {Cerezo}}]{Deneris2025}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~E.}\ \bibnamefont
+  {Deneris}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Bermejo}},
+  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Braccia}}, \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Cincio}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Cerezo}},\ }\bibfield  {title} {\bibinfo
+  {title} {Exact spectral gaps of random one-dimensional quantum circuits},\
+  }\href {https://doi.org/10.1103/8p5j-mxhh} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
+  {pages} {062619} (\bibinfo {year} {2025})},\ \Eprint
+  {https://arxiv.org/abs/2408.11201} {arXiv:2408.11201 [quant-ph]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Dong}\ and\ \citenamefont {Fan}(2026)}]{Dong2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont
+  {Dong}}\ and\ \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Fan}},\
+  }\href {https://arxiv.org/abs/2609.40164v2} {\bibinfo {title} {Spectral gaps
+  and slow modes of {Pauli} rotations and random quantum circuits}} (\bibinfo
+  {year} {2026}),\ \bibinfo {note} {version 2, 4 October 2026},\ \Eprint
+  {https://arxiv.org/abs/2609.40164} {arXiv:2609.40164 [quant-ph]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {{\.{Z}}yczkowski}\ and\ \citenamefont
+  {Sommers}(2001)}]{Zyczkowski2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {{\.{Z}}yczkowski}}\ and\ \bibinfo {author} {\bibfnamefont {H.-J.}\
+  \bibnamefont {Sommers}},\ }\bibfield  {title} {\bibinfo {title} {Induced
+  measures in the space of mixed quantum states},\ }\href
+  {https://doi.org/10.1088/0305-4470/34/35/335} {\bibfield  {journal} {\bibinfo
+   {journal} {J. Phys. A: Math. Gen.}\ }\textbf {\bibinfo {volume} {34}},\
+  \bibinfo {pages} {7111} (\bibinfo {year} {2001})},\ \Eprint
+  {https://arxiv.org/abs/quant-ph/0012101} {arXiv:quant-ph/0012101}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Enr{\'i}quez}\ \emph {et~al.}(2018)\citenamefont
+  {Enr{\'i}quez}, \citenamefont {Delgado},\ and\ \citenamefont
+  {{\.{Z}}yczkowski}}]{Enriquez2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Enr{\'i}quez}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Delgado}},\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {{\.{Z}}yczkowski}},\ }\bibfield  {title} {\bibinfo {title} {Entanglement of
+  three-qubit random pure states},\ }\href {https://doi.org/10.3390/e20100745}
+  {\bibfield  {journal} {\bibinfo  {journal} {Entropy}\ }\textbf {\bibinfo
+  {volume} {20}},\ \bibinfo {pages} {745} (\bibinfo {year} {2018})},\ \Eprint
+  {https://arxiv.org/abs/1809.00642} {arXiv:1809.00642 [quant-ph]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Fyodorov}\ and\ \citenamefont
+  {Khoruzhenko}(2007)}]{Fyodorov2007}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.~V.}\ \bibnamefont
+  {Fyodorov}}\ and\ \bibinfo {author} {\bibfnamefont {B.~A.}\ \bibnamefont
+  {Khoruzhenko}},\ }\bibfield  {title} {\bibinfo {title} {A few remarks on
+  colour-flavour transformations, truncations of random unitary matrices,
+  {Berezin} reproducing kernels and {Selberg}-type integrals},\ }\href
+  {https://doi.org/10.1088/1751-8113/40/4/007} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Phys. A: Math. Theor.}\ }\textbf {\bibinfo {volume} {40}},\
+  \bibinfo {pages} {669} (\bibinfo {year} {2007})},\ \Eprint
+  {https://arxiv.org/abs/math-ph/0610045} {arXiv:math-ph/0610045} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Christandl}\ \emph {et~al.}(2014)\citenamefont
+  {Christandl}, \citenamefont {Doran}, \citenamefont {Kousidis},\ and\
+  \citenamefont {Walter}}]{Christandl2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Christandl}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Doran}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Kousidis}},\ and\
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Walter}},\ }\bibfield
+  {title} {\bibinfo {title} {Eigenvalue distributions of reduced density
+  matrices},\ }\href {https://arxiv.org/abs/1204.0741v2} {\bibfield  {journal}
+  {\bibinfo  {journal} {Commun. Math. Phys.}\ }\textbf {\bibinfo {volume}
+  {332}},\ \bibinfo {pages} {1} (\bibinfo {year} {2014})},\ \Eprint
+  {https://arxiv.org/abs/1204.0741} {arXiv:1204.0741 [quant-ph]} \BibitemShut
+  {NoStop}%
+\end{thebibliography}%

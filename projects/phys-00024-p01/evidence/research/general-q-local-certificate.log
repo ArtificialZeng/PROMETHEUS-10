@@ -1,0 +1,50 @@
+{
+  "arithmetic": "Exact SymPy rational expressions reduced modulo u^2-b^2-2ub+2=0; denominators justified in the stable proof",
+  "domain": "q real except -1,1; u=sqrt(c-1)>0; b=sign(1+q)sqrt(c-q) nonzero",
+  "multiplicities": [
+    "2",
+    "2(n-2)",
+    "2(n-2)",
+    "2(n-2)^2"
+  ],
+  "negative_rank": "2(n-1)^2",
+  "nonzero_hessian_spectrum": [
+    "-2",
+    "-4c(c-q)/[(2c-q)N]",
+    "-4c(c-1)/[(2c-1)N]",
+    "-2c/N"
+  ],
+  "normal_blocks": [
+    {
+      "active_index": 1,
+      "entrywise_residual_zero": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "spectator_index": 3
+    },
+    {
+      "active_index": 2,
+      "entrywise_residual_zero": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "spectator_index": 3
+    }
+  ],
+  "nullity": "4n-2",
+  "schur_equality_Phi_residual_zero": true,
+  "schur_pair_residuals_zero": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "scope_limit": "Local Morse-Bott maximum only; no explicit radius or global inequality.",
+  "sign_proof": "c>max(1,q), N>0, 2c-q>0 and 2c-1>0, so all displayed eigenvalues are strictly negative",
+  "status": "exact_allq_pair_and_normal_block_identities"
+}

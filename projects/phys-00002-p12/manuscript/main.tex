@@ -1,0 +1,167 @@
+\documentclass[aps,pre,preprint,superscriptaddress,nofootinbib]{revtex4-2}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\begin{document}
+\title{Sharp lower bounds on current cumulant ratios in Markov rings with an irreversible bond}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190, China}
+\date{\today}
+\begin{abstract}
+For a finite continuous-time Markov ring with positive forward rates, nonnegative reverse rates, and at least one irreversible bond, we prove the sharp lower bounds
+$c_3/c_1\geq-1/16$ and $c_4/c_2\geq-(1+\sqrt{5})/10$ for the long-time cumulant rates of a signed unit cycle count.
+The constants were previously proposed for unicyclic currents.
+An irreversible bond makes the count regenerative; the established birth-and-death passage-time representation reduces the problem to inequalities for arbitrary positive exponential-stage weights.
+The proof allows unrestricted backward excursions on the remaining bonds and does not assume a slow-link extremal topology.
+Sharpness is approached by directed rings of increasing size.
+The conjecture for rings with all reverse rates strictly positive remains unresolved.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+Higher current cumulants can constrain the microscopic dynamics compatible with a transport measurement. Ptaszy\'nski proposed the lower constants $-1/16$ and $-(1+\sqrt{5})/10$ for the ratios of third to first and fourth to second steady-state current cumulants in unicyclic Markov networks \cite{Ptaszynski2022}. The directed slow-link family yields those constants in the large-network limit; selecting that family as globally extremal relies on numerical evidence in the original treatment.
+
+Here we prove both inequalities for every ring containing an irreversible bond, including rings with arbitrary backward rates elsewhere. The contribution is a proof without an extremal-topology ansatz in this boundary class. The constants, renewal relations, and passage-time spectral representation are established prior results. The argument does not establish the conjecture for strictly positive reverse rates.
+
+The irreversible-bond model also occurs in statistical kinetics \cite{BaratoSeifert2015}. Bounds on standardized cycle-completion-time or first-passage-time moments \cite{BaratoSeifert2015,WamplerBarato2021} concern different observables from the current cumulant ratios used here. The distinction matters because passing from a waiting time to its inverse counting process couples several waiting-time cumulants.
+
+\section{Model and result}
+Let $N\geq3$ and label ring states modulo $N$. The forward transition $i\to i+1$ has finite rate $u_i>0$, and its reverse has finite rate $w_i\geq0$. Assume $w_i=0$ on at least one bond. There are no other transitions and the rates are time independent. With column probability vectors the generator is
+\begin{equation}
+ L_{i+1,i}=u_i,\qquad L_{i,i+1}=w_i,\qquad
+ L_{i,i}=-(u_i+w_{i-1}).
+ \label{eq:generator}
+\end{equation}
+Thus every column sums to zero. The diagonal follows directly from outgoing escapes; all counting-field factors below modify off-diagonal jump rates only.
+
+For any fixed bond, let $Q_t$ be its net forward crossing count, with increments $+1$ and $-1$. Define
+\begin{equation}
+ \psi(z)=\lim_{t\to\infty}\frac{1}{t}
+ \log\mathbb E[e^{zQ_t}],\qquad c_n=\psi^{(n)}(0),\qquad
+ S=\frac{c_3}{c_1},\quad K=\frac{c_4}{c_2}.
+ \label{eq:observable}
+\end{equation}
+These are cumulant ratios, not standardized central moments.
+Rates and $c_n$ have units of inverse time; $Q_t,z,S,K$ are dimensionless.
+Positive forward rates ensure irreducibility. The finite tilted generator has an analytic simple eigenvalue branch near $z=0$, which defines $\psi$ there for any initial law.
+
+For this entire class,
+\begin{equation}
+ \boxed{S\geq-\frac{1}{16},\qquad
+ K\geq-\frac{1+\sqrt{5}}{10}.}
+ \label{eq:bounds}
+\end{equation}
+Both denominators are strictly positive. Both constants are sharp over unbounded finite $N$. The proof and the limiting families follow below.
+
+\section{Renewal reduction}
+Rotate the labels so $w_0=0$ and count the transition $0\to1$. Each crossing returns the system to state 1. Before the next crossing, unroll the states as $1,2,\ldots,N-1,0$, replacing the next $0\to1$ jump by absorption. This is a birth-and-death chain with $N$ transient states, reflecting entrance, and absorbing exit. The strong Markov property gives independent identically distributed intercrossing times $\tau$.
+
+Absorption has an exponential tail: from every transient state, a sequence of at most $N$ forward jumps within a fixed time has a uniformly positive probability. A finite initial delay therefore leaves the long-time cumulant rates unchanged. Net counts on two bonds differ by the change in occupancy of the intervening arc, which is bounded. Their real counting-field generating functions differ by bounded factors, so their scaled logarithms, and hence all derivatives of the analytic eigenvalue branch, coincide.
+
+Let $T$ be the transient subgenerator. The birth-and-death passage-time theorem \cite{Fill2009}, including its extension to vanishing death rates, gives
+\begin{equation}
+ \widehat F(a):=\mathbb E[e^{-a\tau}]
+ =\prod_{j=1}^N\frac{\lambda_j}{\lambda_j+a},
+ \label{eq:transform}
+\end{equation}
+where $\lambda_j$ are the positive eigenvalues of $-T$, with multiplicity.
+For completeness, the endpoint cofactor of the tridiagonal resolvent gives $\widehat F(a)=(\prod_i u_i)/\det(aI-T)$.
+Eventual absorption fixes $\det(-T)=\prod_i u_i$.
+Each communicating interval of $T$ is diagonally symmetrizable; zero reverse rates make the full matrix block triangular with these interval blocks. Stability from the exponential absorption tail makes all $\lambda_j$ real and strictly positive. Repeated eigenvalues pose no difficulty. Equation~(\ref{eq:transform}) is the transform of a sum of independent exponential stages.
+
+Write
+\begin{equation}
+ x_j=\lambda_j^{-1},\quad M=\sum_jx_j,\quad
+ p_j=\frac{x_j}{M},\qquad
+ q=\sum_jp_j^2,\quad r=\sum_jp_j^3,\quad h=\sum_jp_j^4.
+ \label{eq:weights}
+\end{equation}
+All $p_j$ are positive and sum to one. The waiting-time cumulants are $\kappa_n=(n-1)!\sum_jx_j^n$.
+The renewal relation $\log\widehat F(\psi(z))=-z$ yields the familiar inversion formulas \cite{Ptaszynski2022}
+\begin{align}
+ c_1&=\kappa_1^{-1},&
+ c_2&=\frac{\kappa_2}{\kappa_1^3},\nonumber\\
+ c_3&=\frac{3\kappa_2^2}{\kappa_1^5}
+       -\frac{\kappa_3}{\kappa_1^4},\nonumber\\
+ c_4&=\frac{15\kappa_2^3}{\kappa_1^7}
+       -\frac{10\kappa_2\kappa_3}{\kappa_1^6}
+       +\frac{\kappa_4}{\kappa_1^5}.
+\end{align}
+Consequently $c_1=1/M>0$, $c_2=q/M>0$, and
+\begin{equation}
+ S=3q^2-2r,\qquad K=15q^2-20r+\frac{6h}{q}.
+ \label{eq:ratios}
+\end{equation}
+No approximation in ring size or rate ratios has entered this reduction.
+
+\section{Moment inequalities}
+\subsection{Third cumulant ratio}
+Finite-vector norm monotonicity gives $r\leq q^{3/2}$, and $0<q\leq1$. With $x=\sqrt q$,
+\begin{equation}
+ S\geq3x^4-2x^3\geq-\frac1{16},
+\end{equation}
+since
+\begin{equation}
+ 3x^4-2x^3+\frac1{16}
+ =\frac{(2x-1)^2(12x^2+4x+1)}{16}\geq0.
+\end{equation}
+This argument holds for every positive stage-weight vector.
+
+\subsection{Fourth cumulant ratio}
+Cauchy--Schwarz gives $r^2\leq qh$. Set $y=r/q$, so $0<y\leq\sqrt q$. Equation~(\ref{eq:ratios}) implies
+\begin{equation}
+ K\geq15q^2-20qy+6y^2.
+ \label{eq:kquadratic}
+\end{equation}
+When $q\leq9/25$, completing the square gives
+\begin{equation}
+ K\geq-\frac53q^2\geq-\frac{27}{125}
+ >-\frac{1+\sqrt5}{10}.
+\end{equation}
+When $q\geq9/25$, the derivative of the right-hand side of Eq.~(\ref{eq:kquadratic}) with respect to $y$ is
+$12y-20q\leq12\sqrt q-20q\leq0$.
+Thus replacing $y$ by $\sqrt q$ gives a lower bound:
+\begin{equation}
+ K\geq f(x):=15x^4-20x^3+6x^2,\qquad \frac35\leq x\leq1.
+\end{equation}
+Let $p_*=(5+\sqrt5)/10$. The exact identity
+\begin{align}
+ f(x)+\frac{1+\sqrt5}{10}
+ &=(x-p_*)^2
+ \left[15x^2+(-5+3\sqrt5)x+\frac{\sqrt5-1}{2}\right]
+ \geq0
+\end{align}
+proves the second bound. The bracket coefficients are positive for $x\geq0$.
+The split at $q=9/25$ is necessary to justify the substitution in Eq.~(\ref{eq:kquadratic}).
+
+\section{Sharpness}
+Choose a time scale $k>0$ and directed rings ($w_i=0$ for all $i$). To approach the third-ratio bound take
+\begin{equation}
+ u_0=\frac{k}{N-1},\qquad u_i=k\quad(i>0).
+\end{equation}
+The normalized stage weights are $p_0=1/2$ and $p_i=1/[2(N-1)]$ for $i>0$. Hence $q\to1/4$, $r\to1/8$, and $S\to-1/16$.
+
+For the fourth-ratio bound take instead
+\begin{equation}
+ u_0=\frac{k(1-p_*)}{p_*(N-1)},\qquad u_i=k\quad(i>0).
+\end{equation}
+Then $p_0=p_*$ and $p_i=(1-p_*)/(N-1)$. As $N\to\infty$, $(q,r,h)\to(p_*^2,p_*^3,p_*^4)$, so $K\to f(p_*)=-(1+\sqrt5)/10$.
+The slow-rate prefactor is $(1-p_*)/p_*=(3-\sqrt5)/2$.
+These families agree with the earlier limiting construction \cite{Ptaszynski2022}. Every member has finite positive forward rates; sharpness does not assert equality or characterize the optimizer at a fixed finite $N$.
+
+\section{Checks and physical scope}
+The analytic argument establishes the inequalities for arbitrary finite ring size. Exact finite-case calculations support the transcription and counting conventions: the accompanying standard-library Python code compares backward absorption-moment inversion with normalized tilted-generator differentiation on all counted bonds of 16 rings at $N=3,4,6,8$. It includes directed rings, one or several irreversible bonds, and strong internal backward excursions; it makes 84 exact four-cumulant comparisons. It also checks the scalar polynomial identities in rational arithmetic and in $\mathbb Q(\sqrt5)$. These checks supplement the proof rather than extend its domain.
+
+The bounds constrain transport models containing an irreversible step even when the other steps have substantial backtracking. A measured long-time ratio below either bound excludes this class provided unit cycle counting, time-independent rates, and the single-ring topology apply. It does not identify which premise fails.
+An exactly irreversible bond corresponds to infinite cycle affinity under a local-detailed-balance interpretation. No finite-affinity entropy-production bound is claimed. Additional channels, finite-time ratios, time-dependent rates, and differently normalized observables require separate analyses. In particular, continuity from a zero reverse rate proves no bound throughout the strictly positive interior.
+
+\subsection*{Research tools and data availability}
+AI assistance through OpenAI Codex was used for literature comparison, analytic reasoning, code generation, exact calculation checks, and drafting. This writing session used a GPT-6-based agent; exact model versions for earlier sessions were not recorded and remain to be confirmed. The work was directed toward a fixed Markov-ring claim and checked using explicit algebra and separate exact generator and passage-time calculations, including a fresh AI-assisted local scientific audit. Such checks do not replace human scientific judgment. Human author review is pending for this local draft.
+The accompanying reproducibility files specify the deterministic test inputs, algorithms, environment, and execution instructions. There are no experimental data.
+
+\begin{acknowledgments}
+OpenAI Codex also assisted with manuscript organization and wording. The scope and accuracy of this disclosure require author confirmation before submission.
+\end{acknowledgments}
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
+\end{document}

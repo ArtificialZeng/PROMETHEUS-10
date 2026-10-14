@@ -1,0 +1,14 @@
+{
+  "proposer_job_id": "phys-00002-p04-research-ac1054825098",
+  "frozen_before_holdouts": true,
+  "energies": [0, 1, 2],
+  "bases": ["9/8", "8"],
+  "couplings_edge_order": ["0-1", "0-2", "1-2"],
+  "couplings": [["1/128", "1/4", "64"], ["1/128", "1/16", "128"]],
+  "rate_definition": "k^a_ij = g^a_ij b_a^(E_j-E_i), destination row i, departure column j",
+  "temperature_definition": "beta_a = 2 ln(b_a)/epsilon; k_B=1",
+  "target": "Exact negative long-time bath-0 fourth heat cumulant at this finite admissible model",
+  "discovery_file": "evidence/three-state-search.json",
+  "discovery_index": 143,
+  "fresh_referee_status": "not performed"
+}

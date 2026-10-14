@@ -1,0 +1,4 @@
+Exact calculation: Python standard library (fractions, itertools, json, math).
+Writing environment: Python 3.14.7; pdflatex and BibTeX on PATH.
+No third-party Python package required; no package installation performed.
+Reproduction conventions and command scope: reproducibility/README.md.

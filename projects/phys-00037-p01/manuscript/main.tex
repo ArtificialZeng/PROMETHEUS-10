@@ -1,0 +1,532 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\Ree}{\operatorname{Re}}
+\newcommand{\Imm}{\operatorname{Im}}
+\newcommand{\PhiB}{\Phi_{\boldsymbol b}}
+\newtheorem{theorem}{Theorem}
+\title{Second-order entropy stability of a three-mode\break fermionic product channel}
+\author{Xiaojian Zeng\\[2pt]
+\small PBC School of Finance, Tsinghua University\\
+\small Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The minimum output entropy of a fermionic product channel is known over
+generalized Gaussian inputs, but this restricted optimization does not control
+arbitrary non-Gaussian perturbations. We study the complete three-mode channel
+on the eight-dimensional qubit Hilbert space, including odd Majorana monomials
+and parity-coherent inputs. For every ordered attenuation vector
+$0\le b_6\le\cdots\le b_1<1$, we prove that the known generalized Gaussian
+optimizer $\ket{+++}$ is stationary in all complex pure-state directions and
+has a positive-semidefinite real entropy Hessian. Its twelve-dimensional
+Gaussian tangent decouples from the two-dimensional non-Gaussian normal
+space. In the normalized chart with normal vector $\ket{-+-}$, the two
+normal curvatures obey
+$H_{\Imm}\ge H_{\Ree}\ge 2b_1^2(1-b_1^2)^4/(65\ln 2)$,
+and are strictly positive when $b_1>0$. The proof combines a logarithmic
+resolvent reduction with a complete exact rational Bernstein certificate
+for four polynomials on an ordered parameter chamber. The certificate and
+two algebraically distinct replay implementations are supplied. Zero and
+repeated smaller attenuations are included. This result excludes a quadratic
+non-Gaussian entropy descent mechanism at the Gaussian encoder; it does not
+establish a global minimum, higher-mode stability, or nonlinear local
+minimality along Gaussian zero modes. The rank-singular face $b_1=1$ is
+outside the differentiability domain considered here.
+\end{abstract}
+\noindent\textbf{Keywords:} quantum channel; minimum output entropy; Majorana
+attenuation; generalized Gaussian state; exact polynomial certificate
+
+\section{Introduction}
+Fermionic product channels provide a finite-dimensional family in which
+noise acts multiplicatively on a complete Majorana operator basis.
+Bravyi introduced these channels, determined their minimum output entropy
+over generalized Gaussian inputs, and proved unrestricted optimality for
+at most two modes~\cite{Bravyi2005}. For three and four modes, numerical
+iterations supported the same global formula. The Gaussian optimization
+and finite numerical evidence leave a distinct local question: can a
+non-Gaussian perturbation lower the output entropy to quadratic order at
+the proposed encoder?
+
+We answer this local question for every ordered attenuation vector in the
+three-mode chamber with a full-rank reference output. At the encoder
+$g=\ket{+++}$, there are fourteen real projective pure-state directions.
+Twelve are tangent to the generalized Gaussian orbit; the two remaining
+directions are represented by $\chi=\ket{-+-}$ and $\ii\chi$.
+The full entropy gradient vanishes, these two sectors have no mixed
+Hessian entries, and both normal curvatures have an explicit positive
+lower bound whenever the channel is not completely depolarizing.
+The known Gaussian optimum then supplies the nonnegative tangent block.
+
+The central step is a model-specific sign certificate. We reduce the
+real normal curvature to an integral whose numerator is cubic in a
+resolvent variable. Each of its four coefficients has a complete rational
+Bernstein expansion with nonnegative entries on a five-dimensional ratio
+cube. A positive coefficient slice gives strictness and a conservative
+quantitative bound. The calculation uses exact integers and rationals,
+without fitting, sampling, or a noise-parameter expansion.
+
+Several nearby results concern different quantities. Completely bounded
+output entropy and entanglement-assisted capacity for radial fermion
+multipliers~\cite{Arhancet2024} do not identify this ordinary output-entropy
+Hessian. The Fourier-multiplier transference results
+in~\cite{Arhancet2020} also require their stated algebraic hypotheses.
+Parity-constrained fermionic channel optimizations and composition
+in~\cite{Salek2026} use a different input domain. Standard local-additivity
+methods~\cite{RuskaiYard2023} provide useful entropy derivatives but
+do not supply an optimizer for this channel. Our contribution is the
+continuous-parameter three-mode second variation and its exact certificate.
+
+\section{Channel, input domain, and statement}
+\subsection{The complete attenuation map}
+On $\mathcal H=(\mathbb C^2)^{\otimes3}$, with the first qubit most
+significant in the computational basis, define
+\begin{equation}
+ c_{2j-1}=Z_1\cdots Z_{j-1}X_j,\qquad
+ c_{2j}=Z_1\cdots Z_{j-1}Y_j,\qquad j=1,2,3.
+ \label{eq:JW}
+\end{equation}
+These Hermitian Majoranas satisfy
+$\{c_p,c_q\}=2\delta_{pq}I$. For $x\in\{0,1\}^6$, let
+$c(x)=c_1^{x_1}\cdots c_6^{x_6}$, with factors in increasing order.
+The channel is defined on all of $M_8$ by
+\begin{equation}
+ \PhiB(c(x))=\left(\prod_{p:x_p=1}b_p\right)c(x),
+ \qquad \PhiB(I)=I .\label{eq:channel}
+\end{equation}
+In particular, the definition retains odd and higher-order monomials;
+it is not merely an action on a covariance matrix.
+
+For $0\le b_p\le1$, complete positivity and trace preservation follow
+from Bravyi's factor representation~\cite[Eqs.~(9)--(10)]{Bravyi2005}:
+\begin{equation}
+ P=(-\ii)^3c_1\cdots c_6=Z_1Z_2Z_3,
+ \quad K_p=\ii P c_p,
+ \quad \Phi_p(\rho)=\frac{(1+b_p)\rho+(1-b_p)K_p\rho K_p}{2}.
+ \label{eq:CP}
+\end{equation}
+Each $K_p$ is a Hermitian unitary; conjugation by $K_p$ changes only
+the sign of $c_p$. Thus the commuting factor superoperators compose
+to~\eqref{eq:channel}. The name ``product'' refers to these factors,
+which are not independent channels on the three physical qubits.
+
+The optimization admits every qubit density matrix, including complex
+pure states with parity coherence. No definite-parity restriction is
+imposed. This is the encoded spin/qubit problem of~\cite{Bravyi2005};
+it does not assert an operational preparation or communication rate
+for isolated fermions subject to parity superselection.
+Attenuations and state coordinates are dimensionless. We use
+$S(\rho)=-\Tr\rho\log_2\rho$, so entropy and its coordinate curvature
+are in bits. There is no Hamiltonian, boundary condition, thermal scale,
+continuum limit, or perturbative dynamical approximation in this model.
+
+\subsection{Gaussian optimum and the pure-state chart}
+``Generalized Gaussian'' follows Definition~1 of~\cite{Bravyi2005}:
+the allowed unitary generators include Hermitian linear and quadratic
+Majorana combinations, rather than quadratic terms alone. Write
+\begin{equation}
+ (a,b,c,d,e,f)=(b_1,b_2,b_3,b_4,b_5,b_6),\qquad
+ 0\le f\le e\le d\le c\le b\le a<1.\label{eq:chamber}
+\end{equation}
+The pure input
+\begin{equation}
+ \ket g=\ket{+++},\qquad
+ \ket\pm=(\ket0\pm\ket1)/\sqrt2,\label{eq:g}
+\end{equation}
+is the state in Bravyi's Eq.~(36). Indeed its three commuting
+stabilizers can be written $c_1=X_1$,
+$-\ii c_2c_3=X_1X_2$, and $-\ii c_4c_5=X_2X_3$.
+The source Gaussian optimization gives
+\begin{equation}
+ S(\PhiB(\ket g\bra g))=
+ h_2\!\left(\frac{1+a}{2}\right)+
+ h_2\!\left(\frac{1+bc}{2}\right)+
+ h_2\!\left(\frac{1+de}{2}\right),\label{eq:known}
+\end{equation}
+where $h_2(u)=-u\log_2u-(1-u)\log_2(1-u)$.
+This is the known minimum over generalized Gaussian inputs.
+Equality with the unrestricted global minimum is not assumed.
+
+Let $\ket{s(q)}$, $q=0,\ldots,7$, be the orthonormal $X$ basis,
+where the binary digits of $q$ specify minus signs and $\ket{s(0)}=g$.
+A projective chart at $g$ is
+\begin{equation}
+ \ket{\psi(w)}=
+ \frac{\ket g+\sum_{q=1}^7w_q\ket{s(q)}}
+ {\sqrt{1+\sum_{q=1}^7|w_q|^2}},\qquad w_q=u_q+\ii v_q.
+ \label{eq:chart}
+\end{equation}
+The Hessian below uses the fourteen real coordinates $u_q,v_q$;
+their tangent vectors have unit Hilbert norm. Define
+$\mathcal F(w)=S(\PhiB(\ket{\psi(w)}\bra{\psi(w)}))$.
+Its Gaussian tangent is understood as a real subspace of this
+projective tangent, with inner product $\Ree\langle v,w\rangle$.
+
+\begin{theorem}[Three-mode second variation]\label{thm:main}
+For every attenuation vector in~\eqref{eq:chamber},
+$\nabla\mathcal F(0)=0$ and $\nabla^2\mathcal F(0)$ is positive
+semidefinite. The twelve-dimensional generalized Gaussian tangent
+and its normal space
+\begin{equation}
+ \mathcal N=\operatorname{span}_{\mathbb R}
+ \{\ket\chi,\ii\ket\chi\},\qquad \ket\chi=\ket{-+-},
+ \label{eq:normal}
+\end{equation}
+have zero mixed Hessian block. In the normal chart
+$\psi(z)=(g+z\chi)/\sqrt{1+|z|^2}$, the real and imaginary
+coordinate directions diagonalize that block and satisfy
+\begin{equation}
+ H_{\Imm}\ge H_{\Ree}\ge
+ \frac{2a^2(1-a^2)^4}{65\ln2}.\label{eq:bound}
+\end{equation}
+For $a>0$ both normal curvatures are strictly positive. At $a=0$
+the complete channel is depolarizing and the full Hessian is zero.
+\end{theorem}
+
+Here $H_{\Ree}=\partial_x^2\mathcal F(z)|_{z=0}$ for $z=x+\ii y$,
+and similarly for $H_{\Imm}$. Repeated and zero smaller attenuations
+belong to the theorem. The face $a=1$ is excluded because the
+reference output can be rank deficient. Positive-semidefinite curvature
+does not imply nonlinear local minimality along zero-curvature
+Gaussian directions.
+
+\section{Stationarity and the normal Hessian}
+\subsection{Output spectrum and coherence}
+For an $X$-basis sign triple $s=(s_1,s_2,s_3)$, introduce the bijection
+\begin{equation}
+ t=(s_1,s_1s_2,s_2s_3),\qquad r=(a,bc,de).
+\end{equation}
+The reference output is diagonal in this basis, with eigenvalues
+\begin{equation}
+ \lambda(t)=\frac18(1+at_1)(1+bct_2)(1+det_3).
+ \label{eq:lambda}
+\end{equation}
+All are strictly positive under~\eqref{eq:chamber}, even when smaller
+attenuations vanish or coincide. The normal input output
+$\PhiB(\ket\chi\bra\chi)$ is diagonal with eigenvalues $\lambda(-t)$.
+The corresponding index pairing flips the first and third $X$ signs,
+and therefore changes $t$ to $-t$.
+
+For $E=\ket\chi\bra g$, the only nonzero entries of $\PhiB(E)$
+join those paired basis vectors. With $s(t)$ the inverse sign map,
+\begin{equation}
+ A(t):=\bra{s(-t)}\PhiB(E)\ket{s(t)}
+ =\frac{t_3 f}{8}(a+t_1)(b+t_2c)(d+t_3e).
+ \label{eq:A}
+\end{equation}
+Equations~\eqref{eq:lambda}--\eqref{eq:A} follow by expanding
+the three input matrices in the complete Majorana basis, or by
+applying the six CP factors~\eqref{eq:CP}. Both constructions
+are reproduced exactly in Online Resource~1, including all 192
+matrix entries rather than only the covariance data.
+
+\subsection{Selection rules and tangent splitting}
+Every ordered Majorana monomial is a Pauli string up to a scalar
+phase. Hence~\eqref{eq:channel} is diagonal on the Pauli basis.
+A Pauli string in the $X$ basis has a fixed binary flip pattern:
+its nonzero matrix entries satisfy $p\mathbin{\oplus}q=h$.
+For each $h$, the Pauli strings of that pattern span the matrices
+with that support. The channel therefore preserves each flip pattern.
+
+The first density variation in any direction $\ket{s(q)}$, $q\ne0$,
+has pattern $q$ and no output diagonal. Since the reference
+log-output is diagonal, every first entropy derivative vanishes.
+For distinct patterns, the first variations are orthogonal in the
+logarithmic derivative bilinear form. Their mixed second density
+variation has the nonzero pattern $p\mathbin{\oplus}q$ and
+thus zero pairing with the diagonal log-output. The Hessian
+has no entries mixing distinct flip patterns.
+
+The projective vectors obtained by acting with
+$\ii c_p$ and $\ii(\ii c_pc_q)$ on $g$, deleting the component
+along $g$, give both real directions for the six patterns
+\begin{equation}
+ \{001,010,011,100,110,111\}.\label{eq:patterns}
+\end{equation}
+They have real rank twelve and no component with pattern $101$.
+This is a finite calculation with the six linear and fifteen quadratic
+generators in~\eqref{eq:JW}; the supplement checks the rank exactly.
+These generators close to the generalized Gaussian Lie algebra.
+Thus~\eqref{eq:patterns} is its tangent and $101$, namely $\chi$,
+is its complex orthogonal complement. The flip selection rule proves
+the Gaussian--normal mixed block is zero for every attenuation vector.
+
+\subsection{Entropy derivative in the normalized chart}
+For $x,y>0$ define the logarithmic divided difference
+\begin{equation}
+ L(x,y)=\begin{cases}
+ (\ln x-\ln y)/(x-y),&x\ne y,\\
+ 1/x,&x=y,
+ \end{cases}
+ \quad
+ L(x,y)=\int_0^\infty\frac{\dd v}{(v+x)(v+y)}.
+ \label{eq:L}
+\end{equation}
+The continuous value is essential when output eigenvalues coincide.
+For a trace-preserving twice-differentiable density path $\sigma(\epsilon)$
+through a positive diagonal $\sigma_0$ with eigenvalues $\lambda_i$,
+\begin{equation}
+ \frac{\dd^2S}{\dd\epsilon^2}\bigg|_0
+ =-\frac1{\ln2}\left[
+ \Tr\sigma''(0)\ln\sigma_0+
+ \sum_{i,j}|\sigma'(0)_{ij}|^2 L(\lambda_i,\lambda_j)
+ \right].\label{eq:entropyderivative}
+\end{equation}
+This standard resolvent derivative is also used in local
+entropy analysis~\cite[Sec.~3]{RuskaiYard2023}.
+
+For either real normal coordinate, the second density variation is
+\begin{equation}
+ \sigma''(0)=2\big[
+ \PhiB(\ket\chi\bra\chi)-\PhiB(\ket g\bra g)\big].
+ \label{eq:normalization}
+\end{equation}
+It must be retained: differentiating the coherence alone would give
+the wrong sign problem. Combining~\eqref{eq:entropyderivative} with
+the paired diagonal entries gives
+\begin{align}
+ H_{\Ree}&=\frac1{\ln2}\sum_t
+ \left\{[\lambda(t)-\lambda(-t)]^2
+        -[A(t)+A(-t)]^2\right\}L(\lambda(t),\lambda(-t)),
+ \label{eq:Hreal}\\
+ H_{\Imm}&=\frac1{\ln2}\sum_t
+ \left\{[\lambda(t)-\lambda(-t)]^2
+        -[A(t)-A(-t)]^2\right\}L(\lambda(t),\lambda(-t)).
+ \label{eq:Himag}
+\end{align}
+The sums run over all eight sign triples and count both members of
+each pair. Real and imaginary first variations have real and purely
+imaginary matrix entries, respectively, so their mixed entry vanishes.
+Moreover,
+\begin{equation}
+ A(t)A(-t)=\frac{f^2(1-a^2)(b^2-c^2)(d^2-e^2)}{64}\ge0.
+ \label{eq:phase}
+\end{equation}
+It follows directly that $H_{\Imm}\ge H_{\Ree}$. Repeated pairs
+may make the two curvatures equal; their positivity will follow
+without division by a parameter difference.
+
+\section{Exact positivity over the ordered chamber}
+\subsection{Four resolvent coefficients}
+Set $r=bc$ and $s=de$ in this section. Represent the four unordered
+pairs by $t_1=1$, $t_2,t_3\in\{1,-1\}$, indexed by $i$. Define
+\begin{align}
+ W_i&=1+art_2+ast_3+rst_2t_3,\\
+ D_i&=a+rt_2+st_3+arst_2t_3,\\
+ V_i&=bd+cet_2t_3+a(cdt_2+bet_3).\label{eq:WDV}
+\end{align}
+For the corresponding pair,
+$\lambda+\lambda'=W_i/4$,
+$\lambda-\lambda'=D_i/4$, and
+$A+A'=t_3 fV_i/4$. In particular $W_i>0$ and
+\begin{equation}
+ G=\lambda(t)\lambda(-t)
+ =\frac{(1-a^2)(1-r^2)(1-s^2)}{64}>0
+ \label{eq:G}
+\end{equation}
+is independent of the pair. For $v\ge0$, put
+\begin{equation}
+ q=v^2+G,\qquad z=\frac{v}{4q}.
+\end{equation}
+Using~\eqref{eq:L} in~\eqref{eq:Hreal} and combining the four
+fractions yields
+\begin{equation}
+ H_{\Ree}=\frac1{8\ln2}\int_0^\infty
+ \frac{N(z)}{q\prod_{i=1}^4(1+zW_i)}\,\dd v,\qquad
+ N(z)=\sum_{i=1}^4(D_i^2-f^2V_i^2)
+                \prod_{j\ne i}(1+zW_j).
+ \label{eq:resolvent}
+\end{equation}
+The numerator has degree at most three in $z$.
+The coefficient $N_k$ of $z^k$ has derivative in $f^2$ equal to
+\begin{equation}
+ \frac{\partial N_k}{\partial(f^2)}
+ =-\sum_i V_i^2 e_k(W_1,\ldots,\widehat W_i,\ldots,W_4)\le0,
+ \label{eq:monotone}
+\end{equation}
+where $e_k$ is the elementary symmetric polynomial and $e_0=1$.
+All its arguments are positive. Since $f\le e$, it suffices to
+certify every coefficient at $f=e$.
+
+\subsection{The complete rational certificate}
+The sign summation in~\eqref{eq:resolvent} makes every attenuation
+exponent even, as can be verified by direct expansion.
+At $f=e$, put $A=a^2$, $B=b^2$, $C=c^2$, $D=d^2$, and $E=e^2$.
+Map the ordered chamber to a cube by
+\begin{equation}
+ A=x_0,\quad B=x_0x_1,\quad C=x_0x_1x_2,\quad
+ D=x_0x_1x_2x_3,\quad E=x_0x_1x_2x_3x_4,
+ \quad 0\le x_j\le1.\label{eq:ratios}
+\end{equation}
+This covers the zero faces: if a preceding parameter is zero, all
+following parameters are zero and their remaining ratios may be
+chosen as zero. No division by a vanishing attenuation is required.
+
+Let $P_k(x)$ denote $N_k$ after this substitution. With
+$B_i^n(x)=\binom ni x^i(1-x)^{n-i}$, its tensor expansion is
+\begin{equation}
+ P_k(x)=\sum_{\boldsymbol i}\beta^{(k)}_{\boldsymbol i}
+                  \prod_{j=0}^4 B_{i_j}^{n_j^{(k)}}(x_j).
+ \label{eq:Bernstein}
+\end{equation}
+If $p_{\boldsymbol m}$ are the exact power coefficients, the values
+are computed by the finite identity
+\begin{equation}
+ \beta_{\boldsymbol i}^{(k)}
+ =\sum_{\boldsymbol m\le\boldsymbol i}p_{\boldsymbol m}
+    \prod_{j=0}^4\frac{\binom{i_j}{m_j}}{\binom{n_j^{(k)}}{m_j}}.
+ \label{eq:basisconvert}
+\end{equation}
+Table~\ref{tab:certificate} gives the derived finite degrees,
+complete coefficient counts, common positive denominators, and
+numbers of zero entries. Every other entry is strictly positive.
+\begin{table}[tb]
+\centering
+\caption{Complete exact tensor Bernstein witness for the four
+coefficients of the real-normal resolvent numerator at $f=e$.
+Entries are stored as integer numerators divided by the indicated
+common denominator. All 37,320 entries are nonnegative; degrees
+are derived from expanded polynomials, rather than inferred from samples.}
+\label{tab:certificate}
+\begin{tabular}{@{}ccrrr@{}}
+\toprule
+$k$ & $(n_0,n_1,n_2,n_3,n_4)$ & Entries & Denominator & Zeros\\
+\midrule
+0 & $(5,4,3,2,2)$    & 1,080  & 1,440         & 181\\
+1 & $(6,5,4,3,2)$    & 2,520  & 43,200        & 366\\
+2 & $(9,8,6,4,3)$    & 12,600 & 152,409,600   & 1,295\\
+3 & $(10,9,7,5,3)$   & 21,120 & 2,000,376,000 & 2,066\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Online Resource~1 supplies the entire witness, the exact polynomial
+generator, the forward basis conversion, and two replay implementations.
+One rebuilds the full Majorana monomial channel and uses separate
+sparse integer polynomial convolution followed by inverse finite
+differences. On each axis the inverse identity is
+$p_j=\binom nj\Delta^j\beta_0$; applying it successively verifies
+every multivariate power coefficient. The other builds the CP-factor
+channel directly, extracts the four summands from its matrix entries,
+and recomputes every Bernstein value using rational arithmetic before
+comparison. The matrix entries, real tangent rank, flip-support
+selection rules, and known one-/two-mode spectra are checked as well.
+No polynomial cache is used by either replay to establish the witness
+identity. The supplied certificate is an exact finite algebraic witness,
+not a numerical scan or a fitted reconstruction.
+
+\subsection{Strictness and the quantitative bound}
+For $k=0$, every coefficient with $i_0=1$ in~\eqref{eq:Bernstein}
+equals $4/5$, independent of the other four indices. Nonnegativity
+of all other entries and partition of unity in the remaining axes give
+\begin{equation}
+ P_0(x)\ge\frac45 B_1^5(A)=4A(1-A)^4.
+ \label{eq:slice}
+\end{equation}
+The other $P_k$ are nonnegative on the cube. By~\eqref{eq:monotone},
+the original $f\le e$ numerator satisfies
+\begin{equation}
+ N(z)\ge4a^2(1-a^2)^4\qquad (z\ge0).
+\end{equation}
+The positive denominator in~\eqref{eq:resolvent} proves strict
+real-normal positivity when $0<a<1$.
+
+To obtain an explicit constant, restrict the integral to $v\ge1$.
+From $G\le1/64$, $W_i\le4$, and $z\le1/(4v)$,
+\begin{equation}
+ q\prod_i(1+zW_i)
+ \le\frac{65}{64}v^2(1+1/v)^4
+ \le\frac{65}{4}v^2.
+\end{equation}
+Substitution in~\eqref{eq:resolvent} and
+$\int_1^\infty v^{-2}\dd v=1$ yield
+$H_{\Ree}\ge2a^2(1-a^2)^4/(65\ln2)$.
+Together with~\eqref{eq:phase}, this proves~\eqref{eq:bound}.
+The bound is deliberately conservative; it is uniform in all five
+smaller attenuations, including their degeneracies.
+
+\section{Completion of the full Hessian and interpretation}
+Bravyi's Gaussian minimum~\cite[Theorem~1 and Eq.~(34)]{Bravyi2005}
+makes the restricted Hessian on the Gaussian orbit nonnegative.
+For a curved path on that orbit, its acceleration would contribute
+the full gradient paired with the path's second tangent derivative.
+The full gradient is zero, so the restricted Hessian equals the
+restriction of the projective Hessian~\eqref{eq:chart}.
+The twelve tangent directions and the two normal directions exhaust
+the real projective tangent. Their mixed block vanishes, and the
+normal block is nonnegative by the certificate. This proves the
+full positive-semidefinite statement in Theorem~\ref{thm:main}.
+If $a=0$, ordering forces every attenuation to be zero; the channel
+sends all density matrices to $I/8$ and every derivative vanishes.
+
+The calculation controls a concrete failure mechanism for the source
+global conjecture. A negative non-Gaussian Hessian direction at $g$
+would immediately lower its output entropy to quadratic order.
+Theorem~\ref{thm:main} excludes that route throughout~\eqref{eq:chamber}.
+It also supplies an exact diagnostic for an entropy optimizer: a
+negative normal curvature at this encoder in the stated chart
+signals an implementation or convention error, rather than a
+counterexample. The normalization term~\eqref{eq:normalization}
+and the repeated-eigenvalue limit in~\eqref{eq:L} are particularly
+relevant to that diagnostic.
+
+For the unrestricted covariant qubit channel, Bravyi's known
+single-use Holevo relation is $C_1=3-S_{\min}$~\cite{Bravyi2005}.
+The local obstruction constrains quadratic improvements of the
+Gaussian encoder in that optimization, but establishes no new value
+of $S_{\min}$ or $C_1$. It also gives no regularized classical,
+quantum, private, entanglement-assisted, or parity-constrained rate.
+
+The remaining limitations are substantial. A positive-semidefinite
+Hessian may have flat Gaussian directions, for which higher input-state
+orders can matter. We have neither controlled those orders nor excluded
+distant non-Gaussian minima. The theorem is for three modes, not every
+finite mode number, and does not extend entropy differentiability to
+the singular face $a=1$. The unrestricted all-mode global formula
+is therefore left unresolved by this work. No priority is claimed
+for generalized Gaussian structure, the logarithmic resolvent, or the
+Bernstein basis; the result is their exact model-specific application
+to the two transverse entropy curvatures.
+
+\section*{Statements and declarations}
+\paragraph{Computational material.}
+Online Resource~1 is the accompanying source supplement containing
+\texttt{certificate.json}, its generating programs, exact replay
+programs, pinned environment requirements, and reproduction instructions.
+The complete sign argument uses exact integer and rational arithmetic;
+the included floating Hessian checks are supplementary diagnostics.
+No external dataset is required. The original channel is specified
+by~\eqref{eq:JW}--\eqref{eq:CP} and attributed to~\cite{Bravyi2005}.
+
+\paragraph{Artificial intelligence disclosure.}
+OpenAI Codex was used to propose and develop the analytic reduction,
+generate the computational code, execute exact checks, screen literature,
+and draft the manuscript. A separate Codex session performed an internal
+scientific audit of the result. These uses extend beyond copy editing.
+The internal audit is neither external peer review nor human verification.
+Human scientific verification, authorship confirmation, and assessment
+of the publisher's AI policy remain pending for this local draft.
+
+\paragraph{Author contributions, funding, and competing interests.}
+The draft author details are supplied for subsequent confirmation.
+An accountable human contribution statement, funding declaration, and
+financial and nonfinancial competing-interest declaration have not yet
+been confirmed; no absence of funding or interests is inferred.
+
+\clearpage
+\bibliographystyle{unsrtnat}
+\bibliography{manuscript/references}
+\end{document}

@@ -1,0 +1,22 @@
+{
+  "job_id": "phys-00004-p08-research-2ff1f8ac82b0",
+  "target": "Conjecture 8.9 of arXiv:2003.14335v4, every epsilon > 0",
+  "parameter_family": "integer m >= 4; h=atan(1/sqrt(m))/pi; a=1/2; b=2*h; double every edge at unchanged length",
+  "predicted_wave_number": "atan(1/sqrt(2*m+1))/h",
+  "predicted_mu2": "predicted_wave_number squared, simple",
+  "predicted_extrema": "all m positive and all m negative fan leaf vertices, no other points",
+  "predicted_extrema_diameter": "6*h",
+  "predicted_metric_diameter": "1",
+  "added_spectrum": "one complete DD interval spectrum (n*pi/L_e)^2 for every original edge, n >= 1",
+  "full_matching_m": [4, 5, 8],
+  "scalar_m": [4, 5, 8, 32, 256, 10000],
+  "epsilon_checks": [2, 1, 0.9, 0.1, 0.01, 0.0001],
+  "diameter_lp_m": 4,
+  "diagnostic_tolerances": {
+    "wave_number_comparison": 1e-11,
+    "double_matrix_residual": 1e-11,
+    "sample_nullity_threshold": 1e-10,
+    "metric_lp_tolerance": 1e-9
+  },
+  "diagnostic_limitations": "Binary floating point roots, SVD and LP outputs are implementation diagnostics, not directed enclosures or proofs. The exact universal argument is in research-pass1-proof.md. Same worker, no fresh referee independence."
+}

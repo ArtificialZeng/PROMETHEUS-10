@@ -1,0 +1,285 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\title{Uniform indexed spectral bounds near the five-photon resonance of the quantum Rabi model}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give explicit bounds for the exact unbiased quantum Rabi operator near a known five-photon avoided crossing. For dimensionless coupling $0<G\leq 1/10$ and detuning
+$d=5/2-(5/4)G^2+cG^4$, $|c|\leq1$, the third sorted plus-parity eigenvalue satisfies $e_2^+<5/2-G^2$. On the fourth-order tuned curve $c=-5/64$, the third and fourth eigenvalues lie within $G^6/3$ of $5/2-G^2\mp\sqrt{120}\,G^5/64$, respectively. A finite trial-space determinant proves the first bound. An infinite-tail estimate, an energy-dependent two-state Schur complement and inertia identify the two full-operator levels and control the remainder uniformly. The fifth-order coupling is already known; the contribution is an explicit finite-range error and index certificate. These results do not resolve the universal spectral inequalities for all levels and parameters.
+\end{abstract}
+
+\section{Model and relation to prior results}
+With $\hbar=1$, consider
+\begin{equation}\label{eq:HR}
+H_R=\omega a^\dagger a+g\sigma_x(a+a^\dagger)+\Delta\sigma_z,
+\qquad \omega>0,\quad g\geq0,\quad\Delta\in\R .
+\end{equation}
+The Hilbert space is $\ell^2(\N_0)\otimes\mathbb C^2$. We use the self-adjoint closure on $D(a^\dagger a)$ of the finite-Fock core, with the vacuum lower boundary and square summability at infinity. The field term is infinitesimally number-operator relative bounded. This realization has compact resolvent and is bounded below. Its parity $\Pi=\sigma_z(-1)^{a^\dagger a}$ gives two Jacobi blocks. In units
+\[
+G=g/\omega,\qquad d=\Delta/\omega,\qquad e_n^s=E_n^s/\omega,
+\]
+their diagonal and adjacent entries are
+\begin{equation}\label{eq:jacobi}
+(h_s)_{nn}=n+s(-1)^n d,\qquad
+(h_s)_{n,n+1}=G\sqrt{n+1},\qquad s=\pm1 .
+\end{equation}
+Eigenvalues are increasingly sorted, counted with multiplicity and indexed from zero. Fock labels are not eigenvalue indices. Reversing $d$ exchanges parity. At $d=0$, completing the oscillator square yields one ladder $e_n^s=n-G^2$ in each block.
+
+Lanuza \cite{Lanuza} formulates three global spectral inequalities, including $e_n^s\leq n+1/2-G^2$. The small-splitting Weyl estimate covers $|d|\leq1/2$, and a variational argument covers the ground level at arbitrary splitting. We address only $n=2$ in one parity near $d=5/2$. The universal opposite-parity and spacing questions remain unresolved by this work. The finite-window result of Malagutti and Parmeggiani \cite{Malagutti} is a small-atomic-gap statement, even when the coupling is unrestricted; its regime differs from ours.
+
+The five-photon mechanism and leading coupling $\sqrt{5!}\,G^5/64$ are established in the Hermitian limit of the multiphoton calculation of de Paula, Costa and Dodonov \cite{Paula}. We do not claim a new resonance or coefficient. Rigorous Jacobi perturbation series and resonance error estimates are also established methodology \cite{Charif}. The double-eigenvalue theorem there assumes adjacent degenerate Jacobi sites with a nonzero first-order splitting. Here the degenerate sites are $0$ and $5$, with vanishing direct and first-order splitting. The contribution below is the stated uniform range, explicit remainder and sorted full-operator indices. Our comparison of these sources does not establish exhaustive priority.
+
+\section{Results}
+Write $\kappa=\sqrt{120}/64$. All ensuing proofs use $\omega=1$, and retain $G$ as the dimensionless coupling.
+\begin{theorem}[A resonance-window ceiling]\label{thm:A}
+For every $0<G\leq1/10$ and $-1\leq c\leq1$, if
+\begin{equation}\label{eq:window}
+d=\frac52-\frac54G^2+cG^4,
+\end{equation}
+then the full plus-parity operator satisfies
+\[
+e_2^+<\frac52-G^2.
+\]
+\end{theorem}
+\begin{theorem}[Two indexed enclosures]\label{thm:B}
+For $0<G\leq1/10$ on the curve
+\begin{equation}\label{eq:tuned}
+d=\frac52-\frac54G^2-\frac5{64}G^4,
+\qquad x=\frac52-G^2,
+\end{equation}
+the exact full-operator eigenvalues satisfy
+\begin{align}
+\abs{e_2^+-(x-\kappa G^5)}&\leq G^6/3,\label{eq:lower}\\
+\abs{e_3^+-(x+\kappa G^5)}&\leq G^6/3.\label{eq:upper}
+\end{align}
+\end{theorem}
+The curve \eqref{eq:tuned} is tuned through fourth order. It is not asserted to be the exact stationary or minimum-gap curve. At $G=0$ the relevant diagonal levels coincide; the strict inequality becomes equality.
+
+\section{A finite trial space proves the ceiling}
+Set $t=G^2$, $u=c+5/64$ and $q_n=n+(-1)^n d-x$. Let $A_8$ be the compression of $h_+-x$ to Fock sites $0,\ldots,7$. Its determinant is generated exactly by
+\begin{equation}\label{eq:continuant}
+D_0=1,\quad D_1=q_0,\quad
+D_{m+1}=q_mD_m-mtD_{m-1}\quad(1\leq m\leq7).
+\end{equation}
+Direct rational polynomial arithmetic gives
+\begin{equation}\label{eq:poly}
+D_8=t^4P(t,u),\qquad
+P(t,u)=-768u^2+
+t\left(-\frac{45}2+119u+320u^2\right)+O(t^2).
+\end{equation}
+Here $P$ is the finite polynomial defined by \eqref{eq:continuant}, not an asymptotic replacement. The following coefficient estimates include every higher term.
+
+Write $P=\sum p_{jk}u^jt^k$, $T=1/100$, $U=69/64$, and define
+\begin{align}
+A&=768-\!\!\sum_{\substack{j\geq2\\(j,k)\ne(2,0)}}\abs{p_{jk}}T^kU^{j-2},\nonumber\\
+B&=\sum_k\abs{p_{1k}}T^{k-1},\qquad
+C=\frac{45}2-\sum_{k\geq2}\abs{p_{0k}}T^{k-1}.\label{eq:ABC}
+\end{align}
+There are no other terms at $t^0$, and $p_{1,0}=0$. Expanding \eqref{eq:continuant} yields 73 nonzero coefficients. Exact values of the three sums are supplied in Appendix~\ref{app:arithmetic}; in particular
+$A>764$, $B<120$, $C>22$. Thus for $0<t\leq T$, $|u|\leq U$,
+\begin{equation}\label{eq:negative}
+P(t,u)\leq-764u^2+120t|u|-22t
+\leq \frac{120^2}{4\cdot764}t^2-22t<0 .
+\end{equation}
+The original $c$ interval is contained in this $u$ interval.
+
+Since $\det A_8<0$, its negative inertia is odd and it has no zero eigenvalue. Sites $1$ and $3$ span a strictly negative coordinate subspace:
+\[
+q_1=-4+\frac94t-ct^2<0,\qquad
+q_3=-2+\frac94t-ct^2<0.
+\]
+There is no direct matrix edge between these sites. Hence the negative inertia is at least two, and being odd it is at least three. The three-dimensional negative spectral subspace of $A_8$ is a legal finite-Fock trial subspace for the infinite operator. Min-max gives $e_2^+<x$, proving Theorem~\ref{thm:A}. This argument needs no finite-cutoff approximation to the full spectrum.
+
+\section{Two-state reduction with an infinite complement}
+\subsection{Exact middle matrix and tail bounds}
+Use \eqref{eq:tuned}. Let $P_0$ project on sites $0$ and $5$ and $Q=I-P_0$. The complement consists of a four-site middle matrix $M$ on sites $1,\ldots,4$ and a tail $T_6$ on sites $6,7,\ldots$. Whenever $Qh_+Q-E$ is invertible, define
+\begin{equation}\label{eq:F}
+F(E)=P_0h_+P_0-EI
+-P_0h_+Q(Qh_+Q-E)^{-1}Qh_+P_0 .
+\end{equation}
+At $E=x$, put $R=(M-x)^{-1}$ and
+$r_6=\langle6|(T_6-x)^{-1}|6\rangle$. Then
+\begin{align}
+a=F_{00}(x)&=d-x-tR_{11},\nonumber\\
+b=F_{55}(x)&=5-d-x-5tR_{44}-6tr_6,\label{eq:Fab}\\
+F_{05}(x)&=\frac{\sqrt{120}\,G^5}{\det(M-x)}.\nonumber
+\end{align}
+Indeed $R_{14}=-\sqrt{24}\,G^3/\det(M-x)$; the minus sign in \eqref{eq:F} gives the displayed positive off-diagonal. A phase change of site $5$ changes this sign without changing eigenvalues.
+
+Middle endpoint inverses have exact rational recursions:
+\begin{align*}
+r_4^{M}&=q_4^{-1},&
+r_n^{M}&=[q_n-(n+1)tr_{n+1}^{M}]^{-1}\quad(n=3,2,1),\\
+\ell_1^{M}&=q_1^{-1},&
+\ell_n^{M}&=[q_n-nt\ell_{n-1}^{M}]^{-1}\quad(n=2,3,4).
+\end{align*}
+Thus $R_{11}=r_1^M$, $R_{44}=\ell_4^M$. The alternating signs $q_1,q_3<0$, $q_2,q_4>0$ ensure nonzero denominators.
+
+For a tail starting at $N$, the inequalities
+$G\sqrt{k}\leq\varepsilon k+t/(4\varepsilon)$ and
+$2|v_nv_{n+1}|\leq |v_n|^2+|v_{n+1}|^2$ give the closed-form lower bound
+\begin{equation}\label{eq:tail}
+T_N\geq b_N I,\qquad
+b_N=(1-2\varepsilon)N-|d|-\varepsilon-\frac{t}{2\varepsilon}.
+\end{equation}
+This follows by bounding each row sum of the edge form by
+$2\varepsilon n+\varepsilon+t/(2\varepsilon)$, then using $n\geq N$.
+For $\varepsilon=1/32$,
+\begin{align}
+b_6-x&=\frac{19}{32}-\frac{55}4t+\frac5{64}t^2>0,\nonumber\\
+b_9-x&=\frac{109}{32}-\frac{55}4t+\frac5{64}t^2>0.\label{eq:b69}
+\end{align}
+In particular the infinite tail is positive relative to $x$.
+
+The site-$9$ tail resolvent obeys $0<r_9\leq(b_9-x)^{-1}$. Successive positive Schur complements give
+\begin{align}
+r_{8,L}&=q_8^{-1},&
+r_{8,U}&=[q_8-9t/(b_9-x)]^{-1},\nonumber\\
+r_{n,L}&=[q_n-(n+1)tr_{n+1,L}]^{-1},&
+r_{n,U}&=[q_n-(n+1)tr_{n+1,U}]^{-1}
+\quad(n=7,6).\label{eq:tails}
+\end{align}
+All denominators are positive: $q_8\geq79/10$, $q_7\geq2$,
+$q_6\geq5$, $b_9-x\geq3$, so $r_{8,U}<1/7$, $r_{7,U}<1$ and
+$q_6-7tr_{7,U}\geq5-7/100>0$.
+Consequently $r_{6,L}\leq r_6\leq r_{6,U}$.
+Define $b_L,b_U$ by substituting $r_{6,U},r_{6,L}$, respectively, into \eqref{eq:Fab}. Then $b_L\leq b\leq b_U$.
+
+\subsection{Uniform rational remainders}
+The preceding recursions define all finite rational functions without numerical diagonalization. For a rational function $f=p/q$ with $q(0)>0$, the coefficient estimate
+\begin{equation}\label{eq:rational}
+\abs{f(t)}\leq
+\frac{\sum_k|p_k|T^k}{q_0-\sum_{k\geq1}|q_k|T^k},
+\qquad 0\leq t\leq T,
+\end{equation}
+holds when the denominator on the right is positive. Cancel powers of $t$ first and normalize the sign of $q$.
+Apply this estimate to $a/t^3$, $b_L/t^3$, $b_U/t^3$, and
+$(1/\det(M-x)-1/64)/t$. The exact upper bounds in Appendix~\ref{app:arithmetic} imply
+\begin{equation}\label{eq:Ferr}
+|a|\leq G^6/10,\qquad |b|\leq G^6/10,\qquad
+|F_{05}(x)-\kappa G^5|\leq G^7/5 .
+\end{equation}
+For $J=\begin{pmatrix}0&1\\1&0\end{pmatrix}$, the matrix row-sum norm then gives
+\begin{equation}\label{eq:normF}
+\norm{F(x)-\kappa G^5J}
+\leq G^6/10+G^7/5\leq3G^6/25 .
+\end{equation}
+These are bounds on the infinite-operator Schur complement, since \eqref{eq:tails} encloses its tail resolvent.
+
+\subsection{Resolvent control and sorted indices}
+For $|E-x|\leq10^{-3}$ write $Qh_+Q-E=D_E+V_Q$, where $D_E$ is diagonal. Middle diagonal absolute values are at least $19/10$, with signs $-,+,-,+$; tail diagonal values are positive and at least $n/4$. For the middle rows and columns the absolute sums of $V_QD_E^{-1}$ are bounded by $4G/(19/10)<2/5$.
+For tail columns with $n\geq7$, the sums are bounded by
+\[
+\frac{4G(\sqrt n+\sqrt{n+1})}{n}
+\leq \frac{24G}{7}\leq\frac{12}{35}.
+\]
+For tail rows with $n\geq7$, they are bounded by
+\[
+4G\left(\frac{\sqrt n}{n-1}+\frac1{\sqrt{n+1}}\right)
+<4G\left(\frac12+\frac38\right)\leq\frac7{20}.
+\]
+Both displayed functions decrease with $n$. At $n=6$ the row and column bounds are $6/35$ and $1/5$. Missing edges to the projected sites reduce these sums. The Schur norm test and Neumann series therefore yield
+\begin{equation}\label{eq:resolvent}
+\norm{V_QD_E^{-1}}\leq2/5,\qquad
+\norm{(Qh_+Q-E)^{-1}}\leq\frac{10/19}{1-2/5}=\frac{50}{57}<1 .
+\end{equation}
+The product $V_QD_E^{-1}$ is bounded despite the unbounded edges. The diagonal inverse maps into $D(N)$, so this factorization establishes an inverse of the actual self-adjoint compression on its domain.
+
+The same estimate holds when the complement edges are continuously reduced to zero. No complement eigenvalue enters the strip during that homotopy; the diagonal complement has exactly two negative levels and a positive tail. Thus $Qh_+Q-E$ has negative inertia two throughout the strip.
+
+The two columns of $Qh_+P_0$ have disjoint supports and squared norms $G^2$ and $11G^2$. Differentiating \eqref{eq:F} gives
+\begin{equation}\label{eq:slope}
+F'(E)=-I-P_0h_+Q(Qh_+Q-E)^{-2}Qh_+P_0,\qquad
+-(1+11G^2)I\leq F'(E)\leq-I .
+\end{equation}
+Its two ordered eigenvalues decrease at rates between $1$ and $1+11G^2$ in the finite-difference min-max sense.
+Since $\norm{F(x)}\leq\kappa G^5+3G^6/25<10^{-3}$,
+$F(x-10^{-3})$ is positive definite and $F(x+10^{-3})$ negative definite. Each ordered branch has a unique zero.
+The Schur inertia identity adds the complement's two negative eigenvalues to the negative inertia of $F(E)$, labeling the lower and upper zeros as $e_2^+$ and $e_3^+$. The nonzero off-diagonal ensures distinct roots for $G>0$.
+
+Let $\lambda$ be the corresponding eigenvalue of $F(x)$ and $h=e-x$ the root displacement. Equations \eqref{eq:slope} give
+$|h|\leq|\lambda|$ and $|h-\lambda|\leq11G^2|h|$.
+By \eqref{eq:normF}, $|\lambda\mp\kappa G^5|\leq3G^6/25$. Hence
+\begin{align}
+|h\mp\kappa G^5|
+&\leq \left[\frac3{25}+11G\left(\kappa+\frac3{25}G\right)\right]G^6\nonumber\\
+&\leq \left[\frac3{25}+\frac{11}{10}
+\left(\frac{11}{64}+\frac3{250}\right)\right]G^6
+=\frac{25781}{80000}G^6<\frac13G^6.\label{eq:last}
+\end{align}
+Here $\sqrt{120}<11$ was used. This proves Theorem~\ref{thm:B}.
+
+\section{Physical consequence and limitations}
+On the tuned curve the gap is enclosed by
+\begin{equation}\label{eq:gap}
+2\kappa G^5-\frac23G^6
+\leq e_3^+-e_2^+
+\leq2\kappa G^5+\frac23G^6 .
+\end{equation}
+Its relative half-width against the leading gap is $G/(3\kappa)$, less than $19.5\%$ at $G=0.1$ and tending to zero with $G$. Since $\kappa>17/100$ and $G/3\leq1/30$, the lower branch lies strictly below $x$. The bound remains informative when the second- and fourth-order diagonal margins cancel: an unspecified fourth-order remainder would be larger than the fifth-order splitting.
+
+For general $\omega$, multiply each dimensionless energy enclosure and gap bound by $\omega$. The per-level error is $\omega G^6/3$, with dimensions of energy. This is a prediction for the idealized closed unbiased model. No driving, dissipation, rotating-wave approximation or non-Hermitian dynamics enters the proof. A same-parity gap does not by itself establish a dipole-allowed measured transition or a population-transfer rate. Neither exact minimum-gap tuning nor extension to arbitrary $G$, other photon resonances, all indices or all three universal inequalities follows here.
+
+\appendix
+\section{Exact arithmetic and reproduction}\label{app:arithmetic}
+The coefficient sums \eqref{eq:ABC}, obtained from the determinant recurrence, are
+\begin{align*}
+A&=\frac{52548521556451230094221425362399533009}
+{68719476736000000000000000000000000},\\
+B&=\frac{8408185946535545583353411544001}
+{70368744177664000000000000000},\\
+C&=\frac{161551674905174105111160359308799}
+{7205759403792793600000000000000}.
+\end{align*}
+For the tuned curve, the middle determinant is
+\begin{align*}
+\det(M-x)={}&64-24t-\frac{37}4t^2+\frac{67}{32}t^3
+-\frac{1091}{1024}t^4+\frac{2575}{65536}t^6\\
+&+\frac{625}{262144}t^7+\frac{625}{16777216}t^8.
+\end{align*}
+Applying \eqref{eq:rational} to the rational functions defined in
+\eqref{eq:Fab} and \eqref{eq:tails} gives the following exact upper bounds:
+\begin{align*}
+\sup |a|/G^6
+&\leq\frac{18823223047734823240125}
+{273843132909863398502384}<\frac1{10},\\
+\sup |b_U|/G^6
+&\leq\frac{3838796259627673714388684736294478400125}
+{55114535210523671543172283591102026388464}<\frac1{10},\\
+\sup |b_L|/G^6
+&\leq\frac{44191226695409433842669339297715268230494875}
+{589053645812673342457556124121234622680507536}<\frac1{10},\\
+\sup |F_{05}(x)-\kappa G^5|/G^7
+&\leq\frac{17785178711722838240275}
+{273843132909863398502384}<\frac15 .
+\end{align*}
+The last bound uses $\sqrt{120}<11$. Every denominator lower bound used in \eqref{eq:rational} is positive.
+
+The accompanying reproduction package contains the rational polynomial coefficients, exact function expressions, a symbolic generator and two standard-library rational checkers. The first checker expands the eight-site determinant over all 34 path matchings: each occupied edge $j$ contributes $-(j+1)t$, and each unmatched vertex contributes $q_n$. It reconstructs all 73 coefficients independently of the continuant implementation. The second checker builds the middle and tail rational functions separately. Four rational coupling values also have full-operator inertia brackets for the tuned doublet. Such point checks diagnose arithmetic and labels; the uniform proofs above establish the continuum.
+
+For a head of $L$ sites, let $\beta_L$ be the tail form lower bound \eqref{eq:tail} at $N=L$. At rational energy $z<\beta_L$, the infinite-tail Schur correction has size between $0$ and $LG^2/(\beta_L-z)$ at the head's last site. Equality of the two resulting finite inertias therefore certifies the full count below $z$. The supplied checks use this bound and rational square enclosures of $\sqrt{120}$, not agreement of finite eigensolver cutoffs. Regeneration commands and software requirements are specified in the accompanying reproducibility README.
+
+\section*{Data and code availability}
+Exact arithmetic code and machine-readable coefficient and bound records are included in the local supplementary package. No experimental data were used. Public deposition and a permanent repository identifier remain subject to author approval.
+
+\section*{AI declaration}
+OpenAI Codex was used substantially in literature retrieval, mathematical derivation, exact-arithmetic code, verification and manuscript drafting. A separate AI context checked the scientific argument and implemented an arithmetic replay. These checks are not external peer review. Human scientific review, validation of the intellectual contribution, authorship confirmation and approval of the final disclosure remain pending for this local draft.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

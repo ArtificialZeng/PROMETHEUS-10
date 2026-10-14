@@ -1,0 +1,302 @@
+\documentclass[aps,pre,onecolumn,11pt,notitlepage,nofootinbib]{revtex4-2}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Local dissipation optimality at the spectral coherence threshold of unicyclic clocks},pdfauthor={Xiaojian Zeng},pdfsubject={Local entropy-cost response of finite Markov cycles},pdfkeywords={stochastic thermodynamics, unicyclic clock, spectral coherence, entropy production}}
+\newcommand{\atanh}{\operatorname{atanh}}
+\newcommand{\Repart}{\operatorname{Re}}
+\newcommand{\Impart}{\operatorname{Im}}
+\newcommand{\mean}[1]{\overline{#1}}
+\begin{document}
+\title{Local dissipation optimality at the spectral coherence threshold of unicyclic clocks}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190}
+\begin{abstract}
+Spectral coherence constrains the thermodynamic cost of autonomous stochastic clocks, but a global dissipation bound cannot be inferred from the slowest oscillatory mode of an arbitrary Markov network. We establish a restricted local result for a single bidirectional cycle. For every fixed number of states $n\geq5$, the homogeneous positive-rate ring at the threshold $q=|\Impart\lambda|/(-\Repart\lambda)=1$ is a strict local minimizer, modulo common time scaling, of $Y=\sigma(-\Repart\lambda)/|\Impart\lambda|^2$ on the eligible side $q\geq1$. Its minimum is $(1+\tan^2(\pi/n))\atanh(\tan(\pi/n))/\tan(\pi/n)>1$. Stationary edge-flow coordinates allow both the stationary weights and the kinetics to vary freely. We derive the complete constrained disorder Hessian, prove positivity in every spatial Fourier sector, and treat the even-$n$ Nyquist sector separately. The leading conjugate pair remains simple and spectrally isolated in the local neighborhood. The result supplies the full quadratic cost response near the threshold; it gives no explicit disorder radius, no neighborhood uniform in $n$, and no global bound for heterogeneous cycles.
+\end{abstract}
+\maketitle
+\enlargethispage{6pt}
+
+\section{Introduction}
+An autonomous biochemical clock dissipates free energy while maintaining a noisy rhythm. In a finite Markov model, a complex relaxation eigenvalue $\lambda=-a+\mathrm{i}b$, with $a,b>0$, defines a decay time $a^{-1}$ and a spectral period $2\pi/b$. Oberreiter, Seifert, and Barato (OBS) proposed a lower bound on the entropy dissipated per spectral period and calculated the exact homogeneous-ring cost curve \cite{OBS2022}. Their heterogeneous-network minimizations suggested homogeneous optimality at sufficiently large coherence, but also showed departures from it at small coherence. The threshold relevant here is $b/a=1$, or a coherence number $\mathcal N=1/(2\pi)$.
+
+The unrestricted spectral conjecture requires care. General-network counterexamples have been reported on a sparse theta graph \cite{Jason2026} and on three coupled periodic layers \cite{Shiraishi2026}. Both topologies are outside a single simple cycle. Gu proved an eigenvector-weighted inequality $\sigma\geq\eta b^2/a$, with $\eta=1$ for translation-invariant rings \cite{Gu2026}; it does not impose the homogeneous finite-$n$ entropy cost on a heterogeneous ring. Current-based phase bounds also require additional conditions before their frequency can be identified with a spectral frequency \cite{Kolchinsky2026}. We use the generator's eigenvalue throughout and make no such identification.
+
+Affinity-dependent spectral bounds provide a different comparison. Uhl and Seifert studied local perturbations of the spectral ellipse at fixed affinity and escape-rate scale \cite{UhlSeifert2019}. The recent winding formulation establishes unicyclic spectral localization with affinity, topology, and escape-rate information \cite{Winding2026}. These results constrain eigenvalues without supplying the stationary-current factor in the entropy-production rate $\sigma=J\mathcal A$. Thus their optimization variables and objective differ from entropy cost at fixed spectral coherence.
+
+Here we prove strict local entropy-cost optimality at the threshold for every fixed $n\geq5$, allowing all heterogeneous rate directions. The homogeneous cost itself is the known OBS curve. The additional content is its complete constrained second variation and the proof that every heterogeneous sector raises the cost locally. This is stronger than continuity of $Y>1$ near the homogeneous ring: continuity alone would allow $Y$ to decrease while staying above one. Our conclusion is local; the coefficient-one inequality for arbitrary heterogeneous single cycles is not resolved here. The comparison with prior work is limited to the inspected primary results and makes no exhaustive priority claim.
+
+\section{Model, observable, and local result}
+Consider states $i\in\mathbb Z_n$ with finite, time-independent rates $u_i>0$ for $i\to i+1$ and $d_i>0$ for $i\to i-1$. There are no other transitions. For a column probability vector, the forward generator is
+\begin{equation}
+ R_{i+1,i}=u_i,\qquad R_{i-1,i}=d_i,\qquad R_{i,i}=-(u_i+d_i).
+ \label{eq:generator}
+\end{equation}
+Periodic indices are understood. Irreducibility gives a unique positive stationary law $\pi$, normalized by $\sum_i\pi_i=1$. The backward generator $Q=R^{\mathsf T}$ has the same spectrum. The stationary current
+\begin{equation}
+ J=\pi_i u_i-\pi_{i+1}d_{i+1}
+ \label{eq:current}
+\end{equation}
+is independent of $i$. With natural logarithms and $k_B=1$, the entropy-production rate is
+\begin{align}
+ \sigma&=\sum_i(\pi_i u_i-\pi_{i+1}d_{i+1})
+       \log\frac{\pi_i u_i}{\pi_{i+1}d_{i+1}}
+       =J\mathcal A,\label{eq:entropy}\\
+ \mathcal A&=\sum_i\log\frac{u_i}{d_i}.
+\end{align}
+Each undirected edge occurs once in Eq.~\eqref{eq:entropy}. The equivalent directed-edge expression sums the forward flow times its log ratio; it does not double the flux-difference formula. The stationary-probability logarithms telescope, yielding $J\mathcal A$.
+
+Let $\alpha$ be the largest real part among nonzero eigenvalues. For a nonreal leading eigenvalue with real part $\alpha$, set
+\begin{equation}
+ a=-\Repart\lambda,\quad b=|\Impart\lambda|,\quad
+ q=\frac ba,\quad Y=\frac{\sigma a}{b^2}.
+ \label{eq:cost}
+\end{equation}
+Rates, $a,b,J$, and $\sigma$ have units of inverse time; $q$, $Y$, and $\mathcal A$ are dimensionless. All these spectral ratios are invariant under a common rate rescaling. In the notation of Ref.~\cite{OBS2022},
+\begin{equation}
+ \mathcal N=\frac{q}{2\pi},\qquad
+ \Delta S=\frac{2\pi\sigma}{b},\qquad
+ Y=\frac{\Delta S}{4\pi^2\mathcal N}.
+\end{equation}
+The present eligible domain is $q\geq1$.
+
+\paragraph*{Local optimum.}
+For every fixed integer $n\geq5$, put $t=\tan(\pi/n)$. The homogeneous ring
+\begin{equation}
+ u_i=c(1+t),\qquad d_i=c(1-t),\qquad c>0,
+ \label{eq:reference}
+\end{equation}
+has a simple leading conjugate pair with $q=1$. There exists a sufficiently small $n$-dependent neighborhood of this ring modulo common rate scaling such that every positive-rate cycle in that neighborhood with $q\geq1$ satisfies
+\begin{equation}
+ Y\geq Y_*(n)=\frac{1+t^2}{t}\atanh t>1.
+ \label{eq:main}
+\end{equation}
+Equality holds only at the homogeneous threshold ring, up to common rate scaling. At fixed $q=1$, the Hessian is positive definite in all $2(n-1)$ heterogeneous directions, including the Nyquist sector when $n$ is even.
+
+The pair remains simple and isolated within the neighborhood used in this statement. No subleading oscillatory mode is substituted. Distant real-mode ties, Jordan degeneracies, or changes of spectral leadership lie outside the local conclusion. The result specifies neither an explicit disorder radius nor a radius uniform in $n$. A cycle reversal gives the corresponding counterclockwise-biased statement. The restriction $n\geq5$ ensures $0<t<1$ and hence strictly positive reference rates.
+
+\section{Stationary coordinates and the coherence constraint}
+\subsection{A chart for every nearby positive cycle}
+Near Eq.~\eqref{eq:reference}, $J>0$. Divide all rates by $J$, selecting a time unit in which the stationary current is one. Define the dimensionless backward edge flows
+\begin{equation}
+ g_i=\frac{\pi_{i+1}d_{i+1}}{J},\qquad
+ \frac{u_i}{J}=\frac{g_i+1}{\pi_i},\qquad
+ \frac{d_i}{J}=\frac{g_{i-1}}{\pi_i}.
+ \label{eq:chart}
+\end{equation}
+Conversely, every positive normalized $\pi$ and positive $g_i$ produce legal rates through these formulas. Their forward and backward flows on edge $i$ are $g_i+1$ and $g_i$, so the current is constant and $\pi$ is exactly stationary. Equations~\eqref{eq:current} and \eqref{eq:chart} also reconstruct all nearby legal rates. Thus the chart covers the full rate space after removal of common time scale.
+
+Use zero-mean real vectors $h,p$ and one uniform control $\mu$:
+\begin{equation}
+ g_i=g e^{\mu+h_i},\qquad
+ \pi_i=\frac{e^{p_i}}{\sum_j e^{p_j}},\qquad
+ \sum_i h_i=\sum_i p_i=0.
+ \label{eq:coordinates}
+\end{equation}
+There are $2(n-1)$ heterogeneous coordinates and one uniform coordinate. In current units, Eq.~\eqref{eq:entropy} reduces exactly to
+\begin{equation}
+ \sigma=\mathcal A=\sum_i\log(1+g_i^{-1}).
+ \label{eq:affinityflow}
+\end{equation}
+No small-noise approximation enters this representation.
+
+\subsection{Uniform spectrum and local spectral ordering}
+At $h=p=\mu=0$, the Fourier vectors $f_j(i)=e^{\mathrm{i}j\theta i}/\sqrt n$, with $\theta=2\pi/n$, diagonalize $Q$. Its eigenvalues are
+\begin{equation}
+ \lambda_j=n\left[(g+1)(e^{\mathrm{i}j\theta}-1)+g(e^{-\mathrm{i}j\theta}-1)\right].
+ \label{eq:fourier}
+\end{equation}
+The modes $j=1,n-1$ form the only leading nonzero pair: strict cosine ordering separates their real parts from every other nonzero mode. For $g>0$, each member is simple, since equal cosines only pair opposite indices and their nonzero imaginary parts have opposite signs. The positive-imaginary member has
+\begin{equation}
+ b_0=n\sin\theta,\qquad
+ a_0=n(2g+1)(1-\cos\theta),\qquad
+ q=\frac{\cot(\pi/n)}{2g+1}.
+ \label{eq:uniform}
+\end{equation}
+Consequently $q=1$ fixes $g=(1-t)/(2t)>0$. These are the uniform-ring formulas of Ref.~\cite{OBS2022}, expressed in current units.
+
+Simplicity permits a real-analytic continuation of $\lambda_1$ under real rate perturbations. For each fixed $n$, its positive spectral gap retains leading status locally. The uniform-control derivative is real and nonzero:
+\begin{equation}
+ \kappa:=\left.\partial_\mu\lambda_1\right|_0
+       =-2ng(1-\cos\theta)<0,\qquad
+ \left.\partial_\mu q\right|_0=\frac{b_0\kappa}{a_0^2}<0.
+ \label{eq:control}
+\end{equation}
+The implicit function theorem therefore gives an analytic $\mu=\mu(h,p;q)$ near $(h,p,q)=(0,0,1)$. Translation invariance annihilates every first variation in zero-mean $h,p$. In particular $\mu(h,p;1)$ has no linear term, and the cost at fixed $q=1$ is stationary in all heterogeneous directions.
+
+\section{Complete constrained second variation}
+We first differentiate along $h_i(\epsilon)=\epsilon h_i$, $p_i(\epsilon)=\epsilon p_i$ at $\mu=0$ and write $Q=Q_0+\epsilon Q_1+\epsilon^2Q_2/2+O(\epsilon^3)$. Denote the derivative of the continued eigenvalue by $\lambda''$. The outgoing entries are
+\begin{align}
+ (Q_1)_{i,i+1}&=n[gh_i-(g+1)p_i],\nonumber\\
+ (Q_1)_{i,i-1}&=n[gh_{i-1}-gp_i],\label{eq:q1}\\
+ (Q_2)_{i,i+1}&=n\left[gh_i^2-2gh_ip_i
+                +(g+1)(p_i^2+\mean{p^2})\right],\nonumber\\
+ (Q_2)_{i,i-1}&=n\left[gh_{i-1}^2-2gh_{i-1}p_i
+                +g(p_i^2+\mean{p^2})\right],\label{eq:q2}
+\end{align}
+where $\mean{p^2}=n^{-1}\sum_i p_i^2$. Diagonal entries are minus the sum of their row's outgoing entries. The terms containing $\mean{p^2}$ arise from differentiating the probability normalizer.
+
+Let $F$ have columns $f_j$, and put $B_r=F^\dagger Q_rF$. The zero-mean condition gives $\lambda'=0$. Differentiating the eigen-equation with gauge $f_1^\dagger v'=0$ gives
+\begin{equation}
+ \lambda''=(B_2)_{11}
+       +2\sum_{j\ne1}\frac{(B_1)_{1j}(B_1)_{j1}}{\lambda_1-\lambda_j}.
+ \label{eq:lambda2}
+\end{equation}
+This is a simple-eigenvalue formula at the circulant reference; it assumes neither a Hermitian heterogeneous generator nor normality away from that point.
+
+Restoring $q=1$ requires $\Repart\lambda+\Impart\lambda=0$. Along the restored path, $\mu(\epsilon)=\mu''\epsilon^2/2+O(\epsilon^3)$, and
+\begin{align}
+ \mu''&=-\frac{\Repart\lambda''+\Impart\lambda''}{\kappa},\label{eq:mu2}\\
+ \mathcal A''&=\frac{g}{(g+1)^2}\sum_i h_i^2-\frac{n}{g+1}\mu'',\label{eq:a2}\\
+ Y''&=Y_*\left(\frac{\mathcal A''}{\mathcal A_0}
+                   -\frac{\Impart\lambda''}{b_0}\right),\qquad
+ \mathcal A_0=n\log\frac{g+1}{g}.\label{eq:y2}
+\end{align}
+The control changes the imaginary part only at higher order because $\kappa$ is real. Equations~\eqref{eq:q1}--\eqref{eq:y2} already specify the Hessian for any real heterogeneous tangent vector.
+
+\subsection{Fourier blocks}
+For $1\leq k<n/2$, set $v=\tan(\pi k/n)\geq t$ and use the real amplitudes
+\begin{align}
+ h_i&=H_c\cos(k\theta i)+H_s\sin(k\theta i),\nonumber\\
+ p_i&=P_c\cos(k\theta i)+P_s\sin(k\theta i).
+\end{align}
+The second derivative is $\bm z^{\mathsf T}M_k\bm z$, with $\bm z=(H_c,H_s,P_c,P_s)^{\mathsf T}$ and
+\begin{equation}
+ M_k=\begin{pmatrix}
+ C_{hh}&0&C_{hp}&C_{\times}\\
+ 0&C_{hh}&-C_{\times}&C_{hp}\\
+ C_{hp}&-C_{\times}&C_{pp}&0\\
+ C_{\times}&C_{hp}&0&C_{pp}
+ \end{pmatrix}.
+ \label{eq:block}
+\end{equation}
+Distinct sectors do not couple: invariance under a cyclic translation removes every quadratic term whose total spatial wave number is nonzero modulo $n$. Opposite indices are combined in each real block.
+
+The closed coefficients use $x=t^2$ and $\ell=\log[(1+t)/(1-t)]=2\atanh t$. Define
+\begin{align}
+ S&=\ell(1-x)^2+2t(1+x),\label{eq:s}\\
+ D_\pm&=(1-x)^2(v\pm2t)^2+4t^4v^2+t^2(1+6x-3x^2),\qquad D=D_+D_-,\label{eq:d}\\
+ P_h&=2t^2(1+x)\left[\ell(1-x)^2(3x-1)+2t(1+x)^2\right]
+              +(v^2-t^2)(5x^2-2x+1)S,\label{eq:ph}\\
+ P_{\mathrm{mix}}&=\ell t^2(3-x)(1-x)(1+x)-2t^3(x^2-6x+1)\nonumber\\
+    &\hspace{1em}+v^2\left[\ell(1-x)(1+x)(3x-1)+2t(7x^2-2x-1)\right],\label{eq:pc}\\
+ P_d&=2t^2(1+x)\left[4t^2(1+x)-\ell^2(1-x)^3\right]+(v^2-t^2)S^2.\label{eq:pd}
+\end{align}
+The polynomial $P_{\mathrm{mix}}$ describes the mixed response. Then
+\begin{align}
+ C_{hh}&=\frac{t(1+x)(1+v^2)P_h}{(1+t)^2D},\qquad
+ C_{pp}=\frac{1+t}{1-t}C_{hh},\label{eq:hhpp}\\
+ C_{hp}&=-\frac{t(1+x)^2P_{\mathrm{mix}}}{(1+t)D},\qquad C_{\times}=vC_{hp},\label{eq:cross}\\
+ C_{hh}C_{pp}-C_{hp}^2-C_{\times}^2
+ &=\frac{t^2(1+x)^2(1+v^2)P_d}{(1-t)(1+t)^3D}.\label{eq:det}
+\end{align}
+The derivation of these coefficients from the two Fourier transfers is given in the Appendix. They are exact finite-state expressions, not fits to sampled modes.
+
+\subsection{Positivity in every sector}
+All denominators in Eqs.~\eqref{eq:hhpp}--\eqref{eq:det} are positive on $0<t<1$, $v\geq t$. In particular, $1+6x-3x^2>0$ for $0<x<1$, so each $D_\pm>0$. Also
+\begin{equation}
+ S>0,\qquad 5x^2-2x+1=5(x-1/5)^2+4/5>0.
+\end{equation}
+The needed logarithm bound follows directly by integration:
+\begin{equation}
+ \atanh t=\int_0^t\frac{ds}{1-s^2}<\frac{t}{1-t^2},\qquad
+ \ell<\frac{2t}{1-x}.
+ \label{eq:logbound}
+\end{equation}
+For $P_h$ at $v=t$, its square bracket in Eq.~\eqref{eq:ph} is positive immediately if $3x\geq1$. If $3x<1$, multiplication of the strict bound in Eq.~\eqref{eq:logbound} by the negative coefficient gives the lower bound
+\begin{equation}
+ \ell(1-x)^2(3x-1)+2t(1+x)^2
+ >2t\left[(1+x)^2-(1-x)(1-3x)\right]
+ =4tx(3-x)>0.
+\end{equation}
+Its slope as a function of $v^2$ is positive; hence $P_h>0$ for every $v\geq t$. Similarly,
+\begin{equation}
+ \ell^2(1-x)^3<4t^2(1-x)<4t^2(1+x)
+\end{equation}
+makes $P_d$ positive at $v=t$, while its $v^2$ slope is $S^2>0$. Therefore $C_{hh}>0$ and the scalar Schur determinant in Eq.~\eqref{eq:det} is strictly positive. The cross block in Eq.~\eqref{eq:block} has product with its transpose equal to $(C_{hp}^2+C_{\times}^2)I_2$, so these two conditions prove $M_k$ positive definite.
+
+If $n$ is even, the sector $k=n/2$ has only $h_i=H(-1)^i$, $p_i=P(-1)^i$. Its sine vanishes, and the two harmonic indices coincide. A direct single-harmonic evaluation of Eq.~\eqref{eq:lambda2} gives the diagonal block
+\begin{equation}
+ C_{hh}^{\mathrm N}=\frac{2t(1+x)S}{(1+t)^2(5x^2-2x+1)}>0,\qquad
+ C_{pp}^{\mathrm N}=\frac{1+t}{1-t}C_{hh}^{\mathrm N}>0,
+ \label{eq:nyquist}
+\end{equation}
+with zero mixed entry. These entries are twice the $v\to\infty$ limits of the generic cosine coefficients, reflecting the single Nyquist harmonic rather than two distinct half-amplitude harmonics. The zero-mean conditions remove $k=0$. The generic blocks and, when needed, Eq.~\eqref{eq:nyquist} exhaust exactly $2(n-1)$ real heterogeneous directions. Thus the complete fixed-threshold Hessian is positive definite for every fixed $n\geq5$.
+
+\section{From the Hessian to the eligible-side minimum}
+At fixed $q=1$, analyticity, vanishing first variation, and the positive definite Hessian give
+\begin{equation}
+ Y(h,p;1)=Y_*+\frac12\sum_{1\leq k<n/2}\bm z_k^{\mathsf T}M_k\bm z_k
+       +\frac12\bm z_{\mathrm N}^{\mathsf T}M_{\mathrm N}\bm z_{\mathrm N}
+       +O(\|(h,p)\|^3),
+ \label{eq:taylor}
+\end{equation}
+where the Nyquist term is included only for even $n$. For each fixed $n$, Taylor's theorem bounds the remainder in a sufficiently small neighborhood and yields a strict minimum at $h=p=0$. We do not estimate that neighborhood quantitatively.
+
+For the uniform family at general $q$ near one, the known cost curve is
+\begin{equation}
+ Y_{\mathrm{unif}}(q)=\frac{2\atanh(qt)}{q\sin\theta},\qquad qt<1.
+ \label{eq:uniformcost}
+\end{equation}
+Its derivative is strictly positive for $q>0$ because
+\begin{equation}
+ \frac{z}{1-z^2}-\atanh z>0\quad(0<z<1);
+\end{equation}
+the expression vanishes at zero and has derivative $2z^2/(1-z^2)^2>0$. By continuity, $\partial_qY(h,p;q)>0$ in a sufficiently small product neighborhood of $(0,0,1)$. For $q\geq1$ there, lowering $q$ to one at fixed $h,p$ lowers the cost while staying within the chart. Combined with the fixed-$q$ strict minimum, this proves Eq.~\eqref{eq:main}. Equality requires $q=1$ and zero heterogeneity. Since $\atanh t>t$ for $t>0$, $Y_*(n)>1$. Positivity of rates, normalization of $\pi$, and leading spectral isolation persist throughout the chosen neighborhood.
+
+\section{Verification, physical meaning, and limitations}
+The algebra rests on the defining rates, Fourier transfer formula, and explicit inequalities above. Exact rational-function reductions over $\mathbb Q(t,v,\ell)$ verify the closed blocks, determinant factorization, and Nyquist limit. An independently differentiated linear stationary-flow chart reproduces the same constrained Hessian; its first tangent vectors coincide with those of Eq.~\eqref{eq:coordinates}, and the restricted gradient vanishes. Thus agreement checks the full constrained response without relying on a particular second-order parametrization.
+
+Separate direct-generator calculations check mixed directions, spectral ordering, and restoration of $q=1$. These finite calculations corroborate the analytic argument; they are not rigorous numerical enclosures and do not establish an arbitrary-disorder bound. For a benchmark within the published homogeneous family, take $n=7$, $u=8$, $d=1$ in a chosen inverse-time unit. Both the stationary and spectral representations give $\pi_i=1/7$, $J=1$, $\sigma=7\log8$, $a=9[1-\cos(2\pi/7)]$, and $b=7\sin(2\pi/7)$. This check tests generator conventions and the entropy normalization against Ref.~\cite{OBS2022}. No finite search or optimizer is a premise of the local proof.
+
+The physical conclusion is that small kinetic heterogeneity cannot improve the homogeneous clock's entropy cost once its leading spectral coherence is restored to the threshold. Both edge flows and stationary weights vary, so the conclusion applies beyond a perturbation of holding times or of a single rate parameter. An improvement over the reference cost must leave the specified local neighborhood. This is a response result for a finite autonomous Markov model, not an experimental dissipation estimate without additional model validation.
+
+The calculation is exactly a second variation at a finite-$n$ reference. Analytic remainder control proves the existence of a local minimum but supplies no explicit finite-disorder tolerance. The neighborhood may shrink with $n$; no interchange of a large-$n$ limit with the perturbation size is justified. Arbitrary-coherence optimality, global heterogeneous optimality, and distant spectral degeneracies remain outside the result. In particular, the proposed inequality $\sigma\geq b^2/a$ on every eligible positive-rate simple cycle remains unresolved by this work.
+
+\paragraph*{Research tools and AI use.}
+OpenAI Codex was used substantively to develop the derivation, generate calculation and verification code, compare literature, and prepare this manuscript. Symbolic identities were evaluated with SymPy; direct spectral diagnostics used NumPy and SciPy. Separate automated reconstructions checked the stationary coordinates and Fourier response. These calculations and AI checks do not constitute human author verification or external peer review. This local draft remains subject to author review; exact model identifiers and the author's direction and verification of the AI-assisted work must be confirmed before submission.
+
+\paragraph*{Data and code availability.}
+The accompanying local reproduction materials contain the defining calculation scripts, saved exact outputs, software requirements, and instructions for regeneration in a separate working directory. No experimental data were used. Primary papers are cited rather than redistributed in the proposed handoff package.
+
+\appendix
+\section{Fourier reduction and the Nyquist normalization}
+For the discrete Fourier coefficients
+\begin{equation}
+ \widehat h_r=\frac1n\sum_i h_i e^{-\mathrm{i}r\theta i},\qquad
+ \widehat p_r=\frac1n\sum_i p_i e^{-\mathrm{i}r\theta i},
+\end{equation}
+the matrix element in Eq.~\eqref{eq:q1} is
+\begin{align}
+ (B_1)_{jm}={}&ng\left[e^{\mathrm{i}m\theta}-1
+       +e^{-\mathrm{i}(j-m)\theta}(e^{-\mathrm{i}m\theta}-1)\right]\widehat h_{j-m}
+       -\lambda_m\widehat p_{j-m}.
+ \label{eq:transfer}
+\end{align}
+For a generic real mode $k$, only $j=1+k$ and $j=1-k$ contribute in Eq.~\eqref{eq:lambda2}. The first-order projection is zero. The diagonal second-order projection follows from Eq.~\eqref{eq:q2}:
+\begin{align}
+ (B_2)_{11}=n\big\{&g\mean{h^2}(e^{\mathrm{i}\theta}+e^{-\mathrm{i}\theta}-2)
+       -2g[e^{\mathrm{i}\theta}-1]\mean{hp}\nonumber\\
+       &-2g[e^{-\mathrm{i}\theta}-1]\mean{h_{i-1}p_i}
+       +2\mean{p^2}[(g+1)(e^{\mathrm{i}\theta}-1)+g(e^{-\mathrm{i}\theta}-1)]\big\}.
+ \label{eq:projection}
+\end{align}
+For example, taking $h_i=H\cos(k\theta i)$ and $p_i=P\cos(k\theta i)+T\sin(k\theta i)$ gives
+\begin{equation}
+ \mean{h^2}=\frac{H^2}{2},\quad \mean{p^2}=\frac{P^2+T^2}{2},\quad
+ \mean{hp}=\frac{HP}{2},\quad
+ \mean{h_{i-1}p_i}=\frac H2[P\cos(k\theta)+T\sin(k\theta)].
+\end{equation}
+Substitute Eq.~\eqref{eq:transfer} into the two resolvent terms, then Eq.~\eqref{eq:projection} into Eq.~\eqref{eq:lambda2}, and finally Eqs.~\eqref{eq:mu2}--\eqref{eq:y2}. The replacements
+\begin{equation}
+ e^{\mathrm{i}\theta}=\frac{1+\mathrm{i}t}{1-\mathrm{i}t},\qquad
+ e^{\mathrm{i}k\theta}=\frac{1+\mathrm{i}v}{1-\mathrm{i}v},\qquad
+ g=\frac{1-t}{2t}
+\end{equation}
+reduce every entry to a rational function of $t,v,\ell$. The coefficients of $H^2$, $P^2$, $2HP$, and $2HT$ yield $C_{hh}$, $C_{pp}$, $C_{hp}$, and $C_{\times}$ in Eqs.~\eqref{eq:hhpp}--\eqref{eq:cross}. Cyclic translation reconstructs the full four-dimensional block. Exact simplification gives Eq.~\eqref{eq:det}; the logarithm is kept as a formal real symbol during this algebraic equality check and bounded analytically only afterward.
+
+At even-$n$ Nyquist frequency, $e^{\mathrm{i}k\theta}=-1$. The Fourier coefficients are $\widehat h_{n/2}=H$, $\widehat p_{n/2}=P$, rather than two coefficients of half amplitude. There is one resolvent index $j=1+n/2$, and $\mean{h^2}=H^2$, $\mean{p^2}=P^2$, $\mean{hp}=HP$, $\mean{h_{i-1}p_i}=-HP$. Direct substitution in the same projection and constraint formulas gives Eq.~\eqref{eq:nyquist}, with a vanishing mixed coefficient. This calculation avoids treating the aliased harmonics as independent modes.
+
+\bibliography{references}
+\end{document}

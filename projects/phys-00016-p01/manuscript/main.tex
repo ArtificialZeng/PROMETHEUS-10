@@ -1,0 +1,311 @@
+\documentclass[aps,prb,reprint,amsmath,amssymb,longbibliography,floatfix]{revtex4-2}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Comment on Ergotropy and entanglement in critical spin chains},
+ pdfauthor={Xiaojian Zeng},
+ pdfsubject={Finite-chain correction to occupation-aligned passive energy},
+ pdfkeywords={ergotropy, passivity, fermion chain}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\al}{\mathrm{al}}
+\newcommand{\pa}{\mathrm{p}}
+\begin{document}
+\title{Comment on ``Ergotropy and entanglement in critical spin chains''}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+\date{October 13, 2026}
+\begin{abstract}
+The occupation-alignment expression in Eq.~(34) of B.~Mula et al.,
+Phys. Rev. B \textbf{107}, 075116 (2023), minimizes the subsystem energy under
+number-preserving Gaussian orbital rotations. It need not give the minimum
+over all subsystem unitaries. For the unchanged half-filled ground state of
+the homogeneous open fermion chain, we establish the first failure among
+lengths $N=4m$ at $N=12$. A swap between two physical two-particle states
+lowers the aligned energy while preserving particle number and parity.
+Rational interval calculations enclose the full additional extractable work
+between $1.356396207356\times10^{-6}J$ and
+$1.356396207357\times10^{-6}J$. We give a quartic extraction gate and finite
+comparisons through $N=24$. The corrections amount to about 15--31 parts per
+million of the aligned bound energy. These finite results leave the proposed
+thermodynamic entropy relation undecided.
+\end{abstract}
+\maketitle
+
+\section{The optimization being corrected}
+Subsystem ergotropy distinguishes the energy removable by a unitary from the
+energy remaining above the isolated subsystem ground state. Reference~\cite{Mula2023}
+defines the passive energy by ordering the complete many-body spectra in
+Eqs.~(1)--(4), but identifies it with an occupation-aligned one-body sum in
+Eq.~(34). The distinction matters even for its specified free-fermion
+ground-state marginal. Ordering individual occupations against one-particle
+energies need not order their many-body products against subset energies.
+
+The general distinction between unrestricted and Gaussian work extraction is
+established prior work~\cite{OnumaKalu2018}. Population swaps are also standard.
+The result here concerns the actual marginal of the chain in
+Ref.~\cite{Mula2023}, without adjustable mode temperatures or a replacement
+state. The nearby long-range Kitaev study~\cite{Mitra2025} treats pairing,
+chemical potential, and asymptotic entanglement spectra; we make no correction
+claim about that model. Our counterexample concerns the exact finite
+optimization in Eq.~(34) of Ref.~\cite{Mula2023}. It does not settle the separate
+large-$N$ bound-energy prediction in that reference.
+
+\section{Exact input and two operation sets}
+Let $N=4m$, $m\geq1$, and $\ell=N/2$. With canonical fermions and $J>0$,
+take the open Hamiltonian
+\begin{equation}
+ H_N=-J\sum_{j=1}^{N-1}(c_j^\dagger c_{j+1}+c_{j+1}^\dagger c_j).
+ \label{eq:H}
+\end{equation}
+There is no chemical potential, pairing, interaction, or bath. The empty
+vacuum has zero energy. Let $\rho_A$ be the marginal of the unique half-filled
+ground state on $A=\{1,\ldots,\ell\}$, and let $H_A$ retain only the internal
+links of $A$ after isolation. Work below is the decrease of $\Tr(\rho_AH_A)$;
+it does not include the cost of cutting the chain or implementing a control.
+
+Solving the open one-body difference equation, with vanishing wave function
+at sites $0$ and $N+1$, gives sine modes and energies
+$-2J\cos[k\pi/(N+1)]$. Filling its $N/2$ negative energies gives exactly
+\begin{equation}
+ (C_A)_{ij}=\frac{2}{N+1}\sum_{k=1}^{N/2}
+ \sin\frac{ik\pi}{N+1}\sin\frac{jk\pi}{N+1},
+ \label{eq:C}
+\end{equation}
+where $(C_A)_{ij}=\langle c_i^\dagger c_j\rangle$, $1\leq i,j\leq\ell$.
+Let $\nu_1\geq\cdots\geq\nu_\ell$ be its eigenvalues. The physical energies
+of $H_A$, in ascending order, are
+\begin{equation}
+ \varepsilon_j=-2J\cos\frac{j\pi}{\ell+1},\qquad
+ E_{\al}=\sum_{j=1}^{\ell}\nu_j\varepsilon_j.
+ \label{eq:align}
+\end{equation}
+This pairs descending occupations with ascending physical energies, giving the
+source expression its favorable convention. Rephasing sites or reversing
+one-body labels is not the counterexample.
+
+The marginal is a number-conserving Gaussian state. In its natural orbitals,
+Wick factorization fixes all occupation moments and therefore the density
+matrix as a product of Bernoulli mode densities. In particular, all its
+$2^\ell$ eigenvalues are
+\begin{equation}
+ q(\mathbf n)=\prod_{j=1}^{\ell}\nu_j^{n_j}(1-\nu_j)^{1-n_j},
+ \quad\mathbf n\in\{0,1\}^{\ell}.
+ \label{eq:q}
+\end{equation}
+Let $V$ contain real natural orbitals in descending occupation order, and
+$\Phi_{ij}=\sqrt{2/(\ell+1)}\sin[ij\pi/(\ell+1)]$ contain the physical
+energy orbitals. The number-preserving Fock lift $\Gamma(W)$ of
+$W=\Phi V^\dagger$ maps $\rho_A$ to a state $\rho_{\al}$ whose probabilities
+are Eq.~\eqref{eq:q} in the physical-mode occupation basis. Its energy is
+$E_{\al}$. The one-body trace rearrangement inequality proves that this is
+the minimum over number-preserving Gaussian orbital rotations.
+
+For arbitrary subsystem unitaries, instead let $p_r^\downarrow$ be all
+$q(\mathbf n)$ in descending order and $E_r^\uparrow$ all
+$E(\mathbf n)=\sum_j n_j\varepsilon_j$ in ascending order. Then
+\begin{equation}
+ E_{\pa}=\min_U\Tr(U\rho_AU^\dagger H_A)
+       =\sum_{r=1}^{2^\ell}p_r^\downarrow E_r^\uparrow.
+ \label{eq:passive}
+\end{equation}
+Indeed, the overlaps between eigenbases form a doubly stochastic matrix;
+the trace is a linear function of this matrix, minimized by the opposite
+ordering permutation, which is itself unitary. Degeneracies are retained.
+Define $\Delta W=E_{\al}-E_{\pa}\geq0$. If operations must commute with
+$\widehat n_A=\sum_jc_j^\dagger c_j$, one sorts within each number sector
+instead, obtaining $E_{\pa}^{(n)}$ and
+$\Delta W_n=E_{\al}-E_{\pa}^{(n)}$. Sector probabilities are neither
+discarded nor renormalized.
+
+\section{A charge-conserving counterexample at \texorpdfstring{$N=12$}{N=12}}
+For $\ell=6$, let $d_j^\dagger=\sum_i\Phi_{ij}c_i^\dagger$ and choose
+\begin{equation}
+ \ket a=d_2^\dagger d_3^\dagger\ket{0},\qquad
+ \ket b=d_1^\dagger d_4^\dagger\ket{0}.
+ \label{eq:ab}
+\end{equation}
+Both states contain two particles and have even parity, with the other modes
+empty. Their energies and aligned probabilities obey the strict rational
+enclosures
+\begin{align}
+ 0.335125603737&<\frac{E_b-E_a}{J}<0.335125603738,\nonumber\\
+ 2.002576633338&<10^6(q_b-q_a)<2.002576633339.
+ \label{eq:gaps}
+\end{align}
+Thus the higher-energy state has higher probability. These signs use the
+actual projector~\eqref{eq:C}, not an asymptotic spectrum. For orientation,
+the descending occupations are approximately
+\begin{equation}
+ \begin{split}
+ (\nu_1,\ldots,\nu_6)\simeq(&0.999999987458,\ 0.999800520240,\\
+ &0.899541716786,\ 0.100458283214,\\
+ &0.000199479760,\ 0.000000012542).
+ \end{split}
+\end{equation}
+The approximate entries are not used to decide a sign.
+
+Consider the exact rank-state swap
+\begin{equation}
+ S=I-\ket a\bra a-\ket b\bra b+\ket a\bra b+\ket b\bra a.
+ \label{eq:S}
+\end{equation}
+It satisfies $S^\dagger=S$, $S^2=I$, and commutes with both $\widehat n_A$
+and $(-1)^{\widehat n_A}$. Its work gain from $\rho_{\al}$ is
+\begin{equation}
+ g=\Tr[(\rho_{\al}-S\rho_{\al}S^\dagger)H_A]
+   =(E_b-E_a)(q_b-q_a),
+\end{equation}
+with
+\begin{equation}
+ 6.71114703278\times10^{-7}<g/J<6.71114703279\times10^{-7}.
+ \label{eq:gain}
+\end{equation}
+Consequently $U=S\Gamma(W)$ takes the original marginal to an energy below
+$E_{\al}$. Every density eigenvalue is preserved. The universal finite
+equality $E_{\pa}=E_{\al}$ is therefore false, including when particle
+number and parity conservation are imposed. No environment operation or
+measurement enters this witness.
+
+A quartic operation avoids projectors onto empty spectator modes. Set
+\begin{equation}
+ K=d_1^\dagger d_4^\dagger d_3d_2+\mathrm{h.c.},\qquad
+ U_K=\exp(-i\pi K/2).
+\end{equation}
+After alignment it exchanges the same two four-mode patterns for every
+occupation of modes 5 and 6. Fermionic phases do not affect the energy.
+Spectator probabilities sum to one, giving
+\begin{equation}
+ \begin{split}
+ g_K={}&(\varepsilon_1+\varepsilon_4-\varepsilon_2-\varepsilon_3)\\
+ &\times[\nu_1(1-\nu_2)(1-\nu_3)\nu_4\\
+ &\hspace{1.2em}-(1-\nu_1)\nu_2\nu_3(1-\nu_4)],
+ \end{split}
+\end{equation}
+and
+\begin{equation}
+ 6.71248612208\times10^{-7}<g_K/J<6.71248612209\times10^{-7}.
+\end{equation}
+This generator conserves number and parity. Its physical-mode interaction
+is not asserted to be spatially local, fast, or inexpensive.
+
+\section{First failing size and finite magnitude}
+The earlier allowed sizes $N=4,8$ are exactly passive after alignment.
+To see this, the staggered matrix $D_{jj}=(-1)^j$ anticommutes with the
+one-body hopping. With no zero mode, $DP_-D=I-P_-$ for the occupied
+projector. Restriction gives $D_AC_AD_A=I-C_A$, so occupations come in
+complementary pairs. Relative to the filled negative-energy local state,
+each pair has a hole and a particle excitation with equal positive energy
+cost and equal entanglement cost $\kappa=\log[\nu/(1-\nu)]$, $\nu>1/2$.
+Probability is proportional to the exponential of minus the total
+entanglement cost.
+
+For $N=4$ there is one cost repeated twice. Increasing excitation count
+increases energy and decreases probability, proving passivity. For $N=8$
+the two energy costs, each repeated twice, are
+$J\alpha=J(1+\sqrt5)/2$ and $J\beta=J(\sqrt5-1)/2$, with
+$\alpha>2\beta$. Rational interval evaluation of Eq.~\eqref{eq:C} proves
+\begin{equation}
+ \nu_1(1-\nu_2)^2>(1-\nu_1)\nu_2^2,
+\end{equation}
+hence $\kappa_1>2\kappa_2$. Excitation counts
+$(s_1,s_2)\in\{0,1,2\}^2$ are therefore lexicographically ordered by
+both physical and entanglement costs: increasing $s_1$ dominates every
+possible decrease in $s_2$, and at fixed $s_1$ both costs increase with
+$s_2$. States with the same counts have equal energy and probability.
+This proves $E_{\pa}=E_{\al}$ at $N=8$, rather than inferring equality
+from a small numerical residual. Thus $N=12$ is the first failure in
+the sequence $N=4m$.
+
+\begin{table*}[t]
+\caption{Complete finite-spectrum corrections as strict enclosures. The
+last column gives $10^6\Delta W/Q_{\al}$ approximately, with
+$Q_{\al}=E_{\al}-E_{A,0}$. Both corrections vanish exactly at $N=4,8$.}
+\label{tab:work}
+\begin{ruledtabular}
+\begin{tabular}{c c c r}
+$N$ & $10^6\Delta W/J$ & $10^6\Delta W_n/J$ & ppm\\
+\hline
+12 & $(1.356396207356,\ 1.356396207357)$ & $(1.351749675589,\ 1.351749675590)$ & 15.09\\
+16 & $(1.871176478412,\ 1.871176478413)$ & $(1.863882069329,\ 1.863882069330)$ & 23.52\\
+20 & $(2.029342670961,\ 2.029342670962)$ & $(2.028803336503,\ 2.028803336504)$ & 28.47\\
+24 & $(2.003459793533,\ 2.003459793534)$ & $(2.001606649667,\ 2.001606649668)$ & 31.00\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+Table~\ref{tab:work} uses every Fock state at each size, totaling 5460
+states over $N=4,8,12,16,20,24$. At $N=12$,
+$E_{\al}\simeq-3.40404538383307J$ and
+$E_{\pa}\simeq-3.40404674022927J$.
+The aligned bound energy is approximately $0.0899138J$, and its aligned
+ergotropy is $0.0365547J$. The correction is about 15.09 ppm of the
+former and 37.11 ppm of the latter. It is an exact optimization distinction
+with a small quantitative effect.
+
+\section{Error control and interpretation}
+The strict bounds are computer-assisted enclosures of the exact finite
+input. Every arithmetic operation rounds outward on rational intervals
+with denominator $10^{90}$. Machin's identity
+$\pi=16\arctan(1/5)-4\arctan(1/239)$ is enclosed using alternating
+series with 120 and 40 terms and next-term bounds. Angle reduction puts
+sines in $[0,\pi/2]$. A degree-199 Taylor polynomial, with its zero
+degree-200 coefficient, has remainder bounded by $2^{201}/201!$.
+This encloses Eq.~\eqref{eq:C} and all physical energies.
+
+Numerical proposals for eigenvectors are only checked inputs. For every
+rational vector $v$ and center $\mu$, exact interval arithmetic verifies
+\begin{equation}
+ \|(C_A-\mu I)v\|^2<10^{-90}\|v\|^2.
+\end{equation}
+The Hermitian spectral decomposition then puts an eigenvalue within
+$10^{-45}$ of $\mu$. All $\ell$ intervals are strictly disjoint and inside
+$(0,1)$, so together they isolate the entire correlation spectrum.
+No assumed eigenvector orthogonality or floating eigensolver accuracy
+enters this argument.
+
+Every product probability and subset energy is enclosed. Order statistics
+are monotone under componentwise bounds; sorting all lower endpoints and
+all upper endpoints therefore encloses the corresponding sorted exact
+values. Interval products and sums enclose Eq.~\eqref{eq:passive}, including
+negative energies and degeneracies, and the same procedure applies within
+number or parity blocks. A separate direct ground-state calculation in
+the 924-dimensional half-filled $N=12$ sector, followed by an ordinary
+site-Fock partial trace, corroborates the marginal, orbital alignment,
+swap, and quartic energy traces to better than $2.2\times10^{-15}J$ for the
+two gain formulas. This floating cross-check is not the proof of the
+strict bounds. The exact checker and its input proposals are supplied
+as a reproducibility resource.
+
+The physical correction is
+$W=W_{\al}+\Delta W$ and $Q=Q_{\al}-\Delta W$, where
+$W_{\al}=\Tr(\rho_AH_A)-E_{\al}$ and $Q=E_{\pa}-E_{A,0}$.
+Occupation alignment remains valid with an explicit restriction to
+number-preserving Gaussian orbital rotations, or as an upper bound on
+the unrestricted passive energy. The additional work survives
+number and parity conservation. We establish no classification for
+$N>24$, no thermodynamic error estimate, and no experimental or
+finite-time protocol. In particular, a finite failure of Eq.~(34) does
+not determine the fate of the asymptotic entropy relation in
+Ref.~\cite{Mula2023}.
+
+\paragraph{Research tools.}
+OpenAI Codex was used for the witness search, derivations,
+verification-code development and execution, literature comparison, and
+manuscript drafting. Exact arithmetic checks and separate numerical
+representations are described above; they do not constitute completed
+human scientific review.
+
+\paragraph{Data availability.}
+The accompanying reproducibility resource contains the exact checker,
+rational eigenvector proposals, complete certificate, and optional
+direct-density code and data.
+
+\begin{acknowledgments}
+OpenAI Codex assisted with drafting. Human scientific review, authorship
+confirmation, and final text approval remain pending.
+\end{acknowledgments}
+
+\bibliography{references}
+\end{document}

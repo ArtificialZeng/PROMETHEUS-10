@@ -1,0 +1,13 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "sympy": "1.14.0",
+  "checked_at": "2026-10-13T23:20:51.597815+00:00",
+  "core_dependencies": "Python standard library",
+  "symbolic_dependency": "sympy==1.14.0",
+  "latex_dependencies": "Existing REVTeX4.2, TikZ, hyperref, microtype, latexmk; system packages are not bundled",
+  "integer_digit_limit": "Checkers explicitly increase the Python per-process conversion limit for exact integer output",
+  "no_software_installed": true,
+  "stdlib_portability_check_python": "3.14.7",
+  "stdlib_portability_check": "Actual separate standard-library run completed successfully; all core checkers returned zero and expected arithmetic matched."
+}

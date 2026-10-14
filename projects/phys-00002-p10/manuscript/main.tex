@@ -1,0 +1,341 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\dd}{\,\mathrm{d}}
+\title{A balanced beam-splitter counterexample to the\\ low-order Wigner--R\'enyi vacuum bound}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The vacuum lower bound for Wigner--R\'enyi entropy holds for balanced
+beam-splitter states at orders $\alpha\geq 1/2$. We give a computer-assisted
+counterexample to its proposed extension to every $0<\alpha<1/2$.
+Both inputs are independently prepared in
+$(20\ket{0}+\ket{2})/\sqrt{401}$, with mean photon number $2/401$ each.
+After balanced mixing and discarding one output, the retained Wigner function
+is exactly a Gaussian times the square of a quartic polynomial.
+At $\alpha=1/4$, a directed full-plane integration bound gives
+$\int W^{1/4}<9.43718$, whereas the vacuum integral is greater than $9.43892$.
+The calculation treats polynomial zeros by an absolute-value chord and controls
+the entire Gaussian tail analytically. It uses exact physical reconstruction
+and two implementations of outward arithmetic. The result concerns one fixed
+order and one finite-support product input; it does not identify an optimum
+or a sharp boundary in R\'enyi order.
+\end{abstract}
+
+\section{Question and contribution}
+For a state with a nonnegative Wigner function, differential entropy measures
+uncertainty over phase space. Van Herstraeten and Cerf proved a vacuum
+Wigner--R\'enyi entropy bound for the reduced outputs of balanced beam splitters
+with separable inputs at $\alpha\geq 1/2$~\cite{interference}.
+Their discussion proposes extending it to smaller positive orders.
+The physical restriction matters: general Wigner-positive states admit
+sub-vacuum entropy~\cite{general,he}, while the established beam-splitter
+Shannon bound remains valid. Purity-based sufficient conditions for the
+Shannon bound~\cite{purity} address a different regime.
+
+Here we test the proposed low-order extension inside the narrower class of
+independently prepared product inputs. The witness is an exact non-Gaussian
+ket of support $\{0,2\}$ in each input. We reconstruct its reduced state
+and Wigner function algebraically, then give a full-plane upper enclosure
+at $\alpha=1/4$ strictly below vacuum. No finite-box replacement of the entropy
+or perturbative approximation is used.
+
+The counterexamples of Ref.~\cite{general} are explicitly outside the
+beam-splitter class; its two-level output-sector discussion concerns Shannon
+entropy. Our output has a nonzero four-photon component. Reference~\cite{he}
+also treats general Wigner-positive states and loss stability, rather than this
+fixed low-order, two-non-Gaussian-input witness.
+The contribution is therefore a restricted-channel counterexample, not
+another disproof of the general Shannon conjecture.
+
+\section{Conventions and exact physical state}
+We use dimensionless canonical quadratures, $[x,p]=i$, with $\hbar=1$,
+$a=(x+ip)/\sqrt{2}$ and natural logarithms. Our phase-plane measure is
+$\dd x\dd p$, and $R=x^2+p^2$. The vacuum Wigner function is
+\begin{equation}
+ W_0(x,p)=\pi^{-1}e^{-R}.
+\end{equation}
+For $\alpha>0$, $\alpha\neq1$, define
+\begin{equation}
+ I_\alpha(W)=\int_{\mathbb R^2}W^\alpha\dd x\dd p,\qquad
+ h_\alpha(W)=\frac{\ln I_\alpha(W)}{1-\alpha},
+ \label{eq:entropy}
+\end{equation}
+with $0^\alpha=0$. The vacuum satisfies
+\begin{equation}
+ I_\alpha(W_0)=\frac{\pi^{1-\alpha}}{\alpha},\qquad
+ h_\alpha(W_0)=\ln\pi+\frac{\ln\alpha}{\alpha-1}.
+ \label{eq:vac}
+\end{equation}
+
+Prepare the two modes independently in
+\begin{equation}
+ \ket{\psi}=\frac{20\ket{0}+\ket{2}}{\sqrt{401}}.
+ \label{eq:input}
+\end{equation}
+Its normalization is exact and $\langle a^\dagger a\rangle=2/401$.
+The balanced lossless mixer acts on creation operators by
+$a^\dagger\mapsto(a^\dagger+b^\dagger)/\sqrt{2}$ and
+$b^\dagger\mapsto(a^\dagger-b^\dagger)/\sqrt{2}$.
+The convention differing by a sign of the second input gives the same
+state here because that input has even parity. The joint output is
+\begin{equation}
+ \ket{\Psi}=\frac{1}{401}\left[
+ 400\ket{00}+20\ket{20}+20\ket{02}
+ +\frac{\sqrt{6}}{4}(\ket{40}+\ket{04})-\frac12\ket{22}
+ \right].
+ \label{eq:joint}
+\end{equation}
+Tracing out the second mode gives a density matrix on $\{0,2,4\}$,
+\begin{equation}
+ \rho=\frac{1}{401^2}
+ \begin{pmatrix}
+ 160400+3/8 & 7990 & 100\sqrt{6}\\
+ 7990 & 1601/4 & 5\sqrt{6}\\
+ 100\sqrt{6} & 5\sqrt{6} & 3/8
+ \end{pmatrix}.
+ \label{eq:rho}
+\end{equation}
+It is positive semidefinite as the Gram matrix obtained from
+Eq.~\eqref{eq:joint}, and its trace is one. The retained mean photon number
+is $2/401$. All higher Fock components vanish exactly: this support is
+part of the defined state, rather than a truncation of a Gaussian input.
+
+The corresponding Wigner function is
+\begin{equation}
+ W(x,p)=\frac{e^{-R}}{\pi}Q(x,p)^2,\qquad
+ Q(x,p)=\frac{401-2R+R^2/2+20\sqrt{2}(x^2-p^2)}{401}.
+ \label{eq:W}
+\end{equation}
+Consequently $W\geq0$ everywhere, including its zeros, and
+$\int W\dd x\dd p=1$. Positivity of the density operator follows from its
+preparation and partial trace, not merely from positivity of this
+phase-space expression.
+
+Two algebraic constructions establish Eq.~\eqref{eq:W}.
+The first transforms Eq.~\eqref{eq:rho} using Fock-basis Weyl elements.
+The second starts with the Hermite wavefunction
+\begin{equation}
+ \psi(q)=\frac{\pi^{-1/4}e^{-q^2/2}}{\sqrt{401}}
+ \left(20-\frac{\sqrt{2}}{2}+\sqrt{2}q^2\right).
+\end{equation}
+Balanced rotation gives the joint wavefunction
+$\pi^{-1/2}e^{-(q_1^2+q_2^2)/2}P(q_1,q_2)/401$, where
+\begin{equation}
+ P(q_1,q_2)=
+ \left[20-\frac{\sqrt{2}}2+
+       \frac{\sqrt{2}}2(q_1^2+q_2^2)\right]^2
+       -2q_1^2q_2^2.
+\end{equation}
+Partial tracing in $q_2$ and applying
+\begin{equation}
+ W(x,p)=\frac{1}{\pi}\int_{\mathbb R}
+ e^{-2ips}\langle x+s|\rho|x-s\rangle\dd s
+\end{equation}
+reduces to polynomial Gaussian moments. All coefficients can be compared
+exactly in $\mathbb Q(\sqrt{2})$. This also directly checks normalization.
+The coordinate calculation reproduces the known vacuum and identical
+one-photon input baselines; the latter gives
+$e^{-R}(R-1)^2/\pi$, including its nodal circle.
+The implementation details and exact outputs accompany the manuscript.
+
+\section{Full-plane integral bound at order one quarter}
+At the specified order,
+\begin{equation}
+ I_{1/4}(W)=\pi^{-1/4}
+ \int_{\mathbb R^2}e^{-R/4}\sqrt{|Q(x,p)|}\dd x\dd p,
+ \qquad I_{1/4}(W_0)=4\pi^{3/4}.
+ \label{eq:quarter}
+\end{equation}
+Fractional powers near polynomial zeros require explicit control.
+We use a cellwise upper inequality rather than estimating the error of
+point quadrature.
+
+In polar coordinates $x=\sqrt R\cos\theta$, $p=\sqrt R\sin\theta$,
+\begin{equation}
+ Q(R,\theta)=\frac{401-2R+R^2/2+
+                       20\sqrt{2}R\cos(2\theta)}{401}.
+ \label{eq:polar}
+\end{equation}
+Each quadrant contributes equally and $\dd x\dd p=\frac12\dd R\dd\theta$.
+For a cell $C=[a,b]\times[u,v]$ in the first quadrant, let
+\begin{equation}
+ M_C=\int_C e^{-R/4}\dd R\dd\theta,\qquad
+ J_C=\int_C e^{-R/4}Q(R,\theta)\dd R\dd\theta.
+\end{equation}
+Suppose an outward enclosure gives $l\leq Q\leq h$ on $C$.
+An upper bound $A_C$ on its weighted absolute-$Q$ integral is
+\begin{equation}
+ A_C=
+ \begin{cases}
+ J_C,&l\geq0,\\
+ -J_C,&h\leq0,\\
+ \displaystyle\frac{h+l}{h-l}J_C-\frac{2hl}{h-l}M_C,
+       &l<0<h.
+ \end{cases}
+ \label{eq:chord}
+\end{equation}
+The last case follows from the chord of the convex function $|q|$ on
+$[l,h]$. Its denominator is strictly positive.
+Cauchy--Schwarz with weight $e^{-R/4}$ then gives
+\begin{equation}
+ \int_C e^{-R/4}\sqrt{|Q|}\dd R\dd\theta\leq\sqrt{M_CA_C}.
+ \label{eq:cell}
+\end{equation}
+Thus cells that straddle a zero are included without dividing by $Q$ or
+assuming differentiability of its fractional power.
+
+The cell moments are analytic. Set
+\begin{align}
+ m_0&=4(e^{-a/4}-e^{-b/4}),\\
+ m_1&=4[(a+4)e^{-a/4}-(b+4)e^{-b/4}],\\
+ m_2&=4[(a^2+8a+32)e^{-a/4}-(b^2+8b+32)e^{-b/4}].
+\end{align}
+Writing $\Delta\theta=v-u$ and
+$c_C=[\sin(2v)-\sin(2u)]/(2\Delta\theta)$, one obtains
+\begin{equation}
+ M_C=\Delta\theta\,m_0,\qquad
+ J_C=\frac{\Delta\theta}{401}
+ [401m_0-2m_1+m_2/2+20\sqrt{2}c_Cm_1].
+\end{equation}
+Natural interval evaluation of Eq.~\eqref{eq:polar}, with monotonicity of
+$\cos(2\theta)$ on $[0,\pi/2]$, encloses $Q$.
+The interior integral through $R=100$ is at most
+$2\pi^{-1/4}\sum_C\sqrt{M_CA_C}$.
+
+The omitted plane is controlled analytically. For $R\geq100$,
+\begin{equation}
+ |Q|\leq1+\frac{2+20\sqrt{2}}{401}R+\frac{R^2}{802}
+       <2R^2.
+\end{equation}
+The deliberately loose last inequality already follows for $R\geq1$.
+It yields
+\begin{equation}
+ I_{\rm tail}\leq
+ \pi^{3/4}\sqrt{2}\int_{100}^{\infty}R e^{-R/4}\dd R
+ =16\pi^{3/4}\sqrt{2}\,26e^{-25}
+ <1.929\times10^{-8}.
+ \label{eq:tail}
+\end{equation}
+This bound includes all angles and all radii outside the disk.
+
+\subsection{Outward arithmetic and results}
+OpenAI Codex assisted with candidate discovery, algebraic derivation,
+certificate implementation and computational checking. Separate Codex sessions
+provided an additional coordinate-space reconstruction and an integer-interval
+implementation. The exact algebra and both certificates are supplied for
+reproduction; these AI-assisted checks do not replace human scientific review.
+
+Uniform grids use $800\times64$ or $1600\times128$ cells in
+$[0,100]\times[0,\pi/2]$. Radial endpoints are exact dyadic rationals.
+One implementation uses 40-digit directed Decimal arithmetic and a
+slightly tighter coefficient tail bound. A separately implemented
+35-digit integer interval calculation uses Eq.~\eqref{eq:tail} and
+reconstructs the state in coordinates without importing the first
+implementation.
+Both use the cell inequality above, so this comparison checks independent
+algebra and arithmetic implementations, not two unrelated integration theories.
+
+In the integer implementation, additions and subtractions are exact;
+products and divisions are enclosed by integer floor and ceiling operations.
+Square roots use integer square roots with an upward correction when needed.
+The Machin identity
+$\pi=16\arctan(1/5)-4\arctan(1/239)$ with alternating-series remainder
+encloses $\pi$. For $e^x$, $0\leq x\leq25$, terms through degree 160
+are summed with a positive geometric bound on the remainder and the result
+is inverted to enclose $e^{-x}$.
+Sine and cosine use terms indexed $0$ through $60$ and an absolute
+next-term remainder on $[0,\pi]$. The remainders lie beyond the point
+where successive terms decrease. Every ensuing operation, including
+the sign-changing chord denominator, is outward rounded.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+Arithmetic and grid & Full-plane upper bound & Tail upper bound\\
+\midrule
+Decimal, $800\times64$ & $9.437261993640953$ & $1.466\times10^{-8}$\\
+Decimal, $1600\times128$ & $9.437179016856389$ & $1.466\times10^{-8}$\\
+Integer, $1600\times128$ & $9.437179021478335$ & $1.929\times10^{-8}$\\
+\bottomrule
+\end{tabular}
+\caption{Outward upper bounds on $I_{1/4}(W)$ including the entire tail.
+Decimal endpoints are from \texttt{alpha-quarter-jensen-enclosures.json};
+integer endpoints are from \texttt{independent-enclosure.json}.
+The finer grid contains 621 sign-straddling cells.
+These values bound the integral from above; they are not two-sided
+enclosures of its value.}
+\label{tab:bounds}
+\end{table}
+
+All three computations give a strict upper bound below the directed
+vacuum lower bound. In particular,
+\begin{equation}
+ I_{1/4}(W)<9.43718<9.43892<4\pi^{3/4}
+          =I_{1/4}(W_0).
+ \label{eq:strict}
+\end{equation}
+The last lower bound follows from the same enclosed $\pi$; its unrounded
+endpoint exceeds $9.4389219696587875$.
+Since $\ln$ is increasing and $1-\alpha=3/4>0$,
+Eq.~\eqref{eq:strict} proves $h_{1/4}(W)<h_{1/4}(W_0)$.
+One such normalized physical product input suffices to negate a statement
+quantified over every product input and every $0<\alpha<1/2$.
+
+\section{Physical meaning and limitations}
+Balanced mixing can produce a positive phase-space distribution from these
+independent non-Gaussian inputs while its quarter-order differential entropy
+lies below vacuum. Thus the channel's Wigner positivity and the established
+bounds at larger orders do not imply the proposed bound at all positive orders.
+The example has low mean occupation but contains an exact four-photon
+output component; discarding that component would define a different state.
+The measured quantity here is a Wigner--R\'enyi phase-space functional, not
+the von Neumann entropy of the reduced density operator.
+
+This counterexample leaves the proved $\alpha\geq1/2$ beam-splitter result,
+including its Shannon limit, intact. It does not establish a violating
+interval, an optimal deficit, a sharp order threshold, a universal small-input
+expansion, or robustness under imperfect preparation and loss.
+The full-plane comparison is computer assisted: its trust base is the
+displayed inequalities, the supplied Python code and exact integer/rational
+or directed Decimal operations. No formal proof-assistant verification or
+experimental implementation is claimed.
+Comparison with primary versions available on 12 October 2026 found no
+matching restricted-class resolution; this is a bounded literature check
+and not an exhaustive priority assertion.
+
+\paragraph{Data availability and reproducibility.}
+The accompanying source package includes the exact reconstruction programs,
+both full-plane certificate implementations and their reference outputs.
+The accompanying instructions provide commands for exact Fock
+and coordinate reconstruction and both full-plane certificates in a scratch
+directory.
+All certificate programs require only Python's standard library.
+Exact rational interval endpoints and actual execution outputs are included.
+The table uses upper bounds only; no empirical search values are needed
+for the conclusion.
+
+\paragraph{Acknowledgments and AI disclosure.}
+OpenAI Codex assisted with literature searching and manuscript preparation,
+in addition to the research uses described above. The model used for this
+manuscript preparation was \texttt{gpt-6.1-sol}; the exact model versions of
+earlier calculation sessions are not fully recorded and require confirmation.
+The displayed physical reconstruction and separate computational checks
+describe verification performed by AI-assisted programs, not verification by
+the named human author. Human authorship, contributions, review of all
+AI-generated content and responsibility for the work remain to be confirmed
+before submission.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

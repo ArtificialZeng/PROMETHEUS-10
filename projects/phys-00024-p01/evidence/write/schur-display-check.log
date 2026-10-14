@@ -1,0 +1,24 @@
+{
+  "check": "typeset Schur response matrix",
+  "method": "exact polynomial subtraction from column-vectorized defining form",
+  "coverage": "ar,ai,dr,di,t arbitrary real; q=1/2",
+  "residuals": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "scope": "transcription check of an accepted auxiliary identity; not fresh scientific acceptance"
+}

@@ -1,0 +1,105 @@
+{
+  "job_id": "phys-00018-p01-research-d34512ad717d",
+  "basis_size": 48,
+  "scope": "All real bounded whole-lattice protein response functions, fixed unequal constitutive parents only.",
+  "W4_coercivity": {
+    "U2_parent_d1": "3/102400",
+    "U1_parent_d2": "1/187272"
+  },
+  "parents": {
+    "1": {
+      "A": {
+        "projection_norm_upper": 0.6497724583711232,
+        "projection_error_dual_norm_upper": 4.7127103815031867e-07,
+        "approximant_U_norm_upper": 0.649771987100085,
+        "centered_approximant_sup_upper": 24.65948757448201,
+        "head_residual_W4dual_squared_upper": 2.491603557961918e-22,
+        "tail_residual_W4dual_squared_upper": 6.506481056419958e-18
+      },
+      "H": {
+        "projection_norm_upper": 1.9442198773861044,
+        "projection_error_dual_norm_upper": 1.04940708074073e-06,
+        "approximant_U_norm_upper": 1.9442188279790236,
+        "centered_approximant_sup_upper": 135.54756101799703,
+        "head_residual_W4dual_squared_upper": 2.224260505232866e-21,
+        "tail_residual_W4dual_squared_upper": 3.226111229541609e-17
+      },
+      "Dr": {
+        "projection_norm_upper": 0.25872170537439876,
+        "projection_error_dual_norm_upper": 1.3131162760910359e-06,
+        "approximant_U_norm_upper": 0.25872039225812266,
+        "centered_approximant_sup_upper": 5.364893384886475,
+        "head_residual_W4dual_squared_upper": 3.9254009471301915e-23,
+        "tail_residual_W4dual_squared_upper": 5.051581097651366e-17
+      },
+      "Dg": {
+        "projection_norm_upper": 0.33380252064472976,
+        "projection_error_dual_norm_upper": 8.905631807942532e-07,
+        "approximant_U_norm_upper": 0.333801630081549,
+        "centered_approximant_sup_upper": 6.482977023472745,
+        "head_residual_W4dual_squared_upper": 6.522199860883304e-23,
+        "tail_residual_W4dual_squared_upper": 2.3235367756117925e-17
+      }
+    },
+    "2": {
+      "A": {
+        "projection_norm_upper": 0.3177554516310752,
+        "projection_error_dual_norm_upper": 2.7171851974620682e-08,
+        "approximant_U_norm_upper": 0.3177554244592233,
+        "centered_approximant_sup_upper": 9.870916361007517,
+        "head_residual_W4dual_squared_upper": 2.697309884351034e-22,
+        "tail_residual_W4dual_squared_upper": 3.672713903116745e-21
+      },
+      "H": {
+        "projection_norm_upper": 1.2721761279771546,
+        "projection_error_dual_norm_upper": 7.499492068044244e-08,
+        "approximant_U_norm_upper": 1.2721760529822341,
+        "centered_approximant_sup_upper": 66.66095939861148,
+        "head_residual_W4dual_squared_upper": 4.3084858041713966e-21,
+        "tail_residual_W4dual_squared_upper": 2.5723970344456553e-20
+      },
+      "Dr": {
+        "projection_norm_upper": 0.2942310952978128,
+        "projection_error_dual_norm_upper": 9.766427275613559e-08,
+        "approximant_U_norm_upper": 0.29423099763354005,
+        "centered_approximant_sup_upper": 5.046465911499957,
+        "head_residual_W4dual_squared_upper": 2.338695935984023e-22,
+        "tail_residual_W4dual_squared_upper": 5.06990524288334e-20
+      },
+      "Dg": {
+        "projection_norm_upper": 0.1607532324149311,
+        "projection_error_dual_norm_upper": 4.882174265686707e-08,
+        "approximant_U_norm_upper": 0.16075318359318846,
+        "centered_approximant_sup_upper": 2.4812059562270368,
+        "head_residual_W4dual_squared_upper": 6.966848051208359e-23,
+        "tail_residual_W4dual_squared_upper": 1.2658142169522913e-20
+      }
+    }
+  },
+  "checks": [
+    {
+      "form": "B1",
+      "finite_projected_norm_upper": "3/4",
+      "whole_space_omitted_form_norm_upper": "26964389676986740881899337873025484714966737802500402617368103910252273/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+      "whole_space_norm_upper": "43422060428383250270580001277595838470460959216353014015199211371071333867249/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+      "whole_space_norm_numeric_upper": 0.7500004657380285,
+      "norm_at_most_four_fifths": true
+    },
+    {
+      "form": "B2_transpose",
+      "finite_projected_norm_upper": "3/4",
+      "whole_space_omitted_form_norm_upper": "183213957466028739245054855182099537603237037682433310109239782587429495/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "whole_space_norm_upper": "86844250141944612596417483811371112989490091736268105462903297245717434659447/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "whole_space_norm_numeric_upper": 0.7500015822666184,
+      "norm_at_most_four_fifths": true
+    }
+  ],
+  "exact_files": [
+    "evidence/research-pass4/riesz-d1-n48-exact.json",
+    "evidence/research-pass4/riesz-d2-n48-exact.json"
+  ],
+  "full_response_contraction_check_passed": true,
+  "original_status": "unresolved",
+  "referee_acceptance": false,
+  "limitations": "Proposer enclosure depends on the analytic whole-space generator proof and preserved pass-3 certificates; no arbitrary kinetics, strong-feedback or larger-N resolution."
+}

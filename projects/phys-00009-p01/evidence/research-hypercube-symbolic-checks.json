@@ -1,0 +1,91 @@
+{
+  "status": "exact_symbolic_checks_completed",
+  "D4_radial_matrix": "Matrix([\n[     8*a,    -8*a,    0,    0,    0],\n[-2*a - 2, 8*a + 2, -6*a,    0,    0],\n[       0,    -4*a,  8*a, -4*a,    0],\n[       0,       0, -6*a,  8*a, -2*a],\n[       0,       0,    0, -8*a,  8*a]])",
+  "D4_radial_characteristic_polynomial": "lambda*(8*a - lambda)*(768*a**3 - 304*a**2*lambda + 48*a**2 + 32*a*lambda**2 - 32*a*lambda - lambda**3 + 2*lambda**2)",
+  "D4_at_single_particle_gap": "96*a**4*(35*a - 1)",
+  "threshold_formula": "a_D=(D-1)*2**(-(D-1))*integral_0^1 (1+u**2)**(D-1) du - 1",
+  "threshold_recurrence": "a_(D+1)=(D**2*a_D+1)/((D-1)*(2*D+1)), D>=2",
+  "checked_thresholds": [
+    {
+      "D": 1,
+      "critical_a": "-1",
+      "determinant_at_2a_scaled": "-b - 1"
+    },
+    {
+      "D": 2,
+      "critical_a": "-1/3",
+      "determinant_at_2a_scaled": "-b - 3"
+    },
+    {
+      "D": 3,
+      "critical_a": "-1/15",
+      "determinant_at_2a_scaled": "-b - 15"
+    },
+    {
+      "D": 4,
+      "critical_a": "1/35",
+      "determinant_at_2a_scaled": "3*(b - 35)"
+    },
+    {
+      "D": 5,
+      "critical_a": "17/315",
+      "determinant_at_2a_scaled": "3*(17*b - 315)"
+    },
+    {
+      "D": 6,
+      "critical_a": "37/693",
+      "determinant_at_2a_scaled": "15*(37*b - 693)"
+    },
+    {
+      "D": 7,
+      "critical_a": "45/1001",
+      "determinant_at_2a_scaled": "135*(45*b - 1001)"
+    },
+    {
+      "D": 8,
+      "critical_a": "229/6435",
+      "determinant_at_2a_scaled": "315*(229*b - 6435)"
+    },
+    {
+      "D": 9,
+      "critical_a": "3013/109395",
+      "determinant_at_2a_scaled": "315*(3013*b - 109395)"
+    },
+    {
+      "D": 10,
+      "critical_a": "4909/230945",
+      "determinant_at_2a_scaled": "2835*(4909*b - 230945)"
+    },
+    {
+      "D": 11,
+      "critical_a": "5347/323323",
+      "determinant_at_2a_scaled": "42525*(5347*b - 323323)"
+    },
+    {
+      "D": 12,
+      "critical_a": "8821/676039",
+      "determinant_at_2a_scaled": "467775*(8821*b - 676039)"
+    },
+    {
+      "D": 13,
+      "critical_a": "176933/16900975",
+      "determinant_at_2a_scaled": "467775*(176933*b - 16900975)"
+    },
+    {
+      "D": 14,
+      "critical_a": "300017/35102025",
+      "determinant_at_2a_scaled": "6081075*(300017*b - 35102025)"
+    },
+    {
+      "D": 15,
+      "critical_a": "1031927/145422675",
+      "determinant_at_2a_scaled": "42567525*(1031927*b - 145422675)"
+    },
+    {
+      "D": 16,
+      "critical_a": "119875/20036013",
+      "determinant_at_2a_scaled": "9577693125*(119875*b - 20036013)"
+    }
+  ],
+  "limitations": "Finite exact checks supplement the all-D proof; they are not the source of its quantifiers. Same worker wrote checks and proof; no fresh referee acceptance."
+}

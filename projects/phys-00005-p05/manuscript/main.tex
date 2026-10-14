@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\Ee}{E^{\mathrm e}}
+\newcommand{\Eo}{E^{\mathrm o}}
+\newtheorem{proposition}{Proposition}
+\title{An even first excitation in a phase-shifted EPR-like Hamiltonian}
+\author{Xiaojian Zeng\\\small PBC School of Finance, Tsinghua University, 100190\\\small\texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give an exact counterexample to extending odd-parity first-excitation ordering to phase-shifted EPR-like Hamiltonians. On the unweighted complete graph with four vertices, pairing amplitude $s=3/4$ and two edge phases equal to $\pi$, both the unique ground state and the first excited state have even parity. Complete sector characteristic polynomials and rational root isolation establish that the lowest odd energy exceeds the second even energy by more than $3/10$ in the unnormalized edge energy unit. An operator-norm bound preserves this reversal on an explicit open neighborhood of amplitudes and complex phases. The phase-free conjecture is unaffected. The example shows why the lowest odd level cannot in general be used to compute the full gap in the phase-shifted model.
+\end{abstract}
+
+\section{Question and scope}
+Wong, Bravyi, Gosset and Liu introduced EPR-like Hamiltonians and conjectured that their second smallest eigenvalue coincides with the lowest energy in the odd-weight subspace \cite{Wong2026}. Their Conjecture~2 concerns the phase-free model. Section~5.6 introduces edge-dependent pairing phases and asks whether the conjectures extend to that setting. We answer the first-excitation question negatively, using a connected, nonbipartite, unweighted graph whose phases cannot all be removed by single-site $Z$ rotations.
+
+Later work proves global spectral-gap bounds for related Lee--Yang and Suzuki--Fisher Hamiltonians \cite{Bravyi2026,Rayudu2026,Hofgard2026}. Those bounds do not specify the parity of the first excitation. Our example is consistent with a positive global gap and a unique ground state. It concerns sector ordering, without a thermodynamic-limit or experimental claim. A bounded comparison of these primary preprints and focused literature searches found no explicit prior resolution of this phase-extension question; we make no exhaustive priority claim.
+
+\section{Model and phase obstruction}
+For a finite simple graph $G=(V,E)$, let
+\begin{equation}
+ \ket{\phi_e}=\ket{00}+s u_e\ket{11},\qquad
+ H(s,u)=-\sum_{e=\{i,j\}\in E}\ket{\phi_e}\!\bra{\phi_e}_{ij}\otimes I_{V\setminus e},
+ \label{eq:model}
+\end{equation}
+where $0<s<1$, $u_e=e^{i\theta_e}$ and $\bra{\phi_e}$ denotes the adjoint ket. The vectors are unnormalized. Each edge has coefficient one; energies are measured in that fixed coefficient unit and $s,\theta_e$ are dimensionless. Equation~\eqref{eq:model} is the convention of Eq.~(77) in \cite{Wong2026}. In particular, the local term sends $\ket{00}$ to $-\ket{00}-su_e\ket{11}$ and $\ket{11}$ to $-s\overline{u_e}\ket{00}-s^2\ket{11}$.
+
+The Hamiltonian is Hermitian and commutes with $P=\bigotimes_{i\in V}Z_i$. Pairing changes occupation by two and does not conserve ordinary particle number. Write the even energies as $\Ee_1\le\Ee_2\le\cdots$ and the odd energies as $\Eo_1\le\cdots$, with multiplicities. The proposed ordering is $\Eo_1\le\Ee_2$.
+
+Take $V=\{0,1,2,3\}$ and all six edges. In the order $01,02,03,12,13,23$, set
+\begin{equation}
+ s=\frac34,\qquad (u_{01},u_{02},u_{03},u_{12},u_{13},u_{23})=(1,1,1,1,-1,-1).
+ \label{eq:witness}
+\end{equation}
+The negative phases change pairing amplitudes, not edge weights. The triangle $012$ establishes nonbipartiteness. On the cycle $01230$ the invariant
+\begin{equation}
+ \frac{u_{01}u_{23}}{u_{12}u_{03}}=-1
+ \label{eq:cycle}
+\end{equation}
+is unchanged by $u_{ij}\mapsto\eta_i\eta_j u_{ij}$ with unit vertex phases $\eta_i$. Thus all phases cannot be removed by vertex $Z$ rotations. All spectator identities and six interactions are retained.
+
+\section{Complete sector spectra}
+We first reduce the matrices with the sign pattern in \eqref{eq:witness}, retaining symbolic $s$. Put $d=1+s^2$. In the even sector, use the vacuum, the six weight-two strings and the full string. In the weight-two order corresponding to binary integers $3,5,6,9,10,12$, the matrix is
+\begin{equation}
+ H_{\mathrm e}=\begin{pmatrix}-6&a&0\\a^{\mathsf T}&-dI_6&b^{\mathsf T}\\0&b&-6s^2\end{pmatrix},\quad
+ \begin{aligned}a&=(-s,-s,-s,-s,s,s),\\b&=(s,s,-s,-s,-s,-s).\end{aligned}
+ \label{eq:evenblock}
+\end{equation}
+Here vertex zero is the least significant bit. The row vectors satisfy
+$aa^{\mathsf T}=bb^{\mathsf T}=6s^2$ and $ab^{\mathsf T}=-2s^2$.
+Four middle-layer directions orthogonal to both rows have energy $-d$. Taking the Schur complement of the middle layer gives the monic characteristic polynomial
+\begin{align}
+ p_{\mathrm e}(x)&=(x+d)^4\big\{[(x+6)(x+d)-6s^2]\notag\\
+ &\hspace{24mm}\times[(x+6s^2)(x+d)-6s^2]-4s^4\big\}.
+ \label{eq:pe}
+\end{align}
+The calculation away from $x=-d$ extends to all $x$ by polynomial identity.
+
+In the odd sector, order weight-one states as $1,2,4,8$ and weight-three states as $7,11,13,14$. The diagonal blocks are $-3I_4$ and $-3s^2I_4$, and the off-diagonal block is
+\begin{equation}
+ C=s\begin{pmatrix}-1&1&1&0\\-1&-1&0&1\\-1&0&-1&1\\0&-1&-1&-1\end{pmatrix}.
+\end{equation}
+Direct multiplication gives eigenvalues $5s^2,5s^2,s^2,s^2$ for $CC^{\mathsf T}$. Singular-value reduction therefore yields
+\begin{equation}
+ p_{\mathrm o}(x)=[x^2+3(1+s^2)x+4s^2]^2[x^2+3(1+s^2)x+8s^2]^2.
+ \label{eq:po}
+\end{equation}
+Equations~\eqref{eq:pe} and \eqref{eq:po} account for all eight energies in each sector.
+
+At $s=3/4$, define
+\begin{equation}
+ Q(x)=2048x^4+25600x^3+92648x^2+90075x+20736.
+\end{equation}
+The two polynomials specialize to
+\begin{align}
+ p_{\mathrm e}(x)&=\frac{(16x+25)^4Q(x)}{134217728},\label{eq:exacte}\\
+ p_{\mathrm o}(x)&=\frac{(16x^2+75x+36)^2(16x^2+75x+72)^2}{65536}.
+ \label{eq:exacto}
+\end{align}
+
+\begin{proposition}
+For \eqref{eq:witness}, the unique ground state and first excited state are even, and $\Eo_1-\Ee_2>3/10$.
+\end{proposition}
+\begin{proof}
+Rational Sturm root counts isolate one root of $Q$ in each of
+\begin{equation}
+ \left(-\frac{669}{100},-\frac{667}{100}\right),\quad
+ \left(-\frac{449}{100},-\frac{447}{100}\right),\quad
+ \left(-\frac{51}{50},-1\right),\quad
+ \left(-\frac{17}{50},-\frac{33}{100}\right).
+ \label{eq:intervals}
+\end{equation}
+These four disjoint intervals exhaust the degree; all four roots are simple. The remaining even energies are four copies of $-25/16$. Consequently the first two quartic roots are $\Ee_1$ and $\Ee_2$, and
+\begin{equation}
+ \Ee_1<-6<\Ee_2<-\frac{89}{20}.
+\end{equation}
+From \eqref{eq:exacto}, $\Eo_1=(-75-\sqrt{3321})/32$. Since $3321<(289/5)^2$, it satisfies $\Eo_1>-83/20$. Hence
+\begin{equation}
+ \Ee_2<-\frac{89}{20}<-\frac{83}{20}<\Eo_1,\qquad
+ \Eo_1-\Ee_2>\frac3{10}.
+ \label{eq:ordering}
+\end{equation}
+Together with the complete multiplicities, this establishes the asserted global ordering.
+\end{proof}
+
+The Sturm counts are exact rational calculations. As a separate certificate, rational $LDL^{\mathsf T}$ congruences give inertia $(2,6,0)$ for $H_{\mathrm e}+89I/20$ and $(0,8,0)$ for $H_{\mathrm o}+83I/20$, ordered as negative, positive and zero. The accompanying code verifies these identities and prints every pivot. Decimal eigenvalues are unnecessary for the strict conclusion.
+
+\section{An open neighborhood of counterexamples}
+Let $s',\theta'_e$ satisfy $|s'-3/4|<10^{-3}$ and wrapped angular deviations $|\theta'_e-\theta_e|<10^{-3}$ on every edge. These coordinates remain inside $0<s'<1$. In the active $00/11$ block, the edge difference has diagonal coefficient $s'^2-s^2$ and off-diagonal coefficient $s'u'_e-su_e$. Thus
+\begin{align}
+ \|h_e(s',u'_e)-h_e(s,u_e)\|
+ &\le |s'^2-s^2|+|s'u'_e-su_e|\notag\\
+ &\le 3|s'-s|+|\theta'_e-\theta_e|.
+\end{align}
+We used $|s'^2-s^2|\le2|s'-s|$ and $|u'_e-u_e|\le|\theta'_e-\theta_e|$. Spectator identities preserve the norm, so the sum over six edges obeys $\|H'-H\|<24/1000$. Both operators conserve parity. Applying the Hermitian eigenvalue perturbation bound separately to each sector gives
+\begin{equation}
+ E^{\mathrm o\prime}_1-E^{\mathrm e\prime}_2>\frac3{10}-2\frac{24}{1000}=\frac{252}{1000}>0.
+\end{equation}
+The cycle angle remains within $4/1000$ of $\pi$ and is still obstructed. The initial gap above the unique even ground state exceeds two units by \eqref{eq:intervals} and \eqref{eq:ordering}; it too survives the bound. The reversal therefore holds on a legal open set of complex phases, rather than only at discrete signs or a degenerate endpoint.
+
+\section{Consequences and reproducibility}
+The true gap in this example is $\Ee_2-\Ee_1$. Computing $\Eo_1-\Ee_1$ instead overestimates it by more than $3/10$. Moreover, a parity-odd probe $A$, with $PAP=-A$, has zero matrix element between the even ground and even first excited states. This selection rule makes no claim about a nonzero allowed transition or response intensity.
+
+The construction is a counterexample to the universal phase extension, including its restricted nonbipartite, phase-obstructed domain. It does not refute the phase-free Conjecture~2, classify all graphs or phases, identify a thermodynamic transition, or contradict known global-gap bounds. The middle-layer overlap in \eqref{eq:evenblock} and the odd singular values exhibit the pairing interference in this particular model; no general interference criterion is claimed.
+
+The accompanying reproduction instructions specify Python and SymPy versions. Two exact constructions use local matrix-unit Kronecker embeddings and bitstring ket--bra action, with explicit bit reversal between conventions. An additional separately written Pauli-product reconstruction checks the sector polynomials and inertia. The source benchmarks include the four-vertex star at $s=1/2$, with gap $1-s^2=3/4$ from Lemma~13 of \cite{Wong2026}, and saturation of the published normalized parent-star bound in \cite{Ju2025}. Those checks are convention controls, not evidence for a new benchmark result. The exact witness, complete rational matrices, root-count and congruence certificates are supplied with the source code. A finite numerical sign scan was used for discovery only; the conclusion rests on the exact argument above and the continuous norm bound.
+
+\section*{Acknowledgements}
+\paragraph{AI disclosure.} OpenAI Codex assisted the research ideation, literature comparison, matrix-construction and certificate code, calculation checks, and manuscript drafting. AI-assisted discovery and checks used exact finite-dimensional algebra and the validation methods described above. Separate AI research and checking contexts shared the primary equations and symbolic algebra library; these checks are not external peer review. Human scientific review, critical revision and authorship confirmation of this local draft remain pending.
+
+\paragraph{Data and code availability.} Complete source code, rational witness data, certificates and regeneration instructions accompany this local draft. No experimental data were used.
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

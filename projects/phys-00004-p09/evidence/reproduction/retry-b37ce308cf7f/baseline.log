@@ -1,0 +1,40 @@
+COMMAND: ["/Users/mac/6physics-research/.venv/bin/python", "/Users/mac/6physics-research/projects/phys-00004-p09/evidence/reproduction/retry-b37ce308cf7f/compare_and_baseline.py"]
+STARTED_AT: 2026-10-12T09:54:23.432772+00:00
+STDOUT:
+COMMAND: /Users/mac/6physics-research/.venv/bin/python evidence/reproduction/compare_and_baseline.py
+ENVIRONMENT: Python 3.12.14, NumPy 2.5.3, SymPy 1.14.0
+NUMERIC: complex128, absolute tolerance 5e-12, entropy cutoff 1e-14; exact polynomials certify the 0/1/2-bit baseline values.
+PUBLISHED BASELINE uniform_product n=1: exact nonzero spectrum ['1']; S=0 bits PASS
+PUBLISHED BASELINE uniform_product n=2: exact nonzero spectrum ['1']; S=0 bits PASS
+PUBLISHED BASELINE uniform_correlated n=1: exact nonzero spectrum ['1/2', '1/2']; S=1 bits PASS
+PUBLISHED BASELINE uniform_correlated n=2: exact nonzero spectrum ['1/4', '1/4', '1/4', '1/4']; S=2 bits PASS
+PUBLISHED BASELINE uniform_anticorrelated n=1: exact nonzero spectrum ['1/2', '1/2']; S=1 bits PASS
+PUBLISHED BASELINE uniform_anticorrelated n=2: exact nonzero spectrum ['1/4', '1/4', '1/4', '1/4']; S=2 bits PASS
+PUBLISHED BASELINE deterministic n=1: exact nonzero spectrum ['1']; S=0 bits PASS
+PUBLISHED BASELINE deterministic n=2: exact nonzero spectrum ['1']; S=0 bits PASS
+EXACT: K_B=K_A^T entry by entry; G_A and G_B equal characteristic polynomials.
+EXACT: det(G_A)=det(G_B)=(x00*x11-x01*x10)^2; normalization supplies trace=1.
+CANONICAL ('uniform_product', 1): S_A=-0 S_B=-0 bits; marginal and basis map PASS
+CANONICAL ('uniform_product', 2): S_A=1.601713251907459e-16 S_B=-0 bits; marginal and basis map PASS
+CANONICAL ('biased_product', 1): S_A=3.203426503814918e-16 S_B=6.406853007629834e-16 bits; marginal and basis map PASS
+CANONICAL ('biased_product', 2): S_A=3.203426503814918e-16 S_B=-6.406853007629837e-16 bits; marginal and basis map PASS
+CANONICAL ('uniform_correlated', 1): S_A=0.9999999999999999 S_B=0.9999999999999999 bits; marginal and basis map PASS
+CANONICAL ('uniform_correlated', 2): S_A=2 S_B=2 bits; marginal and basis map PASS
+CANONICAL ('uniform_anticorrelated', 1): S_A=0.9999999999999999 S_B=0.9999999999999999 bits; marginal and basis map PASS
+CANONICAL ('uniform_anticorrelated', 2): S_A=2 S_B=2 bits; marginal and basis map PASS
+CANONICAL ('biased_correlated', 1): S_A=0.9182958340544896 S_B=0.9182958340544896 bits; marginal and basis map PASS
+CANONICAL ('biased_correlated', 2): S_A=1.836591668108979 S_B=1.836591668108979 bits; marginal and basis map PASS
+CANONICAL ('deterministic', 1): S_A=-0 S_B=-0 bits; marginal and basis map PASS
+CANONICAL ('deterministic', 2): S_A=-0 S_B=-0 bits; marginal and basis map PASS
+CANONICAL ('zero_row', 1): S_A=-0 S_B=3.203426503814918e-16 bits; marginal and basis map PASS
+CANONICAL ('zero_row', 2): S_A=-0 S_B=3.203426503814918e-16 bits; marginal and basis map PASS
+CANONICAL ('asymmetric', 1): S_A=0.02103352607526143 S_B=0.02103352607526111 bits; marginal and basis map PASS
+CANONICAL ('asymmetric', 2): S_A=0.04206705215052137 S_B=0.04206705215052257 bits; marginal and basis map PASS
+CANONICAL ('three_support', 1): S_A=0.3545789026652699 S_B=0.35457890266527 bits; marginal and basis map PASS
+CANONICAL ('three_support', 2): S_A=0.7091578053305396 S_B=0.7091578053305396 bits; marginal and basis map PASS
+SUPPLEMENT: {"auxiliary_splits": [[1, 4], [4, 1], [2, 2], [2, 3], [3, 2], [4, 3], [3, 4], [4, 4]], "fixed_tables": 6, "largest_marginal_error": 5.551115123125783e-16, "largest_norm_chain_violation": 1.1102230246251565e-16, "largest_spectrum_disagreement": 1.1102230246251565e-15, "meaning": "finite floating-point diagnostics, not a proof of arbitrary dimension or two-copy additivity", "minimum_entropy_slack_bits": -6.406853007629837e-16, "minimum_largest_weight_slack": -4.440892098500626e-16, "random_tables": 32, "rng_seed": 20261012, "status": "pass", "trials": 304}
+RESULT: PASS; reproduction only.
+
+STDERR:
+
+RETURN_CODE: 0

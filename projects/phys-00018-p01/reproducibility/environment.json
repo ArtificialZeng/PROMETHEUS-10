@@ -1,0 +1,7 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "dependencies": "Standard-library certificate replay; NumPy/SciPy only for optional full regeneration. No software installed."
+}

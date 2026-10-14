@@ -1,0 +1,5 @@
+# Versions of the existing environment used for the retained computations.
+mpmath==1.3.0
+numpy==2.5.3
+scipy==1.18.1
+sympy==1.14.0

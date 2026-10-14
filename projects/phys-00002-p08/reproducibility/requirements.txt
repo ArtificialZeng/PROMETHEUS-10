@@ -1,0 +1,2 @@
+# Exact checker: tested with Python 3.12.14 and SymPy 1.14.0.
+sympy==1.14.0

@@ -1,0 +1,1042 @@
+[
+  {
+    "id": "phys-00002-p04",
+    "series": "big_mac",
+    "title": "Comment on “Bounds on skewness and kurtosis of steady-state currents”",
+    "category": "disproofs",
+    "original_status": "disproved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "仅由温差驱动的有限态热流，第四累积量能否为负？",
+    "claim_statement": "The frozen three-state two-positive-temperature, fully paired detailed-balance model has strictly positive c2 and strictly negative long-time hot-bath c4. It is an exact counterexample to the universal nonnegative thermal fourth-cumulant assertion.",
+    "background": "Under the stated assumptions, negative fourth heat cumulants cannot exclude purely thermally driven classical Markov dynamics. This removes the proposed universal nonnegative-kurtosis diagnostic outside equilibrium.",
+    "novelty": "A fully specified finite three-microstate, two-positive-temperature network with exact negative fourth long-time bath heat cumulant, obeying the stated thermal local detailed-balance premises. The full finite generator, not a residence-current approximation, is certified by two distinct exact calculations.",
+    "limitations": "provisional; no equivalent purely thermal counterexample or later exact resolution found in targeted current primary-literature checks; absence of hits does not prove novelty No fresh referee or exhaustive citation-network search has occurred; raw web evidence consists of returned primary passages rather than complete downloaded source PDF bytes. Proposed physical intermittency explanation is not a certified singular-limit mechanism. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00002-p04/paper.pdf",
+    "pdf_sha256": "e42140afa0160033651216f0a7f6cf2359423ef4a98975c1df886582d02f7b1f",
+    "code_files": [
+      "code/check_witness.py",
+      "code/reproduce_manuscript.py",
+      "code/thermal_search.py"
+    ],
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [],
+    "canonical_id": "phys-00002-p04",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00002-p08",
+    "series": "big_mac",
+    "title": "A resource obstruction for qubit measurement self-testing with matched kernel preparations",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "自检验四结果单比特测量，能否减少制备和辅助测量数量？",
+    "claim_statement": "For any extremal four-outcome complex-qubit reference POVM with four matched pure kernel-state preparations, and any binary auxiliary collection whose reference observable Bloch vectors span a space of dimension at most two, every real linear functional on the complete prepare-and-measure probability table that is globally maximized at that reference has an admissible maximizing realization with the same auxiliary measurements and a target having at most three nonzero effects. Thus no such witness self-tests the four-outcome target, even when only the target is to be certified. This includes two projective auxiliaries and two arbitrary binary POVMs. The reference kernel-state restriction is essential to the claimed scope; the unrestricted resource conjecture remains unresolved.",
+    "background": "Reweighting all probabilities at the established four matched-exclusion-state reference cannot reduce auxiliary settings from three to two. Any such reduced-resource protocol must depart from those reference preparations or change the physical resources/premises. The obstruction addresses target-only certification, not merely separate state self-testing.",
+    "novelty": "Necessary supporting-witness normal form c_ij=l_i-k_j delta_ij with k_j>=0 for arbitrary target probability coefficients at any four matched kernel-state reference; using it, a universal explicit <=3-nonzero-effect same-score target replacement whenever the auxiliary Bloch span has dimension<=2. Includes arbitrary binary POVMs and zero auxiliary-state-gradient cases; original unrestricted minimality remains unresolved.",
+    "limitations": "Fresh primary screen2026-10-12UTC before legacy extension:2406.08661v1/current official record;2020 publisher fulltext;2306.07248v5 including official2025-11-01 revision;2306.00730v4;2603.01802v1;2503.13282v2/current2026-07-01 revision. Exact-ID and minimal/two/four-outcome/antipodal/state-exclusion/lower-bound searches. No equivalent result identified in checked passages; bounded screen, incomplete forward-citation coverage, no proof of priority or unrestricted openness. Novelty/significance remain for fresh referee. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00002-p08/paper.pdf",
+    "pdf_sha256": "4a3f0cb51456bc921962601cb9642c97d76a8be7846694bb4f858a9f4b28900e",
+    "code_files": [
+      "evidence/n4k2_exact_checks.py",
+      "reproducibility/build_manuscript.py",
+      "reproducibility/run_exact_checks.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00002-p08",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00002-p10",
+    "series": "big_mac",
+    "title": "A balanced beam-splitter counterexample to the low-order Wigner–Rényi vacuum bound",
+    "category": "disproofs",
+    "original_status": "disproved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "低阶 Wigner–Rényi 熵：真空是否仍给出最小值？",
+    "claim_statement": "The universal low-order Wigner–Rényi vacuum bound for independently prepared balanced beam-splitter inputs is false. With [x,p]=i and Wvac=exp(-(x²+p²))/pi, prepare psi=(20|0>+|2>)/sqrt401 independently on both modes, trace one output after the balanced lossless mixer, and set alpha=1/4. Its exact retained Wigner function is exp(-R)[(401-2R+R²/2+20sqrt2(x²-p²))/401]²/pi, R=x²+p². A directed full-plane upper bound proves I_1/4(Wout)<9.43718<9.43892<I_1/4(Wvac)=4pi^(3/4), hence h_1/4(Wout)<h_1/4(Wvac). No other alpha range or optimum is claimed.",
+    "background": "Balanced mixing of two independent non-Gaussian low-energy states does not preserve the vacuum minimum for all low-order Wigner–Rényi entropies; the proposed extension to every alpha in (0,1/2) fails.",
+    "novelty": "Exact independent product input psi=(20|0>+|2>)/sqrt401 yields an admissible beam-splitter state violating the vacuum bound at alpha=1/4; directed full-plane upper I<9.43718, vacuum I>9.43892.",
+    "limitations": "2026-10-12 official full text and version histories of 2411.05562v2 and 2609.24670v1; preserved 2601.16898v2 context; bounded searches for Wigner Rényi beam-splitter low-alpha counterexamples, cross-Wigner p<1 and squeezed alpha=1/4. No matching resolution located; absence of hit is not exhaustive priority proof. Referee novelty audit remains mandatory. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00002-p10/paper.pdf",
+    "pdf_sha256": "e34288ccc8a5647007e68b0062dd61dade72de875d22ad66092f7a004474ce4f",
+    "code_files": [
+      "evidence/alpha-quarter-enclosure.py",
+      "evidence/alpha-quarter-jensen-enclosure.py",
+      "evidence/alpha-quarter-witness-exact.py",
+      "reproducibility/independent_replay.py",
+      "reproducibility/run_all.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [],
+    "canonical_id": "phys-00002-p10",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00002-p12",
+    "series": "big_mac",
+    "title": "Sharp lower bounds on current cumulant ratios in Markov rings with an irreversible bond",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "双向单环随机网络的负偏度、负峰度能否突破猜想界？",
+    "claim_statement": "For every finite simple nearest-neighbor time-homogeneous Markov ring with N>=3, finite forward rates u_i>0, nonnegative finite reverse rates w_i and at least one w_i=0, the long-time signed one-cycle count cumulant rates satisfy c3/c1>=-1/16 and c4/c2>=-(1+sqrt(5))/10. Here c1,c2>0; arbitrary initial law and any counted bond yield the same ratios. Both constants are sharp over unbounded finite N. The original strictly positive bidirectional conjecture remains unresolved; no finite-N extremizer or interior bound is asserted.",
+    "background": "Validates the proposed third/fourth current-ratio transport diagnostics throughout an irreversible-bond classical single-cycle class, including strong backward excursions elsewhere. It identifies a rigorously safe boundary sector; all-positive finite-affinity universality remains unresolved.",
+    "novelty": "An ansatz-free analytic proof of both winding-ratio lower bounds for every positive exponential-stage vector, mapped by the known passage-time theorem to every finite Markov ring with at least one irreversible bond and arbitrary remaining backward rates. Both constants are asymptotically sharp.",
+    "limitations": "Targeted primary/current recheck on 2026-10-12, arXiv latest v4 and exact Appendix, author Fill theorem/remark, prior 2023 modular and 2025 heat/entropy neighbors, exact constants with proof/erratum/renewal/hypoexponential searches. No direct priority conflict found; this is bounded coverage, not a priority guarantee. Fresh referee must assess novelty and significance of proof upgrade. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00002-p12/paper.pdf",
+    "pdf_sha256": "919a21d4c2c26a4fdd800386f2d9fa5a739ae3e8f8ea69ccdf90b66ff8a10084",
+    "code_files": [
+      "reproducibility/build.py",
+      "reproducibility/check.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [],
+    "canonical_id": "phys-00002-p12",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00002-p13",
+    "series": "big_mac",
+    "title": "Sharp first-passage skewness and excess-kurtosis bounds for three-state cycles at large affinity",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "单环熵产生首达时间的最优上界：大亲和力分支能否解析求出？",
+    "claim_statement": "For the strictly positive finite-rate time-homogeneous N=3 periodic Markov ring and the large-threshold entropy-current FPT conventions of problem.md, at every finite A>=log(64), the separate sharp envelopes are U_S=sqrt(A) N(p_S)/V(p_S)^(3/2) and U_K=A Q(p_K)/V(p_K)^2. Here d=coth(A/4), H=(d^2+1)/(2d), t(p)=d p(2+p)/(1+2p)^2, zeta(p)=d^2 p^2/(1+2p)^3, V=H-2t, N=3H^2-1-6Ht+6zeta, and Q=3H(5H^2-3)-12(3H^2-1)t+12Ht^2+24Hzeta. p_S is the unique positive root of 4(d^2-1)p^2+(12d^2-4)p-(d^2-1)^2=0; p_K is the unique positive root of 8(d^2-1)p^3+(-4d^4+24d^2-12)p^2+(2d^4+12d^2-6)p-(d^2-1)^2(d^2+1)=0. Both bounds are attained by strictly positive finite rate vectors constructed in spectral-envelope-proof.md Section 5. This does not settle the original all-N/all-affinity problem or the kink locations.",
+    "background": "Replaces rate-space numerical maximization by algebraic sharp limits on entropy-threshold timing asymmetry and excess tails in three-step dissipative cycles. Identifies an attaining half-affinity tilted-spectrum degeneracy and allows direct envelope evaluation at fixed dissipation.",
+    "novelty": "Exact sharp upper envelopes for both large-threshold scaled FPT skewness and scaled excess kurtosis for every strictly positive three-state ring at every finite A>=log(64). They are specified by unique positive quadratic/cubic roots in d=coth(A/4), and explicit strictly positive rate vectors attain each bound.",
+    "limitations": "Current primary arXiv history/HTML 2110.14540 and exact-claim/later-resolution searches rechecked 2026-10-12 before extension. Compared retained 1510.03279v1, full 2204.08421v4 definitions/Section III E/Appendix A, and 2025 JSP 192,126 publisher fulltext definitions. No equivalent envelope found in this bounded screen. Publisher version of the 2021 source and exhaustive citation tracking remain incomplete; priority is proposed, not certified. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00002-p13/paper.pdf",
+    "pdf_sha256": "cf5a88d22ae48b399fce2552b4f66453e457deed0628ecf6e8fe96260c7686a2",
+    "code_files": [
+      "evidence/reproduction/determinant_a.py",
+      "evidence/reproduction/renewal_b.py",
+      "evidence/research/spectral-envelope-check.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00002-p13",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00003-p07",
+    "series": "big_mac",
+    "title": "Uniform indexed spectral bounds near the five-photon resonance of the quantum Rabi model",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "量子Rabi模型2026年新谱界：超出小劈裂区的认证判别",
+    "claim_statement": "In the exact unbiased quantum Rabi model of problem.md, write G=g/omega,d=Delta/omega,e_n^s=E_n^s/omega with omega>0. For every 0<G<=1/10 and -1<=c<=1, d=5/2-(5/4)G^2+cG^4 implies e_2^+<5/2-G^2. On d=5/2-(5/4)G^2-(5/64)G^4, the sorted full-operator levels satisfy |e_2^+-(5/2-G^2-sqrt120*G^5/64)|<=G^6/3 and |e_3^+-(5/2-G^2+sqrt120*G^5/64)|<=G^6/3. Delta sign reversal exchanges parity. No all-n, opposite-parity, universal spacing, exact-stationarity or experimental transition claim.",
+    "background": "Certifies how the avoided-crossing lower branch stays below the conjectured indexed ceiling when the leading diagonal margin vanishes. Gives a rigorous gap envelope with relative error <=G/(3kappa), below 19.5% at G=0.1 and improving as G->0; no optical selection-rule or transfer-rate claim.",
+    "novelty": "Explicit continuous-domain certificate for the sorted n=2 plus-parity upper bound near the five-photon resonance, with infinite-tail and index control; on fourth-order tuning, two indexed eigenvalue enclosures with uniform absolute error G^6/3 for 0<G<=0.1. No novelty claimed for the known sqrt(5!)/64 coefficient or the resonance mechanism.",
+    "limitations": "Primary v3 and current abstract rechecked 2026-10-12; exact identifier/title plus proof/resolution queries and weak-coupling/five-photon/Bloch-Siegert neighbors. Springer 2026 small-gap successor and arXiv:2608.09562v1 Sec.5 checked. No verified later global resolution or matching explicit uniform certificate; priority is not exhaustive and novelty/significance require fresh referee assessment. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00003-p07/paper.pdf",
+    "pdf_sha256": "e62071505924136588fbe39f596813bc97018e7c62eafcd47ee46d5194c2699f",
+    "code_files": [
+      "evidence/research/pass2/check-feshbach.py",
+      "evidence/research/pass2/check-rational-functions.py",
+      "evidence/research/pass2/feshbach-symbolic.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00003-p07",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00003-p10",
+    "series": "big_mac",
+    "title": "Weak periodic phase shaping lowers the worst-case sensitivity of coherent-state qubit readout",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "单比特读取相干光场，能否严格超过 \\(4/e\\) 的最坏幅度灵敏度？",
+    "claim_statement": "In the one-real-coherent-mode, fixed-ground-state-qubit, alpha-independent-unitary, qubit-only SLD-QFI model of source.md/problem.md, for every fixed L>0 and fixed real bounded Borel L-periodic function g nonconstant almost everywhere, set V_epsilon=exp[-i sigma_y(Q/sqrt(2)+epsilon g(Q))]. There exists epsilon0(g,L)>0 such that for every real epsilon with 0<abs(epsilon)<epsilon0, of either sign, the outputs are uniformly full rank and inf_{alpha in R} F_Q[rho_epsilon(alpha)]<4/e. Explicitly epsilon0=min(h/M,gamma/(2KM^2)), where M bounds abs(g), G is the exact first-variation response, gamma=min(-min G,max G)>0, and h,K are the uniform-rank/remainder constants in evidence/research/periodic-variation-proof.md. Constant g preserves 4/e. The profile and period are fixed before taking epsilon small; no common radius, norm-neighborhood maximum, finite-strength no-go or unrestricted optimum is asserted.",
+    "background": "Rules out all fixed weak periodic same-axis phase shaping, including multiharmonic and discontinuous profiles, as an infinitesimal route to improving the established uniform single-mode qubit readout. Any improvement must evade this restricted perturbative conclusion. No improved interaction, hardware benefit or unrestricted optimum is asserted.",
+    "novelty": "A restricted exact directionwise obstruction: for every one fixed real bounded Borel periodic phase profile g, nonconstant almost everywhere, f_epsilon(x)=x/sqrt(2)+epsilon g(x) has inf over every real alpha of qubit QFI strictly below 4/e for both sufficiently small signs of epsilon. The radius depends on the profile and period. Explicit first-variation Fourier multipliers have no nonzero-frequency nulls; uniform full rank and a quadratic remainder establish the continuum conclusion.",
+    "limitations": "Checked current official arXiv:2509.22361 history and full v2 primary Sections III.1 and III.6 on 2026-10-12; no later version listed. Existing full publisher and preprint sources and preprocessing/compression/repeated-query neighbors were read at their decisive premises. Current exact-title/identifier/author, coherent/qubit/worst-case/Fisher, 4/e/nonlinear and Gaussian/minimax/qubit/encoding searches identified no checked primary reporting this obstruction. Absence of hits is not priority proof. The source's in-preparation reference remains inaccessible and could affect novelty; fresh independent significance/novelty review remains required. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00003-p10/paper.pdf",
+    "pdf_sha256": "dbecb95500325c05a82091fb82f841ca504f37ee54b4d852af0042a7429ade0d",
+    "code_files": [
+      "evidence/research/general_variation_check.py",
+      "evidence/research/sinusoidal.py",
+      "reproducibility/build_manuscript.py",
+      "reproducibility/make_figure.py",
+      "reproducibility/run_consistency_checks.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00003-p10",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00004-p05",
+    "series": "big_mac",
+    "title": "Diagonal quantum discord under unital qubit noise: a relative-entropy proof for two-qubit states",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "单比特unital噪声，能否增加二比特态的对角量子失谐？",
+    "claim_statement": "For every two-qubit density operator rho_AB and every unital CPTP channel E_A, provided both rho_A and E_A(rho_A) are nondegenerate, the entropy-based diagonal discord S(pi_A rho_AB)-S(rho_AB), using each state's own marginal spectral projections, is nonincreasing under E_A tensor id_B. This settles precisely the frozen source.md/problem.md domain, including rank-deficient global states and arbitrarily small positive marginal gaps.",
+    "background": "Within the stated finite-dimensional single-use noise model, local unital noise cannot increase diagonal discord despite a moving marginal eigenbasis. This supplies the resource monotonicity left numerically supported in S1 for the frozen two-qubit domain.",
+    "novelty": "Exact proof of the entire frozen nondegenerate two-qubit/unital-CPTP inequality via channel-image compatibility with output marginal pinching and the quantum relative-entropy Pythagorean identity. Channel/dephasing commutation is unnecessary for this entropy-based claim.",
+    "limitations": "2026-10-12 exact-title and diagonal-discord/unital/monotonicity/counterexample/conjecture/proof/relative-entropy/pinching/noncommuting/Pythagorean searches; latest S1 version record and relevant full primary passages checked; S2 actual v4 primary PDF/text rechecked. No later exact resolution identified, but no exhaustive citation graph or priority guarantee. Primary and raw query evidence preserved. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00004-p05/paper.pdf",
+    "pdf_sha256": "75431152fe48db2bdcd14755e8bdf4e42a9760a5ea1bf125721684baff332a03",
+    "code_files": [
+      "evidence/reconstruct_a.py",
+      "evidence/reconstruct_b.py",
+      "evidence/research-check.py",
+      "evidence/research-precision.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00004-p05",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00004-p06",
+    "series": "big_mac",
+    "title": "Global optimality of every-jump resetting for a Cauchy flight: a computer-assisted survival comparison",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "Cauchy跳跃重置：每步重置的局部最优条件，是否已经保证全局最优？",
+    "claim_statement": "For every finite b>=0 in the unit Cauchy reset-before-jump killed walk, Q2(b)>=Q1(b)^2 implies T_b(r)>T_b(1)=1/[1-F(b)] for every0<r<1; r=1 is equality.",
+    "background": "Within the reset-before-jump Cauchy search model, Q2>=Q1^2 selects reset before every jump as the unique optimum among constant Bernoulli resetting rates; interior reset-rate optimization cannot lower the mean passage time, even at equality of the two-step criterion.",
+    "novelty": "Computer-assisted proof of the complete frozen unit-Cauchy implication for every finite b>=0 and every 0<r<=1, strengthened to strict interior comparison. A finite survival enclosure for orders3..9 plus exact zero-barrier induction gives all-order coefficient dominance; a separate finite/analytic exclusion proves the antecedent cannot hold for b>=1.809.",
+    "limitations": "Current exact-title/identifier, Cauchy/global/sufficient/proof/conjecture and later-result searches on2026-10-12; primary originalv1 full HTML, Bonomo-Pal geometric convention and later2507.11196v1 full HTML rechecked. No exact later resolution located. Journal fulltext retrieval failed; targeted primary-PDF indexing still locates the conjecture, but no full version comparison is claimed. Abstract-only newer lead and inaccessible neighboring2D paper are recorded. Novelty/priority remain provisional for fresh referee review. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00004-p06/paper.pdf",
+    "pdf_sha256": "7ba4c47b42417ab88e61996266f07b9db8d36db13f6ab4039810ef8a10e16027",
+    "code_files": [
+      "evidence/antecedent_exclusion.py",
+      "evidence/barrier_cover.py",
+      "evidence/finite_survival.py",
+      "evidence/independent_exclusion_check.py",
+      "evidence/independent_survival_check.py",
+      "evidence/interval-survival-check.py",
+      "evidence/interval_survival.py",
+      "reproduce_bundle.py"
+    ],
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [
+      "requirements.txt"
+    ],
+    "canonical_id": "phys-00004-p06",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00004-p08",
+    "series": "big_mac",
+    "title": "Arbitrarily clustered hot spots on bridgeless quantum graphs",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "没有桥的输运网络，能否让最慢热模态的全部冷热极值任意靠近？",
+    "claim_statement": "For every real epsilon>0 there is a finite connected compact positive-length standard-Kirchhoff metric multigraph Gamma with every edge on a cycle, diameter 1, simple first positive eigenvalue mu2, and complete global maximum/minimum union M satisfying diam(M)<epsilon. Explicit witness: for m=max(4,ceil(36/(pi^2*epsilon^2))), h=atan(1/sqrt(m))/pi, take a central tree with two long arms 1/2, two stems h to fan hubs, and m leaves of length 2h per hub; replace every edge by two equal parallel copies. Its simple mu2=[atan(1/sqrt(2m+1))/h]^2, its full metric diameter is 1, and its complete extrema union is exactly the 2m fan leaf vertices of diameter 6h<epsilon. This is the original Conjecture 8.9 no-bridge scope, allowing articulation vertices and no fixed volume/degree restriction.",
+    "background": "For homogeneous standard-Kirchhoff network diffusion, the hottest/coldest set of the unique slowest nonconstant mode does not impose any positive universal lower bound relative to network metric diameter, even when every edge lies on a cycle. This is a model prediction with constant diffusivity, without a fixed-volume or bounded-degree constraint.",
+    "novelty": "An explicit one-integer uniformly doubled lengthened split-tree family proves the full printed existence statement: for m>=4, h=atan(1/sqrt(m))/pi, mu2=[atan(1/sqrt(2m+1))/h]^2 is simple, the exact complete extrema union has diameter 6h, and the actual doubled metric diameter is 1. m=max(4,ceil(36/(pi^2*epsilon^2))) makes 6h<epsilon for every epsilon>0.",
+    "limitations": "Fresh bounded primary-source searches and exact-transfer comparison on 2026-10-12, recorded in evidence/research-pass1-literature.md and raw web-01 through -08. Current official original v4, survey v3, and same-authors higher-dimensional v2 were checked. No direct later resolution was identified; incomplete indexing and other terminology limit any priority claim. candidate_novel is provisional and requires a fresh referee novelty/significance check. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00004-p08/paper.pdf",
+    "pdf_sha256": "0188c931316c3c7d091c8168c714ea9c73298b88ecfff8242e974ba6cfbd9cf7",
+    "code_files": [
+      "evidence/compare_inputs.py",
+      "evidence/reconstruct_a.py",
+      "evidence/reconstruct_b.py",
+      "evidence/research-pass1-check.py",
+      "manuscript/build.py"
+    ],
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00004-p08",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00004-p09",
+    "series": "big_mac",
+    "title": "Positive pathwise entropy curvature at the canonical two-copy purification of a binary classical state",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "经典二比特关联的von Neumann纯化纠缠，两份联合制备能否省资源？",
+    "claim_statement": "For every strictly positive normalized binary probability table P with det(sqrt(P)) nonzero, consider the canonical two-copy purification in the fixed auxiliary split R=S=C^4 and U(t)=exp(i t H) on RS. On the 112-real-dimensional Hermitian-generator subspace with no first-order null-to-null Schmidt block, S(AR;t)=2 h2((1+sqrt(1-4 det(sqrt(P))^2))/2)+c_P(H)t^2+o(t^2). The exact quadratic form c_P is nonnegative with kernel precisely H=H_R tensor I+I tensor H_S, a 31-dimensional local auxiliary-unitary gauge. Thus its 81-dimensional quotient is strictly positive. The phase sector has the explicit sum-of-squares form and the controlled-rotation sectors the graph-Laplacian forms in quadratic-form.md. Outside this subspace, the positive leading t^2 log(1/t^2) coefficient implies entropy increase along every fixed non-gauge exponential-unitary path for sufficiently small nonzero t. This does not assert a common quantitative neighborhood, global additivity, boundary/product-table coverage, or a result for larger auxiliary splits.",
+    "background": "Every fixed non-gauge exponential auxiliary-unitary direction increases the purification entropy for sufficiently small nonzero parameter in this split. Infinitesimal descent cannot provide collective preparation savings there; finite-distance or larger-split mechanisms remain possible.",
+    "novelty": "Exact entropy quadratic form on the 112-dimensional no-first-order-Schmidt-rank-growth auxiliary-generator space at the canonical two-copy purification; its quotient by 31 local auxiliary-unitary gauge directions is strictly positive in all 81 remaining dimensions for every strictly positive nonproduct binary probability table in R=S=C^4.",
+    "limitations": "Primary records and relevant full-text locations checked 2026-10-12 before continuation, plus exact claim/local-curvature/local-additivity queries. August 2608.28897v1, October 2610.03630v1, norm-compression 2410.21961v4, and related 1105.6122 and 2111.11385v4 were screened. Bounded coverage cannot certify priority; a fresh referee must assess possible constrained variants and significance. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00004-p09/paper.pdf",
+    "pdf_sha256": "1c8d682b9b029b60f69c8bbc08c4e9b69c49ff792cfc26b5c9dd23c105865bb1",
+    "code_files": [
+      "evidence/reproduction/retry-b37ce308cf7f/compare_and_baseline.py",
+      "evidence/reproduction/retry-b37ce308cf7f/reconstruct_a.py",
+      "evidence/reproduction/retry-b37ce308cf7f/reconstruct_b.py",
+      "evidence/research/pass2-8ac137aacbe0/analytic_curvature.py",
+      "evidence/research/pass2-8ac137aacbe0/check_phase_identity.py",
+      "evidence/research/pass2-8ac137aacbe0/replay_curvature.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00004-p09",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00005-p05",
+    "series": "big_mac",
+    "title": "An even first excitation in a phase-shifted EPR-like Hamiltonian",
+    "category": "disproofs",
+    "original_status": "disproved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "不可消配对相位的 EPR 图，最低激发是否仍一定为奇宇称？",
+    "claim_statement": "The universal Eo1<=Ee2 question frozen in source.md/problem.md is false. For the exact negative unnormalized pairing-projector Hamiltonian on K4, s=3/4, theta13=theta23=pi and all other phases0, the graph is legal and phase-obstructed, Ee2<-89/20<-83/20<Eo1. Its unique ground and first excitation are even. Reversal persists when |s-3/4|<1/1000 and every wrapped phase deviation is<1/1000, with Eo1-Ee2>252/1000. This answers negatively the restricted phase extension, not the phase-free Conjecture2.",
+    "background": "The true first excitation is even and the gap is Ee2-Ee1; substituting the lowest odd energy overestimates it by more than3/10 in the fixed edge energy unit. Odd-parity probes cannot couple the even ground state to this even excitation; no response intensity asserted.",
+    "novelty": "A legal unweighted nonbipartite K4 at s=3/4 and phases pi on edges13,23 has Ee2<-89/20 and Eo1>-83/20, exactly disproving the project universal phase-obstructed ordering; a legal open amplitude/phase neighborhood retains reversal.",
+    "limitations": "2026-10-12: reopened current official arXiv histories and February/July fulltexts; reread October Section6.3 and preserved primary excerpts. All four histories list v1. Five focused parity/phased-EPR/counterexample searches found no explicit resolution. Older flux-model equivalences and complete citation networks were not exhaustively searched; candidate priority remains subject to fresh referee and author review. Exact terms and raw records in comparison files. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00005-p05/paper.pdf",
+    "pdf_sha256": "806ae662259e83f9df6d8fa2cdf803cfeccea0d0a5c1f69884a3f4b5d551cd7b",
+    "code_files": [
+      "code/certify_k4.py",
+      "code/input_a.py",
+      "code/input_b.py",
+      "supplement/pauli_check.py"
+    ],
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "dependency_files": [
+      "supplement/requirements.txt"
+    ],
+    "canonical_id": "phys-00005-p05",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00005-p06",
+    "series": "big_mac",
+    "title": "An eighth-order inverse-response filter in a ten-site quantum walk",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "单次量子行走求逆，十站点链能否实现有统一余项的八阶滤波？",
+    "claim_statement": "For the exact R=4 ten-site zero-diagonal open Hermitian Jacobi chain of source.md/problem.md, there exist fixed positive couplings specified by the unique cancellation root in evidence/research-root-certificate.json, tau=2pi, a nonzero real linear coefficient ell in (-1.078612,-1.078611), x0=1/16 and C=131072002 such that |<10|exp(-i tau T4(x;J))|1>-i ell x|<=C*x^8 for every 0<x<=x0. This is the precise R=4 existence resolution, including the high-energy branch; it does not settle the original author all-R conjecture.",
+    "background": "The same autonomous ten-site model and tau=2pi achieve one higher absolute response order, hence seventh rather than sixth conditional inverse-state power in gamma under the stated spectral and normalization factors. Couplings remain of order one, with a larger leading scalar success coefficient. Matched full-propagation samples show much smaller error at similar norm(H)*t; no complete algorithmic or hardware speedup is asserted.",
+    "novelty": "An explicit exact-root specification of positive fixed R=4 couplings cancels cubic, quintic and septic low-energy coefficients simultaneously, retains a nonzero linear response, and gives the full-amplitude bound |a4-i ell x|<=131072002*x^8 for every 0<x<=1/16. Root existence is certified by interval contraction; the oscillatory high branch is bounded separately.",
+    "limitations": "Primary version pages were reopened on 2026-10-12 around 17:32-17:34 UTC: 2508.06611v1, 2512.08141v1 and 2510.06316v3. Reread the original Conjecture 1/Table I/Appendix A, successor Theorem 4.1/Sections 4.2 and 6, and competitor v3 Section 4.4/Proposition 19/Corollary 20. Targeted exact-title/identifier/author searches identified no direct later resolution in this limited screen. The competitor uses repeated Hamiltonian-QSVT queries. Coverage is not exhaustive, absence of a hit does not prove priority, and candidate_novel requests independent novelty/significance review. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00005-p06/paper.pdf",
+    "pdf_sha256": "9b780e954e90eeba421ccccf60dc0a6180c5bdda669d217353b39035d50b419e",
+    "code_files": [
+      "reproducibility/build.py",
+      "reproducibility/export_manuscript_data.py",
+      "reproducibility/replay.py",
+      "scripts/certify_r4_root.py",
+      "scripts/check_r4_symbolic_and_bounds.py",
+      "scripts/replay_r4_eigenseries.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00005-p06",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00007-p05",
+    "series": "big_mac",
+    "title": "Exact conditional min-entropy of two-qubit unitary channels with white noise",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "任意双qubit酉门叠加白噪声，其条件信道min-entropy能否直接由Choi态求得？",
+    "claim_statement": "For every U in U(4) and real p in [0,1], let Omega=(1-p)|u><u|+p I16/16 be the normalized Choi state in the grouped X=RA A,Y=RB B order, rho_U=Tr_X |u><u| and L=Tr sqrt(rho_U). For the exact SDPs in problem.md, including Tr_B Q=(Tr Q)I_RB/2 in t, s(Omega)=t(Omega)=(1-p)L^2+p/4. A common optimizer is Q=(1-p)L sqrt(rho_U)+(p/16)I4. Hence S_infty[A|B]_N=H_min(X|Y)_Omega-1 for every frozen noisy two-qubit gate, including degeneracies, deficient Schmidt rank and p endpoints. This is a proposer proof awaiting fresh referee review.",
+    "background": "The conditioning-channel TP restriction has zero cost for this single-use family; its conditional channel min-entropy is computed exactly from the pure-unitary Choi Schmidt spectrum rather than by a constrained SDP. Units are bits and the resource interpretation uses trivial output Hamiltonians.",
+    "novelty": "Settle the frozen all-U(4), all-p in [0,1] noisy identity and supply explicit common optimum (1-p)(Tr sqrt(rho_U))^2+p/4 with a common TP-feasible optimizer and matching state-dual witness.",
+    "limitations": "2026-10-12: current official arXiv pages/fulltext confirm v2 for both decisive preprints; decisive local source sections re-read; exact identifier/title, author/noisy, white-noise, depolarized-pure, pseudopure and Schmidt/min-entropy queries. No later primary resolution verified; bounded searches do not establish global priority; independent referee comparison remains required. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00007-p05/paper.pdf",
+    "pdf_sha256": "fd661f74a279f98d0ea8681bc4071bf38e2737884d5b928e0d911faaceedbd37",
+    "code_files": [
+      "evidence/input-a.py",
+      "evidence/input-b.py",
+      "evidence/replay.py",
+      "evidence/research-check.py"
+    ],
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [],
+    "canonical_id": "phys-00007-p05",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00007-p06",
+    "series": "big_mac",
+    "title": "The sharp overlap threshold for antidistinguishability of five pure states",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "五个纯态的零错误排除，已知重叠阈值是否真正锐？",
+    "claim_statement": "For five arbitrary normalized complex pure states in C^5, allowing dependence, the infimum t5 of maximum pairwise overlap modulus over non-antidistinguishable tuples equals sqrt(3/8), with single-copy unrestricted PSD POVMs and zero effects permitted. An explicit rank-three family has every squared overlap m and is non-antidistinguishable for every real 3/8<m<2/5. Its exact physical dual certificate gives uniform-prior optimum exclusion error at least s*eta/5>0 as defined in evidence/five-state-proof.md. The published bound includes the boundary; this is an infimum approached from above, not an attained non-excludable minimum. No n>=6 or exact optimum error claim.",
+    "background": "The overlap-only universal guarantee for ideal single-copy five-state zero-error exclusion is sharp. Arbitrarily small increases above sqrt(3/8) admit non-excludable states, with certified positive uniform-prior error lower bound s*eta/5.",
+    "novelty": "An explicit rank-three five-state pure-state family with every squared pairwise overlap m in (3/8,2/5), and an exact positive-trace physical exclusion dual witness for every such m, proves t5=sqrt(3/8).",
+    "limitations": "2026-10-12 primary recheck of arXiv:2609.17411v1 Section 1.1 and Section 3; retained publisher Quantum 9,1622 full PDF, Corollary 5.4, Section 6 and equation (2). Bounded targeted searches and precise comparison are preserved; no later exact resolution found, but exhaustive priority is not certified. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00007-p06/paper.pdf",
+    "pdf_sha256": "fa64ba9d7b7b69351a1797772563b9ac41acd08e54252f344850ce4de4a7c189",
+    "code_files": [
+      "evidence/verify-five-state-certificate.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00007-p06",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00007-p09",
+    "series": "big_mac",
+    "title": "Local robustness of commuting-reflection encoding near the three-qubit W state",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "任意三qubit纯态，是否均可由局部可交换反射编码成一组正交基？",
+    "claim_statement": "There exist epsilon>0 and C<infinity such that every normalized complex three-qubit pure-state ray with phase-fixed chart psi=(W3+eta)/sqrt(1+||eta||^2), <W3|eta>=0, ||eta||<epsilon admits a commuting-reflection encoding with the triangle graph and a local SU2 change V(theta)=exp(-i theta.sigma/2)q^tensor3 satisfying ||theta||<=C||eta||^(1/3). On psi(t)=(W3+t delta)/sqrt(1+13t^2), delta=V0^dag O V0 W3, an exact branch has theta=s v1+O(s^2), t=(40ab/39)s^3+O(s^4), whereas no C1 branch through V0 exists. No universal claim away from the neighborhood or numerical radius is asserted.",
+    "background": "Eight perfectly distinguishable messages from coordinated commuting product reflections remain possible under arbitrary sufficiently small pure-state perturbations of W3, with joint decoding.",
+    "novelty": "An exact open neighborhood of arbitrary complex pure-state perturbations of W3 is encodable with the fixed triangle graph. A nonzero cubic reduced moment yields an anchored O(distance^(1/3)) encoder-control bound and cube-root continuation on a specified legal state path.",
+    "limitations": "2026-10-12 primary arXiv history/current fulltext and retained v1/v2 PDFs checked; title/resolution, W neighborhood, three-qubit commuting encodability and successor searches preserved. No verified successor located, but unpublished work and complete forward citations remain unchecked; no absolute priority claim. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00007-p09/paper.pdf",
+    "pdf_sha256": "761d3ab7299318acb8476bd983f5e3f7bff564006057cf5380514f8263a9dd7c",
+    "code_files": [
+      "evidence/check_w_cubic_exact.py",
+      "evidence/check_w_jacobian_numeric.py",
+      "evidence/radical_algebra.py",
+      "evidence/w_cubic.py",
+      "evidence/w_jacobian.py",
+      "reproducibility/build.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [],
+    "canonical_id": "phys-00007-p09",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00007-p14",
+    "series": "big_mac",
+    "title": "Extreme excursions and terminal-sign retention in stationary Brownian resetting",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "指数重置Brownian粒子经历高越界后，终点仍在正半轴的稀有事件系数",
+    "claim_statement": "For every fixed T>0,r>0,a real in the stationary zero-drift variance-t reset Brownian model, exp(alpha u)P(M_T>u,Y_T>0) converges to exp(alpha a)[Phi(alpha sqrt(T))+r integral_0^T Phi(alpha sqrt(s))q_a(T-s)ds], with the explicit remainder (2) in joint-tail-proof.md for u>max(a,0), proving the published conjectured bounds.",
+    "background": "Quantifies retention of a stationary extreme excursion by endpoint-sign monitoring; reset-position dependence enters through terminal-sign renewal, and at zero reset the coefficient is halfway between the two published neighboring coefficients.",
+    "novelty": "Explicit all-fixed-parameter joint maximum/positive-terminal coefficient with post-reset sign probability q_a, plus a Gaussian-tail finite-u remainder; establishes the named conjecture and its bounds within the frozen zero-drift stationary Brownian model.",
+    "limitations": "2026-10-12 fresh arXiv version history and v3 Remark 3 and publisher Remark 3, exact title/identifier and stationary joint-tail resolution searches; local fulltext NJP sections 3.1.2, 4.1 and 5 and equations 22-30,78-92. No later resolution identified; priority beyond this bounded coverage remains unverified. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00007-p14/paper.pdf",
+    "pdf_sha256": "4b8895a57c1d05c6582a691a2372a3974a429c8cf954702687601a3e38548c92",
+    "code_files": [
+      "evidence/check_joint_tail.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [],
+    "canonical_id": "phys-00007-p14",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00007-p19",
+    "series": "big_mac",
+    "title": "An exact counterexample to the reported spin-9/2 anticoherence extremum",
+    "category": "disproofs",
+    "original_status": "disproved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "未知轴旋转探测中，九个对称 qubit 的三阶各向同性极值是否已达到？",
+    "claim_statement": "The original conditioned spin-9/2 bound is disproved: in normalized Dicke convention k=m+j, the pure vector with c0=c9=-1/sqrt(6), c3=c6=1/sqrt(3), all other coefficients zero, has rho1=I2/2, rho2=I_sym,2/3, and P3=4253/15876-10sqrt(42)/3969<789/3136, equivalently A3=(11623+40sqrt(42))/11907>2347/2352. The strict gap is (640sqrt(42)-4139)/254016. Supporting physical result: its uniform unknown-axis rotation-average fidelity is lower than that of every member of Martin et al. Eq.(65), for all 0<=chi<=pi/2 and 0<eta<=2 asin(1/10) radians. No claim of the true global A3 or finite-angle optimum is made.",
+    "background": "The corrected attainable A3 changes the next-order directional-isotropy benchmark after fixing lower moments. Two complete exact fidelity representations and rational coefficient enclosures show F_witness(eta)<F_published_chi(eta) for all 0<=chi<=pi/2 and 0<eta<=2 asin(1/10) radians; the leading difference is -(252/5)D eta^6. The shared eta^2 sensitivity and general multiparameter QFI optimality are not changed or inferred.",
+    "novelty": "An exactly normalized phase alteration with c0=c9=-1/sqrt(6), c3=c6=1/sqrt(3) obeys the original rho1/rho2 constraints and has P3*=4253/15876-10sqrt(42)/3969<789/3136, equivalently A3*=(11623+40sqrt(42))/11907>2347/2352. The strict purity gap is (640sqrt(42)-4139)/254016, certified by the integer difference 71879. This disproves the original universal bound without asserting the true global maximum.",
+    "limitations": "Rechecked current primary histories and relevant full-text portions on 2026-10-12 before extending legacy work: 1909.08355v2, 1503.03446v3, 1509.08300v2, 1707.01246v2, 2509.18533v3, 2404.15548v3, 2605.29436v1, 2505.06154v2 and the retained published PDFs. Exact threshold, phase/radical and correction searches are saved. No identified earlier exact extremal correction appeared in this bounded screen; absence of hits is not proof of priority. State catalogs and equivalent previously parametrized states remain a specific novelty question for the fresh referee. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00007-p19/paper.pdf",
+    "pdf_sha256": "c6ccbd8c3501206859be92969056a1e181e463977d93b59f0e69e80003a9e6ad",
+    "code_files": [
+      "code/compare_reconstructions.py",
+      "code/reproduce_full_qubit_a.py",
+      "code/reproduce_schmidt_b.py",
+      "code/research_fidelity_compare.py",
+      "code/research_four_support_a.py",
+      "code/research_four_support_b.py",
+      "code/research_recoupling.py",
+      "code/research_verify_four_support.py",
+      "manuscript/build.py",
+      "manuscript/check_certificate.py",
+      "manuscript/run_reproduction.py"
+    ],
+    "reproduction_guides": [
+      "manuscript/REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [
+      "code/research_requirements.txt"
+    ],
+    "canonical_id": "phys-00007-p19",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00008-p03",
+    "series": "big_mac",
+    "title": "Exact local spectrum and a residual-rate obstruction for quantum Latin-square normalization",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "量子Latin方阵的交替归一化，是否对几乎所有初值达到任意精度？",
+    "claim_statement": "For the explicit n=4 Q(theta) block-rotation quantum Latin square in evidence/research/local-spectrum-proof.md, the real derivative of one source row-then-column normalization cycle restricted to the 64-dimensional column-unitary tangent space has spectrum 0 (16), 1 (32), (1+cos(theta))/2 (8), (1-cos(theta))/2 (8), with degeneracies combined for all real theta. For every q in (0,1), delta in (0,1), eta>0, some theta in (0,pi/2) and legal column-unitary x with 0<||x-Q(theta)||_F<eta satisfy e(F(x))>q e(x)>0 while all eight inverted Gram spectra lie in [1-delta,1+delta]. This is a local one-cycle rate obstruction only and leaves the original almost-sure arbitrary-precision question unresolved.",
+    "background": "For this measurement-array generator, excellent individual Gram conditioning does not guarantee a strict uniform one-cycle residual reduction. The family gap collapses quadratically near a classical endpoint. This identifies a geometric obstruction to a conditioning-only progress guarantee; no nonlinear iteration budget or probability law is claimed.",
+    "novelty": "Exact complete spectrum 0^16, 1^32, ((1+cos(theta))/2)^8, ((1-cos(theta))/2)^8 of the n=4 family derivative restricted to the column-unitary tangent space, including classical endpoint degeneracies. Prove legal arbitrarily close curves with source-residual ratio tending to the slow eigenvalue and all inverted Grams arbitrarily close to I, excluding a uniform one-cycle q<1.",
+    "limitations": "2026-10-12 primary version/conjecture, original Sections 3-4, 2016 Sections 5-6, 2017 strictly positive-block theorem domain, 2023 Problem 3.13, current author bibliography and limited 2026 v3 successor screen; Lewis-Malick Lemma 2.1/equation (11)/Theorem 4.3 and Musto-Vicary Definition 1/Example 2. Exact-title, alternating-projection, linear-convergence, principal-angle and quantum Sinkhorn rate searches. No matching explicit family spectrum identified in bounded checked sources; equivalent older results and priority remain a fresh-review question. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00008-p03/paper.pdf",
+    "pdf_sha256": "588d65d84d0ea8ce7979fc9e12239535cc5fff5c7ce68e44896332f169e0e5ec",
+    "code_files": [
+      "evidence/research/exact_family.py",
+      "manuscript/build.py",
+      "manuscript/plot_spectrum.py",
+      "manuscript/reproduce_exact.py"
+    ],
+    "reproduction_guides": [
+      "manuscript/REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [
+      "manuscript/requirements.txt"
+    ],
+    "canonical_id": "phys-00008-p03",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00009-p01",
+    "series": "big_mac",
+    "title": "Exact two-particle relaxation crossover for the symmetric inclusion process on hypercubes",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "吸引粒子与热传导模型的最慢弛豫，是否永远只需两粒子信息？",
+    "claim_statement": "For the conservative SIP with exactly two particles on the D-dimensional Boolean hypercube Q_D, every finite integer D>=1, homogeneous site weight a>0 and common edge conductance c>0, lambda_2=c*min(2a,rho_D(a)), where rho_D(a) is the smallest positive eigenvalue of the D+1-state birth-death negative generator with downward rates 2*d*a+2*1_{d=1} and upward rates 2*(D-d)*a. The one-particle gap is 2*c*a. With a_D=(D-1)*2^{-(D-1)}*integral_0^1(1+u^2)^{D-1}du-1, lambda_2<lambda_1 iff 0<a<a_D for D>=4; for D<=3 lambda_2=lambda_1 for all a>0. The threshold satisfies a_4=1/35, a_(D+1)=(D^2*a_D+1)/((D-1)*(2D+1)) for D>=2, and D^2*a_D tends to 1. No k>=3 identity is claimed.",
+    "background": "Determines when a pair-separation relaxation mode is strictly slower than every one-particle mode, at finite diffusivity. Provides a dimension-dependent crossover boundary and its scaling. Published monotonicity then excludes one-particle reduction of the full conservative SIP below the threshold, while its all-k gap above the threshold remains undetermined.",
+    "novelty": "Exact full two-particle gap reduction for every homogeneous hypercube Q_D and every finite positive a to a D+1-state distance chain, including rigorous bounds on omitted sectors. An exact finite-a crossover formula, a_4=1/35, an all-D recurrence and D^2*a_D->1 are obtained.",
+    "limitations": "Primary current versions, relevant journal sections, the 2024 institutional published PDF and bounded hypercube/Hamming/1-over-35 searches checked on 2026-10-12, before and during research. The inspected texts and searches did not yield this formula. No exhaustive global priority claim; novelty and significance require a fresh referee. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00009-p01/paper.pdf",
+    "pdf_sha256": "33c1eea230084da664c592913b4bfa51b885edbe378671c2fbf405c690ce7a76",
+    "code_files": [
+      "evidence/compare_inputs.py",
+      "evidence/reconstruct_a.py",
+      "evidence/reconstruct_b.py",
+      "evidence/reproduce_baseline.py",
+      "evidence/research_hypercube_check.py",
+      "reproducibility/build_manuscript.py",
+      "reproducibility/make_figure.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00009-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00013-p01",
+    "series": "big_mac",
+    "title": "Exact pure-state contraction spectrum of a three-qubit Haar circuit",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "三量子比特 Haar 随机电路，所有表示的最慢模是否已在第四阶出现？",
+    "claim_statement": "For the specified three-qubit adjacent normalized Haar-SU4 circuit, the complete nonzero principal cosines on L2(CP7, normalized Haar) are c_r=6/((r+2)(2r+3)), r>=0. In conjugation on End(Sym^k C8), k>=0 integer, the cosines truncate to0<=r<=floor(k/2). Removing the whole global invariant gives norm0 for k<=1 and2/5 for every k>=2, and pure-state ordered m-step norm(2/5)^(2m-1), m>=1. This is a natural state quotient/symmetric-moment result; the original all-PU8 equality c_*=1/2 remains unresolved.",
+    "background": "Identifies centered single-qubit purity as the slowest state-observable mode at every symmetric moment order, excludes higher symmetric moments as slower counterexamples, and gives exact stationary L2 contraction for random pure-state preparation. The pure-state quotient is faster than the known group-level fourth-moment cosine1/2. It does not settle the original unitary-group mixing constant or imply a total-variation mixing time from a delta initial law.",
+    "novelty": "For the same adjacent Haar-SU4 three-qubit circuit, derive the complete principal-cosine sequence c_r=6/((r+2)(2r+3)) on L2(CP7), r>=0, and its exact truncation to every End(Sym^k C8), r<=floor(k/2). The stationary pure-state nonfixed norm is2/5, and the ordered m-step norm is(2/5)^(2m-1). This is an all-degree quotient result; the number2/5 at degree2 and the finite k7/k8 tables are not the novelty claim.",
+    "limitations": "Current official metadata and decisive primary full-text passages checked2026-10-12:2609.40164v2,2012.05259v1,2411.13739v2,2408.11201v2,1809.00642v1,math-ph/0610045v2,quant-ph/0012101v3,2606.11438v1. Searches covered exact original constant, later resolutions, pure-state/all-symmetric-moment spectra, joint purity correlations and Jacobi/projective-space equivalents. No examined primary source gives this exact local-circuit all-degree sequence. This is bounded proposer novelty analysis, not exhaustive priority proof; the older Haferkamp-Hunter-Jones publisher body remains unexamined. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00013-p01/paper.pdf",
+    "pdf_sha256": "cca6390c04c9e7163f703fe8352b37fff7d959d808c202dd0ba8ed764d60493e",
+    "code_files": [
+      "evidence/research/check_analytic.py",
+      "evidence/research/compare_holdout.py",
+      "evidence/research/compare_sym7.py",
+      "evidence/research/probability_check.py",
+      "evidence/research/symmetric_a.py",
+      "evidence/research/symmetric_b.py",
+      "manuscript/make_figure.py",
+      "reproducibility/check_support.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00013-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00014-p01",
+    "series": "big_mac",
+    "title": "Exact single-use Bayesian Nagaoka–Hayashi attainment for noisy qubit rotations",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "带退极化噪声的三参数旋转估计，Bayesian Nagaoka–Hayashi 下界能否精确实现？",
+    "claim_statement": "For k=1 in the frozen fixed-Bell-probe model U_theta=exp(-i theta dot sigma) followed by known depolarization 0<=lambda<=1, with uniform Cartesian-volume prior on ||theta||<=pi/4 and R=E[||hat theta-theta||^2]/3, the optimum over all system-ancilla physical POVMs and finite-second-moment estimators equals the source Bayesian Nagaoka-Hayashi SDP: R_1(lambda)=C_NH(1,lambda)=pi^2/80-4(1-lambda)^2(3/(2pi)-12/pi^3)^2. It is attained by four orthonormal vectors (|0>-i sum_i s_ji|i>)/2 in the source spin basis, for tetrahedral signs s=(+++),(+--),(-+-),(--+), with posterior estimates 2(1-lambda)(3/(2pi)-12/pi^3)s. Equivalently, one fixed local pre-rotation followed by a Bell measurement implements this PVM. A normalized covariant sphere measurement also attains it. Exact continuum physical-risk and NH PSD dual certificates establish the all-noise equality, including endpoints. No claim for k=2,3,4 or optimized/adaptive probes; the frozen original remains unresolved.",
+    "background": "A fixed single-qubit pre-rotation followed by a Bell measurement achieves the ultimate three-axis Bayesian mean-square precision for one noisy channel use. Only the posterior estimator shrinks with known noise, so the measurement needs no noise-dependent redesign. The finite Bayesian incompatibility penalty relative to the reproduced SLD value is 8B Q^2/(A+B) for lambda<1.",
+    "novelty": "Exact k=1 fixed-Bell attainment for the full continuum 0<=lambda<=1 under the specified pi/4 volume prior: closed optimal risk pi^2/80-4(1-lambda)^2(3/(2pi)-12/pi^3)^2; four-outcome noise-independent rotated-Bell projective measurement; exact posterior estimates; distinct all-estimate physical-risk and NH SDP dual certificates. The original k=1,2,3,4 question remains unresolved.",
+    "limitations": "2026-10-12 21:10-21:19 UTC: current 2607.15398 v1 and 2511.16645 v4 metadata/bodies; selected current author fulltext 2008.02612v2 and previous exact-scope Suzuki/Zhao/Andre source records. Exact identifier/title, Bayesian NH exact/proof/attainment, depolarization/SU(2), tetrahedral/simplex, Hadamard/projective, phase-imaging/N00N queries. No verified later exact resolution found. Bounded coverage is not a proof of priority; Nature publisher redirect failure and incomplete old-method appendices are disclosed. Fresh referee must assess novelty/significance. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00014-p01/paper.pdf",
+    "pdf_sha256": "6143ce28efa877161a28d79c9cd997e991c2dbe1048c835a87aa0e76165edb8f",
+    "code_files": [
+      "evidence/reproduce/exact_input_map.py",
+      "evidence/reproduce/input_a.py",
+      "evidence/reproduce/input_b.py",
+      "evidence/research/check_exact_certificates.py",
+      "evidence/research/replay_physical_measurement.py",
+      "manuscript/make_figure.py",
+      "manuscript/run_reproducibility.py"
+    ],
+    "reproduction_guides": [
+      "manuscript/REPRODUCE.md"
+    ],
+    "dependency_files": [
+      "manuscript/requirements.txt"
+    ],
+    "canonical_id": "phys-00014-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00015-p01",
+    "series": "big_mac",
+    "title": "Local dissipation optimality at the spectral coherence threshold of unicyclic clocks",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "异质单环随机时钟的谱熵产生界，是否仍有普适系数一？",
+    "claim_statement": "For each integer n>=5 put t=tan(pi/n). The homogeneous strictly positive single-cycle rates u=c(1+t), d=c(1-t), c>0, have a simple globally leading conjugate pair with b/a=1. In a sufficiently small n-dependent neighborhood modulo common time scaling, every legal rate tuple with b/a>=1 satisfies Y=sigma*a/b^2 >= (1+t^2)*atanh(t)/t>1, with equality only at that homogeneous threshold ring up to scale. The full fixed-b/a=1 heterogeneous tangent Hessian is positive definite, including even-n Nyquist modes. No explicit or uniform-in-n radius, arbitrary-coherence optimality or global heterogeneous inequality is claimed.",
+    "background": "Small kinetic heterogeneity cannot reduce the homogeneous dissipation cost once the leading spectral coherence is restored to the source's eligibility threshold. Any improvement or counterexample must leave the n-dependent local neighborhood. This is a finite-model response result, not an experimental entropy estimate or a global bound.",
+    "novelty": "Exact positive full heterogeneous tangent Hessian at b/a=1 for every n>=5, and resulting strict local minimum of Y=sigma*a/b^2 among nearby positive-rate single cycles on b/a>=1, modulo time scale. Stationary probabilities and edge flows both vary freely. Nyquist modes and the local spectral ordering are included.",
+    "limitations": "Bounded primary checks on 2026-10-12: OBS 2112.01607v2, Gu 2606.05498v1, Shiraishi 2609.34352v1, Kolchinsky 2510.14101v3, winding paper 2605.15884v3, current Jason author TeX scope and Uhl--Seifert 1907.04260v1 Section 4. Searches included entropy/coherence, unicyclic/heterogeneous, uniform rates, perturbation, second order and local minimum. No exact predecessor for this restricted entropy-cost statement was identified. Priority and significance remain candidate assessments; publisher-final-body comparison and a complete forward-citation census are not completed. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00015-p01/paper.pdf",
+    "pdf_sha256": "3c0c2d54282ad80f218c5e9408efea28e92c0188c4d8123bc9305e5bfd61ed90",
+    "code_files": [
+      "reproducibility/independent_direct.py",
+      "reproducibility/independent_symbolic.py",
+      "reproducibility/run_checks.py",
+      "scripts/check_curvature_sign.py",
+      "scripts/check_local_variation_exact.py",
+      "scripts/compare_reproduction.py",
+      "scripts/reproduce_input_a.py",
+      "scripts/reproduce_input_b.py",
+      "scripts/research_symbolic_curvature.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00015-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00016-p01",
+    "series": "big_mac",
+    "title": "Comment on “Ergotropy and entanglement in critical spin chains”",
+    "category": "disproofs",
+    "original_status": "disproved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "临界自由费米子链的占据数排序，是否已给出真正的最大可提取功？",
+    "claim_statement": "For the exact open homogeneous H_N=-sum(c_j^dagger c_(j+1)+h.c.), N=4m, its unique half-filled ground-state marginal on the first l=N/2 sites and unrestricted U(2^l), the original universal equality E_pass=E_align=sum_j nu_desc,j epsilon_ascending,j is false. At N12 a legal number/parity-preserving swap between physical-mode kets {2,3} and {1,4}, after legal orbital alignment, reduces energy by strictly more than 6.71114703278e-7 J. The full N12 correction lies in (0.000001356396207356,0.000001356396207357) J. Analytic particle-hole excitation ordering proves equality at N4/N8, so N12 is the first failing N=4m. Complete certified finite-sort corrections are supplied at N16,20,24 and a quartic N12 extraction gate. No claim is made about all larger sizes, locality/control time, thermodynamic entropy scaling or source Eqs41/42.",
+    "background": "For this exact finite model, the published aligned work underestimates unrestricted extractable work and overestimates bound energy. A legal interaction among physical subsystem modes extracts extra work even while particle number and parity are conserved. The correction is small, approximately 15-31 ppm of aligned bound energy over N12-24; occupation alignment retains its explicit number-preserving Gaussian optimum meaning. No thermodynamic/CFT coefficient or experimental gain is claimed.",
+    "novelty": "Exact rational actual-input N12 population inversion, explicit number/parity-preserving Fock-state swap and quartic mode gate; complete unrestricted/number/parity sorting through N24; analytic N4/N8 passivity identifies the first N=4m failure. The universal finite equality is false, with full N12 correction in (1.356396207356e-6,1.356396207357e-6) J.",
+    "limitations": "Fresh 2026-10-13 official original/successor/version reads and exact-title/arXiv/finite-spectrum/correction screens, primary PRB final and author-v2 Eq34, PRE generic examples/Theorem1, NJP full-sort/single-mode/AppendixB passages, and a 2026 ancilla theorem operation-set comparison. Same-date cached official update records reread without claiming refetch. No exhaustive forward-citation search, final-byte comparison of the NJP successor or guaranteed priority; novelty and significance await fresh referee/author scrutiny. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00016-p01/paper.pdf",
+    "pdf_sha256": "2ac67ca0c6dd8795749e243f2527f530a52d3e6dc87678d1389e4fa1697dc9c7",
+    "code_files": [
+      "manuscript/build.py",
+      "reproducibility/certify.py",
+      "reproducibility/fock-replay.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00016-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00018-p01",
+    "series": "big_mac",
+    "title": "A local noise tradeoff for two cross-regulated genes with unequal finite RNA lifetimes",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "有限 mRNA 寿命的交叉调控网络，能否同时降低所有蛋白质的噪声？",
+    "claim_statement": "For the exact infinite-state two-stage N=2 gene-expression CTMC with parent tuples (c,delta,beta,gamma)=(1,1,1,1),(2,2,1,1), let h1,h2 be any real bounded whole-lattice protein functions with |h_i|<=1, and a,b>0. Set g=max(a,b), f1=1+epsilon*a*h2(P2), f2=2-epsilon*b*h1(P1), with all other reaction channels unchanged. The exact independent-parent forms defined in evidence/research-pass2/operator-certificate-and-tail.md satisfy |V1|,|V2|<=4/5*sqrt(U1*U2) for all such response functions, without monotonicity or a finite plateau. For S=a^2*U1+b^2*U2>0, every 0<epsilon<min(1/g,S/(4480*g^3)) gives an admissible network with at least one stationary protein Fano factor strictly above its mean-matched finite-lifetime baseline B1=3/2 or B2=4/3. If both responses are constant, both Fano factors equal their baselines. This computer-assisted local theorem covers all response shapes for this fixed unequal-lifetime low-copy pair only; epsilon is response-dependent. The original arbitrary-N, arbitrary-kinetics, strong-feedback problem remains unresolved.",
+    "background": "At unregulated RNA/protein mean one and finite unequal RNA lifetimes, arbitrary cross-transcription shaping cannot reduce both stationary protein Fano factors below their correctly mean-matched two-stage baselines within the stated response-dependent weak-feedback neighborhood. This excludes a whole nonlinear low-copy design route without LNA or a burst approximation. Searches for a legal simultaneous-suppression example must leave this neighborhood, change parent kinetics or consider larger networks.",
+    "novelty": "A computer-assisted exact local no-simultaneous-output-suppression result for the finite-RNA parent pair (c,delta,beta,gamma)=(1,1,1,1),(2,2,1,1), uniform over every real bounded whole-lattice response shape, including nonmonotone and arbitrarily rare tails. A new weaker whole-space weighted generator bound and finite Riesz residual enclosures remove the earlier artificial finite-plateau restriction, yielding |V_i|<=4/5 sqrt(U1 U2), with an explicit finite-feedback stationary covariance remainder.",
+    "limitations": "Rechecked official arXiv histories 2607.20823,2605.15401,2512.20887 and the current burst-paper Discussion and official author list on 2026-10-13 UTC before legacy extension. Compared decisive pages in preserved primary PDFs/texts and targeted exact-title, finite-intermediate, finite-mRNA, two-stage weak-feedback, nonlinear cross-regulation and simultaneous-suppression searches. No matching later primary theorem was identified in this bounded screen. Current general resolution and global priority remain uncertain; absence of a hit is not proof of openness or novelty. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00018-p01/paper.pdf",
+    "pdf_sha256": "77e738346885e711277617666c009d9f3791c2487586a892a9509ba5c43303a8",
+    "code_files": [
+      "evidence/research-pass2/joint_stationary.py",
+      "evidence/research-pass3/l2_gram.py",
+      "evidence/research-pass3/palm_and_coercivity.py",
+      "evidence/research-pass4/check_riesz_exact.py",
+      "evidence/research-pass4/riesz_residual.py",
+      "reproducibility/build_draft.py",
+      "reproducibility/make_table.py",
+      "reproducibility/regenerate.py",
+      "reproducibility/replay.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00018-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00024-p01",
+    "series": "big_mac",
+    "title": "Local stability of a sharp q-deformed commutator response for conditional quantum operations",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "非正规量子跃迁的顺序响应，q 变形对易子的锐界是否对所有维数成立？",
+    "claim_statement": "For each finite n>=3 and each real q not equal to -1 or 1, set R=sqrt(2(1+q^2)), c=(1+q+R)/2, u=sqrt(c-1), b=sign(1+q)sqrt(c-q), A_q=diag(u,-b,0,...,0). For g_q(A)=lambda_max(H_q(A))/||A||_F^2, where vec(B)^dagger H_q(A) vec(B)=Re Tr((BA-AB)^dagger(BA-qAB)), there exists an n,q-dependent neighborhood of A_q in M_n(C) on which g_q is real analytic with a Morse-Bott local maximum c. Its local maximum set is the smooth 4n-2 real-dimensional manifold of unitarily embedded two-plane matrices C satisfying det C+[ub/(u-b)^2](tr C)^2=0 near diag(u,-b). The complete negative normal Hessian spectrum at A_q is -2, -4c(c-q)/[(2c-q)R], -4c(c-1)/[(2c-1)R], -2c/R, with multiplicities 2,2(n-2),2(n-2),2(n-2)^2. For mu the smallest magnitude and Lambda the largest, a smaller tubular neighborhood satisfies (mu/8)dist_F(A,M_q)^2 <= c-g_q(A) <= Lambda dist_F(A,M_q)^2, hence the corresponding local sharp f-bound holds for every complex B. No explicit radius, global bound, or uniform n/q limit is claimed. Auxiliary q=1/2 n=2 nonzero equality matrices are exactly det A+(3/2)(3+sqrt(10))(tr A)^2=0.",
+    "background": "The already reconstructed conditional-Kraus ordered-amplitude response has a locally stable sharp upper envelope: general operator errors normal to the saturation family, including spectator-level coupling, reduce the optimized response quadratically. A violating tuple cannot approach this orbit at fixed n,q. No explicit neighborhood radius or new relaxation-rate prediction is claimed.",
+    "novelty": "For every finite n>=3 and real q except -1,1, prove a full-dimensional local sharp bound near the embedded witness, classify its smooth equality manifold of dimension 4n-2, and derive the complete negative normal Hessian spectrum with multiplicities. Auxiliary q=1/2 equality determinant and curvature explain the previous flat directions.",
+    "limitations": "Primary-source and exact-claim rechecks on 2026-10-13: arXiv:2208.10005v1, current publisher abstract, arXiv:2608.03897v1 q-commutator norms, arXiv:2409.00436v1 averaged relaxation resolution, exact identifier/title/formula/author and equality/stability/Morse searches. No primary statement of this local all-q f-response spectrum was found; this bounded screen is not priority certification. Fresh novelty and significance review remain required. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00024-p01/paper.pdf",
+    "pdf_sha256": "a00715c66313cab0107e0c77240d40c1f16f2e695c3a4abaaadbb0752555c34f",
+    "code_files": [
+      "evidence/research/equality_geometry_certificate.py",
+      "evidence/research/general_q_local_certificate.py",
+      "evidence/research/n2_equality_symbolic.py",
+      "evidence/write/schur-display-check.py",
+      "reproducibility/run_checks.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00024-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00027-p01",
+    "series": "big_mac",
+    "title": "Time-independent Lindblad embeddings of two-parameter Werner–Holevo noise",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "满秩双参数 Werner–Holevo 噪声：精确恒定 Lindblad 实现的区域与分支障碍",
+    "claim_statement": "For the frozen two-parameter noisy Werner-Holevo channel on M_d(C), write Phi=P0+s Ps+a Pa with s=1-d*x/(d-1)-d*y/(d+1) and a=1-(d-2)*x/(d-1)-(d+2)*y/(d+1). For every d>=3 in the sector s>0,a>0, there exists a finite time-independent same-system GKLS generator L with exp(L)=Phi, allowing arbitrary Hamiltonians, jumps and logarithm branches, if and only if s^((d+2)/d)<=a<=s^((d-2)/d). A valid generator has H=0 and nonnegative symmetric-traceless and imaginary-antisymmetric jump rates gamma_s=((d-2)log(s)-d log(a))/(2d) and gamma_a=(d log(a)-(d+2)log(s))/(2d). For d=3 this gives the complete classification in the frozen x>0,y>0,x+y<=1 domain: s=1-3x/2-3y/4>0, a=1-x/2-5y/4>0, and s^5<=a^3<=s. The negative even-multiplicity sectors for d>=4 are not classified.",
+    "background": "The unrestricted reduction makes the known covariant rate inequalities decisive for calibrated symmetric and antisymmetric Werner-Holevo noise even when the underlying constant master equation is not assumed symmetric: outside the qutrit region no hidden Hamiltonian, noncovariant jumps, or logarithm branch can realize the observed channel. The two boundaries remain the zero-rate limits of the known symmetric-traceless and antisymmetric jump families.",
+    "novelty": "The proposed contribution is only the arbitrary-endpoint-generator necessity step and its qutrit consequence: for every d>=3 and s,a>0, any same-system time-independent GKLS logarithm of the O(d)-covariant endpoint, even if noncovariant and nonprincipal and with arbitrary Hamiltonian/jumps inside degenerate sectors, has a full-O(d) average fixed by branch-invariant real sector traces to the principal covariant logarithm. Combining this reduction with the known 2023 covariant cone gives the unrestricted positive-spectrum criterion. Odd real sector multiplicities plus singularity exclusion then give the complete frozen-domain d=3 classification. The covariant cone/exponential itself is not claimed new, and the signed d>=4 problem remains unresolved.",
+    "limitations": "Complete retained primary PDFs arXiv:1801.06121v3, 2301.10679v4, and 2602.08464v1 were read at the recorded locators, and live primary records plus exact-claim/later-resolution searches were rechecked on 2026-10-13. The current model record remains arXiv:2405.11216v3. No returned primary record stated the narrowed arbitrary-noncovariant O(d) endpoint reduction or complete noisy-Werner--Holevo qutrit region. This bounded result is not proof of priority or openness; a fresh referee must independently repeat the comparison. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00027-p01/paper.pdf",
+    "pdf_sha256": "a591fa24c49262873605f092e26443f901b74d5ed7d8b820276bf97fd2d2f4c6",
+    "code_files": [
+      "evidence/reproduce/check_reproduction.py",
+      "evidence/reproduce/input_a.py",
+      "evidence/reproduce/input_b.py",
+      "evidence/research/pass3/verify_positive_region.py",
+      "manuscript/figures/make_qutrit_region.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00027-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00029-p01",
+    "series": "big_mac",
+    "title": "A periodic planar counterexample to the Apollonian Ising temperature bound",
+    "category": "disproofs",
+    "original_status": "disproved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "平面铁磁 Ising 晶格的最高临界温度：阿波罗尼亚上界猜想",
+    "claim_statement": "For every bare uniform ferromagnetic J>0 and zero field, let Lambda_1024 retain every triangular-grid bond and put N1024 finite fan spins in each up triangle A=z,B=z+e1,C=z+e2, e1=(1,0),e2=(1/2,sqrt(3)/2), at x_j=z+(1/2,sqrt(3)/(6j)), adding A-x_j,B-x_j for every j,C-x_1,and x_(j-1)-x_j for j>=2, all with the same J and no duplicate bond. This is a simple connected locally finite periodic Euclidean triangulation with1025-site primitive cell and q_max2055. Its actual infinite-volume Ising transition obeys T_c(Lambda_1024)/J>2/log(11/10)>20, while the exact canonical Apollonian function defined in immutable source.md obeys T_c_star(2055)/J<=T_c_star(3072)/J<20. Hence the original all-periodic-planar uniform-J inequality T_c<=T_c_star(q_max) is false within its full stated premises.",
+    "background": "Maximum coordination alone does not enforce the proposed logarithmic Apollonian design ceiling in the unrestricted source graph class. Selectively concentrated uniform-J paths change the actual infinite-volume ordering threshold; any corrected ceiling needs a different bound or additional physical/geometric assumptions.",
+    "novelty": "A concrete uniformly coupled Euclidean periodic fan with N1024 and qmax2055 satisfies T_c/J>20>T_c_star(2055)/J by strict exact certificates, disproving the original universal finite-q ceiling inside its premises. N1 is a reproduced prior baseline, not a claimed contribution.",
+    "limitations": "13October2026 UTC current arXiv2605.10017 and2601.02502 version histories, current source full v2 HTML and final APS abstract, exact identifier/title/author counterexample-comment-correction searches, and nested/fan/parallel/decorated triangular neighbors. Relevant primary full texts of the two2026 sources and final EJP criticality paper are preserved/read at exact locators. Background abstracts and failed1993 publisher opener are labelled; no exhaustive worldwide priority or unread full-body graph equivalence claimed. The exact older decoration comparison remains a referee priority issue rather than an input to the proof. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00029-p01/paper.pdf",
+    "pdf_sha256": "f372ed7640f76e6ee14fbacc8f4c031c919ac7c5d231e6132670ab0da71377fe",
+    "code_files": [
+      "reproducibility/fan/check_canonical_direct.py",
+      "reproducibility/fan/check_fan.py",
+      "reproducibility/fan/check_homology_factor.py",
+      "reproducibility/fan/check_independent.py",
+      "reproducibility/fan/compare_inputs.py",
+      "reproducibility/fan/homology_replay.py",
+      "reproducibility/run_fan.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00029-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00030-p01",
+    "series": "big_mac",
+    "title": "A finite nonreciprocal counterexample to a noise-matched current large-deviation bound",
+    "category": "disproofs",
+    "original_status": "disproved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "非互易相干导体的完整电流涨落：平均耗散能否仍约束稀有事件？",
+    "claim_statement": "The exact curvature-matching universal assertion frozen in source.md and problem.md is refuted by the finite stationary normal 387-dot conductor in evidence/research/r1-tightbinding-model.md, with exact semi-infinite tight-binding leads (band [0,40000]epsilon), three fixed Fermi reservoirs at common T_ref>0 and mu=(5001,4997,4976)epsilon, n=128 filter branches of finite width 0.02epsilon, E0=5000epsilon and Hermitian flux-ring core Gamma_c=200000epsilon. For extracted lead-0 counting, J>0 and total physical sigma>0, j=-J is strictly inside the asserted domain, and I_0(-J)-B_psi0(-J)>0.019epsilon/h. A completed outward full-energy certificate encloses Delta=24J-chi_0(-24)-4sigma/k_B inside [0.019447,0.024248]epsilon/h, with actual width below 0.005. Exact psi_0>=1/2, B_psi(-J)=2sigma/(psi k_B), and Fenchel at s=-24 prove the rate-function gap without a rounded infimum or a numerical saddle. This resolves only the frozen formalization of the first proposed nonreciprocal extension; it does not refute the reciprocal theorem or variance bound or settle the joint-current alternative.",
+    "background": "The proved variance constraint cannot be extended to the proposed full rate-function shape merely by substituting its noise-matching psi_0 dissipation factor. Magnetic circulation and an intermediate reservoir reduce actual entropy per selected mean particle while the rare reversal count samples a much lower-chemical-potential reservoir. This obstructs that specific use of measured mean dissipation to constrain rare currents. Other single-current shapes and the joint-current conjecture remain untested.",
+    "novelty": "A fixed physically realizable stationary finite 387-dot conductor with exact normal tight-binding leads, three fixed positive-temperature Fermi reservoirs and all-reservoir heat entropy yields a computer-assisted strict counterexample to the exact curvature-matching assertion frozen in source.md: I_0(-J)-B_psi0(-J)>0.019 epsilon/h. It uses the exact psi_0 definition through the proved conservative bound psi_0>=1/2, not a numerical minimizer or an ideal one-energy unitary array.",
+    "limitations": "Fresh bounded primary screen on 2026-10-13 at 19:51-19:53 UTC checked exact-title/identifier/conjecture/nonreciprocity/counterexample and Brandner-Saito rate-function successor terms. Current histories show 2507.01214v1,2502.07917v2,2607.06190v1; the exact final JPA conjecture and successor entropy distinction were reread from retained full primary documents. No exact later resolution was identified. This is not exhaustive priority certification; the target is our frozen curvature-matching interpretation of the first author speculation, not a formula quoted verbatim as a published theorem. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00030-p01/paper.pdf",
+    "pdf_sha256": "c6442e15587c6f98b52f6ed34e401f1f520045f99fe2c4e42165804141905c02",
+    "code_files": [
+      "evidence/research/r2-interval-enclosure-v2.py",
+      "evidence/research/r2-interval-enclosure.py",
+      "evidence/research/r3-independent-check.py",
+      "evidence/research/r3-interval-enclosure.py",
+      "evidence/research/r3-interval-refine.py",
+      "reproducibility/check_certificate.py",
+      "reproducibility/check_coefficient_magnitudes.py",
+      "reproducibility/check_remainders.py",
+      "reproducibility/physical_replay.py"
+    ],
+    "reproduction_guides": [
+      "evidence/research/r3-README.md",
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00030-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00032-p01",
+    "series": "big_mac",
+    "title": "A resource-dependent thermodynamic uncertainty relation for three-port coherent conductors",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "三端单通道相干输运：真实总耗散的非线性噪声界能否严格收紧？",
+    "claim_statement": "For every stationary elastic number-preserving noninteracting normal-fermion conductor in the exact C3 class of source.md/problem.md, with three physical reservoirs, at most one open channel per lead, a finite Hermitian sample and causal normal leads, fixed finite chemical potentials and strictly positive temperatures, finite J=abs(chi0 prime(0))>0, full count-variance rate C2=chi0 double-prime(0)>0 and actual total reservoir heat entropy sigma>0, sigma/k_B >= (9/10) J asinh(J/C2). The complete analytic-plus-integer-interval argument covers both current signs, both three-cycle orientations, every 3x3 unitary scattering matrix including reflected closed channels, arbitrary legal energy dependence, and signed energy integration. An enclosed exact rational psi0 witness is below 9/10, hence kappa3>=9/10>psi0. This proposed proof answers the original strict-improvement question without determining optimal kappa3 or claiming saturation; fresh referee acceptance is pending.",
+    "background": "Knowing that the hardware has only three single-channel normal leads gives a strictly stronger lower bound on actual total dissipated heat entropy from one measured particle-current mean and full count variance. The bound includes all reservoirs and does not require event entropy, extra activity, a reversed experiment, small bias or hidden probes.",
+    "novelty": "A proposed computer-assisted full-scope bound sigma/k_B >= (9/10) J asinh(J/C2) for every legal normal elastic noninteracting three-reservoir conductor with at most one channel per lead, arbitrary finite thermal/chemical biases, generic broken-reciprocity scattering and signed energy integration. Exact psi0 is below 9/10 by a certified rational witness. Optimal kappa3 is not determined.",
+    "limitations": "Bounded current primary recheck on 14 October 2026 UTC: S1 current v2, S5 v1 and S4 July-2026 v1 histories/full defining statements; S3 current v3 and October-2026 publisher abstract retaining linear-response/probe premises; previously preserved S2,S6,S7 defining scopes; fresh primary published S8 PDF/current arXiv v3, including its nonlinear Eqs.(84)-(87),(95)-(96). Exact titles and three-terminal/nonlinear/single-channel/asinh/9/10/Birkhoff/cycle terms searched. No exact restricted resolution was identified; absence of hits is not exhaustive openness or priority proof. Fresh referee and eventual human review must assess novelty/significance independently. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00032-p01/paper.pdf",
+    "pdf_sha256": "d17c35e669276c8a06bdec13aaca9b8af7324fd11b9c8f2af5aa29e7952e59ae",
+    "code_files": [
+      "evidence/research/certify_cycle.py",
+      "evidence/research/check_certificate_integer.py",
+      "evidence/research/structural_checks.py"
+    ],
+    "reproduction_guides": [
+      "manuscript/REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [],
+    "canonical_id": "phys-00032-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00034-p01",
+    "series": "big_mac",
+    "title": "Replica twist entropy fails strong monotonicity under fermionic Gaussian measurements",
+    "category": "disproofs",
+    "original_status": "disproved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "双副本扭转熵能否作为纯态费米资源的强单调量？",
+    "claim_statement": "In the fixed-parity finite-mode graded-CAR model of problem.md, replica twist entropy at alpha=pi/4 is not a strong pure-state Gaussian monotone. The normalized even-parity N=34 state sqrt(3)/2 |00>|0000>^tensor8 + 1/2 |11>[(|0000>+|1111>)/sqrt(2)]^tensor8 followed by occupation measurement of its first mode, retaining both outcomes with probabilities 3/4 and 1/4, has exact average increase log(25836385/25165824)>0. More generally the explicit N=4m+2 flagged family has the exact all-angle formula in evidence/flagged-twist-proof.md and, at every fixed 0<alpha<pi/2 and 0<q<1, violates strong monotonicity for sufficiently large finite m with unbounded average increase as m grows.",
+    "background": "Replica twist entropy cannot be used as a strong monotone to upper-bound average pure-state Gaussian resource-conversion yield. Its source diagnostic and dynamical properties are unaffected. This gives an exact operational limitation for the actual high-order two-copy observable, including fermion-parity and graded-copy constraints.",
+    "novelty": "An exact fixed-parity fermionic family N=4m+2 has F=p^2+q^2 f(alpha)^m+2pq K_m(alpha), with explicit f and K. At alpha=pi/4, m=8,q=1/4 gives a finite N=34 two-outcome violation Delta=log(25836385/25165824)>0. For every fixed interior angle, parent P remains bounded but average measured-branch P grows linearly with m.",
+    "limitations": "Current primary version records and targeted defining/proof sections rechecked 2026-10-14, including the newly identified current bridge-degree v2 and stabilizer counterexample v2/v3. Existing covariance and convolution comparisons retained. Bounded search cannot certify priority; candidate_novel is a proposer hypothesis for fresh review, not acceptance. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00034-p01/paper.pdf",
+    "pdf_sha256": "246f7eef8f9e899749dc55f4e036ab4324f3a53cdc76f269357118720ed043f8",
+    "code_files": [
+      "evidence/replay_flagged_twist_graded.py",
+      "evidence/verify_flagged_twist_exact.py",
+      "reproducibility/build_manuscript.py",
+      "reproducibility/make_figure.py",
+      "reproducibility/occupied_minor_checker.py",
+      "reproducibility/run_checks.py"
+    ],
+    "reproduction_guides": [
+      "reproducibility/README.md"
+    ],
+    "dependency_files": [
+      "reproducibility/requirements.txt"
+    ],
+    "canonical_id": "phys-00034-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00035-p01",
+    "series": "big_mac",
+    "title": "Near-star spectral gaps on subdivided two-star qubit networks",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "无相位 EPR 配对图的锐谱隙，是否始终至少 1-s²？",
+    "claim_statement": "Let T_k have hubs a,b, a shared neighbor c, and k private leaves at each hub, with only ac,bc and the private hub-leaf edges; n=2k+3. For the original phase-free unnormalized unit-edge H_s, every integer k>=100 and every real theta in [1/2,2], eta=theta/k, s=sqrt(1-eta), have simple full ground and first excited energies in conserved-number N=2 and N=3 after X_a X_b. With full multiplicities, |Delta(H_s(T_k))/eta-[1+1/(2k)+(1-theta)/(4k^2)]|<=364/k^3, so Delta>eta and the ratio tends uniformly to one on this infinite nonstar family. Every full N>=4 sector obeys lambda_N<lambda_3-(N-3)eta/2 for B=-X_a X_b H X_a X_b; complete internal N2 modes and N0/N1 are also excluded. Original all-graph/all-s conjecture remains unresolved. This is a controlled joint size/endpoint family result, with fixed unit edge strength and growing degree, not a thermodynamic phase claim.",
+    "background": "The actual lowest excitation of this leaf-rich two-hub network is a relative 1/(2k) above the star threshold at leading order, with a controlled theta-dependent correction. Uniform approach to Delta/eta=1 occurs on an infinite nonstar family as s tends to one in eta=theta/k, so removing stars does not create a fixed multiplicative excess in this specified near-endpoint regime. There is no new phase or quantum algorithm complexity claim.",
+    "novelty": "For every subdivided two-star T_k, integer k>=100 and theta in [1/2,2], eta=theta/k, prove the complete ground and first excitation are simple N2/N3 levels and |Delta/eta-[1+1/(2k)+(1-theta)/(4k^2)]|<=364/k^3. The complete-star envelope supplies every N>=4 bound, including the stronger half-eta penalty; a full N2 Weyl bound supplies omitted internal irreps. The sector expansion is thereby upgraded to a full-gap result.",
+    "limitations": "Fresh primary metadata and decisive preserved fulltexts checked on 2026-10-14, before extending the legacy claim. Exact claim/resolution, deformed EPR/leaf/star and two-star/joint-limit searches are preserved in research-p4-current-web-1 through -4; current versions v1,v1,v1,v2,v1 confirmed. No matching full-gap formula or later sharp-leaf resolution found in this bounded coverage. Novelty/significance remain provisional for a fresh referee, without exhaustive priority or openness claims. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00035-p01/paper.pdf",
+    "pdf_sha256": "9c6081d3ddd6dcbc37c740dfb183c4140ccba4ad90859a358f97efbba537371e",
+    "code_files": [
+      "reproducibility/build_endpoint_manuscript.py",
+      "reproducibility/endpoint_certificate.py",
+      "reproducibility/make_endpoint_table.py",
+      "reproducibility/replay_endpoint.py"
+    ],
+    "reproduction_guides": [
+      "README_REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [
+      "requirements.txt"
+    ],
+    "canonical_id": "phys-00035-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00036-p01",
+    "series": "big_mac",
+    "title": "Algebraic endpoint densities are the transfer-matrix charges in regular Yang–Baxter chains",
+    "category": "proofs",
+    "original_status": "proved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "可积自旋链的全部局域守恒荷，能否由代数荷密度之差直接恢复？",
+    "claim_statement": "For every finite-dimensional complex V and every formal/analytic source-regular Yang--Baxter R(u,v) with R(u,u)=P and R12(u,v)R21(v,u)=I, for every k>=2, BOTH Conjecture 2.7 block-R endpoint density differences are equivalent to a density of Q_k^(L)=partial_u^(k-2)(t_L^-1 t_L prime)|0 modulo exactly I tensor m - m tensor I. Their cyclic sums equal the prescribed raw transfer charges on every homogeneous untwisted periodic chain L>=k. This is the complete undeformed source identity, including general non-difference R and minimal L=k; no higher-order long-range or other-boundary extension is claimed.",
+    "background": "Identifies the quantum-group algebraic densities with the actual prescribed local conservation-law hierarchy, excluding untracked lower-charge or scalar mixing and removing the unproved identification in applications of the source's undeformed recurrence. No new particle, phase, experiment, all-order long-range deformation or measured algorithmic speedup is asserted.",
+    "novelty": "A finite-chain ordered-product and rooted connected-coefficient proof of BOTH endpoint formulas for every source-allowed finite-dimensional regular braiding-normalized Yang--Baxter R, every k>=2 and every periodic L>=k, plus a constructive tensor-word proof of the exact local-gradient equivalence.",
+    "limitations": "On 14 October 2026 checked current arXiv original history (still v2, 5 June 2026), bounded exact identifier/title/conjecture and neighbour searches, and inspected the defining source loci, BBL Eq.(2.16), 2021 Appendix A Eqs.(A.1)--(A.7), and older Links/Takizawa ladder constructions. Raw retrievals and selected primary full texts are preserved. No later resolution was verified; search absence is not proof of openness and comprehensive priority is not established. Candidate novelty requires fresh referee assessment. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00036-p01/paper.pdf",
+    "pdf_sha256": "f37975e35d3fdeba6eebe4e8b9a7ea7cea893560863c971dbf654522bd96e784",
+    "code_files": [
+      "evidence/reproduce-compare.py",
+      "evidence/reproduce-input-a.py",
+      "evidence/reproduce-input-b.py",
+      "evidence/research-reparam-test.py",
+      "evidence/research-structural-tests.py"
+    ],
+    "reproduction_guides": [
+      "REPRODUCIBILITY.md"
+    ],
+    "dependency_files": [],
+    "canonical_id": "phys-00036-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00037-p01",
+    "series": "big_mac",
+    "title": "Second-order entropy stability of a three-mode fermionic product channel",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "费米乘积噪声的最小输出熵，是否总由广义 Gaussian 输入达到？",
+    "claim_statement": "For Bravyi's complete n=3 qubit/Majorana attenuation channel and every ordered 0<=b6<=...<=b1<1, the output-entropy gradient at the generalized-Gaussian pure input |+++> vanishes in all normalized complex pure-state directions, and the real 14-dimensional Hessian is positive semidefinite. Its Gaussian-normal cross block vanishes exactly. In the exact two-dimensional non-Gaussian normal span_R{|-+->,i|-+->}, H_Im>=H_Re>=2*b1^2*(1-b1^2)^4/(65*ln(2)), hence both normal eigenvalues are strictly positive for b1>0. At b1=0 the complete channel is depolarizing and the Hessian vanishes. Zero and repeated smaller attenuations are covered; rank-singular b1=1, strict local minimality along Gaussian zero modes, global entropy optimality and higher n are excluded.",
+    "background": "Rules out a quadratic non-Gaussian descent mechanism for increasing the source single-use unrestricted Holevo objective from this Gaussian encoder anywhere in the full three-mode full-rank-reference parameter chamber. Supplies an exact normal-curvature check for entropy optimization. No global optimum, new capacity formula, SSR-constrained rate, or experiment is inferred.",
+    "novelty": "An exact computer-assisted all-parameter certificate for the two non-Gaussian normal Hessian eigenvalues at the three-mode Eq.(36) optimizer for every ordered 0<=b6<=...<=b1<1, including zero and repeated smaller attenuations. A uniform explicit positive lower bound when b1>0, exact cross-block selection rules, and the known Gaussian minimum imply a nonnegative full-complex 14-dimensional pure-state Hessian.",
+    "limitations": "Fresh primary exact-claim/title and local-Hessian searches on 2026-10-14; Bravyi v1, Arhancet radial-v6 and Fourier-v15 selected full-text comparisons, Salek et al. 2610.06758v1 endpoint/parity theorem, and Ruskai-Yard 2111.11385v4 Introduction/Theorem 2/Section 3. Current version pages and raw search/capture replies are preserved. No equivalent theorem was located; bounded searches, selected body coverage and inaccessible publisher revisions do not prove exhaustive priority or present openness. Fresh referee novelty/significance review remains required. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00037-p01/paper.pdf",
+    "pdf_sha256": "7672a8a17247408fd921bc6bb988d8cdf2ec3afe0591b8f226e16870650b44d5",
+    "code_files": [
+      "manuscript/build.py",
+      "supplement/generate_certificate.py",
+      "supplement/generate_polynomials.py",
+      "supplement/run_checks.py",
+      "supplement/verify_cp.py",
+      "supplement/verify_monomials.py"
+    ],
+    "reproduction_guides": [
+      "supplement/README.md"
+    ],
+    "dependency_files": [
+      "supplement/requirements.txt"
+    ],
+    "canonical_id": "phys-00037-p01",
+    "counted_as_distinct": true
+  },
+  {
+    "id": "phys-00040-p01",
+    "series": "big_mac",
+    "title": "Initial entropy-production decrease for product-profile narrow beams in the Landau–Maxwell equation",
+    "category": "partial-results",
+    "original_status": "unresolved",
+    "release_status": "draft_ready_author_review_required",
+    "original_question": "三维 Landau–Maxwell 气体的熵产生，是否从初始时刻起始终递减？",
+    "claim_statement": "In the three-dimensional homogeneous Landau-Maxwell equation with a(z)=(|z|^2 I-zz^T)/2, mass one, mean zero and energy three, fix finite distinct real mu_j, w_j>0 with sum w=1, sum w mu=0, sum w mu^2=3. For each j fix centered normalized P_j on R^2 and R_j on R, each a polynomial globally bounded below by a positive constant multiplied by a centered nondegenerate Gaussian, with Cov(P_j)=a_j I_2, Var(R_j)=lambda_j>0 and sum w a=1. Put kappa_p^2=1-(2p+p^2 sum w lambda)/3 and f_p(v)=p^-2 sum_j w_j P_j(v_perp/sqrt(p)) R_j((v3-kappa_p mu_j)/p). For sufficiently small p>0 with kappa_p>=1/2, its actual initial right entropy-production derivative is Dprime_0(f_p)=p^-2 sum_j w_j C_j+O(p^-1), with configuration-dependent remainder, where C_j=-(mu_j^2+3)^2 JP_j/2-2(1+2a_j+U4_j/4)J_j+(9+5mu_j^2-mu_j^2 K2_j)I_j-mu_j a_j S3_j. Here JP=E_P||Hess log P||_F^2, U4=E_P|X|^4, K2=E_P(X.grad log P)^2, I=E_R((log R)prime)^2, J=E_R((log R)doubleprime)^2 and S3=E_R((log R)prime)^3. Every such coefficient satisfies C_j<=-(5/28)(mu_j^2+3)^2 JP_j<=-45/(14a_j^2), so sum w C_j<=-45/14 and Dprime_0(f_p)<0 for all sufficiently small p. The same leading functional inequality holds for any regular positive product factors with the stated finite moments and valid integrations by parts. This is an initial-data asymptotic, not a closure or a result uniform over varying configurations; the original universal monotonicity problem remains unresolved.",
+    "background": "A natural counterstreaming route to positive initial entropy acceleration is excluded beyond Gaussian local profiles, even for arbitrary fixed longitudinal score skewness. Within the specified beam scaling/covariance class, a putative positive p->0 sequence must violate local product structure or fixed-configuration hypotheses. The original all-data/all-time question remains unresolved.",
+    "novelty": "For every fixed finite normalized separated beam configuration with centered independent local transverse/longitudinal positive polynomial-Gaussian factors and widths sqrt(p),p, derive the full original-collision initial derivative Dprime_0(f_p)=p^-2 sum w C_j+O(p^-1). The general product coefficient includes longitudinal score skewness. Projected longitudinal curvature and transverse moment-curvature inequalities prove C_j<=-45/(14a_j^2), hence sum w C_j<=-45/14. Actual-mixture posterior overlap, tails and fixed-p initial differentiability are controlled analytically.",
+    "limitations": "Fresh primary histories/fulltexts and bounded exact-claim/successor/product-beam neighbor searches on 2026-10-14. Actual located Villani v5 sections 7,13,24.1 and Delarue-Menozzi-Nualart v1 Proposition 2.3 checked. No matching later resolution or identical criterion located; absence is not openness/priority proof. Older Villani 1998/2000 fulltexts remain unreviewed. Candidate novelty/value are proposer assessments requiring a fresh referee; earlier acceptance covers a different scope. Exact model and scope are stated in the frozen claim. Human author review remains required.",
+    "pdf": "projects/phys-00040-p01/paper.pdf",
+    "pdf_sha256": "8eff0670e7d6fc731a812b6ea5c3746f17b619809e5c9c027211008b9dd9604f",
+    "code_files": [
+      "repro/beam_pair_check.py",
+      "repro/beam_scaling_check.py",
+      "repro/run_beam_checks.py"
+    ],
+    "reproduction_guides": [
+      "repro/README.md"
+    ],
+    "dependency_files": [
+      "repro/beam-requirements.txt"
+    ],
+    "canonical_id": "phys-00040-p01",
+    "counted_as_distinct": true
+  }
+]

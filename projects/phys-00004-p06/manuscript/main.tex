@@ -1,0 +1,312 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\Q}{Q}
+\title{Global optimality of every-jump resetting for a Cauchy flight:\\a computer-assisted survival comparison}
+\author{Xiaojian Zeng\\\small PBC School of Finance, Tsinghua University, 100190\\\small\texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a discrete-time unit-Cauchy flight absorbed on landing above a barrier,
+we prove that the two-step local condition for resetting before every jump
+is sufficient for global optimality among constant Bernoulli resetting rates.
+Specifically, if the reset-free path survival satisfies $Q_2(b)\ge F(b)^2$,
+then every interior rate has a strictly larger mean first-passage time than
+rate one. A finite set of outward-rounded killed-kernel inequalities controls
+orders three through nine; the symmetric zero-barrier survival law controls
+all higher orders. Separate integral enclosures exclude the antecedent at
+all barriers above $1.809$. The result includes equality in the local
+condition and arbitrarily small positive reset rates. It settles the Cauchy
+specialization of the published global-optimality conjecture, without
+asserting rate monotonicity or an extension to other stable indices.
+\end{abstract}
+
+\section{First passage and the endpoint question}
+Resetting can improve first-passage performance, but an endpoint derivative
+need not determine a global optimum. Radice, Cristadoro and Thapa
+\cite{radice} derived a two-step criterion that excludes resetting before
+every jump when its endpoint derivative has the wrong sign. Their stable-flight
+discussion leaves the converse global conclusion conjectural. Here we prove
+that converse for the Cauchy member of the family.
+
+Discrete first passage under restart also has a general renewal description
+\cite{bonomo}. Its first-passage probability generating function maps to the
+survival generating function used here. We use that relation, rather than
+claiming that the two descriptions necessarily have different reset timing.
+The small-reset criterion in that work addresses the opposite endpoint;
+it does not by itself establish the global every-jump implication below.
+The zero-barrier symmetric survival law and the approximate Cauchy transition
+barrier reported in Ref.~\cite{radice} are prior results, not contributions of
+this calculation.
+
+Let $X_0=0$ and let the independent increments have density and CDF
+\begin{equation}
+ f(x)=\frac{1}{\pi(1+x^2)},\qquad
+ F(x)=\frac12+\frac{\arctan x}{\pi}.
+\end{equation}
+At each step an independent Bernoulli coin with probability $r$ resets the
+position to zero \emph{before} the fresh increment:
+\begin{equation}
+ X_n=\begin{cases}\eta_n,&\text{with probability }r,\\
+ X_{n-1}+\eta_n,&\text{with probability }1-r.
+ \end{cases}
+\end{equation}
+For a finite barrier $b\ge0$, absorption occurs at
+$\tau_b=\inf\{n\ge1:X_n>b\}$. Write $T_b(r)=\mathbb E\tau_b$.
+Length is measured in the Cauchy scale and time in steps. The left half-line
+is unbounded; no reflecting wall or finite-variance approximation is used.
+Let $S_n=\sum_{j=1}^n\eta_j$ and define reset-free \emph{path} survival by
+\begin{equation}
+ Q_n(b)=\mathbb P(S_j\le b\text{ for every }1\le j\le n),\quad Q_0=1.
+\end{equation}
+In particular, $q=Q_1(b)=F(b)$ and
+\begin{equation}\label{eq:q2}
+ Q_2(b)=\int_{-\infty}^b f(x)F(b-x)\,dx.
+\end{equation}
+Endpoint $r=1$ gives independent trials, hence $T_b(1)=1/(1-q)$.
+
+\begin{theorem}\label{thm:main}
+For every finite $b\ge0$, in the process specified above,
+\begin{equation}
+ Q_2(b)\ge F(b)^2\quad\Longrightarrow\quad
+ T_b(r)>\frac{1}{1-F(b)}\qquad(0<r<1).
+\end{equation}
+Thus $r=1$ is the unique minimum over constant rates $0<r\le1$ whenever
+the antecedent holds, including its equality case.
+\end{theorem}
+The proof is computer assisted: the finite integral inequalities are
+certified by integer interval arithmetic, whereas the infinite-order and
+infinite-barrier extensions are analytic. It neither identifies every zero
+of $Q_2-F^2$ nor proves monotonicity of $T_b(r)$.
+
+\section{Renewal reduction and infinite orders}
+Let $G_b(z)=\sum_{n\ge0}Q_n(b)z^n$ and $z=1-r$. For $0<r<1$ the renewal
+mean is \cite{radice}
+\begin{equation}\label{eq:mean}
+ T_b(r)=\frac{zG_b(z)}{1-rG_b(z)}.
+\end{equation}
+For completeness, put $(Kv)(x)=\int_{-\infty}^b f(y-x)v(y)\,dy$.
+The backward equation reads $u=1+zKu+r(Ku)(0)$.
+With $h=(I-zK)^{-1}1$ one has $h(0)=G_b(z)$ and
+$(Kh)(0)=(G_b(z)-1)/z$. Solving $u=ch$ for its scalar multiplier gives
+Eq.~\eqref{eq:mean}. The killed reset transition has row mass at most
+$1-r(1-q)<1$, so its mean exists and is bounded by $1/[r(1-q)]$.
+Moreover $Q_n\le q$ for $n\ge1$ implies
+\begin{equation}
+ G_b(z)\le1+\frac{qz}{r},\qquad 1-rG_b(z)\ge z(1-q)>0.
+\end{equation}
+There is therefore no uncertain numerical denominator sign.
+
+Direct subtraction in Eq.~\eqref{eq:mean} gives
+\begin{equation}\label{eq:sign}
+ \operatorname{sgn}[T_b(r)-T_b(1)]
+ =\operatorname{sgn}[(1-zq)G_b(z)-1].
+\end{equation}
+It is enough that $Q_n(b)\ge q^n$ for every $n$, with at least one strict
+inequality. Absolute convergence at $0<z<1$ then gives
+$G_b(z)>1/(1-zq)$. This comparison avoids truncating the generating series
+near $r=0$. Expanding its endpoint sign expression gives
+$(1-zq)G_b(z)-1=(Q_2-q^2)z^2+O(z^3)$, explaining the local criterion.
+
+Set $B=1809/1000$. The scalar enclosures described below prove
+$F(B)<21/25$. For $0\le b\le B$, barrier inclusion and the continuous
+symmetric survival law quoted in Ref.~\cite{radice} give
+\begin{equation}
+ Q_n(b)\ge Q_n(0)=a_n=4^{-n}\binom{2n}{n}.
+\end{equation}
+In exact arithmetic,
+\begin{equation}
+ a_{10}=\frac{46189}{262144}>\left(\frac{21}{25}\right)^{10},\qquad
+ \frac{a_{n+1}}{a_n}=\frac{2n+1}{2n+2}\ge\frac{21}{22}>\frac{21}{25}
+ \quad(n\ge10).
+\end{equation}
+Induction proves $Q_n(b)>q^n$ for all $n\ge10$. The zeroth and first
+orders are identities; the second order is the theorem's hypothesis.
+Only orders $3\le n\le9$ remain. As a convention check, $G_0(z)=(1-z)^{-1/2}$
+in Eq.~\eqref{eq:mean} reproduces $T_0(r)=1+r^{-1/2}$.
+
+\section{Uniform finite-order survival certificates}
+For $x\le b$, let $u_n(x)$ be path survival for $n$ jumps starting at $x$.
+Coupling the same increments proves that $u_n$ decreases in $x$, while
+$Q_n(b)=u_n(0)$ increases in $b$. First-step conditioning gives
+\begin{equation}\label{eq:kernel}
+ u_{n+1}(x)=\int_{-\infty}^b f(y-x)u_n(y)\,dy,\qquad
+ u_1(x)=F(b-x).
+\end{equation}
+Choose rational endpoints $-L=x_0<\cdots<x_m=b$, including zero.
+If $\ell_{nk}\le u_n(x_k)$, then a lower node enclosure is
+\begin{equation}\label{eq:lower}
+ \ell_{n+1,j}=\sum_{k=1}^m
+ \bigl[F(x_k-x_j)-F(x_{k-1}-x_j)\bigr]\ell_{nk},
+\end{equation}
+with every mass and sum rounded downward. The omitted integral below $-L$
+is nonnegative. Discarding it weakens a lower bound; it does not introduce a
+wall or presume that the omitted mass is small at every starting point.
+
+A truncated approximation need not itself decrease. After each recurrence,
+replace its values by $\max_{k\ge j}\ell_{nk}$. This remains a legal lower
+bound at $x_j$, because true survival decreases. Thus the cell argument in
+Eq.~\eqref{eq:lower} is valid at every order.
+
+The certificate uses spacing $1/32$ from $-8$ to $b$, with geometric
+negative cells from $-128$ to $-8$ and zero inserted as an endpoint.
+For each closed barrier cell $[l,u]$, the checked inequalities are
+\begin{equation}\label{eq:cell}
+ Q_n(b)\ge Q_n(l)\ge\ell_n(l)>F(u)^n\ge F(b)^n,
+ \qquad 3\le n\le9.
+\end{equation}
+The ten cells in Table~\ref{tab:cover} join exactly to cover $[0,B]$.
+These are uniform event-inclusion inequalities, not interpolation of sampled
+values. The table reports conservative decimal lower bounds on the smallest
+margin in each cell; exact rational endpoints and margins accompany the code.
+\input{survival-table.tex}
+
+CDFs are enclosed at integer scale $10^{30}$. The enclosure of $\pi$ uses
+Machin's identity,
+\begin{equation}
+\pi=16\arctan(1/5)-4\arctan(1/239).
+\end{equation}
+Sign, reciprocal and addition identities reduce each rational arctangent
+argument to absolute value at most $1/2$. Sixty alternating terms, together
+with the next-term remainder, enclose the arctangent. Integer products,
+divisions and positive recurrence sums round outwards or downwards as
+appropriate. No floating-point transcendental evaluation contributes to a
+certificate sign. Display decimals are not the decision arithmetic.
+
+\section{Excluding every larger barrier}
+Write $c_2(b)=Q_2(b)-F(b)^2$. We prove $c_2(b)<0$ for every $b\ge B$.
+The three interval computations below are accompanied by exact rational
+outputs and executable code.
+
+\subsection{Initial sign and the interval to two}
+To control the whole infinite integration domain in Eq.~\eqref{eq:q2}, set
+$t=1/(1+b-x)$. Then
+\begin{equation}\label{eq:compact}
+ Q_2(b)=\int_0^1\frac{A(t)}{\pi D_b(t)}\,dt,\quad
+ A(t)=F\left(\frac{1-t}{t}\right),\quad
+ D_b(t)=t^2+[(b+1)t-1]^2.
+\end{equation}
+The endpoint value is $A(0)=1$. Composite Simpson quadrature with $N=8192$
+and the explicit fourth-derivative bound in Appendix~\ref{app:error} gives,
+rounding this display outward,
+\begin{equation}
+ -0.00000697205<c_2(B)<-0.00000694741.
+\end{equation}
+
+Differentiation of Eq.~\eqref{eq:q2} yields
+$Q_2'(b)=f(b)/2+\int_{-\infty}^b f(x)f(b-x)\,dx$.
+The full convolution is $2/[\pi(b^2+4)]$. The removed interval $[b,b+1]$
+contributes at least $f(b+1)/4$, since its second Cauchy factor integrates
+to $1/4$. Hence
+\begin{equation}\label{eq:derivative}
+ c_2'(b)\le\frac{2}{\pi(b^2+4)}
+ -\frac{1}{4\pi[1+(b+1)^2]}
+ -\frac{2F(b)-1/2}{\pi(1+b^2)}.
+\end{equation}
+For every cell $[l,u]$ of width $1/1000$ in $[B,2]$, evaluate the positive
+term at $l$, the subtracted inverse quadratics at $u$, and the CDF factor
+from below at $l$. All 191 resulting uniform upper bounds are negative.
+The largest is less than $-0.00503$. Thus the initial sign persists to two.
+
+\subsection{Crossing and returning between two and seven}
+The marginal $S_2$ is Cauchy of scale two. Removing paths which crossed
+at the first step and returned at the second gives the distinct identity
+\begin{equation}\label{eq:return}
+ Q_2(b)=F(b/2)-\int_0^\infty f(b+t)F(-t)\,dt.
+\end{equation}
+On a rational integration cell $[v,w]$, the removed integral is at least
+$[F(b+w)-F(b+v)]F(-w)$. Summing these contributions with spacing $1/64$
+to 16 and geometric cells to 1024 gives an upper enclosure of $Q_2$.
+Discarding the remaining positive removed integral preserves that direction.
+For a barrier cell $[l,u]$, use
+\begin{equation}
+ c_2(b)\le Q_2(u)-F(l)^2\qquad(l\le b\le u).
+\end{equation}
+Forty-two closed rational cells cover $[2,7]$, each with a strictly negative
+upper bound; the largest is below $-0.0001724763$.
+
+\subsection{The analytic infinite-barrier tail}
+For $b\ge7$, put $x=1/b$, $t=\arctan x$ and $v=\arctan(2x)$.
+Path inclusion implies $Q_2(b)\le F(b/2)$. On $0<x\le1/7$ there is no
+arctangent branch ambiguity, and
+\begin{align}
+ F(b/2)-F(b)^2&=\frac{2t-v}{\pi}-\frac{t^2}{\pi^2},\\
+ 2t-v&=\arctan\frac{2x^3}{1+3x^2}\le2x^3,\qquad
+ t\ge\frac{x}{1+x^2}.
+\end{align}
+The difference is strictly negative provided
+$2\pi x(1+x^2)^2<1$. This increasing function is bounded at $x=1/7$
+by $0.934609<1$. Consequently every barrier satisfying the theorem's
+antecedent lies below $B$.
+
+\section{Conclusion, interpretation and reproducibility}
+On that remaining barrier interval, Eq.~\eqref{eq:cell} supplies orders
+three through nine and the exact baseline induction supplies every order
+at least ten. Together with the assumed second order, all survival
+coefficients dominate $q^n$, strictly at order ten. Equation~\eqref{eq:sign}
+therefore proves Theorem~\ref{thm:main} for every interior reset rate.
+
+The physical consequence is a complete decision rule among constant
+Bernoulli protocols: whenever the two-jump condition holds, resetting before
+each jump is globally best. The equality case needs no numerical root
+isolation. The proof controls the heavy left tail and the entire rate domain;
+it makes no assumption of finite Cauchy moments. It does not settle the
+other stable indices, uniqueness of a transition barrier, or optimization
+over state-dependent or history-dependent protocols. A bounded current
+literature check located no subsequent exact resolution of this Cauchy
+implication; it does not guarantee priority.
+
+The supplementary reproducibility instructions identify the exact integer
+scripts, rational outputs and scalar checks. A separate reconstruction used
+Horner interval arctangents, different scales and grids, and a legal
+left-tail contribution; it passed all barrier cells and the initial sign.
+That computational cross-check is not a substitute for human scrutiny of
+the analytic enclosure arguments. The manuscript uses the accepted scope
+only; the code contains more diagnostic outputs than the proof requires.
+
+\paragraph{AI assistance and author review.}
+Codex was used for research ideation, derivations, code generation, literature
+checks, computational validation and manuscript drafting. Computational
+checks include a separate AI-context reconstruction. No completed human
+validation or authorship approval is asserted in this local draft. Before
+submission, the named author must critically review the reasoning, code,
+references and text, confirm the actual tool/model version and disclosure,
+and take responsibility for the final work.
+
+\appendix
+\section{Explicit compact-quadrature error bound}\label{app:error}
+Here is a reproducible bound for Eq.~\eqref{eq:compact}. Put
+$a=1+(b+1)^2$, $d_1=\max\{2(b+1),2a-2(b+1)\}$ and $d_2=2a$.
+On $[0,1]$, $D_b\ge1/a$, $|D_b'|\le d_1$ and $D_b''=d_2$.
+Differentiating $D_b(1/D_b)=1$ gives valid bounds $B_k$ on the derivatives
+of $1/D_b$ through order four:
+\begin{equation}
+ B_0=a,\qquad B_k=a\left[kd_1B_{k-1}+\binom{k}{2}d_2B_{k-2}\right],
+\end{equation}
+where the second term is omitted for $k=1$.
+For $E=t^2+(1-t)^2$, $A'=-1/(\pi E)$, $E\ge1/2$,
+$|E'|\le2$ and $E''=4$. Set
+\begin{equation}
+ C_0=2,\qquad C_k=2\left[2kC_{k-1}+4\binom{k}{2}C_{k-2}\right]
+ \quad(1\le k\le3).
+\end{equation}
+With $\alpha_0=1$ and $\alpha_k=C_{k-1}/3$ for $1\le k\le4$,
+$\pi>3$ and Leibniz's rule give
+\begin{equation}
+ \left|\left(\frac{A}{\pi D_b}\right)^{(4)}\right|
+ \le M_4=\frac13\sum_{k=0}^4\binom4k\alpha_kB_{4-k}.
+\end{equation}
+All endpoint derivatives extend continuously. For even $N$ the composite
+Simpson error is at most $M_4/(180N^4)$. The evaluated Simpson sum is itself
+an outward interval; this rational error is added at both ends. No omitted
+spatial-tail correction remains after the compact transformation.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

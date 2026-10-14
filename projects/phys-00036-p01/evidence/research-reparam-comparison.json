@@ -1,0 +1,1536 @@
+{
+  "captured_at": "2026-10-14T05:51:38.568339+00:00",
+  "input": "R_f(u,v)=(P-(f(u)-f(v))I)/(1-f(u)+f(v)), f(u)=u+u^2",
+  "scope": "Exact finite k=4,5 stress test, not a resolution or novelty assertion",
+  "arithmetic": "Python integers and fractions.Fraction; no numeric tolerance",
+  "transfer_checks": [
+    {
+      "L": 4,
+      "k": 2,
+      "full_matrix_entries_checked": 256,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "2": 1
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 4,
+      "k": 3,
+      "full_matrix_entries_checked": 256,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "3": 1,
+        "2": 2
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 4,
+      "k": 4,
+      "full_matrix_entries_checked": 256,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "4": 1,
+        "3": 6
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 5,
+      "k": 2,
+      "full_matrix_entries_checked": 1024,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "2": 1
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 5,
+      "k": 3,
+      "full_matrix_entries_checked": 1024,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "3": 1,
+        "2": 2
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 5,
+      "k": 4,
+      "full_matrix_entries_checked": 1024,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "4": 1,
+        "3": 6
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 5,
+      "k": 5,
+      "full_matrix_entries_checked": 1024,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "5": 1,
+        "4": 12,
+        "3": 12
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 6,
+      "k": 2,
+      "full_matrix_entries_checked": 4096,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "2": 1
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 6,
+      "k": 3,
+      "full_matrix_entries_checked": 4096,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "3": 1,
+        "2": 2
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 6,
+      "k": 4,
+      "full_matrix_entries_checked": 4096,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "4": 1,
+        "3": 6
+      },
+      "mixing_residual_permutation_terms": 0
+    },
+    {
+      "L": 6,
+      "k": 5,
+      "full_matrix_entries_checked": 4096,
+      "independent_transfer_residual_entries": 0,
+      "chain_rule_mixing": {
+        "5": 1,
+        "4": 12,
+        "3": 12
+      },
+      "mixing_residual_permutation_terms": 0
+    }
+  ],
+  "local_gradient_checks": [
+    {
+      "model": "XXX",
+      "k": 4,
+      "side": "left",
+      "difference_entries": 24,
+      "rank": 63,
+      "unknowns": 64,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "equation": "endpoint_density - independently derived q = I tensor m - m tensor I",
+      "witness_sparse_entries": [
+        [
+          2,
+          2,
+          "2"
+        ],
+        [
+          2,
+          4,
+          "-2"
+        ],
+        [
+          3,
+          3,
+          "2"
+        ],
+        [
+          3,
+          5,
+          "-2"
+        ],
+        [
+          4,
+          2,
+          "-2"
+        ],
+        [
+          4,
+          4,
+          "2"
+        ],
+        [
+          5,
+          3,
+          "-2"
+        ],
+        [
+          5,
+          5,
+          "2"
+        ]
+      ]
+    },
+    {
+      "model": "XXX",
+      "k": 4,
+      "side": "right",
+      "difference_entries": 50,
+      "rank": 63,
+      "unknowns": 64,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "equation": "endpoint_density - independently derived q = I tensor m - m tensor I",
+      "witness_sparse_entries": [
+        [
+          1,
+          2,
+          "-2"
+        ],
+        [
+          1,
+          4,
+          "2"
+        ],
+        [
+          2,
+          1,
+          "-2"
+        ],
+        [
+          2,
+          2,
+          "6"
+        ],
+        [
+          2,
+          4,
+          "-4"
+        ],
+        [
+          3,
+          3,
+          "2"
+        ],
+        [
+          3,
+          5,
+          "-4"
+        ],
+        [
+          3,
+          6,
+          "2"
+        ],
+        [
+          4,
+          1,
+          "2"
+        ],
+        [
+          4,
+          2,
+          "-4"
+        ],
+        [
+          4,
+          4,
+          "2"
+        ],
+        [
+          5,
+          3,
+          "-4"
+        ],
+        [
+          5,
+          5,
+          "6"
+        ],
+        [
+          5,
+          6,
+          "-2"
+        ],
+        [
+          6,
+          3,
+          "2"
+        ],
+        [
+          6,
+          5,
+          "-2"
+        ]
+      ]
+    },
+    {
+      "model": "nonlinear_reparam",
+      "k": 4,
+      "side": "left",
+      "difference_entries": 24,
+      "rank": 63,
+      "unknowns": 64,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "equation": "endpoint_density - independently derived q = I tensor m - m tensor I",
+      "witness_sparse_entries": [
+        [
+          2,
+          2,
+          "2"
+        ],
+        [
+          2,
+          4,
+          "-2"
+        ],
+        [
+          3,
+          3,
+          "2"
+        ],
+        [
+          3,
+          5,
+          "-2"
+        ],
+        [
+          4,
+          2,
+          "-2"
+        ],
+        [
+          4,
+          4,
+          "2"
+        ],
+        [
+          5,
+          3,
+          "-2"
+        ],
+        [
+          5,
+          5,
+          "2"
+        ]
+      ]
+    },
+    {
+      "model": "nonlinear_reparam",
+      "k": 4,
+      "side": "right",
+      "difference_entries": 50,
+      "rank": 63,
+      "unknowns": 64,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "equation": "endpoint_density - independently derived q = I tensor m - m tensor I",
+      "witness_sparse_entries": [
+        [
+          1,
+          2,
+          "-8"
+        ],
+        [
+          1,
+          4,
+          "8"
+        ],
+        [
+          2,
+          1,
+          "4"
+        ],
+        [
+          2,
+          2,
+          "6"
+        ],
+        [
+          2,
+          4,
+          "-10"
+        ],
+        [
+          3,
+          3,
+          "2"
+        ],
+        [
+          3,
+          5,
+          "2"
+        ],
+        [
+          3,
+          6,
+          "-4"
+        ],
+        [
+          4,
+          1,
+          "-4"
+        ],
+        [
+          4,
+          2,
+          "2"
+        ],
+        [
+          4,
+          4,
+          "2"
+        ],
+        [
+          5,
+          3,
+          "-10"
+        ],
+        [
+          5,
+          5,
+          "6"
+        ],
+        [
+          5,
+          6,
+          "4"
+        ],
+        [
+          6,
+          3,
+          "8"
+        ],
+        [
+          6,
+          5,
+          "-8"
+        ]
+      ]
+    },
+    {
+      "model": "XXX",
+      "k": 5,
+      "side": "left",
+      "difference_entries": 124,
+      "rank": 255,
+      "unknowns": 256,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "equation": "endpoint_density - independently derived q = I tensor m - m tensor I",
+      "witness_sparse_entries": [
+        [
+          1,
+          2,
+          "12"
+        ],
+        [
+          1,
+          4,
+          "-24"
+        ],
+        [
+          1,
+          8,
+          "12"
+        ],
+        [
+          2,
+          1,
+          "-12"
+        ],
+        [
+          2,
+          4,
+          "30"
+        ],
+        [
+          2,
+          8,
+          "-18"
+        ],
+        [
+          3,
+          5,
+          "-6"
+        ],
+        [
+          3,
+          6,
+          "12"
+        ],
+        [
+          3,
+          9,
+          "-6"
+        ],
+        [
+          4,
+          1,
+          "24"
+        ],
+        [
+          4,
+          2,
+          "-30"
+        ],
+        [
+          4,
+          8,
+          "6"
+        ],
+        [
+          5,
+          3,
+          "6"
+        ],
+        [
+          5,
+          6,
+          "-24"
+        ],
+        [
+          5,
+          9,
+          "18"
+        ],
+        [
+          6,
+          3,
+          "-12"
+        ],
+        [
+          6,
+          5,
+          "24"
+        ],
+        [
+          6,
+          10,
+          "-18"
+        ],
+        [
+          6,
+          12,
+          "6"
+        ],
+        [
+          7,
+          11,
+          "-6"
+        ],
+        [
+          7,
+          13,
+          "18"
+        ],
+        [
+          7,
+          14,
+          "-12"
+        ],
+        [
+          8,
+          1,
+          "-12"
+        ],
+        [
+          8,
+          2,
+          "18"
+        ],
+        [
+          8,
+          4,
+          "-6"
+        ],
+        [
+          9,
+          3,
+          "6"
+        ],
+        [
+          9,
+          5,
+          "-18"
+        ],
+        [
+          9,
+          10,
+          "24"
+        ],
+        [
+          9,
+          12,
+          "-12"
+        ],
+        [
+          10,
+          6,
+          "18"
+        ],
+        [
+          10,
+          9,
+          "-24"
+        ],
+        [
+          10,
+          12,
+          "6"
+        ],
+        [
+          11,
+          7,
+          "6"
+        ],
+        [
+          11,
+          13,
+          "-30"
+        ],
+        [
+          11,
+          14,
+          "24"
+        ],
+        [
+          12,
+          6,
+          "-6"
+        ],
+        [
+          12,
+          9,
+          "12"
+        ],
+        [
+          12,
+          10,
+          "-6"
+        ],
+        [
+          13,
+          7,
+          "-18"
+        ],
+        [
+          13,
+          11,
+          "30"
+        ],
+        [
+          13,
+          14,
+          "-12"
+        ],
+        [
+          14,
+          7,
+          "12"
+        ],
+        [
+          14,
+          11,
+          "-24"
+        ],
+        [
+          14,
+          13,
+          "12"
+        ]
+      ]
+    },
+    {
+      "model": "XXX",
+      "k": 5,
+      "side": "right",
+      "difference_entries": 72,
+      "rank": 255,
+      "unknowns": 256,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "equation": "endpoint_density - independently derived q = I tensor m - m tensor I",
+      "witness_sparse_entries": [
+        [
+          1,
+          2,
+          "6"
+        ],
+        [
+          1,
+          4,
+          "-6"
+        ],
+        [
+          2,
+          1,
+          "-6"
+        ],
+        [
+          2,
+          4,
+          "6"
+        ],
+        [
+          3,
+          5,
+          "-6"
+        ],
+        [
+          3,
+          6,
+          "6"
+        ],
+        [
+          4,
+          1,
+          "6"
+        ],
+        [
+          4,
+          2,
+          "-6"
+        ],
+        [
+          5,
+          3,
+          "6"
+        ],
+        [
+          5,
+          6,
+          "-6"
+        ],
+        [
+          6,
+          3,
+          "-6"
+        ],
+        [
+          6,
+          5,
+          "6"
+        ],
+        [
+          9,
+          10,
+          "6"
+        ],
+        [
+          9,
+          12,
+          "-6"
+        ],
+        [
+          10,
+          9,
+          "-6"
+        ],
+        [
+          10,
+          12,
+          "6"
+        ],
+        [
+          11,
+          13,
+          "-6"
+        ],
+        [
+          11,
+          14,
+          "6"
+        ],
+        [
+          12,
+          9,
+          "6"
+        ],
+        [
+          12,
+          10,
+          "-6"
+        ],
+        [
+          13,
+          11,
+          "6"
+        ],
+        [
+          13,
+          14,
+          "-6"
+        ],
+        [
+          14,
+          11,
+          "-6"
+        ],
+        [
+          14,
+          13,
+          "6"
+        ]
+      ]
+    },
+    {
+      "model": "nonlinear_reparam",
+      "k": 5,
+      "side": "left",
+      "difference_entries": 142,
+      "rank": 255,
+      "unknowns": 256,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "equation": "endpoint_density - independently derived q = I tensor m - m tensor I",
+      "witness_sparse_entries": [
+        [
+          1,
+          2,
+          "12"
+        ],
+        [
+          1,
+          4,
+          "-24"
+        ],
+        [
+          1,
+          8,
+          "12"
+        ],
+        [
+          2,
+          1,
+          "-12"
+        ],
+        [
+          2,
+          4,
+          "30"
+        ],
+        [
+          2,
+          8,
+          "-18"
+        ],
+        [
+          3,
+          5,
+          "-6"
+        ],
+        [
+          3,
+          6,
+          "12"
+        ],
+        [
+          3,
+          9,
+          "-6"
+        ],
+        [
+          4,
+          1,
+          "24"
+        ],
+        [
+          4,
+          2,
+          "-30"
+        ],
+        [
+          4,
+          4,
+          "24"
+        ],
+        [
+          4,
+          8,
+          "-18"
+        ],
+        [
+          5,
+          3,
+          "6"
+        ],
+        [
+          5,
+          5,
+          "24"
+        ],
+        [
+          5,
+          6,
+          "-24"
+        ],
+        [
+          5,
+          9,
+          "-6"
+        ],
+        [
+          6,
+          3,
+          "-12"
+        ],
+        [
+          6,
+          5,
+          "24"
+        ],
+        [
+          6,
+          6,
+          "24"
+        ],
+        [
+          6,
+          10,
+          "-42"
+        ],
+        [
+          6,
+          12,
+          "6"
+        ],
+        [
+          7,
+          7,
+          "24"
+        ],
+        [
+          7,
+          11,
+          "-30"
+        ],
+        [
+          7,
+          13,
+          "18"
+        ],
+        [
+          7,
+          14,
+          "-12"
+        ],
+        [
+          8,
+          1,
+          "-12"
+        ],
+        [
+          8,
+          2,
+          "18"
+        ],
+        [
+          8,
+          4,
+          "-30"
+        ],
+        [
+          8,
+          8,
+          "24"
+        ],
+        [
+          9,
+          3,
+          "6"
+        ],
+        [
+          9,
+          5,
+          "-42"
+        ],
+        [
+          9,
+          9,
+          "24"
+        ],
+        [
+          9,
+          10,
+          "24"
+        ],
+        [
+          9,
+          12,
+          "-12"
+        ],
+        [
+          10,
+          6,
+          "-6"
+        ],
+        [
+          10,
+          9,
+          "-24"
+        ],
+        [
+          10,
+          10,
+          "24"
+        ],
+        [
+          10,
+          12,
+          "6"
+        ],
+        [
+          11,
+          7,
+          "-18"
+        ],
+        [
+          11,
+          11,
+          "24"
+        ],
+        [
+          11,
+          13,
+          "-30"
+        ],
+        [
+          11,
+          14,
+          "24"
+        ],
+        [
+          12,
+          6,
+          "-6"
+        ],
+        [
+          12,
+          9,
+          "12"
+        ],
+        [
+          12,
+          10,
+          "-6"
+        ],
+        [
+          13,
+          7,
+          "-18"
+        ],
+        [
+          13,
+          11,
+          "30"
+        ],
+        [
+          13,
+          14,
+          "-12"
+        ],
+        [
+          14,
+          7,
+          "12"
+        ],
+        [
+          14,
+          11,
+          "-24"
+        ],
+        [
+          14,
+          13,
+          "12"
+        ]
+      ]
+    },
+    {
+      "model": "nonlinear_reparam",
+      "k": 5,
+      "side": "right",
+      "difference_entries": 176,
+      "rank": 255,
+      "unknowns": 256,
+      "free_variables_set_zero": 1,
+      "residual_nonzero_entries": 0,
+      "equation": "endpoint_density - independently derived q = I tensor m - m tensor I",
+      "witness_sparse_entries": [
+        [
+          1,
+          2,
+          "-30"
+        ],
+        [
+          1,
+          4,
+          "54"
+        ],
+        [
+          1,
+          8,
+          "-24"
+        ],
+        [
+          2,
+          1,
+          "-18"
+        ],
+        [
+          2,
+          2,
+          "48"
+        ],
+        [
+          2,
+          4,
+          "-90"
+        ],
+        [
+          2,
+          8,
+          "60"
+        ],
+        [
+          3,
+          5,
+          "-30"
+        ],
+        [
+          3,
+          6,
+          "-6"
+        ],
+        [
+          3,
+          9,
+          "12"
+        ],
+        [
+          3,
+          10,
+          "24"
+        ],
+        [
+          4,
+          1,
+          "42"
+        ],
+        [
+          4,
+          2,
+          "-54"
+        ],
+        [
+          4,
+          4,
+          "72"
+        ],
+        [
+          4,
+          8,
+          "-60"
+        ],
+        [
+          5,
+          3,
+          "-18"
+        ],
+        [
+          5,
+          5,
+          "120"
+        ],
+        [
+          5,
+          6,
+          "-18"
+        ],
+        [
+          5,
+          9,
+          "-60"
+        ],
+        [
+          5,
+          10,
+          "-48"
+        ],
+        [
+          5,
+          12,
+          "24"
+        ],
+        [
+          6,
+          3,
+          "6"
+        ],
+        [
+          6,
+          5,
+          "-30"
+        ],
+        [
+          6,
+          6,
+          "24"
+        ],
+        [
+          6,
+          9,
+          "48"
+        ],
+        [
+          6,
+          10,
+          "-36"
+        ],
+        [
+          6,
+          12,
+          "-12"
+        ],
+        [
+          7,
+          7,
+          "24"
+        ],
+        [
+          7,
+          11,
+          "-36"
+        ],
+        [
+          7,
+          13,
+          "36"
+        ],
+        [
+          7,
+          14,
+          "-24"
+        ],
+        [
+          8,
+          1,
+          "-24"
+        ],
+        [
+          8,
+          2,
+          "36"
+        ],
+        [
+          8,
+          4,
+          "-36"
+        ],
+        [
+          8,
+          8,
+          "24"
+        ],
+        [
+          9,
+          3,
+          "-12"
+        ],
+        [
+          9,
+          5,
+          "-36"
+        ],
+        [
+          9,
+          6,
+          "48"
+        ],
+        [
+          9,
+          9,
+          "24"
+        ],
+        [
+          9,
+          10,
+          "-30"
+        ],
+        [
+          9,
+          12,
+          "6"
+        ],
+        [
+          10,
+          3,
+          "24"
+        ],
+        [
+          10,
+          5,
+          "-48"
+        ],
+        [
+          10,
+          6,
+          "-60"
+        ],
+        [
+          10,
+          9,
+          "-18"
+        ],
+        [
+          10,
+          10,
+          "120"
+        ],
+        [
+          10,
+          12,
+          "-18"
+        ],
+        [
+          11,
+          7,
+          "-60"
+        ],
+        [
+          11,
+          11,
+          "72"
+        ],
+        [
+          11,
+          13,
+          "-54"
+        ],
+        [
+          11,
+          14,
+          "42"
+        ],
+        [
+          12,
+          5,
+          "24"
+        ],
+        [
+          12,
+          6,
+          "12"
+        ],
+        [
+          12,
+          9,
+          "-6"
+        ],
+        [
+          12,
+          10,
+          "-30"
+        ],
+        [
+          13,
+          7,
+          "60"
+        ],
+        [
+          13,
+          11,
+          "-90"
+        ],
+        [
+          13,
+          13,
+          "48"
+        ],
+        [
+          13,
+          14,
+          "-18"
+        ],
+        [
+          14,
+          7,
+          "-24"
+        ],
+        [
+          14,
+          11,
+          "54"
+        ],
+        [
+          14,
+          13,
+          "-30"
+        ]
+      ]
+    }
+  ],
+  "q5_derivation": {
+    "rank": 81,
+    "unknowns": 120,
+    "free_variables_set_zero": 39,
+    "derivation": "Exact locality inversion of route-A Q5 at L=6 in formal S5/S6 permutation algebra; no block endpoint used",
+    "all_global_permutations_checked": 455,
+    "residual_terms": 0,
+    "coefficients": [
+      {
+        "permutation": [
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        "coefficient": "-18"
+      },
+      {
+        "permutation": [
+          1,
+          2,
+          5,
+          3,
+          4
+        ],
+        "coefficient": "18"
+      },
+      {
+        "permutation": [
+          1,
+          3,
+          5,
+          4,
+          2
+        ],
+        "coefficient": "6"
+      },
+      {
+        "permutation": [
+          1,
+          4,
+          3,
+          5,
+          2
+        ],
+        "coefficient": "6"
+      },
+      {
+        "permutation": [
+          1,
+          5,
+          2,
+          4,
+          3
+        ],
+        "coefficient": "-6"
+      },
+      {
+        "permutation": [
+          1,
+          5,
+          3,
+          2,
+          4
+        ],
+        "coefficient": "-6"
+      },
+      {
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          1
+        ],
+        "coefficient": "-6"
+      },
+      {
+        "permutation": [
+          2,
+          3,
+          5,
+          1,
+          4
+        ],
+        "coefficient": "6"
+      },
+      {
+        "permutation": [
+          2,
+          4,
+          1,
+          5,
+          3
+        ],
+        "coefficient": "6"
+      },
+      {
+        "permutation": [
+          2,
+          5,
+          1,
+          3,
+          4
+        ],
+        "coefficient": "-6"
+      },
+      {
+        "permutation": [
+          3,
+          1,
+          4,
+          5,
+          2
+        ],
+        "coefficient": "6"
+      },
+      {
+        "permutation": [
+          3,
+          1,
+          5,
+          2,
+          4
+        ],
+        "coefficient": "-6"
+      },
+      {
+        "permutation": [
+          4,
+          1,
+          2,
+          5,
+          3
+        ],
+        "coefficient": "-6"
+      },
+      {
+        "permutation": [
+          5,
+          1,
+          2,
+          3,
+          4
+        ],
+        "coefficient": "6"
+      }
+    ]
+  },
+  "elapsed_seconds": 0.27815612498670816,
+  "limitations": "Known-input stress test only. Local q5 obtained from one formal periodic transfer and checked against exact endpoints and L=5,6, not a universal general-R/all-k proof. Same-agent route independence is weaker than a fresh referee."
+}

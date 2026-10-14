@@ -1,0 +1,19 @@
+{
+  "source_id": "S1",
+  "source_locator": "Quantum 4, 285 (2020), Section 4.4.3, Eq. (65), PDF page 12 / printed page 11",
+  "transcription": "Direct transcription of the three magnetic-basis terms, checked against the published text extraction. No existing marginal matrix was used.",
+  "N": 9,
+  "basis": "k=m+j, computational bit 1 has m=+1/2; |D_N^k> is the normalized equal superposition of bitstrings with k ones",
+  "phase_symbol": "z=exp(i*chi), |z|=1, 0<=chi<=pi/2",
+  "spin_terms": [
+    {"twice_m": -9, "coefficient": "sqrt(13)/8"},
+    {"twice_m": -1, "coefficient": "z*sqrt(15/32)"},
+    {"twice_m": 7, "coefficient": "-sqrt(21)/8"}
+  ],
+  "published_checks": {
+    "A1": "1",
+    "A2": "1",
+    "A3": "2347/2352",
+    "A4": "5*(355609+175*sqrt(273)*(z**2+z**(-2))/2)/1806336"
+  }
+}

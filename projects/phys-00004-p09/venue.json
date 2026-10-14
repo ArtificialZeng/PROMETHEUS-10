@@ -1,0 +1,14 @@
+{
+  "target": "Quantum Information Processing",
+  "article_type": "Original Paper",
+  "fit": "The official journal scope includes theoretical quantum information research and explicitly names entanglement and discord; this manuscript gives a self-contained analytic entanglement-of-purification result with a precisely restricted fixed-split, pathwise scope.",
+  "scope_verified": true,
+  "ai_policy_summary": "Springer Nature uses a risk-based AI policy requiring transparent disclosure, accuracy checks, human oversight, and author accountability; it does not permit AI to replace authorship or generate scholarly claims or interpretations without adequate oversight. This project used AI beyond language editing, while human scientific verification is still pending.",
+  "ai_policy_status": "needs_author_judgment",
+  "policy_checked_at": "2026-10-12T12:24:00Z",
+  "ranking_status": "unverified",
+  "evidence_files": [
+    "venue/aims-and-policy.md"
+  ],
+  "human_author_approval": "pending"
+}

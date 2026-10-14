@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "project_id": "phys-00009-p01",
+  "series": "big_mac",
+  "upstream_base_commit": "07342ef",
+  "release_status": "draft_ready_author_review_required",
+  "kind": "result-note",
+  "original_status": "unresolved",
+  "original_source_sha256": "1e4c33e55dc896c0d954fdcd7e583fbea9a26295c72953636e2dab23f70573eb",
+  "source_bundle_sha256": "6f3d951f99cda08e23a448ff04a17781145b5942b90dde62ffd517bc46edb9a8",
+  "source_bundle_manifest_sha256": "1705a820e0b86f013361f9de093eb8bbc26833ef7cfc140f79f72486085a6c6f",
+  "scientific_snapshot_digest": "ca0f2945e2228ecd9da4396ca43cb46cc7e78b53494e18b0b6df484795509cd4",
+  "manuscript_digest": "79d8b3a76724642f65933e4b5eeca2898d8b033f2dfe70016374e957e76ffdca",
+  "pdf_sha256": "33c1eea230084da664c592913b4bfa51b885edbe378671c2fbf405c690ce7a76",
+  "scope_source": "frozen claim and native release; archived qualified version where required",
+  "public_file_rename": {
+    "main.pdf": "paper.pdf"
+  },
+  "portability_changes": [
+    {
+      "file": "evidence/compare_inputs.py",
+      "original_sha256": "dde5a8b2733afdedc7479a3aec0d0bbfd4a8ae7cc7989a6da4f7437f62783ff5",
+      "public_sha256": "23800986994b4514a61631eea5515cf669d3b7b043ffd8d408ae3530c4b3b435",
+      "edits": [
+        {
+          "from": "/Users/mac/6physics-research/.venv/bin/python",
+          "to": "python3",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "evidence/reproduce_baseline.py",
+      "original_sha256": "bd506cf3852c3b5617565c65fb409e866e228fad9299b426052930a9f02f7121",
+      "public_sha256": "a4b0dea8dc1371193fa95bf72414b0aab98fc6e4355629254e5313426877a71d",
+      "edits": [
+        {
+          "from": "/Users/mac/6physics-research/.venv/bin/python",
+          "to": "python3",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "evidence/reproduction-environment.json",
+      "original_sha256": "8dafbb09654ed1ebe99e0ea1265368e270925f2057a8f5c96d9e2b11512748e7",
+      "public_sha256": "b3849d7fccce5bc02b9a945c0f6a6e3dedf72a09abadeba7194862202d442bf5",
+      "edits": [
+        {
+          "from": "/Users/mac/6physics-research/.venv/bin/python",
+          "to": "python3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "human_author_review": "required",
+  "external_peer_review": "not_claimed"
+}

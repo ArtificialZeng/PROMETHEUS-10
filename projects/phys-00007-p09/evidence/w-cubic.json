@@ -1,0 +1,461 @@
+{
+  "definition": "theta=s v(u)+s^2 c(u)+O(s^3); c in span Xj,Zj; six moments vanish through s^2",
+  "missing_moment": "K1K2K3-2(K1+K2+K3)",
+  "coefficient_convention": "coefficient of s^3 (not third derivative)",
+  "cubic_coefficients": [
+    {
+      "exponents": [
+        0,
+        0,
+        3
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "-80/3"
+        }
+      ],
+      "numeric": -10.886621079036347
+    },
+    {
+      "exponents": [
+        0,
+        1,
+        2
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "40"
+        }
+      ],
+      "numeric": 16.32993161855452
+    },
+    {
+      "exponents": [
+        0,
+        2,
+        1
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "40"
+        }
+      ],
+      "numeric": 16.32993161855452
+    },
+    {
+      "exponents": [
+        0,
+        3,
+        0
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "-80/3"
+        }
+      ],
+      "numeric": -10.886621079036347
+    },
+    {
+      "exponents": [
+        1,
+        0,
+        2
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "40"
+        }
+      ],
+      "numeric": 16.32993161855452
+    },
+    {
+      "exponents": [
+        1,
+        1,
+        1
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "-160"
+        }
+      ],
+      "numeric": -65.31972647421809
+    },
+    {
+      "exponents": [
+        1,
+        2,
+        0
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "40"
+        }
+      ],
+      "numeric": 16.32993161855452
+    },
+    {
+      "exponents": [
+        2,
+        0,
+        1
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "40"
+        }
+      ],
+      "numeric": 16.32993161855452
+    },
+    {
+      "exponents": [
+        2,
+        1,
+        0
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "40"
+        }
+      ],
+      "numeric": 16.32993161855452
+    },
+    {
+      "exponents": [
+        3,
+        0,
+        0
+      ],
+      "exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "-80/3"
+        }
+      ],
+      "numeric": -10.886621079036347
+    }
+  ],
+  "holdout": [
+    {
+      "u": [
+        1,
+        -1,
+        2
+      ],
+      "cubic_exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "800/3"
+        }
+      ],
+      "cubic_numeric": 108.86621079036348,
+      "correction_exact": [
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "-52"
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "60"
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "27"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "u": [
+        2,
+        3,
+        -1
+      ],
+      "cubic_exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "2800/3"
+        }
+      ],
+      "cubic_numeric": 381.03173776627216,
+      "correction_exact": [
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "-83"
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "30"
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "118"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "u": [
+        -2,
+        1,
+        0
+      ],
+      "cubic_exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "800/3"
+        }
+      ],
+      "cubic_numeric": 108.86621079036348,
+      "correction_exact": [
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "70"
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "19"
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "-54"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "u": [
+        1,
+        1,
+        1
+      ],
+      "cubic_exact": [],
+      "cubic_numeric": 0,
+      "correction_exact": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "u": [
+        1,
+        0,
+        0
+      ],
+      "cubic_exact": [
+        {
+          "powers_r_a_b_i": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "rational": "-80/3"
+        }
+      ],
+      "cubic_numeric": -10.886621079036347,
+      "correction_exact": [
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "13"
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "-4"
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "powers_r_a_b_i": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "rational": "-4"
+          }
+        ],
+        [],
+        []
+      ]
+    }
+  ],
+  "checks": "Exact first and second order constraints; missing quadratic zero; five exact cubic holdouts",
+  "scope": "One local chart through published triangle W encoder; no global exclusion or universal encoding proof"
+}

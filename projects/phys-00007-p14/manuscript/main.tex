@@ -1,0 +1,286 @@
+\documentclass[11pt,a4paper]{article}
+\pdfoutput=1
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=28mm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\dd}{\,\mathrm d}
+\newtheorem{theorem}{Theorem}
+\title{Extreme excursions and terminal-sign retention in stationary Brownian resetting}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For stationary Brownian motion with independent exponential resetting, we determine
+the fixed-horizon probability of a high excursion followed by a positive terminal
+position. The exponential tail coefficient contains the probability of retaining
+a positive endpoint after the first reset, averaged over the remaining duration.
+An explicit Gaussian-tail remainder controls the finite-threshold approximation
+for every fixed positive horizon and reset rate and every finite reset position.
+This establishes the conjectured joint-tail asymptotic of Dębicki, Hashorva and
+Michna. When the reset position is zero, the coefficient is exactly midway between
+their conjectured bounds. The argument separates the stationary initial excursion
+from later reset-origin excursions and does not interchange terminal-threshold
+and high-excursion limits.
+\end{abstract}
+
+\section{Observable and model}
+Endpoint monitoring of a resetting diffusion need not retain evidence of an earlier
+large excursion: a reset erases its position. We calculate this effect for a particle
+in a nonequilibrium stationary state on the full real line. Dębicki, Hashorva and
+Michna~\cite{DHM} obtained the stationary maximum tail and joint tails for terminal
+thresholds proportional to the excursion level. Their Remark~3 leaves the zero
+terminal threshold conjectural. We determine its coefficient and give an explicit
+finite-threshold error. Renewal and two-time methods for complete and incomplete
+resetting are developed in~\cite{TMM}; the contribution here is the stationary
+path-maximum/terminal-sign observable, rather than a new renewal formalism.
+
+Let $B$ be a standard Brownian motion, $\operatorname{Var}(B_t)=t$, and let $N$
+be an independent Poisson process of rate $r>0$. Complete resets place the particle
+at $a\in\mathbb R$:
+\begin{equation}\label{eq:model}
+Y_t=Y_0+B_t+\int_{(0,t]}(a-Y_{s-})\dd N_s,\qquad
+p_\infty(y)=\frac{\alpha}{2}e^{-\alpha|y-a|},\quad \alpha=\sqrt{2r}.
+\end{equation}
+The initial position has density $p_\infty$ and is independent of future noise.
+The diffusion coefficient is $D=1/2$ in these units; there is no drift or reflecting
+boundary. The generator is
+$\mathcal L f(y)=f''(y)/2+r[f(a)-f(y)]$.
+The displayed density solves
+$p_\infty''/2-rp_\infty+r\delta_a=0$ distributionally and has unit mass.
+Lengths are expressed in units for which the Brownian diffusion length is
+$\sqrt t$; thus $\alpha a$, $\alpha u$ and $\alpha\sqrt t$ are dimensionless.
+Put $M_T=\sup_{0\leq t\leq T}Y_t$, with $T>0$ fixed.
+
+For a process started deterministically at $a$, its positive-terminal probability
+after duration $v>0$ is
+\begin{equation}\label{eq:q}
+q_a(v)=e^{-rv}\Phi(a/\sqrt v)
+       +\int_0^v r e^{-rw}\Phi(a/\sqrt w)\dd w.
+\end{equation}
+Here $\Phi$ is the standard normal distribution function. The last-reset age has
+an atom $e^{-rv}$ at $v$ and density $re^{-rw}$ on $(0,v)$, proving
+\eqref{eq:q}. The strict event at zero duration gives $q_a(0)=\mathbf1_{\{a>0\}}$.
+Its right limit is $1$, $1/2$ or $0$ for positive, zero or negative $a$,
+respectively. Isolated endpoint values do not affect the integrals below.
+
+\section{Coefficient and finite-threshold bound}
+\begin{theorem}\label{thm:main}
+For every fixed $T>0$, $r>0$ and finite $a\in\mathbb R$ in \eqref{eq:model},
+\begin{equation}\label{eq:C}
+\lim_{u\to\infty}e^{\alpha u}\Prob(M_T>u,Y_T>0)
+=C(T,r,a)
+=e^{\alpha a}\left[
+\Phi(\alpha\sqrt T)+r\int_0^T\Phi(\alpha\sqrt s)q_a(T-s)\dd s\right].
+\end{equation}
+For $u>\max(a,0)$, let $d=u-a$. Then
+\begin{equation}\label{eq:error}
+\left|e^{\alpha u}\Prob(M_T>u,Y_T>0)-C(T,r,a)\right|
+\leq R(u;T,r,a),
+\end{equation}
+where
+\begin{align}\label{eq:R}
+R(u;T,r,a)
+={}&e^{\alpha a+rT}\Phi\!\left(\frac{\alpha T-d}{\sqrt T}\right)\nonumber\\
+&+2e^{\alpha u}\left[
+e^{-rT}\Phi\!\left(-\frac u{\sqrt T}\right)
++rT\Phi\!\left(-\frac d{\sqrt T}\right)\right].
+\end{align}
+The bound tends to zero for each fixed parameter triple.
+\end{theorem}
+In particular, $C$ is finite and positive and obeys the strict inequalities
+\begin{equation}\label{eq:bounds}
+e^{\alpha a}\Phi(\alpha\sqrt T)
+<C(T,r,a)<
+e^{\alpha a}\left[\Phi(\alpha\sqrt T)
++r\int_0^T\Phi(\alpha\sqrt s)\dd s\right].
+\end{equation}
+These establish the bounds conjectured in Remark~3 of~\cite{DHM}. No uniformity
+in simultaneous limits of $T,r,a$ and $u$ is asserted.
+
+\section{Proof}
+\subsection{Separate the initial segment}
+Let $\tau$ be the first future reset and let $E_u$ be a crossing of $u$
+in the initial Brownian segment, stopped at $\tau$ or $T$.
+Write $m_t=\sup_{0\leq s\leq t}B_s$ and
+\[
+H(t,u)=\Prob(Y_0+m_t>u),\qquad
+j(t,u)=\Prob(Y_0+m_t>u,Y_0+B_t>0).
+\]
+Conditional on $\tau=s$, complete resetting makes the future independent of
+the initial crossing, with terminal sign probability $q_a(T-s)$. Therefore
+\begin{equation}\label{eq:F}
+F(u):=\Prob(E_u,Y_T>0)
+=e^{-rT}j(T,u)+\int_0^T re^{-rs}H(s,u)q_a(T-s)\dd s.
+\end{equation}
+Crossing at a reset instant has probability zero; continuity within the segment
+also represents its pre-reset supremum. Since $u>a$, a reset jump cannot create
+a crossing from below. Every crossing not counted in $E_u$ must occur in one
+of the $N_T$ later Brownian segments starting at $a$.
+Conditional on all reset times, each has length at most $T$. Reflection and
+a union bound give
+\begin{equation}\label{eq:later}
+0\leq \Prob(M_T>u,Y_T>0)-F(u)
+\leq 2rT\Phi(-d/\sqrt T).
+\end{equation}
+Indeed the conditional sum is at most $2N_T\Phi(-d/\sqrt T)$ and
+$\E N_T=rT$. Independence between segment events is unnecessary. This treats
+all reset counts without an infinite-series truncation.
+
+\subsection{Control loss at the Brownian endpoint}
+On $\{Y_0+m_T>u,\ Y_0+B_T\leq0\}$ one has $m_T-B_T>u$.
+The process $B_{T-h}-B_T$, $0\leq h\leq T$, is a Brownian motion in distribution,
+so $m_T-B_T$ has the distribution of a Brownian maximum. For $u>0$,
+\begin{equation}\label{eq:loss}
+0\leq H(T,u)-j(T,u)\leq2\Phi(-u/\sqrt T).
+\end{equation}
+The implication includes initial positions above $u$ and does not impose a sign
+condition on the reset position.
+
+\subsection{Control the stationary initial tail}
+Let $X=Y_0-a$ and $L(z)=\Prob(X>z)$. Its centered Laplace survival is
+\[
+L(z)=
+\begin{cases}
+\tfrac12e^{-\alpha z},&z\geq0,\\
+1-\tfrac12e^{\alpha z},&z<0.
+\end{cases}
+\]
+For $d>0$ and $m\geq0$,
+\begin{equation}\label{eq:laplace}
+0\leq \frac12e^{\alpha m}-e^{\alpha d}L(d-m)
+\leq\frac12e^{\alpha m}\mathbf1_{\{m>d\}}.
+\end{equation}
+The difference is zero for $m\leq d$; for $m>d$ its nonnegativity follows
+from $\cosh(\alpha(m-d))\geq1$, and its upper bound from $L\geq0$.
+Since $H(t,u)=\E L(d-m_t)$ and $m_t\leq m_T$ under the same Brownian path,
+\begin{equation}\label{eq:Hbound}
+0\leq A(t)-e^{\alpha d}H(t,u)\leq D_T(d),\qquad 0\leq t\leq T,
+\end{equation}
+where half-normal integration yields
+\begin{align}\label{eq:AD}
+A(t)&=\tfrac12\E e^{\alpha m_t}=e^{rt}\Phi(\alpha\sqrt t),\\
+D_T(d)&=\tfrac12\E[e^{\alpha m_T}\mathbf1_{\{m_T>d\}}]
+=e^{rT}\Phi((\alpha T-d)/\sqrt T).\nonumber
+\end{align}
+At $t=0$, $A(0)=1/2$ and $H(0,u)=e^{-\alpha d}/2$,
+so the time endpoint is covered.
+
+\subsection{Assemble the bounds}
+In \eqref{eq:F}, replace $j(T,u)$ by $H(T,u)$ and then
+$e^{\alpha u}H(t,u)$ by $e^{\alpha a}A(t)$.
+Equation~\eqref{eq:AD} gives exactly \eqref{eq:C}. The initial-tail error is
+at most $e^{\alpha a}D_T(d)$ times
+\[
+e^{-rT}+\int_0^T re^{-rs}q_a(T-s)\dd s\leq1.
+\]
+The endpoint-loss error from \eqref{eq:loss} is at most
+$2e^{\alpha u-rT}\Phi(-u/\sqrt T)$.
+The later-segment contribution in \eqref{eq:later} adds
+$2rTe^{\alpha u}\Phi(-d/\sqrt T)$. Their sum is \eqref{eq:R}.
+Each Gaussian tail vanishes after multiplication by a fixed exponential
+in $u$, proving \eqref{eq:error} and the limit. Finally $0<q_a(v)<1$
+for $v>0$ and finite $a$, proving \eqref{eq:bounds}.
+\hfill$\square$
+
+\section{Evaluation and physical interpretation}
+\subsection{Controlled evaluation}
+Formula~\eqref{eq:C} involves only finite one-dimensional integrals.
+For exact-real enclosures, define $f_a(w)=\Phi(a/\sqrt w)$ using its right
+limit at $w=0$. On a partition $0=w_0<\cdots<w_n=v$, each contribution
+to the integral in \eqref{eq:q} is between
+\[
+(e^{-rw_i}-e^{-rw_{i+1}})
+\min\{f_a(w_i),f_a(w_{i+1})\}
+\quad\hbox{and the corresponding maximum.}
+\]
+Monotonicity of $f_a$ gives an enclosure width no greater than
+$r\max_i(w_{i+1}-w_i)$. Add the atom $e^{-rv}f_a(v)$.
+Differentiating \eqref{eq:q} gives $q_a'(v)=e^{-rv}f_a'(v)$, so $q_a$
+is decreasing for $a>0$, increasing for $a<0$, and constant for $a=0$.
+For the outer integral, endpoint bounds on both nonnegative factors bracket
+their product on every subinterval. Use the right limit of $q_a$ at zero
+for these endpoint bounds. Refinement converges because the factors have bounded
+variation and continuous extensions from positive durations.
+Certified evaluations of $\Phi$ and the exponential, or directed rounding,
+are required to turn these exact-real bounds into machine certificates.
+
+An alternative evaluation eliminates the inner quadrature. For $b=|a|>0$, put
+\begin{equation}\label{eq:G}
+G(v)=e^{-\alpha b}\Phi(\alpha\sqrt v-b/\sqrt v)
++e^{\alpha b}\Phi(-\alpha\sqrt v-b/\sqrt v).
+\end{equation}
+Its derivative is
+$G'(v)=e^{-rv}b e^{-b^2/(2v)}/\sqrt{2\pi v^3}$ and $G(0+)=0$.
+Consequently $q_a(v)=1-G(v)/2$ for $a>0$ and $q_a(v)=G(v)/2$
+for $a<0$, by the derivative and initial limit of \eqref{eq:q}.
+Large exponential factors in \eqref{eq:G} require stable special-function
+evaluation; the bounded-integral construction avoids that difficulty.
+
+\subsection{Zero reset position and retention}
+When $a=0$, symmetry gives $q_0(v)=1/2$ for $v>0$:
+\begin{equation}\label{eq:zero}
+C(T,r,0)=\Phi(\alpha\sqrt T)+\frac r2
+\int_0^T\Phi(\alpha\sqrt s)\dd s.
+\end{equation}
+This is the midpoint of the two bounding coefficients. With $k=\alpha\sqrt T$
+and $\phi=\Phi'$,
+\begin{equation}\label{eq:I}
+\int_0^T\Phi(\alpha\sqrt s)\dd s
+=T\Phi(k)+\frac{k\phi(k)-\Phi(k)+1/2}{\alpha^2}.
+\end{equation}
+For $T=r=1$, \eqref{eq:zero} gives $C\simeq1.32857643$.
+This decimal is an ordinary floating-point evaluation of an exact expression.
+
+The known unconditional coefficient in Theorem~5 of~\cite{DHM} is the upper
+expression in \eqref{eq:bounds}. Dividing $C$ by that coefficient gives the
+limiting fraction of extreme paths retained by the positive endpoint monitor.
+The initial high segment controls the exponential scale; later excursions
+starting at a finite reset point have Gaussian-small crossing probabilities.
+After an initial excursion, a subsequent reset can erase the extreme position,
+but its remaining evolution retains the endpoint sign with probability $q_a$.
+The first term in \eqref{eq:C} is the no-future-reset contribution; the integral
+quantifies this additional post-reset retention.
+
+Changing $a$ alters both the stationary tail multiplier and the post-reset sign
+probability, because the monitoring boundary stays at zero. Thus translation
+cannot be represented by the multiplier $e^{\alpha a}$ alone.
+The fixed zero threshold is evaluated directly: taking a terminal threshold
+proportional to $u$ and then sending its proportionality factor to zero
+would not justify this result.
+
+\section{Scope and reproducibility}
+The result assumes a stationary start, zero drift, independent Poisson complete
+resets and a fixed finite horizon on the real line. Bound~\eqref{eq:R} may be
+loose at moderate thresholds, but vanishes at fixed parameters. It does not
+control joint parameter limits, other renewal laws or nonstationary starts.
+It is an exact model calculation, with no experimental inference.
+
+The accompanying standard-library Python diagnostics evaluate the coefficient
+and compare last-reset and discounted first-hit representations of $q_a$.
+They also compare finite-threshold reflection/renewal calculations at several
+reset signs, horizons and rates. Mesh refinement is diagnostic, not a certified
+discretization or roundoff bound; the analytic inequalities above establish
+the asymptotic and its error. Reproduction instructions and the environment
+description accompany the source files.
+
+\paragraph{AI assistance.}
+OpenAI Codex was used for literature screening, derivation development,
+calculation and diagnostic code, separate-context scientific checking, and
+manuscript drafting. These AI checks are not external peer review.
+Human author review and approval of the scientific content and this disclosure
+remain pending for this local draft.
+
+\paragraph{Data availability.}
+No experimental data were used. The calculation code and reproduction
+instructions are supplied with the local manuscript package.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

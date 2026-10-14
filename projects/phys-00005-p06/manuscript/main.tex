@@ -1,0 +1,488 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={An eighth-order inverse-response filter in a ten-site quantum walk},
+ pdfauthor={Xiaojian Zeng},pdfsubject={Fixed-chain postselected matrix inversion},
+ pdfkeywords={quantum walk, matrix inversion, interval arithmetic, postselection}}
+\usepackage{url}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\Res}{\operatorname{Res}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\numberwithin{equation}{section}
+\title{An eighth-order inverse-response filter in a ten-site quantum walk}
+\author{Xiaojian Zeng\\[3pt]
+\small PBC School of Finance, Tsinghua University, 100190, China\\
+\small\href{mailto:xiaojianzeng@foxmail.com}{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct a fixed, positive-coupling ten-site quantum walk with uniform
+eighth-order absolute inverse-response error. An interval contraction certifies
+simultaneous cancellation of the cubic, quintic and septic low-energy coefficients
+at dimensionless time $2\pi$. A contour argument and a separate high-energy
+spectral-weight estimate prove an explicit bound for $0<x\le1/16$, retaining the
+rapidly oscillating contribution. The corresponding postselected inverse has
+seventh-order conditional-state error under an explicit spectral-domain condition.
+Matched propagation examples report success probability and Hamiltonian norm cost.
+This resolves the four-extension existence question within the autonomous
+quantum-walk inversion model; the general chain-length conjecture remains open.
+\end{abstract}
+\noindent\textbf{Keywords:} continuous-time quantum walk; matrix inversion;
+spectral filter; interval arithmetic; postselection
+
+\section{Introduction}
+Weakly coupled quantum walks provide inverse-matrix responses through one
+evolution under a fixed Hamiltonian. In their preprint
+\emph{Matrix Inversion by Quantum Walk}
+(\href{https://arxiv.org/abs/2508.06611v1}{arXiv:2508.06611v1}, 2025),
+Kay and Tamon formulate an existence conjecture for chains with $R$ extensions
+on either side of the matrix block. Their Sec.~II.A, Table~I and Appendix~A
+give a ten-site, $R=4$ design with absolute response error of order $x^7$
+under a fixed low-energy spectrum. The desired unrestricted order is $x^8$.
+Their odd low-energy expansion and suppression of the high-energy endpoint
+weight supply the mechanism underlying the present construction.
+
+We free one finite spectral eigenvalue and simultaneously cancel the cubic,
+quintic and septic coefficients. An exact root specified by an interval
+contraction fixes four positive couplings. We then bound the entire amplitude
+uniformly, including the high-energy oscillation. An ordinary Taylor expansion
+of the full Hamiltonian at $x=0$ would miss this contribution and would not
+establish the claimed error order.
+
+Related weak-coupling transfer results are developed in Kay and Tamon's
+\emph{The strength of weak coupling}
+(\href{https://arxiv.org/abs/2512.08141v1}{arXiv:2512.08141v1}, 2025),
+Theorem~4.1 and Secs.~4.2 and 6. Quantitative transfer estimates on graphs with
+an involution are also studied by Lippner and Shi~\cite{LippnerShi2024}.
+These transfer settings differ from the fixed-time inverse filter considered
+here. Kang and Su~\cite{KangSu2026}, Sec.~4.4, Proposition~19 and
+Corollary~20 of their current preprint version, construct inverses through
+Hamiltonian singular-value transformation using repeated queries. That
+resource setting is distinct from one fixed autonomous chain. Our comparison
+concerns the nearest checked fixed-chain design; it makes no exhaustive
+priority, general-$R$, or complete algorithmic speedup claim.
+
+\section{Model and uniform response result}
+In an orthonormal single-excitation site basis, let
+\begin{equation}
+ T_4(x;J)=\sum_{j=1}^{9}w_j
+ \bigl(\ket{j}\bra{j+1}+\ket{j+1}\bra{j}\bigr),
+ \qquad x>0,
+ \label{eq:chain}
+\end{equation}
+where the open chain has zero diagonal and
+\begin{equation}
+ (w_1,\ldots,w_9)=(J_1,J_2,J_3,J_4,x^{-1},J_4,J_3,J_2,J_1).
+\end{equation}
+Its full endpoint amplitude is
+\begin{equation}
+ a_4(x;J,\tau)=\bra{10}e^{-\ii\tau T_4(x;J)}\ket{1}.
+ \label{eq:amplitude}
+\end{equation}
+All four couplings and the dimensionless time are fixed independently of $x$.
+
+\begin{theorem}\label{thm:main}
+There are positive fixed couplings $J_1,\ldots,J_4$ and a real
+$\ell\in(-1.078612,-1.078611)$ such that, at $\tau=2\pi$,
+\begin{equation}
+ \bigl|a_4(x;J,2\pi)-\ii\ell x\bigr|
+ \le 131072002\,x^8,\qquad 0<x\le\frac1{16}.
+ \label{eq:uniform}
+\end{equation}
+The couplings are specified exactly by the unique cancellation root in
+Sec.~\ref{sec:root}. For orientation, they are approximately
+\begin{equation}
+ (J_1,J_2,J_3,J_4)\simeq
+ (0.6803742065,\ 0.9435755016,\ 1.1381740446,\ 0.8283449422).
+ \label{eq:rounded}
+\end{equation}
+The displayed rounded values are not a substitute for the exact root.
+\end{theorem}
+
+The numerical constant in Eq.~\eqref{eq:uniform} is deliberately conservative.
+The conclusion is an existence statement in the finite Hermitian model,
+with a computer-assisted root certificate and analytic remainder estimates.
+It covers the $R=4$ case, without a construction for arbitrary $R$.
+
+\section{Reflection sectors and cancellation equations}
+\subsection{Exact resolvent representation}
+Reflection about the central bond gives sectors spanned by
+$(\ket{j}\pm\ket{11-j})/\sqrt{2}$, $j=1,\ldots,5$.
+The two blocks $B_\pm(x)$ have off-diagonals $J_1,\ldots,J_4$,
+and their only nonzero diagonal entry is the last, $\pm x^{-1}$.
+For $D=\operatorname{diag}(1,-1,1,-1,1)$,
+$B_-(x)=-D B_+(x)D$. Therefore
+\begin{align}
+ a_4(x;J,\tau)
+ &=\frac12\left(\bra{1}e^{-\ii\tau B_+(x)}\ket{1}
+             -\bra{1}e^{-\ii\tau B_-(x)}\ket{1}\right)\nonumber\\
+ &=-\ii\sum_{r=1}^{5}W_r(x)\sin\bigl(\tau E_r(x)\bigr),
+ \label{eq:sectors}
+\end{align}
+where $E_r$ are the eigenvalues of $B_+$ and $W_r$ their first-site
+spectral weights. In particular, no extra factor of two enters the endpoint
+response.
+
+Write $a=J_1^2$, $b=J_2^2$, $c=J_3^2$, $d=J_4^2$ and set
+\begin{align}
+ p(z)&=z^4-(a+b+c)z^2+ac,
+ &q(z)&=zp(z)-dz(z^2-a-b),\nonumber\\
+ n_0(z)&=z^3-(b+c)z,
+ &n_1(z)&=zn_0(z)-d(z^2-b).
+ \label{eq:polynomials}
+\end{align}
+Continuant recursion for the determinant and first-site minor gives
+\begin{equation}
+ \det(zI-B_+)=-\frac{p(z)-xq(z)}{x},\qquad
+ G_{11}(z,x)=\frac{n_0(z)-xn_1(z)}{p(z)-xq(z)}.
+ \label{eq:resolvent}
+\end{equation}
+The polynomial identity $n_0q-n_1p=-abcd$ yields
+\begin{equation}
+ G_{11}(z,x)=\frac{n_0(z)}{p(z)}
+ -abcd\sum_{n\ge1}x^n\frac{q(z)^{n-1}}{p(z)^{n+1}},
+ \qquad |xq/p|<1.
+ \label{eq:geometric}
+\end{equation}
+
+Let $a_{\mathrm{low}}=\ii f(x)$ denote the contribution from the four
+finite eigenvalues inside a fixed contour. The paired zero-$x$ spectrum
+makes $f_0=0$. Contour integration of Eq.~\eqref{eq:geometric} gives
+\begin{equation}
+ f(x)=\sum_{n\ge1}f_nx^n,\qquad
+ f_n=abcd\,S_n,\qquad
+ S_n=\sum_{p(\rho)=0}\Res_{z=\rho}
+       \frac{\sin(\tau z)q(z)^{n-1}}{p(z)^{n+1}}.
+ \label{eq:coefficients}
+\end{equation}
+Since $p$ is even and $q$ is odd, the integrand is even for even $n$,
+and opposite-root residues cancel. Thus every even coefficient vanishes.
+Only the low-energy part is expanded here.
+
+\subsection{An exactly specified positive root}\label{sec:root}
+Fix $u=1/2$ and $\tau=2\pi$. Parametrize
+\begin{align}
+ p(z)&=(z^2-u^2)(z^2-v^2),\nonumber\\
+ a&=\frac{u^2v^2}{c},\qquad
+ b=u^2+v^2-c-\frac{u^2v^2}{c},\qquad
+ s=a+b=u^2+v^2-c.
+ \label{eq:parametrization}
+\end{align}
+The domain $u^2<c<v^2$, $v>u$, $d>0$ makes all four squared
+couplings positive: $bc=(c-u^2)(v^2-c)>0$.
+The three equations are
+\begin{equation}
+ F(v,c,d)=\bigl(S_3,S_5,S_7\bigr)=0.
+ \label{eq:cancellation}
+\end{equation}
+They are real analytic on the box used below. Each residue is a finite
+polynomial-jet calculation. More explicitly, for $\rho\in\{u,v\}$ and
+the other positive root $\omega$,
+\begin{align}
+ p(\rho+y)&=y h_\rho(y),\nonumber\\
+ h_\rho(y)&=2\rho(\rho^2-\omega^2)
+          +(5\rho^2-\omega^2)y+4\rho y^2+y^3,\label{eq:jet}\\
+ S_n&=2\sum_{\rho=u,v}[y^n]
+ \left\{\sin\bigl(2\pi(\rho+y)\bigr)
+ q(\rho+y)^{n-1}h_\rho(y)^{-n-1}\right\},\qquad n\ \text{odd}.
+ \label{eq:jetresidue}
+\end{align}
+This makes the cancellation equations reproducible without fitting a
+singular full propagator.
+
+Let $X$ be the closed infinity-norm box of radius $r=10^{-40}$ about
+the exact terminating decimal vector $y_0=(v_0,c_0,d_0)$:
+\input{certificate-center.tex}
+Using a fixed exact decimal preconditioner $Y$ (Appendix~\ref{app:certificate}),
+define $\Phi(y)=y-YF(y)$. Elementary directed interval arithmetic at
+80 decimal digits, with an analytically differentiated jet recurrence,
+encloses the complete Jacobian on $X$ and gives
+\begin{align}
+ \sup_{y\in X}\norm{I-YDF(y)}_\infty&<8.0\times10^{-36},\nonumber\\
+ \norm{YF(y_0)}_\infty&<4.28\times10^{-65},\nonumber\\
+ \sup_{y\in X}\norm{\Phi(y)-y_0}_\infty&<4.28\times10^{-65}<r.
+ \label{eq:contraction}
+\end{align}
+The last line includes the Jacobian contribution times $r$, rather than
+only the center displacement. Thus $\Phi$ maps $X$ strictly into itself
+and is a contraction. Banach's fixed-point theorem gives a unique fixed
+point. The first inequality also makes $YDF(y)$ invertible; hence $Y$
+is invertible and the fixed point is an exact zero of $F$.
+Conversely every zero is a fixed point, establishing uniqueness within $X$.
+
+At this zero, define $J=(\sqrt{a},\sqrt{b},\sqrt{c},\sqrt{d})$ using
+Eq.~\eqref{eq:parametrization}, and $\ell=abcd\,S_1$.
+The same interval calculation gives positivity and
+\begin{equation}
+ -1.078612<\ell<-1.078611.
+ \label{eq:linear}
+\end{equation}
+Consequently $f_3=f_5=f_7=0$ exactly, and
+$f(x)=\ell x+O(x^9)$. These cancellations hold at the enclosed zero;
+the terminating decimal center has small nonzero residuals.
+
+The supplementary certificate retains all exact binary interval endpoints.
+The enclosure uses only elementary arithmetic, sine, cosine and $\pi$
+from \texttt{mpmath.iv} 1.3.0, with $\sin\pi=0$ and $\cos\pi=-1$
+inserted exactly at $u=1/2$. Numerical root finding and inversion propose
+the center and $Y$; their numerical accuracy is not an existence premise.
+This is a computer-assisted proof relying on the interval implementation,
+without proof-assistant formalization. A separate calculation from implicit
+finite-eigenvalue series and cofactor weights reproduces the coefficients
+through order seven; that numerical agreement supports the implementation
+and does not replace the contraction inequalities.
+
+\section{Uniform control of the complete amplitude}\label{sec:bound}
+\subsection{The analytic low-energy remainder}
+The root box implies the coarse rational bounds
+\begin{equation}
+ \frac32<v<\frac{31}{20},\quad
+ 1.2954<c<1.2955,\quad 0<d<0.687,\quad
+ 0<s<1.36,\quad 0<abcd<1.
+ \label{eq:outer}
+\end{equation}
+On the circle $|z|=2$,
+\begin{align}
+ |p(z)|&\ge(4-u^2)(4-v^2)>5,\nonumber\\
+ \left|\frac{q(z)}{p(z)}\right|
+ &\le 2+\frac{2d(4+s)}{5}<4.
+ \label{eq:contour}
+\end{align}
+For $|x|\le1/16$, $|xq/p|<1/4$. Rouch\'e's theorem counts exactly
+four zeros of $p-xq$ inside this circle. The contour integral is analytic
+in $x$ and Eq.~\eqref{eq:geometric} converges uniformly there, so
+coefficient extraction under the integral is justified.
+
+Since $|\sin(2\pi z)|\le e^{4\pi}<300000$, the circle length divided
+by $2\pi$ is 2, and $abcd<1$, Eq.~\eqref{eq:coefficients} gives
+\begin{equation}
+ |f_n|\le 24000\,4^{n-1},\qquad n\ge1.
+ \label{eq:coefficientbound}
+\end{equation}
+The elementary exponential bound can itself be checked rationally: use
+$\pi<22/7$, sum $\sum_{k=0}^{100}(88/7)^k/k!$, and bound the
+positive tail by its first term times $1/(1-(88/7)/102)$.
+The resulting upper bound is less than 300000.
+After the odd cancellations and even parity zeros, the remainder starts
+at order nine. For real $0<x\le1/16$,
+\begin{align}
+ |f(x)-\ell x|
+ &\le\frac{24000\,4^8x^9}{1-4x}\nonumber\\
+ &\le2097152000\,x^9
+ \le131072000\,x^8.
+ \label{eq:lowbound}
+\end{align}
+Including the zero even coefficients in the geometric majorant only
+enlarges this bound.
+
+\subsection{The oscillatory high-energy branch}
+For real positive $x$, $B_+(x)$ is Hermitian. Its largest eigenvalue
+$\Lambda$ satisfies $\Lambda\ge1/x$ by the last-site Rayleigh quotient.
+Since $1/x\ge16$, this is the fifth eigenvalue outside the contour.
+Let $\eta$ be the last component of its normalized eigenvector.
+Solving the first four component equations gives
+\begin{equation}
+ \bra{1}\psi_{\mathrm{high}}\rangle
+ =\eta\frac{J_1J_2J_3J_4}{p(\Lambda)}.
+ \label{eq:highcomponent}
+\end{equation}
+The numerator follows from the cross-chain cofactor of the four-site
+principal block. With $|\eta|\le1$, its first-site weight obeys
+\begin{align}
+ W_{\mathrm{high}}
+ &\le\frac{abcd}{p(\Lambda)^2}\nonumber\\
+ &\le\frac{x^8}{\bigl[(1-u^2x^2)(1-v^2x^2)\bigr]^2}
+ \le2x^8.
+ \label{eq:highbound}
+\end{align}
+The last inequality uses $u^2<v^2<3$, $x^2\le1/256$ and
+$(253/256)^4>1/2$.
+Equation~\eqref{eq:sectors} identifies its full endpoint contribution as
+\begin{equation}
+ a_{\mathrm{high}}(x)=-\ii W_{\mathrm{high}}(x)
+                      \sin\bigl(2\pi\Lambda(x)\bigr).
+\end{equation}
+Thus $|a_{\mathrm{high}}|\le2x^8$ for every $x$ in the specified
+interval. No expansion or averaging of this phase has been used.
+Adding Eq.~\eqref{eq:lowbound} proves Theorem~\ref{thm:main}.
+
+For the specified witness, perturbation theory for the isolated eigenvalue
+near 1 of $xB_+(x)$ gives $\Lambda=x^{-1}+dx+O(x^3)$ and
+$W_{\mathrm{high}}=abcd\,x^8(1+O(x^2))$. Therefore
+\begin{equation}
+ a_4(x)-\ii\ell x
+ =-\ii abcd\,x^8\sin\bigl(2\pi/x+O(x)\bigr)+O(x^9).
+ \label{eq:asymptotic}
+\end{equation}
+Sequences with opposite sine maxima show
+\begin{equation}
+ \limsup_{x\to0^+}\frac{|a_4(x)-\ii\ell x|}{x^8}
+ =abcd\simeq0.3663437609.
+\end{equation}
+This explains the attained order for this witness and the oscillatory
+error envelope. It is not a general-chain optimality theorem.
+
+\section{Postselected inverse, probability and cost}
+Let $A=U\Sigma V^\dagger$ be square and invertible, with dimensionless
+singular values in $[1/\kappa,1]$, $\kappa\ge1$, and $\norm{A}=1$.
+In units $\hbar=1$, introduce a common energy scale $E_0$. A ten-block
+Hamiltonian has the four couplings $\gamma J_j E_0$ on each side,
+central block $E_0A$ and its adjoint, and zero block diagonal.
+For each singular channel,
+\begin{equation}
+ H_\lambda/E_0=\gamma T_4(\gamma/\lambda;J),\qquad
+ t=\frac{2\pi}{\gamma E_0},\qquad
+ 0<\gamma\le\frac{1}{16\kappa}.
+ \label{eq:units}
+\end{equation}
+Thus $x=\gamma/\lambda$ remains inside the theorem's domain
+simultaneously for the entire input spectrum. Sites before the central
+block carry left singular vectors and sites after it carry right singular
+vectors. Endpoint detection gives the Kraus block
+\begin{equation}
+ K=V\operatorname{diag}\bigl(a_4(\gamma/\lambda_j)\bigr)U^\dagger,
+ \qquad K_0=\ii\ell\gamma A^{-1}.
+\end{equation}
+With $C=131072002$,
+\begin{equation}
+ \norm{K-K_0}\le\Delta,\qquad
+ \Delta=C(\gamma\kappa)^8.
+ \label{eq:krauserror}
+\end{equation}
+For normalized $b$, define $n=\norm{K_0b}=|\ell|\gamma\norm{A^{-1}b}$.
+Triangle inequalities and the contraction property of $K$ give
+\begin{equation}
+ \max(0,n-\Delta)^2\le p_{\mathrm{succ}}=\norm{Kb}^2
+ \le\min\bigl(1,(n+\Delta)^2\bigr).
+ \label{eq:success}
+\end{equation}
+If $\Delta<n$, the successful branch is nonzero and
+\begin{equation}
+ \norm{\frac{Kb}{\norm{Kb}}-\frac{K_0b}{n}}
+ \le\frac{2\Delta}{n}
+ \le\frac{2C}{|\ell|}\gamma^7\kappa^8.
+ \label{eq:conditional}
+\end{equation}
+For the first inequality, add and subtract $Kb/n$ and use
+$|\norm{Kb}-n|\le\Delta$. The second uses
+$\norm{A^{-1}b}\ge1$. The conditional reference includes the global
+phase $\ii\ell/|\ell|$. The error power loses one order on normalization:
+the absolute response order is eight, whereas this conditional-state bound
+is seventh order for fixed $\kappa$ and input. Rectangular inverses require
+a specified singular support and are not claimed here.
+
+The complete evolution is unitary. The selected map
+$\rho\mapsto K\rho K^\dagger$ is completely positive and trace
+nonincreasing, with probability in Eq.~\eqref{eq:success}. The construction
+does not yield deterministic inversion. Couplings stay of order one and
+$\tau=2\pi$ matches the source design. A row-sum estimate gives the coarse
+dimensionless cost bound
+\begin{equation}
+ \norm{H}t\le2\pi\left(\gamma^{-1}+2\max_jJ_j\right).
+ \label{eq:cost}
+\end{equation}
+Unamplified attempts have expected repetition count $1/p_{\mathrm{succ}}$.
+State preparation, Hamiltonian simulation, amplification, coherence and
+control precision remain additional resources.
+
+\section{Propagation comparison and limitations}
+The fixed-spectrum reference keeps $u=1/2$, $v=3/2$ and numerically
+cancels $S_3,S_5$ at high precision. Its couplings reproduce the rounded
+$R=4$ values in Kay and Tamon's Table~I. Its response coefficient is about
+$-0.9430116913$, and its septic coefficient is about $-0.2639054062$.
+The new witness frees $v\simeq1.5487685249$ and cancels $S_7$ as well.
+The largest coupling increases from about 0.9926 to 1.1382, while the
+linear response magnitude increases to about 1.0786. Neither time nor
+couplings diverge to obtain the higher order.
+
+Table~\ref{tab:comparison} compares complete ten-site propagations at
+$x=4/401$, where $2\pi/x$ is a sine maximum. These are scalar channel
+diagnostics with identical $x$ and $\tau$. The prior reference is recomputed
+at high precision rather than taken from six-digit printed couplings.
+It is a precision-stabilized numerical comparison, not a separate
+interval-certified prior theorem.
+\input{comparison-table.tex}
+
+The calculations compare a direct ten-site representation with the
+five-site spectral sum and repeat at 60 and 90 decimal digits.
+Across six tested $x=4/(4k+1)$ values, $k=25,50,100,200,500,1000$,
+the representation discrepancies are below $10^{-89}$ and the precision
+differences below $7\times10^{-61}$. Coupling derivatives and Duhamel's
+inequality bound the response uncertainty from the $10^{-40}$ parameter
+box by $40\times10^{-40}$ over these propagations. These diagnostics
+support the calculations; the interval root and uniform inequalities in
+Sec.~\ref{sec:bound}, rather than the samples, prove Eq.~\eqref{eq:uniform}.
+The leading scalar success-probability ratio is approximately
+$(1.0786116373/0.9430116913)^2\simeq1.31$.
+
+The sample shows substantially smaller response error at nearly equal
+$\norm{H}t$. It does not establish a globally optimized filter, a complete
+quantum algorithm advantage, or robustness to timing, coupling and hardware
+errors. The uniform constant is loose; practical design would require
+tighter constants and an implementation-error budget. Only the exact
+$R=4$ existence slice is resolved. Existence and efficient discovery for
+general $R$ remain outside the result. The nearest-primary-source
+comparison is bounded and does not establish exhaustive priority.
+
+\section*{Computational methods and AI disclosure}
+The interval calculation uses \texttt{mpmath} 1.3.0. Symbolic determinant
+and cofactor checks use \texttt{SymPy} 1.14.0; the numerical replay uses
+arbitrary-precision Hermitian spectral propagation. Supplementary code
+and exact certificate data specify the recurrences, precision settings,
+parameter box and decimal preconditioner.
+OpenAI Codex language-model tools were used for literature screening,
+derivation and root-search assistance, verification-code generation,
+computational interpretation and manuscript drafting. A separate AI
+checking stage used a different coefficient representation; it is not
+external peer review. This disclosure covers generative scientific work
+as well as writing. Human scientific review and authorship confirmation
+are pending for this local draft; completed human verification is not
+asserted.
+
+\section*{Statements and declarations}
+\noindent\textbf{Data and code availability.}
+The accompanying local supplement contains the root certificate,
+propagation comparison data and scripts, symbolic checks, environment
+specification and regeneration instructions. It contains no experimental
+dataset. Public archival deposition has not occurred.\\[3pt]
+\textbf{Funding and competing interests.}
+These declarations await confirmation by the named author before any
+submission.\\[3pt]
+\textbf{Author information and contributions.}
+The displayed author information is supplied for this draft and requires
+confirmation. The named author's scientific review, contribution statement
+and approval of the final text remain pending.\\[3pt]
+\textbf{Ethics approval and consent.}
+Not applicable to this finite-dimensional theoretical and computational study.
+
+\appendix
+\section{Exact interval certificate inputs}\label{app:certificate}
+The fixed exact decimal preconditioner used in Eq.~\eqref{eq:contraction}
+is listed row by row below. Each entry is a terminating decimal, interpreted
+exactly before outward rounding. The entries and center were proposed
+numerically; the strict interval inequalities provide the certificate.
+\input{certificate-preconditioner.tex}
+The stored certificate supplies the full interval Jacobian and the exact
+binary endpoints of $I-YDF(X)$, center corrections, image bounds,
+coupling-positivity intervals and linear response. The replay instructions
+evaluate the finite jets in Eq.~\eqref{eq:jetresidue} and differentiate
+them analytically. A second representation solves the four implicit
+eigenvalue series of $p(E)-xq(E)=0$, reconstructs first-site weights as
+$(n_0(E)-xn_1(E))/(p'(E)-xq'(E))$, and composes their sine series.
+This separates implementation checks from the analytic treatment of the
+high-energy mode.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

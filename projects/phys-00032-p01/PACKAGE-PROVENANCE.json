@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "project_id": "phys-00032-p01",
+  "series": "big_mac",
+  "upstream_base_commit": "07342ef",
+  "release_status": "draft_ready_author_review_required",
+  "kind": "resolution-paper",
+  "original_status": "proved",
+  "original_source_sha256": "2af5628562993fafb234c71087e4cf93e268986fa6f5bb918b57dfd1cbf62a6e",
+  "source_bundle_sha256": "ed4e11e217c0f7917e061cf5e6c58b233b0c0b2084f33052d8d0d6a7957dd1c5",
+  "source_bundle_manifest_sha256": "d0fde69aa6feb2d942034a665e127bfd54af9ab166aea118df87e9bbeead86ed",
+  "scientific_snapshot_digest": "090d8e74ac683c5cc501d4885119586faedc54cc76132c64657b5cceb6e12928",
+  "manuscript_digest": "051dd8fecd7337a936763a1c9bbb022bcc7b0d8e8d9a96a4656285645b58fb61",
+  "pdf_sha256": "d17c35e669276c8a06bdec13aaca9b8af7324fd11b9c8f2af5aa29e7952e59ae",
+  "scope_source": "frozen claim and native release; archived qualified version where required",
+  "public_file_rename": {
+    "main.pdf": "paper.pdf"
+  },
+  "portability_changes": [
+    {
+      "file": "evidence/research/environment.json",
+      "original_sha256": "cf184aef5030d6a56d3e6b9d0abaf5e989d661b649e7b27ade3078db5a98fca4",
+      "public_sha256": "caf069259af38338bb5e9282389cd90798ea7754922c72bc7cfa54a94e86d7a0",
+      "edits": [
+        {
+          "from": "/Users/mac/6physics-research/.venv/bin/python",
+          "to": "python3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "human_author_review": "required",
+  "external_peer_review": "not_claimed"
+}

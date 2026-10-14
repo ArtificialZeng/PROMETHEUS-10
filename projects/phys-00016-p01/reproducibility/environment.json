@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-10-13T01:15:12.780416+00:00",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "checker_dependencies": "Python standard library only",
+  "optional_direct_density_versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "optional_version_source": "Accepted research environment record; optional direct-density code is unchanged.",
+  "latex": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "bibtex": "BibTeX 0.99e (TeX Live 2026)",
+  "installation_performed": false
+}

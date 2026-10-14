@@ -1,0 +1,524 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage[margin=29mm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\tcQ}{\widetilde{\mathcal{Q}}}
+\newcommand{\cyc}{\mathsf{S}}
+
+\title{Algebraic endpoint densities are the transfer-matrix charges\\
+in regular Yang--Baxter chains}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{14 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Schouten and de Leeuw recently introduced algebraic charge densities obtained by
+differentiating directed products of a regular Yang--Baxter $R$-matrix and conjectured
+that two endpoint differences represent the usual logarithmic-transfer charges.  We
+prove this conjecture for every finite-dimensional local space, every regular
+braiding-normalized (not necessarily difference-form) $R$-matrix, every charge order
+$k\geq2$, and every homogeneous untwisted periodic chain of length $L\geq k$.
+Regularity unfolds a multivariable normalized transfer matrix at any inactive edge.
+Coefficients of its logarithmic derivative are then rooted connected clusters, with a
+degree-$r$ coefficient supported on at most $r+1$ edges.  Subtracting the shortened
+open product anchors each cluster once, so the cyclic sums of both directed endpoint
+densities equal the prescribed transfer charge, including at the minimal size $L=k$.
+Finally, an explicit tensor-word argument identifies the kernel of cyclic summation:
+every vanishing $k$-site density is exactly a local gradient
+$\mathbf 1\otimes m-m\otimes\mathbf 1$.  This upgrades equality of global charges to
+the precise local equivalence in the conjecture, without a thermodynamic limit, boost
+boundary terms, or removal of lower-charge admixtures.
+\end{abstract}
+
+\section{Introduction}
+
+A regular solution of the Yang--Baxter equation supplies a commuting transfer matrix
+and, by logarithmic differentiation, a hierarchy of local conserved charges.  The
+hierarchy is central to quantum-integrable spin chains, while practical constructions
+often use boost or ladder recurrences instead of differentiating a long monodromy
+directly \cite{Tetelman1982,Links2001,TakizawaLinks2002,Bargheer2009,deLeeuw2021}.
+For a general non-difference $R$-matrix, however, the choice of local density and its
+relation to an algebraic representative are delicate: equal periodic sums determine
+a density only modulo a local gradient, and scalar or lower-range terms cannot simply
+be discarded.
+
+Schouten and de Leeuw introduced two directed families of algebraic charge densities
+in their quantum-group treatment of long-range deformations
+\cite{SchoutenDeLeeuw2026}.  Their Conjecture~2.7 asserts that a difference at the two
+ends of either directed block is locally equivalent to a density of the usual
+logarithmic-transfer charge.  They established the first orders and the commutation of
+the candidate sums with the transfer matrix, but left their identification with the
+specified charge hierarchy open.  The current arXiv version at the time of writing is
+v2, dated 5 June 2026; a bounded exact-title, identifier, author and conjecture-phrase
+search on 14 October 2026 found no later primary proof or disproof.  This search is not
+an exhaustive priority claim.
+
+Here we prove the conjecture in its undeformed scope.  The proof has three ingredients.
+First, regular permutation factors turn the two algebraic stars into the left and right
+Maurer--Cartan forms of one open nearest-neighbour product.  Second, cutting a
+multivariable transfer matrix at a regular factor yields an exact product over active
+connected components.  Its rooted logarithmic coefficients are therefore connected
+and have a sharp support bound.  Endpoint subtraction anchors each such coefficient
+exactly once.  Third, a constructive tensor-word lemma shows that the kernel of cyclic
+summation is precisely the space of local gradients.  Yang--Baxter integrability is
+used only to equate the left and right logarithmic derivatives on the physical
+homogeneous line.
+
+The result concerns dimensionless raw derivatives at undeformed order.  It does not
+extend by itself to twisted, open or inhomogeneous chains, nor to positive orders of a
+long-range deformation.  In a Hermitian realization, conventional factors of $i$ and
+an energy scale must still be restored model by model.
+
+\section{Setup and statement}
+
+Let $V$ be a finite-dimensional complex vector space and let
+\begin{equation}
+ R(u,v)\in\End(V\otimes V)[[u,v]]
+\end{equation}
+be a formal matrix power series, or the Taylor series of an analytic matrix near
+$(0,0)$.  We assume the Yang--Baxter equation
+\begin{equation}
+ R_{12}(u_1,u_2)R_{13}(u_1,u_3)R_{23}(u_2,u_3)
+ =R_{23}(u_2,u_3)R_{13}(u_1,u_3)R_{12}(u_1,u_2),
+ \label{eq:ybe}
+\end{equation}
+regularity $R(u,u)=P$, and the fixed braiding normalization
+\begin{equation}
+ R_{12}(u,v)R_{21}(v,u)=\mathbf 1.
+ \label{eq:braidunitarity}
+\end{equation}
+Equation~\eqref{eq:braidunitarity} is not Hilbert-space unitarity.  No difference-form,
+Hermiticity or diagonalizability hypothesis will be used.
+
+On a homogeneous periodic chain of length $L$, define
+\begin{equation}
+ t_L(u)=\tr_a\!\left[R_{aL}(u,0)\cdots R_{a1}(u,0)\right],
+ \qquad U_L=t_L(0),
+ \label{eq:transfer}
+\end{equation}
+and the raw logarithmic-transfer charges
+\begin{equation}
+ Q_k^{(L)}=
+ \left.\partial_u^{k-2}\bigl(t_L(u)^{-1}t_L'(u)\bigr)\right|_{u=0},
+ \qquad k\geq2.
+ \label{eq:charges}
+\end{equation}
+Regularity makes $U_L$ the invertible one-site translation.  There is no factorial
+division in \eqref{eq:charges}.
+
+For ordered disjoint blocks $A=(1,\ldots,N)$ and $B=(N+1,\ldots,M)$, use the directed
+product convention of Ref.~\cite{SchoutenDeLeeuw2026},
+\begin{equation}
+ R_{AB}=\prod_{i=1}^{N}\ \prod_{j=M}^{N+1}R_{ij}(u_i,u_j),
+ \qquad D_A=\sum_{i\in A}\partial_{u_i},\quad
+ D_B=\sum_{j\in B}\partial_{u_j},
+\end{equation}
+where the displayed order is the operator order.  The algebraic densities are
+\begin{align}
+ \cQ_{AB}^{(k)}&=D_A^{k-2}\left(R_{AB}^{-1}D_A R_{AB}\right),\\
+ \tcQ_{AB}^{(k)}&=-D_B^{k-2}\left(R_{AB}^{-1}D_B R_{AB}\right).
+ \label{eq:algebraicdensities}
+\end{align}
+All spectral parameters are set to zero after differentiation.  Empty-block terms are
+zero.  Two $k$-site densities are locally equivalent, written $x\sim y$, when
+\begin{equation}
+ y-x=\mathbf 1\otimes m-m\otimes\mathbf 1
+ \label{eq:gradient}
+\end{equation}
+for some $m\in\End(V^{\otimes(k-1)})$.
+
+\begin{theorem}[Endpoint-density identity]
+\label{thm:main}
+Under \eqref{eq:ybe}--\eqref{eq:braidunitarity}, for every $k\geq2$ the two endpoint
+differences
+\begin{align}
+ a_k={}&\left.
+ \Bigl(\cQ_{1(2,\ldots,k)}^{(k)}-
+       \cQ_{2(3,\ldots,k)}^{(k)}\Bigr)\right|_{\bm u=0},
+ \label{eq:aksource}\\
+ b_k={}&\left.
+ \Bigl(\tcQ_{(1,\ldots,k-1)k}^{(k)}-
+       \tcQ_{(1,\ldots,k-2)k-1}^{(k)}\Bigr)\right|_{\bm u=0}
+ \label{eq:bksource}
+\end{align}
+are locally equivalent.  On every homogeneous untwisted periodic chain $L\geq k$,
+each cyclic sum is exactly $Q_k^{(L)}$.  Consequently, both are equivalent in the
+sense of \eqref{eq:gradient} to any $k$-site density of the charge
+\eqref{eq:charges}.
+\end{theorem}
+
+\section{The directed blocks as open logarithmic derivatives}
+
+Put
+\begin{equation}
+ C(u)=P R(u,0),\qquad C(0)=\mathbf 1,
+\end{equation}
+and, on sites $1,\ldots,n$, define
+\begin{equation}
+ G_n(u)=C_{n-1,n}(u)\cdots C_{12}(u),\qquad G_1=\mathbf 1,
+ \label{eq:Gdef}
+\end{equation}
+together with the left and right logarithmic derivatives
+\begin{equation}
+ F_n=G_n^{-1}G_n',\qquad B_n=G_n'G_n^{-1}.
+ \label{eq:FBdef}
+\end{equation}
+Superscripts on $F_n$ or $B_n$ will indicate a shifted interval of sites.
+
+\begin{proposition}[Regular-factor reduction]
+\label{prop:starreduction}
+For $r=k-2$, the source expressions \eqref{eq:aksource}--\eqref{eq:bksource} are
+\begin{align}
+ a_k&=\left.\partial_u^r
+ \left(F_k-F_{k-1}^{[2,k]}\right)\right|_{u=0},
+ \label{eq:akopen}\\
+ b_k&=\left.\partial_u^r
+ \left(B_k-B_{k-1}^{[1,k-1]}\right)\right|_{u=0}.
+ \label{eq:bkopen}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Let
+\begin{equation}
+ S_n(u)=R_{1n}(u,0)\cdots R_{12}(u,0),\qquad
+ W_n=P_{1n}\cdots P_{12}.
+\end{equation}
+Moving each regular flip to the left gives
+\begin{equation}
+ W_n^{-1}S_n(u)=G_n(u).
+ \label{eq:leftstar}
+\end{equation}
+This follows inductively: after extracting $P_{1n}$, conjugation by
+$W_{n-1}$ carries $C_{1n}$ to $C_{n-1,n}$ without reversing its tensor slots.
+Since $W_n$ is independent of $u$, $S_n^{-1}S_n'=F_n$.  Taking the full and
+shortened stars yields \eqref{eq:akopen}.
+
+For the opposite orientation, \eqref{eq:braidunitarity} gives, in fixed tensor slots,
+\begin{equation}
+ R_{ij}(0,u)=R_{ji}(u,0)^{-1}=P_{ij}C_{ij}(u)^{-1}.
+ \label{eq:oppositeR}
+\end{equation}
+If $T_n(u)=R_{1n}(0,u)\cdots R_{n-1,n}(0,u)$, moving the flips through the
+factors to their right gives
+\begin{equation}
+ T_n(0)^{-1}T_n(u)=
+ C_{12}(u)^{-1}\cdots C_{n-1,n}(u)^{-1}=G_n(u)^{-1}.
+\end{equation}
+Therefore
+\begin{equation}
+ -T_n^{-1}T_n'=-G_n(G_n^{-1})'=G_n'G_n^{-1}=B_n,
+\end{equation}
+which retains the single minus sign in \eqref{eq:algebraicdensities}.  Full minus
+shortened blocks now give \eqref{eq:bkopen}.  No difference property was used.
+\end{proof}
+
+\section{Cutting the multivariable transfer}
+
+Introduce independent commuting bookkeeping variables $z_1,\ldots,z_L$ and the
+normalized multivariable transfer
+\begin{equation}
+ X_L(\bm z)=U_L^{-1}\tr_a\!\left[
+ R_{aL}(z_L,0)\cdots R_{a1}(z_1,0)\right].
+ \label{eq:multix}
+\end{equation}
+This is only a generating series.  We do not assert that it is a new commuting
+inhomogeneous family.  On the diagonal $z_1=\cdots=z_L=u$,
+$X_L=U_L^{-1}t_L(u)$.  Associate $z_j$ with the directed edge $(j-1,j)$, with
+indices understood cyclically.
+
+\begin{lemma}[Exact cut and component factorization]
+\label{lem:cut}
+If $S$ is a proper subset of the $L$ directed edges and all variables outside $S$
+are set to zero, then
+\begin{equation}
+ X_L\big|_S=\prod_{I\in\pi_0(S)}G_I,
+ \label{eq:components}
+\end{equation}
+where $I$ runs over the connected interval components of $S$ and $G_I$ is the
+corresponding open product \eqref{eq:Gdef}.  Products belonging to different
+components commute.
+\end{lemma}
+
+\begin{proof}
+Choose an inactive edge, say $z_1=0$.  Regularity inserts $R_{a1}(0,0)=P_{a1}$.
+The elementary partial-trace identity
+\begin{equation}
+ \tr_a(A_aP_{a1})=A_1
+\end{equation}
+replaces the auxiliary slot by site $1$.  Equation~\eqref{eq:leftstar}, with an
+independent variable in each factor, then gives
+\begin{equation}
+ X_L(0,z_2,\ldots,z_L)
+ =C_{L-1,L}(z_L)\cdots C_{12}(z_2).
+ \label{eq:onecut}
+\end{equation}
+A cut at any other inactive edge follows by cyclically rotating the monodromy before
+the partial trace.  This use of partial-trace cyclicity is valid because physical
+matrix entries of the rotated factor commute with those on all other sites.  Additional
+inactive edges split \eqref{eq:onecut} into open products on disjoint site intervals.
+Those factors have disjoint support and hence commute, proving
+\eqref{eq:components} and independence of the chosen cut.
+\end{proof}
+
+Define the rooted logarithmic derivatives
+\begin{equation}
+ Y_j=X_L^{-1}\partial_{z_j}X_L,
+ \qquad Z_j=(\partial_{z_j}X_L)X_L^{-1}.
+ \label{eq:YZ}
+\end{equation}
+For a coefficient of the monomial $\bm z^{\bm\alpha}$ in either series, its rooted
+edge support is
+\begin{equation}
+ S(\bm\alpha,j)=\{i:\alpha_i>0\}\cup\{j\}.
+ \label{eq:rootedsupport}
+\end{equation}
+The root $j$ is included even if $\alpha_j=0$, since differentiation may have removed
+its only power.
+
+\begin{proposition}[Rooted connectedness and range]
+\label{prop:rooted}
+A degree-$r$ coefficient in $Y_j$ or $Z_j$ has rooted support on at most $r+1$
+edges.  If $r\leq L-2$, every nonzero coefficient has connected rooted support.
+\end{proposition}
+
+\begin{proof}
+The cardinality bound follows immediately from \eqref{eq:rootedsupport}.  It makes
+the support proper when $r\leq L-2$, so Lemma~\ref{lem:cut} computes the coefficient
+exactly after all other variables are set to zero.  If the support is disconnected,
+let $I$ be the component containing the root.  Differentiating
+\eqref{eq:components} and multiplying by the product inverse gives
+\begin{equation}
+ (X_L^{-1}\partial_{z_j}X_L)|_S=G_I^{-1}\partial_{z_j}G_I,
+ \qquad
+ ((\partial_{z_j}X_L)X_L^{-1})|_S=(\partial_{z_j}G_I)G_I^{-1}.
+\end{equation}
+Neither expression contains a variable belonging to another component.  Since every
+non-root edge in $S$ has a positive exponent, the proposed disconnected coefficient
+must vanish.
+\end{proof}
+
+\section{Endpoint anchoring and the global charge}
+
+Let $\tau$ translate a local operator by one site and write the cyclic sum of a
+$k$-site density $d$ on length $L$ as
+\begin{equation}
+ \cyc_L[d]=\sum_{n=0}^{L-1}\tau^n(d).
+\end{equation}
+
+\begin{proposition}[Each connected coefficient is counted once]
+\label{prop:anchoring}
+For $r=k-2$ and $L\geq k$,
+\begin{align}
+ \cyc_L[a_k]&=
+ \left.\partial_u^r\bigl(X_L(u)^{-1}X_L'(u)\bigr)\right|_{u=0},
+ \label{eq:leftsum}\\
+ \cyc_L[b_k]&=
+ \left.\partial_u^r\bigl(X_L'(u)X_L(u)^{-1}\bigr)\right|_{u=0}.
+ \label{eq:rightsum}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:rooted}, a surviving degree-$r$ rooted coefficient occupies
+a connected interval of at most $r+1=k-1$ edges.  It is therefore nonwrapping even at
+the minimal length $L=k$.  In the left form, subtracting
+$F_{k-1}^{[2,k]}$ from $F_k$ cancels exactly those rooted coefficients whose support
+omits the first edge.  This remains true when the removed edge is the root and its
+exponent after differentiation is zero: such a term has no counterpart in the shortened
+product.  Thus every remaining interval is anchored at its unique leftmost edge.
+Cyclic translation counts every connected rooted coefficient exactly once.
+
+For the right form, subtracting $B_{k-1}^{[1,k-1]}$ instead anchors the unique
+rightmost edge, and the same argument applies.  Raw differentiation multiplies every
+degree-$r$ coefficient by the same $r!$ on both sides.  The case $k=2$ is included:
+the rooted support consists only of its root and $G_1'=0$.
+\end{proof}
+
+The Yang--Baxter equation now enters.  Its standard train argument gives
+$[t_L(u),t_L(v)]=0$.  Hence $t_L$, $t_L'$ and $U_L=t_L(0)$ commute, and on the
+homogeneous line
+\begin{equation}
+ X_L^{-1}X_L'=t_L^{-1}t_L'
+ =X_L'X_L^{-1}.
+ \label{eq:formscoincide}
+\end{equation}
+Combining Proposition~\ref{prop:anchoring} with \eqref{eq:formscoincide} proves
+\begin{equation}
+ \cyc_L[a_k]=Q_k^{(L)}=\cyc_L[b_k]
+ \qquad (L\geq k).
+ \label{eq:globalsums}
+\end{equation}
+No infinite-chain limit or finite periodic boost is involved, and scalar and lower-range
+coefficients remain in the calculation.
+
+\section{The exact kernel of cyclic summation}
+
+Global equality is not yet the local equivalence \eqref{eq:gradient}.  The required
+upgrade follows from a finite-dimensional algebraic lemma.
+
+\begin{lemma}[Cyclic kernel]
+\label{lem:kernel}
+Let $D\in\End(V^{\otimes k})$.  If $\cyc_L[D]=0$ for one $L>2k$, then there exists
+$M\in\End(V^{\otimes(k-1)})$ such that
+\begin{equation}
+ D=\mathbf 1\otimes M-M\otimes\mathbf 1.
+ \label{eq:kernelgradient}
+\end{equation}
+Conversely, every expression of the form \eqref{eq:kernelgradient} has zero cyclic sum
+for every $L\geq k$.
+\end{lemma}
+
+\begin{proof}
+Choose a basis of $\End(V)$ consisting of $\mathbf 1$ and trace-zero matrices
+$E_\alpha$, and expand $D$ in the induced tensor-word basis.  For any word other than
+the all-identity word, delete its leading and trailing identities.  The remaining
+\emph{core} $w$ has length $m\leq k$ and nonidentity first and last letters.  Let
+$c_a$ be the coefficient of the embedding
+\begin{equation}
+ \mathbf 1^{\otimes a}\otimes w\otimes
+ \mathbf 1^{\otimes(k-m-a)},\qquad 0\leq a\leq k-m.
+\end{equation}
+On a ring with $L>2k$, the exterior identity run uniquely identifies the core and its
+cyclic placement, so distinct cores cannot cancel one another.  Vanishing of the cyclic
+sum is therefore equivalent to a zero scalar coefficient and
+\begin{equation}
+ \sum_{a=0}^{k-m}c_a=0
+ \label{eq:coresum}
+\end{equation}
+for every core.
+
+For $m<k$, put the same core into a $(k-1)$-site word and assign coefficients
+\begin{equation}
+ d_a=-\sum_{b=0}^{a}c_b,\qquad 0\leq a\leq k-m-1.
+ \label{eq:partialsums}
+\end{equation}
+Then $\mathbf 1\otimes M-M\otimes\mathbf 1$ has coefficients
+$-d_0=c_0$, $d_{a-1}-d_a=c_a$ in the interior, and
+$d_{k-m-1}=c_{k-m}$ at the final embedding, where the last equality is
+\eqref{eq:coresum}.  Summing these contributions over all cores constructs $M$.
+For $m=k$, \eqref{eq:coresum} forces the sole coefficient to vanish.  If
+$\dim V=1$, only the scalar word exists and is likewise forced to zero.  The converse
+is immediate by telescoping around the ring.
+\end{proof}
+
+Apply Lemma~\ref{lem:kernel} to $D=a_k-b_k$, using \eqref{eq:globalsums} at any
+$L>2k$.  This proves $a_k\sim b_k$.  If $q_k$ is any $k$-site representative whose
+cyclic sum is $Q_k^{(L)}$ for all $L\geq k$, the same lemma applied to $a_k-q_k$ and
+$b_k-q_k$ proves both equivalences claimed in Theorem~\ref{thm:main}.  Alternatively,
+$a_k$ itself supplies a canonical representative, so no independently normalized
+density need be assumed.  This completes the proof of Theorem~\ref{thm:main}.
+
+\section{Exact finite checks and convention control}
+
+The theorem is analytic; the following computations test conventions rather than supply
+its universal quantifiers.  Two independent implementations transcribed the transfer
+matrix and both directed block products using exact integer or rational arithmetic.
+Both implementations were developed with OpenAI Codex assistance; their independence
+concerns the input reconstruction and matrix representation, not independent human
+authorship.  Generated code was checked by complete exact residuals and a separate
+fresh AI reconstruction.  The
+published spin-$\tfrac12$ XXX input
+\begin{equation}
+ R_{12}(u,v)=\frac{(u-v)\mathbf 1-P_{12}}{u-v-1}
+\end{equation}
+reproduces the known $Q_2,Q_3,Q_4$ densities after the explicit normalization map to
+Ref.~\cite{Bargheer2009}.  A nonlinear reparametrization $f(u)=u+u^2$ retains the
+chain-rule admixtures $Q_4[f]=Q_4+6Q_3$ and
+$Q_5[f]=Q_5+12Q_4+12Q_3$; both endpoint formulas solve the complete local-gradient
+system at $k=4,5$.  An admissible spectral-gauge transform provides a separate
+non-difference control through $k=6$, including $L=k=6$.
+
+The recorded exact checks are as follows; ``zero'' means entrywise exact zero, with no
+floating-point tolerance.
+\begin{itemize}
+\item For XXX at $k\leq4$ and $L=4,5,6$, independent transfer and block
+constructions have zero residual.
+\item For $f(u)=u+u^2$ at $k=4$ with $L=4,5,6$ and at $k=5$ with $L=5,6$,
+the independent transfers agree exactly; both complete local-gradient systems
+also have zero residual, and hence the endpoint sums equal the same charge.
+\item For spectral-gauge XXX at $k=4,5,6$ and $L=6,7$, the sums, gradients and
+independent transfer comparison have zero residual.
+\item For generic non-Yang--Baxter controls through $k=5$, the cut and
+connected-support identities have zero residual.
+\end{itemize}
+
+The generic controls in the last row are deliberately outside the physical target and
+are not counterexamples or confirmations of the Yang--Baxter theorem.  They isolate the
+purely algebraic cut and support steps.  Reproduction commands, scripts, exact outputs
+and the Python version are specified in the accompanying reproducibility record.
+
+\section{Physical meaning and limitations}
+
+The theorem identifies the algebraic densities of Ref.~\cite{SchoutenDeLeeuw2026}
+with the particular hierarchy selected by the logarithmic derivative
+\eqref{eq:charges}; they are not merely another mutually commuting family.  In
+particular, no untracked scalar or lower-charge combination remains after passage to the
+exact local-gradient quotient.  This supplies the missing undeformed identification
+used conditionally in that work and gives finite-support representatives at every order.
+
+For a Hermitian XXX realization one may write $H=JQ_2$ with real $J$ carrying energy
+units.  Odd raw derivatives can require the customary factor of $i$ to become Hermitian.
+The general algebraic $R$ in Theorem~\ref{thm:main} need not be a unitary quantum gate,
+and the theorem does not predict a new excitation, phase or experimental signal.  Its
+scope is the homogeneous, untwisted, periodic, undeformed chain.  Open boundaries,
+twists, inhomogeneous evaluation parameters and positive long-range deformation orders
+can introduce additional endpoint or wrapping terms and are not covered.
+
+\section{Conclusion}
+
+Regularity turns an inactive transfer factor into an exact cut.  This makes the
+logarithmic-transfer coefficients rooted connected clusters and supplies a support bound
+strong enough to retain the minimal chain length $L=k$.  The two directed endpoint
+subtractions anchor those clusters from opposite ends, while Yang--Baxter commutativity
+identifies the resulting left and right logarithmic derivatives.  A constructive cyclic
+kernel lemma then yields the precise local gradient.  Together these steps prove both
+orientations of Conjecture~2.7 of Ref.~\cite{SchoutenDeLeeuw2026} for general regular
+braiding-normalized $R$-matrices and all charge orders.
+
+\section*{Data and code availability}
+
+The exact-arithmetic scripts, machine-readable outputs, primary-source locators and
+regeneration commands accompanying this local draft are described in
+\texttt{REPRODUCIBILITY.md}.  They test finite cases and conventions; the all-order
+claim rests on the proof above.  No third-party article PDF is part of the proposed
+submission bundle.
+
+\section*{Acknowledgements and AI assistance disclosure}
+
+OpenAI Codex was used to support literature retrieval and organization, proof
+development, exact-arithmetic code, an independent AI audit, and manuscript drafting.
+AI-assisted outputs were checked by exact replays and by a separate fresh AI scientific
+review, but those checks are not external peer review.  This is a local draft: the named
+author must critically review and validate all content, approve the disclosure, and take
+responsibility for any version submitted to a journal.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

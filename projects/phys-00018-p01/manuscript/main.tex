@@ -1,0 +1,511 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\N}{\mathbb Z_{\geq0}}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\dd}{\,\mathrm dt}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\DeclareMathOperator{\supp}{supp}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\title{A local noise tradeoff for two cross-regulated genes\\
+with unequal finite RNA lifetimes}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\hypersetup{pdftitle={A local noise tradeoff for two cross-regulated genes with unequal finite RNA lifetimes},pdfauthor={Xiaojian Zeng}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Eliminating short-lived RNA gives an instantaneous protein-burst model,
+but a noise constraint in that limit need not describe finite RNA lifetimes.
+We establish a computer-assisted local constraint for two genes with explicit
+RNA, catalytic translation and protein degradation. In protein-lifetime units,
+the constitutive transcription and RNA-decay rates are respectively $(1,1)$
+and $(2,2)$, while both translation and protein-decay coefficients are one.
+Each parent has RNA and protein mean one. Cross-transcription responses may
+be any bounded real functions of the other protein count, including
+nonmonotone functions and responses confined to arbitrarily rare counts.
+An infinite-state return-operator bound, obtained from weighted generator
+estimates and exact finite Riesz residual certificates, is combined with a
+controlled cubic covariance remainder. For each fixed nonconstant response
+pair, an explicit positive feedback interval forces at least one stationary
+protein Fano factor above its own mean-matched finite-lifetime baseline,
+$3/2$ or $4/3$. Constant responses leave both baselines unchanged.
+The interval depends on the response shapes. The result does not settle
+strong feedback, other kinetic parameters or networks with more genes.
+\end{abstract}
+
+\section{Finite RNA memory and output-noise constraints}
+
+At low molecule counts, a gene-regulatory circuit is naturally represented
+by stochastic reaction events. Noise control must then be compared with
+an uncontrolled system at the same stationary mean, rather than with an
+arbitrarily chosen production rate. For explicit RNA and catalytic
+translation, the constitutive protein Fano factor is
+\begin{equation}
+ B_i=1+\frac{\beta_i}{\delta_i+\gamma_i},
+ \label{eq:baseline}
+\end{equation}
+where $\delta_i$ and $\gamma_i$ are RNA and protein decay coefficients
+and $\beta_i$ is the translation coefficient
+\citep{Thattai2001,Shahrezaei2008}. This finite-lifetime baseline differs
+from the instantaneous-burst value $1+\beta_i/\delta_i$.
+
+Yan \emph{et al.} formulated noise-tradeoff conjectures for reaction
+networks and established analytical constraints in linear-noise and
+separated-time regimes \citep{Yan2019}. Stationary information-flow
+arguments subsequently supplied exact constraints for unit-birth
+components relative to their Poisson baselines
+\citep{Ripsman2025,AndersonUnit2026}. An exact tradeoff also holds for
+instantaneous positive geometric protein bursts, while unrestricted
+nongeometric burst laws admit counterexamples \citep{AndersonBurst2026}.
+The latter work identifies finite-lived production intermediates as a
+remaining direction. A protein-only burst generator omits the RNA memory
+retained here. Likewise, a constraint on all RNA and protein coordinates
+relative to one does not by itself compare only the proteins with
+Eq.~\eqref{eq:baseline}.
+
+We consider a restricted, exactly specified part of that direction:
+two genes with unequal finite RNA lifetimes and low constitutive mean
+counts. The contribution is a local output-noise obstruction valid for
+every bounded response shape on the complete count lattice. The response
+functions are not linearized at their means. The proof combines exact
+stationary identities, a computer-assisted bound on the complete
+response-function space, and an explicit finite-amplitude remainder.
+The fixed kinetics and response-dependent amplitude are essential parts
+of the statement.
+
+\section{Reaction model and the exact comparison}
+\label{sec:model}
+
+Let $(M_1,P_1,M_2,P_2)\in\N^4$ denote RNA and protein counts. For
+$i=1,2$, with $j\ne i$, the only channels are
+\begin{align}
+ M_i&\longrightarrow M_i+1 &&\text{at rate } f_i(P_j),&
+ M_i&\longrightarrow M_i-1 &&\text{at rate } \delta_i M_i,
+ \nonumber\\
+ P_i&\longrightarrow P_i+1 &&\text{at rate } \beta_i M_i,&
+ P_i&\longrightarrow P_i-1 &&\text{at rate } \gamma_i P_i.
+ \label{eq:reactions}
+\end{align}
+Translation leaves RNA unchanged. Death rates vanish at zero, and there
+is no upper count boundary. Transcription depends only on the other
+protein: there is no direct protein self-regulation, promoter state,
+degradation feedback, extrinsic environment or additional controller.
+No detailed-balance assumption is imposed.
+
+Choose a common time unit $t_0$ equal to the protein mean lifetime.
+All times and rates below are their numerical values in units $t_0$
+and $t_0^{-1}$. Counts, response functions and $\epsilon$ are dimensionless;
+$a,b$ are numerical transcription gains in the same rate unit.
+The fixed parameters are
+\begin{equation}
+ (\delta_1,\beta_1,\gamma_1)=(1,1,1),\qquad
+ (\delta_2,\beta_2,\gamma_2)=(2,1,1).
+ \label{eq:kinetics}
+\end{equation}
+For arbitrary functions $h_i:\N\to[-1,1]$ and gains $a,b>0$, set
+\begin{equation}
+ f_1(p)=1+\epsilon a h_2(p),\qquad
+ f_2(p)=2-\epsilon b h_1(p),\qquad g=\max(a,b).
+ \label{eq:feedback}
+\end{equation}
+The sign convention places no monotonicity constraint on $h_i$.
+For $\epsilon g<1$, both rates are positive and bounded at every count.
+
+These conditions define an admissible infinite-state process. Its total
+jump rate grows at most linearly, so it is nonexplosive. Positive
+immigration, translation and death allow communication between all
+states. For bounded transcription the Foster function
+\begin{equation}
+ \Phi=1+\sum_{i=1}^2\left[\left(1+\frac{1}{\delta_i}\right)M_i+P_i\right]
+\end{equation}
+has negative linear drift outside a finite set. Polynomial powers of
+$\Phi$ have the corresponding negative leading drift, because jump
+increments are bounded and jump rates grow at most linearly. This gives
+positive recurrence, a unique stationary law $\pi_\epsilon$ and the
+polynomial moments needed below. Protein means are strictly positive.
+
+Write $\mu_i=\E_\epsilon P_i$ and
+$F_i=\Var_\epsilon(P_i)/\mu_i$. The comparison gene has exactly the same
+$\delta_i,\beta_i,\gamma_i$ and constant transcription chosen to match
+$\mu_i$. Its Fano factor is Eq.~\eqref{eq:baseline}, independent of that
+constant rate. Thus our baselines are
+\begin{equation}
+ B_1=\frac32,\qquad B_2=\frac43.
+ \label{eq:fixedbaselines}
+\end{equation}
+They refer to the actual regulated means, not only to the parent means.
+
+\begin{proposition}[Exact finite-lifetime noise identity]
+\label{prop:identity}
+For the bounded reaction model~\eqref{eq:reactions}, with any finite
+positive kinetic coefficients,
+\begin{equation}
+ F_i-B_i=
+ \frac{\beta_i\,\Cov_\epsilon(Z_i,f_i)}
+ {\gamma_i\mu_i(\delta_i+\gamma_i)},\qquad
+ Z_i=\frac{\beta_i}{\delta_i}M_i+P_i.
+ \label{eq:fanoidentity}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Stationary generator tests on $M_i,P_i,M_i^2,M_iP_i,P_i^2$ give
+\begin{align}
+ \delta_i\E M_i&=\E f_i,&
+ \gamma_i\E P_i&=\beta_i\E M_i,\nonumber\\
+ \Var(M_i)&=\E M_i+\frac{\Cov(M_i,f_i)}{\delta_i},\nonumber\\
+ \Cov(M_i,P_i)&=
+ \frac{\beta_i\Var(M_i)+\Cov(P_i,f_i)}{\delta_i+\gamma_i},\nonumber\\
+ \Var(P_i)&=\E P_i+\frac{\beta_i}{\gamma_i}\Cov(M_i,P_i).
+ \label{eq:momentidentity}
+\end{align}
+Substitution proves Eq.~\eqref{eq:fanoidentity}. The polynomial moment
+bounds justify the generator tests by localization.
+\end{proof}
+In the fixed units~\eqref{eq:kinetics}, $Z_1=M_1+P_1$,
+$Z_2=M_2/2+P_2$, and
+\begin{equation}
+ F_i-B_i=\frac{\Cov_\epsilon(Z_i,f_i)}{(\delta_i+1)\mu_i}.
+ \label{eq:fixedidentity}
+\end{equation}
+In particular, the sign of the excess Fano factor is the sign of the
+corresponding covariance.
+
+\section{The local result}
+\label{sec:result}
+
+At $\epsilon=0$, the two genes are independent constitutive parents,
+with $(c,\delta,\beta,\gamma)=(1,1,1,1)$ and $(2,2,1,1)$.
+Both RNA and protein means are one. Let $\mathcal T_i(t)$ be the
+single-parent backward semigroup and $\E_0$ expectation under the
+independent stationary parents. Define
+\begin{align}
+ A_i&=\Cov_0(M_i,h_i(P_i)),&
+ H_i&=\Cov_0(P_i,h_i(P_i)),\nonumber\\
+ C_i(t)&=\Cov_0(h_i(P_i(0)),h_i(P_i(t))),\nonumber\\
+ D_i(t)&=\E_0\big[(\mathcal T_i(t)h_i)(M_i+1,P_i)
+                      -(\mathcal T_i(t)h_i)(M_i,P_i)\big].
+ \label{eq:parentforms}
+\end{align}
+The last expression is an extra-RNA response, not a simultaneous
+RNA/protein jump. Put
+\begin{equation}
+ r_1(t)=(1+t)e^{-t},\qquad
+ r_2(t)=e^{-t}-\tfrac12e^{-2t},
+\end{equation}
+and define the exact injection and return forms
+\begin{align}
+ U_1&=\int_0^\infty r_1(t)C_2(t)\dd,&
+ U_2&=\int_0^\infty r_2(t)C_1(t)\dd,\nonumber\\
+ V_1&=A_1\int_0^\infty r_1(t)D_2(t)\dd+
+             H_1\int_0^\infty e^{-t}D_2(t)\dd,\nonumber\\
+ V_2&=A_2\int_0^\infty r_2(t)D_1(t)\dd+
+             H_2\int_0^\infty e^{-t}D_1(t)\dd.
+ \label{eq:UV}
+\end{align}
+Global additive constants in the responses do not affect these forms.
+The integrals are finite for bounded $h_i$.
+
+\begin{theorem}[Local finite-RNA output-noise tradeoff]
+\label{thm:main}
+For the fixed parents above, every pair of bounded real whole-lattice
+responses satisfies
+\begin{equation}
+ |V_1|,\ |V_2|\ \leq\ \frac45\sqrt{U_1U_2}.
+ \label{eq:contraction}
+\end{equation}
+For the physical family~\eqref{eq:feedback}, define
+$S=a^2U_1+b^2U_2$. If at least one $h_i$ is nonconstant, then $S>0$.
+For every
+\begin{equation}
+ 0<\epsilon<
+ \min\left\{\frac1g,\frac{S}{4480g^3}\right\},
+ \label{eq:epsilon}
+\end{equation}
+the admissible stationary network has
+\begin{equation}
+ F_1>\frac32\quad\text{or}\quad F_2>\frac43.
+ \label{eq:tradeoff}
+\end{equation}
+If both response functions are constant, $F_1=3/2$ and $F_2=4/3$.
+\end{theorem}
+
+The operator inequality~\eqref{eq:contraction} is computer-assisted:
+its finite matrices, rational witnesses and infinite-state error bounds
+are described in Sec.~\ref{sec:contraction} and Appendix~\ref{app:certificate}.
+The statement has no finite-plateau, smoothness or monotonicity restriction.
+It has a response-dependent amplitude: nearly constant or rare-tail
+responses can make $S$ arbitrarily small.
+
+\subsection{Finite-amplitude response and deduction}
+
+The independent-product Poisson equation for
+$(Z_i-\E_0 Z_i)(h_j-\E_0 h_j)$ gives the quadratic covariance terms
+in Eq.~\eqref{eq:UV}. A stationary coupling and weighted increment
+estimate supply the following finite remainder, proved in
+Appendix~\ref{app:remainder}:
+\begin{align}
+ \left|\Cov_\epsilon(Z_1,f_1)
+       -\epsilon^2(a^2U_1-abV_1)\right|
+ &\leq448\epsilon^3g^3,\nonumber\\
+ \left|\Cov_\epsilon(Z_2,f_2)
+       -\epsilon^2(b^2U_2-abV_2)\right|
+ &\leq448\epsilon^3g^3 .
+ \label{eq:remainder}
+\end{align}
+These are whole-lattice inequalities for $\epsilon g<1$; stationary
+differentiability is not assumed.
+
+Using Eq.~\eqref{eq:contraction} and
+$2ab\sqrt{U_1U_2}\leq S$,
+\begin{equation}
+ S-ab(V_1+V_2)\geq\frac15S.
+\end{equation}
+Hence
+\begin{equation}
+ \Cov_\epsilon(Z_1,f_1)+\Cov_\epsilon(Z_2,f_2)
+ \geq \epsilon^2\frac S5-896\epsilon^3g^3>0
+\end{equation}
+under Eq.~\eqref{eq:epsilon}. At least one covariance is positive, and
+Eq.~\eqref{eq:fixedidentity} proves Eq.~\eqref{eq:tradeoff}.
+Strict positivity of $S$ follows from the weighted estimates below.
+When both responses are constant, the genes remain independent
+constitutive systems with changed means, so their Fano factors remain
+Eq.~\eqref{eq:fixedbaselines}.
+
+\section{Controlling all response shapes}
+\label{sec:contraction}
+
+\subsection{Injection variance and a weighted generator estimate}
+
+For the parent with RNA decay $d\in\{1,2\}$, let $\pi_d$ denote its
+stationary law and $L_d$ its full backward generator. Its protein
+marginal has full support. For a bounded $h$, write
+$\widetilde h=h-\E_{\pi_d}h$ and
+\begin{equation}
+ W_{4,d}(h)=\E_{\pi_d}
+       \frac{\widetilde h(P)^2}{(1+P)^4}.
+\end{equation}
+The scalar stationary covariance is even in time, although the parent
+process is not reversible. The impulse-filter covariance identity gives
+\begin{align}
+ U_1&=2\Var_{\pi_2}
+       \left(\int_0^\infty te^{-t}\widetilde h_2(P_t)\dd\right),\nonumber\\
+ U_2&=3\Var_{\pi_1}
+       \left(\int_0^\infty(e^{-t}-e^{-2t})
+                         \widetilde h_1(P_t)\dd\right).
+ \label{eq:filtervariance}
+\end{align}
+One can verify these identities by integrating the autocorrelations of
+the displayed kernels. Bounded responses justify Fubini. Conditioning on
+$(M_0,P_0)$ and applying Jensen yields
+\begin{align}
+ U_1&\geq2\norm{(1-L_2)^{-2}\widetilde h_2}_2^2,\nonumber\\
+ U_2&\geq3\norm{(1-L_1)^{-1}(2-L_1)^{-1}\widetilde h_1}_2^2.
+ \label{eq:reslower}
+\end{align}
+All norms are under the appropriate full invariant law.
+
+Let $q_d(m,p)=d+(d+1)m+p$ be the total outgoing rate and
+$w_d=1+q_d$. Neighboring states have $w_d$ ratios between $1/2$ and $2$.
+Stationary incoming flux is $\pi_d(y)q_d(y)$. Outgoing-jump
+Cauchy--Schwarz, followed by this incoming-flux identity, gives
+\begin{equation}
+ \norm{w_d^{-j}L_du}_2^2
+ \leq2(1+2^{2j-1})\norm{w_d^{-(j-1)}u}_2^2,
+ \qquad j=1,2.
+ \label{eq:genbound}
+\end{equation}
+For the incoming term, the weight ratio costs at most $2^{2j-1}$;
+the outgoing diagonal term costs at most one. The factor two comes
+from $(u(y)-u(x))^2\leq2u(y)^2+2u(x)^2$.
+This uses nonnegative countable sums, not detailed balance.
+Applying Eq.~\eqref{eq:genbound} twice gives
+\begin{align}
+ \norm{w_d^{-2}(1-L_d)^2v}_2
+ &\leq(1+2\sqrt6+\sqrt{108})\norm{v}_2<17\norm{v}_2,\nonumber\\
+ \norm{w_d^{-2}(1-L_d)(2-L_d)v}_2
+ &\leq(2+3\sqrt6+\sqrt{108})\norm{v}_2<20\norm{v}_2.
+ \label{eq:productbound}
+\end{align}
+The resolvent vectors in Eq.~\eqref{eq:reslower} have
+bounded first and second generator powers, so their backward resolvent
+equations justify these operations without a finite-support-core
+assumption.
+
+The stationary cluster construction in Appendix~\ref{app:parent}
+implies $\E[M\mid P=p]\leq p+1$. Thus
+$\E[w_d\mid P=p]\leq2(d+1)(p+1)$. Conditional Jensen for $x^{-4}$,
+Eq.~\eqref{eq:reslower} and Eq.~\eqref{eq:productbound} give
+\begin{equation}
+ U_1\geq\frac{W_{4,2}(h_2)}{187272},
+ \qquad
+ U_2\geq\frac{3W_{4,1}(h_1)}{102400}.
+ \label{eq:coercivity}
+\end{equation}
+The denominators follow from
+$2/(17^2\,6^4)=1/187272$ and $3/(20^2\,4^4)=3/102400$.
+Every nonconstant bounded response therefore has strictly positive
+injection. The weight is deliberately weak; no stronger unproved
+coercivity estimate is needed.
+
+\subsection{Finite certificates and omitted functionals}
+
+Let $\mathcal H_d$ be the completion of bounded protein functions
+modulo constants under injection norm $U_2$ for $d=1$, or $U_1$
+for $d=2$. Write the lower constants in Eq.~\eqref{eq:coercivity} as
+$\alpha_1=3/102400$, $\alpha_2=1/187272$.
+For a zero-sum coefficient functional $\ell(h)=\sum_p\ell_ph(p)$,
+\begin{equation}
+ \norm{\ell}_{\mathcal H_d^*}^2
+ \leq\frac1{\alpha_d}
+       \sum_{p\geq0}\frac{(p+1)^4\ell_p^2}{\pi_d(P=p)}.
+ \label{eq:dual}
+\end{equation}
+This follows by centering $h$ and applying Cauchy--Schwarz.
+
+The return forms have rank two. With
+$D_{g,i}=\int e^{-t}D_i(t)\dd$ and
+$D_{r,i}=\int r_i(t)D_i(t)\dd$,
+\begin{equation}
+ V_1=A_1D_{r,2}+H_1D_{g,2},\qquad
+ V_2=D_{r,1}A_2+D_{g,1}H_2.
+ \label{eq:ranktwo}
+\end{equation}
+Appendix~\ref{app:parent} provides whole-lattice coefficient bounds
+$|\ell_p|\leq C(p+1)\pi_d(P=p)$ for each of these functionals.
+They are consequently continuous in $\mathcal H_d$.
+
+Let $\mathcal S_n$ consist of response functions constant for $p\geq n$,
+modulo global constants, and let $\mathcal P_{d,n}$ be its
+injection-orthogonal projection. A full threshold category is included;
+this is not a cap on the stochastic process. Exact interval Gram matrices
+and integer congruence certificates at $n=64$ establish
+\begin{equation}
+ |V_i(\mathcal P_{1,n}h_1,\mathcal P_{2,n}h_2)|
+ \leq\frac34\sqrt{U_2(h_1)U_1(h_2)},\qquad n\leq64.
+ \label{eq:finitebound}
+\end{equation}
+The parent resolvents are approximated on $0\leq M\leq48$,
+$0\leq P\leq128$ only to construct witnesses. Their errors under the
+true invariant law, including the infinite tail, enter every matrix
+enclosure. Appendix~\ref{app:certificate} specifies that error control.
+
+For each return functional, a rational vector $v\in\mathcal S_n$
+approximates its Riesz representative. Write its residual as
+$e=\ell-U_d(v,\cdot)$, where $U_d$ denotes the corresponding polarized
+injection form. In the scaled basis
+$s_k\ind_{\{P=k\}}$ for $1\leq k<n$ and
+$s_n\ind_{\{P\geq n\}}$, let $\rho_k$ enclose $|e(b_k)|$.
+The count-zero coefficient is bounded by $\sum_k\rho_k/s_k$,
+because $e$ annihilates constants and the last basis function covers
+the entire tail. The head dual bound is
+\begin{equation}
+ H=\frac{(\sum_{k=1}^n\rho_k/s_k)^2}{\pi_{d,0}^{-}}
+    +\sum_{p=1}^{n-1}
+       \frac{(p+1)^4(\rho_p/s_p)^2}{\pi_{d,p}^{-}},
+ \label{eq:head}
+\end{equation}
+where $\pi_{d,p}^{-}>0$ is a certified lower probability bound.
+
+If $V\geq\sup_p|v(p)-\E v|$, the coefficient of the injection
+covariance operator obeys
+$|(U_dv)_p|\leq c_dV\pi_{d,p}$, with $c_1=3/4$ and $c_2=2$.
+The omitted dual contribution is therefore at most
+\begin{align}
+ T&=C^2T_6+2Cc_dVT_5+(c_dV)^2T_4,\nonumber\\
+ T_k&\geq\E_{\pi_d}[(P+1)^k\ind_{\{P\geq n\}}],\qquad k=4,5,6.
+ \label{eq:tail}
+\end{align}
+Exact full moments minus lower probability prefixes enclose these
+positive tails. Thus
+\begin{equation}
+ \Delta_\ell=\sqrt{(H+T)/\alpha_d}
+ \label{eq:rieszerror}
+\end{equation}
+is an upper bound on the full dual residual and on the norm of the
+omitted functional $\ell-\ell\mathcal P_{d,n}$.
+An upper bound for the projected functional is
+$m_\ell=\norm v_{U_d}+\Delta_\ell$.
+For a factor pair $\ell,k$ in Eq.~\eqref{eq:ranktwo}, its omitted
+operator norm is bounded by
+\begin{equation}
+ \Delta_\ell m_k+m_\ell\Delta_k+\Delta_\ell\Delta_k.
+ \label{eq:rankerror}
+\end{equation}
+Adding the two rank-one errors to $3/4$ bounds the full return norm.
+No finite projection is assumed to exhaust the response space.
+
+\input{manuscript/certificate-table.tex}
+
+The decisive $n=48$ exact bounds in Table~\ref{tab:certificate} are
+strictly below $4/5$. They prove Eq.~\eqref{eq:contraction} for all
+bounded response shapes. The smaller projection gives valid bounds
+below one but insufficient to certify $4/5$; it is included to show
+the effect of the residual enclosure. Floating solves propose witnesses;
+exact rational residuals, probability intervals, moment tails and integer
+congruence margins decide all displayed inequalities.
+
+\section{Physical interpretation and limitations}
+
+The positive injection forms measure fluctuations introduced by the
+other gene's transcription signal after RNA-to-protein filtering.
+The return terms measure how the loop acts back on that noise.
+At the stated low-copy parents, the full return response is too weak
+to offset both injection costs locally, even if the response is
+nonlinear, nonmonotone or concentrated on very rare protein counts.
+Finite RNA memory is retained throughout.
+
+The result restricts a design route rather than asserting a universal
+noise law. It does not resolve simultaneous protein-noise suppression
+for arbitrary kinetic parameters, strong feedback or more than two genes.
+It also supplies no response-independent positive $\epsilon$ radius.
+The conservative constants are sufficient bounds, not optimal feedback
+thresholds or experimental predictions. Other channels, including
+promoter switching, resource coupling, sequestration and degradation
+control, lie outside Eq.~\eqref{eq:reactions}. A comparison with a burst
+baseline at finite RNA lifetime would answer a different question.
+
+The distinction from prior exact unit-birth and geometric-burst results
+is the explicit finite-RNA, output-only, mean-matched comparison.
+The literature comparison here is scoped to those primary models and
+the analytical regimes of Ref.~\citep{Yan2019}; it is not a claim to
+have excluded every representation of a related result.
+
+\section*{Data and computational methods}
+The companion source package contains the exact matrices, probability
+intervals, rational witnesses, residual bounds and certificate-replay code.
+The enclosure construction used Python with NumPy and SciPy for
+proposing sparse-resolvent and Riesz approximants; all final certificate
+signs use integer or \texttt{Fraction} arithmetic. A standard-library
+checker replays the stored contraction and residual certificates.
+Appendices below specify the underlying infinite-state arguments.
+There are no experimental data. The local package has no public
+repository identifier at this draft stage.
+
+OpenAI Codex was used substantively in exploring the argument,
+literature synthesis, derivations, code generation, automated
+computational checks and manuscript drafting. The automated checks
+describe reproducible calculations, not completed human verification.
+Human scientific review and approval remain pending for this local
+draft. The accompanying author handoff records the disclosure details
+and model-version provenance that require confirmation before submission.
+
+\appendix
+\input{manuscript/appendices.tex}
+\bibliographystyle{unsrtnat}
+\bibliography{manuscript/references}
+\end{document}

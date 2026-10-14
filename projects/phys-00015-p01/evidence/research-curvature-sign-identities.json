@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "hh_reduction": true,
+    "det_reduction": true,
+    "hc_reduction": true,
+    "pp_ratio": true,
+    "cross_phase_ratio": true,
+    "scalar_lower_bound_difference": true,
+    "Ph_slope_positive_polynomial": true,
+    "Nyquist_hh": true
+  },
+  "Ph": "2*t**2*(t**2 + 1)*(L*(1 - t**2)**2*(3*t**2 - 1) + 2*t*(t**2 + 1)**2) + (-t**2 + v**2)*(L*(1 - t**2)**2 + 2*t*(t**2 + 1))*(5*t**4 - 2*t**2 + 1)",
+  "Pd": "2*t**2*(t**2 + 1)*(-L**2*(1 - t**2)**3 + 4*t**2*(t**2 + 1)) + (-t**2 + v**2)*(L*(1 - t**2)**2 + 2*t*(t**2 + 1))**2",
+  "S": "L*(1 - t**2)**2 + 2*t*(t**2 + 1)",
+  "Dminus": "4*t**4*v**2 + t**2*(-3*t**4 + 6*t**2 + 1) + (1 - t**2)**2*(-2*t + v)**2",
+  "Dplus": "4*t**4*v**2 + t**2*(-3*t**4 + 6*t**2 + 1) + (1 - t**2)**2*(2*t + v)**2",
+  "method": "rational-function equality over Q(t,v,L); signs proved analytically in evidence/research-local-proof.md",
+  "status": "pass"
+}

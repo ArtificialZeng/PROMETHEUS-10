@@ -1,0 +1,445 @@
+\documentclass[aps,pra,reprint,amsmath,amssymb,nofootinbib,floatfix]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newtheorem{proposition}{Proposition}
+\newenvironment{proof}{\par\noindent\textit{Proof. }}{\hfill$\square$\par}
+
+\begin{document}
+\title{Weak periodic phase shaping lowers the worst-case sensitivity of coherent-state qubit readout}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, 100190, China}
+\date{October 12, 2026}
+
+\begin{abstract}
+A fixed interaction can encode the real amplitude of a coherent bosonic
+mode into a qubit, with the field subsequently discarded. The optimal
+linear quadrature coupling gives amplitude-independent quantum Fisher
+information $4/\ee$. We show that every fixed real bounded periodic phase
+perturbation along the same qubit rotation axis, nonconstant almost
+everywhere, lowers the infimum of the symmetric-logarithmic-derivative
+quantum Fisher information over all real amplitudes, for both sufficiently
+small nonzero signs of its strength. A Gaussian-score calculation gives a
+nonzero, zero-mean first-order sensitivity response whose Fourier
+multipliers have no nonzero-frequency zeros. Explicit uniform rank and
+quadratic-remainder bounds convert this response into a strict worst-case
+loss. The argument includes discontinuous profiles and requires neither a
+photon cutoff nor a sampled-amplitude extrapolation. The strength radius
+depends on the fixed profile and period. This restricted obstruction
+excludes a weak periodic shaping route; it does not determine the
+unrestricted interaction optimum or exclude finite-strength improvements.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+When a quantized field is measured through a small probe, the interaction
+must transfer information into the degrees of freedom that are actually
+read out. For the real amplitude $\alpha$ of a single coherent mode, the
+field quantum Fisher information (QFI) is $4$, whereas a fixed qubit
+readout generally retains less. Ravell Rodr\'{i}guez, Perarnau-Llobet, and
+Sekatski formulated the optimization of the worst-amplitude qubit QFI and
+exhibited a linear quadrature coupling with uniform value
+$4/\ee$~\cite{ravell2026}. Their work leaves the general fixed-interaction
+optimization unresolved and suggests $4/\ee$ or a nearby value.
+
+A natural design question is whether weak nonlinear shaping of that
+linear interaction can improve its uniform sensitivity. Optimizing the
+linear coupling strength alone does not answer this question: nonlinear
+profiles introduce infinitely many additional directions. Here we analyze
+each fixed bounded periodic profile acting along the same qubit rotation
+axis. Every nonconstant profile produces a first-order ripple in the local
+QFI, and that ripple necessarily has both signs. A uniform remainder
+estimate then proves a strict reduction of the worst-amplitude QFI for
+either sufficiently small sign of the perturbation.
+
+This is a directionwise statement. The profile and its period are fixed
+before the perturbation strength tends to zero. The result does not
+provide a common neighborhood over all profiles, an upper bound for
+finite-strength shaping, or a solution of the arbitrary-unitary problem.
+
+\section{Model and the linear benchmark}
+
+The field Hilbert space is $\ell^2(\mathbb N_0)$, with $[a,a^\dagger]=1$.
+In oscillator units, $\hbar=1$ and
+\begin{equation}
+ Q=\frac{a+a^\dagger}{\sqrt2},\qquad
+ p_\alpha(x)=\frac{\ee^{-(x-\sqrt2\alpha)^2}}{\sqrt\pi}.
+ \label{eq:gaussian}
+\end{equation}
+The input is the real coherent state $\ket\alpha$, so its quadrature has
+mean $\sqrt2\alpha$ and variance $1/2$. The amplitude, quadrature, and
+couplings below are dimensionless. The qubit begins in the fixed state
+$\ket g$. In the basis $(\ket g,\ket e)$, use
+$\sigma_y=\left(\begin{smallmatrix}0&-\ii\\\ii&0\end{smallmatrix}\right)$,
+so $\ee^{-\ii\sigma_y f(x)}\ket g=
+\cos f(x)\ket g+\sin f(x)\ket e$.
+
+Let $L>0$ and let $g$ be a real bounded Borel $L$-periodic function, fixed
+independently of $\alpha$ and of the strength $\epsilon$. We consider
+\begin{equation}
+ V_\epsilon=\exp\left[-\ii\sigma_y\otimes
+ \left(\frac{Q}{\sqrt2}+\epsilon g(Q)\right)\right].
+ \label{eq:unitary}
+\end{equation}
+Since $g(Q)$ is bounded and self-adjoint, the quadrature function in
+Eq.~\eqref{eq:unitary} is self-adjoint on the domain of $Q$.
+Functional calculus defines a unitary on the full field space, including
+for discontinuous $g$. Only the final qubit is retained:
+\begin{align}
+ \rho_\epsilon(\alpha)
+ &=\Tr_F\left[V_\epsilon
+ (\ket g\bra g\otimes\ket\alpha\bra\alpha)
+ V_\epsilon^\dagger\right]\notag\\
+ &=\int_{\mathbb R}p_\alpha(x)
+ \ket{\psi_\epsilon(x)}\bra{\psi_\epsilon(x)}\,\dd x,
+ \label{eq:state}\\
+ \ket{\psi_\epsilon(x)}
+ &=\ee^{-\ii\sigma_y[x/\sqrt2+\epsilon g(x)]}\ket g.
+ \notag
+\end{align}
+There is one input mode per encoding, no postselection or retained
+classical branch record, and no control adapted to the unknown amplitude.
+
+We use the pointwise symmetric logarithmic derivative (SLD) QFI
+\cite{braunstein1994}, defined by
+\begin{equation}
+ \rho_\epsilon\mathcal L_\alpha+
+ \mathcal L_\alpha\rho_\epsilon=2\partial_\alpha\rho_\epsilon,
+ \qquad F_Q=\Tr(\rho_\epsilon\mathcal L_\alpha^2).
+ \label{eq:sld}
+\end{equation}
+This is a local sensitivity benchmark, allowing optimization of the final
+qubit measurement at a local working point. It does not imply a globally
+identifiable amplitude or a particular finite-sample estimation risk.
+Uniform full rank, established below, avoids rank-changing SLD conventions.
+
+Put $\mu=\sqrt2\alpha$ and $p_0(y)=\ee^{-y^2}/\sqrt\pi$. The complex
+Bloch coordinate is
+\begin{equation}
+ m_\epsilon(\mu)=\int_{\mathbb R}p_0(y)
+ \ee^{\ii\sqrt2(\mu+y)+2\ii\epsilon g(\mu+y)}\,\dd y.
+ \label{eq:m}
+\end{equation}
+In particular,
+\begin{equation}
+ \rho_\epsilon=\frac12
+ \begin{pmatrix}1+\Rea m_\epsilon&\Ima m_\epsilon\\
+ \Ima m_\epsilon&1-\Rea m_\epsilon\end{pmatrix}.
+ \label{eq:blochstate}
+\end{equation}
+Define $d_\epsilon(\mu)=\sqrt2\partial_\mu m_\epsilon(\mu)$ and
+$\mathcal F_\epsilon(\mu)=F_Q[\rho_\epsilon(\mu/\sqrt2)]$. Thus
+$d_\epsilon$ is always an \emph{amplitude} derivative. Solving
+Eq.~\eqref{eq:sld} in the Bloch representation gives
+\begin{equation}
+ \mathcal F_\epsilon(\mu)=|d_\epsilon|^2+
+ \frac{[\Rea(\overline m_\epsilon d_\epsilon)]^2}
+ {1-|m_\epsilon|^2}.
+ \label{eq:qfi}
+\end{equation}
+For completeness, writing $\mathcal L_\alpha=b_0 I+\bm b\cdot\bm\sigma$
+gives $b_0+\bm b\cdot\bm r=0$ and
+$\bm b+b_0\bm r=\partial_\alpha\bm r$, which immediately yields
+Eq.~\eqref{eq:qfi} for $\bm r=(\Ima m,0,\Rea m)$.
+
+More generally, the linear coupling $f(x)=\tau x/\sqrt2$ gives
+\begin{equation}
+ m_\tau(\alpha)=\ee^{-\tau^2/2+2\ii\tau\alpha},
+ \qquad F_Q=4\tau^2\ee^{-\tau^2}.
+ \label{eq:baseline}
+\end{equation}
+This is the exact quadrature benchmark of Ref.~\cite{ravell2026},
+not a large-amplitude approximation to the Jaynes--Cummings interaction.
+It is maximized at $|\tau|=1$, giving $4/\ee$ for every real $\alpha$.
+Equation~\eqref{eq:unitary} perturbs the $\tau=1$ carrier.
+
+\section{The first-order sensitivity response}
+
+The derivative in Eq.~\eqref{eq:qfi} can be obtained by differentiating
+the Gaussian density at fixed quadrature $x$:
+\begin{equation}
+ d_\epsilon(\mu)=\int_{\mathbb R}2\sqrt2\,y\,p_0(y)
+ \ee^{\ii\sqrt2(\mu+y)+2\ii\epsilon g(\mu+y)}\,\dd y.
+ \label{eq:score}
+\end{equation}
+The integrable Gaussian score justifies this differentiation even when
+$g$ has jumps; no derivative of $g$ is used.
+
+Let $A=\ee^{-1/2}$. At zero strength,
+\begin{equation}
+ m_0=A\ee^{\ii\sqrt2\mu},\qquad
+ d_0=2\ii A\ee^{\ii\sqrt2\mu}.
+ \label{eq:zerodata}
+\end{equation}
+Hence $|d_0|^2=4/\ee$ and
+$\Rea(\overline m_0d_0)=0$. If $m_1=\partial_\epsilon m_\epsilon|_0$
+and $d_1=\partial_\epsilon d_\epsilon|_0$, then
+\begin{align}
+ m_1&=2\ii\int p_0(y)g(\mu+y)
+ \ee^{\ii\sqrt2(\mu+y)}\,\dd y,\notag\\
+ d_1&=4\ii\sqrt2\int y p_0(y)g(\mu+y)
+ \ee^{\ii\sqrt2(\mu+y)}\,\dd y.
+ \label{eq:firstdata}
+\end{align}
+The radial term in Eq.~\eqref{eq:qfi} starts at second order. Therefore
+the first variation is
+\begin{align}
+ G(\mu)&=\left.\partial_\epsilon\mathcal F_\epsilon(\mu)\right|_0
+ =2\Rea(\overline d_0d_1)\notag\\
+ &=16\sqrt2 A\int_{\mathbb R}y p_0(y)
+ \cos(\sqrt2y)g(\mu+y)\,\dd y.
+ \label{eq:response}
+\end{align}
+The kernel is smooth, integrable, and odd. Its convolution with bounded
+$g$ is continuous, $L$-periodic, and has zero mean.
+
+To determine whether any nonconstant profile can have zero response,
+write $\kappa=2\pi/L$ and
+\begin{equation}
+ c_n=\frac1L\int_0^L g(x)\ee^{-\ii n\kappa x}\,\dd x.
+\end{equation}
+The Gaussian moment
+$\int y p_0(y)\ee^{\ii\lambda y}\,\dd y
+=\ii\lambda\ee^{-\lambda^2/4}/2$ gives, for $n>0$,
+\begin{equation}
+ G_n=\ii C(n\kappa)c_n,\qquad
+ G_{-n}=-\ii C(n\kappa)c_{-n},\qquad G_0=0,
+ \label{eq:fourierresponse}
+\end{equation}
+where $k_0=1/\sqrt2$ and
+\begin{align}
+ C(\xi)&=16k_0\ee^{-1-\xi^2/4}\notag\\
+ &\quad\times\left[\xi\cosh(k_0\xi)-2k_0\sinh(k_0\xi)\right].
+ \label{eq:multiplier}
+\end{align}
+Fubini's theorem applies because $g$ is bounded and the kernel is
+integrable. No pointwise Fourier-series convergence of $g$ is assumed.
+
+For $\xi>0$, put $z=k_0\xi$. The bracket in
+Eq.~\eqref{eq:multiplier} is
+$\sqrt2(z\cosh z-\sinh z)$, which is strictly positive: it vanishes
+at $z=0$ and has derivative $\sqrt2 z\sinh z>0$.
+Thus $C(\xi)>0$ at every nonzero positive frequency.
+If $G$ vanished identically, Eq.~\eqref{eq:fourierresponse} would force
+all nonzero Fourier coefficients of $g$ to vanish. Fourier uniqueness
+in $L^2([0,L])$ would then make $g$ constant almost everywhere.
+For a nonconstant profile, it follows that
+\begin{align}
+ \min_\mu G(\mu)&<0<\max_\mu G(\mu),\notag\\
+ \gamma&=\min\{-\min G,\max G\}>0.
+ \label{eq:gamma}
+\end{align}
+The extrema exist on any compact period. Each fixed perturbation therefore
+has an amplitude at which its first-order QFI change is unfavorable,
+for either sign of strength.
+
+For a finite trigonometric profile,
+\begin{equation}
+g(x)=g_0+\sum_{n\geq1}[a_n\cos(n\kappa x)+b_n\sin(n\kappa x)],
+\end{equation}
+the response is explicitly
+\begin{equation}
+ G(\mu)=\sum_{n\geq1}C(n\kappa)
+ [b_n\cos(n\kappa\mu)-a_n\sin(n\kappa\mu)].
+ \label{eq:trigresponse}
+\end{equation}
+Distinct harmonics cannot cancel the entire ripple: no nonzero mode lies
+in the response kernel.
+
+\section{Uniform rank control and strict worst-case loss}
+
+A first variation at isolated amplitudes would not by itself control the
+whole real axis. We next bound the QFI remainder uniformly. Choose any
+finite $M>0$ satisfying $|g(x)|\leq M$, and define
+\begin{align}
+ D&=2A,\qquad W=2\sqrt{2/\pi},\qquad h=(1-A)/4,\notag\\
+ \beta&=(1+A)/2,\qquad \delta=1-\beta^2,\notag\\
+ K&=4W^2(1+h)^2+4DW+
+ \frac{4(\beta W+D)^2}{\delta}.
+ \label{eq:constants}
+\end{align}
+All these constants are positive, and $\beta<1$.
+
+Write $a=|\epsilon|$. The inequalities
+$|\ee^{2\ii\epsilon g}-1|\leq2aM$ and
+$\int 2\sqrt2|y|p_0(y)\,\dd y=W$ imply
+\begin{equation}
+ |m_\epsilon-m_0|\leq2aM,\qquad
+ |d_\epsilon-d_0|\leq2aMW.
+ \label{eq:lipschitz}
+\end{equation}
+When $aM\leq h$, these give
+\begin{equation}
+ |m_\epsilon|\leq A+2h=\beta,
+ \qquad 1-|m_\epsilon|^2\geq\delta.
+ \label{eq:rank}
+\end{equation}
+The smallest output eigenvalue is at least $(1-\beta)/2=h$,
+independently of the amplitude.
+
+For real $g$, the exponential Taylor remainder obeys
+$|\ee^{2\ii\epsilon g}-1-2\ii\epsilon g|\leq2a^2M^2$.
+Consequently,
+\begin{align}
+ m_\epsilon&=m_0+\epsilon m_1+r_m,&|r_m|&\leq2a^2M^2,\notag\\
+ d_\epsilon&=d_0+\epsilon d_1+r_d,&|r_d|&\leq2a^2M^2W,\notag\\
+ |m_1|&\leq2M,&|d_1|&\leq2MW.
+ \label{eq:taylor}
+\end{align}
+Using $|d_0|=D$ and $G=2\Rea(\overline d_0d_1)$, expansion
+of the first term of Eq.~\eqref{eq:qfi} yields
+\begin{align}
+ \big||d_\epsilon|^2-D^2-\epsilon G\big|
+ &\leq2D|r_d|+|\epsilon d_1+r_d|^2\notag\\
+ &\leq a^2M^2[4DW+4W^2(1+h)^2].
+ \label{eq:tangentialbound}
+\end{align}
+For the second term, the zero radial derivative at the carrier and
+Eq.~\eqref{eq:lipschitz} give
+\begin{align}
+ |\Rea(\overline m_\epsilon d_\epsilon)|
+ &\leq |m_\epsilon|\,|d_\epsilon-d_0|
+       +|m_\epsilon-m_0|\,|d_0|\notag\\
+ &\leq2aM(\beta W+D).
+ \label{eq:radialbound}
+\end{align}
+Combining Eqs.~\eqref{eq:rank}, \eqref{eq:tangentialbound}, and
+\eqref{eq:radialbound} proves the exact bound
+\begin{equation}
+ \left|\mathcal F_\epsilon(\mu)-\frac4\ee-\epsilon G(\mu)\right|
+ \leq KM^2\epsilon^2
+ \quad\text{for all }\mu\in\mathbb R,
+ \label{eq:uniformremainder}
+\end{equation}
+whenever $|\epsilon|M\leq h$.
+
+\begin{proposition}
+For each fixed $L>0$ and real bounded Borel $L$-periodic profile $g$
+that is not constant almost everywhere, let $\gamma$ and $K$ be given
+by Eqs.~\eqref{eq:gamma} and \eqref{eq:constants}. With
+\begin{equation}
+ \epsilon_0(g,L)=\min\left\{\frac hM,
+                  \frac{\gamma}{2KM^2}\right\}>0,
+ \label{eq:radius}
+\end{equation}
+every $0<|\epsilon|<\epsilon_0$, of either sign, gives uniformly
+full-rank qubit outputs and
+\begin{equation}
+ \inf_{\alpha\in\mathbb R}F_Q[\rho_\epsilon(\alpha)]<\frac4\ee.
+ \label{eq:mainresult}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $\epsilon>0$, evaluate Eq.~\eqref{eq:uniformremainder} at a minimum
+of $G$. For $\epsilon<0$, use a maximum of $G$. In either case, using
+$\mu=\sqrt2\alpha$ and Eq.~\eqref{eq:radius},
+\begin{align}
+ \inf_{\alpha\in\mathbb R}F_Q[\rho_\epsilon(\alpha)]
+ &\leq\frac4\ee-\gamma|\epsilon|+KM^2\epsilon^2\notag\\
+ &<\frac4\ee-\frac\gamma2|\epsilon|<\frac4\ee.
+ \label{eq:lossbound}
+\end{align}
+Equation~\eqref{eq:rank} supplies the uniform rank claim.
+\end{proof}
+
+If $g$ is constant almost everywhere, the perturbation is a fixed output
+rotation and preserves $4/\ee$ exactly. Thus the exclusion of constant
+profiles is necessary, and changes on sets of measure zero are immaterial.
+
+\section{Illustration and numerical consistency checks}
+
+For $g(x)=\sin(\kappa x)$, Eq.~\eqref{eq:trigresponse} reduces to
+$G(\mu)=C(\kappa)\cos(\kappa\mu)$. Figure~\ref{fig:ripple} illustrates
+the response and the opposite unfavorable amplitude regions for the two
+signs. Its QFI values were calculated from the Gaussian projector and
+score integrals, followed by a spectral SLD evaluation. They are supporting
+numerical data; the proposition follows from the uniform analytic bound.
+The illustrated strengths satisfy the rank/remainder condition
+$|\epsilon|M\leq h$; they need not lie within the conservative strict-loss
+radius in Eq.~\eqref{eq:radius}.
+
+\begin{figure}[!htbp]
+ \includegraphics[width=\columnwidth]{manuscript/figures/sensitivity-ripple.pdf}
+ \caption{Sensitivity ripple for the fixed profile
+ $g(x)=\sin(\kappa x)$ with $\kappa=0.7$, plotted against
+ $t=\kappa\mu=\sqrt2\kappa\alpha$.
+ QFI change from $4/\ee$ at $\epsilon=0.005$ and $\epsilon=-0.02$,
+ from direct density-matrix SLD calculations at 17 phases. Lines join sampled values
+ to guide the eye. Both curves have values below the baseline. No grid
+ minimum or numerical error enclosure is used to prove the all-amplitude
+ statement.}
+ \label{fig:ripple}
+\end{figure}
+
+The same consistency tests used a mixed-harmonic profile, a discontinuous
+square wave, a high harmonic, and a constant control. Across five profiles
+and 17 phases at two strengths, the 170 direct SLD evaluations satisfy
+the analytic rank and remainder inequalities. The largest discrepancy
+between the Gaussian and Fourier first-response calculations is below
+$3.8\times10^{-15}$, and the largest observed ratio of the absolute QFI
+remainder to $KM^2\epsilon^2$ is below $0.057$. The square-wave integral
+is split at its jumps. These finite floating-point checks do not provide
+outward-rounded quadrature certificates or establish the response's
+all-frequency injectivity. Equations~\eqref{eq:multiplier}--\eqref{eq:uniformremainder}
+provide the corresponding exact statements. Code, the saved data, and
+regeneration instructions accompany this draft.
+
+\section{Physical consequence and limitations}
+
+The loss mechanism is a nonzero first-order modulation with zero average:
+weak shaping can increase the QFI at some amplitudes, but decreases it at
+others. The response filter is injective on nonconstant periodic profiles,
+so adding harmonics cannot eliminate the entire first-order modulation.
+This rules out every fixed weak bounded periodic same-axis profile,
+including profiles with jumps, as a route to improving the established
+uniform qubit readout.
+
+The result concerns one fixed interaction over the whole amplitude axis.
+Locally optimized preprocessing under noisy measurements, such as the
+finite-dimensional setting of Ref.~\cite{zhou2023}, has a different
+objective and does not furnish this uniform fixed-profile conclusion.
+Likewise, retaining an additional measurement record or querying several
+field modes would change the readout resources specified here.
+
+The radius in Eq.~\eqref{eq:radius} depends on $g$ and $L$.
+The multipliers can be small at low or high frequencies, so the present
+argument supplies no common radius over all periods or profiles.
+Finite-strength deformations, strength-dependent profiles, and interactions
+outside the same-axis functional form remain beyond the proposition.
+Their possible success is not established. The unrestricted fixed-unitary
+worst-amplitude optimization is not resolved by this result, and no
+experimental implementation or global estimation advantage is claimed.
+
+\section*{Use of AI tools}
+
+OpenAI Codex was used substantively for literature retrieval, derivation
+development, symbolic and numerical calculations, code preparation,
+manuscript drafting, and internal checking. Separate AI sessions
+reconstructed the source model and recomputed the restricted result.
+These checks are not external peer review or human scientific verification.
+Human scientific review and authorship confirmation remain pending for
+this local draft; the accompanying author handoff records the disclosure
+details that require confirmation.
+
+\section*{Data and code availability}
+
+The accompanying reproducibility material contains the analytic argument,
+numerical consistency-test code and saved outputs, figure-generation
+script, software versions, and build instructions. No experimental data
+were used.
+
+\bibliographystyle{apsrev4-2}
+\bibliography{manuscript/references}
+\end{document}

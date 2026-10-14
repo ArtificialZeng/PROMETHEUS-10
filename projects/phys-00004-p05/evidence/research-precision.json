@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "index": 0,
+      "dps50": {
+        "gain": "-0.6185674889839986299281285089493413318815",
+        "gap_in": "0.4320239929135969337801269",
+        "gap_out": "0.1858191925944163436223988",
+        "compatibility_residual": "0.0"
+      },
+      "dps80": {
+        "gain": "-0.6185674889839986299281285089493413318815111998960006692965556214150851",
+        "gap_in": "0.4320239929135969337801269",
+        "gap_out": "0.1858191925944163436223988",
+        "compatibility_residual": "0.0"
+      },
+      "gain_precision_difference": "1.11998960007e-41",
+      "binary64_gain": -0.6185674889839986
+    },
+    {
+      "index": 1588,
+      "dps50": {
+        "gain": "-0.0000000000291821969792564061459556345058509602668",
+        "gap_in": "0.4555640483130717297167472",
+        "gap_out": "0.455564048293707476324999",
+        "compatibility_residual": "1.437031414e-51"
+      },
+      "dps80": {
+        "gain": "-0.00000000002918219697925640614595563450585096026679597445866921699197172475846035",
+        "gap_in": "0.4555640483130717297167472",
+        "gap_out": "0.455564048293707476324999",
+        "compatibility_residual": "4.286093311e-82"
+      },
+      "gain_precision_difference": "4.02554133078e-51",
+      "binary64_gain": -2.9182434246877165e-11
+    },
+    {
+      "index": 5000,
+      "dps50": {
+        "gain": "-0.1251629589275035798685527685414244679113",
+        "gap_in": "0.000001513021358701173827858483",
+        "gap_out": "2.472562484617801814579252e-9",
+        "compatibility_residual": "0.0"
+      },
+      "dps80": {
+        "gain": "-0.1251629589275035798685527685414244679113398025285365133724617926540547",
+        "gap_in": "0.000001513021358701173827858483",
+        "gap_out": "2.472562484617801814579252e-9",
+        "compatibility_residual": "0.0"
+      },
+      "gain_precision_difference": "3.98025285365e-41",
+      "binary64_gain": -0.12516295892783003
+    }
+  ],
+  "limitations": "Same proposer, saved binary64 matrices; independently reconstructed channel and reflection pinching with mpmath eigensolver. Precision agreement is not a rigorous enclosure and does not establish the exact theorem. State trace and Hermiticity inherit binary64 input error; no positive-gain witness is claimed."
+}

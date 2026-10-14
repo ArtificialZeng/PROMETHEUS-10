@@ -1,0 +1,23 @@
+{
+  "method": "independent direct SU2 rotation and graph amplitudes; central differences",
+  "precision": "binary64, diagnostic only; exact certificates in w_jacobian.py",
+  "errors": [
+    {
+      "step": 0.01,
+      "maximum_entry_error": 2.0046784128119333e-06
+    },
+    {
+      "step": 0.001,
+      "maximum_entry_error": 2.0046899515402394e-08
+    },
+    {
+      "step": 0.0001,
+      "maximum_entry_error": 2.0058742167261556e-10
+    },
+    {
+      "step": 1e-05,
+      "maximum_entry_error": 4.871519854177109e-12
+    }
+  ],
+  "status": "pass"
+}

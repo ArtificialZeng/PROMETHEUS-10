@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/mac/6physics-research/projects/phys-00030-p01/evidence/research/r3-independent-check.py", line 124, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/mac/6physics-research/projects/phys-00030-p01/evidence/research/r3-independent-check.py", line 112, in main
+    assert all(contain),(q,contain)
+           ^^^^^^^^^^^^
+AssertionError: (-4, [True, False, False, True, False, False])

@@ -1,0 +1,39 @@
+{
+  "t": "1/20",
+  "alpha": "1/4",
+  "precision": 40,
+  "method": "Directed weighted Cauchy/Jensen polar cells, absolute-value chord across zeros, analytic full-plane tail",
+  "rows": [
+    {
+      "radial_R_cells": 800,
+      "quadrant_angular_cells": 64,
+      "R_cutoff": 100,
+      "interior_upper": "9.437261978982825404450614419399035404337",
+      "tail_upper": "1.465812699157115905474661658619680260748E-8",
+      "full_plane_upper": "9.437261993640952396021773474145651990534",
+      "vacuum_lower": "9.438921969658787550313897858087737769580",
+      "strict_violation": true,
+      "sign_cells_positive_negative_straddling": [
+        50034,
+        882,
+        284
+      ]
+    },
+    {
+      "radial_R_cells": 1600,
+      "quadrant_angular_cells": 128,
+      "R_cutoff": 100,
+      "interior_upper": "9.437179002198261220604749984876601844785",
+      "tail_upper": "1.465812699157115905474661658619680260748E-8",
+      "full_plane_upper": "9.437179016856388212175909039623218430982",
+      "vacuum_lower": "9.438921969658787550313897858087737769580",
+      "strict_violation": true,
+      "sign_cells_positive_negative_straddling": [
+        200393,
+        3786,
+        621
+      ]
+    }
+  ],
+  "elapsed_seconds": 18.259956791996956
+}

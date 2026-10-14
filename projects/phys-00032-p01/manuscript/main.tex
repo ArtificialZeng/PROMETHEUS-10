@@ -1,0 +1,402 @@
+\documentclass[aps,pra,reprint,superscriptaddress,nofootinbib,longbibliography,floatfix]{revtex4-2}
+
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\kb}{k_{\mathrm B}}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\asinh}{\operatorname{arsinh}}
+\newcommand{\Dkl}{D_{\mathrm{bin}}}
+\newcommand{\PhiF}{\Phi}
+
+\begin{document}
+
+\title{A resource-dependent thermodynamic uncertainty relation for three-port coherent conductors}
+
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+
+\date{\today}
+
+\begin{abstract}
+Thermodynamic uncertainty relations infer dissipation from the mean and fluctuations of a measured current.  For normal fermionic coherent transport without reciprocity, the known nonlinear relation has a universal coefficient smaller than one.  We prove that a concrete hardware restriction strictly strengthens that relation.  Consider stationary, elastic, number-preserving transport between exactly three reservoirs, with at most one propagating channel in each lead, arbitrary thermochemical biases, and an arbitrary magnetic field.  If $J$ is the magnitude of the particle current entering the measured lead, $C_2$ is its full count-variance rate, and $\sigma$ is the total heat entropy production of all reservoirs, then
+\begin{equation*}
+ \frac{\sigma}{\kb}\geq \frac{9}{10}J\,\asinh\!\left(\frac{J}{C_2}\right).
+\end{equation*}
+The result holds for every finite noninteracting normal sample with causal scattering leads and arbitrary energy dependence.  The proof reduces an arbitrary $3\times3$ unitary scatterer to six permutations while retaining the concavity correction of the full fermionic variance.  Transpositions obey a stronger coefficient-two inequality; the two directed three-cycles reduce to a scalar occupation inequality.  Analytic estimates cover all boundary and small-current regimes, and a complete rational interval certificate covers the remaining compact domain.  An exact witness bounds the unrestricted coefficient below $0.854$, proving a strict resource-dependent improvement.  We do not claim that $9/10$ is optimal or attainable.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Thermodynamic uncertainty relations (TURs) turn current fluctuations into lower bounds on entropy production and thereby enable thermodynamic inference from partial observations \cite{BaratoSeifert2015,Gingrich2016}.  In ballistic quantum conductors, Pauli blocking and energy filtering invalidate the classical quadratic TUR based on the full fermionic noise \cite{BrandnerHanazatoSaito2018}.  Recent nonlinear bounds restore an operational relation between the actual total entropy production, a single particle current, and its full second cumulant at arbitrary bias \cite{Potanina2021,BrandnerSaito2025,BrandnerSaito2025JPA}.  When microreversibility is not assumed, the known bound for an unrestricted number of terminals uses the binary-entropy constant $\psi_0\simeq0.85246$ \cite{BrandnerSaito2025}.  Other recent relations use linear-response probe conditions or an event-level forward/backward cost and thus address different physical premises \cite{Zhang2026,Tesser2026}.
+
+Here we ask whether elementary information about the scattering hardware can improve the entropy inference.  We answer this question affirmatively for three physical reservoirs with one channel per lead.  Our main result is the computer-assisted inequality
+\begin{equation}
+ \frac{\sigma}{\kb}\geq \frac{9}{10}J\asinh\!\left(\frac{J}{C_2}\right),
+ \label{eq:main}
+\end{equation}
+valid far from equilibrium and without time-reversal symmetry.  It involves the actual heat entropy produced by all three reservoirs, not an entropy assigned to individual counting events.  The coefficient is rigorously larger than the unrestricted $\psi_0$.  Thus knowing that a device is a single-channel three-port gives a strictly stronger inference from the same two measured statistics.
+
+The proof has three layers.  First, bistochasticity and a Birkhoff decomposition reduce the pointwise scattering problem to permutations.  The full count variance is concave, rather than affine, in the transmission matrix; keeping its exact concavity remainder is essential for extending the permutation bounds to coherent mixtures.  Second, the only difficult permutations are the two directed three-cycles.  Their total entropy contains an unavoidable return path through the unmeasured reservoirs, which produces a two-variable lower bound.  Third, elementary estimates settle all singular and near-equilibrium regimes, while directed interval arithmetic proves the remaining compact inequality.  Positive homogeneity and convexity then perform the energy integration without assuming a finite energy window.
+
+The coefficient $9/10$ is chosen because it admits a compact rigorous certificate with comfortable margins.  The analysis neither determines the best three-port coefficient nor constructs a saturating conductor.  It also does not extend to additional channels, superconducting counting, interactions, or driven transport; superconducting devices can display qualitatively different TUR behavior \cite{Mayo2026}.
+
+\section{Physical setting and statement}
+\label{sec:model}
+
+We consider a finite Hermitian single-particle sample connected to three normal reservoirs $a=0,1,2$.  At energy $E$, each lead supports at most one propagating mode and the scattering matrix $S(E)$ is unitary on the open channels.  A closed channel may be represented by an exactly reflected mode.  The reservoirs have finite chemical potentials $\mu_a$ and strictly positive temperatures $T_a$, with occupations
+\begin{equation}
+ f_a(E)=\frac{1}{1+\exp[(E-\mu_a)/(\kb T_a)]}.
+ \label{eq:fermi}
+\end{equation}
+We use $T_{ab}=|S_{ab}|^2$, where $b$ labels the incident and $a$ the outgoing lead.  The particle and heat currents entering the sample from reservoir $a$ are
+\begin{align}
+ J_a&=\frac{1}{h}\int\dd E\sum_bT_{ab}(f_a-f_b),\label{eq:curr}\\
+ Q_a&=\frac{1}{h}\int\dd E\,(E-\mu_a)\sum_bT_{ab}(f_a-f_b),\label{eq:heat}
+\end{align}
+and the physical entropy-production rate is
+\begin{equation}
+ \sigma=-\sum_a\frac{Q_a}{T_a}.
+ \label{eq:sigma}
+\end{equation}
+All reservoirs in Eq.~\eqref{eq:sigma} are retained.
+
+For the count at terminal 0, let $V_0$ be its channel projector and $F=\operatorname{diag}(f_0,f_1,f_2)$.  The long-time cumulant-generating rate is \cite{LevitovLesovik1993,BrandnerSaito2025JPA}
+\begin{equation}
+ \chi_0(s)=\frac{1}{h}\int\dd E\,
+ \log\det[1-F+F S^\dagger e^{-sV_0}S e^{sV_0}].
+ \label{eq:cgf}
+\end{equation}
+We set $J=|\chi_0'(0)|$ and $C_2=\chi_0''(0)$.  Thus $C_2$ is the count variance per unit time, with no extra factor of two from an electrical-noise convention.
+
+It is useful to remove the common measure $\dd E/h$ and work pointwise.  Put
+\begin{equation}
+ L(x)=\log\frac{x}{1-x},\qquad g(x)=x(1-x).
+\end{equation}
+The signed current density $j$, variance density $v$, and dimensionless entropy density $s$ are
+\begin{align}
+ j&=f_0-\sum_bT_{0b}f_b,\label{eq:jlocal}\\
+ v&=p_++p_--j^2,\label{eq:vlocal}\\
+ p_+&=f_0\sum_{b\ne0}T_{0b}(1-f_b),\qquad
+ p_-=(1-f_0)\sum_{b\ne0}T_{0b}f_b,\label{eq:pmp}\\
+ s&=\sum_aL(f_a)\left(f_a-\sum_bT_{ab}f_b\right).
+ \label{eq:slocal}
+\end{align}
+Equation~\eqref{eq:vlocal} is the full thermal-plus-partition variance obtained from Eq.~\eqref{eq:cgf}.  Moreover, $\sigma/\kb=\int(\dd E/h)s(E)$.
+
+Define the even, positively homogeneous function
+\begin{equation}
+ \PhiF(j,v)=j\,\asinh(j/v),\qquad v>0,
+ \label{eq:phi}
+\end{equation}
+with the lower-semicontinuous value $\PhiF(0,0)=0$.  Our result is the following.
+
+\paragraph*{Theorem.}
+For every conductor described above for which the integrated observables exist and $J,C_2,\sigma$ are positive and finite,
+\begin{equation}
+ \frac{\sigma}{\kb}\geq\frac{9}{10}\PhiF(J,C_2).
+ \label{eq:theorem}
+\end{equation}
+The statement includes arbitrary fixed thermochemical biases, broken time-reversal symmetry, reflection, arbitrary energy dependence, and both current directions.
+
+\section{Reduction to permutation scatterers}
+\label{sec:reduction}
+
+At a fixed energy, $T$ is doubly stochastic.  Hence it has a Birkhoff decomposition $T=\sum_r w_rP_r$ into the six $3\times3$ permutation matrices, with $w_r\geq0$ and $\sum_rw_r=1$ \cite{MarshallBook}.  This decomposition is only an algebraic device for a bound; it does not replace the coherent scatterer by an incoherent apparatus.
+
+The current $j$ and the activity $p_++p_-$ are affine in $T$.  If $j_r,v_r$ denote their values for $P_r$, direct substitution in Eq.~\eqref{eq:vlocal} gives
+\begin{equation}
+ v(T)=\sum_rw_rv_r+\sum_rw_rj_r^2-\left(\sum_rw_rj_r\right)^2
+ \geq\sum_rw_rv_r.
+ \label{eq:variance-concavity}
+\end{equation}
+The entropy $s$ is affine in $T$.  Meanwhile $\PhiF$ is jointly convex and decreases when $v$ increases.  Indeed, writing $\PhiF(j,v)=v h(j/v)$ with $h(x)=x\asinh x$,
+\begin{equation}
+ h''(x)=\frac{2+x^2}{(1+x^2)^{3/2}}>0,
+ \qquad
+ \partial_v\PhiF=-\frac{j^2}{v\sqrt{v^2+j^2}}\leq0.
+ \label{eq:convexity}
+\end{equation}
+Consequently, a bound $s(P_r)\geq c\PhiF(j_r,v_r)$ for all permutations implies
+\begin{align}
+ s(T)&\geq c\sum_rw_r\PhiF(j_r,v_r)\nonumber\\
+ &\geq c\PhiF\!\left(\sum_rw_rj_r,\sum_rw_rv_r\right)
+ \geq c\PhiF(j(T),v(T)).
+ \label{eq:mixture}
+\end{align}
+
+Permutations that fix terminal 0 have $j=v=0$ and nonnegative entropy.  A transposition of terminal 0 with a lead of occupation $b$, with $a=f_0$, has
+\begin{equation}
+ j=a-b,\qquad v=g(a)+g(b),\qquad
+ s=(a-b)[L(a)-L(b)].
+\end{equation}
+If $A=a(1-b)+b(1-a)$, then
+\begin{align}
+ \frac{|a-b|}{A}&=\tanh\frac{|L(a)-L(b)|}{2},\\
+ A^2-(a-b)^2&=4g(a)g(b)\leq v^2.
+\end{align}
+It follows that $|a-b|/v\leq\sinh(|L(a)-L(b)|/2)$ and therefore
+\begin{equation}
+ s\geq2\PhiF(j,v).
+ \label{eq:transposition}
+\end{equation}
+Only the two orientations of a three-cycle can set the coefficient in Eq.~\eqref{eq:theorem}.
+
+\section{The directed-cycle inequality}
+\label{sec:cycle}
+
+Relabel the two unmeasured reservoirs so that a directed cycle maps the predecessor occupations in the outgoing rows as $(a,b,c)\leftarrow(b,c,a)$, where $a=f_0$.  Then
+\begin{align}
+ j&=a-b,&v&=g(a)+g(b),\label{eq:cycle-jv}\\
+ s_3&=(a-b)L(a)+(b-c)L(b)\nonumber\\
+ &\hspace{2.2cm}+(c-a)L(c)\nonumber\\
+ &=\Dkl(b\Vert a)+\Dkl(c\Vert b)\nonumber\\
+ &\hspace{2.2cm}+\Dkl(a\Vert c),
+ \label{eq:cycle-s}
+\end{align}
+where
+\begin{equation}
+ \Dkl(p\Vert q)=p\log\frac pq+(1-p)\log\frac{1-p}{1-q}.
+\end{equation}
+The second cycle orientation is obtained by exchanging the two unmeasured labels.  Particle-hole conjugation $(a,b,c)\mapsto(1-a,1-b,1-c)$ leaves $s_3$ and $v$ invariant and reverses $j$, so it suffices to consider $a>b$.
+
+For fixed $a,b$, differentiation gives
+\begin{align}
+ \frac{\partial s_3}{\partial c}
+ &=L(c)-L(b)+\frac{c-a}{g(c)},\label{eq:dc}\\
+ \frac{\partial^2s_3}{\partial c^2}
+ &=\frac{c+a-2ac}{g(c)^2}>0.
+ \label{eq:d2c}
+\end{align}
+The first derivative is negative at $c=b$ and positive at $c=a$.  Thus the unique minimizer lies in $b<c<a$, and it is enough to bound this interval.
+
+Two standard information inequalities provide complementary estimates.  Let $u(p)=(\sqrt p,\sqrt{1-p})$.  The log-sum inequality yields
+\begin{equation}
+ \Dkl(p\Vert q)\geq-2\log[u(p)\cdot u(q)]
+ \geq\|u(p)-u(q)\|^2.
+\end{equation}
+Together with the Euclidean triangle inequality, the two return steps in Eq.~\eqref{eq:cycle-s} obey
+\begin{equation}
+ \Dkl(c\Vert b)+\Dkl(a\Vert c)\geq
+ H(a,b),
+ \label{eq:hellinger}
+\end{equation}
+where
+\begin{equation}
+ H(a,b)=1-\sqrt{ab}-\sqrt{(1-a)(1-b)}.
+\end{equation}
+Thus
+\begin{equation}
+ s_3\geq \Dkl(b\Vert a)+H(a,b).
+ \label{eq:surrogate}
+\end{equation}
+
+A second estimate controls small current.  Separating particle and hole terms in Eq.~\eqref{eq:cycle-s} produces two relative entropies of normalized cyclic triples.  Pinsker's inequality \cite{CoverThomas}, with $z=a+b+c$, gives
+\begin{equation}
+ s_3\geq2(a-b)^2\left(\frac1z+\frac1{3-z}\right)
+ =\frac{6(a-b)^2}{z(3-z)}.
+ \label{eq:pinsker}
+\end{equation}
+For completeness, the required Pinsker constant follows by log-sum projection to a binary partition and $\partial_p^2\Dkl(p\Vert q)=1/[p(1-p)]\geq4$.
+
+The central claim is
+\begin{equation}
+ s_3\geq\frac9{10}\PhiF(a-b,g(a)+g(b))
+ \quad (0<a,b,c<1).
+ \label{eq:cycle-bound}
+\end{equation}
+Its analytic exterior and certified compact interior are described next.
+
+\section{Analytic exterior and interval certificate}
+\label{sec:certificate}
+
+Put $d=a-b>0$ and $V=g(a)+g(b)$.  Five elementary estimates cover the singular boundaries and a neighborhood of the diagonal.
+
+First, if $a,b\leq1/20$, Eq.~\eqref{eq:pinsker} restricted to the particle part gives $s_3\geq d^2/(a+b)$.  Since $V\geq(19/20)(a+b)$ and $\PhiF(d,V)\leq d^2/V$, the coefficient is at least $19/20$.  Particle-hole symmetry covers $a,b\geq19/20$.
+
+Second, write $m=(a+b)/2$ and $z=3m+u$, where $|u|\leq d/2$ at the minimizing $c$.  Direct expansion gives
+\begin{equation}
+ z(3-z)\leq\frac92V+\frac94d^2+\frac32d.
+\end{equation}
+If $d/V\leq1/2$, using $d^2\leq d$ yields $z(3-z)\leq51V/8$.  Equation~\eqref{eq:pinsker} then implies
+\begin{equation}
+ s_3\geq\frac{16}{17}\frac{d^2}{V}
+ \geq\frac{16}{17}\PhiF(d,V)>\frac9{10}\PhiF(d,V).
+ \label{eq:small-ratio}
+\end{equation}
+
+The remaining three estimates treat $b\to0$, $a\to1$, and their joint corner.  Their explicit rational constants are collected in Appendix~\ref{app:boundaries}.  They establish Eq.~\eqref{eq:cycle-bound} outside the compact rectangle
+\begin{equation}
+ \mathcal R=\left[\frac1{20},1-10^{-6}\right]
+ \times\left[10^{-6},\frac{19}{20}\right],\qquad a>b,
+ \label{eq:rectangle}
+\end{equation}
+apart from the small-ratio region already covered by Eq.~\eqref{eq:small-ratio}.
+
+On the remainder of $\mathcal R$, we certify the stronger two-variable inequality
+\begin{equation}
+ \Dkl(b\Vert a)+H(a,b)-\frac9{10}\PhiF(d,V)\geq0.
+ \label{eq:certified-inequality}
+\end{equation}
+The rectangle is bisected at rational midpoints.  A leaf is accepted if it lies outside $a>b$, lies wholly in $d/V\leq1/2$, or has a nonnegative outward interval lower bound for Eq.~\eqref{eq:certified-inequality}.  Monotonicity bounds the last term from above by $\PhiF(d_{\max},V_{\min})$.  No sampled value is used to infer positivity.
+
+Table~\ref{tab:certificate} summarizes the complete cover.  A second implementation replays the rational tree using only fixed-point integer intervals at scale $2^{128}$, exact integer square roots, directed integer division, and the expansion
+\begin{align}
+ \log u&=2\sum_{n=0}^{M-1}\frac{q^{2n+1}}{2n+1}+R_M,
+ &q&=\frac{u-1}{u+1},\nonumber\\
+ 0&\leq R_M\leq\frac{2q^{2M+1}}{(2M+1)(1-q^2)},
+ \label{eq:logseries}
+\end{align}
+after range reduction to $1\leq u\leq2$, with $M=40$.  This checker verifies the exact partition tree and recomputes all positive leaves without importing the interval generator.  The smallest certified lower endpoint is larger than $6.6084\times10^{-6}$.
+
+\begin{table}[t]
+\caption{Complete rational cover of the compact occupation rectangle.  ``Small ratio'' invokes Eq.~\eqref{eq:small-ratio}; every ``interval positive'' leaf is recomputed by the integer checker.}
+\label{tab:certificate}
+\begin{ruledtabular}
+\begin{tabular}{lr}
+Leaf category & Number\\
+\hline
+Interval positive & 3393\\
+Analytic small ratio & 388\\
+Outside $a>b$ & 1\\
+Total & 3782\\
+Visited tree nodes & 7563\\
+Maximum depth & 33
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The analytic estimates, Eq.~\eqref{eq:surrogate}, and the complete interval cover prove Eq.~\eqref{eq:cycle-bound} for both cycle orientations and current signs.  Boundary occupations follow by lower semicontinuity; physical Fermi functions are strictly interior at every finite energy.
+
+\section{Energy integration and strict improvement}
+\label{sec:integration}
+
+Equations~\eqref{eq:transposition} and \eqref{eq:cycle-bound}, combined with Eq.~\eqref{eq:mixture}, establish the pointwise inequality
+\begin{equation}
+ s(E)\geq\frac9{10}\PhiF(j(E),v(E))
+ \label{eq:pointwise}
+\end{equation}
+for every $3\times3$ unitary scatterer.  This larger pointwise class contains every finite causal sample in the stated physical domain, so no realization of an abstract minimizer is required.
+
+Positive homogeneity and convexity imply the integral form of Jensen's inequality,
+\begin{equation}
+ \int\frac{\dd E}{h}\,\PhiF(j(E),v(E))
+ \geq\PhiF\!\left(\int\frac{\dd E}{h}j(E),
+                    \int\frac{\dd E}{h}v(E)\right).
+ \label{eq:integral-jensen}
+\end{equation}
+This statement does not require normalizing the infinite energy measure.  One may apply the supporting plane of $\PhiF$ at the finite integrated point and use Euler homogeneity.  Signed currents are integrated before taking the magnitude, so cancellations can only weaken the right-hand side.  Finite-temperature Fermi tails, bounded transmissions, and the stipulated finite observables justify the integrals.  Equations~\eqref{eq:pointwise} and \eqref{eq:integral-jensen} give Eq.~\eqref{eq:theorem}.
+
+To compare with the unrestricted result, define \cite{BrandnerSaito2025}
+\begin{equation}
+ \psi_0=\inf_{\substack{0<x,y<1\\x\ne y}}
+ \frac{\rho(x)-\rho(y)-\rho'(x)(x-y)}
+ {(x-y)\asinh\!\left[(x-y)/(x+y-x^2-y^2)\right]},
+ \label{eq:psi0}
+\end{equation}
+where $\rho(x)=-x\log x-(1-x)\log(1-x)$.  The exact rational choice $x=1/10$, $y=999/1000$ gives a directed enclosure
+\begin{multline}
+ 0.85395851552902
+ <\frac{\Dkl(y\Vert x)}{\PhiF(x-y,g(x)+g(y))}\\
+ <0.85395851552904<\frac9{10}.
+ \label{eq:psi-witness}
+\end{multline}
+Because Eq.~\eqref{eq:psi0} is an infimum, this one witness proves $\psi_0<9/10$ without requiring a rigorous enclosure of its numerical minimizer.  If $\kappa_3$ denotes the best coefficient in the three-port single-channel class, our theorem therefore yields
+\begin{equation}
+ \kappa_3\geq\frac9{10}>\psi_0.
+ \label{eq:strict}
+\end{equation}
+
+\section{Discussion}
+
+The strengthened coefficient comes from a physical resource constraint, not a redefinition of entropy or noise.  In a three-cycle, transport measured between occupations $a$ and $b$ must return through the third reservoir.  The return path contributes the two relative entropies bounded in Eq.~\eqref{eq:hellinger}.  For an unrestricted terminal network, analogous entropy can be diluted among additional paths and is discarded in the known universal proof.  With only three one-channel leads it can be retained uniformly.
+
+Equation~\eqref{eq:main} is directly an entropy-inference rule.  A measurement of one mean particle current and its full long-time variance, combined with independently known single-channel three-port hardware, gives a lower bound on the total dissipated heat entropy even at arbitrary bias and broken reciprocity.  It requires no heat-current measurement, reversed experiment, activity, or hidden probe.  It is stronger than the unrestricted rule while preserving the same observables.
+
+Several limitations are important.  We have not shown that $9/10$ is optimal, that it is saturated by any physical conductor, or that coefficient one holds.  The proof uses the rank-one measured projector and the six permutations of a $3\times3$ bistochastic matrix; additional terminals or channels require new ideas.  Interactions, inelastic scattering not represented within the stated elastic model, driving, and superconducting or Andreev counting lie outside the theorem.  Finally, the compact occupation inequality is computer-assisted.  Its proof is nevertheless finite and reproducible: every rational box, directed enclosure, and analytic branch is recorded, and a dissimilar integer-arithmetic implementation replays the full cover.
+
+\section*{Data availability}
+
+The certificate generator, complete rational leaf list, independent integer-interval checker, exact checker output, and auxiliary convention tests are supplied with the manuscript.  The accompanying reproducibility guide states the software environment and commands.  No proprietary data are used.
+
+\section*{Use of artificial intelligence}
+
+OpenAI Codex was used substantively in developing proof strategies, implementing and checking the interval calculations, screening literature, and drafting this manuscript.  Its outputs do not replace author accountability.  Before external submission, the named author must independently inspect the scientific argument, executable evidence, citations, and prose and must make all authorship and disclosure decisions.
+
+\appendix
+
+\section{Boundary estimates}
+\label{app:boundaries}
+
+This appendix records the three estimates used near $b=0$ and $a=1$.  They complete the analytic complement of the rectangle in Eq.~\eqref{eq:rectangle}.
+
+For $b\leq\beta=10^{-6}$ and $1/20\leq a\leq999/1000$, put $\epsilon=1-a$, $t=\sqrt\epsilon$, and $L=-\log\epsilon$.  The elementary inequality
+\begin{equation}
+ L+1-\sqrt\epsilon\geq
+ a\asinh(1/\epsilon)+\frac{143}{2560}a
+ \label{eq:tiny-b-key}
+\end{equation}
+follows from $\asinh(1/\epsilon)\leq\log[(2+\epsilon)/\epsilon]$, $-\log\epsilon\geq2(1-\epsilon)/(1+\epsilon)$, and $\log(2+\epsilon)\leq7/10+\epsilon/2$.  After multiplication by $(1+t^2)(1+t)$, the remaining polynomial is bounded because
+\begin{equation}
+ P(t)-\left(\frac3{10}-\frac7{10}t+\frac85t^2\right)
+ =t^2(1-t)\left(\frac12t^2+t+\frac15\right)\geq0,
+\end{equation}
+and the quadratic has minimum $143/640$.  Furthermore,
+\begin{align}
+ \Dkl(b\Vert a)&\geq(1-b)L-\rho(b),\\
+ H(a,b)&\geq1-\sqrt\epsilon-\sqrt b,\\
+ \PhiF(d,V)&\leq a\asinh(1/\epsilon).
+\end{align}
+Using $L<7$ in this range and $\rho(b)\leq b[\log(1/b)+1]<15\beta$, the total finite-$b$ loss is at most
+\begin{equation}
+ 7\beta+15\beta+\sqrt\beta=\frac{1022}{10^6}
+ <\frac{143}{51200}.
+\end{equation}
+Thus this region actually obeys $s_3\geq\PhiF(d,V)$.
+
+For the opposite corner $a\geq999/1000$ and $b\leq1/1000$, again set $\epsilon=1-a$.  Since $V\geq(999/1000)\epsilon$ and $d\leq1$,
+\begin{equation}
+ \PhiF(d,V)\leq-\log\epsilon+
+ \log\frac{2000999}{999000}.
+\end{equation}
+The binary divergence alone then gives
+\begin{multline}
+ s_3-\frac9{10}\PhiF(d,V)\geq
+ \frac{99}{1000}\log1000-\rho(1/1000)\\
+ {}-\frac9{10}\log\frac{2000999}{999000}
+ >0.0507781669405624.
+ \label{eq:corner-margin}
+\end{multline}
+
+Finally, if $a\geq1-10^{-6}$ and $1/1000\leq b\leq19/20$, then $-\log\epsilon>13$, $\rho(b)/(1-b)<4$, and $\asinh(1/b)<8$.  Therefore
+\begin{equation}
+ s_3-\frac9{10}\PhiF(d,V)
+ >(1-b)\left(13-4-\frac{36}{5}\right)>0.
+\end{equation}
+Together with the dilute/full, small-ratio, and corner regions in the main text, these cases cover every point outside the certified compact remainder.  All decimal inequalities in this appendix are also evaluated by the exact directed checker through Eq.~\eqref{eq:logseries}; they are not floating-point assumptions.
+
+\section{Certificate contents and verification}
+\label{app:repro}
+
+The generator stores each leaf as four rational endpoints, a depth, a branch label, and, for interval-positive leaves, its directed margin.  The exact initial rectangle is
+\begin{equation}
+ [1/20,999999/1000000]\times[1/1000000,19/20].
+\end{equation}
+The rational bisection rule always splits the wider coordinate, resolving ties in favor of $a$.  Hence the checker reconstructs the complete tree from the initial box and leaf dictionary; an omitted, duplicated, or orphaned box causes failure.  It verifies 7563 visited nodes and all 3782 leaves.
+
+The interval-positive calculation uses
+\begin{align}
+ \Dkl(b\Vert a)&=b\log(b/a)+(1-b)\log[(1-b)/(1-a)],\\
+ H(a,b)&=1-\sqrt{ab}-\sqrt{(1-a)(1-b)},
+\end{align}
+with every operation rounded outward.  For each box, $d$ is replaced by its maximum and $V$ by its positive minimum, an upper bound on $\PhiF$ by Eq.~\eqref{eq:convexity}.  The integer replay uses exact rational-to-fixed-point rounding at every conversion.  The logarithmic remainder in Eq.~\eqref{eq:logseries} is positive and is added only to the upper endpoint.  The reported lower margin, the strict witness in Eq.~\eqref{eq:psi-witness}, and the corner margin in Eq.~\eqref{eq:corner-margin} are therefore rigorous enclosures rather than displayed-precision tests.
+
+\bibliography{references}
+
+\end{document}

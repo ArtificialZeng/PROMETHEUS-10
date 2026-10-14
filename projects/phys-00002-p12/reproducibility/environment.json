@@ -1,0 +1,7 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.5-arm64-arm-64bit-Mach-O",
+  "dependencies": "Python standard library only for scientific replay; existing TeX distribution for typesetting",
+  "pdflatex": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "bibtex": "BibTeX 0.99e (TeX Live 2026)"
+}

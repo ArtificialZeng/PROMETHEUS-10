@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\dd}{D_{\mathrm{diag}}}
+\newtheorem{theorem}{Theorem}
+\title{Diagonal quantum discord under unital qubit noise:\\a relative-entropy proof for two-qubit states}
+\author{Xiaojian Zeng\\\small PBC School of Finance, Tsinghua University, 100190\\\small\texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that entropy-based, one-sided diagonal quantum discord cannot increase under a local unital qubit channel on a two-qubit state, provided the measured marginal is nondegenerate before and after the channel. This establishes the two-qubit, nondegenerate-marginal sector of the monotonicity conjecture of Liu, Takagi and Lloyd. The channel need not commute with marginal-eigenbasis dephasing. Instead, the image of the dephased input is fixed by the output dephasing and supplies an admissible relative-entropy comparison state. The discord loss separates exactly into a data-processing loss and a nonnegative comparison-state mismatch. The proof includes rank-deficient global states and imposes no lower bound on a positive marginal spectral gap. Degenerate marginals and general distance-based variants are outside the statement.
+\end{abstract}
+
+\section{The local-noise question}
+Diagonal quantum discord measures the information lost when a local measurement is restricted to the eigenbasis of the measured marginal. It avoids the measurement optimisation in ordinary quantum discord, but its measurement basis changes with the state. Liu, Takagi and Lloyd established monotonicity for several local channel classes and left the general qubit case as Conjecture~1 of Ref.~\cite{Liu2019}. Their probabilistic Hadamard example shows why an argument requiring commutation between the channel and marginal-eigenbasis dephasing does not cover all unital qubit channels.
+
+We address the entropy-based quantity on two qubits, with the measured marginal nondegenerate at both endpoints. The result covers arbitrary unital completely positive trace-preserving (CPTP) channels applied once to the measured qubit. It does not require a Markovian semigroup or a generator. Our contribution is a proof in this precise sector of the published conjecture, rather than a classification of commuting channels. A bounded literature search through 12 October 2026 identified no later proof of this exact statement; this is not an exhaustive priority determination.
+
+The ingredients are standard: relative-entropy contractivity, the pinching trace identity, and the common output eigenbasis of complementary qubit projectors. In particular, the last observation is already present in Eq.~(11) of Ref.~\cite{Liu2019}. Their combination gives a comparison-state argument even when commutation fails. The resource-destroying-map framework of Ref.~\cite{Liu2017} provides the background for distinguishing nongeneration, commutation and selective monotonicity.
+
+\section{Definitions and scope}
+Let $\rho$ be a positive semidefinite, trace-one operator on $\mathbb C^2\otimes\mathbb C^2$, with marginal $\rho_A=\Tr_B\rho$. Suppose
+\begin{equation}
+ \rho_A=aP_+ +bP_-,\qquad a+b=1,\qquad a\ne b,
+ \label{eq:marginal}
+\end{equation}
+where $P_\pm$ are orthogonal rank-one projections summing to $I_A$. For this input, define the fixed linear pinching channel
+\begin{equation}
+ \Delta(X)=\sum_{s=\pm}(P_s\otimes I_B)X(P_s\otimes I_B).
+ \label{eq:pinching}
+\end{equation}
+The one-sided diagonal discord is
+\begin{equation}
+ \dd(\rho)=S(\Delta\rho)-S(\rho),\qquad
+ S(x)=-\Tr x\log_2 x.
+ \label{eq:discord}
+\end{equation}
+As in Eq.~(8) of Ref.~\cite{Liu2019}, this equals $D(\rho\Vert\Delta\rho)$, where
+\begin{equation}
+ D(x\Vert y)=\Tr x(\log_2 x-\log_2 y)
+ \label{eq:relative}
+\end{equation}
+when $\supp x\subseteq\supp y$, and is infinite otherwise. Logarithms are restricted to the relevant supports and $0\log 0=0$. Entropies and relative entropies are in bits; all state and channel parameters are dimensionless.
+
+Let $\mathcal E$ be a unital CPTP qubit channel, put $\Phi=\mathcal E\otimes\id_B$, and write $\rho'=\Phi(\rho)$. If $\rho'_A$ is nondegenerate, its spectral projections define a second fixed pinching channel $\Delta'$. In $\dd(\rho')$ the pinching is $\Delta'$, not $\Delta$. Although each fixed pinching is linear, the assignment of a pinching to an arbitrary state is state dependent. We never apply data processing to that nonlinear assignment.
+
+\begin{theorem}\label{thm:main}
+For every two-qubit density operator $\rho$ and every unital CPTP qubit channel $\mathcal E$, if $\rho_A$ and $\mathcal E(\rho_A)$ are nondegenerate, then
+\begin{equation}
+ \dd\bigl((\mathcal E\otimes\id_B)(\rho)\bigr)\leq\dd(\rho).
+ \label{eq:main}
+\end{equation}
+With $\tau=\Delta\rho$ and $\sigma=\Phi(\tau)$, the loss is exactly
+\begin{align}
+ \dd(\rho)-\dd(\rho')
+ &=\bigl[D(\rho\Vert\tau)-D(\rho'\Vert\sigma)\bigr]
+ \nonumber\\
+ &\quad+D(\Delta'\rho'\Vert\sigma).
+ \label{eq:loss}
+\end{align}
+Both terms on the right are finite and nonnegative.
+\end{theorem}
+
+\section{Proof by an output comparison state}
+\subsection{Compatibility without commutation}
+Set $C=\mathcal E(P_+)$. Linearity and unitality give
+\begin{equation}
+ \mathcal E(P_-)=I_A-C,\qquad
+ \rho'_A=bI_A+(a-b)C.
+ \label{eq:affine}
+\end{equation}
+Since $a\ne b$ and $\rho'_A$ is nondegenerate, $C$ has the same spectral projections as $\rho'_A$, up to interchange. In the input eigenbasis,
+\begin{equation}
+ \tau=P_+\otimes B_+ +P_-\otimes B_-,\qquad
+ B_s=\langle s|\rho|s\rangle\geq0.
+\end{equation}
+Consequently
+\begin{equation}
+ \sigma=C\otimes B_+ +(I_A-C)\otimes B_-,\qquad
+ \Delta'\sigma=\sigma.
+ \label{eq:compatibility}
+\end{equation}
+This uses the common output eigenbasis already identified in Ref.~\cite{Liu2019}; it places the full comparison state in the output block algebra. It does not assert $\sigma=\Delta'\rho'$. In fact, those two states can differ when channel/dephasing commutation fails. They nevertheless have the same measured marginal, $\sigma_A=\rho'_A$.
+
+\subsection{The pinching identity and singular states}
+For any fixed orthogonal pinching $L$ and density operator $y$ satisfying $Ly=y$ and $\supp x\subseteq\supp y$, the trace pairing gives
+\begin{equation}
+ D(x\Vert y)=S(Lx)-S(x)+D(Lx\Vert y).
+ \label{eq:pythagorean}
+\end{equation}
+For positive definite $y$, $\log y$ is block diagonal, so
+$\Tr x\log_2 y=\Tr Lx\log_2 y$; subtracting the definitions proves the identity. This is the familiar relative-entropy minimisation over the fixed block algebra. Nonnegativity implies that $Lx$ is a minimiser, and taking $y=Lx$ gives $D(x\Vert Lx)=S(Lx)-S(x)$.
+
+For completeness, all support conditions in our application can be checked without assuming full rank. Let $N=(P_+-P_-)\otimes I_B$. Then
+\begin{equation}
+ \tau=\tfrac12(\rho+N\rho N),\qquad
+ \rho\leq2\tau,\qquad \rho'\leq2\sigma.
+ \label{eq:domination}
+\end{equation}
+The last inequality follows from positivity of $\Phi$. It implies $\supp\rho'\subseteq\supp\sigma$. Because $\sigma$ is block diagonal under $\Delta'$, its support projection is also block diagonal; therefore $\supp\Delta'\rho'\subseteq\supp\sigma$. The output two-block pinching also gives $\rho'\leq2\Delta'\rho'$. Hence all relative entropies below are finite.
+
+More generally, for the identity~\eqref{eq:pythagorean}, a block-diagonal $y$ has a block-diagonal kernel projector. Support inclusion for $x$ therefore implies support inclusion for $Lx$. Replace $y$ by $(y+\epsilon I)/(1+\epsilon d)$, where $d$ is the total Hilbert-space dimension, use the trace identity, and take $\epsilon\downarrow0$. On the common support the relative entropies converge to their finite values, giving~\eqref{eq:pythagorean} for singular $y$ as well. The same pinching domination ensures that $D(x\Vert Lx)$ is finite.
+
+\subsection{Data processing and the exact loss}
+Apply CPTP data processing to the pair $(\rho,\tau)$:
+\begin{equation}
+ D(\rho'\Vert\sigma)\leq D(\rho\Vert\tau)=\dd(\rho).
+ \label{eq:dpi}
+\end{equation}
+Relative-entropy contractivity is the standard premise of the commuting-map monotonicity argument in Refs.~\cite{Liu2019,Liu2017}; here it is applied only to the linear channel $\Phi$. Equation~\eqref{eq:compatibility} permits the use of~\eqref{eq:pythagorean} with $L=\Delta'$:
+\begin{equation}
+ D(\rho'\Vert\sigma)=\dd(\rho')+D(\Delta'\rho'\Vert\sigma)
+ \geq\dd(\rho').
+ \label{eq:output}
+\end{equation}
+Combining~\eqref{eq:dpi} and~\eqref{eq:output} proves~\eqref{eq:main}. Subtraction gives~\eqref{eq:loss}. Its first term is nonnegative by data processing and its second by relative-entropy nonnegativity. This completes the proof.
+
+\section{Interpretation and limitations}
+The first term in~\eqref{eq:loss} is the information lost by processing the input/comparison-state pair. The second measures the difference between the output pinching and the channel image of the input pinching. Thus noncommutation contributes a nonnegative mismatch without permitting this observable to increase. Equality in~\eqref{eq:main} requires both terms to vanish; no classification of equality states or channels is asserted.
+
+The theorem answers whether this easily computed quantum-correlation quantity can grow under the specified local unital noise: it cannot. The measurement axis may rotate or the marginal gap may shrink, but the comparison state remains in the correct output block algebra. Unitality supplies the complementary images in~\eqref{eq:affine}; trace preservation alone does not supply that relation. Complete positivity ensures physical admissibility with the spectator qubit present. The proof covers arbitrary complex states, rank-deficient states and channel-boundary cases, with no perturbative order or numerical error entering the result.
+
+We retain the two-qubit scope stated in Theorem~\ref{thm:main}. No value is assigned at a degenerate measured marginal, and no arbitrary eigenbasis is chosen there. Arbitrarily small positive gaps are allowed, but an exactly zero gap is outside the theorem. The result does not settle the separate commuting-channel classification question in Ref.~\cite{Liu2019}, nor monotonicity for arbitrary contractive-distance replacements of the entropy-based discord. It also makes no claim about nonunital noise or optimised discord.
+
+\section*{Reproducibility and AI-assisted methods}
+The conclusion is analytic. Supplementary symbolic and numerical checks, together with code, saved inputs, environment information and regeneration instructions, accompany this local draft. Finite scans and agreement at increased precision serve as checks and are not interval certificates or a proof of the universal inequality.
+
+OpenAI Codex was used for literature discovery, proof development and checking, supplementary calculation code, and manuscript drafting. A separate AI session checked the scientific argument using a separately constructed calculation. These checks are not external peer review. The argument above is self-contained and the supplementary implementation permits replay without an AI tool; human scientific assessment remains pending.
+
+\section*{Acknowledgements and AI disclosure}
+OpenAI Codex materially contributed to the research and preparation described above. The exact underlying model version was not independently recorded in the available project metadata. Human author verification, critical revision of AI-assisted text and calculations, reference validation, and acceptance of responsibility for the content have not yet been completed for this local draft. This disclosure must be updated to reflect the review actually performed before submission.
+
+\section*{Data availability}
+The accompanying reproducibility files contain the supplementary scripts and numerical inputs. No experimental data were collected. A public repository or supplement location has not yet been assigned.
+
+\bibliographystyle{unsrt}
+\bibliography{manuscript/references}
+\end{document}

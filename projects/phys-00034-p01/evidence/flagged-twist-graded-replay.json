@@ -1,0 +1,128 @@
+{
+  "method": "full graded two-register factor product, no string-oracle import",
+  "coverage": "m=1,2; alpha=pi/4,0.19,1.17; q=0.25,0.05,0.6; phases=1,i,-1; both branches",
+  "records": [
+    {
+      "m": 1,
+      "N": 6,
+      "alpha": 0.7853981633974483,
+      "q": 0.25,
+      "relative_phase": "1",
+      "graded_F_real": 0.8437499999999999,
+      "graded_F_imag": 0.0,
+      "formula_F": 0.84375,
+      "absolute_difference": 1.1102230246251565e-16,
+      "probabilities": [
+        0.7499999999999999,
+        0.25000000000000006
+      ],
+      "branch_F": [
+        1.0,
+        0.7500000000000002
+      ],
+      "Delta_diagnostic": -0.09797851868245244
+    },
+    {
+      "m": 1,
+      "N": 6,
+      "alpha": 0.19,
+      "q": 0.05,
+      "relative_phase": "1j",
+      "graded_F_real": 0.9950126526946794,
+      "graded_F_imag": 0.0,
+      "formula_F": 0.9950126526946789,
+      "absolute_difference": 5.551115123125783e-16,
+      "probabilities": [
+        0.9499999999999998,
+        0.05
+      ],
+      "branch_F": [
+        1.0,
+        0.9656045013426138
+      ],
+      "Delta_diagnostic": -0.0032497782531154245
+    },
+    {
+      "m": 1,
+      "N": 6,
+      "alpha": 1.17,
+      "q": 0.6,
+      "relative_phase": "-1",
+      "graded_F_real": 0.8606282521024372,
+      "graded_F_imag": 0.0,
+      "formula_F": 0.8606282521024373,
+      "absolute_difference": 1.1102230246251565e-16,
+      "probabilities": [
+        0.4,
+        0.5999999999999999
+      ],
+      "branch_F": [
+        1.0,
+        0.8709520852800348
+      ],
+      "Delta_diagnostic": -0.06719164185668308
+    },
+    {
+      "m": 2,
+      "N": 10,
+      "alpha": 0.7853981633974483,
+      "q": 0.25,
+      "relative_phase": "1",
+      "graded_F_real": 0.7441406249999999,
+      "graded_F_imag": 0.0,
+      "formula_F": 0.744140625,
+      "absolute_difference": 1.1102230246251565e-16,
+      "probabilities": [
+        0.7499999999999999,
+        0.25
+      ],
+      "branch_F": [
+        1.0,
+        0.5625
+      ],
+      "Delta_diagnostic": -0.15168421368691654
+    },
+    {
+      "m": 2,
+      "N": 10,
+      "alpha": 0.19,
+      "q": 0.05,
+      "relative_phase": "1j",
+      "graded_F_real": 0.9909856433347282,
+      "graded_F_imag": 0.0,
+      "formula_F": 0.9909856433347274,
+      "absolute_difference": 7.771561172376096e-16,
+      "probabilities": [
+        0.9499999999999998,
+        0.049999999999999996
+      ],
+      "branch_F": [
+        1.0,
+        0.9323920530131168
+      ],
+      "Delta_diagnostic": -0.0055551370553569655
+    },
+    {
+      "m": 2,
+      "N": 10,
+      "alpha": 1.17,
+      "q": 0.6,
+      "relative_phase": "-1",
+      "graded_F_real": 0.7527294836930989,
+      "graded_F_imag": 0.0,
+      "formula_F": 0.7527294836930989,
+      "absolute_difference": 0.0,
+      "probabilities": [
+        0.4,
+        0.6000000000000001
+      ],
+      "branch_F": [
+        1.0,
+        0.7585575348536404
+      ],
+      "Delta_diagnostic": -0.11824738936925461
+    }
+  ],
+  "maximum_parent_abs_difference": 7.771561172376096e-16,
+  "limitations": "Finite floating diagnostics support convention checks; exact N=34 proof uses stable derivation and the separate exact local-string kernel contraction."
+}

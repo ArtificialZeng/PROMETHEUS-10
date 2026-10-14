@@ -1,0 +1,676 @@
+{
+  "at": "2026-10-14T17:39:47.998465+00:00",
+  "record_type": "Actual selected scientific replay of public derivative in isolated scratch copies",
+  "passed": 35,
+  "total": 35,
+  "formula_changes": false,
+  "scope": "Selected replay checks, not a new independent scientific audit or a proof of global original questions. Local research inputs and public inputs are unchanged by these scratch runs. No new claims of precision, convergence or certification beyond the programs documented scope.",
+  "initial_entry_order_failure": {
+    "id": "phys-00027-p01",
+    "reason": "Supervisor first omitted the documented input-generation prerequisites. Original files were complete; the documented sequence passed. Original failure retained locally."
+  },
+  "projects": [
+    {
+      "id": "phys-00002-p04",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "code/reproduce_manuscript.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.196
+        }
+      ]
+    },
+    {
+      "id": "phys-00002-p08",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/run_exact_checks.py",
+            "--output-dir",
+            "replay-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 21.015
+        }
+      ]
+    },
+    {
+      "id": "phys-00002-p10",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/run_all.py",
+            "--output",
+            "build/reproduction-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 26.677
+        }
+      ]
+    },
+    {
+      "id": "phys-00002-p12",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/check.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.866
+        }
+      ]
+    },
+    {
+      "id": "phys-00002-p13",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research/spectral-envelope-check.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 1.987
+        }
+      ]
+    },
+    {
+      "id": "phys-00003-p07",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "build/replay/check-feshbach.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.131
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "build/replay/check-rational-functions.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.071
+        }
+      ]
+    },
+    {
+      "id": "phys-00003-p10",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/run_consistency_checks.py",
+            "--output",
+            "build/replay-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 3.037
+        }
+      ]
+    },
+    {
+      "id": "phys-00004-p05",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research-check.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 4.521
+        }
+      ]
+    },
+    {
+      "id": "phys-00004-p06",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproduce_bundle.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 168.931
+        }
+      ]
+    },
+    {
+      "id": "phys-00004-p08",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research-pass1-check.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 1.714
+        }
+      ]
+    },
+    {
+      "id": "phys-00004-p09",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research/pass2-8ac137aacbe0/replay_curvature.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 12.849
+        }
+      ]
+    },
+    {
+      "id": "phys-00005-p05",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "code/certify_k4.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.633
+        }
+      ]
+    },
+    {
+      "id": "phys-00005-p06",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/replay.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 2.381
+        }
+      ]
+    },
+    {
+      "id": "phys-00007-p05",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/replay.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.234
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research-check.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 3.926
+        }
+      ]
+    },
+    {
+      "id": "phys-00007-p06",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/verify-five-state-certificate.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 2.277
+        }
+      ]
+    },
+    {
+      "id": "phys-00007-p09",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/check_w_cubic_exact.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.365
+        }
+      ]
+    },
+    {
+      "id": "phys-00007-p14",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/check_joint_tail.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.525
+        }
+      ]
+    },
+    {
+      "id": "phys-00007-p19",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "manuscript/check_certificate.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.081
+        }
+      ]
+    },
+    {
+      "id": "phys-00008-p03",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "manuscript/reproduce_exact.py",
+            "--output",
+            "build/replay-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 6.199
+        }
+      ]
+    },
+    {
+      "id": "phys-00009-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/compare_inputs.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.134
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/reproduce_baseline.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.624
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research_hypercube_check.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 11.049
+        }
+      ]
+    },
+    {
+      "id": "phys-00013-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/check_support.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 4.633
+        }
+      ]
+    },
+    {
+      "id": "phys-00014-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "manuscript/run_reproducibility.py",
+            "--output",
+            "replay-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 3.499
+        }
+      ]
+    },
+    {
+      "id": "phys-00015-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/run_checks.py",
+            "--suite",
+            "all",
+            "--output",
+            "replay-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 84.158
+        }
+      ]
+    },
+    {
+      "id": "phys-00016-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/certify.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.348
+        }
+      ]
+    },
+    {
+      "id": "phys-00018-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/replay.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 6.321
+        }
+      ]
+    },
+    {
+      "id": "phys-00024-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/run_checks.py",
+            "--output",
+            "build/replay-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 3.809
+        }
+      ]
+    },
+    {
+      "id": "phys-00027-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/reproduce/input_a.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 1.681
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/reproduce/input_b.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 1.239
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/reproduce/check_reproduction.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 6.551
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research/pass3/verify_positive_region.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 1.407
+        }
+      ]
+    },
+    {
+      "id": "phys-00029-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/run_fan.py",
+            "--output",
+            "build/fan-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.51
+        }
+      ]
+    },
+    {
+      "id": "phys-00030-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/check_certificate.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 1.444
+        }
+      ]
+    },
+    {
+      "id": "phys-00032-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research/check_certificate_integer.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 9.474
+        }
+      ]
+    },
+    {
+      "id": "phys-00034-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/run_checks.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 3.988
+        }
+      ]
+    },
+    {
+      "id": "phys-00035-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "reproducibility/replay_endpoint.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 10.324
+        }
+      ]
+    },
+    {
+      "id": "phys-00036-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research-reparam-test.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 0.365
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "evidence/research-structural-tests.py"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 3.83
+        }
+      ]
+    },
+    {
+      "id": "phys-00037-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "supplement/run_checks.py",
+            "--output-dir",
+            "replay-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 6.891
+        }
+      ]
+    },
+    {
+      "id": "phys-00040-p01",
+      "actual_scratch_replay": true,
+      "commands": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "repro/run_beam_checks.py",
+            "--output-dir",
+            "checks-new"
+          ],
+          "exit_code": 0,
+          "status": "completed",
+          "seconds": 1.956
+        }
+      ]
+    }
+  ]
+}

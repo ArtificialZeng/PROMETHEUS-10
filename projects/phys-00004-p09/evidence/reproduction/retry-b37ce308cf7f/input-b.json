@@ -1,0 +1,28 @@
+{
+  "representation": "B: separately derived coefficient blocks, reversed BS:AR cut, column Gram and SVD",
+  "source": "Independent same-agent pass from the rendered arXiv:2608.28897v1 p.2 and p.7 and quant-ph/0202044v3 p.8; no read of A data or result in B implementation",
+  "source_files": ["supervisor-inputs/purification-primary/2608.28897v1.pdf", "supervisor-inputs/purification-primary/source-page2.png", "evidence/reproduction/primary-appendix-a.png", "supervisor-inputs/purification-primary/quant-ph-0202044v3.pdf", "evidence/reproduction/primary-example-1.png"],
+  "amplitude_variables": {"x00": "sqrt(p00)", "x01": "sqrt(p01)", "x10": "sqrt(p10)", "x11": "sqrt(p11)"},
+  "domain": "All xij are real nonnegative with sum xij**2=1; occupied auxiliary outcome vectors are normalized and mutually orthogonal.",
+  "logical_order": "B-side outcome first; full physical order B,A and environmental order S,R.",
+  "coefficient_row_basis": ["B0 S0", "B0 S1", "B1 S0", "B1 S1"],
+  "coefficient_column_basis": ["A0 R0", "A0 R1", "A1 R0", "A1 R1"],
+  "coefficient_matrix": [
+    ["x00", "0", "0", "x10"],
+    ["0", "0", "0", "0"],
+    ["0", "0", "0", "0"],
+    ["x01", "0", "0", "x11"]
+  ],
+  "logical_gram": [
+    ["x00**2+x10**2", "x00*x01+x10*x11"],
+    ["x00*x01+x10*x11", "x01**2+x11**2"]
+  ],
+  "characteristic_polynomial": "z**2-z+(x00*x11-x01*x10)**2 on the normalized domain",
+  "block_bound": "Let K_ij=xij*Phi_ij with Frobenius norm(Phi_ij)=1. For a block vector w=(w0,w1), norm((K w)_i)<=sum_j xij*norm(wj). Squaring and summing gives norm(K w)<=norm(M)*norm(w). Hence largest Schmidt weight<=norm(M)**2.",
+  "basis_map": "K_B=transpose(K_A), not adjoint, since pure-ket coefficients are transposed by swapping the two sides. G_A=M*M^T, G_B=M^T*M are different matrices with identical nonzero spectra. Physical index B,A -> A,B uses [0,2,1,3].",
+  "two_copy_map": "Logical index i=2*i1+i2 and j=2*j1+j2. K_A[(i,r),(j,s)] maps to K_B[(j,s),(i,r)]. Source order A1 B1 A2 B2 is permuted to A1 A2 B1 B2 by swapping axes 1 and 2; environment labels follow the same grouping.",
+  "entropy_convention": "Base 2; Schmidt weights are singular values squared, never singular values themselves.",
+  "derivation_file": "evidence/reproduction/derivation-b.md",
+  "implementation_file": "evidence/reproduction/reconstruct_b.py",
+  "independence_limit": "Both passes were by this one worker. Same primary papers, mathematical problem and benchmark labels were shared; no fresh referee or separate agent is claimed."
+}

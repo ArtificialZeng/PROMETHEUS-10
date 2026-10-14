@@ -1,0 +1,12 @@
+{
+  "N": 9,
+  "convention": "k=m+j; normalized |D9^k>; |1> is spin up",
+  "magnetic_terms": [
+    {"twice_m": -9, "coefficient": "-1/sqrt(6)"},
+    {"twice_m": -3, "coefficient": "1/sqrt(3)"},
+    {"twice_m": 3, "coefficient": "1/sqrt(3)"},
+    {"twice_m": 9, "coefficient": "-1/sqrt(6)"}
+  ],
+  "origin": "Supervisor-proposed phase alteration of the support in Bjork et al. 1503.03446v3 Table I; no cached marginal or proposed answer is an input."
+}
+

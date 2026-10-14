@@ -1,0 +1,642 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,graphicx}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{doi}
+\hypersetup{pdftitle={A finite nonreciprocal counterexample to a noise-matched current large-deviation bound},pdfauthor={Xiaojian Zeng},pdfsubject={Coherent transport and current large deviations}}
+\newcommand{\kb}{k_{\mathrm B}}
+\newcommand{\ee}{\varepsilon}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\asinh}{\operatorname{arsinh}}
+\newcommand{\atanh}{\operatorname{artanh}}
+\newcommand{\KL}{D}
+\newcommand{\ellambda}{\lambda_{\mathrm q}}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\title{A finite nonreciprocal counterexample to a noise-matched\newline current large-deviation bound}
+\author{Xiaojian Zeng\\[3pt]
+\small PBC School of Finance, Tsinghua University, 100190\\
+\small\texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+An established thermodynamic bound on the variance of a particle current in a
+coherent conductor with broken reciprocity suggests a corresponding extension
+of the reciprocal large-deviation bound. We formulate the proposed extension
+by matching its curvature to that variance inequality and give a
+computer-assisted counterexample. The conductor is a stationary Hermitian
+387-dot sample attached to three normal tight-binding leads and three fixed
+Fermi reservoirs at a common positive temperature. Its contact self-energies,
+finite filter width and full propagating band are retained exactly. At the
+interior reversal current $j=-J$, a complete interval integration and a
+fixed-field Fenchel argument establish a rate-function violation greater than
+$0.019\ee/h$, where $\ee=\kb T_{\mathrm{ref}}$. A conservative analytic bound
+on the exact dissipation constant removes any reliance on its numerical
+minimizer. The arithmetic verification includes an exhaustive check of every
+Taylor remainder used in the fixed certificate, after an intermediate
+magnitude-bound defect was identified. The result excludes this particular
+noise-matched single-current shape; it leaves the reciprocal theorem, the
+nonreciprocal variance bound and the alternative joint-current question intact.
+\end{abstract}
+
+\section{The proposed extension and its scope}
+
+Mean dissipation constrains fluctuations in coherent fermionic transport, but
+the constraint depends on the observable and on reciprocity. Brandner and
+Saito proved a thermodynamic upper bound on the particle-current rate function
+when the transmission coefficients are symmetric
+\cite{BrandnerSaitoJPA2025}. Their separate variance inequality applies also
+when this symmetry is broken \cite{BrandnerSaitoPRL2025}. In the perspectives
+section of the final large-deviation paper, they propose inserting the
+nonreciprocal dissipation factor into the full bound so as to recover the
+variance inequality. They also raise a distinct possibility involving the
+joint rate function of all independent currents.
+
+The first suggestion is qualitative. We therefore state explicitly the
+curvature-matching interpretation tested here. Let $J>0$ be an oriented
+single-terminal mean particle current and let $\sigma>0$ be the actual total
+reservoir entropy-production rate. Write
+\begin{align}
+ R_\psi&=\coth\!\left(\frac{\sigma}{2\psi\kb J}\right),\qquad c_\psi=JR_\psi,
+ \label{eq:R}\\
+ B_\psi(j)&=(c_\psi+j)\log\frac{c_\psi+j}{c_\psi+J}
+ +(c_\psi-j)\log\frac{c_\psi-j}{c_\psi-J}.
+ \label{eq:B}
+\end{align}
+The assertion is
+\begin{equation}
+ I(j)\le B_{\psi_0}(j),\qquad -c_{\psi_0}<j<c_{\psi_0},
+ \label{eq:assertion}
+\end{equation}
+for every stationary elastic noninteracting normal coherent conductor, every
+finite number of leads and channels, and all fixed finite reservoir chemical
+potentials and positive temperatures for which the steady integrals exist.
+No transmission reciprocity is imposed. Equation~\eqref{eq:assertion} is our
+precise formalization of the first suggestion, rather than a formula quoted
+verbatim as an established result.
+
+The constant is the exact infimum defined in the supplemental material of
+Ref.~\cite{BrandnerSaitoPRL2025}:
+\begin{equation}
+ \psi_0=\inf_{\substack{0<x,y<1\\x\ne y}}
+ \frac{\rho(x)-\rho(y)-\rho'(x)(x-y)}
+ {(x-y)\asinh\!\bigl((x-y)/(x+y-x^2-y^2)\bigr)},
+ \quad \rho(x)=-x\log x-(1-x)\log(1-x).
+ \label{eq:psi}
+\end{equation}
+Continuous limiting values are understood. We do not replace this infimum
+by a rounded decimal. If $C_2=\chi''(0)$ is the count-variance rate, the
+published nonreciprocal noise inequality reads
+\begin{equation}
+ \frac{C_2}{J}\sinh\!\left(\frac{\sigma}{\psi_0\kb J}\right)\ge1.
+ \label{eq:noise}
+\end{equation}
+Indeed, $B_\psi''(J)=\sinh[\sigma/(\psi\kb J)]/J$, so
+\eqref{eq:R} gives the curvature matching in this ansatz. The reciprocal
+theorem instead uses $R=\coth[\sigma/(4\kb J)]$; it is not being tested
+outside its hypotheses.
+
+Our counterexample uses all reservoir heats in $\sigma$. This matters because
+the proved nonreciprocal bound involving a partial dissipation in
+Ref.~\cite{BrandnerSaitoJPA2025} does not permit that quantity to be replaced
+by total dissipation without the additional symmetry premise. Bounds on
+arbitrary-current precision based on forward-backward event entropy
+\cite{TesserSplettstoesser2026} use another input and do not supply
+\eqref{eq:assertion}. A bounded primary-literature and version check on
+13 October 2026 identified no later resolution of the precise assertion
+above. This is not an exhaustive priority claim.
+
+\section{Counting conventions and a decisive fixed-field test}
+
+At energy $E$, $S_{ab}$ maps the incident channel of lead $b$ to the outgoing
+channel of lead $a$, and $\mathcal T_{ab}=|S_{ab}|^2$ in our one-channel
+sample. The extracted-particle current and the heat injected into the sample
+are
+\begin{align}
+ J_a&=\frac1h\int_0^\infty\!\dd E\sum_b
+       \mathcal T_{ab}(f_a-f_b),\label{eq:J}\\
+ Q_a&=\frac1h\int_0^\infty\!\dd E\sum_b
+       \mathcal T_{ab}(f_a-f_b)(E-\mu_a),\qquad
+ \sigma=-\sum_a\frac{Q_a}{T_a},\label{eq:entropy}\\
+ f_a(E)&=\frac{1}{1+\exp[(E-\mu_a)/(\kb T_a)]}.
+\end{align}
+Here $h$ is Planck's constant. For $F=\operatorname{diag}(f_a)$ and the
+channel projector $V_0$, the long-time cumulant-generating rate and its
+Legendre--Fenchel transform are
+\begin{align}
+ \chi_0(s)&=\frac1h\int_0^\infty\!\dd E\,
+ \log\det[\mathbb I-F+F S^\dagger e^{-sV_0}S e^{sV_0}],\label{eq:CGF}\\
+ I_0(j)&=\sup_{s\in\mathbb R}\{sj-\chi_0(s)\}.
+ \label{eq:LF}
+\end{align}
+Thus $s$ is dimensionless, $J,\chi,I$ have units of inverse time and
+$\sigma$ has units of entropy per time. There is no extra factor of two
+from an electrical-noise spectral-density convention.
+
+For one counted channel the energy-resolved count $X$ takes values
+$-1,0,1$. Direct conditioning on the incoming occupation of that channel,
+or the Slater-determinant scattering probabilities, gives
+\begin{align}
+ p_+&=f_0\sum_{b\ne0}\mathcal T_{0b}(1-f_b),&
+ p_-&=(1-f_0)\sum_{b\ne0}\mathcal T_{0b}f_b,&
+ p_0&=1-p_+-p_-,\label{eq:marginal}\\
+ M(s)&=p_0+p_+e^s+p_-e^{-s}.\label{eq:M}
+\end{align}
+These probabilities reduce the determinant in \eqref{eq:CGF}; they are not
+an independent stochastic replacement of the scattering model.
+
+The reversal current gives a particularly economical test. For $J,\sigma>0$
+and finite positive $\psi$, $c_\psi>J$ and direct substitution yields
+\begin{equation}
+ B_\psi(-J)=2J\log\frac{c_\psi+J}{c_\psi-J}
+           =\frac{2\sigma}{\psi\kb}.
+ \label{eq:reversalB}
+\end{equation}
+Appendix~\ref{app:psi} proves the exact conservative bound
+$1/2\le\psi_0\le1$. Fenchel's inequality at the fixed field $s=-24$
+therefore implies
+\begin{equation}
+ I_0(-J)-B_{\psi_0}(-J)
+ \ge24J-\chi_0(-24)-\frac{4\sigma}{\kb}
+ \equiv\Delta.
+ \label{eq:Delta}
+\end{equation}
+A positive enclosure of $\Delta$, together with $J,\sigma>0$, proves a
+strict rate-function violation at an interior current. No numerical saddle,
+rounded dissipation constant or assumption about equality in
+\eqref{eq:LF} is required.
+
+\section{A finite stationary normal conductor}
+\label{sec:model}
+
+Fix any $T_{\mathrm{ref}}>0$ and use the energy unit
+$\ee=\kb T_{\mathrm{ref}}$. Each of three identical normal
+one-channel semi-infinite leads has onsite $2t=20000\ee$ and hopping
+$-t=-10000\ee$. Its propagating band is $0<E<40000\ee$.
+The retarded surface Green function is
+\begin{equation}
+ g_{\mathrm{lead}}(E)=
+ \frac{E-2t-\ii\sqrt{E(4t-E)}}{2t^2},\qquad 0<E<4t,
+ \label{eq:surface}
+\end{equation}
+with the retarded analytic continuation outside the band. It follows from
+the semi-infinite surface recurrence and equivalently from the outgoing
+Bloch solution $E=2t-2t\cos k$.
+
+The sample consists of three identical $n=128$ site filter chains and three
+core sites, hence $3n+3=387$ sites. Set
+\begin{align}
+ E_0&=5000\ee,&w&=0.02\ee,&\Gamma_c&=200000\ee,\nonumber\\
+ \Gamma_f&=\frac{w}{4\sin[\pi/(2n)]},&
+ h_\ell&=\frac{w}{4\sqrt{\sin[(2\ell+1)\pi/(2n)]
+                         \sin[(2\ell-1)\pi/(2n)]}},
+ \label{eq:filter}\\
+ \lambda&=\sqrt{\Gamma_f\Gamma_c},&&1\le\ell\le n-1.\nonumber
+\end{align}
+The filter profile uses the $w/4$ convention of the quantum-dot construction
+in Ref.~\cite{BrandnerSaitoPRL2025}. These equations, rather than any
+approximate transmission-window description, define the sample.
+
+Label the filter sites $(a,\ell)$ and the core sites $c_a$, with $a=0,1,2$.
+The filter hoppings are the real $h_\ell$. The real hopping $\lambda$ joins
+$(a,n)$ to $c_a$. All sample onsite energies are $E_0$, except that of the
+outer site $(a,1)$, which is $E_0-\operatorname{Re}\Sigma(E_0)$. The real
+lead contact is defined by
+\begin{equation}
+ V^2=\frac{2t^2\Gamma_f}{\sqrt{E_0(4t-E_0)}},\qquad
+ \Sigma(E)=V^2 g_{\mathrm{lead}}(E).
+ \label{eq:contact}
+\end{equation}
+On the three core sites the remaining hopping matrix is
+\begin{equation}
+ H_{\mathrm{core}}-E_0\mathbb I=\ii\Gamma_c(P-P^{\mathsf T}),
+ \qquad P=\begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix}.
+ \label{eq:core}
+\end{equation}
+It is Hermitian and carries a nonzero magnetic flux. All hoppings, contacts
+and onsite energies are fixed and time independent. There are no
+interactions, anomalous pairing terms, drives, probes or internal baths.
+
+For $0<E<4t$, let $\Gamma(E)=-\operatorname{Im}\Sigma(E)>0$ and
+\begin{equation}
+ G(E)=[E\mathbb I-H_{\mathrm{sample}}-\Sigma(E)P_{\mathrm{out}}]^{-1},
+ \qquad S_{ab}(E)=\delta_{ab}-2\ii\Gamma(E)G_{(a,1),(b,1)}(E),
+ \label{eq:S}
+\end{equation}
+where $P_{\mathrm{out}}$ projects onto the three outer filter sites.
+The resolvent identity
+$G-G^\dagger=-2\ii\Gamma G P_{\mathrm{out}}G^\dagger$ proves unitarity
+of this flux-normalized scattering matrix. Outside the propagating band the
+leads have no open channels, so there is no reservoir-current contribution.
+Discrete bound sample modes carry no extensive steady reservoir current in
+this stationary noninteracting model. The lead endpoints can be handled by
+their limiting scattering values and have zero integration measure.
+
+The three reservoirs remain at the common temperature $T_{\mathrm{ref}}$
+and at the fixed chemical potentials
+\begin{equation}
+ (\mu_0,\mu_1,\mu_2)=(5001,4997,4976)\ee.
+ \label{eq:reservoirs}
+\end{equation}
+No energy-dependent occupation is chosen independently of these Fermi
+functions. The selected extracted-particle current is already positive;
+no orientation reversal is applied.
+
+\section{Total entropy, circulation and the integrated certificate}
+
+The sample is circulant in its lead indices. Let
+$u=\mathcal T_{01}$, $v=\mathcal T_{02}$,
+$d_{01}=f_0-f_1>0$ and $d_{12}=f_1-f_2>0$. The two circulation sectors
+contribute respectively the current-density vectors
+\begin{equation}
+ u(d_{01},d_{12},-d_{01}-d_{12}),\qquad
+ v(d_{01}+d_{12},-d_{01},-d_{12}).
+ \label{eq:cycles}
+\end{equation}
+Their sum conserves particle number. At the common temperature, conservation
+of total energy and particle number converts the heat definition
+\eqref{eq:entropy} into
+\begin{equation}
+ \frac{\sigma}{\kb}=\sum_a\frac{\mu_a-E_0}{\ee}J_a.
+ \label{eq:commonT}
+\end{equation}
+In particular, define the dimensionless energy densities $\mathcal J$ and
+$\mathcal E$ by
+\begin{align}
+ \mathcal J&=u d_{01}+v(d_{01}+d_{12}),\label{eq:Jdensity}\\
+ \mathcal E&=u(25d_{01}+21d_{12})+v(4d_{01}+25d_{12}).
+ \label{eq:Edensity}
+\end{align}
+Their energy integrals divided by $h$ give $J$ and $\sigma/\kb$.
+Both are nonnegative, and the central circulating transmission makes them
+strictly positive on a positive-width set. All three heats are included in
+\eqref{eq:Edensity}.
+
+For numerical evaluation use $q=(E/\ee-5000)/0.01$, with $\dd E=0.01\ee\dd q$.
+Put $z=e^{0.01q}$, $e_0=e^{-1}$, $e_1=e^3$, $e_2=e^{24}$ and
+$D_a=1+ze_a$. Then
+\begin{equation}
+ d_{01}=\frac{z(e_1-e_0)}{D_0D_1},\qquad
+ d_{12}=\frac{z(e_2-e_1)}{D_1D_2},\qquad
+ A_b=\frac{z[e_b(e^{-24}-1)+e_0(e^{24}-1)]}{D_0D_b}.
+ \label{eq:densities}
+\end{equation}
+Equations~\eqref{eq:marginal}--\eqref{eq:M} give
+$M(-24)=1+uA_1+vA_2$. The residual in \eqref{eq:Delta} is integrated
+directly with density
+\begin{equation}
+ \mathcal D=u(-76d_{01}-84d_{12})
+             +v(8d_{01}-76d_{12})-\log(1+uA_1+vA_2).
+ \label{eq:residualdensity}
+\end{equation}
+This retains correlations between current and entropy. Subtracting loose
+separate observable enclosures would yield a weaker result.
+
+The full finite-Hamiltonian range construction is described in
+Appendices~\ref{app:continuants} and \ref{app:arithmetic}. It covers
+$q\in[-8192,16384]$, corresponding to
+$E/\ee-5000\in[-81.92,163.84]$, using exactly 26,275 consecutive dyadic
+panels. Range bounds apply to every energy in a panel, including resonances.
+All 727 panels with zero-inclusive interval denominator bounds are retained
+using the physical transmission bounds. Analytic Fermi tails enclose the
+rest of the actual propagating band. The tail contribution to the absolute
+residual uncertainty is below $1.12\times10^{-14}\ee/h$.
+
+Table~\ref{tab:certificate} gives conservative outward decimal enclosures
+obtained by exact-rational summation of the exported panel bounds and
+directed tail estimates. They are intervals, not asserted significant digits
+of a point estimate. More detailed exact endpoints are supplied with the
+reproducibility data. In particular,
+\begin{equation}
+ \Delta\in[0.019447591396978867,\,0.024247460886202978]\,\frac{\ee}{h}.
+ \label{eq:certifiedDelta}
+\end{equation}
+The enclosure width is below $0.005\ee/h$.
+
+\begin{table}[t]
+\centering
+\caption{Outward enclosures for the fixed physical sample. All entries are
+in units of $\ee/h$. The residual is enclosed directly, rather than by
+subtracting the other rows.}
+\label{tab:certificate}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Lower endpoint & Upper endpoint\\
+\midrule
+$\Delta$       & 0.019447 & 0.024248\\
+$J$            & 0.013576 & 0.014625\\
+$\sigma/\kb$   & 0.073446 & 0.079193\\
+$\chi_0(-24)$  & 0.010467 & 0.012105\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{proposition}
+For the stationary sample and reservoirs in
+Section~\ref{sec:model}, the curvature-matched assertion
+\eqref{eq:assertion} is false. In the stated computer-assisted arithmetic
+trust model,
+\begin{equation}
+ I_0(-J)-B_{\psi_0}(-J)>0.019\,\frac{\ee}{h}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The complete certificate proves $J,\sigma>0$ and
+$\Delta>0.019\ee/h$. Appendix~\ref{app:psi} gives a positive finite
+exact $\psi_0$, so $R_{\psi_0}>1$ and $-J$ is strictly inside the asserted
+domain. Equation~\eqref{eq:Delta} proves the strict violation. One admissible
+finite sample suffices to refute the universal quantifiers.
+\end{proof}
+
+\section{Verification, physical meaning and limitations}
+
+The integral proof uses complete range coverage, rather than quadrature
+convergence. An independently implemented check reconstructs the retarded
+boundary and branches by outgoing Bloch modes and scalar continuants;
+another uses forward branch elimination and a direct core inverse.
+Explicit Slater minors agree with the original counting determinant.
+The latter implementation checks 58 high-precision scattering/counting
+points, 41 comparisons with full-panel bounds and five dense 387-site
+resolvent solves. The maximum dense-solve scattering disagreement is below
+$5.6\times10^{-15}$. Gauss orders 2, 4 and 8 on the frozen partition give a
+diagnostic residual near $0.02382794\ee/h$, with order-4-to-8 difference
+about $8.1\times10^{-9}\ee/h$. These agreements are diagnostics, not the
+source of the strict integral error bound. A positive-temperature reciprocal
+boxcar baseline also reproduces the published narrow-window current and
+CGF limits. Parameters, primary inputs and arithmetic libraries are shared
+between these implementations; code and scattering values are not reused
+for the independent physical reconstruction.
+
+The range verification has an explicit qualification. An intermediate
+scalar absolute-value helper is nearest rounded and fails to be an outward
+magnitude bound for 42 actual coefficients. The fixed calculation is
+validated by an independent directed 500-digit reconstruction and an
+exhaustive comparison of every implemented remainder upper endpoint:
+52,550 checks, two polynomials on all 26,275 final panels, with zero
+violations. Later directed arithmetic provides sufficient margin for these
+actual remainders. This establishes the fixed certificate, not generic
+outward correctness of the helper for other grids or parameters. The
+failure records and complete closure checker are retained with the data.
+
+The mechanism can be read directly from \eqref{eq:cycles}. Around the
+central circulating transmission, particles flow from the high-chemical-
+potential reservoir into the intermediate reservoir and then toward the
+low-chemical-potential reservoir. The intermediate reservoir reduces the
+total mean entropy cost per selected extracted particle. In contrast, a
+negative selected count is sensitive to the occupation of the much lower-
+chemical-potential reservoir. The large negative counting field accentuates
+that rare event. Finite filtering and magnetic flux implement this
+separation in a physical stationary sample. Leakage at the filter edges is
+not negligible by assumption; it is included in the certificate.
+
+Accordingly, matching the curvature of a variance inequality does not
+determine the proposed full rare-current shape from actual mean entropy.
+The result says nothing against the established reciprocal large-deviation
+theorem or the nonreciprocal variance inequality. It does not resolve the
+joint-current alternative, exclude other total-entropy-dependent shapes,
+or assert that the sample has been fabricated. The filter order, width,
+core coupling and lead band are fixed. There is no infinite-size,
+zero-temperature, wide-band or perturbative limit in the proof.
+
+The computation trusts Python exact integer/rational arithmetic,
+mpmath 1.3.0 directed interval elementary functions and nearest-rounded
+arbitrary-precision basic arithmetic with the explicit forward-error
+envelope. It is a computer-assisted model counterexample, without
+proof-assistant formalization. The numerical margin is conditional on that
+documented computational trust base.
+
+\paragraph{Computational research method.}
+OpenAI Codex assisted literature discovery, model selection, the analytic
+reduction, code generation, computational checking and interpretation.
+The reported intervals are outputs of the deterministic scattering and
+range calculations described above. Separate implementations and the
+complete fixed-certificate remainder comparison supply the disclosed
+validation; AI text or confidence is not a numerical error estimate.
+
+\paragraph{Data availability.}
+The accompanying local reproducibility package contains the defining
+parameters, exact-model derivations, complete exported panel data,
+calculation scripts, arithmetic-defect records and the exhaustive
+remainder-check code and outputs. It includes instructions for scratch-copy
+recomputation and exact resummation. No public repository or deposited-data
+identifier is claimed for this draft.
+
+\section*{Acknowledgements and AI disclosure}
+OpenAI Codex was used for research ideation, literature discovery, analytic
+reasoning, computational implementation and checks, and manuscript drafting.
+The disclosed validation consists of deterministic calculations, complete
+range/error checks and separate AI-assisted implementations. Human
+scientific review, critical revision of the AI-assisted text and references,
+and confirmation of authorship remain pending for this local draft.
+
+\appendix
+\section{An analytic lower bound for the exact constant}
+\label{app:psi}
+
+The numerator in \eqref{eq:psi} is the binary relative entropy
+$\KL(y\Vert x)$. Jensen's inequality applied to the square-root likelihood
+ratio gives
+\begin{equation}
+ \KL(y\Vert x)\ge-2\log C,\qquad
+ C=\sqrt{xy}+\sqrt{(1-x)(1-y)}.
+\end{equation}
+Put $x=\sin^2\alpha$, $y=\sin^2\beta$ with
+$0<\alpha,\beta<\pi/2$. First take $\alpha>\beta$, and define
+$r=\sin(\alpha-\beta)$, $A=\sin(\alpha+\beta)$, so $0<r\le A\le1$.
+Then
+\begin{equation}
+ C=\sqrt{1-r^2},\qquad x-y=Ar,\qquad
+ x+y-x^2-y^2=\tfrac12[A^2(1-2r^2)+r^2].
+\end{equation}
+For fixed $r$, let
+\begin{equation}
+ F_r(A)=Ar\asinh\frac{2Ar}{A^2(1-2r^2)+r^2}.
+\end{equation}
+With $v=2Ar/[A^2(1-2r^2)+r^2]>0$ and $b=1-2r^2$, differentiation gives
+\begin{equation}
+ \frac{F_r'(A)}r=\asinh v+\frac{v}{\sqrt{1+v^2}}
+ \frac{r^2-bA^2}{r^2+bA^2}
+ \ge\asinh v-\frac{v}{\sqrt{1+v^2}}\ge0.
+\end{equation}
+The first inequality follows because the displayed rational factor is at
+least $-1$; the second follows by differentiation from $v=0$.
+Thus the denominator of \eqref{eq:psi} is at most
+\begin{equation}
+ F_r(1)=r\asinh\frac{2r}{1-r^2}=2r\atanh r.
+\end{equation}
+Also $g(r)=-\log(1-r^2)-r\atanh r$ satisfies $g(0)=0$ and
+\begin{equation}
+ g'(r)=\frac r{1-r^2}-\atanh r\ge0,
+\end{equation}
+since the derivative of the right-hand side is
+$2r^2/(1-r^2)^2\ge0$ and its value at zero is zero. Combining the bounds,
+\begin{equation}
+ \KL(y\Vert x)\ge-\log(1-r^2)\ge r\atanh r
+ \ge\tfrac12(x-y)\asinh\frac{x-y}{x+y-x^2-y^2}.
+\end{equation}
+The square-root likelihood bound holds in both relative-entropy directions;
+$C$ and the denominator are symmetric. The argument therefore covers
+$x<y$ as well as all continuous limits, proving $\psi_0\ge1/2$.
+At $y=x+\delta$ the numerator and denominator both have leading term
+$\delta^2/[2x(1-x)]$, so the diagonal limit is one and $\psi_0\le1$.
+
+\section{Finite continuants and transmission ranges}
+\label{app:continuants}
+
+This appendix uses $0.01\ee$ as the energy scale, so the filter diagonal
+variable is $q$. Define
+\begin{align}
+ \gamma_f&=\frac1{2\sin(\pi/256)},\quad g_c=20000000,\quad
+ \ellambda^2=\gamma_fg_c,\nonumber\\
+ b_\ell&=\frac1{4\sin[(2\ell+1)\pi/256]\sin[(2\ell-1)\pi/256]},
+ \label{eq:qparams}
+\end{align}
+where $\ellambda$ denotes the dimensionless core-filter hopping.
+The closed-chain continuant has recurrence
+$P_{j+1}=qP_j-b_jP_{j-1}$, $P_0=1$, $P_1=q$.
+Let $F$ be the 128-site determinant, $B$ the 127-site determinant with
+the first site removed and $G$ the 126-site determinant with both endpoints
+removed. The profile is reflection symmetric, so deleting the other endpoint
+gives the same $B$.
+
+For clarity define
+\begin{equation}
+ a_c=\frac{\Gamma_f/\ee}{\sqrt{5000\cdot35000}},\qquad
+ \gamma(q)=\gamma_f\sqrt{(1+0.01q/5000)(1-0.01q/35000)}.
+\end{equation}
+The exact contact-modified determinants are
+\begin{equation}
+ D=F+(\ii\gamma-a_cq)B,\qquad
+ C=qD-\ellambda^2[B+(\ii\gamma-a_cq)G].
+\end{equation}
+The core Schur complement is $(C/D)\mathbb I-\ii g_c(P-P^{\mathsf T})$.
+Its three sector determinants are $C$, $C-\sqrt3g_cD$ and
+$C+\sqrt3g_cD$. Put $H=\prod_{\ell=1}^{127}b_\ell$ and
+\begin{equation}
+ \mathcal A=\frac{4\gamma^2(\ellambda^2)^2H^2g_c^2}
+ {|C|^2|C-\sqrt3g_cD|^2|C+\sqrt3g_cD|^2}.
+\end{equation}
+The endpoint cofactors and core adjugate give
+\begin{equation}
+ u=\mathcal A|C-\ii g_cD|^2,\qquad
+ v=\mathcal A|C+\ii g_cD|^2.
+ \label{eq:uv}
+\end{equation}
+These identities refer to the finite physical Hamiltonian. At $q=0$ they
+give $u=0$, $v=1$, consistent with the current orientation above.
+
+For the small reverse numerator the cancellation is performed before
+interval evaluation. With $B_c=qB-\ellambda^2G$ and
+$K=F+\gamma_f^2G$, the exact components are
+\begin{align}
+ \operatorname{Re}(C-\ii g_cD)
+ &=qF+g_c(\gamma-\gamma_f)B-a_cqB_c,\\
+ \operatorname{Im}(C-\ii g_cD)
+ &=q(\gamma+g_ca_c)B
+   -g_c(\gamma/\gamma_f)K+g_c(\gamma/\gamma_f-1)F.
+\end{align}
+All coefficients of $K$, including small nonleading ones, are retained.
+No inferred zero, approximate filter identity or wide-band replacement is
+used. If an interval denominator contains zero, the panel uses
+$0\le u,v\le1$ from unitarity; it is not removed. The separate physical
+bound $e^{-24}\le M(-24)\le e^{24}$ ensures a defined logarithm.
+
+\section{Whole-panel arithmetic and the fixed-certificate closure}
+\label{app:arithmetic}
+
+The trigonometric hoppings and continuant coefficients are generated with
+directed interval arithmetic at 250 decimal digits. Write
+$F(q)=F_e(q^2)$ and $B(q)=qB_e(q^2)$. On a dyadic $q$ panel let
+$x=q^2$, $x_c=m^2$ for its midpoint $m$, and
+$r_x\ge\sup|x-x_c|$, $X\ge\sup|x|$. A degree-19 Taylor range for either
+even polynomial $p(x)=\sum_kp_kx^k$ includes the remainder
+\begin{equation}
+ \mathcal R_p\le r_x^{20}\sum_{k\ge20}|p_k|\binom{k}{20}X^{k-20}.
+ \label{eq:remainder}
+\end{equation}
+This bounds all omitted degrees throughout the panel.
+
+The first 20 Taylor coefficients are evaluated by generalized Horner jets
+using 336-bit nearest-rounded point arithmetic. The dyadic midpoint square
+is exactly representable. Let $u_p=2^{1-336}$,
+$N=5544$ and $\gamma_N=Nu_p/(1-Nu_p)$. The operation count exceeds all
+basic operations in each signed or positive jet recurrence. If
+$\widehat A$ is the computed positive recurrence for absolute coefficient
+sums and $r_c$ is the directed relative coefficient uncertainty, the jet
+envelope is
+\begin{equation}
+ \widehat{\mathrm{jet}}\ \pm\
+ \frac{(\gamma_N+r_c)\widehat A}{1-\gamma_N}.
+\end{equation}
+It includes cancellation and rounding of the positive recurrence.
+Subsequent Taylor evaluation, norms, divisions, square roots, exponentials,
+logarithms, panel widths and sums use directed 85-digit interval operations.
+
+For reproducibility it is essential to describe a defect in the original
+remainder implementation. The scalar absolute-value conversion used to
+initialize coefficient magnitudes is nearest rounded. Independent exact
+endpoint comparisons show 44 failures to enclose the original coefficient
+intervals, including 42 strict underestimates of the exact coefficient
+magnitudes. This helper cannot be treated as an outward upper-bound
+operation in general.
+
+The closure is specific and complete. A separately transcribed checker
+reconstructs coefficient intervals at 500 digits. It extracts absolute
+endpoint bounds by changing their encoded sign, avoiding nearest-rounded
+scalar absolute values. At every actual final panel, it evaluates a
+500-digit directed reference bound for \eqref{eq:remainder} and compares
+it to the implemented 85-digit remainder upper endpoint. Each implemented
+upper endpoint is at least the reference upper endpoint, for both
+polynomials on every one of the 26,275 panels. All 52,550 comparisons
+complete with zero violations. Hence every remainder used in this fixed
+certificate is adequate despite the defective intermediate initialization.
+The supplemental code and records preserve both the failure and this
+exhaustive closure; they do not certify a reusable helper for new inputs.
+
+Every panel supplies a range for the full density. Its positive width times
+that range encloses the integral, including structures narrower than the
+panel. The refinement driver can retain valid parent intervals or replace
+them by child ranges. The final consecutive dyadic endpoints and width
+subtractions are checked as exact rationals, with total $q$ width 24576.
+Each binary64 exported lower/upper endpoint is moved one representable
+number outward. Exact-rational resummation covers every exported panel,
+including all 727 denominator fallbacks, and adds the tails below once.
+
+\section{Finite-band tails}
+\label{app:tails}
+
+Let $\delta=E/\ee-5000$. Below $-81.92$, every reservoir hole probability
+is bounded by $e^{\delta+24}$; above $163.84$, every particle probability
+is bounded by $e^{1-\delta}$. A nonzero extracted count requires at least
+one hole in the low-energy tail or at least one particle in the high-energy
+tail. Conservative dimensionless integrated event bounds are
+\begin{equation}
+ H_t=3e^{-81.92+24},\qquad P_t=3e^{1-163.84}.
+\end{equation}
+Throughout these tails the $e^{24}$-amplified event probability is below
+$1/2$. From $|M-1|\le e^{24}\Pr(X\ne0)$ and
+$|\log M|\le2|M-1|$, the following bounds hold in rate units $\ee/h$:
+\begin{align}
+ J_{\mathrm{tail}}&\le2(H_t+P_t),\\
+ (\sigma/\kb)_{\mathrm{tail}}&\le28J_{\mathrm{tail}},\\
+ |\chi(-24)|_{\mathrm{tail}}&\le2e^{24}(H_t+P_t),\\
+ |\Delta|_{\mathrm{tail}}&\le24J_{\mathrm{tail}}
+       +4(\sigma/\kb)_{\mathrm{tail}}+|\chi(-24)|_{\mathrm{tail}}.
+\end{align}
+Directed exponentials bound the last expression by
+$1.1140\times10^{-14}\ee/h$. Extending the estimates beyond the actual
+lead band only enlarges the bound. Together with the complete central
+partition this covers all physical energies; no infinite-energy truncation
+is left uncontrolled.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

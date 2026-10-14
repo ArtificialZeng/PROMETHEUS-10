@@ -1,0 +1,656 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Initial entropy-production decrease for product-profile narrow beams in the Landau-Maxwell equation},pdfauthor={Xiaojian Zeng}}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\Dzero}{D'_{0+}}
+\newcommand{\normF}[1]{\left\|#1\right\|_{\mathrm F}}
+\title{Initial entropy-production decrease for\\product-profile narrow beams in the\\Landau--Maxwell equation}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study the initial entropy-production derivative for the homogeneous
+Landau equation with Maxwell interaction in three velocity dimensions.
+The initial densities are finite mixtures of separated beams with
+transverse width \(\sqrt p\), longitudinal width \(p\), and independent
+local transverse and longitudinal profiles. For every fixed normalized
+configuration of positive polynomial--Gaussian profiles, we derive the
+full continuum expansion \(D'_{0+}(f_p)=p^{-2}\sum_j w_j C_j+O(p^{-1})\).
+The coefficient contains longitudinal score skewness. A projection
+inequality and transverse moment--curvature bounds give
+\(C_j\leq-45/(14a_j^2)\) and \(\sum_j w_j C_j\leq-45/14\), where
+\(a_j\) is the local transverse variance. Thus the initial derivative is
+negative for all sufficiently small \(p\), with a threshold depending
+on the fixed configuration. The proof differentiates the collision
+functional and controls mixture overlap, Gaussian tails and the initial
+solution derivative. It excludes this product-profile beam mechanism for
+a counterexample, while leaving universal and all-time monotonicity open.
+\end{abstract}
+
+\noindent\textbf{Keywords:} homogeneous Landau equation; Maxwell molecules;
+entropy production; narrow beams; anisotropic initial data.
+
+\section{Problem and relation to previous work}
+
+Entropy decay does not imply decay of entropy production. For the
+homogeneous Landau equation with Maxwell interaction,
+Tabary~\cite[Theorem 1.1]{Tabary2026} proves monotonicity when the
+directional temperatures are sufficiently well distributed, and hence
+after an explicit waiting time. In his time normalization, the
+three-dimensional sufficient condition is
+\begin{equation}\label{eq:tabary}
+ T_{\max}-1\leq c_3,\qquad c_3=\frac{20-2\sqrt{70}}{15}.
+\end{equation}
+Silvestre~\cite[Section 1.2]{Silvestre2026} explicitly leaves the
+initial-time question for arbitrary Landau--Maxwell solutions open; his
+finite-angle Boltzmann counterexamples do not transfer to this operator.
+The counterexample of Junn\'e, Winter and Yolda\c{s}~\cite{Junne2026}
+concerns the Landau--Coulomb kernel instead.
+
+We consider initial densities concentrated near finitely many points on
+a velocity axis. Their covariance is \(\diag(p,p,3-2p)\), so their
+largest directional temperature tends to three. They lie outside
+\eqref{eq:tabary} for small \(p\). Within each beam we allow a general
+fixed product profile, including nonradial transverse factors and
+asymmetric longitudinal scores. We derive an explicit leading
+coefficient for the actual initial entropy-production derivative and
+prove that it is strictly negative. The density family is an initial-data
+construction, not an invariant ansatz for the evolution.
+
+The mechanism is a competition between transverse curvature,
+longitudinal curvature, and longitudinal score skewness. Projection of
+the longitudinal log-curvature onto the constant and score functions
+controls skewness without a symmetry assumption. Transverse moment
+identities then force enough curvature to make each redistributed local
+coefficient negative. A partner term cancels only after both beam-label
+averages; computing a component in isolation would miss this cancellation.
+
+The elementary information inequalities, heat-flow identity and
+rotation--Gaussian representation used below are established tools; see
+Villani~\cite{Villani2025} and Delarue, Menozzi and
+Nualart~\cite[Proposition 2.3]{DMN2014}. Our contribution is the specific
+product-beam collision coefficient, its sign bound, and its transfer to
+the actual continuum initial derivative. We make no claim of exhaustive
+priority over consequences implicit in earlier representations.
+
+\section{Equation, beam family and main result}
+
+\subsection{Collision and time conventions}
+Velocity is \(v\in\R^3\), with no spatial variable or external forcing.
+We use dimensionless velocity units with mass one, mean zero, and energy
+three. For a density \(f\), write
+\begin{equation}\label{eq:moments}
+ \int f\,dv=1,\qquad \int vf\,dv=0,\qquad
+ T=\int vv^{\mathsf T}f\,dv,\qquad\tr T=3.
+\end{equation}
+The equation and kernel are
+\begin{align}
+ \partial_t f&=Q(f)
+ =\diver_v\int a(v-w)
+ \bigl[f(w)\nabla f(v)-f(v)\nabla f(w)\bigr]\,dw,
+ \label{eq:equation}\\
+ a(z)&=\frac{|z|^2I_3-zz^{\mathsf T}}2.
+ \label{eq:kernel}
+\end{align}
+All velocity integrals are over the full Euclidean space of the displayed
+dimension. For matrices, \(A:B=\tr(A^{\mathsf T}B)\). The entropy and
+production are
+\begin{align}
+ H(f)&=\int f\log f\,dv,\notag\\
+ D(f)&=\frac12\iint f(v)f(w)\,
+  \Delta_f(v,w)^{\mathsf T}a(v-w)\Delta_f(v,w)\,dv\,dw,
+ \label{eq:D}\\
+ \Delta_f(v,w)&=\nabla\log f(v)-\nabla\log f(w),\qquad
+ \frac{d}{dt}H(f_t)=-D(f_t).\notag
+\end{align}
+Convolution of the quadratic kernel gives
+\begin{equation}\label{eq:diffusion}
+ A[f](v)=a(v)+\frac{3I_3-T}{2},\qquad
+ Q(f)=\diver(A[f]\nabla f)+\diver(vf).
+\end{equation}
+Since \(\diver A=-v\), the backward generator is
+\(L_t\psi=A:\nabla^2\psi-2v\cdot\nabla\psi\). It implies
+\begin{equation}\label{eq:covariance}
+ T'=-6(T-I_3),\qquad T(t)=I_3+e^{-6t}(T(0)-I_3).
+\end{equation}
+These identities agree with Tabary~\cite[Lemmas 2.1--2.2]{Tabary2026}.
+For the kernel without the factor \(1/2\), the rate is \(-12\), as in
+Caja-Lopez et al.~\cite[Proposition 2]{Caja2025}; thus
+\(t_{\rm here}=2t_{\rm unscaled}\).
+
+\subsection{Fixed local profiles}
+Fix a finite number of distinct real centers \(\mu_j\) and positive
+weights \(w_j\), with
+\begin{equation}\label{eq:labels}
+ \sum_jw_j=1,\qquad\sum_jw_j\mu_j=0,\qquad
+ \sum_jw_j\mu_j^2=3.
+\end{equation}
+For each label let \(P_j\) on \(\R^2\) and \(R_j\) on \(\R\) be
+centered probability densities with
+\begin{equation}\label{eq:profiles}
+ \operatorname{Cov}(P_j)=a_jI_2,\qquad
+ \operatorname{Var}(R_j)=\lambda_j>0,\qquad
+ a_j>0,\qquad\sum_jw_ja_j=1.
+\end{equation}
+A positive polynomial--Gaussian density means a centered nondegenerate
+Gaussian multiplied by a polynomial globally bounded below by a positive
+constant, and divided by its integral. Centering and covariance
+conditions in~\eqref{eq:profiles} are imposed on the resulting density;
+its covariance need not equal that of its base Gaussian. Neither
+radiality of \(P_j\) nor parity of \(R_j\) is assumed.
+
+Set \(\bar\lambda=\sum_jw_j\lambda_j\) and define
+\begin{align}
+ \kappa_p&=\left(1-\frac{2p+\bar\lambda p^2}{3}\right)^{1/2},
+ \qquad m_j(p)=\kappa_p\mu_j,\label{eq:kappa}\\
+ F_{j,p}(v)&=p^{-2}P_j(v_\perp/\sqrt p)
+                  R_j((v_3-m_j(p))/p),\qquad
+ f_p=\sum_jw_jF_{j,p}.\label{eq:beam}
+\end{align}
+Here \(v_\perp=(v_1,v_2)\) and \(p\) labels initial data, independently
+of evolution time \(t\). We take sufficiently small \(p>0\) so that
+\(\kappa_p\geq1/2\). The Jacobian of the local coordinates is \(p^2\).
+Equations~\eqref{eq:labels}--\eqref{eq:kappa} give exactly
+\begin{equation}\label{eq:Tbeam}
+ \int vf_p\,dv=0,\qquad
+ T(f_p)=\diag(p,p,3\kappa_p^2+\bar\lambda p^2)
+       =\diag(p,p,3-2p).
+\end{equation}
+
+For a single product factor \(P(x)R(z)\), use the notation
+\begin{align}
+ g&=\nabla\log P,\quad H_P=\nabla^2\log P,\quad
+ t_R=(\log R)',\quad h_R=(\log R)'',\notag\\
+ J_P&=\E_P\normF{H_P}^2,\quad
+ U_4=\E_P|x|^4,\quad K_2=\E_P(x\cdot g)^2,\label{eq:transmom}\\
+ I_R&=\E_Rt_R^2,\quad J_R=\E_Rh_R^2,\quad
+ S_3=\E_Rt_R^3,\quad \mathcal A=1+2a+U_4/4.
+ \label{eq:longmom}
+\end{align}
+Subscripts \(j\) indicate the corresponding local factor.
+
+\begin{theorem}[Negative initial derivative for product beams]\label{thm:main}
+Assume~\eqref{eq:labels}--\eqref{eq:profiles}, with every local factor
+a positive polynomial--Gaussian density as specified above. The actual
+solution of~\eqref{eq:equation} starting from \(f_p\) has an initial
+right entropy-production derivative, and
+\begin{equation}\label{eq:asymptotic}
+ \Dzero(f_p)=p^{-2}\sum_jw_jC_j+O(p^{-1})\qquad(p\downarrow0),
+\end{equation}
+where, with \(B_j=\mu_j^2+3\),
+\begin{align}
+ C_j={}&-\frac{B_j^2}{2}J_{P,j}-2\mathcal A_jJ_{R,j}
+ \notag\\[-2pt]
+ &+\bigl(9+5\mu_j^2-\mu_j^2K_{2,j}\bigr)I_{R,j}
+       -\mu_ja_jS_{3,j}.\label{eq:C}
+\end{align}
+Every coefficient obeys
+\begin{equation}\label{eq:sign}
+ C_j\leq-\frac5{28}B_j^2J_{P,j}
+       \leq-\frac{45}{14a_j^2},\qquad
+ \sum_jw_jC_j\leq-\frac{45}{14}.
+\end{equation}
+Consequently \(\Dzero(f_p)<0\) for all sufficiently small \(p>0\).
+The remainder and the threshold depend on the complete fixed
+configuration. There is no assertion uniform over changing profiles,
+weights, widths, center gaps, or numbers of beams.
+\end{theorem}
+
+The inequality for the functional~\eqref{eq:C} also holds for regular
+positive product factors having the displayed finite moments and the
+integrations by parts used in Section~\ref{sec:sign}. The stronger
+polynomial--Gaussian assumption ensures the actual-mixture and
+initial-solution assertions in~\eqref{eq:asymptotic}.
+
+\section{Reconstruction from the collision functional}\label{sec:coefficient}
+
+\subsection{Exact first variation}
+Put \(q=Q(f)/f\). At any time at which the differentiation is justified,
+\begin{equation}\label{eq:pairvariation}
+ D'(f)=\iint f(v)f(w)
+ \bigl[q(v)\Delta_f^{\mathsf T}a(v-w)\Delta_f
+       +2\nabla q(v)^{\mathsf T}a(v-w)\Delta_f\bigr]\,dv\,dw.
+\end{equation}
+Indeed, the two density variations are equal after exchanging \(v,w\),
+and the two score variations are also equal because
+\(\partial_t\nabla\log f=\nabla q\). The prefactor \(1/2\) in
+\eqref{eq:D} then yields~\eqref{eq:pairvariation}. From
+\eqref{eq:diffusion},
+\begin{equation}\label{eq:q}
+ q=A[f]:\bigl(\nabla^2\log f+
+                  \nabla\log f\,\nabla\log f^{\mathsf T}\bigr)+3.
+\end{equation}
+Thus~\eqref{eq:pairvariation} differentiates the original nonlinear
+collision functional, including its partner dependence; the covariance
+has not been held fixed along the evolution. Section~\ref{sec:flow}
+justifies this formula at the initial time for the densities in the theorem.
+
+\subsection{Leading local matrices and partner averages}
+For the leading calculation use the coordinates and derivative scaling
+\[
+ v=(\sqrt p\,x,m+pz),\qquad w=(\sqrt p\,y,n+p\zeta),\qquad
+ \mathsf J_p=\diag(p^{-1/2},p^{-1/2},p^{-1}).
+\]
+At \(p=0\), with \(m=\mu_j\), \(n=\mu_k\), the constant terms of
+\(p\mathsf J_pA\mathsf J_p\) and
+\(p\mathsf J_pa(v-w)\mathsf J_p\) are respectively
+\begin{align}
+ A_0(x;m)&=
+ \begin{pmatrix}
+ B I_2/2&-mx/2\\-mx^{\mathsf T}/2&1+|x|^2/2
+ \end{pmatrix},\qquad B=m^2+3,\label{eq:A0}\\
+ K_0(x,y;m,n)&=
+ \begin{pmatrix}
+ (m-n)^2I_2/2&-(m-n)(x-y)/2\\
+ -(m-n)(x-y)^{\mathsf T}/2&|x-y|^2/2
+ \end{pmatrix}.\label{eq:K0}
+\end{align}
+Define the local quantities
+\begin{equation}\label{eq:QLK}
+ L=\frac{\Delta P}{P}=\tr H_P+|g|^2,\quad
+ K=x\cdot g,\quad d_0=1+|x|^2/2,\quad
+ \ell=\frac{R''}{R}=h_R+t_R^2.
+\end{equation}
+With \(s=(g,t_R)\), the leading term of \(pq\) is
+\begin{equation}\label{eq:Q0}
+ Q_0=\frac B2 L-mKt_R+d_0\ell.
+\end{equation}
+In this subsection \(\E_*\) averages the partner profile and then all
+partner labels with their weights. Set \(\bar I=\sum_kw_kI_{R,k}\).
+Centering, covariance and score integration by parts give
+\begin{align}
+ M_2&:=\E_*[K_0(s-s_k)]=A_0s+m e_3,\label{eq:M2}\\
+ M_1&:=\E_*[(s-s_k)^{\mathsf T}K_0(s-s_k)]\notag\\
+ &=\frac B2|g|^2-mKt_R+2mt_R+d_0t_R^2
+                  +\frac{|x|^2}{2}\bar I+c_m.\label{eq:M1}
+\end{align}
+The constant in the last line is
+\[
+ c_m=\frac12\sum_kw_k\bigl[(m-\mu_k)^2\E_{P_k}|g_k|^2
+                                   +2a_kI_{R,k}\bigr].
+\]
+It has no local-coordinate dependence. The score identities used here
+are \(\E_{P_k}g_k=0\),
+\(\E_{P_k}[y_i(g_k)_r]=-\delta_{ir}\), and
+\(\E_{R_k}t_{R,k}=0\); local product independence is essential.
+Since \(\diver A_0=-me_3\),
+\(\diver M_2+s\cdot M_2=Q_0\). Integration of the gradient term in
+\eqref{eq:pairvariation} therefore reduces the leading row to
+\begin{equation}\label{eq:row}
+ \mathcal R_j=\E_{P_jR_j}\bigl[Q_0M_1-2Q_0^2\bigr].
+\end{equation}
+Also \(\E Q_0=0\), so \(c_m\) drops out.
+
+\subsection{Local integrations and the label cancellation}
+Suppress the label again. The longitudinal identities are
+\begin{align}
+ &\E t_R=0,\quad \E h_R=-I_R,\quad
+ \E(h_Rt_R)=-S_3/2,\quad
+ \E(h_Rt_R^2)=-\E t_R^4/3,\notag\\
+ &\E\ell=0,\quad \E(t_R\ell)=S_3/2,\quad
+ \E(t_R^2\ell)=2\E t_R^4/3,\quad
+ \E\ell^2=J_R+\E t_R^4/3.\label{eq:longibp}
+\end{align}
+For example, integrate the derivatives of \(Rt_R\), \(Rt_R^2\) and
+\(Rt_R^3\). In the transverse variables,
+\begin{align}
+ &\E K=-2,\quad\E(Kd_0)=-2-4a,\quad
+ \E d_0=1+a,\quad \E d_0^2=\mathcal A,\notag\\
+ &\E L=0,\quad\E(Ld_0)=2,\quad\E(L|x|^2)=4,\notag\\
+ &\E(L|g|^2)-2\E L^2=-2J_P.\label{eq:transibp}
+\end{align}
+The last identity is the usual heat-flow Fisher dissipation identity:
+for \(\partial_\tau P=\Delta P\), differentiating \(\E|g|^2\) gives
+\(\E(L|g|^2)+2\E(g\cdot\nabla L)\), with
+\(\E(g\cdot\nabla L)=-\E L^2\); integration by parts also gives
+the derivative as \(-2J_P\). The polynomial--Gaussian factors justify
+both calculations directly, without log-concavity.
+
+Substitution of~\eqref{eq:longibp}--\eqref{eq:transibp}
+into~\eqref{eq:row} cancels all fourth-score moments and yields
+\begin{equation}\label{eq:rawrow}
+ \mathcal R_j=-\frac{B_j^2}{2}J_{P,j}-2\mathcal A_jJ_{R,j}
+ +(3+5\mu_j^2-\mu_j^2K_{2,j})I_{R,j}
+ -\mu_ja_jS_{3,j}+B_j\bar I.
+\end{equation}
+The difference between this row and \(C_j\) in~\eqref{eq:C} is
+\(B_j\bar I-6I_{R,j}\). It vanishes after the final label sum:
+\begin{equation}\label{eq:redistribution}
+ \sum_jw_j( B_j\bar I-6I_{R,j})
+   =6\bar I-6\bar I=0,
+\end{equation}
+because \(\sum_jw_jB_j=6\). This establishes the asserted leading
+coefficient before passing from the separated component calculation
+to the actual mixture.
+
+\section{A negative bound for every local coefficient}\label{sec:sign}
+
+\begin{lemma}[Longitudinal projection]\label{lem:long}
+For a regular positive probability density \(R\) with the moments and
+integrations by parts above,
+\begin{equation}\label{eq:projection}
+ J_R\geq I_R^2+\frac{S_3^2}{4I_R}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+An integrable positive density has \(I_R>0\). In \(L^2(R\,dz)\), the
+functions \(1\) and \(t_R\) are orthogonal, with squared norms \(1\)
+and \(I_R\). Their inner products with \(h_R\) are \(-I_R\) and
+\(-S_3/2\) by~\eqref{eq:longibp}. The squared norm of the orthogonal
+projection of \(h_R\) gives~\eqref{eq:projection}.
+\end{proof}
+
+For any \(\mathcal A>0\), completing the skewness square now gives
+\begin{align}
+ -2\mathcal A J_R-maS_3
+ &\leq-2\mathcal A I_R^2
+   -\frac{\mathcal A}{2I_R}
+       \left(S_3+\frac{maI_R}{\mathcal A}\right)^2
+   +\frac{m^2a^2}{2\mathcal A}I_R\notag\\
+ &\leq-2\mathcal A I_R^2+\frac{m^2a^2}{2\mathcal A}I_R.
+ \label{eq:square}
+\end{align}
+This estimate retains both signs and arbitrary magnitudes of score
+skewness; no symmetry of \(R\) has been introduced.
+
+\begin{lemma}[Transverse curvature and fourth moment]\label{lem:trans}
+Let \(P\) be a regular positive centered density on \(\R^2\) with
+covariance \(aI_2\) and the stated finite moments and integrations by
+parts. Then \(u=U_4/a^2>4\), and
+\begin{equation}\label{eq:threebounds}
+ J_P\geq\frac2{a^2},\qquad
+ K_2\geq4+\frac{16}{u-4},\qquad
+ K_2\leq4+\sqrt{2J_PU_4}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:14}
+ J_PU_4\geq14,\qquad J_P\mathcal A\geq7/2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since \(\E|x|^2=2a\) and \(|x|^2\) is not constant almost surely
+under a positive density, \(U_4>4a^2\). Integration by parts gives
+\(\E(x\cdot g)=-2\); hence Cauchy--Schwarz implies
+\(\E|g|^2\geq2/a\). Also
+\(\E H_P=-\E(gg^{\mathsf T})\). Jensen and the matrix trace inequality
+give
+\[
+ J_P\geq\normF{\E H_P}^2
+       \geq\tfrac12(\E|g|^2)^2\geq2/a^2.
+\]
+Writing \(r^2=|x|^2\), another integration by parts gives
+\(\E(Kr^2)=-8a\). Thus
+\[
+ \operatorname{Cov}(K,r^2)=-4a,\quad
+ \operatorname{Var}(K)=K_2-4,\quad
+ \operatorname{Var}(r^2)=U_4-4a^2.
+\]
+Their covariance inequality proves the lower bound on \(K_2\).
+Pointwise \(K^2\leq r^2|g|^2\), while
+\[
+ \E(r^2|g|^2)=4-\E(r^2\tr H_P)
+       \leq4+\sqrt{2J_PU_4}.
+\]
+This proves the upper bound. Combining them gives
+\[
+ J_PU_4\geq\max\left\{2u,\frac{128}{(u-4)^2}\right\}\geq14.
+\]
+For \(u\geq7\) use \(2u\geq14\); for \(4<u\leq7\) use
+\(128/(u-4)^2\geq128/9>14\). Finally
+\(\mathcal A\geq U_4/4\) proves the last assertion.
+\end{proof}
+
+\begin{proof}[Proof of the coefficient bound in Theorem~\ref{thm:main}]
+Fix one label and write \(m=\mu_j\), \(B=m^2+3\). Since
+\(a^2/(2\mathcal A)\leq2/u\), Lemma~\ref{lem:trans} implies
+\begin{equation}\label{eq:cbound}
+ 5-K_2+\frac{a^2}{2\mathcal A}
+ \leq1-\frac{16}{u-4}+\frac2u<1.
+\end{equation}
+Equations~\eqref{eq:C} and~\eqref{eq:square} consequently give
+\[
+ C_j\leq-\tfrac12B^2J_P-2\mathcal A I_R^2+cI_R,
+ \qquad c\leq9+m^2\leq3B.
+\]
+As \(I_R\geq0\), maximization of the last quadratic and
+\(J_P\mathcal A\geq7/2\) yield
+\begin{align}
+ C_j&\leq-\frac12B^2J_P+\frac{9B^2}{8\mathcal A}
+       \leq-\frac5{28}B^2J_P\notag\\
+ &\leq-\frac5{14}\frac{B^2}{a^2}
+       \leq-\frac{45}{14a^2}.\label{eq:localbound}
+\end{align}
+Jensen's inequality for \(a\mapsto a^{-2}\), together with
+\(\sum_jw_ja_j=1\), gives \(\sum_jw_ja_j^{-2}\geq1\) and
+completes~\eqref{eq:sign}. The numerical constant is a convenient
+nonsharp bound; no optimality is asserted.
+\end{proof}
+
+\section{Passage from component coefficients to the mixture}\label{sec:transfer}
+
+\subsection{Polynomial scaling of the component calculation}
+In a component-pair integral use the true whole-mixture diffusion
+matrix \(A=a(v)+(3I_3-T(f_p))/2\), but replace the logarithmic
+derivatives at \(v,w\) by those of \(F_{j,p},F_{k,p}\), respectively.
+Let \(\mathcal P_{jk}(p)\) denote this replacement in
+\eqref{eq:pairvariation}, including the corresponding replacements
+in \(q\) and \(\nabla q\).
+
+For temporarily fixed centers \(m,n\), both full scaled matrices
+\(p\mathsf J_pA\mathsf J_p\) and
+\(p\mathsf J_pa(v-w)\mathsf J_p\) are polynomials in \(p\) of degree
+at most two. The local scores and their derivatives are independent of
+\(p\). Formula~\eqref{eq:q} shows that \(pq\) is also a polynomial
+of degree at most two, including the term \(3p\). In the gradient
+term, \(\nabla_v=\mathsf J_p\nabla_{x,z}\); hence \(p^2\) times
+the full replaced integrand has degree at most four. Every coefficient
+is integrable under the fixed polynomial--Gaussian product factors.
+Replacing \(m,n\) by \(\kappa_p\mu_j,\kappa_p\mu_k\), with
+\(\kappa_p=1+O(p)\), changes the leading coefficient by \(O(p)\)
+and leaves the other coefficient integrals bounded. Therefore
+\begin{equation}\label{eq:componentexpansion}
+ \sum_{j,k}w_jw_k\mathcal P_{jk}(p)
+      =p^{-2}\sum_jw_jC_j+O(p^{-1}).
+\end{equation}
+The normalization identities for the limiting centers are used at
+\(p=0\), not imposed on the finite-\(p\) centers separately from
+the internal variances.
+
+\subsection{Posterior overlap and full-space tails}
+We give the bounds that permit the score replacements just made.
+Let \(d_* =\min_{j\ne k}|\mu_j-\mu_k|>0\). Let
+\(\sigma_{\min},\sigma_{\max}\) be the smallest and largest base
+Gaussian standard deviations of the longitudinal factors, and let
+\(b_{\max}\) bound all transverse base Gaussian covariance eigenvalues.
+All these are fixed positive constants. Choose
+\(r_0=d_*\sigma_{\min}/(16\sigma_{\max})\), and use the physical
+core
+\begin{equation}\label{eq:cores}
+ \Omega_j(p)=\{\,|v_3-m_j(p)|\leq r_0,\quad |v_\perp|\leq1\,\}.
+\end{equation}
+For sufficiently small \(p\), every other center is separated from
+this core in the longitudinal coordinate. Comparison of the Gaussian
+exponents, allowing for unequal base variances, gives on \(\Omega_j(p)\)
+\[
+ \frac{\text{base Gaussian of }F_{k,p}(v)}
+      {\text{base Gaussian of }F_{j,p}(v)}
+       \leq C\exp(C/p-c/p^2),\qquad k\ne j.
+\]
+The fixed choice of \(r_0\) makes the coefficient of \(p^{-2}\)
+strictly negative. The transverse ratio contributes at most
+\(\exp(C/p)\). Positive lower bounds on the defining polynomials
+allow their ratio to contribute only a polynomial in \(p^{-1}\) and
+\(|v|\). Thus the wrong-component posterior weights are exponentially
+small on each core. Raw derivative ratios through order three, and hence
+the logarithmic derivatives entering \(q,\nabla q\), have polynomial
+bounds in \(p^{-1}\) and \(|v|\). Differentiation of posterior weights
+preserves the exponential estimate, with an additional polynomial factor.
+
+Under component \(j\), the complement of~\eqref{eq:cores} has a
+polynomial-weighted Gaussian tail bounded by a power of \(p^{-1}\)
+times
+\begin{equation}\label{eq:tails}
+ C\exp\!\left(-\frac{r_0^2}{4\sigma_{\max}^2p^2}\right)
+       +C\exp\!\left(-\frac1{4b_{\max}p}\right).
+\end{equation}
+One half of each Gaussian exponent supplies the displayed tail and
+the other supplies any required polynomial moment. For the mixture,
+\(\partial^\alpha f_p/f_p\) is a posterior-weighted average of the
+component raw derivative ratios. Consequently the exact and replaced
+pair integrands have global polynomial bounds of the same type, without
+requiring a uniform positive lower bound on \(f_p\) over velocity space.
+Split each component-pair integral into its two cores and their
+complement. For fixed configuration-dependent \(C,K,c>0\), this gives
+\begin{equation}\label{eq:overlap}
+ \left|\mathcal V(f_p)-\sum_{j,k}w_jw_k\mathcal P_{jk}(p)\right|
+       \leq Cp^{-K}e^{-c/p}=o(p^{-1}),
+\end{equation}
+where \(\mathcal V(f)\) denotes the right-hand side of
+\eqref{eq:pairvariation}. This is an analytic full-space estimate,
+not a velocity-grid or finite-difference approximation.
+
+\section{The actual initial right derivative}\label{sec:flow}
+
+It remains to identify \(\mathcal V(f_p)\) with the actual solution
+derivative at each fixed admissible \(p\). All constants in this section
+may depend on \(p\); no uniform ellipticity as \(p\downarrow0\) is used.
+Put
+\[
+ C(t)=\frac{3I_3-T(t)}2,\qquad
+ B_{ir}=\frac{v_i\partial_r-v_r\partial_i}{\sqrt2}\quad(i<r).
+\]
+For the covariance~\eqref{eq:Tbeam}, \(C(t)\) is positive definite
+near zero. The backward generator in~\eqref{eq:diffusion} satisfies
+\begin{equation}\label{eq:angular}
+ L_t=A:\nabla^2-2v\cdot\nabla
+       =\sum_{i<r}B_{ir}^2+C(t):\nabla^2-v\cdot\nabla.
+\end{equation}
+The angular diffusion has an orthogonal Brownian flow \(O_t\),
+normalized to generate \(\sum B_{ir}^2\). Variation of constants
+gives a process
+\begin{equation}\label{eq:affine}
+ V_t=e^{-t}O_tV_0+G_t,
+\end{equation}
+where, conditional on the angular path, \(G_t\) is a centered Gaussian
+independent of \(V_0\), with covariance
+\begin{equation}\label{eq:noise}
+ \operatorname{Cov}(G_t\mid O)
+ =2\int_0^t e^{-2(t-s)}O_tO_s^{\mathsf T}C(s)O_sO_t^{\mathsf T}\,ds.
+\end{equation}
+This is the established rotation--Gaussian mechanism of
+Delarue, Menozzi and Nualart~\cite[Proposition 2.3]{DMN2014}, here
+reconstructed with the kernel and time convention~\eqref{eq:kernel}.
+
+For completeness this prescribed-covariance process is self-consistent.
+Its second moment \(M(t)\) obeys
+\[
+ M'=(\tr M+3)I_3-5M-T(t),\qquad
+ (\tr M)'=6-2\tr M.
+\]
+Thus \(\tr M=3\), and \((M-T)'=-5(M-T)\) with zero initial value
+gives \(M=T\). Its density therefore solves the nonlinear equation
+\eqref{eq:equation}. Conversely, a regular normalized solution has the
+covariance~\eqref{eq:covariance} and hence this same linear generator;
+the affine stochastic equation has a unique law.
+
+The density formula is
+\begin{equation}\label{eq:densityflow}
+ f_t(v)=e^{3t}\E\bigl[f_p(e^tO_t^{\mathsf T}(v-G_t))\bigr].
+\end{equation}
+For fixed \(p\), every raw derivative ratio
+\(\partial^\alpha f_p/f_p\), \(|\alpha|\leq4\), grows at most
+polynomially, and the initial density has moments of every order.
+Differentiate~\eqref{eq:densityflow}. The derivative of the affine
+argument is a bounded linear map for small time. Jensen's inequality
+with the posterior density weights, followed by change of variables,
+therefore bounds, uniformly on a sufficiently small time interval,
+\begin{equation}\label{eq:weighted}
+ \int f_t(v)(1+|v|)^k
+       \left|\frac{\partial^\alpha f_t(v)}{f_t(v)}\right|^s\,dv,
+ \qquad |\alpha|\leq4,\quad k\geq0,\quad s\geq1.
+\end{equation}
+The bounds reduce to initial polynomial-weighted derivative moments
+and bounded moments of the conditional Gaussian noise. Orthogonality
+controls the angular factor. Extra velocity powers in~\eqref{eq:weighted}
+give uniform integrability at infinity.
+
+As \(t\downarrow0\), \(O_t\to I_3\) and \(G_t\to0\), so density
+derivatives converge locally to the initial derivatives. Positivity
+gives local convergence of their ratios. Compact/tail splitting and
+H\"older's inequality, using~\eqref{eq:weighted}, now give convergence
+of both \(D(f_t)\) and \(\mathcal V(f_t)\). At positive times, cutoff
+differentiation and integration by parts prove
+\(dD(f_t)/dt=\mathcal V(f_t)\); the same bounds remove the cutoffs.
+Integration from \(\varepsilon\) to \(t\) and passage
+\(\varepsilon\downarrow0\) yield
+\[
+ D(f_t)-D(f_p)=\int_0^t\mathcal V(f_s)\,ds,
+ \qquad \Dzero(f_p)=\mathcal V(f_p).
+\]
+Together with~\eqref{eq:componentexpansion}--\eqref{eq:overlap}, this
+proves~\eqref{eq:asymptotic}. The bound~\eqref{eq:sign} then completes
+Theorem~\ref{thm:main}.
+
+\section{Interpretation and limitations}
+
+Separated counterstreaming beams with strong temperature anisotropy are
+a natural test of initial entropy-production monotonicity. The theorem
+shows that arbitrary fixed non-Gaussian product profiles do not produce
+a positive initial derivative in the scaling~\eqref{eq:beam}, even when
+longitudinal score skewness is present. For this beam geometry, a positive
+sequence as \(p\downarrow0\) would have to leave at least one of the
+fixed-configuration or local-independence hypotheses. These are possible
+escape routes, not assertions that a counterexample exists there.
+
+The conclusion concerns only the initial right derivative. It does not
+establish monotonicity at later times, an invariant mixture family,
+arbitrary correlated local profiles, rough initial data, or a statement
+uniform over varying configurations. The remainder constant and finite
+threshold are not computed explicitly, and \(45/14\) is not sharp.
+The functional sign estimate holds under broader integration-by-parts
+conditions than the actual-mixture theorem; we do not extend the latter
+without its tail and regularity assumptions. No Boltzmann or Coulomb
+conclusion follows by changing the kernel in the present proof. The
+universal Landau--Maxwell initial-time monotonicity problem remains
+unresolved by this result.
+
+\section*{Reproducibility}
+The accompanying original Python/SymPy programs reconstruct the leading
+two-particle coefficient from explicit product-profile moment identities,
+check the partner redistribution and square completion, and verify the
+degree bounds of the full scaled matrices. The supplement specifies the
+environment and one command for replay. Exact algebra checks support the
+displayed calculation; the integrations by parts, mixture estimates and
+solution differentiability are justified in the text. No numerical scan
+is used as a proof of the sign, and no experimental data are used.
+
+\section*{Use of generative AI tools}
+OpenAI Codex was used in developing the analytic argument, generating
+symbolic checking code, performing literature searches and internal
+checks, and drafting this article. The disclosure applies throughout
+the argument and to the accompanying code. AI checks are not external
+peer review and can share errors. Human scientific review, confirmation
+of authorship and affiliation, and acceptance of responsibility for the
+complete manuscript remain pending for this local draft.
+
+\bibliographystyle{plain}
+\bibliography{manuscript/references}
+\end{document}

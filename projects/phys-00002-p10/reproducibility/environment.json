@@ -1,0 +1,6 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.5-arm64-arm-64bit-Mach-O",
+  "third_party_dependencies": [],
+  "scope": "Exact algebra and directed full-plane certificate replay"
+}

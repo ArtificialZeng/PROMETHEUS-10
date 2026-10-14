@@ -1,0 +1,14 @@
+{"panels": 2000, "checks": 4000, "violations": 0, "seconds": 6.340302666998468}
+{"panels": 4000, "checks": 8000, "violations": 0, "seconds": 12.016836207942106}
+{"panels": 6000, "checks": 12000, "violations": 0, "seconds": 17.694776957971044}
+{"panels": 8000, "checks": 16000, "violations": 0, "seconds": 23.01223312492948}
+{"panels": 10000, "checks": 20000, "violations": 0, "seconds": 28.41506962501444}
+{"panels": 12000, "checks": 24000, "violations": 0, "seconds": 33.77581620798446}
+{"panels": 14000, "checks": 28000, "violations": 0, "seconds": 39.92861041694414}
+{"panels": 16000, "checks": 32000, "violations": 0, "seconds": 46.64039283292368}
+{"panels": 18000, "checks": 36000, "violations": 0, "seconds": 53.26734658295754}
+{"panels": 20000, "checks": 40000, "violations": 0, "seconds": 59.973208624986}
+{"panels": 22000, "checks": 44000, "violations": 0, "seconds": 65.31296458293218}
+{"panels": 24000, "checks": 48000, "violations": 0, "seconds": 71.08264849998523}
+{"panels": 26000, "checks": 52000, "violations": 0, "seconds": 76.92512195801828}
+{"status": "pass_actual_remainders_enclosed", "panels": 26275, "checks": 52550, "violations": 0, "seconds": 77.70511249999981}

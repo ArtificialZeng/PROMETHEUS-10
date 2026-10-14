@@ -1,0 +1,23 @@
+{
+  "job_id": "phys-00002-p08-research-babca3f8ba11",
+  "mode": "exact",
+  "purpose": "Same-worker proposer checks of universal proof building blocks; not independent referee",
+  "models": [
+    {
+      "model": "tetrahedral",
+      "normal_form_space_dimension": 8,
+      "active_sets_checked": 11,
+      "replacement_score_difference": "0 exact"
+    },
+    {
+      "model": "unequal_weight_extremal",
+      "normal_form_space_dimension": 8,
+      "active_sets_checked": 11,
+      "replacement_score_difference": "0 exact"
+    }
+  ],
+  "curve_diagonal_quadratic_coefficient": "1/9",
+  "all_probability_first_derivatives": "0 exact",
+  "target_only_spoof": "0 diagonal,1/3 offdiagonal exact",
+  "original_status": "unresolved"
+}

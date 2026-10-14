@@ -1,0 +1,36 @@
+{"L": 4, "k": 2, "full_matrix_entries_checked": 256, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"2": 1}, "mixing_residual_permutation_terms": 0}
+{"L": 4, "k": 3, "full_matrix_entries_checked": 256, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"3": 1, "2": 2}, "mixing_residual_permutation_terms": 0}
+{"L": 4, "k": 4, "full_matrix_entries_checked": 256, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"4": 1, "3": 6}, "mixing_residual_permutation_terms": 0}
+{"L": 5, "k": 2, "full_matrix_entries_checked": 1024, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"2": 1}, "mixing_residual_permutation_terms": 0}
+{"L": 5, "k": 3, "full_matrix_entries_checked": 1024, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"3": 1, "2": 2}, "mixing_residual_permutation_terms": 0}
+{"L": 5, "k": 4, "full_matrix_entries_checked": 1024, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"4": 1, "3": 6}, "mixing_residual_permutation_terms": 0}
+{"L": 5, "k": 5, "full_matrix_entries_checked": 1024, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"5": 1, "4": 12, "3": 12}, "mixing_residual_permutation_terms": 0}
+{"L": 6, "k": 2, "full_matrix_entries_checked": 4096, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"2": 1}, "mixing_residual_permutation_terms": 0}
+{"L": 6, "k": 3, "full_matrix_entries_checked": 4096, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"3": 1, "2": 2}, "mixing_residual_permutation_terms": 0}
+{"L": 6, "k": 4, "full_matrix_entries_checked": 4096, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"4": 1, "3": 6}, "mixing_residual_permutation_terms": 0}
+{"L": 6, "k": 5, "full_matrix_entries_checked": 4096, "independent_transfer_residual_entries": 0, "chain_rule_mixing": {"5": 1, "4": 12, "3": 12}, "mixing_residual_permutation_terms": 0}
+{"model": "XXX", "k": 4, "side": "left", "difference_entries": 24, "rank": 63, "unknowns": 64, "free_variables_set_zero": 1, "residual_nonzero_entries": 0, "equation": "endpoint_density - independently derived q = I tensor m - m tensor I"}
+{"model": "XXX", "k": 4, "side": "left", "L": 4, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "XXX", "k": 4, "side": "left", "L": 6, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "XXX", "k": 4, "side": "right", "difference_entries": 50, "rank": 63, "unknowns": 64, "free_variables_set_zero": 1, "residual_nonzero_entries": 0, "equation": "endpoint_density - independently derived q = I tensor m - m tensor I"}
+{"model": "XXX", "k": 4, "side": "right", "L": 4, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "XXX", "k": 4, "side": "right", "L": 6, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "nonlinear_reparam", "k": 4, "side": "left", "difference_entries": 24, "rank": 63, "unknowns": 64, "free_variables_set_zero": 1, "residual_nonzero_entries": 0, "equation": "endpoint_density - independently derived q = I tensor m - m tensor I"}
+{"model": "nonlinear_reparam", "k": 4, "side": "left", "L": 4, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "nonlinear_reparam", "k": 4, "side": "left", "L": 6, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "nonlinear_reparam", "k": 4, "side": "right", "difference_entries": 50, "rank": 63, "unknowns": 64, "free_variables_set_zero": 1, "residual_nonzero_entries": 0, "equation": "endpoint_density - independently derived q = I tensor m - m tensor I"}
+{"model": "nonlinear_reparam", "k": 4, "side": "right", "L": 4, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "nonlinear_reparam", "k": 4, "side": "right", "L": 6, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "XXX", "k": 5, "side": "left", "difference_entries": 124, "rank": 255, "unknowns": 256, "free_variables_set_zero": 1, "residual_nonzero_entries": 0, "equation": "endpoint_density - independently derived q = I tensor m - m tensor I"}
+{"model": "XXX", "k": 5, "side": "left", "L": 5, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "XXX", "k": 5, "side": "left", "L": 6, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "XXX", "k": 5, "side": "right", "difference_entries": 72, "rank": 255, "unknowns": 256, "free_variables_set_zero": 1, "residual_nonzero_entries": 0, "equation": "endpoint_density - independently derived q = I tensor m - m tensor I"}
+{"model": "XXX", "k": 5, "side": "right", "L": 5, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "XXX", "k": 5, "side": "right", "L": 6, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "nonlinear_reparam", "k": 5, "side": "left", "difference_entries": 142, "rank": 255, "unknowns": 256, "free_variables_set_zero": 1, "residual_nonzero_entries": 0, "equation": "endpoint_density - independently derived q = I tensor m - m tensor I"}
+{"model": "nonlinear_reparam", "k": 5, "side": "left", "L": 5, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "nonlinear_reparam", "k": 5, "side": "left", "L": 6, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "nonlinear_reparam", "k": 5, "side": "right", "difference_entries": 176, "rank": 255, "unknowns": 256, "free_variables_set_zero": 1, "residual_nonzero_entries": 0, "equation": "endpoint_density - independently derived q = I tensor m - m tensor I"}
+{"model": "nonlinear_reparam", "k": 5, "side": "right", "L": 5, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"model": "nonlinear_reparam", "k": 5, "side": "right", "L": 6, "endpoint_sum_minus_transfer_residual_entries": 0}
+{"completed": true, "elapsed_seconds": 0.27815612498670816}

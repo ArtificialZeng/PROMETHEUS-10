@@ -1,0 +1,257 @@
+{
+  "job_id": "phys-00004-p08-research-2ff1f8ac82b0",
+  "started_at": "2026-10-12T10:19:58.838956+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "mode": "exact identities plus numerical diagnostics",
+  "independence": "Same proposer worker; different full matching / metric representation, no fresh referee.",
+  "exact": {
+    "symbolic_identity_remainders": {
+      "hub_continuity": "0",
+      "hub_flux": "0",
+      "leaf_neumann_cosine_expansion": "0",
+      "tan_characteristic": "0"
+    },
+    "doubled_m4_pole_2pi": {
+      "matrix_dimension": 48,
+      "exact_rank": 46,
+      "exact_nullity": 2,
+      "independent_DD_pair_witnesses": 2,
+      "field": "rational",
+      "note": "All added long-edge DD modes retained."
+    }
+  },
+  "matching": [
+    {
+      "m": 4,
+      "checks": {
+        "tree": {
+          "matrix_dimension": 24,
+          "discovery_bracket": [
+            2,
+            2.5
+          ],
+          "full_determinant_root": 2.180123780125385,
+          "closed_form_k": 2.1801237801253857,
+          "absolute_difference": 4.440892098500626e-16,
+          "maximum_matching_residual": 1.6653345369377348e-16,
+          "smallest_two_singular_values": [
+            0.1665873252400099,
+            4.787663915501126e-17
+          ],
+          "diagnostic_nullity": 1
+        },
+        "doubled": {
+          "matrix_dimension": 48,
+          "discovery_bracket": [
+            2,
+            2.5
+          ],
+          "full_determinant_root": 2.180123780125385,
+          "closed_form_k": 2.1801237801253857,
+          "absolute_difference": 4.440892098500626e-16,
+          "maximum_matching_residual": 1.6653345369377348e-16,
+          "smallest_two_singular_values": [
+            0.16593813679828484,
+            2.172078777482635e-16
+          ],
+          "diagnostic_nullity": 1
+        }
+      }
+    },
+    {
+      "m": 5,
+      "checks": {
+        "tree": {
+          "matrix_dimension": 28,
+          "discovery_bracket": [
+            2,
+            2.5
+          ],
+          "full_determinant_root": 2.1876755906224448,
+          "closed_form_k": 2.1876755906224443,
+          "absolute_difference": 4.440892098500626e-16,
+          "maximum_matching_residual": 2.220446049250313e-16,
+          "smallest_two_singular_values": [
+            0.1686754148632709,
+            1.8781464623170024e-16
+          ],
+          "diagnostic_nullity": 1
+        },
+        "doubled": {
+          "matrix_dimension": 56,
+          "discovery_bracket": [
+            2,
+            2.5
+          ],
+          "full_determinant_root": 2.1876755906224363,
+          "closed_form_k": 2.1876755906224443,
+          "absolute_difference": 7.993605777301127e-15,
+          "maximum_matching_residual": 4.440892098500626e-16,
+          "smallest_two_singular_values": [
+            0.166013455675084,
+            2.918817337339128e-17
+          ],
+          "diagnostic_nullity": 1
+        }
+      }
+    },
+    {
+      "m": 8,
+      "checks": {
+        "tree": {
+          "matrix_dimension": 40,
+          "discovery_bracket": [
+            2,
+            2.5
+          ],
+          "full_determinant_root": 2.19962596456695,
+          "closed_form_k": 2.19962596456695,
+          "absolute_difference": 0.0,
+          "maximum_matching_residual": 1.3877787807814457e-16,
+          "smallest_two_singular_values": [
+            0.17237242939507427,
+            6.243362901374284e-17
+          ],
+          "diagnostic_nullity": 1
+        },
+        "doubled": {
+          "matrix_dimension": 80,
+          "discovery_bracket": [
+            2,
+            2.5
+          ],
+          "full_determinant_root": 2.19962596456695,
+          "closed_form_k": 2.19962596456695,
+          "absolute_difference": 0.0,
+          "maximum_matching_residual": 3.608224830031759e-16,
+          "smallest_two_singular_values": [
+            0.16215502974924445,
+            8.928128587040687e-17
+          ],
+          "diagnostic_nullity": 1
+        }
+      }
+    }
+  ],
+  "metric": {
+    "m": 4,
+    "doubled_edges": 24,
+    "edge_pairs_optimized": 300,
+    "all_interior_coordinate_domains_included": true,
+    "maximum_distance": 1.0,
+    "extrema_vertex_diameter": 0.8855017059025998,
+    "predicted_extrema_diameter": 0.8855017059025998,
+    "opposite_long_pair_maximum": 0.5,
+    "method": "max-min affine path-length LP, with direct same-copy path on both x/y order domains",
+    "error_control": "Binary64/HiGHS diagnostics only; no directed enclosure. Exact case proof is separate."
+  },
+  "scalar": {
+    "m_checks": [
+      {
+        "m": 4,
+        "h": "0.147583617650433",
+        "mu2": "4.7529396966682",
+        "extrema_diameter": "0.8855017059026",
+        "leaf_amplitude": "0.395284707521047",
+        "characteristic_residual": "-1.8111e-71",
+        "added_DD_threshold": "4*pi^2"
+      },
+      {
+        "m": 5,
+        "h": "0.133860236400615",
+        "mu2": "4.78592448980526",
+        "extrema_diameter": "0.80316141840369",
+        "leaf_amplitude": "0.346410161513775",
+        "characteristic_residual": "1.8111e-71",
+        "added_DD_threshold": "4*pi^2"
+      },
+      {
+        "m": 8,
+        "h": "0.108173447969393",
+        "mu2": "4.83835438399709",
+        "extrema_diameter": "0.649040687816356",
+        "leaf_amplitude": "0.265165042944955",
+        "characteristic_residual": "9.0557e-72",
+        "added_DD_threshold": "4*pi^2"
+      },
+      {
+        "m": 32,
+        "h": "0.0556943770115319",
+        "mu2": "4.90952028302009",
+        "extrema_diameter": "0.334166262069191",
+        "leaf_amplitude": "0.126938100072437",
+        "characteristic_residual": "0.0",
+        "added_DD_threshold": "4*pi^2"
+      },
+      {
+        "m": 256,
+        "h": "0.0198685243055408",
+        "mu2": "4.93159611565199",
+        "extrema_diameter": "0.119211145833245",
+        "leaf_amplitude": "0.0442804064404478",
+        "characteristic_residual": "-1.8111e-71",
+        "added_DD_threshold": "4*pi^2"
+      },
+      {
+        "m": 10000,
+        "h": "0.00318299276490826",
+        "mu2": "4.93471995822755",
+        "extrema_diameter": "0.0190979565894495",
+        "leaf_amplitude": "0.00707142135641768",
+        "characteristic_residual": "1.8111e-71",
+        "added_DD_threshold": "4*pi^2"
+      }
+    ],
+    "epsilon_checks": [
+      {
+        "epsilon": "2.0",
+        "m": 4,
+        "extrema_diameter": "0.8855017059026",
+        "number_of_doubled_edges": 24,
+        "diagnostic": "scalar formula only; enormous graphs are not numerically instantiated"
+      },
+      {
+        "epsilon": "1.0",
+        "m": 4,
+        "extrema_diameter": "0.8855017059026",
+        "number_of_doubled_edges": 24,
+        "diagnostic": "scalar formula only; enormous graphs are not numerically instantiated"
+      },
+      {
+        "epsilon": "0.9",
+        "m": 5,
+        "extrema_diameter": "0.80316141840369",
+        "number_of_doubled_edges": 28,
+        "diagnostic": "scalar formula only; enormous graphs are not numerically instantiated"
+      },
+      {
+        "epsilon": "0.1",
+        "m": 365,
+        "extrema_diameter": "0.0998754616104367",
+        "number_of_doubled_edges": 1468,
+        "diagnostic": "scalar formula only; enormous graphs are not numerically instantiated"
+      },
+      {
+        "epsilon": "0.01",
+        "m": 36476,
+        "extrema_diameter": "0.00999985736621332",
+        "number_of_doubled_edges": 145912,
+        "diagnostic": "scalar formula only; enormous graphs are not numerically instantiated"
+      },
+      {
+        "epsilon": "0.0001",
+        "m": 364756262,
+        "extrema_diameter": "9.99999997869467e-5",
+        "number_of_doubled_edges": 1459025056,
+        "diagnostic": "scalar formula only; enormous graphs are not numerically instantiated"
+      }
+    ]
+  },
+  "finished_at": "2026-10-12T10:19:59.442783+00:00",
+  "diagnostic_status": "passed actual checks",
+  "limitations": "No floating root/SVD/LP output is an exact enclosure; no independent referee or exhaustive novelty verdict. Exact universal proof is separate."
+}

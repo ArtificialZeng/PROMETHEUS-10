@@ -1,0 +1,29 @@
+{
+  "method": "New direct leading two-particle variation with general product-profile IBP moments; no prior implementation imported.",
+  "pair_kernel": "Matrix([[(m - n)**2/2, 0, (-U + x)*(-m + n)/2], [0, (m - n)**2/2, (-V + y)*(-m + n)/2], [(-U + x)*(-m + n)/2, (-V + y)*(-m + n)/2, (-U + x)**2/2 + (-V + y)**2/2]])",
+  "partner_M1": "(2*b*ik + 2*b*t**2 + fx*m**2 - 2*fx*m*n + fx*n**2 + fy*m**2 - 2*fy*m*n + fy*n**2 + gx**2*m**2 - 2*gx**2*m*n + gx**2*n**2 - 2*gx*m*t*x + 2*gx*n*t*x + gy**2*m**2 - 2*gy**2*m*n + gy**2*n**2 - 2*gy*m*t*y + 2*gy*n*t*y + ik*x**2 + ik*y**2 + 4*m*t - 4*n*t + t**2*x**2 + t**2*y**2)/2",
+  "partner_M1_residual": "0",
+  "partner_M2": "Matrix([[-(-gx*m**2 - 3*gx + m*t*x)/2], [-(-gy*m**2 - 3*gy + m*t*y)/2], [(-gx*m*x - gy*m*y + 2*m + t*x**2 + t*y**2 + 2*t)/2]])",
+  "partner_M2_residual": "zero vector",
+  "local_Q0": "-KK*m*tt + L*(m**2 + 3)/2 + dd*ll",
+  "local_Q0_mass": "0",
+  "local_Q0_M1": "(3*ELL2*m**4 + 18*ELL2*m**2 + 27*ELL2 + 6*I*K2*m**2 + 30*I*m**2 + 18*I + 6*Ibar*m**2 + 18*Ibar - 3*JP*m**4 - 18*JP*m**2 - 27*JP + 42*S3*a*m + 24*S3*m + T4*U4 + 8*T4*a + 4*T4)/6",
+  "local_Q0_squared": "(3*ELL2*m**4 + 18*ELL2*m**2 + 27*ELL2 + 12*I*K2*m**2 + 3*J*U4 + 24*J*a + 12*J + 48*S3*a*m + 24*S3*m + T4*U4 + 8*T4*a + 4*T4)/12",
+  "pair_row": "-(2*I*K2*m**2 - 10*I*m**2 - 6*I - 2*Ibar*m**2 - 6*Ibar + J*U4 + 8*J*a + 4*J + JP*m**4 + 6*JP*m**2 + 9*JP + 2*S3*a*m)/2",
+  "pair_row_residual": "0",
+  "angular_coefficient": "I*(-K2*m**2 + 5*m**2 + 9) - J*(U4/2 + 4*a + 2) + JP*(-m**2 - 3)*(m**2 + 3)/2 - S3*a*m",
+  "row_redistribution": "-6*I + Ibar*(m**2 + 3)",
+  "weighted_redistribution": "sum w_j B_j=6 and Ibar=sum w_j I_j => 6 Ibar-6 Ibar=0",
+  "gaussian_control_residual": "0",
+  "skew_square_residual": "0",
+  "transverse_bounds": [
+    "JP>=2/a^2",
+    "K2>=4+16/(u-4)",
+    "K2<=4+sqrt(2 JP U4)",
+    "JP U4>=max(2u,128/(u-4)^2)>=14"
+  ],
+  "c_m2_coefficient_upper_minus_one": "-2*(7*u + 4)/(u*(u - 4))",
+  "final_local_bound": "C<=-(5/28)(m^2+3)^2 JP<=-45/(14a^2)",
+  "weighted_bound": "sum w C<=-45/14 from sum w a=1",
+  "limitations": "Exact algebra checks do not themselves prove the IBP, flow differentiability, or overlap/tail hypotheses; these are derived in product-pair-and-sign-derivation.md. Proposer verification only."
+}

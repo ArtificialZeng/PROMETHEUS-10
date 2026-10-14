@@ -1,0 +1,3 @@
+# Python >=3.11. Core arithmetic: standard library only.
+# Optional symbolic weighted Kac-Ward and polynomial checks:
+sympy==1.14.0

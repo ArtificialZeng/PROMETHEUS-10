@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "project_id": "phys-00008-p03",
+  "series": "big_mac",
+  "upstream_base_commit": "07342ef",
+  "release_status": "draft_ready_author_review_required",
+  "kind": "result-note",
+  "original_status": "unresolved",
+  "original_source_sha256": "89a33c3f350991220d87933a4885eabc99086a737d4bc5a09e9d8f812132cb4f",
+  "source_bundle_sha256": "7aafce9b9c78a8432dba01fdb39c327775019ec2890008208f0f9a3977c690d6",
+  "source_bundle_manifest_sha256": "627b9f3f24a0de503ce0de59e2673fec4c22b41e71ab2f4054d496d3e0618f1f",
+  "scientific_snapshot_digest": "35f0d02370822a51817711f61432ae3c22627e5f6c7034dfd8c3cb56800e40af",
+  "manuscript_digest": "077045b77da3c46494d2cb14e9801b2bdf2776db701f9eb9945db5d4b60f53eb",
+  "pdf_sha256": "588d65d84d0ea8ce7979fc9e12239535cc5fff5c7ce68e44896332f169e0e5ec",
+  "scope_source": "frozen claim and native release; archived qualified version where required",
+  "public_file_rename": {
+    "main.pdf": "paper.pdf"
+  },
+  "portability_changes": [],
+  "human_author_review": "required",
+  "external_peer_review": "not_claimed"
+}

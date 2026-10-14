@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "project_id": "phys-00005-p05",
+  "series": "big_mac",
+  "upstream_base_commit": "07342ef",
+  "release_status": "draft_ready_author_review_required",
+  "kind": "resolution-paper",
+  "original_status": "disproved",
+  "original_source_sha256": "6e6352a4d8a154b4cf39188e61cfa46253d516c7681fab6bd173f414a3f1756a",
+  "source_bundle_sha256": "b166ab52cee9217ac66d26764f15ec7db76bceef50b21ab873b14393fc2a7b5b",
+  "source_bundle_manifest_sha256": "f6b1aef82497ddd00d86945d36fa1c82f22b958607bda611085fd94b797d6d28",
+  "scientific_snapshot_digest": "0175f8453292c6a64c7a031c0c44d918b5758745c97728160b6a1a766a31997d",
+  "manuscript_digest": "8ff2b6dfecde0212e95edd794c7ebb3433677b7226f6428747abc472a679b599",
+  "pdf_sha256": "806ae662259e83f9df6d8fa2cdf803cfeccea0d0a5c1f69884a3f4b5d551cd7b",
+  "scope_source": "frozen claim and native release; archived qualified version where required",
+  "public_file_rename": {
+    "main.pdf": "paper.pdf"
+  },
+  "portability_changes": [
+    {
+      "file": "evidence/research/counterexample-proof.md",
+      "original_sha256": "bed8d3c612611678ba06e9632ae3e55175f73426d2c8836db093da73fa5d9837",
+      "public_sha256": "2913424564f76bd74b258f0851fb0d3ac4fb1d539985819589d8a8b33dcbfc94",
+      "edits": [
+        {
+          "from": "/Users/mac/6physics-research/.venv/bin/python",
+          "to": "python3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "human_author_review": "required",
+  "external_peer_review": "not_claimed"
+}

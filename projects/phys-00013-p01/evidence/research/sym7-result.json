@@ -1,0 +1,59 @@
+{
+  "degree": 7,
+  "dimension": 3432,
+  "casimir_entrywise_comparison": "exact_pass",
+  "basis_map": "evidence/research/sym7-basis-map.json",
+  "all_16_cross_gram_entries": "exact_pass",
+  "completed_local_dimensions": [
+    4,
+    4
+  ],
+  "raw_local_dimension_from_independent_Cauchy_branching": 120,
+  "global_dimension": 1,
+  "global_dimension_reason": "Sym^7 C8 is irreducible, highest weight 7 omega1; complete SU8 commutant CI. A(X)=Tr(X)I/3432.",
+  "global_coefficient_projector": [
+    [
+      "40/143",
+      "54/143",
+      "112/429",
+      "35/429"
+    ],
+    [
+      "40/143",
+      "54/143",
+      "112/429",
+      "35/429"
+    ],
+    [
+      "40/143",
+      "54/143",
+      "112/429",
+      "35/429"
+    ],
+    [
+      "40/143",
+      "54/143",
+      "112/429",
+      "35/429"
+    ]
+  ],
+  "nonfixed_signed_characteristic_polynomial": "lambda*(5*lambda - 2)*(14*lambda - 3)*(15*lambda - 2)/1050",
+  "largest_nonfixed_cosine": "2/5",
+  "squared_cosines": [
+    "4/25",
+    "9/196",
+    "4/225"
+  ],
+  "witness_coefficients": [
+    "-7/8",
+    "0",
+    "5/8",
+    "1"
+  ],
+  "witness_trace": "0",
+  "witness_HS_norm_squared": "1365",
+  "strict_exceedance_of_half": false,
+  "original_status": "unresolved",
+  "candidate_kind": "none",
+  "scope": "Exact failed counterexample test in one representation; not an all-PU8 theorem or referee acceptance."
+}

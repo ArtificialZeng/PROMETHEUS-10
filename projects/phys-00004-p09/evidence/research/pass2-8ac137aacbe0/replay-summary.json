@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-12T11:04:19.657271+00:00",
+  "precision_decimal_digits": 70,
+  "completed": true,
+  "tables": 4,
+  "directions": 8,
+  "signed_entropy_evaluations": 48,
+  "max_last_step_discrepancy": "0.01053868774908848534235712130730984241579017296395183019745325251116416",
+  "maximum_marginal_residual": "9.354801088378469950832450214714039954635425131186999327531062641763294e-72",
+  "maximum_unitarity_residual": "2.561332833973904095411585299518201327596742353582472069895726112673765e-71",
+  "wall_seconds": 8.611124417046085,
+  "independence": "Separate code and full tensor/partial-trace eigensolver; shared model, same proposer. No fresh referee independence.",
+  "error_control": "70-digit arithmetic and three central step sizes check the formula; not interval entropy certification. Exact proof rests on the analytic derivation and complete polynomial identity, not these finite differences."
+}

@@ -1,0 +1,75 @@
+{
+  "id": "phys-00007-p05",
+  "prepared_at": "2026-10-12T03:05:31.184827+00:00",
+  "state": "prepared_not_queued",
+  "source_original": "/Users/mac/Documents/ChatGPT/physics_BigMAC/成果总表/sources/phys-00007-p05.md",
+  "source_sha256": "64520010b568dafe82d8d5e1aecc669475eb5d5b5fef3ff5f01b2e180c2469af",
+  "admit_when": "after prepared encoding, MI, EPR, PPT-cost reserves; discovery pending <=1; review priority; fresh symmetry/prior-coverage triage",
+  "files": [
+    {
+      "path": "/Users/mac/Documents/ChatGPT/physics_BigMAC/成果总表/sources/phys-00007-p05.md",
+      "sha256": "64520010b568dafe82d8d5e1aecc669475eb5d5b5fef3ff5f01b2e180c2469af",
+      "bytes": 4696
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/phys-00007-p05-current-screen.md",
+      "sha256": "1c432f98e9c4cf41f883be6fe72cda2966854ac013c80479c87682666b694dd4",
+      "bytes": 4867
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/phys-00007-p05-current-web.json",
+      "sha256": "17699aa8f92039374a3b8632640ba1bb65b8dab62d00760675c78d474a1098f3",
+      "bytes": 54618
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/2410.01740v2.pdf",
+      "sha256": "90fe99083203990d5fe9762d2fb1e1d8707d81f80cb4ceef8cee219e83389c98",
+      "bytes": 764213
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/2410.01740v2.retrieval.json",
+      "sha256": "f43011fbc7814edf95c9459414c2e2e8945b9b7d97f1715bf2197698a68afda8",
+      "bytes": 293
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/2410.01740v2.txt",
+      "sha256": "63b2f46b88fb8a0c519f1858c3a177e603ba921f5f0c67ac6d4d0fa59f2da963",
+      "bytes": 211296
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/2604.01217v2.pdf",
+      "sha256": "1ce2dca205517929d2a42034c95dfe476bc4f88b2dda8086e0b6ec512ed674cf",
+      "bytes": 696090
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/2604.01217v2.retrieval.json",
+      "sha256": "bb817536925005a55744b0da9a810ab354b263934815c266c20bd6e61e7430d9",
+      "bytes": 293
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/2604.01217v2.txt",
+      "sha256": "1cd2f895831fa3c24bcdf616267add32cf8beae71808edb22fda7fbc34c7c00a",
+      "bytes": 280489
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/KRS2009-definition.png",
+      "sha256": "c52fd3c4b6d3e614ec0c1c9083f6fd27f377963f594a811466047b6461c79bbc",
+      "bytes": 568793
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/KRS2009-published.pdf",
+      "sha256": "e5ddc5668b52e9520e83322deb862851726ff85e586afaa1dc067c1a03acbd45",
+      "bytes": 321472
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/KRS2009-published.retrieval.json",
+      "sha256": "b58a18a506153b17addca4325016835008eacf79c4c15d8f33f4a19222aa96de",
+      "bytes": 302
+    },
+    {
+      "path": "/Users/mac/6physics-research/supervisor/intake-screening/channelentropy-primary/KRS2009-published.txt",
+      "sha256": "d54e1b85849d66892ab647d6ad85ad850d25c58f42ae2b7b7ae4083208e03cc1",
+      "bytes": 76928
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Chru{\'s}ci{\'n}ski et~al.(2023)Chru{\'s}ci{\'n}ski, Kimura, Ohno, and
+  Singal]{ckos2022response}
+Dariusz Chru{\'s}ci{\'n}ski, Gen Kimura, Hiromichi Ohno, and Tanmay Singal.
+\newblock One-parameter generalization of the {B{\"o}ttcher--Wenzel} inequality
+  and its application to open quantum dynamics.
+\newblock \emph{Linear Algebra and its Applications}, 656:\penalty0 158--166,
+  2023.
+\newblock \doi{10.1016/j.laa.2022.09.022}.
+\newblock URL \url{https://arxiv.org/abs/2208.10005v1}.
+\newblock Equations and proofs are cited from author preprint
+  arXiv:2208.10005v1 (2022), titled {One parameter generalization of BW
+  inequality and its application to open quantum dynamics}.
+
+\bibitem[Chru{\'s}ci{\'n}ski et~al.(2022)Chru{\'s}ci{\'n}ski, Kimura, Ohno, and
+  Singal]{ckos2022norm}
+Dariusz Chru{\'s}ci{\'n}ski, Gen Kimura, Hiromichi Ohno, and Tanmay Singal.
+\newblock Bounding the {Frobenius} norm of a \(q\)-deformed commutator.
+\newblock Author preprint, arXiv:2202.11520v2, 2022.
+\newblock URL \url{https://arxiv.org/abs/2202.11520v2}.
+
+\bibitem[Nobori(2026)]{nobori2026}
+Motoyuki Nobori.
+\newblock A note on some upper bounds for the {Frobenius} norm of the
+  \(q\)-deformed commutator.
+\newblock Author preprint, arXiv:2608.03897v1, 2026.
+\newblock URL \url{https://arxiv.org/abs/2608.03897v1}.
+
+\bibitem[Muratore-Ginanneschi et~al.(2024)Muratore-Ginanneschi, Kimura, and
+  Chru{\'s}ci{\'n}ski]{muratore2024}
+Paolo Muratore-Ginanneschi, Gen Kimura, and Dariusz Chru{\'s}ci{\'n}ski.
+\newblock Universal bound on the relaxation rates for quantum {Markovian}
+  dynamics.
+\newblock Author preprint, arXiv:2409.00436v1, 2024.
+\newblock URL \url{https://arxiv.org/abs/2409.00436v1}.
+
+\end{thebibliography}

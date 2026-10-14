@@ -1,0 +1,314 @@
+{
+  "status": "pass",
+  "exact_entry_and_characteristic_map": "pass",
+  "published_exact_baseline_cases": 8,
+  "comparison_cases": [
+    {
+      "label": "uniform_product",
+      "copies": 1,
+      "source_reference_entropy_bits": 0.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 0.0,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 0.0
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "uniform_product",
+      "copies": 2,
+      "source_reference_entropy_bits": 0.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 1.5629285849042004e-16,
+        "entropy_bits": 1.6017132519074586e-16,
+        "reference_entropy_bits": 1.6017132519074586e-16,
+        "physical_marginal": 0.0
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "biased_product",
+      "copies": 1,
+      "source_reference_entropy_bits": 0.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 2.220446049250313e-16,
+        "entropy_bits": 3.2034265038149167e-16,
+        "reference_entropy_bits": 3.2034265038149176e-16,
+        "physical_marginal": 1.1102230246251565e-16
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "biased_product",
+      "copies": 2,
+      "source_reference_entropy_bits": 0.0,
+      "errors": {
+        "coefficient": 1.1102230246251565e-16,
+        "spectrum": 6.661338147750939e-16,
+        "entropy_bits": 9.610279511444756e-16,
+        "reference_entropy_bits": 3.2034265038149176e-16,
+        "physical_marginal": 1.1102230246251565e-16
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "uniform_correlated",
+      "copies": 1,
+      "source_reference_entropy_bits": 1.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 0.0,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 1.1102230246251565e-16,
+        "physical_marginal": 1.1102230246251565e-16
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "uniform_correlated",
+      "copies": 2,
+      "source_reference_entropy_bits": 2.0,
+      "errors": {
+        "coefficient": 1.1102230246251565e-16,
+        "spectrum": 1.1102230246251565e-16,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 1.1102230246251565e-16
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "uniform_anticorrelated",
+      "copies": 1,
+      "source_reference_entropy_bits": 1.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 0.0,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 1.1102230246251565e-16,
+        "physical_marginal": 1.1102230246251565e-16
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "uniform_anticorrelated",
+      "copies": 2,
+      "source_reference_entropy_bits": 2.0,
+      "errors": {
+        "coefficient": 1.1102230246251565e-16,
+        "spectrum": 1.1102230246251565e-16,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 1.1102230246251565e-16
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "biased_correlated",
+      "copies": 1,
+      "source_reference_entropy_bits": 0.9182958340544896,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 0.0,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 0.0
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "biased_correlated",
+      "copies": 2,
+      "source_reference_entropy_bits": 1.8365916681089791,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 0.0,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 2.220446049250313e-16,
+        "physical_marginal": 0.0
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "deterministic",
+      "copies": 1,
+      "source_reference_entropy_bits": 0.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 0.0,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 0.0
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "deterministic",
+      "copies": 2,
+      "source_reference_entropy_bits": 0.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 0.0,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 0.0
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "zero_row",
+      "copies": 1,
+      "source_reference_entropy_bits": 0.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 2.220446049250313e-16,
+        "entropy_bits": 3.2034265038149176e-16,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 0.0
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "zero_row",
+      "copies": 2,
+      "source_reference_entropy_bits": 0.0,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 2.220446049250313e-16,
+        "entropy_bits": 3.2034265038149176e-16,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 0.0
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "asymmetric",
+      "copies": 1,
+      "source_reference_entropy_bits": 0.02103352607526123,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 1.1102230246251565e-16,
+        "entropy_bits": 3.226585665316861e-16,
+        "reference_entropy_bits": 2.0122792321330962e-16,
+        "physical_marginal": 5.551115123125783e-17
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "asymmetric",
+      "copies": 2,
+      "source_reference_entropy_bits": 0.04206705215052246,
+      "errors": {
+        "coefficient": 5.551115123125783e-17,
+        "spectrum": 5.64107002212419e-17,
+        "entropy_bits": 1.1934897514720433e-15,
+        "reference_entropy_bits": 1.0894063429134349e-15,
+        "physical_marginal": 4.163336342344337e-17
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "three_support",
+      "copies": 1,
+      "source_reference_entropy_bits": 0.35457890266526987,
+      "errors": {
+        "coefficient": 0.0,
+        "spectrum": 2.220446049250313e-16,
+        "entropy_bits": 1.6653345369377348e-16,
+        "reference_entropy_bits": 0.0,
+        "physical_marginal": 1.1102230246251565e-16
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    },
+    {
+      "label": "three_support",
+      "copies": 2,
+      "source_reference_entropy_bits": 0.7091578053305397,
+      "errors": {
+        "coefficient": 1.1102230246251565e-16,
+        "spectrum": 2.220446049250313e-16,
+        "entropy_bits": 0.0,
+        "reference_entropy_bits": 1.1102230246251565e-16,
+        "physical_marginal": 1.1102230246251565e-16
+      },
+      "status": "pass",
+      "reference_scope": "n times the exact single-copy value; for general n=2 cases this is an attainable upper bound only"
+    }
+  ],
+  "max_errors": {
+    "coefficient": 1.1102230246251565e-16,
+    "spectrum": 6.661338147750939e-16,
+    "entropy_bits": 1.1934897514720433e-15,
+    "physical_marginal": 1.1102230246251565e-16,
+    "reference_entropy_bits": 1.0894063429134349e-15
+  },
+  "supplement": {
+    "trials": 304,
+    "fixed_tables": 6,
+    "random_tables": 32,
+    "auxiliary_splits": [
+      [
+        1,
+        4
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "rng_seed": 20261012,
+    "largest_marginal_error": 5.551115123125783e-16,
+    "largest_spectrum_disagreement": 1.1102230246251565e-15,
+    "largest_norm_chain_violation": 1.1102230246251565e-16,
+    "minimum_largest_weight_slack": -4.440892098500626e-16,
+    "minimum_entropy_slack_bits": -6.406853007629837e-16,
+    "status": "pass",
+    "meaning": "finite floating-point diagnostics, not a proof of arbitrary dimension or two-copy additivity"
+  },
+  "limitations": "Known one-copy and special tensor-power results only; no new optimization, no universal two-copy result, no referee acceptance."
+}

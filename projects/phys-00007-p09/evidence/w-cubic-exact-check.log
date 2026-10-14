@@ -1,0 +1,57 @@
+{
+  "status": "pass",
+  "representation": "operator conjugation in original W basis; nested commutators",
+  "independence": "Separately coded, no w_cubic import or cached jet input; shared radical algebra and primary q",
+  "jet_checks": [
+    {
+      "baseline": [],
+      "first": [],
+      "second": []
+    },
+    {
+      "baseline": [],
+      "first": [],
+      "second": []
+    },
+    {
+      "baseline": [],
+      "first": [],
+      "second": []
+    },
+    {
+      "baseline": [],
+      "first": [],
+      "second": []
+    },
+    {
+      "baseline": [],
+      "first": [],
+      "second": []
+    },
+    {
+      "baseline": [],
+      "first": [],
+      "second": []
+    },
+    {
+      "baseline": [],
+      "first": [],
+      "second": []
+    }
+  ],
+  "cubic_exact": [
+    {
+      "powers_r_a_b_i": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "rational": "-80/3"
+    }
+  ],
+  "cubic_numeric": -10.886621079036347,
+  "source_path_norm_squared": 13,
+  "source_path_missing_derivative": 26,
+  "limitations": "Proposer cross-check, not fresh referee acceptance; full cubic checked in separate vector expansion"
+}

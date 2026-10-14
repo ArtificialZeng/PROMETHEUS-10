@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "scope": "Independent integer-interval replay of scalar certificate and constants; same proposer, not fresh referee acceptance.",
+  "representation": "128-bit binary fixed-point intervals; signed integer directed divisions; isqrt; 40-term atanh logarithm with positive geometric tail bound",
+  "certificate_sha256": "b553cbae4f1b219d684c56be401210c8152edc5b742d226fa52dc329c1da4bb8",
+  "visited": 7563,
+  "leaves": 3782,
+  "leaf_counts": {
+    "interval_positive": 3393,
+    "analytic_small_current_ratio": 388,
+    "outside_a_gt_b": 1
+  },
+  "minimum_interval_leaf_margin_lower": {
+    "lower_integer": "2248727321763718298576360172569072",
+    "upper_integer": "2248727321763718298576360172569072",
+    "scale_integer": "340282366920938463463374607431768211456",
+    "lower_display": "0.00000660841565818245820120605877012261275210059299",
+    "upper_display": "0.00000660841565818245820120605877012261275210059299"
+  },
+  "constant_checks": {
+    "log2_lt7over10": true,
+    "log1000_lt7": true,
+    "log1e6_between13and14": true,
+    "log20_lt3": true,
+    "asinh1000_lt8": true,
+    "tiny_b_error_below_margin": true,
+    "corner_positive": true,
+    "psi0_witness_below9over10": true,
+    "complete_disjoint_rational_cover": true
+  },
+  "psi0_upper_witness_enclosure": {
+    "lower_integer": "290587024916506948414104395920195760407",
+    "upper_integer": "290587024916506948414104395920195760674",
+    "scale_integer": "340282366920938463463374607431768211456",
+    "lower_display": "0.853958515529023050407912069383240100680841554",
+    "upper_display": "0.853958515529023050407912069383240101465484033"
+  },
+  "corner_margin_enclosure": {
+    "lower_integer": "17278914834441125552728954744211544083",
+    "upper_integer": "17278914834441125552728954744211544503",
+    "scale_integer": "340282366920938463463374607431768211456",
+    "lower_display": "0.0507781669405624107862253509398211073884004653",
+    "upper_display": "0.0507781669405624107862253509398211086226695337"
+  },
+  "seconds": 7.990526914596558
+}

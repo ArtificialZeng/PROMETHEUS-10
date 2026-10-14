@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "basis": "Original topic and frozen scientific statement; explicit quantifier and hypothesis comparison; no full-PDF similarity algorithm",
+  "upstream_base_commit": "07342ef",
+  "relationships": [
+    {
+      "older": "phys-smallmac00008-p02",
+      "canonical": "phys-smallmac00014-p11",
+      "kind": "covered_special_case",
+      "reason": "The earlier optimized two-use equality for full-Choi-rank qubit channels is included in the later all-positive-integer-use theorem under the same fresh minimal environment, fixed full four-outcome measurement and recovery conventions. The all-n determinant-polarization result subsumes n=2.",
+      "count_earlier_separately": false
+    },
+    {
+      "older": "phys-smallmac00014-p03",
+      "canonical": "phys-smallmac00015-p01",
+      "kind": "covered_special_case",
+      "reason": "The earlier finite-offset symmetric K3 weak-drive inequality and sharp factor 2 are the N=3 specialization of the later complete-K_N weak-Fourier-drive theorem. Neither proves a finite-amplitude phase bound. The earlier specialized calculation remains available.",
+      "count_earlier_separately": false
+    },
+    {
+      "older": "phys-smallmac00015-p06",
+      "canonical": "phys-smallmac00016-p01",
+      "kind": "covered_witness_stronger_bound",
+      "reason": "Both use the same ordered GAD instrument, incoherent 03|12 bit, p=18/25, gamma=3/10 and two-use policy distinction. The later exact current-bit optimum 289/400 and history value 1831/2500 give 99/10000 advantage, strengthening the earlier 7/2500 witness, and add a certified rectangle. The n=1 equality also settles earliest onset.",
+      "count_earlier_separately": false
+    },
+    {
+      "members": [
+        "phys-00004-p09",
+        "phys-smallmac00022-p01"
+      ],
+      "kind": "related_distinct_quantifiers",
+      "reason": "Both concern two-copy binary-state entanglement of purification. big_mac proves pathwise positivity for every positive nonproduct binary table without a common neighborhood; small_mac proves a full U(16) strict local minimum modulo gauge at r=1/2. Neither recorded statement contains the other complete statement. Keep both, link them, and do not infer global additivity.",
+      "count_separately": true
+    },
+    {
+      "members": [
+        "phys-00035-p01",
+        "phys-smallmac00022-p03"
+      ],
+      "kind": "related_distinct_graph_regimes",
+      "reason": "The small_mac result is an all-s certificate for q=1..6 one-hub subdivided stars. big_mac proves a full-gap, tail-controlled two-hub family for k>=100 in eta=theta/k, theta in [1/2,2]. Different topology, size and parameter quantifiers; neither is an all-graph proof.",
+      "count_separately": true
+    },
+    {
+      "members": [
+        "phys-00018-p01",
+        "phys-smallmac00010-p02"
+      ],
+      "kind": "related_distinct_stochastic_models",
+      "reason": "The two-gene finite-RNA-lifetime matched-baseline theorem is not the three-species direct-abundance feedback-ring weak-regulation result. The intermediate RNA state, number of species, baseline and whole-space remainder are different.",
+      "count_separately": true
+    },
+    {
+      "members": [
+        "phys-00030-p01",
+        "phys-00032-p01"
+      ],
+      "kind": "related_distinct_observables",
+      "reason": "A finite nonreciprocal full-current large-deviation counterexample is not the resource-dependent three-port noise/entropy theorem. The target bound, observable and hypothesis sets differ.",
+      "count_separately": true
+    }
+  ],
+  "all_pdf_and_source_originals_preserved": true,
+  "unknown_equivalence_is_not_merged": true
+}

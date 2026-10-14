@@ -1,0 +1,47 @@
+\begin{tikzpicture}[x=1.25cm,y=0.95cm,
+  every node/.style={font=\small},
+  vertex/.style={circle,fill=black,inner sep=1.7pt},
+  hot/.style={circle,fill=red!70!black,inner sep=2.1pt},
+  cold/.style={circle,fill=blue!70!black,inner sep=2.1pt},
+  edge/.style={line width=0.45pt}]
+\coordinate (o) at (0,0);
+\coordinate (l1) at (0,2.2);
+\coordinate (l2) at (0,-2.2);
+\coordinate (p) at (-1.5,0);
+\coordinate (n) at (1.5,0);
+\foreach \A/\B/\col in {o/l1/black!60,o/l2/black!60,o/p/red!70!black,o/n/blue!70!black}{
+  \draw[edge,\col] (\A) to[bend left=8] (\B);
+  \draw[edge,\col] (\A) to[bend right=8] (\B);
+}
+\foreach \j/\y in {1/1.25,2/0.48,3/-0.48,4/-1.25}{
+  \coordinate (p\j) at (-3.0,\y);
+  \coordinate (n\j) at (3.0,\y);
+  \draw[edge,red!70!black] (p) to[bend left=6] (p\j);
+  \draw[edge,red!70!black] (p) to[bend right=6] (p\j);
+  \draw[edge,blue!70!black] (n) to[bend left=6] (n\j);
+  \draw[edge,blue!70!black] (n) to[bend right=6] (n\j);
+  \node[hot] at (p\j) {};
+  \node[cold] at (n\j) {};
+}
+\node[vertex,label=above right:$o$] at (o) {};
+\node[hot,label=below:$p$] at (p) {};
+\node[cold,label=below:$n$] at (n) {};
+\node[vertex,label=above:$\ell_1$] at (l1) {};
+\node[vertex,label=below:$\ell_2$] at (l2) {};
+\node[left] at (p1) {$p_1$};
+\node[left] at (p2) {$p_2$};
+\node[left] at (p3) {$p_{m-1}$};
+\node[left] at (p4) {$p_m$};
+\node[right] at (n1) {$n_1$};
+\node[right] at (n2) {$n_2$};
+\node[right] at (n3) {$n_{m-1}$};
+\node[right] at (n4) {$n_m$};
+\node at (-3.25,0) {$\vdots$};
+\node at (3.25,0) {$\vdots$};
+\node[fill=white,inner sep=1.5pt] at (-0.76,0.27) {$h_m$};
+\node[fill=white,inner sep=1.5pt] at (0.76,0.27) {$h_m$};
+\node[fill=white,inner sep=1.5pt] at (-2.22,0.93) {$2h_m$};
+\node[fill=white,inner sep=1.5pt] at (2.22,0.93) {$2h_m$};
+\node[right] at (0.18,1.12) {$1/2$};
+\node[right] at (0.18,-1.12) {$1/2$};
+\end{tikzpicture}

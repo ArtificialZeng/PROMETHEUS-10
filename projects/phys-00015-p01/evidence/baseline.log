@@ -1,0 +1,29 @@
+PUBLISHED BASELINE: OBS arXiv:2112.01607v2, PDF p. 2 Eqs. (8)-(10).
+Instance: n=7, u=8/t0, d=1/t0, k_B=1, A=7 ln 8.
+All seven eigenvalues checked; leading modes m=1,6 only. Uniform Fourier normality excludes Jordan defects.
+Exact leadership: cos(2pi/7)>cos(4pi/7)>cos(6pi/7).
+Exact eligibility: b/a=(7/9)cot(pi/7)>(7/9)sqrt(3)>1.
+Exact stationary law pi_i=1/7; J=1/t0; sigma=7 ln 8/t0.
+a_leading = 3.38859178327139822527495604396184170430952742193238105171005504812831712789161
+b_leading = 5.47282037727620866095911168671840425162634163096081270286444470631564212143756
+N_spectral = 0.257046723656001418761233893454751434391564614111910673805440295340454016265647
+DeltaS_spectral = 16.7114229022567918527677915173023035065162714042934518631133781156951644571019
+Y_sigma_a_over_b2 = 1.64680288929720136696974858451026343436346333759484569415653485243973781839381
+OBS_eq8_DeltaS = 16.7114229022567918527677915173023035065162714042934518631133781156951644571019
+OBS_eq9_N = 0.257046723656001418761233893454751434391564614111910673805440295340454016265647
+OBS_eq10_DeltaS = 16.7114229022567918527677915173023035065162714042934518631133781156951644571019
+eq10_atanh_argument = 0.777777777777777777777777777777777777777777777777777777777777777777777777777778
+eq8_DeltaS_error (before serialized-value rounding) = 0.0
+eq9_N_error (before serialized-value rounding) = 5.27109897162e-82
+eq10_DeltaS_error (before serialized-value rounding) = 6.74700668367e-80
+A_direct_spectrum_N = 0.257046723656001476
+A_N_error_vs_independent_B_source = 5.67878530177e-17
+A_direct_spectrum_DeltaS = 16.7114229022567855
+A_DeltaS_error_vs_independent_B_source = 6.33272720988e-15
+A_direct_spectrum_Y = 1.64680288929720038
+A_Y_error_vs_independent_B_source = 9.8786808469e-16
+Exact Eq. (10) argument is 7/9, inside (-1,1).
+At 80-digit precision source-formula errors are <1e-70; float64 full-spectrum tolerance is 1e-11.
+High-precision values are numerical agreement, not interval certificates; analytic identities establish this known homogeneous baseline.
+PASS: actual published analytic family reproduced; original all-heterogeneous assertion remains unresolved.
+This is reproduction only, with no new value/claim packet or independent referee acceptance.

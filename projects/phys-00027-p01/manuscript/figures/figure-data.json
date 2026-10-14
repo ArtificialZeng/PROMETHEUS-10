@@ -1,0 +1,24 @@
+{
+  "boundary_rows": 2002,
+  "coordinates": "Exact Fraction values; s=t^3, a=t or t^5",
+  "classification": "Analytic accepted criterion, not a numerical discovery",
+  "boundary_interior_assertions": "All 1998 nonendpoint samples satisfy the exact domain and criterion",
+  "benchmark": {
+    "x": "1/4",
+    "y": "1/4",
+    "s": "7/16",
+    "a": "9/16",
+    "embeddable": true
+  },
+  "outside": {
+    "x": "1/2",
+    "y": "1/10",
+    "s": "7/40",
+    "a": "5/8",
+    "embeddable": false
+  },
+  "excluded_limits": [
+    "t=0: singular s=a=0",
+    "t=1: x=y=0, outside the frozen domain"
+  ]
+}

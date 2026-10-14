@@ -1,0 +1,21 @@
+{
+  "P_raw_mass": "(16*beta**2 + 5)/4",
+  "P_raw_axis_variance": "(48*beta**2 + 16*beta + 5)/(16*beta**2 + 5)",
+  "P_standardized_U4": "8*(16*beta**2 + 5)*(112*beta**2 + 32*beta + 5)/(48*beta**2 + 16*beta + 5)**2",
+  "R_raw_mass": "(24*epsilon**2 + 5)/4",
+  "R_raw_variance": "(168*epsilon**2 + 5)/(24*epsilon**2 + 5)",
+  "all_raw_means": "exactly zero",
+  "P_raw_offdiagonal": "exactly zero",
+  "positive_lower_polynomial_bound": "1/4 for every real beta,epsilon",
+  "scaled_A_full": "Matrix([[m**2/2 + m*p*z + p**2*z**2/2 + p*y**2/2 - p/2 + 3/2, -p*x*y/2, -m*x/2 - p*x*z/2], [-p*x*y/2, m**2/2 + m*p*z + p**2*z**2/2 + p*x**2/2 - p/2 + 3/2, -m*y/2 - p*y*z/2], [-m*x/2 - p*x*z/2, -m*y/2 - p*y*z/2, x**2/2 + y**2/2 + 1]])",
+  "scaled_pair_kernel_full": "Matrix([[V**2*p/2 - V*p*y + W**2*p**2/2 - W*m*p + W*n*p - W*p**2*z + m**2/2 - m*n + m*p*z + n**2/2 - n*p*z + p**2*z**2/2 + p*y**2/2, -U*V*p/2 + U*p*y/2 + V*p*x/2 - p*x*y/2, -U*W*p/2 + U*m/2 - U*n/2 + U*p*z/2 + W*p*x/2 - m*x/2 + n*x/2 - p*x*z/2], [-U*V*p/2 + U*p*y/2 + V*p*x/2 - p*x*y/2, U**2*p/2 - U*p*x + W**2*p**2/2 - W*m*p + W*n*p - W*p**2*z + m**2/2 - m*n + m*p*z + n**2/2 - n*p*z + p**2*z**2/2 + p*x**2/2, -V*W*p/2 + V*m/2 - V*n/2 + V*p*z/2 + W*p*y/2 - m*y/2 + n*y/2 - p*y*z/2], [-U*W*p/2 + U*m/2 - U*n/2 + U*p*z/2 + W*p*x/2 - m*x/2 + n*x/2 - p*x*z/2, -V*W*p/2 + V*m/2 - V*n/2 + V*p*z/2 + W*p*y/2 - m*y/2 + n*y/2 - p*y*z/2, U**2/2 - U*x + V**2/2 - V*y + x**2/2 + y**2/2]])",
+  "scaled_A_leading": "Matrix([[m**2/2 + 3/2, 0, -m*x/2], [0, m**2/2 + 3/2, -m*y/2], [-m*x/2, -m*y/2, x**2/2 + y**2/2 + 1]])",
+  "scaled_pair_leading": "Matrix([[m**2/2 - m*n + n**2/2, 0, U*m/2 - U*n/2 - m*x/2 + n*x/2], [0, m**2/2 - m*n + n**2/2, V*m/2 - V*n/2 - m*y/2 + n*y/2], [U*m/2 - U*n/2 - m*x/2 + n*x/2, V*m/2 - V*n/2 - m*y/2 + n*y/2, U**2/2 - U*x + V**2/2 - V*y + x**2/2 + y**2/2]])",
+  "matrix_degree_bounds_in_p": [
+    2,
+    2
+  ],
+  "pair_scaled_integrand_degree_bound": 4,
+  "whole_mixture_covariance": "diag(p,p,kappa_p^2*3+p^2*lambdabar)=diag(p,p,3-2p)",
+  "limitations": "Exact symbolic algebra and moments. The degree argument assumes fixed local profiles with finite coefficient integrals; actual-mixture posterior/tail estimates are analytic in the accompanying derivation."
+}

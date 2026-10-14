@@ -1,0 +1,20 @@
+{
+  "target": "Quantum Information Processing",
+  "article_type": "Regular Article",
+  "fit": "Current official aims cover theoretical quantum information science; author guidance permits regular articles of arbitrary length. The accepted restricted qubit measurement-certification resource obstruction fits that subject. QIP 24,157 (2025), DOI10.1007/s11128-025-04773-y, is a checked nearby self-testing/POVM topic precedent in a different Bell scenario. Editorial interest and suitability are not guaranteed.",
+  "scope_verified": true,
+  "ai_policy_summary": "Journal guidance requires disclosure beyond copy editing and human accountability. Current publisher policies and the recorded autonomous research/drafting create an unresolved oversight issue, analyzed in venue/aims-and-policy.md. Human scientific reconstruction, authorship responsibility and a venue-compliance judgment are pending; disclosure and a second AI audit do not establish them.",
+  "ai_policy_status": "needs_author_judgment",
+  "policy_checked_at": "2026-10-12",
+  "ranking_status": "unverified",
+  "evidence_files": [
+    "venue/aims-and-policy.md",
+    "evidence/write-64f056228bbb/web-3.json",
+    "evidence/write-64f056228bbb/web-4.json",
+    "evidence/write-64f056228bbb/web-5.json",
+    "evidence/write-64f056228bbb/web-6.json",
+    "evidence/write-64f056228bbb/web-7.json",
+    "evidence/write-64f056228bbb/web-8.json"
+  ],
+  "human_author_approval": "pending"
+}

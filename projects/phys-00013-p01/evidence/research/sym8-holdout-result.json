@@ -1,0 +1,28 @@
+{
+  "degree": 8,
+  "dimension": 6435,
+  "ranks": [
+    1485,
+    2205,
+    1800,
+    840,
+    105
+  ],
+  "entrywise_Casimir_match_including_zeros": true,
+  "all_25_trace_moments_match": true,
+  "all_25_cross_gram_entries_match": true,
+  "whole_global_identity_removed": true,
+  "observed_signed_cosines": [
+    "1",
+    "2/5",
+    "3/14",
+    "2/15",
+    "1/11"
+  ],
+  "new_holdout_angle": "1/11",
+  "formula_prediction_match": true,
+  "frozen_proposal": "evidence/research/all-degree-proposal.md",
+  "pre_holdout_rank_correction": "evidence/research/proposal-correction-before-holdout.md",
+  "coverage": "One new completed sector r=4; finite data support but do not prove the all-degree statement.",
+  "independence": "Same agent; A differential-operator integer algebra and B tensor-swap rational algebra share no computed inputs."
+}

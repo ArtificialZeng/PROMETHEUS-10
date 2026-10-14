@@ -1,0 +1,215 @@
+{
+  "method": "complete local even Hermitian-Majorana string kernels; exact symbolic contraction",
+  "arithmetic": "SymPy exact rationals, Gaussian integers and radicals; no tolerance",
+  "block_factorization": "Each of the 2-mode flag and m four-mode blocks has even local parity; all odd local strings vanish exactly.",
+  "flag_kernel": {
+    "0000": "1",
+    "0001": "0",
+    "0010": "0",
+    "0011": "1/2",
+    "0100": "0",
+    "0101": "1/2",
+    "0110": "0",
+    "0111": "0",
+    "1000": "0",
+    "1001": "0",
+    "1010": "1/2",
+    "1011": "0",
+    "1100": "1/2",
+    "1101": "0",
+    "1110": "0",
+    "1111": "1"
+  },
+  "resource_kernel": {
+    "0000": "1",
+    "0001": "sqrt(2)/2",
+    "0010": "sqrt(2)/2",
+    "0011": "5/8",
+    "0100": "sqrt(2)/2",
+    "0101": "5/8",
+    "0110": "1/2",
+    "0111": "3*sqrt(2)/8",
+    "1000": "sqrt(2)/2",
+    "1001": "1/2",
+    "1010": "5/8",
+    "1011": "3*sqrt(2)/8",
+    "1100": "5/8",
+    "1101": "3*sqrt(2)/8",
+    "1110": "3*sqrt(2)/8",
+    "1111": "3/4"
+  },
+  "all_angle_symbolic_check": {
+    "variable": "z=cos(alpha/2)^2; t=4z(1-z)=sin(alpha)^2",
+    "flag_nonzero_entries": {
+      "0000": "1",
+      "0011": "4*z**2 - 4*z + 1",
+      "0101": "4*z*(1 - z)",
+      "1010": "4*z*(1 - z)",
+      "1100": "4*z**2 - 4*z + 1",
+      "1111": "1"
+    },
+    "resource_entries_at_flag_nonzero": {
+      "0000": "1",
+      "1111": "z**4 + 14*z**2*(z - 1)**2 + (z - 1)**4",
+      "0011": "z**4 + 6*z**2*(z - 1)**2 + (z - 1)**4",
+      "1100": "z**4 + 6*z**2*(z - 1)**2 + (z - 1)**4",
+      "0101": "8*z**4 - 16*z**3 + 8*z**2 + 1/2",
+      "1010": "8*z**4 - 16*z**3 + 8*z**2 + 1/2"
+    },
+    "result": "Every surviving kernel equals the claimed polynomial identically; hence the all-m all-angle contraction formula follows algebraically."
+  },
+  "formula_checks": [
+    {
+      "m": 1,
+      "N": 6,
+      "q": "1/4",
+      "F_from_exact_strings": "27/32",
+      "formula_difference": "0"
+    },
+    {
+      "m": 1,
+      "N": 6,
+      "q": "1/20",
+      "F_from_exact_strings": "771/800",
+      "formula_difference": "0"
+    },
+    {
+      "m": 2,
+      "N": 10,
+      "q": "1/4",
+      "F_from_exact_strings": "381/512",
+      "formula_difference": "0"
+    },
+    {
+      "m": 2,
+      "N": 10,
+      "q": "1/20",
+      "F_from_exact_strings": "2409/2560",
+      "formula_difference": "0"
+    },
+    {
+      "m": 3,
+      "N": 14,
+      "q": "1/4",
+      "F_from_exact_strings": "2787/4096",
+      "formula_difference": "0"
+    },
+    {
+      "m": 3,
+      "N": 14,
+      "q": "1/20",
+      "F_from_exact_strings": "94899/102400",
+      "formula_difference": "0"
+    },
+    {
+      "m": 4,
+      "N": 18,
+      "q": "1/4",
+      "F_from_exact_strings": "20955/32768",
+      "formula_difference": "0"
+    },
+    {
+      "m": 4,
+      "N": 18,
+      "q": "1/20",
+      "F_from_exact_strings": "751851/819200",
+      "formula_difference": "0"
+    },
+    {
+      "m": 5,
+      "N": 22,
+      "q": "1/4",
+      "F_from_exact_strings": "160719/262144",
+      "formula_difference": "0"
+    },
+    {
+      "m": 5,
+      "N": 22,
+      "q": "1/20",
+      "F_from_exact_strings": "5977887/6553600",
+      "formula_difference": "0"
+    },
+    {
+      "m": 6,
+      "N": 26,
+      "q": "1/4",
+      "F_from_exact_strings": "1249851/2097152",
+      "formula_difference": "0"
+    },
+    {
+      "m": 6,
+      "N": 26,
+      "q": "1/20",
+      "F_from_exact_strings": "9527439/10485760",
+      "formula_difference": "0"
+    },
+    {
+      "m": 7,
+      "N": 30,
+      "q": "1/4",
+      "F_from_exact_strings": "9811527/16777216",
+      "formula_difference": "0"
+    },
+    {
+      "m": 7,
+      "N": 30,
+      "q": "1/20",
+      "F_from_exact_strings": "380160279/419430400",
+      "formula_difference": "0"
+    },
+    {
+      "m": 8,
+      "N": 34,
+      "q": "1/4",
+      "F_from_exact_strings": "77509155/134217728",
+      "formula_difference": "0"
+    },
+    {
+      "m": 8,
+      "N": 34,
+      "q": "1/20",
+      "F_from_exact_strings": "3036549171/3355443200",
+      "formula_difference": "0"
+    },
+    {
+      "m": 9,
+      "N": 38,
+      "q": "1/4",
+      "F_from_exact_strings": "614877999/1073741824",
+      "formula_difference": "0"
+    },
+    {
+      "m": 9,
+      "N": 38,
+      "q": "1/20",
+      "F_from_exact_strings": "24268448127/26843545600",
+      "formula_difference": "0"
+    }
+  ],
+  "witness": {
+    "N": 34,
+    "m": 8,
+    "q": "1/4",
+    "p": "3/4",
+    "state": "sqrt(3)/2 |00> |0000>^tensor8 + 1/2 |11> [(|0000>+|1111>)/sqrt(2)]^tensor8",
+    "measurement": "first Fock mode occupation; retain outcomes 0 and 1",
+    "branch_F": [
+      "1",
+      "6561/65536"
+    ],
+    "F_parent": "77509155/134217728",
+    "exp_Delta": "25836385/25165824",
+    "Delta": "log(25836385/25165824)",
+    "Delta_decimal_diagnostic": "0.02629688616418727650315143658086282808351",
+    "strict_log_bounds": {
+      "lower": "670561/25836385",
+      "upper": "670561/25165824"
+    },
+    "integer_certificate": {
+      "numerator": "25836385",
+      "denominator": "25165824",
+      "comparison": "numerator > denominator > 0"
+    }
+  },
+  "limitations": "This is proposer-side exact verification, not fresh referee acceptance. N=34 is an explicit witness, not a minimal-dimension assertion."
+}

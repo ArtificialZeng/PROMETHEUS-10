@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "basis_map": "y=1-x; (alpha,beta)=(c*a+s*b,s*a-c*b); B*T=R*A modulo c^2+s^2=1",
+  "exact_row_by_row_checks": [
+    {
+      "E": 2,
+      "compared_entries": 16,
+      "nonzero_remainders": 0,
+      "status": "pass"
+    },
+    {
+      "E": 3,
+      "compared_entries": 36,
+      "nonzero_remainders": 0,
+      "status": "pass"
+    },
+    {
+      "E": 5,
+      "compared_entries": 100,
+      "nonzero_remainders": 0,
+      "status": "pass"
+    },
+    {
+      "E": 8,
+      "compared_entries": 256,
+      "nonzero_remainders": 0,
+      "status": "pass"
+    }
+  ],
+  "pumpkin_poles_checked": [
+    "pi",
+    "2*pi",
+    "3*pi"
+  ],
+  "tree_wave_number_absolute_difference": 2.220446049250313e-15,
+  "cross_root_tolerance": 1e-10,
+  "star_DD_pole_replay": "Doubled half-length 4-star: nullity 3 at pi and 5 at 2*pi, matching original plus all four DD branches",
+  "independence": "Two implementations using separate same-agent transcriptions; shared primary source and target. B reads no A artifact. Not a fresh scientific referee.",
+  "file_sha256": {
+    "input-a.json": "c07cf3f2a8f89f2ccdb5e3d9abe2edb24e7cc521ce89d6ba16b17f54ccdb59bf",
+    "input-b.json": "212e3f0ff0676cfa78fe4ba047a62f5939d1b31c652e492e66774d9a625672c2",
+    "reconstruct_a.py": "2b0f911fc50440390063aa514123a225d1983420c4c0e0b23c9ab934a196bf6c",
+    "reconstruct_b.py": "662ed6f38916ec4ebec3d20904a6d15e552c95d82e975bc52087131cffca0053",
+    "matching-a.json": "25be1cd8ee0c0c3bf6259c813ee7aca590dbe29bf0909e0e74c1805f2f6391db",
+    "matching-b.json": "1a4f27744b28189204fee5c1fed0eb3ae4a9ee879fe9dd49f2613c4c208c02af",
+    "results-a.json": "3ad97880cfacf16bb9efda085545a1f890e16be9e9c7707453a2a9b7e138f0f9",
+    "results-b.json": "3473dbda442fda87033dd88ee0ed3415e7d2d31504e984fc446a51d41413e321"
+  }
+}

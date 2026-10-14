@@ -1,0 +1,451 @@
+\section{Exact parent laws and return coefficients}
+\label{app:parent}
+
+For $c=\delta=d\in\{1,2\}$ and $\beta=\gamma=1$, RNA immigrants form a
+Poisson process of rate $d$. Each RNA has an independent exponential
+lifetime of rate $d$, translates at rate one while alive, and gives proteins
+with independent exponential lifetimes of rate one. This labelled
+construction provides a positive stationary law on the infinite lattice.
+
+The number of alive RNAs at observation is Poisson with mean one.
+An alive RNA has age distributed as $\operatorname{Exp}(d)$, so the
+mean number of its surviving proteins is $v=1-e^{-\mathrm{age}}$ with
+density $d(1-v)^{d-1}$ on $[0,1]$. Its mark distribution is
+\begin{equation}
+ q_d(k)=\frac d{k!}\int_0^1e^{-v}v^k(1-v)^{d-1}\,\mathrm dv.
+ \label{eq:qmark}
+\end{equation}
+Dead RNAs supply independent compound-Poisson protein counts with
+L\'evy coefficients and total intensity
+\begin{align}
+ \lambda_d(k)&=\frac d{k!}\int_0^1e^{-v}v^{k-1}(1-v)^d\,\mathrm dv,
+                  \qquad k\geq1,\nonumber\\
+ \Lambda_d&=d\int_0^1\frac{(1-e^{-v})(1-v)^d}{v}\,\mathrm dv .
+\end{align}
+The joint stationary generating function is consequently
+\begin{equation}
+ G_d(x,y)=
+ \exp\left[xq_d(y)-1+\sum_{k\geq1}\lambda_d(k)(y^k-1)\right],
+ \label{eq:jointpgf}
+\end{equation}
+where $q_d(y)=\sum_kq_d(k)y^k$. For $z=y-1$,
+\begin{align}
+ q_d(1+z)&=d!\sum_{k\geq0}\frac{z^k}{(d+k)!},\nonumber\\
+ \log G_{\mathrm{dead},d}(1+z)
+ &=d\,d!\sum_{k\geq1}\frac{z^k}{k(d+k)!}.
+\end{align}
+These expressions obey $zq_d'=d+(z-d)q_d$ and
+$z(\log G_{\mathrm{dead},d})'=d(q_d-1)$.
+Substitution in the full stationary forward equation
+\begin{equation}
+ d(x-1)G+[d(1-x)+x(y-1)]G_x+(1-y)G_y=0
+\end{equation}
+checks the defining reaction law, including catalytic translation.
+The known constitutive moments are
+\begin{equation}
+ \E M=\E P=1,\quad
+ \Var(M)=1,\quad
+ \Cov(M,P)=\frac1{d+1},\quad
+ \Var(P)=1+\frac1{d+1}.
+\end{equation}
+They reproduce Eq.~\eqref{eq:baseline}; they are inputs, not the
+noise-tradeoff contribution.
+
+Let $\pi_{d,p}$ be the protein marginal. It is compound Poisson with
+coefficients $\ell_k=q_d(k)+\lambda_d(k)$ for $k\geq1$:
+\begin{equation}
+ \pi_{d,0}=e^{-1+q_d(0)-\Lambda_d},\qquad
+ \pi_{d,p}=\frac1p\sum_{k=1}^p k\ell_k\pi_{d,p-k}.
+ \label{eq:marginal}
+\end{equation}
+No higher probability coefficient enters this recurrence for a lower
+coefficient. All probabilities are positive. The alive-RNA Poisson
+Palm identity gives $\E[M\ind_{\{P=p\}}]=(\pi_d*q_d)_p$.
+Alive RNAs with zero protein marks form an independent Poisson
+population of mean $q_d(0)\leq1$. Each other alive RNA accounts for at
+least one protein, proving $\E[M\mid P=p]\leq p+1$.
+
+\subsection{Extra-RNA response}
+
+Add one fresh independently marked RNA at time zero to a stationary
+parent, and let $K_t$ be its surviving protein count at time $t$. Linearity
+of the parent channels gives
+\begin{equation}
+ D_d(t;h)=\E[h(P+K_t)-h(P)],
+\end{equation}
+where $P$ is stationary and independent of the added family.
+Conditionally on the extra RNA lifetime, $K_t$ is Poisson with mean
+between zero and one. For $k\geq1$, direct mark integration gives
+\begin{equation}
+ J_k(s):=\int_0^\infty e^{-st}\E[(K_t)_k]\dd
+ =\frac{k!}{(s+k)(s+d)^{\overline k}},\qquad J_0(s)=\frac1s.
+\end{equation}
+Here $(x)_k$ is a falling factorial and
+$(s+d)^{\overline k}=\prod_{j=0}^{k-1}(s+d+j)$.
+Differentiation gives
+\begin{equation}
+ -J_k'(s)=J_k(s)
+ \left[\frac1{s+k}+\sum_{j=0}^{k-1}\frac1{s+d+j}\right].
+\end{equation}
+Define measures
+$\nu_s(k)=\int e^{-st}\Pr(K_t=k)\dd$ and
+$\nu_{s,t}(k)=\int te^{-st}\Pr(K_t=k)\dd$.
+Their coefficient expansion is
+\begin{equation}
+ \nu_s(k)=\sum_{l\geq0}
+ \frac{(-1)^l\binom{k+l}{k}}
+ {(s+k+l)(s+d)^{\overline{k+l}}},
+ \label{eq:nu}
+\end{equation}
+with each term for $\nu_{s,t}(k)$ additionally multiplied by the bracket
+in $-J_{k+l}'(s)/J_{k+l}(s)$. Even and odd Taylor sums for the
+conditional Poisson factor $e^{-v_t}$ enclose these integrals because
+$0\leq v_t\leq1$.
+
+The coefficient sequences of the return functionals are
+\begin{align}
+ A_p&=(\pi_d*q_d)_p-\pi_{d,p},&
+ H_p&=(p-1)\pi_{d,p},\nonumber\\
+ (D_s)_p&=(\pi_d*\nu_s)_p-\pi_{d,p}/s,&
+ (D_{s,t})_p&=(\pi_d*\nu_{s,t})_p-\pi_{d,p}/s^2.
+ \label{eq:coefficients}
+\end{align}
+All have zero total sum. In Eq.~\eqref{eq:ranktwo},
+$D_{g,d}=D_1$;
+$D_{r,1}=D_1-\tfrac12D_2$ and
+$D_{r,2}=D_1+D_{1,t}$.
+
+For $k\geq1$,
+$q_d(k)\geq e^{-1}d!/(d+k)!$. Comparing this with $J_k(s)/k!$,
+and using $e<3$, shows
+$\nu_1(k),\nu_2(k),\nu_{1,t}(k)\leq(3/2)q_d(k)$.
+For the time-weighted case the extra harmonic bracket is at most
+$(k+1)/2$. Splitting off count zero in the convolutions, using total
+measure mass at most one and the conditional RNA bound, yields
+\begin{equation}
+ |\ell_p|\leq C_\ell(p+1)\pi_{d,p},\qquad
+ \begin{array}{c|cccc}
+ \ell&A&H&D_g&D_r\\ \hline
+ d=1&1&1&5/2&15/4\\
+ d=2&1&1&5/2&5
+ \end{array}
+ \label{eq:palmconstants}
+\end{equation}
+The tabulated entries are $C_\ell$. Together with
+Eq.~\eqref{eq:dual}, these inequalities control each functional on the
+entire response space.
+
+\section{Infinite-state numerical enclosures}
+\label{app:certificate}
+
+\subsection{Probabilities, moments and resolvent residuals}
+
+The stationary cluster integrals are enclosed by the $160$th and
+$161$st alternating Taylor sums, with outward fixed-point arithmetic
+at $384$ bits. Positive convolution recurrences evaluate the joint
+law~\eqref{eq:jointpgf} and marginal~\eqref{eq:marginal}.
+The joint calculation uses
+\begin{equation}
+ \pi_d(m,p)=\frac{e^{-1}}{m!}
+              [y^p]q_d(y)^mG_{\mathrm{dead},d}(y).
+\end{equation}
+No finite stationary solve or artificial normalization supplies its
+probabilities.
+
+For $f_{r,s}=\E[(M)_r(P)_s]$, direct generator testing gives
+\begin{equation}
+ (rd+s)f_{r,s}
+ =rd\,f_{r-1,s}
+       +s\big[f_{r+1,s-1}+r f_{r,s-1}\big],
+ \qquad f_{0,0}=1.
+ \label{eq:factorialrec}
+\end{equation}
+The recurrence is triangular at each total degree, proceeding from
+smaller $s$. Exact mixed factorial moments through degree $104$
+bound the required tails. For example, factorial Markov bounds at
+$R+1$ and $S+1$, together with
+\begin{align}
+ M(M)_k&=(M)_{k+1}+k(M)_k,\nonumber\\
+ M^2(M)_k&=(M)_{k+2}+(2k+1)(M)_{k+1}+k^2(M)_k,
+\end{align}
+provide upper bounds $\tau_j$ on
+$\E[M^j\ind_{\{M>R\ {\rm or}\ P>S\}}]$ for $j=0,1,2$.
+The $P$-tail terms use the corresponding mixed moments.
+Positive bounds are minimized over available factorial orders
+$k\leq100$ without moment closure.
+
+Construct approximate resolvent vectors on $R=48,S=128$ using the
+capped backward generator. Quantize them as integers over $2^{192}$,
+then extend them to the full lattice by coordinate clipping. This cap
+defines a witness construction, not the stationary process. For each
+source category, the source itself equals its clipped extension outside
+the rectangle. If $\eta$ is the maximum exact interior residual and
+$V$ the approximant sup norm, then the extended residual obeys
+\begin{equation}
+ |r(m,p)|\leq\eta+
+   2V[dR+S+(d+1)m]\ind_{\{m>R\ {\rm or}\ p>S\}}.
+\end{equation}
+Missing capped death terms and excess translation account for this
+bound. Clipping in $p$ prevents an unbounded $p$ coefficient.
+With $A=dR+S$ and $B=d+1$,
+\begin{align}
+ A_{\rm tail}&=A^2\tau_0+2AB\tau_1+B^2\tau_2,\nonumber\\
+ \norm{r}_2^2&\leq
+ \sum_{\rm inside}\pi_d^+(m,p)r(m,p)^2
+           +2\eta^2\tau_0+8V^2A_{\rm tail}.
+ \label{eq:l2residual}
+\end{align}
+Only exact nonnegative sums and positive tail bounds enter this
+enclosure.
+
+Conditional Jensen and invariance make the full Markov semigroup an
+$L^2(\pi_d)$ contraction. Hence
+$\norm{(s-L_d)^{-1}}_{2\to2}\leq1/s$. For the exact resolvent $v_s$
+and its clipped approximant $\widehat v_s$,
+\begin{equation}
+ \norm{v_s-\widehat v_s}_2\leq\norm{r_s}_2/s.
+\end{equation}
+For $w=(1-L_d)^{-2}b$, whose approximant uses $\widehat v_1$ as source,
+\begin{equation}
+ \norm{w-\widehat w}_2\leq\norm{r_1}_2+\norm{r_w}_2.
+\end{equation}
+Localization and finite polynomial moments justify these residual
+identities for the clipped vectors.
+
+Use disjoint protein categories $1,\ldots,n-1$ and $\{P\geq n\}$,
+omitting zero modulo constants. Scale each by an exact power of two
+$s_k$ so that $1/4<s_k^2\pi_k^+\leq1$.
+Testing a residual against a centered scaled category costs at most
+one in $L^2$. The injection-matrix resolvent errors are therefore
+controlled by $2\norm{r_1}_2+\norm{r_w}_2$ for $U_1$, and
+$\norm{r_1}_2+\norm{r_2}_2/4$ for $U_2$.
+The second expression includes the $-1/2$ kernel coefficient and
+the $1/2$ resolvent norm. Probability integration and centering
+errors are propagated separately before symmetrization.
+
+Return matrices use the one-dimensional coefficient
+sequences~\eqref{eq:coefficients}. The full threshold coefficient is
+the negative prefix sum through $p=n-1$, since each sequence has
+zero total sum. No derivative at an RNA boundary is used.
+
+\subsection{Exact block positivity}
+
+Let $G_2,G_1$ be the enclosed injection matrices on
+$\mathcal S_{64}$ and $\mathsf B$ the matrix for $V_1$ or $V_2$ in
+the corresponding $(h_1,h_2)$ ordering. The required block is
+\begin{equation}
+ K=\begin{pmatrix}
+      (3/4)G_2&\mathsf B\\
+      \mathsf B^{\mathsf T}&(3/4)G_1
+    \end{pmatrix}.
+ \label{eq:block}
+\end{equation}
+A floating Cholesky inverse proposes a congruence $T$, then its
+entries are quantized as integers over $2^{96}$. The central block
+$K_0$ is stored as integers over $2^{192}$; its rounding is added to
+a common true-entry error bound $e$. If $\ell_i$ is the absolute
+row sum of the rational $T$, each transformed entry error is at most
+$e\ell_i\ell_j$. The exact sufficient margins are
+\begin{equation}
+ (TK_0T^{\mathsf T})_{ii}
+ -\sum_{j\ne i}|(TK_0T^{\mathsf T})_{ij}|
+ -e\ell_i\sum_j\ell_j>0.
+ \label{eq:margin}
+\end{equation}
+The two $128$-dimensional blocks have all these rational margins
+positive; their minimum margins both exceed $0.9948$.
+Symmetric strict diagonal dominance gives positivity of the true
+transformed block. It also forces $T$ to have full rank, proving
+positivity of the true original block. Rescaling the two input
+vectors in Eq.~\eqref{eq:block} then gives Eq.~\eqref{eq:finitebound}.
+No eigenvalue rounded to a positive decimal decides this test.
+
+\subsection{Riesz residuals and full return norms}
+
+Finite Riesz vectors at $n=32,48$ are proposed by a floating solve,
+then quantized to integers over $2^{128}$. The $n=64$ Gram enclosures
+are transformed by an exact basis map to the smaller spaces; the
+new threshold is the sum of all old threshold categories.
+Source intervals and Gram errors enclose every scaled residual
+in Eq.~\eqref{eq:head}.
+
+For completeness, the polarized injection operator has coefficient
+\begin{equation}
+ (U_dv)_p=\frac{\pi_{d,p}}2\int_0^\infty r_{\rm rec}(t)
+ \left[
+ \E[v(P_t)-\E v\mid P_0=p]
+ +\E[v(P_0)-\E v\mid P_t=p]
+ \right]\dd ,
+\end{equation}
+where $r_{\rm rec}=r_2$ for $d=1$, and $r_1$ for $d=2$.
+Both conditional expectations have absolute value at most $V$.
+The kernel masses are $3/4$ and $2$, giving the bound used
+in Eq.~\eqref{eq:tail} without assuming reversibility.
+
+Full moments for the tail subtraction can also be reconstructed from
+the exact protein factorial cumulants
+\begin{equation}
+ \kappa_k=\frac{(k-1)!\,d!}{(d+k-1)!}.
+\end{equation}
+The Bell recurrence gives factorial moments, and Stirling conversion
+gives $\E[(P+1)^j]$. Subtracting the lower probability prefix yields
+the upper $T_j$ for $j=4,5,6$. This is an independent moment
+representation of the same parent law.
+
+All residual products and tail subtractions are rational. Square-root
+upper bounds are obtained with integer square roots and checked by
+squaring. Orthogonal projection contracts the dual residual norm:
+Eq.~\eqref{eq:rieszerror} bounds
+$\ell-\ell\mathcal P_{d,n}$ even though the finite spaces need not
+exhaust $\mathcal H_d$. Equations~\eqref{eq:ranktwo}
+and~\eqref{eq:rankerror} then give the full return bounds in
+Table~\ref{tab:certificate}. The stored rational data and
+standard-library replay code specify the complete finite arithmetic.
+
+\section{Finite-feedback covariance remainder}
+\label{app:remainder}
+
+This appendix proves Eq.~\eqref{eq:remainder} without assuming a
+differentiable stationary distribution. All response functions here
+retain their original sup bound one, even when constants are removed
+for the response-space analysis.
+
+\subsection{A stationary immigration-envelope coupling}
+
+For gene $i$, use common RNA immigration rate $c_i-\epsilon g$ and
+an additional envelope immigration process of rate $2\epsilon g$,
+where $(c_1,c_2)=(1,2)$. Each arrival is independently marked with
+RNA lifetime, translation events and protein lifetimes. A constitutive
+parent $Y_i$ accepts each envelope arrival with probability $1/2$.
+The regulated process $X_i$ accepts it with probability
+\begin{equation}
+ \frac{f_i-(c_i-\epsilon g)}{2\epsilon g}\in[0,1],
+\end{equation}
+using the same uniform acceptance mark. Acceptance depends on the
+current regulated state, but the descendant marks of the new family
+are independent of that decision. Let $E_i$ be the process retaining
+every envelope family. Then, pathwise,
+\begin{equation}
+ |X_{M,i}-Y_{M,i}|\leq M_{E,i},\qquad
+ |X_{P,i}-Y_{P,i}|\leq P_{E,i}.
+ \label{eq:envelope}
+\end{equation}
+The parents remain independent across genes. The two envelopes are
+also independent, and $Y_i$ is independent of $E_j$ for $j\ne i$.
+The parent and its own envelope share the parent's half-envelope;
+their covariance must be retained. Stationary joint limits follow
+from constructions started in the past, uniform dominating
+polynomial moments and uniqueness of the marginal invariant laws.
+No monotone or associated feedback process is required.
+
+For $W=M+P$ in a constitutive gene with transcription $c$ and
+$\delta=d\geq1$, the exact moments give
+\begin{equation}
+ \E W=\frac{2c}{d},\qquad
+ \Var(W)=\frac cd\left(2+\frac3{d+1}\right).
+\end{equation}
+Thus $\E W_{Y,i}=2$, $\E W_{E,i}\leq4\epsilon g$ and
+$\Cov(W_{Y,i},W_{E,i})\leq7\epsilon g/2$.
+For either $i$,
+\begin{equation}
+ \E[(1+W_{Y,i})(W_{E,1}+W_{E,2})]
+ \leq \frac{55}{2}\epsilon g.
+ \label{eq:weightedmoment}
+\end{equation}
+The constant is $3(4+4)+7/2$; it includes the parent's
+dependence on its own envelope.
+
+\subsection{Product-parent Poisson solution}
+
+Write $\eta_j=\E_0h_j(P_j)$ and $\bar z_i=1+1/\delta_i$.
+For $i\ne j$, let
+\begin{align}
+ q_i&=(Z_i-\bar z_i)(h_j(P_j)-\eta_j),\nonumber\\
+ u_i(t,m_i,p_i)&=r_i(t)(m_i-1)+e^{-t}(p_i-1),\nonumber\\
+ v_j(t,m_j,p_j)&=\mathcal T_j(t)h_j(m_j,p_j)-\eta_j,\nonumber\\
+ Rq_i&=\int_0^\infty u_i(t,m_i,p_i)v_j(t,m_j,p_j)\dd .
+\end{align}
+The affine parent mean evolution and independence give $L_0Rq_i=-q_i$.
+Here $|v_j|\leq2$ and $r_i(t)\leq(1+t)e^{-t}$, so $Rq_i$ grows
+at most linearly and its generator increments have integrable
+polynomial growth. Localization and the bounded-network moment
+estimates justify stationary generator testing. With
+\begin{equation}
+ L_\epsilon=L_0+\epsilon L_1,\qquad
+ L_1=a h_2(P_2)\Delta_{M_1}-b h_1(P_1)\Delta_{M_2},
+\end{equation}
+put $k_i=L_1Rq_i$. Then
+\begin{equation}
+ \E_\epsilon q_i=\epsilon\E_\epsilon k_i,\qquad
+ \E_0k_1=aU_1-bV_1,\quad
+ \E_0k_2=aV_2-bU_2.
+ \label{eq:poissonresponse}
+\end{equation}
+The two RNA birth channels acting separately on the product
+Poisson solution give the last two identities. This also shows why
+the Fano deviations start at quadratic order after multiplying
+by the signed transcription gain.
+
+\subsection{Weighted increment estimate}
+
+Any function from integer counts to $[-1,1]$ has discrete Lipschitz
+constant at most two. Coupling unregulated descendant families,
+for $d\geq1$, gives
+\begin{align}
+ |\mathcal T_j(t)h_j(z)-\mathcal T_j(t)h_j(y)|
+ &\leq2e^{-t}(\Delta p_j+t\Delta m_j),\nonumber\\
+ |\Delta_M\mathcal T_j(t)h_j(z)|&\leq2te^{-t},\nonumber\\
+ |\Delta_M\mathcal T_j(t)h_j(z)
+        -\Delta_M\mathcal T_j(t)h_j(y)|
+ &\leq4e^{-t}(\Delta p_j+t\Delta m_j),
+\end{align}
+where $\Delta m_j=|m_j-m_j'|$, $\Delta p_j=|p_j-p_j'|$
+and $y$ is the primed state. For the feedforward term in $k_i$,
+integrating the product difference costs at most
+$g[\Delta m_j+(19/2)\Delta p_j]$.
+
+For the return product $h_i u_i\,\Delta_M\mathcal T_jh_j$,
+use the exact telescoping into the difference of $u_i$, of $h_i$,
+and of the extra-RNA response, with the other factors fixed in turn.
+The bound $|u_i(t,y)|\leq r_1(t)(W_i'+2)$ and the integrals
+\begin{equation}
+ \int r_1=2,\qquad
+ \int r_1e^{-t}=\frac34,\qquad
+ \int tr_1e^{-t}=\frac12,\qquad
+ \int te^{-2t}=\frac14
+\end{equation}
+give
+\begin{equation}
+ g\left[\Delta m_i+
+   \left(\frac92+2W_i'\right)\Delta p_i+
+   (4+2W_i')\Delta m_j+(6+3W_i')\Delta p_j\right].
+\end{equation}
+Adding the feedforward bound therefore yields
+\begin{align}
+ |k_i(z)-k_i(y)|
+ &\leq g\left[\Delta m_i+
+   \left(\frac92+2W_i'\right)\Delta p_i+
+   (5+2W_i')\Delta m_j+
+   \left(\frac{31}{2}+3W_i'\right)\Delta p_j\right]\nonumber\\
+ &\leq16g(1+W_i')
+       (\Delta m_i+\Delta p_i+\Delta m_j+\Delta p_j).
+\end{align}
+Applying this to the stationary coupling
+and Eq.~\eqref{eq:weightedmoment} gives
+\begin{equation}
+ |\E_\epsilon k_i-\E_0k_i|\leq440\epsilon g^2.
+\end{equation}
+Exact first-moment balance gives
+$|\E_\epsilon Z_i-\bar z_i|\leq2\epsilon g$,
+and Eq.~\eqref{eq:envelope} gives
+$|\E_\epsilon h_j-\eta_j|\leq4\epsilon g$.
+Subtracting the mean product in $\E_\epsilon q_i$, and using
+Eq.~\eqref{eq:poissonresponse}, proves
+\begin{equation}
+ \left|\Cov_\epsilon(Z_i,h_j)-\epsilon\E_0k_i\right|
+ \leq448\epsilon^2g^2 .
+\end{equation}
+Multiplication by $\epsilon a$ for gene one and by $-\epsilon b$
+for gene two proves Eq.~\eqref{eq:remainder}. The estimate is
+specific to the fixed unequal pair and is not an arbitrary-kinetics
+remainder theorem.

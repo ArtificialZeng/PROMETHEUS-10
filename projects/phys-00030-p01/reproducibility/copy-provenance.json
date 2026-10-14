@@ -1,0 +1,124 @@
+{
+  "scope": "Stable manuscript reproducibility sources; no new scientific claim or acceptance. Output-path adaptation only except removal of workflow-only checks.",
+  "copies": [
+    {
+      "original": "audit/referee-remainder-fullcheck.py",
+      "original_sha256": "373ed7c8f521097bdc45280dfd6eb3310ddb5aa695ae1c89dfeb2370420f5118",
+      "copy": "reproducibility/check_remainders.py",
+      "copy_sha256": "e2584cd43a089562edae5843ee2f56eb30189454f3326d92a36952ac37991686",
+      "changes": [
+        "Redirect generated outputs to reproducibility/run-output; create that directory."
+      ]
+    },
+    {
+      "original": "audit/referee-roundoff-replay.py",
+      "original_sha256": "0cbcef6917a62cfea17a49e4c129eaa03e77c605531576e459974c92170608ad",
+      "copy": "reproducibility/check_coefficient_magnitudes.py",
+      "copy_sha256": "ec355fae7d9b88da7c2247373ea460d668e24d06642b26c0b8e820da95db8393",
+      "changes": [
+        "Redirect generated outputs to reproducibility/run-output; create that directory."
+      ]
+    },
+    {
+      "original": "audit/referee-replay.py",
+      "original_sha256": "82427848e1240e7df584dae3c8eeeeab3680d758af62ddeefbda1444e6055d0c",
+      "copy": "reproducibility/physical_replay.py",
+      "copy_sha256": "71a2c53a8cc59e4eaa6221dae407b77ea2bbc4ac919ff499f59f647eb3c07546",
+      "changes": [
+        "Redirect generated outputs to reproducibility/run-output; create that directory.",
+        "Remove workflow-only snapshot binding and mutable-record scanning; keep all physical, arithmetic and baseline calculations unchanged.",
+        "Rename completion metadata to completed_reproducibility_replay; no scientific computation changed."
+      ]
+    },
+    {
+      "original": "audit/referee-remainder-fullcheck.json",
+      "original_sha256": "8726ce02b412fd01936776419b95058d250dfd7ae57f1ff5a8eb23dbef645b1c",
+      "copy": "reproducibility/records/referee-remainder-fullcheck.json",
+      "copy_sha256": "8726ce02b412fd01936776419b95058d250dfd7ae57f1ff5a8eb23dbef645b1c",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/referee-remainder-fullcheck.log",
+      "original_sha256": "5025e44f4f14f63b84099ac25c86d4d5d28c278062a8c6ea53507fa6f0752dbf",
+      "copy": "reproducibility/records/referee-remainder-fullcheck.log",
+      "copy_sha256": "5025e44f4f14f63b84099ac25c86d4d5d28c278062a8c6ea53507fa6f0752dbf",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/referee-roundoff.json",
+      "original_sha256": "95e651e06763bb12bd7500554ef33feb8bade0cb43059e1a2f6f5f0dd022deec",
+      "copy": "reproducibility/records/referee-roundoff.json",
+      "copy_sha256": "95e651e06763bb12bd7500554ef33feb8bade0cb43059e1a2f6f5f0dd022deec",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/referee-roundoff.log",
+      "original_sha256": "e38289edc2264703d075584249ed3276aa3f074984ceabd6b8617e069b4de206",
+      "copy": "reproducibility/records/referee-roundoff.log",
+      "copy_sha256": "e38289edc2264703d075584249ed3276aa3f074984ceabd6b8617e069b4de206",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/referee-coefficient-absolute-bounds.json",
+      "original_sha256": "9402967521eafd6ad90d8b1e2af8baed36494ab1846b4d3883f45b73e7ed3f5e",
+      "copy": "reproducibility/records/referee-coefficient-absolute-bounds.json",
+      "copy_sha256": "9402967521eafd6ad90d8b1e2af8baed36494ab1846b4d3883f45b73e7ed3f5e",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/referee-exact-sums.json",
+      "original_sha256": "357a22a16e34512b63744e6d6e86fc5faca820c9c2c4520a8546a70d222f671e",
+      "copy": "reproducibility/records/referee-exact-sums.json",
+      "copy_sha256": "357a22a16e34512b63744e6d6e86fc5faca820c9c2c4520a8546a70d222f671e",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/replay-results.json",
+      "original_sha256": "cf2001d964318e4a3ed4a295477ec8f44c5e3c1ef6d1066e9c6cb27aa2cfb2d6",
+      "copy": "reproducibility/records/replay-results.json",
+      "copy_sha256": "cf2001d964318e4a3ed4a295477ec8f44c5e3c1ef6d1066e9c6cb27aa2cfb2d6",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/replay.log",
+      "original_sha256": "b57fa356dc39e7da8f12b9dbe900e3689d22b9ed5452a482b8388296968f6d00",
+      "copy": "reproducibility/records/replay.log",
+      "copy_sha256": "b57fa356dc39e7da8f12b9dbe900e3689d22b9ed5452a482b8388296968f6d00",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/referee-replay-first-attempt.log",
+      "original_sha256": "64f9c5809e1479321515278b8bcfcac64d24c13c0cebaf9dbd9183d7a8deb075",
+      "copy": "reproducibility/records/referee-replay-first-attempt.log",
+      "copy_sha256": "64f9c5809e1479321515278b8bcfcac64d24c13c0cebaf9dbd9183d7a8deb075",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    },
+    {
+      "original": "audit/analytic-reconstruction.md",
+      "original_sha256": "44d9d45e01bd69060e43d4bbb49f760f1ce4736d78c87eb2847e830bdcf87cf5",
+      "copy": "reproducibility/records/analytic-reconstruction.md",
+      "copy_sha256": "44d9d45e01bd69060e43d4bbb49f760f1ce4736d78c87eb2847e830bdcf87cf5",
+      "changes": [
+        "Exact byte copy of substantive referee evidence; original accepted audit remains untouched."
+      ]
+    }
+  ]
+}

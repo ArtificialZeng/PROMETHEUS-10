@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-12T10:45:21.082418+00:00",
+  "tables": 66,
+  "strict_domain": "All sampled tables strictly positive, det(sqrt(P)) nonzero.",
+  "phase_min_eigenvalue": 1.7334799523311726e-08,
+  "phase_second_min_eigenvalue": 3.0611014530855105e-07,
+  "rotation_reduced_min_eigenvalue": 2.1483688482885173e-06,
+  "phase_kernel_counts": [
+    0
+  ],
+  "limitation": "Formula evaluations in binary64. Sign near zero is not certified. No global or arbitrary-auxiliary result."
+}

@@ -1,0 +1,237 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newcommand{\kap}{\kappa}
+\title{Sharp first-passage skewness and excess-kurtosis bounds\protect\\for three-state cycles at large affinity}
+\author{Xiaojian Zeng\protect\\\small PBC School of Finance, Tsinghua University, 100190\protect\\\small\texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We obtain separate sharp upper bounds on the large-threshold entropy-current first-passage skewness and scaled excess kurtosis of a three-state continuous-time Markov ring. For every finite cycle affinity $A\geq\log64$, the two envelopes are specified by the unique positive roots of a quadratic and a cubic, respectively. A symmetric representation of the half-affinity tilted generator embeds every admissible rate vector into a positive-spectrum relaxation. Its global maxima have a repeated pair of decay eigenvalues. Explicit strictly positive finite rates attain each relaxed maximum, completing the physical sharpness argument. The result gives analytic expressions on a restricted large-affinity interval of the numerically studied upper branches; it does not determine the kink locations, smaller-affinity branches, other ring sizes or finite-threshold distributions.
+\end{abstract}
+
+\section{Introduction}
+Higher first-passage cumulants characterize the asymmetry and excess tails of timing fluctuations in dissipative cycles. Wampler and Barato studied entropy-current first-passage skewness and kurtosis in unicyclic Markov networks and found upper branches numerically, without analytic expressions beyond their kinks \cite{Wampler2021}. We establish their separate sharp envelopes for three states on the entire interval $A\geq\log64$. The global optimization and positive-rate attainment are essential: a stationary rate family alone cannot exclude an optimizer outside that family or at a noncompact boundary.
+
+Cycle-completion bounds with an irreversible final transition \cite{Barato2015} have different premises. Bounds on fixed-time current cumulant ratios \cite{Ptaszynski2022} also concern different observables; inversion of a current generating function mixes several passage cumulants. The present result concerns the standardized large-threshold passage ratios defined below. Our literature comparison is bounded to the checked primary preprint versions. No equivalent formula was identified in that comparison; comparison with the Wampler--Barato publisher version and exhaustive priority tracking remain incomplete.
+
+\section{Model, threshold and cumulant conventions}
+States are $i\in\mathbb Z/3\mathbb Z$, with forward edge rate $u_i$ from $i$ to $i+1$ and reverse edge rate $w_i$ from $i+1$ to $i$. All six rates are finite and strictly positive, with dimensions inverse time. The column generator has escape diagonal $-(u_i+w_{i-1})$. Set
+\begin{equation}
+ U=\prod_i u_i,\qquad W=\prod_i w_i,\qquad A=\log(U/W)>0.
+\end{equation}
+Entropy is measured in units of $k_B$. For an isothermal realization the cycle dissipation is $Ak_BT$. There are no additional edges, resetting or time-dependent driving.
+
+Let $n(t)$ count net forward crossings of edge $2\to0$, and define $T_m=\inf\{t\geq0:n(t)\geq m\}$ for integer $m>0$. The selected-edge entropy threshold is $Am$. With $\kap_j(T_m)$ the $j$th cumulant, our observables are
+\begin{align}
+ S&=\lim_{m\to\infty}\sqrt{Am}\,\frac{\kap_3(T_m)}{\kap_2(T_m)^{3/2}},\label{eq:obsS}\\
+ K&=\lim_{m\to\infty}Am\,\frac{\kap_4(T_m)}{\kap_2(T_m)^2}.\label{eq:obsK}
+\end{align}
+Here $\kap_4$ is the fourth central moment minus three times the squared variance: $K$ is scaled \emph{excess} kurtosis. The large-threshold limit is taken at fixed rates and affinity before any rate-boundary or affinity limit. A fixed initial state or fixed initial distribution changes only the initial passage factor and leaves these limits unchanged.
+
+The medium-entropy increment on edge $i$ is $\ell_i=\log(u_i/w_i)$. Since $\sum_i\ell_i=A$, a periodic potential $a_i$ satisfies $a_{i+1}-a_i=\ell_i-A\delta_{i,2}$. Medium entropy and selected-edge entropy therefore differ by a bounded endpoint state term at fixed rates. Their tilted generators are diagonally similar. The periodic lifted walk has analytic finite-phase passage factors near zero Laplace field for fixed positive drift. Bounded phase changes affect the logarithmic passage transform by an $O(1)$ analytic term and hence preserve large-threshold cumulant densities. Equality of finite-threshold distributions or uniformity near equilibrium is not assumed.
+
+We use the logarithmic affinity and logarithm of the moment-generating function throughout. These conventions are dictated by the eigenvalue construction and the uniform rates $u_i/w_i=e^{A/3}$; the corresponding logarithms are missing from two displayed definitions in the checked preprint \cite{Wampler2021}. Its lower-bound sign/prose inconsistency is not used here.
+
+For fixed $A$, let $U_S(3,A)$ and $U_K(3,A)$ be the separate suprema of \eqref{eq:obsS} and \eqref{eq:obsK} over all permitted rates with $U/W=e^A$. A common rescaling of rates does not change either observable. We henceforth measure rates in units of $W^{1/3}$, making $W=1$ and $U=R=e^A$.
+
+\section{Exact envelopes}
+Define
+\begin{equation}
+ \eta=\sqrt R,\quad C=(\eta-1)^2,\quad d=\frac{\eta+1}{\eta-1}=\coth(A/4),\quad H=\frac{R+1}{R-1}=\frac{d^2+1}{2d}.
+\end{equation}
+For $p>0$, put
+\begin{align}
+ t(p)&=\frac{dp(2+p)}{(1+2p)^2},& z(p)&=\frac{d^2p^2}{(1+2p)^3},\label{eq:tz}\\
+ V(p)&=H-2t(p),& N(p)&=3H^2-1-6Ht(p)+6z(p),\\
+ Q(p)&=3H(5H^2-3)-12(3H^2-1)t(p)\notag\\
+ &\quad+12Ht(p)^2+24Hz(p).\label{eq:Q}
+\end{align}
+\begin{theorem}\label{thm:main}
+For every finite $A\geq\log64$, let $p_S,p_K$ be the unique positive roots of
+\begin{align}
+ P_S(p)&=4(d^2-1)p^2+(12d^2-4)p-(d^2-1)^2,\label{eq:PS}\\
+ P_K(p)&=8(d^2-1)p^3+(-4d^4+24d^2-12)p^2\notag\\
+ &\quad +(2d^4+12d^2-6)p-(d^2-1)^2(d^2+1).\label{eq:PK}
+\end{align}
+Then the separate sharp envelopes are
+\begin{equation}\label{eq:envelopes}
+ U_S(3,A)=\sqrt A\,\frac{N(p_S)}{V(p_S)^{3/2}},\qquad
+ U_K(3,A)=A\,\frac{Q(p_K)}{V(p_K)^2}.
+\end{equation}
+Each is attained by strictly positive finite rates. No simultaneous maximization of the two observables is asserted.
+\end{theorem}
+The proof below gives the attaining rates explicitly. It establishes global bounds for all six-rate configurations rather than only for a reflection-symmetric ansatz.
+
+\section{Cumulant reduction and spectral relaxation}
+\subsection{Passage cumulants from the characteristic polynomial}
+Counting entropy on the selected edge gives
+\begin{equation}\label{eq:det}
+ \det(sI-L(z_f))=s^3+c_2s^2+c_1s+U(1-e^{-Az_f})+W(1-e^{Az_f}),
+\end{equation}
+where $z_f$ denotes the counting field and
+\begin{equation}
+ c_2=\sum_i(u_i+w_i),\qquad
+ c_1=\sum_{i<j}(u_iu_j+w_iw_j)+\sum_i u_iw_{i+1}.
+\end{equation}
+Before normalization these coefficients have dimensions inverse time and inverse time squared. Let $P(s)=c_1s+c_2s^2+s^3$ and $D=U-W$. The typical one-period passage transform $Y(s)$, selected by $Y(0)=1$, satisfies
+\begin{equation}\label{eq:Y}
+ WY(s)^2-[U+W+P(s)]Y(s)+U=0.
+\end{equation}
+The other root has $Y(0)=U/W$ and is not the typical positive-drift passage branch. If $g=\log Y$, direct differentiation gives
+\begin{equation}
+ g'(s)=-\frac{P'(s)}{\sqrt{[U+W+P(s)]^2-4UW}},\qquad g(0)=0.
+\end{equation}
+The per-period cumulants are $(-1)^j g^{(j)}(0)$. With
+\begin{equation}
+ \mu=c_1/D,\qquad t=Dc_2/c_1^2,\qquad z=D^2/c_1^3,
+\end{equation}
+they are exactly $\mu,\mu^2V,\mu^3N,\mu^4Q$, where $V,N,Q$ have the forms above with general $t,z$. Consequently $S=\sqrt A\,N/V^{3/2}$ and $K=AQ/V^2$. These are exact derivatives through order four, not an approximation in affinity.
+
+For an independent passage representation, lift the ring to a periodic walk on $\mathbb Z$. The transform $f_i(s)$ of passage from phase $i$ to $i+1$ obeys the first-step equation
+\begin{equation}\label{eq:renewal}
+ (u_i+w_{i-1}+s)f_i=u_i+w_{i-1}f_{i-1}f_i.
+\end{equation}
+The period transform is $Y=\prod_i f_i$. At each Taylor order the phase coefficients solve a cyclic linear system with determinant $U-W>0$, independently reproducing the cumulants above.
+
+For uniform rates $u_i=u>w=w_i$, a single-site passage has cumulants
+\begin{equation}
+ \frac1\delta,\quad\frac{b}{\delta^3},\quad\frac{3b^2-\delta^2}{\delta^5},\quad
+ \frac{3b(5b^2-3\delta^2)}{\delta^7},\qquad \delta=u-w,\quad b=u+w.
+\end{equation}
+A period comprises three such passages, giving the uniform formulas in Eqs.~(19) and (22) of Ref.~\cite{Wampler2021}. Their one-sided equilibrium limits are $S^2\to18$ and $K\to30$. This baseline does not imply finite equilibrium passage moments.
+
+\subsection{A positive-spectrum domain containing all physical rates}
+At half affinity, $z_f=1/2$, the tilted matrix is diagonally similar to the real symmetric matrix $M$ whose diagonals are $-(u_i+w_{i-1})$ and whose edge off-diagonals are $\sqrt{u_iw_i}$. The forward and reverse tilted cycle products coincide, which ensures diagonal symmetrizability. For any real vector $v$,
+\begin{equation}
+ -v^TMv=\sum_i(\sqrt{u_i}v_i-\sqrt{w_i}v_{i+1})^2>0\quad(v\ne0).
+\end{equation}
+Equality would require $U=W$, contrary to $A>0$. Thus the decay eigenvalues $x_1,x_2,x_3$ are positive and
+\begin{equation}\label{eq:spectral}
+ x_1x_2x_3=C,\quad c_2=x_1+x_2+x_3,\quad c_1=x_1x_2+x_1x_3+x_2x_3.
+\end{equation}
+Every physical rate vector maps into $X_C=\{x_i>0:\prod_i x_i=C\}$. We optimize over this larger domain and subsequently realize its maxima; arbitrary relaxed spectra need not all be physical.
+
+The identity
+\begin{equation}
+ c_1^2-3Cc_2=\tfrac12\big[(x_1x_2-x_1x_3)^2+(x_1x_2-x_2x_3)^2+(x_1x_3-x_2x_3)^2\big]
+\end{equation}
+implies $0<t\leq d/3$. For $A\geq\log64$, $1<d\leq9/7$, and therefore
+\begin{equation}\label{eq:positiveV}
+ V\geq H-2d/3=\frac{3-d^2}{6d}>0.
+\end{equation}
+The relaxation thus preserves a strictly positive variance denominator throughout the claimed interval.
+
+\section{Global optimization on the relaxed domain}
+\subsection{Excluding every escape to infinity}
+If a sequence in $X_C$ escapes compact sets, its largest root $L$ tends to infinity along a subsequence. The other roots have product $C/L$, so $c_1\geq2\sqrt{CL}\to\infty$. Hence $z\to0$, while $t$ has a subsequential limit in $[0,d/3]$. At $z=0$, differentiation gives
+\begin{align}
+ \partial_t(N/V^{3/2})&=\frac{3(H^2-1)-6Ht}{(H-2t)^{5/2}},\\
+ \partial_t(Q/V^2)&=\frac{24[H(H^2-1)-(2H^2-1)t]}{(H-2t)^3}.
+\end{align}
+Their maxima on the larger interval $0\leq t<H/2$ occur at
+\begin{equation}
+ t_S^0=\frac{H^2-1}{2H},\qquad t_K^0=\frac{H(H^2-1)}{2H^2-1}.
+\end{equation}
+Both are increasing in $H$. Since $1<H\leq65/63$, their upper values are $128/4095$ and $16640/282303$, respectively, each below $1/3\leq d/3$.
+
+Now take a repeated pair $x_1=x_2=r$, $x_3=q=C/r^2$ and define $p=q/r=C/r^3$. Substitution yields \eqref{eq:tz}. On $0<p<1$,
+\begin{equation}
+ t'(p)=\frac{2d(1-p)}{(1+2p)^3}>0,
+\end{equation}
+so $t$ covers $(0,d/3)$. At the $p$ with $t=t_S^0$ or $t_K^0$, respectively, $z>0$. Moreover,
+\begin{equation}
+ \partial_z S=6\sqrt A/V^{3/2}>0,\qquad \partial_z K=24AH/V^2>0.
+\end{equation}
+Each such point strictly exceeds the corresponding maximum at infinity. A maximizing sequence cannot escape. Bounded sequences with positive fixed product have compact positive subsequences. Equation~\eqref{eq:positiveV} ensures continuity and excludes singular objectives. Each relaxed maximum is therefore finite and attained in the interior of $X_C$.
+
+\subsection{Repeated roots and unique maximizing parameters}
+The map $(c_1,c_2)\mapsto(t,z)$ has nonzero Jacobian. The coefficient map from $X_C$ has rank two when all $x_i$ are distinct. Indeed, dependence of its differentials would imply multipliers $\lambda,\nu$ with
+\begin{equation}
+ x_i(c_2-x_i-\lambda)=\nu\quad\text{for all }i.
+\end{equation}
+Subtracting two such relations gives $(x_i-x_j)(x_k-\lambda)=0$. Three distinct roots would force $\lambda$ to equal all three, a contradiction. Also $dc_2$ vanishes on the product-constrained tangent space only at triple equality. At a distinct-root interior point one can consequently keep $t$ fixed and increase $z$, strictly increasing either objective. Every relaxed maximum must have a repeated root.
+
+Along the repeated-root family, exact differentiation yields
+\begin{align}
+ 2VN'-3NV'&=\frac{3(p-1)P_S(p)}{d(2p+1)^5},\label{eq:derS}\\
+ VQ'-2QV'&=\frac{6(p-1)P_K(p)}{d^2(2p+1)^6}.\label{eq:derK}
+\end{align}
+For $1<d^2\leq81/49$, each polynomial has a negative constant and strictly positive nonconstant coefficients. In particular $-4d^4+24d^2-12>0$ in this interval. Each is strictly increasing for $p\geq0$ and has a unique positive root.
+
+The next section proves $p_*<p_{\rm unif}<1$ for either root. Equations~\eqref{eq:derS}--\eqref{eq:derK} then show increase on $(0,p_*)$, decrease on $(p_*,1)$ and increase on $(1,\infty)$. Thus $p=1$ is a local minimum; the only possible finite maximum is $p_*$. Existence and the rank argument establish the relaxed envelopes in \eqref{eq:envelopes} globally.
+
+\section{Strictly positive attaining rates}
+Set $y=R^{1/6}\geq2$, so $\eta=y^3$. The uniform half-affinity spectrum has
+\begin{equation}
+ r_0=y^2+y+1,\qquad q_0=(y-1)^2,\qquad p_{\rm unif}=q_0/r_0.
+\end{equation}
+Substitution into the derivative polynomials gives
+\begin{align}
+ P_S(p_{\rm unif})&=\frac{8(y^2-y+1)^3G_S(y)}{(y-1)^4(y^2+y+1)^4},\\
+ P_K(p_{\rm unif})&=\frac{8(y^2+1)(y^2-y+1)^4G_K(y)}{(y-1)^6(y^2+y+1)^6},
+\end{align}
+where, writing $v=y-2\geq0$,
+\begin{align}
+ G_S(y)&=v^6+12v^5+57v^4+138v^3+177v^2+108v+21,\\
+ G_K(y)&=2v^8+31v^7+202v^6+725v^5+1562v^4\notag\\
+ &\quad+2049v^3+1566v^2+603v+72.
+\end{align}
+Every coefficient is positive; monotonicity of $P_S,P_K$ proves $0<p_*<p_{\rm unif}<1$.
+
+For either optimizing root define $r=(C/p_*)^{1/3}$ and $q=C/r^2$. Then $r>r_0$ and $r-q>3y$, since $r-C/r^2$ increases strictly with $r$ and equals $3y$ at $r_0$. There is a unique finite $k>y$ satisfying
+\begin{equation}\label{eq:k}
+ 2k+\eta/k^2=r-q.
+\end{equation}
+Its left side starts at $3y$, increases strictly for $k>y$ and is unbounded. Put $h=\eta/k^2$ and
+\begin{equation}
+ B=r(r-2k),\qquad E=r+(\eta-1)k,\qquad F=\eta r-(\eta-1)k.
+\end{equation}
+Since $r-2k=h+q>0$ and $F=\eta(r-k)+k>0$, all three quantities are positive. The attaining edge rates are
+\begin{align}\label{eq:rates}
+ u_0&=\frac{\eta E}{kB},& w_0&=\frac{B}{E},\notag\\
+ u_1&=\frac{kF}{E},&w_1&=\frac{kE}{F},\\
+ u_2&=\frac{\eta B}{F},&w_2&=\frac{F}{kB}.\notag
+\end{align}
+They are finite and strictly positive and obey $\prod_i u_i=\eta^2=R$, $\prod_i w_i=1$.
+
+For completeness, their conserving generator and spectrum can be checked without assuming realizability of the whole relaxation. Let $a=\sqrt{hk}$ and $b=(\sqrt h,\sqrt k,\sqrt k)^T$. The symmetric matrix $M_0=-rI+bb^T$ has eigenvalues $(-r,-r,-q)$ because $h+2k=r-q$. Twist its edge $2\to0$ entry by $\eta$ and reverse entry by $1/\eta$, keeping all other entries and diagonals fixed, and call the matrix $T$. The determinant of $-T$ is the determinant of $-M_0$ minus $(\eta-1)^2$, hence zero. A positive left null vector is
+\begin{equation}
+ l=(1,aE/B,aF/B)^T.
+\end{equation}
+The last two equations of $l^TT=0$ follow by solving a two-dimensional system of determinant $B$; the first follows from $\det T=0$. Thus $\operatorname{diag}(l)T\operatorname{diag}(l)^{-1}$ is a column-conserving generator, with exactly the rates \eqref{eq:rates}.
+
+Its escape diagonals are $r-h,r-k,r-k$ and its edge products are $hk,k^2,hk$. The half-affinity symmetric matrix is therefore $M_0$. In particular $c_2=2r+q$ and $c_1=r^2+2rq$, realizing the relaxed maximizing spectrum. This proves physical attainment of both separate maxima and completes Theorem~\ref{thm:main}.
+
+\section{Physical interpretation and reproducibility}
+The optimizer has two equal decay eigenvalues of the half-affinity tilted generator. This is an ordinary degeneracy of a symmetric, diagonalizable matrix, rather than an exceptional point. The construction retains every reverse transition and achieves sharpness at finite positive rates for every finite affinity in the interval. It bounds timing asymmetry and excess tails of dissipative three-step cycles within this Markov model. Inferring a molecular topology from measured violations would additionally require an adequate Markov description, affinity and threshold control, and statistical uncertainty estimates.
+
+At $A=\log64$, the optimizing equations reduce to
+\begin{align}
+ 784p_S^2+4753p_S-128&=0,\\
+ 76832p_K^3+246225p_K^2+283857p_K-16640&=0.
+\end{align}
+The supplementary evaluations give $U_S\simeq4.28117643$ and $U_K\simeq28.54239829$, at distinct values $p_S\simeq0.02681178$ and $p_K\simeq0.05586657$. The defining algebraic equations govern the result; decimal values are not interval certificates.
+
+The supplementary code checks the symbolic determinant, the positive quadratic form, derivative factorizations, polynomial sign certificates and the attaining rate identities. Separate determinant and renewal implementations compare rational passage cumulants through order four. Optimizing examples at $A=\log64,6,12,30$ are evaluated at 90 and 170 decimal digits. Exact symbolic checks and the analytic argument establish sharpness; sampled rates and numerical precision changes are corroboration. The reproducibility README records Python and library versions and commands. Running checks in a separate copy preserves the original retained outputs.
+
+\paragraph{AI-assisted research methods.}
+OpenAI Codex was used for literature discovery, analytic development, symbolic and numerical code, calculation checks and manuscript drafting. The computational checks are reproducible from the supplied code. A separate AI context reconstructed the source inputs and checked the argument using independently written code; this is an internal computational check, not external peer review. Human critical review of the mathematics, scientific interpretation and citations remains pending for this local draft.
+
+\section{Limitations}
+The affinity cutoff is a sufficient domain for the positive-spectrum relaxation and the explicit attainment proof, not a determination of either kink. The original question for arbitrary cycle lengths and all positive affinities remains unresolved. Smaller affinities can invalidate the relaxed variance bound used here and are not covered by this proof. Neither finite-threshold distributions nor a unique classification of all rate-space equality cases is claimed. Skewness and kurtosis are optimized separately. No additional central result follows from the numerical checks alone.
+
+\section*{Acknowledgements and AI disclosure}
+OpenAI Codex materially assisted the ideas, derivations, code, verification and writing, as described in the methods paragraph. The exact backend model/version for each contributing stage must be confirmed from the retained run records before submission. No completed human validation or authorship approval is asserted. The named author's confirmation and critical revision of this local draft remain pending.
+
+\section*{Data and code availability}
+The accompanying reproducibility materials include the analytic proof, exact check scripts, independent determinant and renewal implementations, supplementary values, and a README with environment and regeneration instructions. No experimental data are used. Primary third-party papers are cited rather than redistributed in the handoff package.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

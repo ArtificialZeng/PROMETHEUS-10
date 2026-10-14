@@ -2,7 +2,13 @@
 
 This directory contains portable replay/build entry points and compact validation records. The project directories hold the actual scientific code, data, TeX/Bib, figures and unchanged archived paper PDFs. There is no research orchestrator, browser controller, API credential or news article in this repository.
 
-## Environment
+The unified [portfolio](portfolio.json) contains 93 stored manuscripts and 90 canonical entries across four classes; earlier covered scopes remain linked, with all originals preserved. Start with [verify_portfolio.py](verify_portfolio.py) and [verify_package.py](verify_package.py) for package integrity. Those checks do not prove the physics.
+
+- The original ten use `reproduce.py` and `build_papers.py` below.
+- The 48 upstream SmallMac packages use [SMALL_MAC.md](SMALL_MAC.md) and their existing per-project guides.
+- The 35 subsequent BigMac packages use [BIG_MAC.md](BIG_MAC.md) and their release-selected per-project guides. There is no claim that the original ten-project runner executes all 93 packages or that one dependency file covers every discipline.
+
+## Environment for the original ten
 
 Use Python 3.12 and a virtual environment. `requirements.txt` records the versions used in this replay; installing packages requires access to a package index. The exact qutrit counterexample uses only the standard library. The interval qubit project needs **python-flint 0.9.0** (import name `flint`), which replaces the original workstation-specific library path.
 
@@ -40,7 +46,7 @@ The script selects the correct working directory for each manuscript's bibliogra
 - Logs from the original research, browser conversations, queue control files and third-party paper PDFs are excluded. Supplied JSON evidence is retained where needed to understand and reproduce the research.
 - `SHA256SUMS` inventories public package files (excluding itself). On macOS use `shasum -a 256 -c reproducibility/SHA256SUMS` from the repository root.
 
-## Scientific release status
+## Historical release status of the original ten
 
 All manuscripts still require final author review. Seven have historical original-problem resolution records; the other three retain unresolved scope. `phys-00007-p01` remains an archived draft with a failed historical evidence/manuscript binding gate. This packaging exercise does not reset that result or inherit it as a new acceptance.
 

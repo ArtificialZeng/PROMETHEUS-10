@@ -1,0 +1,143 @@
+{
+  "method": "independent interval/symmetry sectors B",
+  "versions": {
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "pumpkin_sector_checks": [
+    {
+      "graph": "unit pumpkin",
+      "E": 2,
+      "k": "1*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 1,
+      "total": 2
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 2,
+      "k": "2*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 1,
+      "total": 2
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 2,
+      "k": "3*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 1,
+      "total": 2
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 3,
+      "k": "1*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 2,
+      "total": 3
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 3,
+      "k": "2*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 2,
+      "total": 3
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 3,
+      "k": "3*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 2,
+      "total": 3
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 5,
+      "k": "1*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 4,
+      "total": 5
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 5,
+      "k": "2*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 4,
+      "total": 5
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 5,
+      "k": "3*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 4,
+      "total": 5
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 8,
+      "k": "1*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 7,
+      "total": 8
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 8,
+      "k": "2*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 7,
+      "total": 8
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 8,
+      "k": "3*pi",
+      "NN_multiplicity": 1,
+      "DD_multiplicity": 7,
+      "total": 8
+    }
+  ],
+  "precision_decimal_digits": 70,
+  "tree_lengths": {
+    "h": "0.1666666666666666666666666666666666666666666666666666666666666666666667",
+    "b_unperturbed": "0.1061478075048283021917637485562782346387559734990584004225354309564407",
+    "b_perturbed": "0.1071478075048283021917637485562782346387559734990584004225354309564407",
+    "a": "0.5",
+    "m": 5,
+    "eta": "0.001"
+  },
+  "perturbed_tree_root": {
+    "k": "3.127728933524425475491004584848536757998680198370825219505128356299774",
+    "mu2_numerical": "9.782688281605839955066016921876809931926811351596338761531676203892103",
+    "bisection_width": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
+    "characteristic_residual": "2.71670372364801371025273578726633753420475935944174145687478446698065e-71",
+    "unperturbed_pi_residual": "0.0",
+    "fan_leaf_amplitude": "0.5273343873987589005391899759209863018028985877729527760995191281883732",
+    "continuity_residual": "4.527839539413356183754559645443895890341265599069569094791307444967751e-72",
+    "flux_residual": "2.71670372364801371025273578726633753420475935944174145687478446698065e-71",
+    "metric_diameter": "1",
+    "extrema_union_diameter": "0.5476289483429899377168608304458898026108452803314501341784041952462146",
+    "new_DD_threshold_for_uniform_doubling": "39.47841760435743447533796399950460454125479762896316250565339750488018",
+    "qualification": "High-precision bisection plus residual check, not directed interval arithmetic. Published-family ordering and extrema are justified analytically in the baseline note."
+  },
+  "star_sector_prediction": [
+    {
+      "k": "pi",
+      "original_multiplicity": 3,
+      "added_DD_multiplicity": 0,
+      "doubled_total": 3
+    },
+    {
+      "k": "2*pi",
+      "original_multiplicity": 1,
+      "added_DD_multiplicity": 4,
+      "doubled_total": 5
+    }
+  ],
+  "status": "pass"
+}

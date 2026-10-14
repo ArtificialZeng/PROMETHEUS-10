@@ -1,0 +1,448 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Exact two-particle relaxation crossover for the symmetric inclusion process on hypercubes},
+ pdfauthor={Xiaojian Zeng},pdfsubject={Two-particle reversible relaxation on finite hypercubes},
+ pdfkeywords={symmetric inclusion process, spectral gap, hypercube, two-particle dynamics}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\SIP}{\mathrm{SIP}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\cube}{Q_D}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\title{Exact two-particle relaxation crossover for the\protect\\
+ symmetric inclusion process on hypercubes}
+\author{Xiaojian Zeng\thanks{\href{mailto:xiaojianzeng@foxmail.com}{xiaojianzeng@foxmail.com}}\protect\\[2pt]
+ \small PBC School of Finance, Tsinghua University\protect\\
+ \small Beijing 100190, China}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The symmetric inclusion process describes diffusion with hopping rates
+that increase with the occupation of the destination. Its slowest relaxation mode
+can differ from that of a single particle. We determine the full spectral
+gap for exactly two particles on every finite Boolean hypercube, with a
+homogeneous positive site parameter and equal positive edge conductances.
+The gap is the minimum of the inherited one-particle eigenvalue and the
+first positive eigenvalue of an explicit birth-death chain for the Hamming
+distance between the particles. Translation characters exhaust the
+two-particle state space: every nontrivial character is bounded below by
+the one-particle gap, while all nonradial modes in the translation-invariant
+sector lie higher. A rank-one resolvent calculation then gives an exact
+integral formula for the finite-parameter crossover. A slower separation
+mode occurs precisely below this positive threshold in dimensions four
+and higher; the four-dimensional threshold is $1/35$. A recurrence determines
+the threshold in every dimension and proves its inverse-square dimension
+scaling. The result specifies when two-particle relaxation is controlled
+by collective separation rather than a linear occupation observable.
+It concerns a finite graph with exactly two particles and leaves the
+general many-particle degree-two gap conjecture unresolved.
+\end{abstract}
+\noindent\textbf{Keywords:} symmetric inclusion process; spectral gap;
+ hypercube; reversible relaxation; two-particle dynamics.
+
+\section{Introduction}
+The symmetric inclusion process is an established attractive interacting
+particle model. For conservative dynamics, spectral inheritance makes
+one-particle eigenvalues available in every particle sector, but does not
+ensure that they govern relaxation. Kim and Sau proved the one-particle
+gap identity when all site parameters are at least one
+\cite{KimSau2024}, and subsequently established its failure on suitable
+geometries outside that regime \cite{KimSau2026}. They also proved an
+asymptotic two-particle reduction as diffusivity vanishes along a fixed
+positive direction. Their proposed exact identity
+$\lambda_k=\lambda_2$ for all $k\geq2$, arbitrary finite connected graphs
+and positive site parameters remains a conjecture. The later work of
+Caputo, Quattropani and Sau proves degree-two reduction for stochastic
+exchange dynamics and explicitly retains the Brownian energy
+process/inclusion-process question \cite[Sec.~1.4.6]{CaputoQuattropaniSau2026}.
+
+Here we calculate the full two-particle gap on a coherent graph family
+at finite positive diffusivity. For the Boolean hypercube $Q_D$, we obtain
+an exact boundary between one-particle and pair-separation relaxation.
+The contribution is the full-sector comparison and the finite-parameter
+boundary in every dimension. Qualitative failure of one-particle reduction
+is already known from \cite{KimSau2026}; we do not claim that phenomenon
+as new. Relative coordinates for two interacting particles likewise have
+prior applications, including the exact one-dimensional transition
+calculation of Carinci, Giardin\`a and Redig \cite{CarinciGiardinaRedig2017}.
+The present calculation concerns the finite hypercube and its full
+two-particle spectral gap. It gives no identity at particle number three
+or higher.
+
+\section{Model and exact result}
+Write $V=(\mathbb Z/2\mathbb Z)^D$, $D\geq1$, and join $x$ to $x+e_i$
+for each coordinate vector $e_i$. Addition is modulo two. All edges have
+conductance $c>0$, and the site parameter is $a>0$. For fixed particle
+number $k$, the state space is
+$\Xi_k=\{\eta\in\mathbb N_0^V:\sum_x\eta_x=k\}$ and the backward
+generator is
+\begin{equation}\label{eq:generator}
+ (L_k f)(\eta)=c\sum_{x\in V}\sum_{i=1}^D
+ \eta_x(a+\eta_{x+e_i})
+ \bigl[f(\eta-\delta_x+\delta_{x+e_i})-f(\eta)\bigr].
+\end{equation}
+Terms with $\eta_x=0$ vanish. This directed jump sum has no factor
+$1/2$. It conserves particle number, has no reservoirs, and is reversible
+with probability law
+\begin{equation}\label{eq:measure}
+ \mu_{a,k}(\eta)=\frac{k!}{(2^D a)_k}
+ \prod_{x\in V}\frac{(a)_{\eta_x}}{\eta_x!},
+ \qquad (a)_m=\prod_{j=0}^{m-1}(a+j),\quad (a)_0=1.
+\end{equation}
+These conventions agree with the conservative generator and measure of
+\cite[Eqs.~(2.1)--(2.2)]{KimSau2026}.
+Let $\lambda_k$ be the smallest strictly positive eigenvalue of $-L_k$
+in $L^2(\mu_{a,k})$. All parameters except $c$ are dimensionless;
+$c$, the eigenvalues and the gaps have inverse-time units. The relaxation
+time of the slowest nonconstant mode is $1/\lambda_k$.
+
+For $d\in\{0,\ldots,D\}$, define
+\begin{equation}\label{eq:rates}
+ \ell_d=2da+2\,\ind_{\{d=1\}},\qquad u_d=2(D-d)a.
+\end{equation}
+The negative birth-death generator $T_D(a)$ has action
+\begin{equation}\label{eq:radial}
+ (T_D(a)h)_d=\ell_d(h_d-h_{d-1})+u_d(h_d-h_{d+1}),
+\end{equation}
+with absent endpoint terms omitted. Write $\rho_D(a)$ for its first
+positive eigenvalue. Conductance has been set to one in this auxiliary
+matrix, so that the corresponding physical eigenvalue is $c\rho_D(a)$.
+
+\begin{theorem}\label{thm:main}
+For every finite integer $D\geq1$ and every $a,c>0$, the model
+\eqref{eq:generator} satisfies
+\begin{equation}\label{eq:gap}
+ \lambda_1=2ca,\qquad
+ \lambda_2=c\min\{2a,\rho_D(a)\}.
+\end{equation}
+Define
+\begin{equation}\label{eq:threshold}
+ a_D=(D-1)2^{-(D-1)}\int_0^1(1+u^2)^{D-1}\,du-1.
+\end{equation}
+For $D\leq3$, $\lambda_2=\lambda_1$ at every $a>0$. For $D\geq4$,
+$a_D>0$ and
+\begin{equation}\label{eq:crossing}
+ \lambda_2<\lambda_1\ \Longleftrightarrow\ 0<a<a_D,
+ \qquad
+ \lambda_2=\lambda_1\ \Longleftrightarrow\ a\geq a_D.
+\end{equation}
+The thresholds obey
+\begin{equation}\label{eq:recurrence}
+ a_{D+1}=\frac{D^2 a_D+1}{(D-1)(2D+1)}\quad(D\geq2),
+ \qquad a_4=\frac1{35},\qquad \lim_{D\to\infty}D^2a_D=1.
+\end{equation}
+\end{theorem}
+
+The proof first controls every symmetry sector of the full occupation
+space, then locates the crossing inside the remaining distance chain.
+This order is necessary: distance lumping alone supplies an upper bound
+on $\lambda_2$, rather than the equality in \eqref{eq:gap}.
+
+\section{Full two-particle sector comparison}
+Set $c=1$ throughout the proof. A two-particle configuration is an unordered
+pair $\{x,y\}$, including the stack $x=y$. The same generator is obtained
+from labelled positions by giving the first particle a jump $x\to v$ at
+rate $a+\ind_{\{y=v\}}$ on an edge, and similarly for the second particle.
+On symmetric functions the labelled and occupation generators agree.
+In particular, a stack has total rate $2a$ to each neighboring destination.
+
+\subsection{Translation characters}
+For $q\in V$, let $\chi_q(x)=(-1)^{q\cdot x}$. Translations preserve the
+generator and reversible measure, so their character spaces are invariant,
+orthogonal, and exhaustive. A function in character $q$ can be written as
+\begin{equation}\label{eq:character}
+ F(\{x,y\})=\chi_q(x)g(x+y).
+\end{equation}
+Exchanging $x$ and $y$ requires
+$g(z)=\chi_q(z)g(z)$. Thus $g$ is supported on
+$A_q=\{z:\chi_q(z)=1\}$. Conversely, this support restriction makes
+\eqref{eq:character} well-defined. With $N=2^D$, the character dimensions
+are $N$ at $q=0$ and $N/2$ at each $q\ne0$, and their sum is
+\begin{equation}
+ N+(N-1)\frac N2=\frac{N(N+1)}2=|\Xi_2|.
+\end{equation}
+There is therefore no missing two-particle sector.
+
+Substitution of the labelled jump rates gives the negative-generator
+block on $A_q$:
+\begin{equation}\label{eq:block}
+ (B_q g)(z)=\bigl(2Da+2\,\ind_{\{|z|=1\}}\bigr)g(z)
+ -2\sum_{i:q_i=0}\bigl(a+\ind_{\{z=e_i\}}\bigr)g(z+e_i),
+ \qquad z\in A_q,
+\end{equation}
+where $|z|$ is Hamming weight. If $q_i=1$, the two off-diagonal
+contributions cancel, and their departure rates remain in the diagonal.
+The extra rate at $z=e_i$ describes attraction into a stack. At $z=0$
+the diagonal is $2Da$, with no extra attraction term.
+
+\begin{lemma}\label{lem:nonzero}
+For $q\ne0$, every eigenvalue of $B_q$ is at least $2|q|a$.
+Characters with $|q|=1$ attain $2a$.
+\end{lemma}
+\begin{proof}
+Let $m=|q|\geq1$ and $r=D-m$. The $m$ coordinates where $q_i=1$
+have even parity in $A_q$ and are unchanged by surviving off-diagonal
+moves. Fix their bit pattern. If all those bits are zero, the remaining
+component is
+\begin{equation}\label{eq:components}
+ B_0(Q_r)+2ma I.
+\end{equation}
+Here $B_0(Q_r)$ is itself a translation-invariant block of a reversible
+Markov negative generator, with nonnegative spectrum and a zero
+eigenvalue. For $r=0$ it denotes the one-dimensional zero operator.
+Any other allowed pattern has at least two nonzero bits, so that neither
+$z=0$ nor $|z|=1$ occurs. Its component is
+$2a\mathcal L_{Q_r}+2ma I$, where $\mathcal L_{Q_r}$ is the ordinary
+cube Laplacian. This proves the lower bound. In the all-zero component
+with $m=1$, the constant function in the remaining coordinates attains
+$2a$.
+\end{proof}
+
+The attained eigenfunctions include the linear occupation observables
+\begin{equation}\label{eq:linear}
+ \Phi_i(\eta)=\sum_{x\in V}(-1)^{x_i}\eta_x.
+\end{equation}
+Their eigenvalue is $2a$. Independently, the one-particle negative
+generator is $a\mathcal L_{Q_D}$; Walsh characters have Laplacian
+eigenvalues $2|q|$, giving $\lambda_1=2a$.
+
+\subsection{The translation-invariant sector}
+The block $B_0$ is reversible for the unnormalized weights
+\begin{equation}\label{eq:relative-weights}
+ w(0)=\frac{a+1}{a},\qquad w(z)=1\quad(z\ne0).
+\end{equation}
+One can obtain these weights directly from \eqref{eq:measure}:
+distinct-position configurations have unnormalized mass $a^2$ and stacks
+have mass $a(a+1)/2$, while their translation orbits have sizes $N/2$
+and $N$, respectively. Detailed balance on $0\leftrightarrow e_i$
+also gives $w(0)2a=w(e_i)2(a+1)$.
+
+Coordinate permutations preserve $w$ and $B_0$. Their invariant subspace
+$\mathcal R$ consists of functions of $|z|$. Its weighted orthogonal
+complement consists of functions with zero sum on every Hamming shell.
+In particular, for $f\in\mathcal R^\perp$,
+\begin{equation}\label{eq:nonradial-conditions}
+ f(0)=0,\qquad \sum_{|z|=1}f(z)=0,\qquad \sum_z f(z)=0.
+\end{equation}
+Self-adjointness makes this complement invariant. Its weighted norm
+equals its counting norm, and \eqref{eq:block} reduces to
+\begin{equation}\label{eq:nonradial-action}
+ B_0 f=2a\mathcal L_{Q_D}f+2\,\ind_{\{|z|=1\}}f.
+\end{equation}
+At zero, the equality uses the unit-shell sum in
+\eqref{eq:nonradial-conditions}. The counting-space gap of
+$\mathcal L_{Q_D}$ is two. Consequently,
+\begin{equation}\label{eq:nonradial-bound}
+ \frac{\ip{f}{B_0 f}_w}{\ip{f}{f}_w}
+ =\frac{2a\ip{f}{\mathcal L_{Q_D}f}+2\sum_{|z|=1}|f(z)|^2}
+ {\sum_z|f(z)|^2}\geq4a
+ \quad(0\ne f\in\mathcal R^\perp).
+\end{equation}
+
+On $\mathcal R$, there are $d$ flips decreasing distance and $D-d$
+increasing it, with the additional rate two into zero from distance one.
+The restriction is therefore exactly \eqref{eq:radial}. Its reversible
+masses may be chosen as
+\begin{equation}\label{eq:radial-weights}
+ \pi_0=\frac{a+1}{a},\qquad \pi_d=\binom Dd\quad(1\leq d\leq D).
+\end{equation}
+All neighboring transition rates are positive, so this finite chain is
+irreducible. Lemma~\ref{lem:nonzero}, \eqref{eq:nonradial-bound}, and
+the attained eigenvalue $2a$ prove the two-particle formula
+\eqref{eq:gap} at $c=1$.
+
+\section{Exact location of the crossover}
+\subsection{A radial resolvent at the competing eigenvalue}
+Let $R_D$ be the ordinary radial cube Laplacian: its diagonal is $D$
+and its downward and upward entries are $-d$ and $-(D-d)$. Its eigenvalues
+are $0,2,\ldots,2D$. For example, the shell sums of Walsh characters of
+each weight give $D+1$ radial eigenfunctions with these distinct
+eigenvalues. With $\varepsilon_d$ the coordinate vectors of
+$\mathbb R^{D+1}$, \eqref{eq:rates} gives
+\begin{equation}\label{eq:rankone}
+ \frac{T_D(a)}{2a}=R_D+a^{-1}\varepsilon_1
+ (\varepsilon_1-\varepsilon_0)^{\mathsf T}.
+\end{equation}
+Since $M=R_D-I$ is invertible, the determinant lemma yields
+\begin{equation}\label{eq:detlemma}
+ \det\bigl(T_D(a)-2aI\bigr)
+ =(2a)^{D+1}\det(M)\left(1+\frac{h_D}{a}\right),\qquad
+ h_D=(\varepsilon_1-\varepsilon_0)^{\mathsf T}M^{-1}\varepsilon_1.
+\end{equation}
+Put $v=M^{-1}\varepsilon_1$. The row at distance zero gives
+$(D-1)v_0-Dv_1=0$, hence $h_D=-v_0/D$.
+On the full cube, the unit-shell indicator is
+$\operatorname{Adj}(Q_D)\delta_0=(DI-\mathcal L_{Q_D})\delta_0$.
+The corresponding radial equation therefore implies
+\begin{equation}\label{eq:green}
+ v_0=(D-1)G_D-1,\qquad
+ G_D=\bigl[(\mathcal L_{Q_D}-I)^{-1}\bigr]_{00}
+ =2^{-D}\sum_{j=0}^D\frac{\binom Dj}{2j-1}.
+\end{equation}
+The last expression follows by normalized Walsh diagonalization;
+none of its denominators is zero.
+
+Writing the positive-$j$ terms as integrals gives
+\begin{equation}
+ G_D=2^{-D}\left[-1+
+ \int_0^1\frac{(1+u^2)^D-1}{u^2}\,du\right].
+\end{equation}
+Integration by parts has a vanishing boundary term at $u=0$ and yields
+\begin{equation}\label{eq:greenintegral}
+ G_D=-1+D2^{-(D-1)}\int_0^1(1+u^2)^{D-1}\,du.
+\end{equation}
+Combining \eqref{eq:green}--\eqref{eq:greenintegral} proves $h_D=-a_D$.
+Thus a radial eigenvalue can equal $2a$ at a positive parameter only when
+$a=a_D$. If $a_D>0$, the zero of
+\eqref{eq:detlemma} as a function of $a$ is simple.
+
+\subsection{Which eigenvalue crosses, and in which direction?}
+For every $a>0$, $T_D(a)$ is similar by \eqref{eq:radial-weights} to a
+real symmetric tridiagonal matrix with nonzero neighboring entries. Its
+eigenvalues are real, simple and continuous in $a$, and exactly one is
+zero. Moreover, $T_D(a)/a\to2R_D$ as $a\to\infty$. Every positive radial
+eigenvalue is therefore larger than $2a$ for sufficiently large $a$.
+
+If $a_D\leq0$, the determinant has no positive-parameter zero, so none
+of these eigenvalues can cross $2a$; in particular $\rho_D(a)>2a$
+for all $a>0$. Suppose instead $a_D>0$. A higher positive radial
+eigenvalue cannot be the one equal to $2a$ at $a_D$: the first positive
+one would then be strictly below $2a$ there, forcing another crossing
+between $a_D$ and the large-$a$ regime. This contradicts the unique
+possible zero of \eqref{eq:detlemma}. Hence the crossing belongs to
+$\rho_D$. The simple determinant zero, together with eigenvalue
+simplicity, enforces a sign change. Continuity and the absence of any
+other crossing show that
+\begin{equation}\label{eq:rhorange}
+ \rho_D(a)\begin{cases}
+ <2a,&0<a<a_D,\\
+ =2a,&a=a_D,\\
+ >2a,&a>a_D.
+ \end{cases}
+\end{equation}
+No monotonicity assumption on $\rho_D(a)/a$ is needed.
+
+\subsection{Threshold signs, recurrence and dimension scaling}
+Define $H_m=2^{-m}\int_0^1(1+u^2)^m\,du$. Integrating the derivative
+of $u(1+u^2)^m$ gives
+\begin{equation}\label{eq:Hrecurrence}
+ H_m=\frac{1+mH_{m-1}}{2m+1},\qquad H_0=1.
+\end{equation}
+Since $a_D=(D-1)H_{D-1}-1$, this identity implies
+\eqref{eq:recurrence}. Direct evaluation gives
+\begin{equation}\label{eq:values}
+ a_1=-1,\quad a_2=-\frac13,\quad a_3=-\frac1{15},\quad
+ a_4=\frac1{35},\quad a_5=\frac{17}{315},\quad a_6=\frac{37}{693}.
+\end{equation}
+The recurrence propagates positivity from $D=4$. Together with
+\eqref{eq:rhorange} and \eqref{eq:gap}, this proves the crossover
+statements.
+
+For the asymptotic, put $b_D=D^2a_D$. Then
+\begin{equation}\label{eq:brecurrence}
+ b_{D+1}=q_D(b_D+1),\qquad
+ q_D=\frac{(D+1)^2}{(D-1)(2D+1)}\longrightarrow\frac12.
+\end{equation}
+For $D\geq6$, $0<q_D\leq4/5$, so the recurrence first bounds $b_D$
+uniformly. Also,
+\begin{equation}
+ |b_{D+1}-1|\leq\frac45|b_D-1|+|2q_D-1|.
+\end{equation}
+Iteration gives a geometrically decaying initial contribution and a
+convolution of a summable geometric sequence with a term tending to
+zero. Both vanish as $D\to\infty$, proving $b_D\to1$.
+Finally, restoring $c$ multiplies every eigenvalue by $c$ and leaves
+$a_D$ unchanged. This completes the proof of Theorem~\ref{thm:main}.
+
+\section{Four-dimensional example and reproducibility}
+For $D=4$, the radial characteristic polynomial, with the convention
+$p_4(\lambda)=\det(\lambda I-T_4(a))$, is
+\begin{align}\label{eq:poly}
+ p_4(\lambda)&=\lambda(\lambda-8a)
+ \bigl[\lambda^3-(32a+2)\lambda^2
+ +(304a^2+32a)\lambda\nonumber\\[-2pt]
+ &\hspace{39mm}{}-768a^3-48a^2\bigr].
+\end{align}
+In particular $p_4(2a)=96a^4(35a-1)$. Below $a_4=1/35$,
+$\rho_4(a)$ is the smallest positive root of the cubic factor, and
+$\lambda_2=c\rho_4(a)<2ca$. Figure~\ref{fig:crossover} illustrates
+this crossing and the dimension scaling of the exact threshold.
+
+\begin{figure}[tbp]
+ \centering
+ \includegraphics[width=\textwidth]{manuscript/figures/crossover.pdf}
+ \caption{The exact two-particle reduction. Left: the radial gap divided
+ by the one-particle gap on $Q_4$, and the full two-particle ratio obtained
+ by taking its minimum with one. The vertical line is the exact crossing
+ $a/a_4=1$, with $a_4=1/35$. Eigenvalues are evaluated at 80-decimal working
+ precision for illustration; the crossing is established analytically.
+ Right: $D^2a_D$ from the rational recurrence, for $4\leq D\leq64$,
+ with its proved limiting value one. Neither panel asserts a
+ thermodynamic phase transition.}
+ \label{fig:crossover}
+\end{figure}
+
+The accompanying symbolic verification compares full occupation
+generators assembled from direct jump rates with a separate reversible
+incidence construction. It checks character embeddings, radial
+intertwiners and exact root ordering at $D=3$, $a=1/100$, and at $D=4$,
+$a=1/100,1/35,1/10,1$. Resolvent, integral and recurrence identities are
+also compared exactly for $1\leq D\leq16$. These finite checks support
+the calculation; the analytic sector bounds and crossing argument
+establish the unrestricted finite-$D$ statement. The figure-generation
+script writes the plotted data and compares high-precision radial
+eigenvalues with a separately assembled double-precision symmetric
+matrix. Those numerical values are illustrations, not exact certificates.
+Regeneration instructions and package versions are supplied with the
+reproducibility material.
+
+\section{Relaxation modes and scope}
+Below $a_D$, a translation-invariant function of particle separation is
+the slowest two-particle mode. The bounds on the other sectors ensure
+that its slower relaxation is not an artifact of radial projection.
+At and above the threshold, a linear occupation observable such as
+\eqref{eq:linear} attains the gap. The result therefore distinguishes
+pair-separation relaxation from a mode already visible to a single
+particle, and locates the distinction at finite diffusivity.
+
+Published spectral monotonicity gives
+$\lambda_k\leq\lambda_2$ for every $k\geq2$
+\cite[Eq.~(2.7)]{KimSau2026}. Hence below the threshold one-particle
+reduction is excluded in all those sectors. This observation uses an
+existing monotonicity result and gives no equality between $\lambda_k$
+and $\lambda_2$. Above the threshold, the many-particle gap may still be
+smaller than the one-particle gap. The general degree-two conjecture
+is thus left unresolved.
+
+All conclusions assume exactly two particles for the calculated gap,
+strictly positive homogeneous site parameter, equal positive edge
+conductances, and a finite closed cube. Heterogeneous weights, other
+geometries and reservoir dynamics are outside the result. The limit
+$D^2a_D\to1$ describes the sequence of two-particle crossover boundaries;
+it is not a statement about a thermodynamic transition or a uniform
+many-particle limit.
+
+\section*{Data, code and use of generative AI}
+Reproducibility scripts, exact verification outputs, plotted data and
+environment requirements accompany this manuscript. No experimental
+dataset is used. OpenAI Codex was used in the research process for
+candidate exploration, analytic derivations, code generation, symbolic
+and numerical checking, literature comparison, and manuscript drafting.
+Separate AI-assisted reconstruction and checks were performed; they do
+not constitute external peer review. AI tools are not authors. Human
+scientific review and approval of this draft remain pending.
+
+\begingroup
+\small
+\setlength{\bibsep}{4pt}
+\bibliographystyle{unsrtnat}
+\bibliography{manuscript/references}
+\endgroup
+\end{document}

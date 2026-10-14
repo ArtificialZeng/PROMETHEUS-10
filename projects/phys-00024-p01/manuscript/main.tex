@@ -1,0 +1,638 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,bm,booktabs}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\vecop}{\operatorname{vec}}
+\newcommand{\dist}{\operatorname{dist}_F}
+\newcommand{\norm}[1]{\lVert #1\rVert_F}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\Mq}{\mathcal M_q}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\title{Local stability of a sharp \(q\)-deformed commutator response\\
+for conditional quantum operations}
+\author{Xiaojian Zeng\\
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The real overlap of an ordinary commutator with a \(q\)-deformed
+commutator has a known sharp upper bound for two-dimensional matrices
+and for normal matrices in arbitrary dimension. We study its optimized
+response near an embedded two-level saturation witness. For every fixed
+finite dimension \(n\geq3\) and every real \(q\notin\{-1,1\}\), we prove
+that the response has a Morse--Bott local maximum at the known sharp
+constant. Its local equality set is a smooth real manifold of dimension
+\(4n-2\), characterized by one complex relation on a reducing
+two-dimensional block. We calculate the complete normal Hessian spectrum,
+including perturbations that couple the active levels to additional levels,
+and obtain a two-sided quadratic deficit in the Frobenius distance to
+the equality manifold. The resulting neighborhood includes nonnormal,
+full-rank matrices, while the second operator remains unrestricted.
+An auxiliary determinant identity characterizes all nonzero
+two-dimensional equality matrices at \(q=1/2\).
+After contraction scaling, the response is a success-weighted observable
+of coherently ordered conditional operations on a maximally entangled
+input. The theorem supplies a local sharp envelope and exact normal
+susceptibilities for that observable. No explicit neighborhood radius,
+uniform limit, or resolution of the unrestricted global conjecture is
+claimed.
+\end{abstract}
+\noindent\textbf{Keywords:} conditional quantum operations;
+deformed commutator; Frobenius norm; equality manifold;
+local stability; operator interference.
+
+\section{Introduction}
+Operator products in different orders give distinct conditional
+amplitudes. Their squared norms and real overlap can be combined into
+a weighted order response. A useful matrix functional for this purpose is
+\begin{equation}
+ f(A,B;q)=\operatorname{Re}\Tr\bigl((BA-AB)^\dagger(BA-qAB)\bigr),
+ \qquad q\in\mathbb R.
+ \label{eq:f}
+\end{equation}
+Here \(A,B\in M_n(\mathbb C)\), the inner product is
+\(\ip{X}{Y}=\Tr(X^\dagger Y)\), and
+\(\norm{X}^2=\Tr(X^\dagger X)\) is the unnormalized Frobenius norm.
+The parameter \(q\) is a real response weight.
+
+Chru\'sci\'nski, Kimura, Ohno and Singal introduced this functional and
+proved the sharp estimate
+\begin{equation}
+ f(A,B;q)\leq c(q)\norm{A}^2\norm{B}^2,\qquad
+ c(q)=\frac{1+q+\sqrt{2(1+q^2)}}2,
+ \label{eq:global}
+\end{equation}
+when \(n=2\), and when \(A\) is normal in any dimension
+\citep[Theorem~1]{ckos2022response}. Their unrestricted all-dimensional
+statement is a conjecture in that source. We use its author-preprint
+version for the equations, equality witness and two-dimensional proof.
+The ordinary B\"ottcher--Wenzel point \(q=1\) and the point \(q=-1\)
+are already known cases.
+
+The question addressed here is local: does the sharp witness remain
+a maximum under arbitrary small matrix perturbations, including
+nonnormal perturbations and couplings to extra levels?
+We answer this for every fixed finite \(n\geq3\) and every real
+\(q\notin\{-1,1\}\). The zero directions of the Hessian form a true
+curved equality manifold, rather than an unresolved higher-order
+instability. The remaining directions have an explicit strictly
+negative spectrum. Together with a simple spectral branch, this
+controls the full local remainder and proves a sharp local bound
+for all complex \(B\).
+
+This functional differs from the squared norm of a
+\(q\)-deformed commutator studied in
+\citep{ckos2022norm,nobori2026}. It also differs from the averaged
+relaxation functional used in open quantum dynamics. The universal
+maximal relaxation-rate bound has been proved in
+\citep{muratore2024}; the present result supplies no new relaxation-rate
+bound. Its physical content is instead the local envelope and normal
+susceptibility of a success-weighted conditional-operation response.
+The unrestricted inequality \eqref{eq:global} is not proved here.
+
+\section{Response operator and local stability theorem}
+Let column vectorization identify \(M_n(\mathbb C)\) with
+\(\mathbb C^{n^2}\). Right and left multiplication by \(A\) are
+represented by
+\begin{equation}
+ P_A=A^{\mathsf T}\otimes I_n,\qquad Q_A=I_n\otimes A.
+\end{equation}
+Expanding \eqref{eq:f} gives the Hermitian response operator
+\begin{equation}
+ H_q(A)=P_A^\dagger P_A+qQ_A^\dagger Q_A
+       -\frac{1+q}{2}(P_A^\dagger Q_A+Q_A^\dagger P_A).
+ \label{eq:H}
+\end{equation}
+Thus
+\begin{equation}
+ \begin{aligned}
+ f(A,B;q)&=\vecop(B)^\dagger H_q(A)\vecop(B),\\
+ g_q(A)&=\frac{\lambda_{\max}(H_q(A))}{\norm{A}^2}
+       =\max_{B\neq0}\frac{f(A,B;q)}{\norm{A}^2\norm{B}^2}.
+ \end{aligned}
+ \label{eq:g}
+\end{equation}
+The function \(g_q\) is defined for \(A\neq0\), invariant under unitary
+conjugation, and unchanged by multiplying \(A\) by a nonzero complex
+scalar. No restriction on \(B\) is imposed by this optimization.
+
+Fix \(q\notin\{-1,1\}\), and abbreviate
+\begin{equation}
+ \begin{gathered}
+ R=\sqrt{2(1+q^2)},\quad c=c(q),\quad
+ u=\sqrt{c-1},\quad b=\operatorname{sgn}(1+q)\sqrt{c-q},\\
+ A_q=\diag(u,-b,0,\ldots,0).
+ \end{gathered}
+ \label{eq:params}
+\end{equation}
+Useful exact relations are
+\begin{equation}
+ \begin{gathered}
+ u^2+b^2=R,\qquad u^2-b^2=q-1,\qquad
+ 2ub=1+q,\qquad c>\max(1,q).
+ \end{gathered}
+ \label{eq:relations}
+\end{equation}
+In particular \(u,b,u-b,u+b\) are nonzero on this parameter domain.
+
+For a complex \(2\times2\) matrix \(C\), set
+\begin{equation}
+ \Phi_q(C)=\det C+\frac{ub}{(u-b)^2}(\Tr C)^2.
+ \label{eq:Phi}
+\end{equation}
+Near \(A_q\), define \(\Mq\) to be the local family of matrices
+supported on a reducing complex two-plane, with active block \(C\)
+near \(\diag(u,-b)\) and \(\Phi_q(C)=0\).
+Being supported means that in an orthonormal decomposition into this
+plane and its complement the matrix is \(C\oplus0\).
+Distance to \(\Mq\) below is distance to this local manifold in
+a sufficiently small tubular neighborhood.
+We use the real Frobenius metric
+\(\operatorname{Re}\Tr(D^\dagger E)\) on matrix variations.
+
+\begin{theorem}[Local sharp envelope and normal spectrum]
+\label{thm:local}
+For every fixed finite \(n\geq3\) and every real
+\(q\notin\{-1,1\}\), the function \(g_q\) is real analytic near
+\(A_q\) and has a Morse--Bott local maximum \(c\).
+Its local maximum set and local critical set are exactly \(\Mq\),
+a smooth embedded real manifold of dimension \(4n-2\).
+At \(A_q\), the nonzero eigenvalues of its real Hessian are
+\begin{equation}
+ \begin{array}{c|c}
+ \text{eigenvalue}&\text{multiplicity}\\ \hline
+ -2&2\\
+ -a_1=-\dfrac{4c(c-q)}{(2c-q)R}&2(n-2)\\[2mm]
+ -a_2=-\dfrac{4c(c-1)}{(2c-1)R}&2(n-2)\\[2mm]
+ -a_3=-\dfrac{2c}{R}&2(n-2)^2
+ \end{array}
+ \label{eq:spectrum}
+\end{equation}
+All four magnitudes are positive. With
+\(\mu=\min(2,a_1,a_2,a_3)\) and
+\(\Lambda=\max(2,a_1,a_2,a_3)\), there is a sufficiently small,
+\(n,q\)-dependent neighborhood \(U\) of \(A_q\) on which
+\begin{equation}
+ \frac{\mu}{8}\dist(A,\Mq)^2
+ \leq c-g_q(A)\leq
+ \Lambda\dist(A,\Mq)^2.
+ \label{eq:deficit}
+\end{equation}
+Consequently, for every \(A\in U\) and every \(B\in M_n(\mathbb C)\),
+\begin{equation}
+ f(A,B;q)\leq
+ \left[c-\frac{\mu}{8}\dist(A,\Mq)^2\right]
+ \norm{A}^2\norm{B}^2.
+ \label{eq:localf}
+\end{equation}
+\end{theorem}
+
+The theorem asserts existence of a neighborhood, not an explicit
+radius. It contains full-rank and fully nonnormal perturbations of
+\(A_q\), including arbitrary couplings to the additional levels.
+There is no claim of uniformity as \(n\) grows or \(q\) approaches
+an excluded point. The distance estimate is expressed at the
+unnormalized witness \eqref{eq:params}; its constants refer to that
+choice of Frobenius coordinates.
+
+\section{Equality geometry and the largest spectral branch}
+\begin{lemma}[Embedded equality family]
+\label{lem:family}
+The family \(\Mq\) is smooth of real dimension \(4n-2\).
+On a neighborhood of \(A_q\) within \(\Mq\), one has
+\(g_q=c\), the largest eigenvalue of \(H_q\) is simple,
+and the full gradient of \(g_q\) vanishes.
+\end{lemma}
+\begin{proof}
+The two-dimensional saturation witness of
+\citep{ckos2022response} admits the Schur family
+\begin{equation}
+ C(w)=\begin{pmatrix}u&w\\0&-b\end{pmatrix},\qquad
+ B(w)=\begin{pmatrix}-bw/R&1\\0&uw/R\end{pmatrix},
+ \qquad w\in\mathbb R.
+ \label{eq:pair}
+\end{equation}
+Substitution into \eqref{eq:H}, using \eqref{eq:relations}, gives
+\begin{equation}
+ H_q(C(w))\vecop(B(w))
+       =c(R+w^2)\vecop(B(w)),\qquad \Phi_q(C(w))=0.
+ \label{eq:paireigen}
+\end{equation}
+The known two-dimensional bound makes this the largest eigenvalue.
+This verification uses the signed \(b\) and therefore includes
+\(q<-1\).
+
+The polynomial \(\Phi_q\) depends only on trace and determinant.
+For its zeros near \(\diag(u,-b)\), the two unordered eigenvalues
+are \(\alpha u,-\alpha b\), with \(\alpha\neq0\).
+Indeed their sum is \(\alpha(u-b)\), and their product is
+\(-\alpha^2ub\); conversely these roots give \(\Phi_q=0\).
+Unitary Schur reduction, a diagonal unitary and complex scaling
+then reduce such a block to \eqref{eq:pair} with \(w\geq0\).
+Thus every block in the local \(\Phi_q\) family attains \(g_q=c\).
+
+At the base, differentiating \(\Phi_q=0\) gives
+\begin{equation}
+ \delta C_{22}=-\frac bu\,\delta C_{11},
+ \qquad \delta C_{12},\delta C_{21}\in\mathbb C.
+ \label{eq:tangent}
+\end{equation}
+The complex gradient is nonzero, so the active equality set
+has real dimension six. The Grassmannian of complex two-planes
+in \(\mathbb C^n\) contributes \(4(n-2)\) dimensions.
+The active block remains invertible nearby. Its supporting plane
+is therefore uniquely recovered as the orthogonal complement of
+the kernel of the full matrix. This proves local embeddedness
+and the stated dimension.
+
+At \(A_q\), the matrix units diagonalize \(H_q\), and the top
+eigenvector is \(E_{12}\), with eigenvalue \(cR\).
+The gap to \(E_{21}\) is \((1-q)^2>0\).
+The other nonzero channels have eigenvalues among
+\(u^2,b^2,qu^2,qb^2\), all strictly below \(cR\).
+The remaining channels have eigenvalue zero.
+This establishes simplicity, which persists near the base.
+
+For completeness, separation also holds on nearby embedded
+equality blocks. The two off-plane forms are right multiplication
+with response \(\norm{BC}^2\) and left multiplication with
+response \(q\norm{CB}^2\).
+The first has top eigenvalue at most \(\norm{C}^2\).
+For \(q\geq0\), the second has top eigenvalue at most
+\(q\norm{C}^2\); for \(q<0\), it is negative semidefinite
+and its top eigenvalue is at most zero.
+Both are strictly below \(c\norm{C}^2\).
+The active largest branch remains the simple one found above.
+
+Active-block derivatives of \(g_q\) vanish because the known
+two-dimensional bound is attained there. For off-plane and
+bottom-block variations, the first variations of \(BA\) and
+\(AB\), evaluated at an active maximizing \(B\), are orthogonal
+to the active products. The first variation of \(\norm{A}^2\)
+also vanishes in these directions. The simple-eigenvalue
+derivative therefore makes the full gradient zero.
+Unitary invariance extends this argument to every nearby
+supporting plane.
+\end{proof}
+
+\section{Complete normal Hessian}
+We give the calculation in real and imaginary matrix-entry
+coordinates; \(E_{ij}\) and \(iE_{ij}\) form a real orthonormal basis.
+Write \(\lambda(A)=\lambda_{\max}(H_q(A))\) on its simple branch,
+and \(e=\vecop(E_{12})\).
+For an entry direction \(D_i\), let \(P_i,Q_i\) denote its
+right and left multiplication operators, and set
+\(L_i=P_i-Q_i\), \(M_i=P_i-qQ_i\).
+For the corresponding derivative \(H_i\) at \(A_q\),
+simple-eigenvalue differentiation gives
+\begin{align}
+ \lambda_{ij}
+ &=\operatorname{Re}\bigl(
+   \ip{L_i e}{M_j e}+\ip{L_j e}{M_i e}\bigr)
+   +2\operatorname{Re}\sum_{r\neq12}
+       \frac{(H_i)_{12,r}(H_j)_{r,12}}
+            {cR-(H_q(A_q))_{r,r}}, \label{eq:lambdahess}\\
+ (g_q)_{ij}
+ &=\frac{\lambda_{ij}-2c\delta_{ij}}R .
+ \label{eq:quotienthess}
+\end{align}
+The last formula uses stationarity at \(A_q\),
+\(\lambda=c\norm{A_q}^2\), and the Euclidean Hessian
+of the squared Frobenius norm.
+
+On the active real diagonal coordinates the Hessian block is
+\begin{equation}
+ -\frac2R\begin{pmatrix}b^2&ub\\ub&u^2\end{pmatrix}.
+ \label{eq:activeblock}
+\end{equation}
+The imaginary block is identical. Each has eigenvalues \(0,-2\);
+the zero direction is \((u,-b)\), consistent with
+\eqref{eq:tangent}. The four real active off-diagonal directions
+are tangents to the equality family and have zero Hessian.
+
+Let \(\alpha\geq3\) be a spectator index.
+For the real pair \((A_{1\alpha},A_{\alpha1})\),
+the first-derivative vectors \(H_i e\) point only along
+\(E_{\alpha2}\), with coefficients
+\begin{equation}
+ \frac{(1+q)b+2qu}{2},\qquad \frac{(1+q)b}{2}.
+\end{equation}
+The branch gap is
+\begin{equation}
+ cR-b^2=u^2(2c-q)>0.
+\end{equation}
+Using \((1+q)b+2qu=2uc\) in
+\eqref{eq:lambdahess}--\eqref{eq:quotienthess} yields
+\begin{equation}
+ -\frac{a_1}{2}
+ \begin{pmatrix}1&-1\\-1&1\end{pmatrix}.
+ \label{eq:firstblock}
+\end{equation}
+For the real pair \((A_{2\alpha},A_{\alpha2})\), the
+derivative vectors point only along \(E_{1\alpha}\), with
+coefficients
+\begin{equation}
+ -\frac{(1+q)u}{2},\qquad
+ -\frac{2b+(1+q)u}{2}.
+\end{equation}
+Now the gap and simplifying relation are
+\begin{equation}
+ cR-qu^2=b^2(2c-1)>0,\qquad
+ 2b+(1+q)u=2bc.
+\end{equation}
+The result is \eqref{eq:firstblock} with \(a_1\) replaced
+by \(a_2\). For each imaginary pair the off-diagonal
+signs reverse, so the nonzero eigenvalue is unchanged.
+These zero directions are precisely the unitary variations
+of the supporting two-plane.
+
+For a direction \(D\) wholly within the spectator block,
+\(DE_{12}=E_{12}D=0\), and \(H'_D e=0\).
+Only the norm correction in \eqref{eq:quotienthess}
+survives, giving \(-2c/R=-a_3\) for each real component.
+There are \(2(n-2)^2\) such components.
+
+There are no mixed Hessian blocks. Distinct spectator indices
+couple to orthogonal matrix units; the two active-spectator
+sectors couple respectively to \(E_{\alpha2}\) and
+\(E_{1\alpha}\); active derivatives have only active support.
+The direct-product cross terms in \eqref{eq:lambdahess} and
+the norm cross terms vanish between these sectors as well.
+This support argument holds for every finite \(n\).
+It is not an inference from a finite list of computed dimensions.
+
+The spectrum is therefore \eqref{eq:spectrum}. Since
+\(c>\max(1,q)\), \(R>0\), \(2c-q>0\) and \(2c-1>0\),
+all the displayed normal magnitudes are strictly positive.
+The negative rank and nullity are
+\begin{equation}
+ 2+4(n-2)+2(n-2)^2=2(n-1)^2,\qquad
+ 2n^2-2(n-1)^2=4n-2.
+\end{equation}
+Stationarity on \(\Mq\) puts its tangent space in the
+Hessian kernel. Equality of dimensions identifies that
+kernel exactly.
+
+\section{Control of the full local remainder}
+\begin{proof}[Completion of the proof of Theorem~\ref{thm:local}]
+The simple largest eigenvalue of a real-analytic Hermitian
+matrix family is real analytic locally. Since \(A_q\neq0\),
+the quotient \(g_q\) has the same property.
+In a sufficiently small tubular neighborhood write
+\(A=p+v\), where \(p\in\Mq\) and \(v\) is
+Frobenius-normal to \(\Mq\) at \(p\).
+Then \(\dist(A,\Mq)=\norm{v}\).
+Lemma~\ref{lem:family} gives
+\(g_q(p)=c\) and \(dg_q(p)=0\).
+
+At the base, the Hessian of \(h=c-g_q\) is positive
+on the normal space, with smallest and largest eigenvalues
+\(\mu,\Lambda\). Continuity of the Hessian and of the
+normal bundle permits shrinking the neighborhood so that,
+for every such normal segment and \(0\leq t\leq1\),
+\begin{equation}
+ \frac{\mu}{4}\norm{v}^2
+ \leq D^2h(p+tv)[v,v]\leq
+ 2\Lambda\norm{v}^2.
+ \label{eq:continuity}
+\end{equation}
+Here \(v\) is normal at \(p\); it need not be normal
+to a different tangent plane at \(p+tv\).
+Taylor's integral identity is exact:
+\begin{equation}
+ h(p+v)=\int_0^1(1-t)D^2h(p+tv)[v,v]\,dt.
+\end{equation}
+It proves \eqref{eq:deficit}. The radial derivative
+\(dh(p+v)[v]\) is strictly positive whenever \(v\neq0\),
+by the corresponding integral without the factor \(1-t\).
+There are therefore no other nearby critical points.
+The equality manifold is exactly the local maximum set,
+and the Hessian is nondegenerate in its normal directions:
+this is the Morse--Bott assertion.
+Finally, \eqref{eq:g} proves \eqref{eq:localf}
+for every \(B\), with \(B=0\) trivial.
+\end{proof}
+
+The argument controls the entire analytic remainder.
+A negative quadratic truncation alone would not establish
+a bound along the Hessian kernel; the exact equality
+manifold is essential. The theorem also excludes a sequence
+of violating pairs whose first operators approach \(A_q\)
+at fixed \(n,q\), even if the second operators vary arbitrarily.
+
+\section{Conditional-operation observable}
+For nonzero matrices \(A,B\), choose positive scalars
+\(\alpha=1/(2\norm{A})\) and \(\beta=1/(2\norm{B})\).
+The operators \(K_A=\alpha A\) and \(K_B=\beta B\)
+are interior contractions, since their operator norms
+are at most \(1/2\).
+Each is a legal success Kraus operator; adjoining
+\((I-K^\dagger K)^{1/2}\) completes its two-outcome
+trace-preserving instrument.
+
+Use the normalized maximally entangled input
+\begin{equation}
+ |\Phi_n\rangle=\frac1{\sqrt n}\sum_{j=1}^n|j\rangle|j\rangle.
+\end{equation}
+With \(Y=K_BK_A\), \(X=K_AK_B\), define the successful
+ordered amplitudes
+\(|\psi_Y\rangle=(Y\otimes I)|\Phi_n\rangle\) and
+\(|\psi_X\rangle=(X\otimes I)|\Phi_n\rangle\).
+The exact trace identity
+\begin{equation}
+ \ip{\psi_Y}{\psi_X}=\frac{\Tr(Y^\dagger X)}n
+ \label{eq:trace-map}
+\end{equation}
+fixes the normalization.
+Assume coherent control of these two orders and retain the
+joint-success branch. Its unnormalized state is
+\begin{equation}
+ |\Omega\rangle=\frac{|0\rangle|\psi_Y\rangle+
+                          |1\rangle|\psi_X\rangle}{\sqrt2}.
+\end{equation}
+The reduced, subnormalized control state \(\rho\) obeys
+\begin{equation}
+ \begin{gathered}
+ \rho_{00}=\frac{\norm{Y}^2}{2n},\quad
+ \rho_{11}=\frac{\norm{X}^2}{2n},\quad
+ \Tr(\sigma_x\rho)=\frac{\operatorname{Re}\Tr(Y^\dagger X)}n .
+ \end{gathered}
+\end{equation}
+Thus the Hermitian control observable
+\begin{equation}
+ O_q=2|0\rangle\langle0|+2q|1\rangle\langle1|
+                         -(1+q)\sigma_x
+\end{equation}
+has success-weighted response
+\begin{equation}
+ \mathcal R_q=\Tr(O_q\rho)
+   =\frac{f(K_A,K_B;q)}n.
+ \label{eq:observable}
+\end{equation}
+Failure events contribute zero to this response.
+An expectation in the normalized postselected state would
+instead be \(\mathcal R_q/\Tr\rho\), when the success
+probability is nonzero, and is a different observable.
+Negative \(q\) is a signed measurement weight, not a
+negative probability or transition rate.
+
+For \(A\) in Theorem~\ref{thm:local}'s neighborhood,
+homogeneity transfers its bound to the physical operators:
+\begin{equation}
+ \mathcal R_q\leq
+ \frac{\norm{K_A}^2\norm{K_B}^2}{n}
+ \left[c-\frac{\mu}{8}\dist(A,\Mq)^2\right].
+ \label{eq:physicalbound}
+\end{equation}
+The distance in this expression is measured in the
+original representative \(A\), before contraction scaling.
+The normalized response ratio is unchanged by that scaling.
+At the saturation witness, an infinitesimal perturbation in
+a unit Frobenius normal eigenvector with Hessian eigenvalue
+\(-a\) has optimized deficit
+\(c-g_q(A_q+tD)=a t^2/2+O(t^3)\).
+Equation~\eqref{eq:spectrum} therefore gives exact normal
+susceptibilities, including both kinds of couplings to extra levels.
+No particular implementation, success efficiency or experimental
+error radius is predicted.
+
+\section{Comparison, limitations and reproducibility}
+The established two-dimensional bound supplies the active
+equality family. The advance here is its stability in an
+open, full-dimensional neighborhood in \(M_n(\mathbb C)\),
+the geometry of all local maximizing first operators, and
+the complete normal response spectrum.
+The auxiliary two-dimensional equality identity in
+Appendix~\ref{app:equality} is an extraction of the known
+two-dimensional inequality and is not a separate novelty claim.
+
+Known bounds for \(\norm{AB-qBA}^2\)
+\citep{ckos2022norm,nobori2026} concern a different response.
+For example, the immediate combination of the ordinary
+commutator bound with the general \(q\)-norm bound by
+Cauchy--Schwarz gives \(\sqrt3\) at \(q=1/2\),
+whereas the sharp response constant is
+\((3+\sqrt{10})/4<\sqrt3\).
+This simple implication is insufficient; we do not claim
+that every possible transformation of prior results has
+been exhausted. Likewise, the proved universal relaxation
+bound \citep{muratore2024} is not this unaveraged all-\(q\)
+response problem. A bounded primary-literature comparison
+identified no matching local theorem; it is not exhaustive
+priority certification.
+
+The result is finite-dimensional and dimensionless.
+There is no continuum limit, boundary condition, hidden
+perturbative approximation or finite-size extrapolation.
+The excluded values \(q=-1,1\) have known global bounds
+but do not satisfy the nondegenerate geometry used here.
+No explicit radius is obtained, and the theorem does not
+settle \eqref{eq:global} for general finite displacements.
+Determining an effective radius or extending control
+beyond the local equality family would require further work.
+
+\subsection{Symbolic checks and use of AI tools}
+The analytic argument is accompanied by exact SymPy~1.14.0
+checks in Python~3.12. The supplied programs construct
+\eqref{eq:H} from multiplication operators, verify the
+Schur equality pair, and reduce rational polynomial
+residuals modulo \(u^2-b^2-2ub+2=0\).
+Separate programs check the determinant identity in the
+appendix and complete real-coordinate Hessians at
+\(q=1/2\) in dimensions three and four.
+The every-dimensional conclusion follows from the
+matrix-unit support argument above, not from those finite
+computations. The checks use exact identities, not
+floating-point fitting or an enclosure inferred from a scan.
+Their environment and regeneration instructions accompany
+the local draft.
+
+OpenAI Codex was used in literature screening, proposing
+and developing arguments, implementing and executing
+symbolic calculations, checking the mathematics and
+operator interpretation, and drafting this manuscript.
+The automated consistency checks do not constitute
+external peer review or completed human scientific review.
+Human author review and approval of this local draft remain pending.
+
+\appendix
+\section{Complete two-dimensional equality criterion at \texorpdfstring{\(q=1/2\)}{q=1/2}}
+\label{app:equality}
+\begin{proposition}
+Let \(q=1/2\) and \(c=(3+\sqrt{10})/4\).
+For every nonzero \(A\in M_2(\mathbb C)\),
+\(g_{1/2}(A)=c\) if and only if
+\begin{equation}
+ \det A+\frac32(3+\sqrt{10})(\Tr A)^2=0.
+ \label{eq:auxcriterion}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put \(D=c\norm{A}^2I_4-H_{1/2}(A)\) and
+\(\Phi(A)=\det A+\tfrac32(3+\sqrt{10})(\Tr A)^2\).
+The known two-dimensional theorem makes \(D\) positive
+semidefinite. Direct determinant expansion yields
+\begin{equation}
+ \det D=\frac{\norm{A}^4}{64}|\Phi(A)|^2.
+ \label{eq:detidentity}
+\end{equation}
+To perform the expansion for a general matrix, use unitary
+Schur form \(A=\left(\begin{smallmatrix}a&t\\0&d\end{smallmatrix}\right)\),
+where \(a,d\in\mathbb C\) and \(t\geq0\).
+In the column-vectorized basis the response matrix is
+\begin{equation}
+ \begin{pmatrix}
+ t^2 &-\overline a t/4&t(d-3a/4)&-3t^2/4\\
+ -at/4&h_{22}&0&td/4\\
+ t(\overline d-3\overline a/4)&0&h_{33}&
+                         t(\overline a/2-3\overline d/4)\\
+ -3t^2/4&t\overline d/4&t(a/2-3d/4)&t^2/2
+ \end{pmatrix},
+ \label{eq:schurH}
+\end{equation}
+with
+\begin{align*}
+ h_{22}&=|a|^2+\tfrac12|d|^2+\tfrac32t^2
+                -\tfrac32\operatorname{Re}(\overline a d),\\
+ h_{33}&=|d|^2+\tfrac12|a|^2
+                -\tfrac32\operatorname{Re}(\overline a d).
+\end{align*}
+Subtraction from \(c(|a|^2+|d|^2+t^2)I_4\)
+and expansion, with \((\sqrt{10})^2=10\), gives
+\eqref{eq:detidentity}. Both sides are invariant under
+unitary conjugation, so Schur reduction proves it for
+every complex \(A\). Positive semidefiniteness and
+\(A\neq0\) imply that its vanishing is equivalent
+to the largest response eigenvalue being
+\(c\norm{A}^2\). This includes nonzero nilpotent matrices.
+\end{proof}
+
+\section*{Statements and Declarations}
+\paragraph{Data and code availability.}
+No experimental data are used. Exact verification programs
+and reproduction instructions are included in the local
+handoff materials. A public archival location has not yet
+been assigned.
+\paragraph{Funding and competing interests.}
+These declarations require confirmation by the human author
+before submission.
+\paragraph{Authorship.}
+The stated name, affiliation and correspondence details,
+as well as responsibility for the final scientific content,
+require final author confirmation. AI assistance is described
+in the methods discussion above.
+
+\bibliographystyle{unsrtnat}
+\bibliography{manuscript/references}
+\end{document}

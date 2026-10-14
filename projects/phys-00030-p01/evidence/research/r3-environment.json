@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-10-13T20:13:16.547346+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "executable": "python3",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "libraries": {
+    "mpmath": "1.3.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0"
+  },
+  "trust_base": "Python exact fractions and binary64 endpoint operations; mpmath directed interval elementary functions and nearest-rounded arbitrary-precision arithmetic. No formally verified proof assistant certificate.",
+  "scope": "Actual local environment, same proposer. No inference worker or software installation performed."
+}

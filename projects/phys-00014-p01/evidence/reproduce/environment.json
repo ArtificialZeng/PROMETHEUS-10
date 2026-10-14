@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-10-12T21:06:02.971708+00:00",
+  "python_executable": "python3",
+  "python_version": "3.12.14",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "1.9.2"
+  },
+  "cvxpy_installed_solvers": [
+    "CLARABEL",
+    "SCS",
+    "SCIPY",
+    "HIGHS",
+    "OSQP"
+  ],
+  "software_installed_by_this_job": false,
+  "usage_status": "unknown",
+  "token_usage": null,
+  "cost": null
+}

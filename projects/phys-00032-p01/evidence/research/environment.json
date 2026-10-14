@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-10-14T01:00:49.490258+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "executable": "python3",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "integer_checker": "standard-library only; 128-bit binary fixed-point enclosure and 40-term proven atanh log remainder",
+  "installation": "No package or system installation performed.",
+  "job_scope": "One bounded proposer; no agents, extra inference process or background worker."
+}

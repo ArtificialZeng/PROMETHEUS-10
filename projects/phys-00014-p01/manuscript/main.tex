@@ -1,0 +1,466 @@
+\documentclass[aps,pra,reprint,amsmath,amssymb,nofootinbib,longbibliography,floatfix]{revtex4-2}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\thv}{\bm{\theta}}
+\newcommand{\est}{\hat{\bm{\theta}}}
+\begin{document}
+\title{Exact single-use Bayesian Nagaoka--Hayashi attainment for noisy qubit rotations}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+\date{October 12, 2026}
+\begin{abstract}
+We determine the exact Bayesian precision for simultaneous estimation of
+three qubit-rotation coordinates using one fixed Bell probe and a noiseless
+ancilla. The rotation is followed by known depolarization of strength
+$0\leq\lambda\leq1$, the prior is uniform Cartesian volume on the
+radius-$\pi/4$ parameter ball, and the loss is one third of the squared
+coordinate error. The optimum over all joint measurements and estimators
+equals the Bayesian Nagaoka--Hayashi relaxation and is
+$\pi^2/80-4(1-\lambda)^2[3/(2\pi)-12/\pi^3]^2$.
+Four orthogonal maximally entangled outcomes attain this value: a fixed
+local rotation followed by a Bell measurement suffices, while the posterior
+estimates shrink with noise. A covariant sphere measurement is also optimal.
+We give algebraic positive-semidefinite certificates for both the physical
+risk and the relaxation, valid throughout the noise interval, including
+its pure-state and no-information endpoints. The result converts the
+previous single-use numerical near-attainment into a constructive exact
+precision limit. It concerns the fixed single-use experiment; attainment
+for two through four parallel uses is not established.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+Prior information and measurement incompatibility both matter when only
+a finite number of quantum observations are available. For quadratic
+Bayesian loss, prior moments determine the optimal posterior estimator
+and a symmetric-logarithmic-derivative (SLD) lower bound
+\cite{Rubio2020}. The Nagaoka--Hayashi (NH) semidefinite formulation
+\cite{Conlon2021} has a Bayesian extension \cite{Suzuki2024} that can be
+tighter, but the relaxed measurement moments need not by themselves
+specify a physical measurement. Recent work relates this distinction to
+Bayesian measurement incompatibility \cite{Albarelli2026}.
+
+Bia and Gagatsos studied simultaneous estimation of all three qubit-rotation
+coordinates with a uniform ball prior and depolarizing noise
+\cite{Bia2026}. For up to four parallel uses, their computed strategies
+nearly attain the Bayesian NH bound, both with optimized probes and with
+fixed tensor products of Bell probes. They explicitly characterize this
+as numerical evidence rather than an attainment theorem. We settle the
+fixed-Bell, single-use sector exactly for every allowed noise strength.
+The contribution is a finite attaining measurement and matching algebraic
+certificates, together with a closed precision formula.
+
+The scalar-plus-triplet prior moments used below have a close counterpart
+in the phase-imaging example of Ref.~\cite{Albarelli2026}, whose NH
+attainment is also assessed numerically. This representation and the
+general Bayesian optimality framework are established tools. Likewise,
+NH-saturating noisy-rotation measurements in a local, unbiased,
+phase-damping model were constructed in Ref.~\cite{Conlon2021}.
+Our result concerns a finite volume prior, depolarization, and posterior
+estimation without an unbiasedness condition. We do not extend it to
+multiple uses, other probes, other losses, or adaptive experiments.
+
+\section{Experiment and exact prior moments}
+The system qubit and an untouched ancillary qubit are initially in
+$\ket{\Phi^+}=(\ket{00}+\ket{11})/\sqrt2$. The system undergoes
+\begin{equation}
+ U_{\thv}=e^{-i\thv\cdot\bm{\sigma}},\qquad
+ \mathcal D_\lambda(\rho)=(1-\lambda)\rho+\lambda\I_2/2,
+ \label{eq:channel}
+\end{equation}
+with known $\lambda\in[0,1]$. The Pauli eigenvalues are $\pm1$;
+there is no factor $1/2$ in the exponent. The Bloch-vector rotation
+angle is consequently $2\|\thv\|$. In system--ancilla order the
+normalized output is
+\begin{align}
+ \rho_{\lambda,\thv}&=(1-\lambda)\ket{v_{\thv}}\bra{v_{\thv}}
+                  +\lambda\I_4/4,\label{eq:state}\\
+ \ket{v_{\thv}}&=(U_{\thv}\otimes\I_2)\ket{\Phi^+}.
+\end{align}
+This is a trace-one state from a completely positive trace-preserving
+channel. In the input--output Choi order of Ref.~\cite{Bia2026}, if $W$
+swaps the factors, $\rho_{\lambda,\thv}=WJ_{\thv}W^\dagger/2$;
+the unnormalized one-use Choi operator has trace two.
+
+Put $a=\pi/4$. The prior and Bayes risk are
+\begin{align}
+ p(\thv)&=\frac{3}{4\pi a^3}\,\mathbf1_{\{\|\thv\|\leq a\}},
+                  \label{eq:prior}\\
+ R(M,\est)&=\frac13\mathbb E\bigl[\|\est-\thv\|^2\bigr].
+                  \label{eq:risk}
+\end{align}
+The expectation includes the prior and measurement outcomes. We allow
+arbitrary joint positive operator-valued measures (POVMs), finite or
+continuous, and measurable estimators with finite second moment.
+All coordinates and costs are dimensionless. The prior is uniform
+Cartesian volume, with radial density $3r^2/a^3$; it is neither Haar
+measure nor a uniform radial density. Its no-information risk is
+\begin{equation}
+ R_{\mathrm p}=\frac{\mathbb E\|\thv\|^2}{3}
+             =\frac{a^2}{5}=\frac{\pi^2}{80}.
+ \label{eq:priorrisk}
+\end{equation}
+
+For a transparent real-coordinate representation define
+\begin{equation}
+ \ket0=\ket{\Phi^+},\qquad
+ \ket{\widetilde i}=-i(\sigma_i\otimes\I_2)\ket{\Phi^+}
+ \quad(i=1,2,3).
+ \label{eq:basis}
+\end{equation}
+These four physical vectors are orthonormal. For $\thv=r\bm n$,
+\begin{equation}
+ \ket{v_{\thv}}=\cos r\ket0+\sin r\sum_i n_i\ket{\widetilde i}.
+ \label{eq:realstate}
+\end{equation}
+The rephasing in Eq.~\eqref{eq:basis} changes the basis, not the sign
+of the estimated parameter. Write $E_{ab}=\ket a\bra b$ in this basis,
+with indices $a,b=0,1,2,3$, and define
+\begin{equation}
+ P_0=E_{00},\quad P_1=\sum_{i=1}^3E_{ii},\quad F_i=E_{0i}+E_{i0}.
+\end{equation}
+The angular identities $\mathbb E[n_i]=0$ and
+$\mathbb E[n_i n_j]=\delta_{ij}/3$ give
+\begin{align}
+ \Gamma_0&=\int p(\thv)\rho_{\lambda,\thv}\,d^3\thv
+             =A P_0+B P_1,\label{eq:moments}\\
+ \Gamma_i&=\int p(\thv)\theta_i\rho_{\lambda,\thv}\,d^3\thv
+             =QF_i,\nonumber\\
+ A&=(1-\lambda)C+\lambda/4,\nonumber\\
+ B&=(1-\lambda)(1-C)/3+\lambda/4,\nonumber\\
+ Q&=(1-\lambda)q,\qquad A+3B=1.\label{eq:ABQ}
+\end{align}
+The radial integrals evaluate exactly to
+\begin{align}
+ C&=\frac{3}{a^3}\int_0^a r^2\cos^2r\,dr
+       =\frac12+\frac3\pi-\frac{24}{\pi^3},\label{eq:C}\\
+ q&=\frac{1}{a^3}\int_0^a r^3\sin r\cos r\,dr
+       =\frac{3}{2\pi}-\frac{12}{\pi^3}.\label{eq:q}
+\end{align}
+Both $A$ and $B$ are strictly positive on the entire noise interval.
+At zero noise the individual states are pure, while their prior average
+is full rank.
+
+\section{A finite attaining measurement}
+Let the four sign vectors be
+\begin{equation}
+ \begin{aligned}
+ \bm s_0&=(1,1,1),&\bm s_1&=(1,-1,-1),\\
+ \bm s_2&=(-1,1,-1),&\bm s_3&=(-1,-1,1).
+ \end{aligned}
+\end{equation}
+Define the outcome vectors and effects
+\begin{equation}
+ \ket{e_j}=\frac{\ket0+\sum_i s_{ji}\ket{\widetilde i}}{2},\qquad
+ M_j=\ket{e_j}\bra{e_j}.
+ \label{eq:pvm}
+\end{equation}
+Since $1+\bm s_j\cdot\bm s_l=4\delta_{jl}$, this is an orthonormal
+projective measurement on the full two-qubit output space. The outcome
+probabilities and first moments are
+\begin{equation}
+ p_j=\Tr(\Gamma_0M_j)=\frac14,\qquad
+ g_{ij}=\Tr(\Gamma_iM_j)=\frac Q2s_{ji}.
+\end{equation}
+For quadratic loss the optimal estimator at fixed measurement is the
+posterior mean, so
+\begin{equation}
+ \est_j=\frac{\bm g_j}{p_j}=2Q\bm s_j.
+ \label{eq:est}
+\end{equation}
+The posterior decomposition of squared error yields
+\begin{align}
+ R(M,\est)&=R_{\mathrm p}-\frac13\sum_jp_j\|\est_j\|^2
+                =R_{\mathrm p}-4Q^2.\label{eq:achieved}
+\end{align}
+The measurement does not depend on $\lambda$; only the estimates do.
+They remain in the prior ball: from
+$q=\mathbb E[r\sin r\cos r]/3\leq\mathbb E[r]/6=a/8$,
+\begin{equation}
+ \|\est_j\|=2\sqrt3Q\leq\frac{\sqrt3a}{4}<a.
+\end{equation}
+
+The measurement also has a simple two-qubit implementation. Set
+\begin{equation}
+ V_j=\frac{\I_2-i\bm s_j\cdot\bm\sigma}{2},\qquad
+ \ket{e_j}=(V_j\otimes\I_2)\ket{\Phi^+}.
+ \label{eq:V}
+\end{equation}
+Each $V_j$ is unitary. For the stated ordering,
+\begin{equation}
+ V_0^\dagger V_j=\I_2,\ i\sigma_y,\ i\sigma_z,\ i\sigma_x
+ \quad (j=0,1,2,3).
+ \label{eq:circuit}
+\end{equation}
+Apply $V_0^\dagger$ to the system after the noisy channel and then perform
+a Bell-basis measurement, with the label permutation in
+Eq.~\eqref{eq:circuit}. This implements Eq.~\eqref{eq:pvm}.
+It is a circuit identity requiring a joint Bell measurement, rather
+than a claim of an experimental implementation or a product measurement.
+
+\section{Exact optimality and NH saturation}
+OpenAI Codex assisted with the derivations and verification code used here
+and in the appendices. Human scientific verification and final tool-version
+disclosure remain pending for this local draft.
+
+For the fixed probe, the Bayesian NH program of Refs.~\cite{Suzuki2024,Bia2026}
+is the minimization of
+\begin{equation}
+ \mathcal R(L,X)=R_{\mathrm p}
+ +\frac13\sum_i\Tr(\Gamma_0 L_{ii})
+ -\frac23\sum_i\Tr(\Gamma_i X_i)
+ \label{eq:nhobj}
+\end{equation}
+over Hermitian $X_i$ and blocks $L_{ij}=L_{ji}=L_{ij}^\dagger$, subject to
+\begin{equation}
+ S(L,X)=\begin{pmatrix}L&X\\X^\dagger&\I_4\end{pmatrix}\succeq0,
+ \qquad X=\begin{pmatrix}X_1\\X_2\\X_3\end{pmatrix}.
+ \label{eq:schur}
+\end{equation}
+Every physical measurement with real estimates supplies feasible moments
+$X_i=\int t_i\,dM$ and $L_{ij}=\int t_it_j\,dM$:
+\begin{equation}
+ S(L,X)=\int
+ \begin{pmatrix}t_1\I_4\\t_2\I_4\\t_3\I_4\\\I_4\end{pmatrix}
+ dM
+ \begin{pmatrix}t_1\I_4&t_2\I_4&t_3\I_4&\I_4\end{pmatrix}.
+ \label{eq:physicalgram}
+\end{equation}
+Thus its optimum $C_{\mathrm{NH}}$ is a lower bound on the physical
+optimum $R_1$. To prove tightness, we give a dual matrix independently
+of a numerical solution.
+
+In $\mathbb C^3\otimes\mathbb C^4$, the first factor labels parameters
+and the second uses Eq.~\eqref{eq:basis}. Define
+\begin{align}
+ \ket{\omega}&=\sum_{i=1}^3\ket i\otimes\ket{\widetilde i},\nonumber\\
+ \ket{h_{ij}}&=\ket i\otimes\ket{\widetilde j}
+                   -\ket j\otimes\ket{\widetilde i},\nonumber\\
+ K&=\frac A3\sum_i\ket{i,0}\bra{i,0}
+       +\frac B3\ket\omega\bra\omega
+       +\frac B3\sum_{i<j}\ket{h_{ij}}\bra{h_{ij}}.
+ \label{eq:Kgram}
+\end{align}
+This is positive semidefinite. Its $4\times4$ Hilbert-space blocks are
+\begin{equation}
+ K_{ij}=\frac A3\delta_{ij}P_0+
+        \frac B3\bigl(\delta_{ij}P_1+E_{ij}-E_{ji}\bigr).
+ \label{eq:Kblocks}
+\end{equation}
+Let $x=2Q$ and let $X^\star$ be the column of the three operators
+$X_i^\star=xF_i$. These operators define the certificate; they need
+not equal the finite measurement's first moments. The lifted matrix
+\begin{align}
+ Z&=\begin{pmatrix}\I_{12}\\-X^{\star\dagger}\end{pmatrix}
+       K\begin{pmatrix}\I_{12}&-X^\star\end{pmatrix}\succeq0,
+       \label{eq:Z}\\
+ (KX^\star)_i&=x\left(\frac A3E_{0i}+BE_{i0}\right),\nonumber\\
+ Z_{44}&=x^2\left(3BP_0+\frac A3P_1\right)\label{eq:Z44}
+\end{align}
+obeys, by $A+3B=1$,
+\begin{align}
+ Z_{ii}&=\Gamma_0/3,\nonumber\\
+ Z_{ij}+Z_{ji}&=0\quad(i<j\leq3),\nonumber\\
+ Z_{i4}+Z_{4i}&=-2\Gamma_i/3,\nonumber\\
+ \Tr Z_{44}&=4Q^2.\label{eq:dualaffine}
+\end{align}
+For any feasible $S(L,X)$, these equations give the exact weak-duality
+identity
+\begin{equation}
+ \mathcal R(L,X)-(R_{\mathrm p}-4Q^2)
+             =\Tr[ZS(L,X)]\geq0.
+ \label{eq:weakdual}
+\end{equation}
+The off-diagonal $K$ contributions cancel because $L_{ij}=L_{ji}$;
+the Hermitian $X_i$ give precisely the first-moment coefficients in
+Eq.~\eqref{eq:nhobj}. Consequently
+\begin{equation}
+ R_{\mathrm p}-4Q^2\leq C_{\mathrm{NH}}\leq R_1
+          \leq R(M,\est)=R_{\mathrm p}-4Q^2.
+\end{equation}
+All inequalities are equalities, proving the stated result:
+\begin{equation}
+ \boxed{\begin{aligned}
+ R_1(\lambda)&=C_{\mathrm{NH}}(1,\lambda)\\
+ &=\frac{\pi^2}{80}-4(1-\lambda)^2
+       \left(\frac{3}{2\pi}-\frac{12}{\pi^3}\right)^2.
+ \end{aligned}}
+ \label{eq:result}
+\end{equation}
+Positivity follows from the Gram factors in Eqs.~\eqref{eq:Kgram}
+and \eqref{eq:Z}, so no solver tolerance or noise grid enters the proof.
+A separate physical loss-operator certificate, valid for every real
+estimate, is given in Appendix~\ref{app:physical}.
+
+\begin{figure}[htbp]
+ \includegraphics[width=\columnwidth]{manuscript/figures/risk.pdf}
+ \caption{Dimensionless mean-square coordinate risk for one fixed Bell
+ probe and the radius-$\pi/4$ volume prior. The optimal risk and NH bound
+ are the same solid curve, Eq.~\eqref{eq:result}; the dashed curve is
+ the Bayesian SLD bound, Eq.~\eqref{eq:sld}; the dotted line is the
+ prior risk. The shaded separation is the exact incompatibility penalty.
+ The curves are evaluations of analytic formulas, not measurement data
+ or numerical optimization results. OpenAI Codex assisted with the
+ plotting code; the figure was rendered from the accompanying formula table.}
+ \label{fig:risk}
+\end{figure}
+
+\section{Covariance and the incompatibility penalty}
+An alternative optimal measurement is continuous. With the normalized
+sphere measure $d\mu(\bm n)=d\Omega/(4\pi)$, set
+\begin{align}
+ \ket{m(\bm n)}&=\ket0+\sqrt3\sum_i n_i\ket{\widetilde i},\nonumber\\
+ dM(\bm n)&=\ket{m(\bm n)}\bra{m(\bm n)}\,d\mu(\bm n).
+ \label{eq:sphere}
+\end{align}
+Spherical first and second moments imply $\int dM=\I_4$.
+The outcome probability density relative to $d\mu$ is $A+3B=1$,
+and the posterior mean is $2\sqrt3Q\bm n$. Its risk is therefore
+again $R_{\mathrm p}-4Q^2$. This POVM is covariant under the scalar
+and vector representation of $\mathrm{SO}(3)$. The four-outcome
+measurement is a finite optimal alternative; it does not discretize
+the continuous parameter prior.
+
+The finite measurement's moment operators make its mechanism explicit.
+For $\{i,j,l\}=\{1,2,3\}$,
+\begin{equation}
+ X_i^{\rm tet}=2Q(F_i+E_{jl}+E_{lj}),\qquad
+ (X_i^{\rm tet})^2=4Q^2\I_4.
+ \label{eq:completion}
+\end{equation}
+They commute pairwise. The triplet completion terms have zero overlap
+with the signal first moments $\Gamma_i$ and enable a common projective
+measurement. They do not turn the SLD operators into commuting operators.
+Indeed the Bayesian Lyapunov equations
+$(\Gamma_0S_i+S_i\Gamma_0)/2=\Gamma_i$ give
+\begin{align}
+ S_i&=\frac{2Q}{A+B}F_i,\nonumber\\
+ C_{\mathrm{SLD}}&=R_{\mathrm p}-\frac{4Q^2}{A+B},\nonumber\\
+ R_1-C_{\mathrm{SLD}}&=\frac{8BQ^2}{A+B}>0\quad(\lambda<1).
+ \label{eq:sld}
+\end{align}
+This is a finite Bayesian incompatibility cost, rather than an asymptotic
+or locally unbiased variance. Figure~\ref{fig:risk} displays these exact
+expressions.
+
+
+
+At zero noise, the formulas give
+\begin{align}
+ R_1(0)&\simeq0.09064783829,\nonumber\\
+ C_{\mathrm{SLD}}(0)&\simeq0.08180546613,\nonumber\\
+ R_1(0)/C_{\mathrm{SLD}}(0)&\simeq1.108090236.\label{eq:benchmark}
+\end{align}
+This reproduces the rounded single-use ratio $1.108$ reported in
+Ref.~\cite{Bia2026}. For one use, rotation averaging of a tester preserves
+the isotropic prior and loss, and irreducibility of the qubit input
+representation fixes its invariant marginal to $\I_2/2$; hence the
+source's invariant single-use benchmark maps to this Bell experiment.
+This benchmark comparison does not assert optimality of Bell probes
+for multiple uses.
+
+\section{Scope and physical interpretation}
+The optimal apparatus can be fixed while the known depolarization changes:
+the posterior vectors are multiplied by $1-\lambda$, and the precision
+gain below the prior risk scales as $(1-\lambda)^2$. At $\lambda=0$ the
+proof applies directly to pure individual outputs, using positive prior
+moments and exact Gram factors. At $\lambda=1$, $Q=0$ and all estimates
+are zero; the physical optimum, NH bound, and SLD bound are the prior
+risk. No full-rank endpoint continuation, perturbative expansion, or
+large-sample approximation is needed.
+
+The closest phase-imaging moments in Ref.~\cite{Albarelli2026},
+Eqs.~(58)--(59), have the same star structure after rephasing: for
+three parameters, $\alpha^2=A/B$ and a first-moment rescaling match
+the measurement optimization, while the prior-loss constants differ.
+Thus the star reduction is not an additional contribution of this work.
+The finite measurement and positive NH certificate supply the exact
+attainment step at the present rotation-model scope.
+
+Although the source numerical study extends through four parallel uses,
+this paper concerns one use with a fixed Bell probe. In a multiple-use
+experiment every output encodes the same unknown vector, so
+$\int p(\thv)\rho_{\lambda,\thv}^{\otimes k}d^3\thv$ is generally
+not $\Gamma_0^{\otimes k}$. The present four-dimensional certificates
+therefore do not settle NH attainment for $k=2,3,4$. They also do not
+establish a global optimum over arbitrary probes or adaptive protocols.
+
+\section*{Data availability}
+The analytic expressions and optimality certificates are given in this
+article. Symbolic checks, direct measurement-replay code, and the code
+and tabulated formula evaluations for Fig.~\ref{fig:risk} accompany
+the local draft. No experimental data were used.
+
+\section*{Acknowledgments and use of artificial intelligence}
+OpenAI Codex assisted with literature checks, analytic derivations,
+symbolic and numerical verification code, figure generation, and
+manuscript preparation. Automated checks included a separately
+reconstructed calculation in a fresh AI context. Human scientific
+review and approval of this local draft, including confirmation of
+tool versions and the final disclosure, remain pending.
+
+\appendix
+\section{A physical loss-operator certificate}\label{app:physical}
+Define the second-moment loss operator
+\begin{equation}
+ H=\frac13\int p(\thv)\|\thv\|^2\rho_{\lambda,\thv}\,d^3\thv,
+ \qquad\Tr H=R_{\mathrm p}.
+\end{equation}
+For a reported vector $\bm t\in\mathbb R^3$, its loss operator is
+\begin{equation}
+ \mathcal F(\bm t)=H+\frac13\left(\|\bm t\|^2\Gamma_0
+                                 -2\sum_it_i\Gamma_i\right).
+\end{equation}
+The general supporting-operator criterion is part of Bayesian quantum
+decision theory; see Appendix~B of Ref.~\cite{Albarelli2026}. Here a
+specific supporting operator is
+\begin{equation}
+ Y=H-12BQ^2P_0-\frac43AQ^2P_1.
+\end{equation}
+Rotational covariance lets us take $\bm t=u\bm e_3$, where
+$u=\|\bm t\|\geq0$. The $0,3$ block of $\mathcal F(\bm t)-Y$ is
+\begin{equation}
+ \frac13\begin{pmatrix}
+ Au^2+36BQ^2&-2Qu\\-2Qu&Bu^2+4AQ^2
+ \end{pmatrix};
+\end{equation}
+the two transverse entries are $(Bu^2+4AQ^2)/3$. All diagonal entries
+are nonnegative, and the block determinant is
+\begin{equation}
+ \det[\mathcal F(\bm t)-Y]_{0,3}
+             =\frac{AB}{9}(u^2-12Q^2)^2\geq0.
+\end{equation}
+Thus $\mathcal F(\bm t)\succeq Y$ for every real estimate, including
+estimates outside the prior ball. Integrating against any POVM proves
+$R\geq\Tr Y=R_{\mathrm p}-4Q^2$. At $u=2\sqrt3Q$ the block annihilates
+$(1,\sqrt3)^T$, giving equality for the sphere measurement and the
+four tetrahedral directions. This certificate proves physical
+optimality without assuming that every feasible NH moment pair is
+realizable.
+
+\section{Explicit covariant NH primal}\label{app:primal}
+For completeness, the sphere measurement supplies
+\begin{align}
+ X_i^{\rm sph}&=2QF_i,\nonumber\\
+ L_{ij}^{\rm sph}&=4Q^2\delta_{ij}P_0
+       +\frac{12Q^2}{5}(\delta_{ij}P_1+E_{ij}+E_{ji}).
+\end{align}
+These formulas follow from
+$\mathbb E[n_in_jn_an_b]=(\delta_{ij}\delta_{ab}+
+\delta_{ia}\delta_{jb}+\delta_{ib}\delta_{ja})/15$.
+The Schur complement $L^{\rm sph}-X^{\rm sph}X^{\rm sph\dagger}$
+vanishes on the scalar Hilbert sector. On the parameter--triplet
+tensor space it vanishes on trace and antisymmetric tensors and
+equals $24Q^2/5$ times the identity on symmetric traceless tensors.
+This gives another direct positive-semidefinite primal with objective
+$R_{\mathrm p}-4Q^2$, including $Q=0$.
+
+\bibliographystyle{apsrev4-2}
+\bibliography{manuscript/references}
+\end{document}

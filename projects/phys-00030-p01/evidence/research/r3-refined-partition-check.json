@@ -1,0 +1,36 @@
+{
+  "captured_at": "2026-10-13T20:10:02.365411+00:00",
+  "scope": "Same-proposer independent reconstruction and exported certificate audit; no referee acceptance",
+  "independence": "Rebuilds physical boundary/chain using outgoing Bloch solution, reversed scalar sector recurrences and explicit Slater minors; does not read cached scattering or quadrature values. Comparison alone imports interval kernel. Shared fixed parameters, primary sources, mpmath library and proposer.",
+  "partition_check": {
+    "status": "pass",
+    "panels": 26275,
+    "q_coverage": [
+      -8192,
+      16384
+    ],
+    "exact_rational_width": "24576",
+    "kernel_width_subtractions_exact": true,
+    "exact_rational_exported_panel_sums_with_tails": {
+      "Delta": [
+        0.019447591396978867,
+        0.024247460886202978
+      ],
+      "J": [
+        0.013576913534704596,
+        0.014624073530814305
+      ],
+      "sigma_over_kB": [
+        0.073446431786451,
+        0.0791927501103559
+      ],
+      "chi_minus24": [
+        0.010467734969639661,
+        0.012104208073708085
+      ]
+    },
+    "fallback_active_panels": 727,
+    "certificate_sha256": "2a84e4a83231b54ab70a0f004c7ad8cc7291f5c49c14f12cbe0c89c189a4328a"
+  },
+  "status": "completed_proposer_check"
+}

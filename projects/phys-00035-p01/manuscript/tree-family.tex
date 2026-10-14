@@ -1,0 +1,19 @@
+\begin{tikzpicture}[x=1cm,y=1cm,
+ hub/.style={circle,fill=black,inner sep=2.5pt},
+ site/.style={circle,draw,fill=white,inner sep=2.5pt}]
+ \node[hub,label=below:$a$] (a) at (-2,0) {};
+ \node[hub,label=below:$b$] (b) at (2,0) {};
+ \node[site,label=above:$c$] (c) at (0,0) {};
+ \node[site,label=left:$u_1$] (u1) at (-4,1) {};
+ \node[site,label=left:$u_2$] (u2) at (-4,0) {};
+ \node[site,label=left:$u_k$] (uk) at (-4,-1) {};
+ \node[site,label=right:$v_1$] (v1) at (4,1) {};
+ \node[site,label=right:$v_2$] (v2) at (4,0) {};
+ \node[site,label=right:$v_k$] (vk) at (4,-1) {};
+ \draw (a)--(c)--(b);
+ \draw (u1)--(a) (u2)--(a) (uk)--(a);
+ \draw (v1)--(b) (v2)--(b) (vk)--(b);
+ \node at (-4,-.5) {$\vdots$};
+ \node at (4,-.5) {$\vdots$};
+ \node[font=\small] at (0,-1.05) {$n=2k+3,\quad m=2k+2$};
+\end{tikzpicture}

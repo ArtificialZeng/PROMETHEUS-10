@@ -1,0 +1,138 @@
+{
+  "state": "(20|0>+|2>)/sqrt401, independently prepared on both inputs",
+  "A": "creation map, partial trace and even Laguerre Weyl matrix elements",
+  "B": "Hermite wavefunctions and Gaussian Fourier moments",
+  "independence": "same proposer, distinct exact physical representations; shared generic rational polynomial helpers; fresh referee still required",
+  "coefficient_equality": "exact Q(sqrt2), A=B\u00b2",
+  "full_plane_normalization": "exactly one",
+  "Q": [
+    {
+      "x": 0,
+      "p": 0,
+      "rational": "1",
+      "sqrt2": "0"
+    },
+    {
+      "x": 0,
+      "p": 2,
+      "rational": "-2/401",
+      "sqrt2": "-20/401"
+    },
+    {
+      "x": 0,
+      "p": 4,
+      "rational": "1/802",
+      "sqrt2": "0"
+    },
+    {
+      "x": 2,
+      "p": 0,
+      "rational": "-2/401",
+      "sqrt2": "20/401"
+    },
+    {
+      "x": 2,
+      "p": 2,
+      "rational": "1/401",
+      "sqrt2": "0"
+    },
+    {
+      "x": 4,
+      "p": 0,
+      "rational": "1/802",
+      "sqrt2": "0"
+    }
+  ],
+  "Wout_polynomial": [
+    {
+      "x": 0,
+      "p": 0,
+      "rational": "1",
+      "sqrt2": "0"
+    },
+    {
+      "x": 0,
+      "p": 2,
+      "rational": "-4/401",
+      "sqrt2": "-40/401"
+    },
+    {
+      "x": 0,
+      "p": 4,
+      "rational": "1205/160801",
+      "sqrt2": "80/160801"
+    },
+    {
+      "x": 0,
+      "p": 6,
+      "rational": "-2/160801",
+      "sqrt2": "-20/160801"
+    },
+    {
+      "x": 0,
+      "p": 8,
+      "rational": "1/643204",
+      "sqrt2": "0"
+    },
+    {
+      "x": 2,
+      "p": 0,
+      "rational": "-4/401",
+      "sqrt2": "40/401"
+    },
+    {
+      "x": 2,
+      "p": 2,
+      "rational": "-790/160801",
+      "sqrt2": "0"
+    },
+    {
+      "x": 2,
+      "p": 4,
+      "rational": "-6/160801",
+      "sqrt2": "-20/160801"
+    },
+    {
+      "x": 2,
+      "p": 6,
+      "rational": "1/160801",
+      "sqrt2": "0"
+    },
+    {
+      "x": 4,
+      "p": 0,
+      "rational": "1205/160801",
+      "sqrt2": "-80/160801"
+    },
+    {
+      "x": 4,
+      "p": 2,
+      "rational": "-6/160801",
+      "sqrt2": "20/160801"
+    },
+    {
+      "x": 4,
+      "p": 4,
+      "rational": "3/321602",
+      "sqrt2": "0"
+    },
+    {
+      "x": 6,
+      "p": 0,
+      "rational": "-2/160801",
+      "sqrt2": "20/160801"
+    },
+    {
+      "x": 6,
+      "p": 2,
+      "rational": "1/160801",
+      "sqrt2": "0"
+    },
+    {
+      "x": 8,
+      "p": 0,
+      "rational": "1/643204",
+      "sqrt2": "0"
+    }
+  ]
+}

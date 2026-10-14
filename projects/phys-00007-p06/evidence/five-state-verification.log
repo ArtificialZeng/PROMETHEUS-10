@@ -1,0 +1,8 @@
+D identity PASS: p**3*(24*p**2 - 24*p + 5)/(4*(p - 1)**2*(2*p - 1)*(3*p - 1)**2)
+Normalization and all overlap-modulus identities PASS (orbit, cross, final pair).
+Both zero-step Schur slack identities PASS.
+Both finite-step loss identities PASS; analytic bounds are in proof.
+Direct exact 3x3 test PASS: p= 71/100 m= 3823/10000 35 principal minors positive; 10 overlaps equal; Tr(Y)>0.
+Direct exact 3x3 test PASS: p= 141/200 m= 15043/40000 35 principal minors positive; 10 overlaps equal; Tr(Y)>0.
+Direct exact 3x3 test PASS: p= 3521/5000 m= 9377323/25000000 35 principal minors positive; 10 overlaps equal; Tr(Y)>0.
+Original source SHA256: 714d58953cd915042797abedc61439a44ed840b19519e32fa26e496b4289e4b5

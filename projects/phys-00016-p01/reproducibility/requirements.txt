@@ -1,0 +1,4 @@
+# Decisive certify.py: Python >=3.10, standard library only.
+# The following versions were used for the OPTIONAL fock-replay.py.
+numpy==2.5.3
+scipy==1.18.1

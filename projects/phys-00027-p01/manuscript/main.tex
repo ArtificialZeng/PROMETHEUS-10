@@ -1,0 +1,441 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+  pdftitle={Time-independent Lindblad embeddings of two-parameter Werner-Holevo noise},
+  pdfauthor={Xiaojian Zeng}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\OO}{\mathrm{O}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\Ps}{\mathsf{P}_{\mathrm{s}}}
+\newcommand{\Pa}{\mathsf{P}_{\mathrm{a}}}
+\newcommand{\Pz}{\mathsf{P}_{0}}
+\newcommand{\gs}{\gamma_{\mathrm{s}}}
+\newcommand{\ga}{\gamma_{\mathrm{a}}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.85}
+\title{Time-independent Lindblad embeddings of\\
+two-parameter Werner--Holevo noise}
+\author{Xiaojian Zeng\\[2pt]
+\small PBC School of Finance, Tsinghua University, Beijing 100190, China\\
+\small \texttt{xiaojianzeng@foxmail.com}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+An orthogonally covariant quantum channel need not have an orthogonally
+covariant time-independent generator. This distinction matters when deciding
+whether a calibrated noise channel can arise from one constant Lindblad
+master equation. We consider the two-parameter mixture of the identity and
+the symmetric and antisymmetric Werner--Holevo channels on a finite
+$d$-level system. For positive eigenvalues $s$ and $a$ on the symmetric
+traceless and antisymmetric operator sectors, respectively, we prove that
+an arbitrary same-system Lindblad embedding exists exactly when
+$s^{(d+2)/d}\leq a\leq s^{(d-2)/d}$.
+The covariant generator and its rate cone are established prior results;
+the additional step is necessity without imposing covariance, a
+Hamiltonian restriction, or a logarithm branch. Real sector traces fix the
+average logarithmic rates, and averaging over the full orthogonal group
+then produces the principal covariant generator. Odd sector multiplicities
+exclude every remaining signed qutrit case, yielding a complete
+classification for $d=3$. We give normalized jump operators and illustrate
+the qutrit region. Negative even-multiplicity sectors in higher dimensions
+remain outside the classification.
+\end{abstract}
+\noindent\textbf{Keywords:} quantum channels; Lindblad embedding;
+Werner--Holevo noise; orthogonal covariance; quantum Markov semigroups
+
+\section{Endpoint noise and a constant master equation}
+
+A quantum channel at one finite time does not by itself specify a
+time-independent master equation. The endpoint embedding problem asks whether
+$\Phi=e^{T\mathcal L}$ for a Gorini--Kossakowski--Lindblad--Sudarshan (GKLS)
+generator $\mathcal L$ on the same system. General logarithm and conditional
+complete-positivity tests are available \cite{Wolf2008}, but degeneracies
+allow substantial freedom in the logarithm. In particular, symmetry of an
+endpoint cannot simply be imposed on an unknown generator.
+
+The noisy Werner--Holevo models provide a concrete setting for this issue
+\cite{Karimipour2024,Roofeh2025}. Their decomposition into orthogonal operator
+sectors is established, including in real randomized benchmarking
+\cite{Hashagen2018}. Bhat, Chakraborty and Franz studied the generator family
+spanned by depolarization, transposition and the identity, and derived its
+semigroup exponential and positivity conditions \cite{Bhat2023}. Thus the
+covariant family and the associated rate cone are already known. What remains
+to justify for an endpoint test is that an arbitrary, possibly noncovariant
+GKLS logarithm cannot evade that cone.
+
+Here we prove this reduction for the positive-spectrum part of the
+two-parameter model. The argument uses real traces on degenerate endpoint
+sectors rather than an enumeration of generic-spectrum logarithm branches.
+It gives a complete endpoint classification for qutrits after the signed
+sectors are excluded. Our result concerns a single finite, time-independent
+generator; it does not classify time-dependent completely positive divisible
+paths. The related Pauli-channel semigroup criteria of
+Kattem\"olle, Gul\'acsi and Burkard
+(\href{https://arxiv.org/abs/2602.08464v1}{arXiv:2602.08464v1}) concern a different
+operator algebra and supply a useful conceptual comparison.
+
+\section{Model, sectors and physical domain}
+
+Fix an orthonormal computational basis of $\mathbb C^d$, with $d\geq3$.
+Transposition below is the complex-linear map $X\mapsto X^{\mathsf T}$ in
+this basis, not Hermitian conjugation. Following
+Ref.~\cite{Roofeh2025}, define
+\begin{align}
+ W_-(X)&=\frac{\tr(X)I_d-X^{\mathsf T}}{d-1},&
+ W_+(X)&=\frac{\tr(X)I_d+X^{\mathsf T}}{d+1},\label{eq:WH}\\
+ \Phi_{d,x,y}&=(1-x-y)\id+xW_-+yW_+,\label{eq:model}\\
+ &x>0,\quad y>0,\quad x+y\leq1. \nonumber
+\end{align}
+All inputs in $M_d(\mathbb C)$ are included. In particular, complete
+positivity is required on entangled inputs. No enlarged system, postselection
+or approximation is allowed in the embedding.
+
+Set
+\begin{equation}
+ q=1-x-y,\qquad c=\frac{x}{d-1}+\frac{y}{d+1},\qquad
+ b=\frac{y}{d+1}-\frac{x}{d-1}.
+\end{equation}
+Then $\Phi(X)=qX+c\,\tr(X)I_d+bX^{\mathsf T}$. The orthogonal
+superoperator projectors are
+\begin{equation}
+ \Pz(X)=\frac{\tr(X)}dI_d,\qquad
+ \Ps(X)=\frac{X+X^{\mathsf T}}2-\Pz(X),\qquad
+ \Pa(X)=\frac{X-X^{\mathsf T}}2.                 \label{eq:projectors}
+\end{equation}
+Their complex dimensions, also their dimensions on real Hermitian bases, are
+\begin{equation}
+ 1,\qquad m_{\mathrm{s}}=\frac{d(d+1)}2-1,\qquad
+ m_{\mathrm{a}}=\frac{d(d-1)}2.
+\end{equation}
+The traceless Hermitian bases may be chosen as real symmetric matrices and
+purely imaginary antisymmetric matrices. The channel is
+\begin{align}
+ \Phi&=\Pz+s\Ps+a\Pa,                                      \label{eq:sectors}\\
+ s&=q+b=1-\frac{d}{d-1}x-\frac{d}{d+1}y, \nonumber\\
+ a&=q-b=1-\frac{d-2}{d-1}x-\frac{d+2}{d+1}y. \label{eq:eigenvalues}
+\end{align}
+Both $s$ and $a$ are strictly less than one in the domain
+\eqref{eq:model}; their signs are not fixed by complete positivity.
+
+For clarity, use the unnormalized Choi convention
+\begin{equation}
+ J(\mathcal M)=\sum_{i,j=1}^d E_{ij}\otimes\mathcal M(E_{ij}),\qquad
+ |\Omega\rangle=\sum_{i=1}^d|ii\rangle,
+\end{equation}
+with input followed by output. If $F$ is the swap, then
+$J(\Phi)=q|\Omega\rangle\langle\Omega|+cI+bF$.
+Its eigenvalues are
+\begin{equation}
+ dq+\frac{2y}{d+1},\qquad
+ \frac{2y}{d+1},\qquad \frac{2x}{d-1},             \label{eq:choichannel}
+\end{equation}
+with multiplicities $1,m_{\mathrm{s}},m_{\mathrm{a}}$.
+They are strictly positive even on $x+y=1$, and
+$\tr_{\mathrm{out}}J(\Phi)=I_d$. A full-rank Choi matrix therefore does
+not imply an invertible channel superoperator or a Lindblad embedding.
+
+We set $T=1$ and $\hbar=1$. A generator has the form
+\begin{equation}
+ \mathcal L(X)=-i[H,X]
+ +\sum_r\left(V_rXV_r^\dagger-\frac12\{V_r^\dagger V_r,X\}\right),
+ \qquad H=H^\dagger.                              \label{eq:GKLS}
+\end{equation}
+For a general observation time $T>0$, divide the generator and its jump
+rates below by $T$, and divide the displayed jumps by $\sqrt T$.
+The endpoint weights and eigenvalues are dimensionless.
+
+\section{Unrestricted positive-spectrum criterion}
+
+\begin{theorem}\label{thm:positive}
+For every integer $d\geq3$, let $\Phi_{d,x,y}$ satisfy \eqref{eq:model}
+and suppose $s>0$ and $a>0$. There exists a finite GKLS generator
+$\mathcal L$ on $M_d(\mathbb C)$ with $e^{\mathcal L}=\Phi_{d,x,y}$
+if and only if
+\begin{equation}
+             s^{(d+2)/d}\leq a\leq s^{(d-2)/d}.     \label{eq:cone}
+\end{equation}
+Necessity allows arbitrary Hamiltonians, jump operators, logarithm branches
+and transformations within degenerate endpoint eigenspaces.
+A generator can be chosen with $H=0$ and
+$\mathcal L_0=(\log s)\Ps+(\log a)\Pa$.
+\end{theorem}
+
+The cone in \eqref{eq:cone} is the endpoint expression of the known
+covariant-generator cone \cite{Bhat2023}. The content of the theorem is
+that the same cone is necessary for every generator of this endpoint.
+
+\subsection{Real sector traces and the orthogonal average}
+
+First assume $s\ne a$. Since any matrix commutes with its exponential,
+$\mathcal L$ commutes with $\Phi$. The distinct eigenvalues $1,s,a$
+force $\mathcal L$ to preserve the three sectors in \eqref{eq:projectors}.
+On the scalar sector $\mathcal L(I_d)=hI_d$; trace preservation gives
+$h=0$. Hermiticity preservation makes the restrictions
+$\mathcal L_{\mathrm{s}}$ and $\mathcal L_{\mathrm{a}}$ real matrices
+in their Hermitian bases. Consequently their traces are real and
+\begin{align}
+ e^{\tr\mathcal L_{\mathrm{s}}}
+ &=\det e^{\mathcal L_{\mathrm{s}}}=s^{m_{\mathrm{s}}},&
+ \tr\mathcal L_{\mathrm{s}}&=m_{\mathrm{s}}\log s,\nonumber\\
+ e^{\tr\mathcal L_{\mathrm{a}}}
+ &=\det e^{\mathcal L_{\mathrm{a}}}=a^{m_{\mathrm{a}}},&
+ \tr\mathcal L_{\mathrm{a}}&=m_{\mathrm{a}}\log a.  \label{eq:traces}
+\end{align}
+These identities do not select a logarithm branch or assume normality of
+the restrictions.
+
+The endpoint has full orthogonal covariance:
+$\Ad_O(X)=OXO^{\mathsf T}$ commutes with $\Phi$ for every $O\in\OO(d)$.
+Average the generator, with normalized Haar measure,
+\begin{equation}
+ \overline{\mathcal L}=
+ \int_{\OO(d)}\Ad_O^{-1}\mathcal L\Ad_O\,dO.        \label{eq:average}
+\end{equation}
+Unitary conjugation preserves GKLS form. The finite-dimensional GKLS cone
+is closed and convex: trace and Hermiticity preservation are linear
+conditions and conditional complete positivity is a linear matrix
+inequality \cite{Wolf2008,Bhat2023}. Thus $\overline{\mathcal L}$ is
+again GKLS. It preserves the sectors, vanishes on the scalar sector, and
+retains their restricted traces.
+
+We spell out why its restrictions are scalar for the full group. Diagonal
+sign matrices act on each off-diagonal pair $(i,j)$ with character
+$\varepsilon_i\varepsilon_j$. These characters are distinct for the full
+set of independent signs, so an intertwiner within either sector scales
+each off-diagonal basis vector. Permutation matrices make those scales
+equal. In the symmetric sector, the diagonal traceless subspace is the
+sum-zero permutation representation; an intertwiner is scalar there as
+well. A planar rotation by $\pi/4$ maps $E_{ii}-E_{jj}$ to a signed
+multiple of $E_{ij}+E_{ji}$, equating the diagonal and off-diagonal
+symmetric scales. The antisymmetric sector has no diagonal component.
+This elementary argument gives a scalar on each sector for all $d\geq3$.
+In $d=4$, using full $\OO(4)$ is essential: reflections exchange the two
+Hodge components that are separately invariant under $\SO(4)$.
+The corresponding orthogonal-sector decomposition is also described in
+Ref.~\cite{Hashagen2018}.
+
+Equation \eqref{eq:traces} now fixes the two scalar restrictions:
+\begin{equation}
+       \overline{\mathcal L}=(\log s)\Ps+(\log a)\Pa
+       =\mathcal L_0.                              \label{eq:reduction}
+\end{equation}
+Therefore an arbitrary GKLS embedding implies that the principal sector
+logarithm is GKLS. This conclusion does not follow from a general
+commutation of averaging and exponentiation; \eqref{eq:reduction} follows
+from the specific real trace identities.
+
+When $s=a>0$, the distinct-sector argument is unnecessary. The channel is
+depolarizing and
+$\mathcal L_0=(\log s)(\id-\Pz)$ is an explicit GKLS generator.
+Because $0<s<1$, \eqref{eq:cone} holds automatically. This handles the
+coincident traceless eigenvalues without assuming sector preservation for
+an arbitrary logarithm on that line.
+
+\subsection{The known rate cone in endpoint variables}
+
+Let $\ell_{\mathrm{s}}=\log s$, $\ell_{\mathrm{a}}=\log a$ and
+$Q=I-|\Omega\rangle\langle\Omega|/d$. Direct Choi reshuffling yields
+\begin{align}
+ J(\mathcal L_0)
+ &=\frac{\ell_{\mathrm{s}}+\ell_{\mathrm{a}}}{2}
+       |\Omega\rangle\langle\Omega|
+   +\frac{\ell_{\mathrm{s}}-\ell_{\mathrm{a}}}{2}F
+   -\frac{\ell_{\mathrm{s}}}{d}I, \nonumber\\
+ QJ(\mathcal L_0)Q&=\gs C_{\mathrm{s}}+\ga C_{\mathrm{a}},       \label{eq:ccp}\\
+ C_{\mathrm{s}}&=\frac{I+F}{2}
+                   -\frac{|\Omega\rangle\langle\Omega|}{d},
+ &C_{\mathrm{a}}&=\frac{I-F}{2},\nonumber\\
+ \gs&=\frac{(d-2)\ell_{\mathrm{s}}-d\ell_{\mathrm{a}}}{2d},
+ &\ga&=\frac{d\ell_{\mathrm{a}}-(d+2)\ell_{\mathrm{s}}}{2d}.
+                                                               \label{eq:rates}
+\end{align}
+The Choi-sector projectors $C_{\mathrm{s}},C_{\mathrm{a}}$ are mutually
+orthogonal and distinct from the superoperator notation
+$\Ps,\Pa$. Conditional complete positivity is exactly
+$\gs,\ga\geq0$, which is equivalent to \eqref{eq:cone}.
+This proves necessity for $s\ne a$.
+
+To make the prior-result correspondence explicit, write
+$\mathcal T(X)=X^{\mathsf T}$. Section 6.3 of Ref.~\cite{Bhat2023} uses
+\begin{equation}
+ \mathcal G_{\alpha,\eta}
+  =\alpha\Pz+\eta\mathcal T-(\alpha+\eta)\id.
+ \label{eq:prior}
+\end{equation}
+The exact parameter map is
+\begin{equation}
+ \alpha=-\ell_{\mathrm{s}},\qquad
+ \eta=\frac{\ell_{\mathrm{s}}-\ell_{\mathrm{a}}}{2},\qquad
+ \gs=\frac{\alpha}{d}+\eta,\qquad
+ \ga=\frac{\alpha}{d}-\eta.                        \label{eq:map}
+\end{equation}
+Thus its covariant generator cone $\alpha\geq d|\eta|$ is precisely
+\eqref{eq:cone}. The symbol $\eta$ denotes the parameter called $\gamma$
+in that reference, to avoid confusing it with the two jump rates here.
+Its exponential has sector eigenvalues
+$e^{-\alpha t}$ and $e^{-(\alpha+2\eta)t}$.
+Neither this exponential nor its covariant rate cone is claimed as a new
+result.
+
+\subsection{Normalized jumps and sufficiency}
+
+Choose Frobenius-orthonormal Hermitian bases
+$\{S_\mu\}_{\mu=1}^{m_{\mathrm{s}}}$ of real symmetric traceless matrices
+and $\{A_\nu\}_{\nu=1}^{m_{\mathrm{a}}}$ of purely imaginary
+antisymmetric matrices. Their completeness identities are
+\begin{align}
+ \sum_\mu S_\mu XS_\mu^\dagger
+ &=\frac{\tr(X)I_d+X^{\mathsf T}}2-\frac Xd,
+ &\sum_\mu S_\mu^\dagger S_\mu&=\frac{m_{\mathrm{s}}}{d}I_d,\nonumber\\
+ \sum_\nu A_\nu XA_\nu^\dagger
+ &=\frac{\tr(X)I_d-X^{\mathsf T}}2,
+ &\sum_\nu A_\nu^\dagger A_\nu&=\frac{m_{\mathrm{a}}}{d}I_d.
+                                                            \label{eq:completeness}
+\end{align}
+For example, off-diagonal basis elements are
+$(E_{ij}+E_{ji})/\sqrt2$ and $i(E_{ij}-E_{ji})/\sqrt2$.
+A diagonal symmetric basis is
+\begin{equation}
+ S^{\mathrm{diag}}_k=
+ \frac{\sum_{i=1}^k E_{ii}-kE_{k+1,k+1}}{\sqrt{k(k+1)}},
+ \qquad 1\leq k\leq d-1.
+\end{equation}
+If \eqref{eq:cone} holds, take $H=0$ and jumps
+\begin{equation}
+       V_\mu=\sqrt{\gs}\,S_\mu,\qquad
+       V_\nu=\sqrt{\ga}\,A_\nu.                   \label{eq:jumps}
+\end{equation}
+Substituting \eqref{eq:completeness} into \eqref{eq:GKLS} gives exactly
+$\mathcal L_0=\ell_{\mathrm{s}}\Ps+\ell_{\mathrm{a}}\Pa$.
+Orthogonality of the superoperator projectors gives
+\begin{equation}
+ e^{t\mathcal L_0}
+  =\Pz+s^t\Ps+a^t\Pa, \qquad
+ e^{\mathcal L_0}=\Phi.                           \label{eq:exp}
+\end{equation}
+This proves sufficiency and completes Theorem~\ref{thm:positive}.
+On the two boundaries of the cone, one of the jump families has zero
+rate; a finite generator still exists.
+
+\section{Complete qutrit classification}
+
+\begin{corollary}\label{cor:qutrit}
+For $d=3$ throughout $x>0,y>0,x+y\leq1$, a finite time-independent
+same-qutrit GKLS embedding exists exactly when
+\begin{equation}
+ s=1-\frac32x-\frac34y>0,\qquad
+ a=1-\frac12x-\frac54y>0,\qquad
+                    s^5\leq a^3\leq s.           \label{eq:qutrit}
+\end{equation}
+\end{corollary}
+\begin{proof}
+The two real Hermitian sector multiplicities are $m_{\mathrm{s}}=5$
+and $m_{\mathrm{a}}=3$. A zero eigenvalue makes $\Phi$ singular, which
+is impossible for a finite matrix exponential. If one eigenvalue is
+negative, then $s+a=2q\geq0$ prevents both from being negative; the
+nonzero eigenvalues are therefore distinct and the sector restrictions
+of an embedding would be real. A real matrix exponential has positive
+determinant. A negative scalar on either odd-dimensional sector has
+negative determinant, so no such logarithm exists. All remaining
+possibilities have $s,a>0$ and Theorem~\ref{thm:positive} gives
+\eqref{eq:qutrit}.
+\end{proof}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.82\textwidth]{manuscript/figures/qutrit-region.pdf}
+\caption{Exact homogeneous-embedding region in the qutrit noise triangle.
+The colored region includes its two rate boundaries wherever $x,y>0$;
+the axes and the limiting point $(1/3,2/3)$ are excluded.
+The boundary $\gs=0$ has $a^3=s$, and $\ga=0$ has $a^3=s^5$.
+The dotted line $y=2x$ is the depolarizing subfamily.
+The circle at $(1/4,1/4)$ is embeddable, whereas the cross at
+$(1/2,1/10)$ has positive spectrum but violates the cone.
+Curves are sampled from the analytic boundary equations for rendering;
+the classification follows from Corollary~\ref{cor:qutrit}.}
+\label{fig:region}
+\end{figure}
+
+Figure~\ref{fig:region} separates full Choi rank from homogeneous
+embeddability. At $x=y=1/4$, the endpoint parameters are
+$s=7/16$ and $a=9/16$, and both rate inequalities are strict.
+This same input reproduces the published output benchmark in
+Ref.~\cite{Roofeh2025}: the pure state
+$|\psi\rangle=(i,1,0)^{\mathsf T}/\sqrt2$ has output spectrum
+$\{1/8,3/16,11/16\}$. This is a normalization check, rather than a new
+capacity result.
+
+In contrast, the legal point $x=1/2,y=1/10$ gives
+$s=7/40$ and $a=5/8$, with
+$a^3=125/512>s$. Its principal symmetric jump rate is negative.
+Theorem~\ref{thm:positive} shows that a Hamiltonian, noncovariant jumps
+or a different logarithm branch cannot repair that failure.
+The statement concerns the exact channel at a specified time; applying it
+to a noisy experimental estimate would require uncertainty propagation
+and an independent model-validity assessment.
+
+\section{Interpretation and limitations}
+
+The result converts a known covariant-generator cone into an unrestricted
+endpoint test for the positive orthogonal sectors. This distinction is
+physically useful when the measured or prescribed endpoint has symmetry but
+the underlying master equation is not assumed to share it. The construction
+uses a zero Hamiltonian, while the exclusion statement allows any
+Hamiltonian and any finite set of jumps on the same $d$-level system.
+It is exact in finite dimension, with no perturbative, continuum or
+long-time approximation.
+
+The arbitrary-generator reduction uses positivity of $s$ and $a$.
+For an even-dimensional negative sector, a real logarithm may have trace
+$m\log|\lambda|$. An orthogonal average would then exponentiate to the
+absolute-spectrum endpoint, not necessarily to the original signed
+channel. Thus the present proof does not decide negative
+even-multiplicity sectors for $d\geq4$. The full signed classification
+in arbitrary dimension remains unresolved. The criterion applies to a finite
+generator on the original system and does not characterize time-dependent
+divisible paths.
+
+The orthogonal sectors are established in Ref.~\cite{Hashagen2018}, the
+covariant cone and exponential in Ref.~\cite{Bhat2023}, and the general
+conditional-positivity test in Ref.~\cite{Wolf2008}. The additional argument
+is the branch-independent real-trace reduction in
+\eqref{eq:traces}--\eqref{eq:reduction} and its qutrit consequence.
+Priority is limited to the compared literature; no claim of a comprehensive
+classification of symmetric quantum-channel embeddings is made.
+
+\clearpage
+\section*{Data, code and generative-AI disclosure}
+
+The proof is analytic. The accompanying source package contains exact
+matrix-unit and Kraus reconstructions, symbolic Choi and jump checks,
+and code and rational coordinate data for Fig.~\ref{fig:region}.
+Its reproducibility instructions specify the environments and distinguish
+exact identities from optional floating-point diagnostics. No experimental
+dataset is used.
+
+OpenAI Codex was used in literature searching and comparison, formulation
+of the reduction, derivations, symbolic and numerical code, checking,
+and manuscript drafting. These uses extend beyond copy editing.
+Separate AI review passes checked the scientific argument, but do not
+constitute external peer review. Final scientific review, authorship
+confirmation and accountability by the named human author remain pending
+for this local draft.
+
+\bibliographystyle{unsrtnat}
+\bibliography{manuscript/references}
+\end{document}

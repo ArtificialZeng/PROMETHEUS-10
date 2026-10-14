@@ -1,0 +1,6 @@
+canonical_A = Matrix([[I*h + r + x, t], [-t, I*h + r - x]])
+generic_c_determinant_computed
+exact_determinant_identity_residual = 0
+deficit_determinant = N^2 |det(A)+(3/2)(3+sqrt(10))tr(A)^2|^2 / 64
+canonical_Phi = t**2 - x**2 + (6*sqrt(10) + 19)*(I*h + r)**2
+determinant_at_nilpotent = 0

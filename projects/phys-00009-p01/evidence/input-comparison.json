@@ -1,0 +1,171 @@
+{
+  "status": "pass",
+  "mode": "exact",
+  "case_count": 9,
+  "matrix_entries_compared": 806,
+  "cases": [
+    {
+      "id": "path3-unit-logconcave-k1",
+      "dimension": 3,
+      "a_to_b_permutation": [
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 9,
+      "configuration_edges": 2,
+      "normalization": "3",
+      "status": "pass"
+    },
+    {
+      "id": "path3-unit-logconcave-k2",
+      "dimension": 6,
+      "a_to_b_permutation": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 36,
+      "configuration_edges": 6,
+      "normalization": "6",
+      "status": "pass"
+    },
+    {
+      "id": "path3-unit-logconcave-k3",
+      "dimension": 10,
+      "a_to_b_permutation": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 100,
+      "configuration_edges": 12,
+      "normalization": "10",
+      "status": "pass"
+    },
+    {
+      "id": "complete3-heterogeneous-k1",
+      "dimension": 3,
+      "a_to_b_permutation": [
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 9,
+      "configuration_edges": 3,
+      "normalization": "23/12",
+      "status": "pass"
+    },
+    {
+      "id": "complete3-heterogeneous-k2",
+      "dimension": 6,
+      "a_to_b_permutation": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 36,
+      "configuration_edges": 9,
+      "normalization": "805/288",
+      "status": "pass"
+    },
+    {
+      "id": "complete3-heterogeneous-k3",
+      "dimension": 10,
+      "a_to_b_permutation": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 100,
+      "configuration_edges": 18,
+      "normalization": "37835/10368",
+      "status": "pass"
+    },
+    {
+      "id": "weighted4-input-diagnostic-k1",
+      "dimension": 4,
+      "a_to_b_permutation": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 16,
+      "configuration_edges": 5,
+      "normalization": "239/60",
+      "status": "pass"
+    },
+    {
+      "id": "weighted4-input-diagnostic-k2",
+      "dimension": 10,
+      "a_to_b_permutation": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 100,
+      "configuration_edges": 20,
+      "normalization": "71461/7200",
+      "status": "pass"
+    },
+    {
+      "id": "weighted4-input-diagnostic-k3",
+      "dimension": 20,
+      "a_to_b_permutation": [
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "matrix_entries_compared": 400,
+      "configuration_edges": 50,
+      "normalization": "25654499/1296000",
+      "status": "pass"
+    }
+  ],
+  "scope": "Input admissibility and equality of two assemblies only; no universal gap result."
+}

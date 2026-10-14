@@ -1,0 +1,2 @@
+# Certificate calculations use Python standard library only.
+# Project runtime: CPython 3.14. No pip packages required.

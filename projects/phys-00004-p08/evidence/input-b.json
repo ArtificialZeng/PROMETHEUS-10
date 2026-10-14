@@ -1,0 +1,50 @@
+{
+  "record_kind": "primary_rendering_and_independent_derivation_B",
+  "source": "supervisor-inputs/hotspots-primary/2003.14335v4.pdf",
+  "rendered_pages_actually_inspected": [6,8,20,21],
+  "render_files": ["evidence/source-render-06.png","evidence/source-render-08.png","evidence/source-render-20.png","evidence/source-render-21.png"],
+  "independence": "A second same-agent reconstruction from rendered primary pages and a mean/zero-sum operator derivation. Shared source, agent and known target; no fresh referee independence is claimed. The B implementation does not read input A or A outputs.",
+  "operator": {
+    "action": "negative second derivative on each metric interval, unweighted Lebesgue measure",
+    "vertex_value": "single continuous value per vertex",
+    "source_derivative_convention": "into the vertex: -f'(0) at an origin, +f'(L) at a terminus",
+    "form": "q(f)=sum integral |f_e'|^2, domain continuous edgewise H1",
+    "positivity": "q>=0; on a connected compact graph the kernel consists of constants"
+  },
+  "pumpkin": {
+    "reversed_coordinates": "y=1-x, directed physical v2->v1 on every edge",
+    "basis": "f_e(y)=alpha_e cos(ky)+beta_e sin(ky)",
+    "continuity_origin": "alpha_i-alpha_0=0",
+    "continuity_terminal": "c(alpha_i-alpha_0)+s(beta_i-beta_0)=0",
+    "source_flux_origin_divided_by_k": "-sum beta_i=0",
+    "source_flux_terminal_divided_by_k": "-s sum alpha_i+c sum beta_i=0",
+    "coefficient_map": "alpha_e=c a_e+s b_e; beta_e=s a_e-c b_e. This is an involution when c^2+s^2=1.",
+    "derived_sectors": "Common-edge mean is a Neumann interval of length 1. The E-1 dimensional zero-sum edge sector has Dirichlet values at both endpoints.",
+    "derived_spectrum": "Zero simple; every (n pi)^2, n>=1, has one common Neumann mode plus E-1 zero-sum Dirichlet modes, total multiplicity E.",
+    "row_map_to_A": "Swap the two continuity blocks and swap the two flux rows; negate both flux rows. Apply the coefficient map on every edge."
+  },
+  "split_tree": {
+    "render_derived_lengths": "a=1/2; stems of length h=epsilon; m identical fan leaf edges of length b=atan(cot(pi h)/m)/pi",
+    "selected_instance": {"h": "1/6", "m": 5, "eta": "1/1000"},
+    "orientation": "Use leaf-to-hub coordinate z=b-x on each fan leaf; stem coordinate r starts at v0",
+    "leaf_basis": "C cos(kz), which imposes the leaf Neumann condition before matching",
+    "stem_basis_with_Dirichlet_root": "S sin(kr)",
+    "hub_continuity": "C cos(k b)=S sin(k h)",
+    "hub_flux": "m C sin(k b)=S cos(k h)",
+    "pole_free_fan_matrix_order": "unknowns S,C; rows [-sin(k h),cos(k b)] and [-cos(k h),m sin(k b)]",
+    "pole_free_fan_characteristic": "cos(k h) cos(k b)-m sin(k h) sin(k b)=0",
+    "length_relation": "tan(pi b)=cot(pi h)/m; equivalently m tan(pi h) tan(pi b)=1",
+    "amplitude_relation_at_pi": "C=sqrt(sin(pi h)^2+cos(pi h)^2/m^2), with S=1",
+    "perturbation": "b changes to b+eta, eta>0; h and a fixed",
+    "limits": "The finite-instance calculation does not establish uniform epsilon control of a doubled construction."
+  },
+  "uniform_doubling": {
+    "aligned_pair_unitary_map": "g_e=(f_e,1+f_e,2)/sqrt(2), h_e=(f_e,1-f_e,2)/sqrt(2)",
+    "transformed_domain": "g is continuous across original vertices and has standard Kirchhoff flux; every h_e belongs to H2(0,L_e) intersect H1_0(0,L_e), independently of other edges",
+    "inverse_map": "f_e,1=(g_e+h_e)/sqrt(2), f_e,2=(g_e-h_e)/sqrt(2)",
+    "operator_identity": "U H_doubled U^-1 = H_original direct_sum (direct_sum over edges of H_Dirichlet,(0,L_e))",
+    "full_antisymmetric_spectrum": "For each original edge e, every (n pi/L_e)^2 for n>=1 is retained. Coincident eigenvalues add multiplicities.",
+    "zero_sector": "No Dirichlet zero mode; symmetric zero is the connected graph constant",
+    "conditions": "Uniform doubling of every edge, equal lengths within each pair, standard unweighted Kirchhoff domain; no potential, magnetic phase, delta coupling or changed conductivity"
+  }
+}

@@ -1,0 +1,159 @@
+\documentclass[aps,pre,10pt,onecolumn,notitlepage,longbibliography,amsmath,amssymb]{revtex4-2}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\begin{document}
+\title{Comment on ``Bounds on skewness and kurtosis of steady-state currents''}
+\author{Xiaojian Zeng}
+\email{xiaojianzeng@foxmail.com}
+\affiliation{PBC School of Finance, Tsinghua University, Beijing 100190, China}
+\date{\today}
+\begin{abstract}
+The proposed nonnegativity of the fourth heat-current cumulant in classical Markov systems driven only by temperature differences does not hold for general finite thermal networks. We give an exact counterexample with three resolved states and two baths at finite positive temperatures. Every bath-resolved transition pair obeys thermal local detailed balance, and temperature bias is the only driving force. Rational differentiation of the characteristic polynomial yields a strictly positive second cumulant rate and a strictly negative fourth cumulant rate. Thus negative fourth heat cumulants alone cannot rule out purely thermal classical Markov dynamics. The result concerns the full finite generator in the long-time limit and does not invoke coherence, chemical driving, or an effective switching approximation.
+\end{abstract}
+\maketitle
+
+Reference~\cite{Ptaszynski2022} proposes $\mathcal K^h=c_4/c_2\geq0$ for classical Markov systems driven only by temperature differences [its Eq.~(19)], supported by random thermal-network sampling in Sec.~III D. Here $c_m$ denotes the long-time cumulant rate of integrated bath heat. We disprove this general assertion by an explicit admissible network. The result makes no claim about the other bounds in that work. Related finite-size heat statistics in the Curie--Weiss model~\cite{PtaszynskiEsposito2025} concern a specified model rather than arbitrary thermal networks.
+
+\section{Thermal model and heat counting}
+Let $i=0,1,2$ label nondegenerate resolved states with $E_i=i\epsilon$, where $\epsilon>0$. Set $k_B=1$ and introduce a time unit $\tau>0$. The inverse bath temperatures are
+\begin{equation}
+ \beta_h=\frac{2\ln(9/8)}{\epsilon},\qquad
+ \beta_c=\frac{2\ln8}{\epsilon}.
+\end{equation}
+Both temperatures are finite and positive, with $T_h>T_c$. For destination $i$ and departure $j$, define the off-diagonal rates
+\begin{equation}\label{eq:rates}
+ k^a_{ij}=\tau^{-1}g^a_{ij}b_a^{j-i},\quad
+ b_h=9/8,\quad b_c=8,\quad g^a_{ij}=g^a_{ji}>0.
+\end{equation}
+The dimensionless symmetric factors on pairs $(01,02,12)$ are
+\begin{equation}
+ (g^h_{01},g^h_{02},g^h_{12})=(1/128,1/4,64),\qquad
+ (g^c_{01},g^c_{02},g^c_{12})=(1/128,1/16,128).
+\end{equation}
+They specify the full microscopic stochastic model; no kinetic equality across baths or pairs is assumed. In particular,
+\begin{equation}
+ \frac{k^a_{ij}}{k^a_{ji}}=b_a^{2(j-i)}
+ =\exp[-\beta_a(E_i-E_j)].
+\end{equation}
+Every transition has a strictly positive reverse transition in the same bath. There is no work protocol, chemical affinity, feedback, degeneracy entropy, or coherent evolution.
+
+For reproducibility, the bath off-diagonal matrices, multiplied by $\tau$, are
+\begin{equation}\label{eq:matrices}
+ K_h=\begin{pmatrix}
+ 0&9/1024&81/256\\
+ 1/144&0&72\\
+ 16/81&512/9&0
+ \end{pmatrix},\qquad
+ K_c=\begin{pmatrix}
+ 0&1/16&4\\
+ 1/1024&0&1024\\
+ 1/1024&16&0
+ \end{pmatrix}.
+\end{equation}
+Zeros in these tables are placeholders. With a column probability vector, the actual generator is
+\begin{equation}
+ W_{ij}=k^h_{ij}+k^c_{ij}\ (i\ne j),\qquad
+ W_{jj}=-\sum_{i\ne j}W_{ij}.
+\end{equation}
+Thus columns sum to zero. All off-diagonal entries are positive, so the finite network is irreducible. Its stationary probabilities are
+\begin{equation}
+ p=\frac{(300458657988,\ 172970937252,\ 11512418273)^T}{484942013513}.
+\end{equation}
+
+Count heat delivered to the hot bath: a hot jump $j\to i$ contributes $(j-i)\epsilon$. For integrated heat $Q_h(t)$, define
+\begin{equation}
+ \psi(s)=\lim_{t\to\infty}\frac{1}{t}\ln\langle e^{sQ_h(t)}\rangle,
+ \qquad c_m=\left.\frac{d^m\psi}{ds^m}\right|_{s=0}.
+\end{equation}
+The counting field $s$ has units of inverse energy. Tilt only hot-bath off-diagonal rates,
+\begin{equation}\label{eq:tilt}
+ W_{ij}(s)=k^h_{ij}e^{s(j-i)\epsilon}+k^c_{ij}\ (i\ne j),
+ \qquad W_{jj}(s)=W_{jj}.
+\end{equation}
+For real $s$ near zero, this is an irreducible Metzler matrix. Its simple dominant eigenvalue, continued from zero, is $\psi(s)$. Positive left and right eigenvectors ensure nonzero projection for any normalized nonnegative initial distribution. Hence the derivatives below are the long-time cumulant rates at fixed three states, rather than finite-time estimates or derivatives of another spectral branch.
+
+\section{Exact negative fourth cumulant}
+Use $u=s\epsilon$ and $x=\tau\psi(s)$, so $x^{(m)}(0)=\widehat c_m=\tau c_m/\epsilon^m$. The dimensionless characteristic polynomial is
+\begin{equation}\label{eq:poly}
+ \det[xI-\tau W(u/\epsilon)]
+ =x^3+Ax^2+B(u)x+C(u).
+\end{equation}
+Its coefficients obtained from the three-by-three determinant are listed in Table~\ref{tab:coefficients}. Define $B_m=B^{(m)}(0)$ and $C_m=C^{(m)}(0)$; they are derivatives, not Taylor coefficients. In particular $C_0=0$ and $B_0>0$, so the zero root is simple.
+\begin{table}[ht]
+\caption{Exact dimensionless characteristic data for the hot-bath tilt in Eq.~\eqref{eq:tilt}. The constant coefficient of $x^2$ is $A=97333375/82944$. These rational numbers suffice to reproduce the signs without numerical differentiation.}\label{tab:coefficients}
+\begin{ruledtabular}
+\begin{tabular}{cll}
+ $m$&$B_m$&$C_m$\\
+ 0&$484942013513/764411904$&$0$\\
+ 1&$4850091802655/84934656$&$778514013466255/65229815808$\\
+ 2&$-5045915626729/84934656$&$-2456804922372277/195689447424$\\
+ 3&$4850494298375/84934656$&$806631324684845/65229815808$\\
+ 4&$-5046721248025/84934656$&$-2625640790022913/195689447424$
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+Differentiating Eq.~\eqref{eq:poly} on its root through zero gives
+\begin{align}
+ \widehat c_1&=-C_1/B_0,\\
+ \widehat c_2&=-\big(2A\widehat c_1^2+2B_1\widehat c_1+C_2\big)/B_0,\\
+ \widehat c_3&=-\big(6\widehat c_1^3+6A\widehat c_1\widehat c_2
+ +3B_1\widehat c_2+3B_2\widehat c_1+C_3\big)/B_0,\\
+ \widehat c_4&=-\Big[36\widehat c_1^2\widehat c_2
+ +A(8\widehat c_1\widehat c_3+6\widehat c_2^2)\nonumber\\
+ &\hspace{1.3cm}+4B_1\widehat c_3+6B_2\widehat c_2+4B_3\widehat c_1+C_4\Big]/B_0.
+\end{align}
+Exact substitution yields
+\begin{equation}
+ \widehat c_2=\frac{11489750287768003967052827524784410147}
+ {5478525395224300106370510475774208}>0.
+\end{equation}
+To display the fourth cumulant without an unwieldy fraction, write
+\begin{equation}
+ \widehat c_4=-\frac{N_4}{D_4}<0,
+\end{equation}
+where the following decimal integer strings are concatenated across each line:
+\begin{align}
+ N_4={}&208987470550856853924148562754983815780717\nonumber\\
+      &3797477888140099294516732567038254354814877,\\
+ D_4={}&568561180667972670938634986870569328677\nonumber\\
+      &19761057500095404718643023278410275072.
+\end{align}
+Only integer arithmetic is needed to establish the strict signs. For orientation,
+\begin{align}
+ c_2&\simeq2097.2341\,\epsilon^2/\tau,\\
+ c_4&\simeq-3.6757253\times10^7\,\epsilon^4/\tau,\\
+ c_4/c_2&\simeq-17526.538\,\epsilon^2.
+\end{align}
+The decimals play no role in the sign certificate. A counting-field series through degree four gives these four derivatives exactly: it is not a small-temperature-bias approximation and does not assume that $\psi$ is a quartic polynomial.
+
+The rational determinant calculation was cross-checked by normalized eigenvector differentiation. Set $v_0=p$, $c_0=0$, and $W_m=\partial_s^mW(s)|_0$. For $n\geq1$, impose $\boldsymbol{1}^Tv_n=0$ and solve
+\begin{equation}
+ W_0v_n=\sum_{m=1}^n\binom{n}{m}(c_mI-W_m)v_{n-m}.
+\end{equation}
+The unknown $c_n$ is fixed by the solvability condition. A separate implementation solves ordinary Taylor coefficient equations for the column eigenvector and eigenvalue simultaneously using bordered rational systems. The implementations agree through order four, with exact zero residuals in both the eigenvector equations and characteristic series. The reproducibility package supplies the rates, coefficient data, and rational-arithmetic code.
+
+\section{Physical checks and consequence}
+Heat conservation gives $Q_h+Q_c=E_{\rm initial}-E_{\rm final}$. Equivalently, the two tilted generators are related by an energy-dependent diagonal similarity transformation and reversal of the counting field. Thus their odd cumulant rates have opposite signs and their even rates coincide, as verified exactly. Reversing the heat convention consequently leaves $c_4/c_2$ unchanged. The mean hot-bath heat rate is
+\begin{equation}
+ c_1^h=-\frac{31993726580805}{1700618567936}\frac{\epsilon}{\tau}<0.
+\end{equation}
+The reservoir entropy production $(\beta_h-\beta_c)c_1^h$ is positive. The negative fourth cumulant is therefore consistent with heat flowing from hot to cold.
+
+Dividing every transition rate by 1024 divides each $c_m$ by 1024 and leaves $c_4/c_2$ unchanged. After this rescaling every individual bath rate is at most $\tau^{-1}$. The result does not depend on unbounded rates. The unchanged kinetic factors at either tested common bath temperature yield zero odd cumulants and positive even cumulants. With only one bath, integrated heat is a bounded energy difference and all long-time cumulant rates vanish. These limit checks do not assert positivity for every equilibrium network.
+
+The model has slow access to state 0 and rapid transitions between states 1 and 2. This kinetic disparity suggests intermittent heat exchange, but no asymptotic switching mechanism is needed or established here. The exact full generator supplies the counterexample. We neither classify minimal networks nor claim an experimental realization. Targeted checks of the current primary versions and later-resolution queries did not identify an equivalent purely thermal counterexample; they do not establish exhaustive priority.
+
+One finite admissible witness suffices to invalidate the universal sign assertion. In particular, observing a negative long-time fourth heat cumulant cannot by itself distinguish nonthermal or quantum transport from the purely thermal classical dynamics specified above.
+
+\section*{Computational methods and AI disclosure}
+OpenAI Codex was used for literature checks, candidate search, scientific reasoning, rational-arithmetic code, computational verification, and manuscript drafting. The underlying model versions for the complete workflow were not recorded. Outputs were tested by separately implemented exact calculations and a separate AI review context; these automated checks do not replace human scientific judgment or author accountability. No AI system is listed as an author.
+
+\section*{Data availability}
+All model parameters and the exact scalar certificate appear in this article. Python standard-library implementations, exact outputs, and regeneration instructions are supplied in the accompanying reproducibility package.
+\makeatletter
+\immediate\write\@auxout{\string\citation{apsrev42Control}}
+\makeatother
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
+\end{document}

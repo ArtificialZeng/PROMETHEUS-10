@@ -1,0 +1,12 @@
+{
+  "started_at": "2026-10-13T20:40:49.881949+00:00",
+  "status": "pass_actual_remainders_enclosed",
+  "certificate": "evidence/research/r3-interval-refine.json",
+  "completed_panels": 26275,
+  "checks": 52550,
+  "violations": [],
+  "original_precision": 85,
+  "reference_precision": 500,
+  "method": "Exact same dyadic center/radius/X; independently transcribed original remainder evaluation compared against a fresh 500-digit outward bound formed from exact-coefficient interval absolute endpoints. No discovery module import.",
+  "elapsed_seconds": 77.70511249999981
+}

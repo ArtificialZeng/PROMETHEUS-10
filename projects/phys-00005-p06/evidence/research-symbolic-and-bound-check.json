@@ -1,0 +1,46 @@
+{
+  "symbolic_checks": {
+    "determinant_identity": true,
+    "first_site_minor_identity": true,
+    "resolvent_numerator_identity": true,
+    "cross_chain_inverse_cofactor": true
+  },
+  "parameter_outer_box_checks": {
+    "v_gt_3_over_2": true,
+    "v_gt_15487_over_10000": true,
+    "v_lt_31_over_20": true,
+    "c_gt_12954_over_10000": true,
+    "c_lt_12955_over_10000": true,
+    "d_positive_and_lt_687_over_1000": true,
+    "d_gt_6861_over_10000": true
+  },
+  "uniform_bound_checks": {
+    "s_lt_136_over_100": true,
+    "p_min_gt_5_on_radius_2": true,
+    "q_over_p_lt_4": true,
+    "abcd_lt_1": true,
+    "x0_M_lt_1": true,
+    "high_weight_denominator_gt_half": true,
+    "J2_gt_9_over_10": true,
+    "J2_gradient_l1_lt_3": true,
+    "duhamel_amplitude_parameter_bound_lt_40_radius": true,
+    "exp_4pi_lt_300000_via_rational_Taylor_bound": true
+  },
+  "rational_values": {
+    "p_min_lower": "1917/320",
+    "q_over_p_upper": "108529/31250",
+    "abcd_upper": "11223519/20000000",
+    "exp_88_over_7_upper_numerator": "7360912916914769497163946692748517145331674381410491313835752639943861609649232696201431271672466726118560521160404403347062303513978553870216506890542311860949394199746060063144570272943479330235230922744090159363",
+    "exp_88_over_7_upper_denominator": "25540513323513716459622298275324896494255494117359903046420074635741614064553556524941402745884055213692350002855413169087285560686222344523831304871319400734090819207352648762432610212622662246227264404296875"
+  },
+  "constants": {
+    "tau": "2pi",
+    "contour_radius": "2",
+    "x0": "1/16",
+    "coefficient_bound": "|f_n|<=24000*4^(n-1), n>=1",
+    "low_remainder_bound": "|f_low(x)-ell*x|<=2097152000*x^9<=131072000*x^8",
+    "high_remainder_bound": "|a_high(x)|<=2*x^8",
+    "C": "131072002"
+  },
+  "scope": "Exact algebra and rational estimates supporting the uniform proof. Root existence comes from the separate contraction certificate; no acceptance is inferred."
+}

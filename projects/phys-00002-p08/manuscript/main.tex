@@ -1,0 +1,380 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlength{\parskip}{0.25em}
+\newcommand{\id}{\mathbb{I}}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\bs}{\boldsymbol{\sigma}}
+\newcommand{\rv}{\mathbf{r}}
+\newcommand{\dv}{\mathbf{d}}
+\newcommand{\uv}{\mathbf{u}}
+\newcommand{\qv}{\mathbf{q}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+
+\title{A resource obstruction for qubit measurement self-testing\\
+with matched kernel preparations}
+\author{Xiaojian Zeng\thanks{Corresponding email: \href{mailto:xiaojianzeng@foxmail.com}{xiaojianzeng@foxmail.com}.}\\[0.3em]
+\small PBC School of Finance, Tsinghua University, 100190, China}
+\date{}
+\hypersetup{
+  pdftitle={A resource obstruction for qubit measurement self-testing with matched kernel preparations},
+  pdfauthor={Xiaojian Zeng},
+  pdfsubject={Restricted exact obstruction in dimension-bounded qubit self-testing},
+  pdfkeywords={qubit, self-testing, POVM, prepare-and-measure, resource bounds}
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Resource counts in dimension-bounded self-testing depend on both the unknown
+measurement and the reference preparations. We consider a complex-qubit
+prepare-and-measure experiment with exactly four preparations, binary auxiliary
+settings, and an extremal four-outcome target positive operator-valued measure.
+The reference preparation associated with each target outcome is its pure kernel
+state. We prove that every real linear witness on the complete probability table
+that is globally maximized at this reference admits an inequivalent maximizing
+target with at most three nonzero effects whenever the auxiliary observable
+Bloch vectors span at most two dimensions. The proof first uses measurement
+optimization and complementary slackness to force all target coefficients into
+a common-row-shift plus nonnegative exclusion-penalty form. Preparation optimality
+then leaves at most two inputs with nonzero auxiliary contributions, allowing an
+explicit positive and complete replacement measurement. The result includes biased
+and degenerate binary measurements and allows input-independent shared randomness.
+It obstructs reducing auxiliary resources within the matched-kernel reference
+class used by existing constructions. It does not establish unrestricted resource
+minimality, a bound on preparation number, or robustness to noise.
+\end{abstract}
+\noindent\textbf{Keywords:} quantum self-testing; qubit measurements;
+prepare-and-measure scenarios; resource bounds; semidefinite duality.
+
+\section{Introduction}
+
+Dimension-bounded prepare-and-measure self-testing certifies an unknown quantum
+realization from observed probabilities and a bound on the transmitted Hilbert
+space. For a nonprojective qubit measurement, the number of preparation inputs
+and auxiliary measurement settings is an experimentally relevant resource.
+Tavakoli \emph{et al.}~\cite{Tavakoli2020} developed a construction that first
+certifies suitable preparations and then adds penalties for target outcomes
+excluded by those states. Dr\'otos \emph{et al.}~\cite{Drotos2024} obtained
+four-preparation, three-binary-auxiliary constructions for arbitrary extremal
+four-outcome qubit measurements and conjectured their resource minimality.
+Their preparation-only optimization places optimal state directions in the
+auxiliary Bloch span. By itself, that observation does not constrain a general
+witness whose target probabilities also enter preparation optimization.
+
+Here we address this distinction within the matched state-exclusion reference
+class. All sixteen target coefficients are initially arbitrary, and the witness
+need only certify the target. Measurement optimality nevertheless forces the
+target contribution to be a constant plus nonnegative exclusion penalties.
+We then construct an inequivalent target attaining the same global score when
+the auxiliary Bloch span has dimension at most two. Thus changing the weights
+of the complete probability table cannot reduce the auxiliary count at these
+references.
+
+This restriction is the one used in the cited constructions, rather than an
+assumption about all possible self-tests. The revised semi-SIC
+construction~\cite{DrotosSemiSIC} also uses matched exclusion states; its
+discussion asks about smaller setups. General preparation and measurement
+self-testing constructions~\cite{Navascues2023} establish existence with other
+auxiliary resources. A recent photonic semi-SIC realization~\cite{Xu2026}
+uses four preparations, three dichotomic settings and the target.
+Our result supplies a necessary resource condition for matched references;
+the unrestricted minimality question is not resolved here.
+
+\section{Model and reference strategies}
+\label{sec:model}
+
+Alice receives an input $i\in\{1,2,3,4\}$ and sends a single complex qubit to
+Bob. Bob chooses either a binary auxiliary setting $y\in\{1,\ldots,K\}$ or
+the target setting $t$, which has four labeled outcomes. A deterministic
+strategy consists of density operators $\rho_i\geq0$, $\tr\rho_i=1$,
+binary effects $B_{b|y}\geq0$, $B_{0|y}+B_{1|y}=\id$, and target effects
+$E_j\geq0$, $\sum_{j=1}^4E_j=\id$. The probabilities are
+\begin{equation}
+ p(b|i,y)=\tr(\rho_i B_{b|y}),\qquad
+ p(j|i,t)=\tr(\rho_i E_j).
+ \label{eq:born}
+\end{equation}
+The competing target may have zero effects or be nonextremal. No entanglement
+assistance, trusted axes, sequential instrument or additional communication is
+allowed. Input-independent shared randomness permits convex mixtures of these
+strategies. All quantities are dimensionless, and the problem is static and
+exactly noiseless.
+
+Use the Pauli convention $(\sigma_x,\sigma_y,\sigma_z)$, with
+$(\sigma_y)_{01}=-\mathrm{i}$. The reference is
+\begin{equation}
+ \rho_i^\star=\frac{\id+\rv_i\cdot\bs}{2},\qquad
+ T_i=\alpha_i(\id-\rv_i\cdot\bs),
+ \label{eq:reference}
+\end{equation}
+where
+\begin{equation}
+ \alpha_i>0,\quad \norm{\rv_i}=1,\quad
+ \sum_i\alpha_i=1,\quad \sum_i\alpha_i\rv_i=0.
+ \label{eq:complete}
+\end{equation}
+The four $T_i$ are linearly independent Hermitian matrices, as required for
+an extremal four-outcome qubit measurement. In particular,
+$\tr(\rho_i^\star T_i)=0$: each preparation is the pure state supported on
+the kernel of its matched effect. For the reference binary observables write
+\begin{equation}
+ O_y:=B_{0|y}-B_{1|y}=\beta_y\id+\dv_y\cdot\bs,
+ \qquad |\beta_y|+\norm{\dv_y}\leq1.
+ \label{eq:binary}
+\end{equation}
+The inequality is equivalent to positivity of both binary effects; it includes
+projective, biased, unsharp and degenerate measurements.
+
+Binary normalization puts every real linear witness on the complete table into
+the form
+\begin{equation}
+ L=C_0+\sum_{i,y}w_{iy}\tr(\rho_iO_y)
+       +\sum_{i,j}c_{ij}\tr(\rho_iE_j),
+ \label{eq:witness}
+\end{equation}
+with arbitrary real $w_{iy},c_{ij}$. We say that $L$ self-tests the reference
+target if every globally maximizing admissible realization has target effects
+related to $T_i$ by one common unitary or antiunitary transformation. The input
+and outcome labels are fixed. The obstruction below would remain valid even
+if target outcome permutations were allowed, since it changes the number of
+nonzero effects. No separate preparation self-test is assumed.
+
+\section{Supporting witnesses and the resource obstruction}
+
+\begin{proposition}
+\label{prop:main}
+Let the reference satisfy Eqs.~\eqref{eq:reference}--\eqref{eq:binary}, with
+four linearly independent target effects. Suppose
+$\dim\operatorname{span}\{\dv_y\}_{y=1}^K\leq2$.
+If a real linear witness on the complete probability table attains its global
+maximum at this reference, it also has an admissible maximizing realization
+with the same auxiliary measurements and a target with at most three nonzero
+effects. Consequently it cannot self-test the reference four-outcome target.
+This includes any two arbitrary binary auxiliary measurements and allows
+input-independent shared randomness.
+\end{proposition}
+
+We prove the proposition through a necessary coefficient form and an explicit
+replacement strategy.
+
+\subsection{A basis property of the reference}
+
+The four $\rho_i^\star$ form a basis of the real vector space of Hermitian
+$2\times2$ matrices. Indeed, independence of the $T_i$ is independence of
+the coefficient vectors $(1,-\rv_i)$, which is unchanged by reversing the
+three Pauli coordinates. Furthermore, every triple of $\rv_i$ is linearly
+independent. If one triple spanned at most a plane through the origin,
+the positive-weight relation in Eq.~\eqref{eq:complete} would place the
+fourth direction in the same plane. All four effects would then belong to
+a Hermitian subspace of dimension at most three, a contradiction.
+Thus no plane through the origin contains more than two reference directions,
+and no two are collinear.
+
+\subsection{The target coefficient normal form}
+
+\begin{lemma}
+\label{lem:normal}
+If the reference maximizes $L$, there exist real numbers $\ell_i$ and
+nonnegative numbers $k_j$ such that
+\begin{equation}
+ c_{ij}=\ell_i-k_j\delta_{ij}.
+ \label{eq:normal}
+\end{equation}
+For every admissible strategy, its target contribution is therefore
+\begin{equation}
+ \sum_{i,j}c_{ij}p(j|i,t)=\sum_i\ell_i-\sum_i k_i p(i|i,t).
+ \label{eq:penalty}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Hold the reference preparations and auxiliaries fixed. Global optimality
+implies that the reference target solves the measurement semidefinite program
+\begin{equation}
+ \begin{aligned}
+ \text{maximize}\quad &\sum_j\tr(H_jE_j),
+ & H_j&=\sum_i c_{ij}\rho_i^\star,\\
+ \text{subject to}\quad &E_j\geq0,
+ & \sum_jE_j&=\id.
+ \end{aligned}
+ \label{eq:primal}
+\end{equation}
+Its dual minimizes $\tr\Lambda$ over Hermitian $\Lambda$ with
+$\Lambda-H_j\geq0$ for each $j$. This follows directly from the Lagrangian
+$\tr\Lambda+\sum_j\tr[(H_j-\Lambda)E_j]$.
+The primal is strictly feasible at $E_j=\id/4$ and has a compact feasible
+set. The dual is strictly feasible at $\Lambda=t\id$ for sufficiently
+large $t$. Finite-dimensional Slater duality~\cite{Boyd2004} therefore
+provides an attained dual optimum and complementary slackness:
+\begin{equation}
+ S_j:=\Lambda-H_j\geq0,\qquad \tr(S_jT_j)=0.
+ \label{eq:slack}
+\end{equation}
+For positive operators, zero trace of the product implies orthogonal supports.
+Since $T_j$ has rank one on a two-dimensional space, its complementary
+support is the one-dimensional support of $\rho_j^\star$. Hence
+\begin{equation}
+ S_j=k_j\rho_j^\star,\qquad k_j\geq0.
+ \label{eq:rankone}
+\end{equation}
+This includes zero slack. Expand the common dual operator uniquely as
+$\Lambda=\sum_i\ell_i\rho_i^\star$. Comparing coefficients in the state
+basis gives Eq.~\eqref{eq:normal}.
+
+This equality constrains the numerical coefficients of the original witness,
+rather than merely its value at the reference. It consequently remains true
+when preparations and measurements change. Summing each target probability
+row to one gives Eq.~\eqref{eq:penalty}.
+\end{proof}
+
+\subsection{Only two preparations can contribute to auxiliary optimization}
+
+Keep all reference measurements fixed and define
+\begin{equation}
+ \uv_i=\sum_yw_{iy}\dv_y.
+ \label{eq:u}
+\end{equation}
+For a varied preparation $\rho_i=(\id+\mathbf{s}\cdot\bs)/2$,
+Eq.~\eqref{eq:penalty} makes the state-dependent witness term
+\begin{equation}
+ (\uv_i+k_i\alpha_i\rv_i)\cdot\mathbf{s},
+ \qquad \norm{\mathbf{s}}\leq1.
+ \label{eq:gradient}
+\end{equation}
+Because $\rv_i$ is globally optimal with these measurements fixed,
+\begin{equation}
+ \uv_i+k_i\alpha_i\rv_i=\tau_i\rv_i,
+ \qquad \tau_i\geq0.
+ \label{eq:alignment}
+\end{equation}
+The case $\tau_i=0$ allows a completely vanishing preparation gradient.
+In particular $\uv_i=(\tau_i-k_i\alpha_i)\rv_i$; its multiplier may have
+either sign. Every nonzero $\uv_i$ is parallel to a reference direction
+and belongs to the auxiliary span. The basis property above and the span
+hypothesis imply
+\begin{equation}
+ A:=\{i:\uv_i\ne0\},\qquad |A|\leq2.
+ \label{eq:active}
+\end{equation}
+For an inactive label, the auxiliary contribution is independent of the
+preparation. Individual $w_{iy}$ need not vanish: dependent or degenerate
+auxiliary directions can cancel. The constants $\sum_yw_{iy}\beta_y$
+are also preserved if the auxiliaries are unchanged.
+
+\subsection{A positive complete target with the same score}
+
+Suppose first that $A=\{a,b\}$. Let $c,d$ be the two inactive labels, and set
+\begin{equation}
+ s=\norm{\rv_a+\rv_b},\qquad
+ \qv=\frac{\rv_a+\rv_b}{s},\qquad a_0=\frac{1}{2+s}.
+ \label{eq:q}
+\end{equation}
+Noncollinearity gives $0<s<2$. Define
+\begin{equation}
+ \begin{aligned}
+ E'_a&=a_0(\id-\rv_a\cdot\bs),&
+ E'_b&=a_0(\id-\rv_b\cdot\bs),\\
+ E'_c&=a_0s(\id+\qv\cdot\bs),& E'_d&=0.
+ \end{aligned}
+ \label{eq:replacement}
+\end{equation}
+Each effect is positive. Their scalar coefficients sum to $a_0(2+s)=1$,
+and their Pauli coefficients sum to
+$-a_0(\rv_a+\rv_b)+a_0s\qv=0$. Thus they sum to $\id$.
+Retain $\rho_a^\star,\rho_b^\star$, take
+$\rho'_c=(\id-\qv\cdot\bs)/2$, and choose any density operator for $d$.
+Then
+\begin{equation}
+ \tr(\rho'_iE'_i)=0\quad\text{for every }i.
+ \label{eq:newzeros}
+\end{equation}
+
+If $A=\{a\}$, choose an inactive $c$ and use instead
+\begin{equation}
+ E'_a=\frac{\id-\rv_a\cdot\bs}{2},\qquad
+ E'_c=\frac{\id+\rv_a\cdot\bs}{2},
+ \label{eq:projective}
+\end{equation}
+with the other two effects zero, $\rho'_a=\rho_a^\star$ and
+$\rho'_c=(\id-\rv_a\cdot\bs)/2$. The remaining preparations are arbitrary.
+When $A$ is empty, the same projective construction uses any two distinct
+labels and any unit vector in place of $\rv_a$. These targets are positive
+and complete, and Eq.~\eqref{eq:newzeros} holds in both cases.
+
+Keep all auxiliary effects fixed. Active preparation contributions are
+unchanged, and inactive auxiliary contributions remain state-independent.
+All scalar biases and row-shift constants are unchanged, while every target
+penalty remains zero. Therefore $L'=L^\star$. Since the reference already
+attains the global maximum, the replacement does as well. It has at least
+one zero effect, so it is inequivalent to four nonzero reference effects
+under common unitary or antiunitary transformations, including any outcome
+permutation. A single deterministic alternative suffices to prevent
+self-testing. Allowing shared randomness cannot eliminate that alternative;
+a linear score has the same maximum over strategies and their convex hull.
+This proves Proposition~\ref{prop:main}. \qed
+
+\section{Consequences and limitations}
+
+For exactly four matched pure kernel preparations, target self-testing by a
+globally optimal linear witness requires an auxiliary Bloch span of dimension
+three. At least three binary settings are therefore necessary in this reference
+class, although three settings need not suffice for arbitrary choices of the
+auxiliaries. The statement covers the entire coefficient array of the complete
+table and does not require independent certification of the preparations.
+The supporting coefficient form, followed by a physically admissible competing
+maximizer, extends the preparation-only span obstruction.
+
+The replacement preserves the witness score, not the full probability table.
+In particular, no operational equivalence of the two realizations is asserted
+for measurements or statistics that are not evaluated through the chosen
+linear score. The matched-kernel hypothesis is used both in the rank-one dual
+slack and in preparation alignment. Self-tests with other reference preparations
+lie outside the result. Additional preparation inputs, nonlinear criteria,
+entanglement-assisted or sequential models, necessity of four preparations,
+and a noise-robust tradeoff are also outside its scope. The broader conjecture
+about resource minimality~\cite{Drotos2024} consequently remains unresolved by
+this argument.
+
+The derivation is exact, without a perturbative order or numerical tolerance.
+The accompanying symbolic checks reconstruct the full complementary-slackness
+solution space and verify positivity, completeness, diagonal exclusions and
+score equality for all eleven possible active-label sets on tetrahedral and
+unequal-weight extremal references. These finite checks support the algebra;
+the universal quantifiers follow from the analytic proof. No finite set of
+examples is used to infer the general obstruction.
+
+\section*{Statements and declarations}
+
+\paragraph{Data and code availability.}
+The exact symbolic verification code, its model definitions and regeneration
+instructions accompany this local draft in the reproducibility materials.
+No experimental data were generated. A public repository location has not
+been assigned.
+
+\paragraph{Use of artificial intelligence.}
+OpenAI Codex language-model tools were used extensively for literature
+discovery, proposed arguments, symbolic-code generation, algebraic checks,
+scientific auditing in a separate AI context, and manuscript drafting. The
+symbolic checks use exact arithmetic. AI checks do not constitute human
+scientific validation or external peer review. Human scientific review,
+authorship confirmation and approval of the final text remain pending for
+this local draft.
+
+\paragraph{Author declarations.}
+Author details, contributions, funding and competing-interest statements require
+confirmation by the named author before any submission.
+
+\bibliographystyle{unsrtnat}
+\bibliography{manuscript/references}
+\end{document}

@@ -1,0 +1,142 @@
+{
+  "method": "full endpoint matching A",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0"
+  },
+  "exact_checks": [
+    {
+      "graph": "unit pumpkin",
+      "E": 2,
+      "k": "1*pi",
+      "nullity": 2
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 2,
+      "k": "2*pi",
+      "nullity": 2
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 2,
+      "k": "3*pi",
+      "nullity": 2
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 3,
+      "k": "1*pi",
+      "nullity": 3
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 3,
+      "k": "2*pi",
+      "nullity": 3
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 3,
+      "k": "3*pi",
+      "nullity": 3
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 5,
+      "k": "1*pi",
+      "nullity": 5
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 5,
+      "k": "2*pi",
+      "nullity": 5
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 5,
+      "k": "3*pi",
+      "nullity": 5
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 8,
+      "k": "1*pi",
+      "nullity": 8
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 8,
+      "k": "2*pi",
+      "nullity": 8
+    },
+    {
+      "graph": "unit pumpkin",
+      "E": 8,
+      "k": "3*pi",
+      "nullity": 8
+    },
+    {
+      "graph": "source star",
+      "k": "pi",
+      "nullity": 3
+    },
+    {
+      "graph": "source star",
+      "k": "2*pi",
+      "nullity": 1
+    },
+    {
+      "graph": "doubled star",
+      "k": "pi",
+      "nullity": 3
+    },
+    {
+      "graph": "doubled star",
+      "k": "2*pi",
+      "nullity": 5
+    },
+    {
+      "graph": "unperturbed source split tree",
+      "k": "pi",
+      "dimension": 28,
+      "rank": 25,
+      "nullity": 3
+    }
+  ],
+  "tree_lengths": {
+    "h": 0.16666666666666666,
+    "b_unperturbed": 0.10614780750482836,
+    "b_perturbed": 0.10714780750482836,
+    "a": 0.5,
+    "m": 5,
+    "delta": 0.001
+  },
+  "perturbed_tree_root": {
+    "k": 3.1277289335244234,
+    "mu2_numerical": 9.782688281605827,
+    "bracket": [
+      3.127690819741488,
+      3.127769359400748
+    ],
+    "determinants_at_bracket": [
+      -2.6490903281316327e-09,
+      2.768222642286977e-09
+    ],
+    "matching_smallest_singular_values": [
+      0.005786383178162911,
+      0.0018166927767692517,
+      2.063302072486764e-16
+    ],
+    "doubled_smallest_singular_values": [
+      0.006248607817841483,
+      0.00198527241310569,
+      1.5174272880078635e-16
+    ],
+    "tolerance": "Cross-representation root tolerance 1e-10; double-precision brentq, residual <1e-12. Not an interval-certified root."
+  },
+  "analytic_obligation": "Firstness and multiplicity are proved for this source family in evidence/published-baseline.md; the determinant root alone does not establish ordering.",
+  "status": "pass"
+}

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "project_id": "phys-00002-p13",
+  "series": "big_mac",
+  "upstream_base_commit": "07342ef",
+  "release_status": "draft_ready_author_review_required",
+  "kind": "result-note",
+  "original_status": "unresolved",
+  "original_source_sha256": "69eae5ae077a5e4977e2b4141bcc0c02848f2a178b23a7855857b63db1a46ae1",
+  "source_bundle_sha256": "8e4bfae66abf4bd8f4fc80d982541cb7a6e65db42bc249b919995d3e04567048",
+  "source_bundle_manifest_sha256": "195b6049d0efe4125e79c92f12a4be3dacdc870ac65f32cd78f13a9e52033012",
+  "scientific_snapshot_digest": "e94d93b8b21a0c9aae440ffd1a130bd824d94db891539be6f946c44d105e765b",
+  "manuscript_digest": "1480ef7eaff0366c1334b9aba6ab5a826e1f53aa929a8805abd3fd49121c1c40",
+  "pdf_sha256": "cf5a88d22ae48b399fce2552b4f66453e457deed0628ecf6e8fe96260c7686a2",
+  "scope_source": "frozen claim and native release; archived qualified version where required",
+  "public_file_rename": {
+    "main.pdf": "paper.pdf"
+  },
+  "portability_changes": [
+    {
+      "file": "evidence/research/spectral-envelope-check.py",
+      "original_sha256": "24e964819d9e0cae892bebfdc029b6e08a2c1327b3c02d9a46f4f35d1724f359",
+      "public_sha256": "170bbd684cfa423a6af8375e564fee2fd5dd7f219cdb71d0e3694ed367db2fbf",
+      "edits": [
+        {
+          "from": "/Users/mac/6physics-research/.venv/bin/python",
+          "to": "python3",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "reproducibility/README.md",
+      "original_sha256": "9e32c1435405b27a270c0ec1de6d9c4dcab81ca2e43fda3bc19c17924c427b4e",
+      "public_sha256": "e1d8036becafda998155a4f0f422aad5362c87155899013c097a9363981837b7",
+      "edits": [
+        {
+          "from": "/Users/mac/6physics-research/.venv/bin/python",
+          "to": "python3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "human_author_review": "required",
+  "external_peer_review": "not_claimed"
+}

@@ -1,0 +1,183 @@
+{
+  "status": "pass",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "witness": {
+    "n": 4,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "s": "3/4",
+    "unit_phases": [
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    "theta": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "pi",
+      "pi"
+    ],
+    "cycle": "0-1-2-3-0",
+    "alternating_product": "-1"
+  },
+  "A_B_entrywise_and_sector_polynomials_exact": true,
+  "parity_commutes_exact": true,
+  "even_charpoly": "(16*lambda + 25)**4*(2048*lambda**4 + 25600*lambda**3 + 92648*lambda**2 + 90075*lambda + 20736)/134217728",
+  "odd_charpoly": "(16*lambda**2 + 75*lambda + 36)**2*(16*lambda**2 + 75*lambda + 72)**2/65536",
+  "even_quartic_intervals": [
+    {
+      "interval": [
+        "-669/100",
+        "-667/100"
+      ],
+      "exact_root_count": 1
+    },
+    {
+      "interval": [
+        "-449/100",
+        "-447/100"
+      ],
+      "exact_root_count": 1
+    },
+    {
+      "interval": [
+        "-51/50",
+        "-1"
+      ],
+      "exact_root_count": 1
+    },
+    {
+      "interval": [
+        "-17/50",
+        "-33/100"
+      ],
+      "exact_root_count": 1
+    }
+  ],
+  "quartic_sturm": [
+    {
+      "point": "-7",
+      "values": [
+        "66411/2048",
+        "-253653/2048",
+        "5738091/65536",
+        "-1141154560359/23940220928",
+        "363187867347372028923/30182281154002645264"
+      ],
+      "variations": 4
+    },
+    {
+      "point": "-89/20",
+      "values": [
+        "4410387/5120000",
+        "8056443/256000",
+        "-18490983/1638400",
+        "-3184100107767/119701104640",
+        "363187867347372028923/30182281154002645264"
+      ],
+      "variations": 2
+    },
+    {
+      "point": "-83/20",
+      "values": [
+        "50757597/5120000",
+        "7284339/256000",
+        "-28188747/1638400",
+        "-2887432731999/119701104640",
+        "363187867347372028923/30182281154002645264"
+      ],
+      "variations": 2
+    },
+    {
+      "point": "0",
+      "values": [
+        "81/8",
+        "90075/2048",
+        "1588323/65536",
+        "243293193225/23940220928",
+        "363187867347372028923/30182281154002645264"
+      ],
+      "variations": 0
+    }
+  ],
+  "LDL_inertia": {
+    "0": {
+      "threshold": "-89/20",
+      "pivots": [
+        "-31/20",
+        "8061/2480",
+        "689997/214960",
+        "759297/238960",
+        "828597/262960",
+        "897897/286960",
+        "967197/310960",
+        "-490043/12895960"
+      ],
+      "negative": 2,
+      "positive": 6,
+      "zero": 0,
+      "congruence_exact": true
+    },
+    "1": {
+      "threshold": "-83/20",
+      "pivots": [
+        "23/20",
+        "23/20",
+        "23/20",
+        "1831/1840",
+        "23/20",
+        "1831/1840",
+        "112561/3369040",
+        "112561/3369040"
+      ],
+      "negative": 0,
+      "positive": 8,
+      "zero": 0,
+      "congruence_exact": true
+    }
+  },
+  "odd_minimum": "(-75-sqrt(3321))/32",
+  "ordering": "Ee1 < -6 < Ee2 < -89/20 < -83/20 < Eo1; Eo1-Ee2>3/10",
+  "exact_ground_unique": true,
+  "generic_sector_polynomials": {
+    "0": "(lambda + s**2 + 1)**4*(lambda**4 + 8*lambda**3*s**2 + 8*lambda**3 + 13*lambda**2*s**4 + 50*lambda**2*s**2 + 13*lambda**2 + 6*lambda*s**6 + 42*lambda*s**4 + 42*lambda*s**2 + 6*lambda + 32*s**4)",
+    "1": "(lambda**2 + 3*lambda*s**2 + 3*lambda + 4*s**2)**2*(lambda**2 + 3*lambda*s**2 + 3*lambda + 8*s**2)**2"
+  },
+  "robust_neighborhood": {
+    "abs_s_change_less_than": "1/1000",
+    "each_wrapped_phase_change_less_than": "1/1000",
+    "H_operator_norm_change_less_than": "24/1000",
+    "ordering_margin_greater_than": "252/1000"
+  },
+  "limitations": "Same proposer worker made all checks; exact matrix/congruence independence does not constitute fresh referee review. No phase-free conjecture disproof, no response intensity or thermodynamic claim."
+}

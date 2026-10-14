@@ -1,0 +1,57 @@
+checking_n = 3
+checking_n = 4
+{
+  "active_tangent_relation": "delta A22=-rho delta A11; both offdiagonal entries arbitrary complex",
+  "hessian_checks": [
+    {
+      "expected_normal_eigenvalues": [
+        "-2",
+        "-5/6 - 7*sqrt(10)/30",
+        "-5/9 - 13*sqrt(10)/90",
+        "-1 - 3*sqrt(10)/10"
+      ],
+      "full_hessian_entrywise_exact_match": true,
+      "multiplicities": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "n": 3,
+      "negative_rank": 8,
+      "nullity": 10,
+      "real_dimension": 18,
+      "stationary_gradient_exact_match": true
+    },
+    {
+      "expected_normal_eigenvalues": [
+        "-2",
+        "-5/6 - 7*sqrt(10)/30",
+        "-5/9 - 13*sqrt(10)/90",
+        "-1 - 3*sqrt(10)/10"
+      ],
+      "full_hessian_entrywise_exact_match": true,
+      "multiplicities": [
+        2,
+        4,
+        4,
+        8
+      ],
+      "n": 4,
+      "negative_rank": 18,
+      "nullity": 14,
+      "real_dimension": 32,
+      "stationary_gradient_exact_match": true
+    }
+  ],
+  "nilpotent_H_characteristic_polynomial": "lambda*(lambda - 3/2)*(lambda - 3/4 + sqrt(10)/4)*(lambda - sqrt(10)/4 - 3/4)",
+  "schur_Phi_residual": "0",
+  "schur_pair_kernel_residuals": [
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "scope": "q=1/2 only; equality pairs and independent exact Hessians at embedded published witness",
+  "second_order_correction_e_over_u": "-4 + 4*sqrt(10)/3"
+}

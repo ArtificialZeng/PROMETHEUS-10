@@ -1,0 +1,320 @@
+{
+  "status": "same_agent_checks_pass",
+  "matching_terms": 34,
+  "polynomial_coefficients": 73,
+  "matching_polynomial_equals_recurrence": true,
+  "uniform_sign_arithmetic_pass": true,
+  "rational_sqrt120": [
+    "109544511501033/10000000000000",
+    "54772255750517/5000000000000"
+  ],
+  "tuned_curve_exact_endpoint_cases": [
+    {
+      "g": "1/10",
+      "Delta": "318399/128000",
+      "endpoints": [
+        {
+          "x": "239039803683232748449/96000000000000000000",
+          "tail_lower_bound": "7340481/128000",
+          "schur_correction_upper": "76800000000000000000/5266320946316767251551",
+          "count_lower": 2,
+          "count_upper": 2
+        },
+        {
+          "x": "478079735366465496901/192000000000000000000",
+          "tail_lower_bound": "7340481/128000",
+          "schur_correction_upper": "153600000000000000000/10532641764633534503099",
+          "count_lower": 3,
+          "count_upper": 3
+        },
+        {
+          "x": "478080264633534503099/192000000000000000000",
+          "tail_lower_bound": "7340481/128000",
+          "schur_correction_upper": "153600000000000000000/10532641235366465496901",
+          "count_lower": 3,
+          "count_upper": 3
+        },
+        {
+          "x": "239040196316767251551/96000000000000000000",
+          "tail_lower_bound": "7340481/128000",
+          "schur_correction_upper": "76800000000000000000/5266320553683232748449",
+          "count_lower": 4,
+          "count_upper": 4
+        }
+      ],
+      "expected_counts": [
+        2,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "g": "1/20",
+      "Delta": "5113599/2048000",
+      "endpoints": [
+        {
+          "x": "7672319819683232748449/3072000000000000000000",
+          "tail_lower_bound": "117489921/2048000",
+          "schur_correction_upper": "614400000000000000000/168562561680316767251551",
+          "count_lower": 2,
+          "count_upper": 2
+        },
+        {
+          "x": "15344639703366465496901/6144000000000000000000",
+          "tail_lower_bound": "117489921/2048000",
+          "schur_correction_upper": "1228800000000000000000/337125123296633534503099",
+          "count_lower": 3,
+          "count_upper": 3
+        },
+        {
+          "x": "15344640296633534503099/6144000000000000000000",
+          "tail_lower_bound": "117489921/2048000",
+          "schur_correction_upper": "1228800000000000000000/337125122703366465496901",
+          "count_lower": 3,
+          "count_upper": 3
+        },
+        {
+          "x": "7672320180316767251551/3072000000000000000000",
+          "tail_lower_bound": "117489921/2048000",
+          "schur_correction_upper": "614400000000000000000/168562561319683232748449",
+          "count_lower": 4,
+          "count_upper": 4
+        }
+      ],
+      "expected_counts": [
+        2,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "g": "1/50",
+      "Delta": "199959999/80000000",
+      "endpoints": [
+        {
+          "x": "749879999829283232748449/300000000000000000000000",
+          "tail_lower_bound": "4589912001/80000000",
+          "schur_correction_upper": "9600000000000000000000/16462290003920716767251551",
+          "count_lower": 2,
+          "count_upper": 2
+        },
+        {
+          "x": "1499759999684166465496901/600000000000000000000000",
+          "tail_lower_bound": "4589912001/80000000",
+          "schur_correction_upper": "19200000000000000000000/32924580007815833534503099",
+          "count_lower": 3,
+          "count_upper": 3
+        },
+        {
+          "x": "1499760000315833534503099/600000000000000000000000",
+          "tail_lower_bound": "4589912001/80000000",
+          "schur_correction_upper": "19200000000000000000000/32924580007184166465496901",
+          "count_lower": 3,
+          "count_upper": 3
+        },
+        {
+          "x": "749880000170716767251551/300000000000000000000000",
+          "tail_lower_bound": "4589912001/80000000",
+          "schur_correction_upper": "9600000000000000000000/16462290003579283232748449",
+          "count_lower": 4,
+          "count_upper": 4
+        }
+      ],
+      "expected_counts": [
+        2,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "g": "1/100",
+      "Delta": "3199839999/1280000000",
+      "endpoints": [
+        {
+          "x": "23999039999832483232748449/9600000000000000000000000",
+          "tail_lower_bound": "73439648001/1280000000",
+          "schur_correction_upper": "76800000000000000000000/526798320007667516767251551",
+          "count_lower": 2,
+          "count_upper": 2
+        },
+        {
+          "x": "47998079999677766465496901/19200000000000000000000000",
+          "tail_lower_bound": "73439648001/1280000000",
+          "schur_correction_upper": "153600000000000000000000/1053596640015322233534503099",
+          "count_lower": 3,
+          "count_upper": 3
+        },
+        {
+          "x": "47998080000322233534503099/19200000000000000000000000",
+          "tail_lower_bound": "73439648001/1280000000",
+          "schur_correction_upper": "153600000000000000000000/1053596640014677766465496901",
+          "count_lower": 3,
+          "count_upper": 3
+        },
+        {
+          "x": "23999040000167516767251551/9600000000000000000000000",
+          "tail_lower_bound": "73439648001/1280000000",
+          "schur_correction_upper": "76800000000000000000000/526798320007332483232748449",
+          "count_lower": 4,
+          "count_upper": 4
+        }
+      ],
+      "expected_counts": [
+        2,
+        3,
+        3,
+        4
+      ]
+    }
+  ],
+  "window_endpoint_cases": [
+    {
+      "g": "1/10",
+      "c": "-1",
+      "Delta": "12437/5000",
+      "count_at_target": {
+        "x": "249/100",
+        "tail_lower_bound": "143369/2500",
+        "schur_correction_upper": "250/17143",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/10",
+      "c": "1",
+      "Delta": "6219/2500",
+      "count_at_target": {
+        "x": "249/100",
+        "tail_lower_bound": "286737/5000",
+        "schur_correction_upper": "4000/274287",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/10",
+      "c": "-5/64",
+      "Delta": "318399/128000",
+      "count_at_target": {
+        "x": "249/100",
+        "tail_lower_bound": "7340481/128000",
+        "schur_correction_upper": "102400/7021761",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/10",
+      "c": "0",
+      "Delta": "199/80",
+      "count_at_target": {
+        "x": "249/100",
+        "tail_lower_bound": "22939/400",
+        "schur_correction_upper": "320/21943",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/20",
+      "c": "-1",
+      "Delta": "399499/160000",
+      "count_at_target": {
+        "x": "999/400",
+        "tail_lower_bound": "9178901/160000",
+        "schur_correction_upper": "32000/8779301",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/20",
+      "c": "1",
+      "Delta": "399501/160000",
+      "count_at_target": {
+        "x": "999/400",
+        "tail_lower_bound": "9178899/160000",
+        "schur_correction_upper": "32000/8779299",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/20",
+      "c": "-5/64",
+      "Delta": "5113599/2048000",
+      "count_at_target": {
+        "x": "999/400",
+        "tail_lower_bound": "117489921/2048000",
+        "schur_correction_upper": "409600/112375041",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/20",
+      "c": "0",
+      "Delta": "799/320",
+      "count_at_target": {
+        "x": "999/400",
+        "tail_lower_bound": "91789/1600",
+        "schur_correction_upper": "320/87793",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/100",
+      "c": "-1",
+      "Delta": "249987499/100000000",
+      "count_at_target": {
+        "x": "24999/10000",
+        "tail_lower_bound": "5737472501/100000000",
+        "schur_correction_upper": "800000/5487482501",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/100",
+      "c": "1",
+      "Delta": "249987501/100000000",
+      "count_at_target": {
+        "x": "24999/10000",
+        "tail_lower_bound": "5737472499/100000000",
+        "schur_correction_upper": "800000/5487482499",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/100",
+      "c": "-5/64",
+      "Delta": "3199839999/1280000000",
+      "count_at_target": {
+        "x": "24999/10000",
+        "tail_lower_bound": "73439648001/1280000000",
+        "schur_correction_upper": "10240000/70239776001",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    },
+    {
+      "g": "1/100",
+      "c": "0",
+      "Delta": "19999/8000",
+      "count_at_target": {
+        "x": "24999/10000",
+        "tail_lower_bound": "2294989/40000",
+        "schur_correction_upper": "320/2194993",
+        "count_lower": 3,
+        "count_upper": 3
+      }
+    }
+  ],
+  "limitations": "Finite samples are consistency tests only. The uniform result uses the analytic derivation and exact coefficient estimates. Not fresh referee acceptance."
+}
